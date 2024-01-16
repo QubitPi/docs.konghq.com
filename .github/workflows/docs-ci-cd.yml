@@ -1,19 +1,20 @@
-name: Build Docs PDF and Publish Docs HTML to GitHub Pages
-on:
-  pull_request:
-  push:
-    branches: [master]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Version (e.g. ce_2.4.x - see 'app/_data/*.yml')"
-        required: true
+# Copyright (c) 2015-2020 Jiaqi Liu (https://github.com/QubitPi)
+
+# Mostly copied from ./build-docs-pdf.yml
+---
+name: Documentation CI/CD
+
+#on:
+#  pull_request:
+#  push:
+#    branches: [master]
 
 env:
-  VITE_PORTAL_API_URL: ${{ vars.VITE_PORTAL_API_URL }}
+  USER: QubitPi
+  EMAIL: jack20220723@gmail.com
 
 jobs:
-  pdf:
+  ci-cd:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -29,10 +30,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
-      - name: Install foreman
-        run: gem install foreman
       - name: Ruby gem cache
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -42,15 +41,13 @@ jobs:
         run: bundle config path ${{ github.workspace }}/vendor/bundle
       - name: Bundle Install
         run: bundle install --jobs 4 --retry 3
-      - name: Install foreman
-        run: gem install foreman
 
       # Configure Node to build assets
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -58,34 +55,12 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
-
       # Build the Docs
       - name: Build Docs
         run: |
           npm ci
           cp .env.example .env
           exe/build
-
-      - name: Set date
-        run: |
-           echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-
-#      # Build the PDF
-#      - name: Generate PDF for Docs "${{ github.event.inputs.version }}"
-#        env:
-#          KONG_DOC_VERSIONS: "${{ github.event.inputs.version }}"
-#        run: |
-#          npm install -g wait-on
-#          netlify dev & wait-on http://localhost:8888
-#          cd pdf-generation
-#          npm ci
-#          node run.js
-#
-#      # Upload build PDFs
-#      - uses: actions/upload-artifact@v4
-#        with:
-#          name: "pdfs-${{ env.TODAY }}"
-#          path: pdf-generation/pdfs/*.pdf
 
       - name: Deploy documentation to GitHub Pages
         # if: github.ref == 'refs/heads/master'
@@ -94,5 +69,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
           enable_jekyll: false
-          user_name: QubitPi
-          user_email: jack20220723@gmail.com
+          user_name: ${{ env.USER }}
+          user_email: ${{ env.EMAIL }}
