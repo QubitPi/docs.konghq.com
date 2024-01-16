@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/moved_urls.yml">
+  
+
+  
+    <meta name="robots" content="follow,index">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/moved_urls.yml">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          
+        </div>
+        
+        <div class="version">
+          
+          
+            <span>(latest)</span>
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href=""></a>
+    </li>
+
+    
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/moved_urls.yml"></a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/moved_urls.yml" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          ---
+/gateway-oss/VERSION/configuration/: "/gateway/VERSION/reference/configuration/"
+/gateway/VERSION/get-started/configure-services-and-routes/: "/gateway/VERSION/get-started/services-and-routes/"
+/gateway/VERSION/install-and-run/: "/gateway/VERSION/install/"
+/gateway/VERSION/install-and-run/kubernetes/: "/gateway/VERSION/install/kubernetes/kubectl/"
+/gateway/VERSION/install-and-run/helm/: "/gateway/VERSION/install/kubernetes/helm-quickstart/"
+/gateway/VERSION/install-and-run/openshift/: "/gateway/VERSION/install/kubernetes/openshift/"
+/gateway/VERSION/install-and-run/helm-quickstart-enterprise/: "/gateway/VERSION/install/kubernetes/helm-quickstart/"
+/gateway/VERSION/install-and-run/docker/: "/gateway/VERSION/install/docker/"
+/gateway/VERSION/install-and-run/amazon-linux/: "/gateway/VERSION/install/linux/amazon-linux/"
+/gateway/VERSION/install-and-run/macos/: "/gateway/VERSION/install/macos/"
+/gateway/VERSION/install-and-run/debian/: "/gateway/VERSION/install/linux/debian/"
+/gateway/VERSION/install-and-run/rhel/: "/gateway/VERSION/install/linux/rhel/"
+/gateway/VERSION/install-and-run/ubuntu/: "/gateway/VERSION/install/linux/ubuntu/"
+/gateway/VERSION/install-and-run/centos/: "/gateway/VERSION/install/linux/os-support/"
+/gateway/VERSION/install-and-run/migrate-ce-to-ke/: "/gateway/VERSION/migrate-ce-to-ke/"
+/gateway/VERSION/install-and-run/upgrade-enterprise/: "/gateway/VERSION/upgrade/"
+/gateway/VERSION/install-and-run/upgrade-oss/: "/gateway/VERSION/upgrade/"
+/gateway/VERSION/get-started/quickstart/: "/gateway/VERSION/get-started/"
+/gateway/VERSION/get-started/quickstart/configuring-a-service/: "/gateway/VERSION/get-started/services-and-routes/"
+/gateway/VERSION/get-started/quickstart/configuring-a-grpc-service/: "/gateway/VERSION/kong-plugins/configuring-a-grpc-service/"
+/gateway/VERSION/get-started/quickstart/enabling-plugins/: "/gateway/VERSION/get-started/rate-limiting/"
+/gateway/VERSION/get-started/quickstart/adding-consumers/: "/gateway/VERSION/get-started/key-authentication/"
+/gateway/VERSION/get-started/comprehensive/prepare/: "/gateway/VERSION/get-started/"
+/gateway/VERSION/get-started/comprehensive/expose-services/: "/gateway/VERSION/get-started/services-and-routes/"
+/gateway/VERSION/get-started/comprehensive/protect-services/: "/gateway/VERSION/get-started/rate-limiting/"
+/gateway/VERSION/get-started/comprehensive/improve-performance/: "/gateway/VERSION/get-started/proxy-caching/"
+/gateway/VERSION/get-started/comprehensive/secure-services/: "/gateway/VERSION/get-started/secure-services/"
+/gateway/VERSION/get-started/comprehensive/load-balancing/: "/gateway/VERSION/get-started/load-balancing/"
+/gateway/VERSION/get-started/comprehensive/manage-teams/: "/gateway/VERSION/kong-manager/auth/workspaces-and-teams/"
+/gateway/VERSION/get-started/comprehensive/dev-portal/: "/gateway/VERSION/kong-enterprise/dev-portal/publish-spec/"
+/gateway/VERSION/plan-and-deploy/kong-user/: "/gateway/VERSION/production/running-kong/kong-user/"
+/gateway/VERSION/plan-and-deploy/sizing-guidelines/: "/gateway/VERSION/production/sizing-guidelines/"
+/gateway/VERSION/plan-and-deploy/hybrid-mode/: "/gateway/VERSION/production/deployment-topologies/hybrid-mode/"
+/gateway/VERSION/plan-and-deploy/hybrid-mode/hybrid-mode-setup/: "/gateway/VERSION/production/deployment-topologies/hybrid-mode/setup/"
+/gateway/VERSION/plan-and-deploy/kubernetes-deployment-options/: "/gateway/VERSION/install/kubernetes/deployment-options/"
+/gateway/VERSION/plan-and-deploy/systemd/: "/gateway/VERSION/production/running-kong/systemd/"
+/gateway/VERSION/plan-and-deploy/performance-testing-framework/: "/gateway/VERSION/reference/performance-testing-framework/"
+/gateway/VERSION/plan-and-deploy/dns-considerations/: "/gateway/VERSION/production/networking/dns-considerations/"
+/gateway/VERSION/plan-and-deploy/default-ports/: "/gateway/VERSION/production/networking/default-ports/"
+/gateway/VERSION/plan-and-deploy/licenses/: "/gateway/VERSION/licenses/"
+/gateway/VERSION/plan-and-deploy/licenses/access-license/: "/gateway/VERSION/licenses/download/"
+/gateway/VERSION/plan-and-deploy/licenses/deploy-license/: "/gateway/VERSION/licenses/deploy/"
+/gateway/VERSION/plan-and-deploy/licenses/report/: "/gateway/VERSION/licenses/report/"
+/gateway/VERSION/plan-and-deploy/security/start-kong-securely/: "/gateway/VERSION/production/access-control/start-securely/"
+/gateway/VERSION/plan-and-deploy/security/db-encryption/: "/gateway/VERSION/kong-enterprise/db-encryption/"
+/gateway/VERSION/plan-and-deploy/security/kong-security-update-process/: "/gateway/VERSION/production/security-update-process/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/: "/gateway/VERSION/kong-enterprise/secrets-management/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/getting-started/: "/gateway/VERSION/kong-enterprise/secrets-management/getting-started/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/advanced-usage/: "/gateway/VERSION/kong-enterprise/secrets-management/advanced-usage/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/backends/: "/gateway/VERSION/kong-enterprise/secrets-management/backends/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/backends/env/: "/gateway/VERSION/kong-enterprise/secrets-management/backends/env/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/backends/aws-sm/: "/gateway/VERSION/kong-enterprise/secrets-management/backends/aws-sm/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/backends/gcp-sm/: "/gateway/VERSION/kong-enterprise/secrets-management/backends/gcp-sm/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/backends/hashicorp-vault/: "/gateway/VERSION/kong-enterprise/secrets-management/backends/hashicorp-vault/"
+/gateway/VERSION/plan-and-deploy/security/secrets-management/reference-format/: "/gateway/VERSION/kong-enterprise/secrets-management/reference-format/"
+/gateway/VERSION/configure/auth/: "/gateway/VERSION/kong-plugins/authentication/reference/"
+/gateway/VERSION/configure/auth/oidc-use-case/: "/gateway/VERSION/kong-plugins/authentication/oidc/"
+/gateway/VERSION/configure/auth/oidc-curity/: "/gateway/VERSION/kong-plugins/authentication/oidc/curity/"
+/gateway/VERSION/configure/auth/oidc-azuread/: "/gateway/VERSION/kong-plugins/authentication/oidc/azure-ad/"
+/gateway/VERSION/configure/auth/oidc-google/: "/gateway/VERSION/kong-plugins/authentication/oidc/google/"
+/gateway/VERSION/configure/auth/oidc-okta/: "/gateway/VERSION/kong-plugins/authentication/oidc/okta/"
+/gateway/VERSION/configure/auth/oidc-auth0/: "/gateway/VERSION/kong-plugins/authentication/oidc/auth0/"
+/gateway/VERSION/configure/auth/oidc-cognito/: "/gateway/VERSION/kong-plugins/authentication/oidc/cognito/"
+/gateway/VERSION/configure/auth/allowing-multiple-authentication-methods/: "/gateway/VERSION/kong-plugins/authentication/allowing-multiple-authentication-methods/"
+/gateway/VERSION/configure/auth/kong-manager/: "/gateway/VERSION/kong-manager/auth/"
+/gateway/VERSION/configure/auth/kong-manager/super-admin/: "/gateway/VERSION/kong-manager/auth/super-admin/"
+/gateway/VERSION/configure/auth/kong-manager/networking/: "/gateway/VERSION/kong-manager/networking/"
+/gateway/VERSION/configure/auth/kong-manager/email/: "/gateway/VERSION/kong-manager/configuring-to-send-email/"
+/gateway/VERSION/configure/auth/kong-manager/reset-password/: "/gateway/VERSION/kong-manager/auth/reset-password/"
+/gateway/VERSION/configure/auth/kong-manager/workspaces/: "/gateway/VERSION/kong-manager/workspaces/"
+/gateway/VERSION/configure/auth/kong-manager/basic/: "/gateway/VERSION/kong-manager/auth/basic/"
+/gateway/VERSION/configure/auth/kong-manager/ldap/: "/gateway/VERSION/kong-manager/auth/ldap/configure/"
+/gateway/VERSION/configure/auth/kong-manager/oidc-mapping/: "/gateway/VERSION/kong-manager/auth/oidc/mapping/"
+/gateway/VERSION/configure/auth/kong-manager/sessions/: "/gateway/VERSION/kong-manager/auth/sessions/"
+/gateway/VERSION/configure/auth/rbac/: "/gateway/VERSION/kong-manager/auth/rbac/"
+/gateway/VERSION/configure/auth/rbac/add-role/: "/gateway/VERSION/kong-manager/auth/rbac/add-role/"
+/gateway/VERSION/configure/auth/rbac/add-user/: "/gateway/VERSION/kong-manager/auth/rbac/add-user/"
+/gateway/VERSION/configure/auth/rbac/add-admin/: "/gateway/VERSION/kong-manager/auth/rbac/add-admin/"
+/gateway/VERSION/configure/auth/service-directory-mapping/: "/gateway/VERSION/kong-manager/auth/ldap/service-directory-mapping/"
+/gateway/VERSION/configure/grpc/: "/gateway/VERSION/kong-plugins/grpc/"
+/gateway/VERSION/configure/graphql-quickstart/: "/gateway/VERSION/kong-plugins/graphql/"
+/gateway/VERSION/configure/logging/: "/gateway/VERSION/production/logging/"
+/gateway/VERSION/configure/network/: "/gateway/VERSION/production/networking/firewall/"
+/gateway/VERSION/developer-portal/: "/gateway/VERSION/kong-enterprise/dev-portal/"
+/gateway/VERSION/developer-portal/enable-dev-portal/: "/gateway/VERSION/kong-enterprise/dev-portal/enable/"
+/gateway/VERSION/developer-portal/structure-and-file-types/: "/gateway/VERSION/kong-enterprise/dev-portal/structure-and-file-types/"
+/gateway/VERSION/developer-portal/working-with-templates/: "/gateway/VERSION/kong-enterprise/dev-portal/working-with-templates/"
+/gateway/VERSION/developer-portal/using-the-editor/: "/gateway/VERSION/kong-enterprise/dev-portal/using-the-editor/"
+/gateway/VERSION/developer-portal/configuration/authentication/basic-auth/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/basic-auth/"
+/gateway/VERSION/developer-portal/configuration/authentication/key-auth/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/key-auth/"
+/gateway/VERSION/developer-portal/configuration/authentication/oidc/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/oidc/"
+/gateway/VERSION/developer-portal/configuration/authentication/sessions/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/sessions/"
+/gateway/VERSION/developer-portal/configuration/authentication/adding-registration-fields/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/adding-registration-fields/"
+/gateway/VERSION/developer-portal/configuration/smtp/: "/gateway/VERSION/kong-enterprise/dev-portal/smtp/"
+/gateway/VERSION/developer-portal/configuration/workspaces/: "/gateway/VERSION/kong-enterprise/dev-portal/workspaces/"
+/gateway/VERSION/developer-portal/administration/managing-developers/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/managing-developers/"
+/gateway/VERSION/developer-portal/administration/developer-permissions/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/developer-permissions/"
+/gateway/VERSION/developer-portal/administration/application-registration/auth-provider-strategy/: "/gateway/VERSION/kong-enterprise/dev-portal/applications/auth-provider-strategy/"
+/gateway/VERSION/developer-portal/administration/application-registration/enable-application-registration/: "/gateway/VERSION/kong-enterprise/dev-portal/applications/enable-application-registration/"
+/gateway/VERSION/developer-portal/administration/application-registration/enable-key-auth-plugin/: "/gateway/VERSION/kong-enterprise/dev-portal/applications/enable-key-auth-plugin/"
+/gateway/VERSION/developer-portal/administration/application-registration/3rd-party-oauth/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/3rd-party-oauth/"
+/gateway/VERSION/developer-portal/administration/application-registration/okta-config/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/okta-config/"
+/gateway/VERSION/developer-portal/administration/application-registration/azure-oidc-config/: "/gateway/VERSION/kong-enterprise/dev-portal/authentication/azure-oidc-config/"
+/gateway/VERSION/developer-portal/administration/application-registration/managing-applications/: "/gateway/VERSION/kong-enterprise/dev-portal/applications/managing-applications/"
+/gateway/VERSION/developer-portal/theme-customization/easy-theme-editing/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/theme-editing/"
+/gateway/VERSION/developer-portal/theme-customization/migrating-templates/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/migrating-templates/"
+/gateway/VERSION/developer-portal/theme-customization/markdown-extended/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/markdown-extended/"
+/gateway/VERSION/developer-portal/theme-customization/emails/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/emails/"
+/gateway/VERSION/developer-portal/theme-customization/adding-javascript-assets/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/adding-javascript-assets/"
+/gateway/VERSION/developer-portal/theme-customization/single-page-app/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/single-page-app/"
+/gateway/VERSION/developer-portal/theme-customization/alternate-openapi-renderer/: "/gateway/VERSION/kong-enterprise/dev-portal/customize/alternate-openapi-renderer/"
+/gateway/VERSION/developer-portal/helpers/cli/: "/gateway/VERSION/kong-enterprise/dev-portal/cli/"
+/gateway/VERSION/vitals/: "/gateway/VERSION/kong-enterprise/analytics/"
+/gateway/VERSION/vitals/vitals-metrics/: "/gateway/VERSION/kong-enterprise/analytics/metrics/"
+/gateway/VERSION/vitals/vitals-reports/: "/gateway/VERSION/kong-enterprise/analytics/reports/"
+/gateway/VERSION/vitals/vitals-influx-strategy/: "/gateway/VERSION/kong-enterprise/analytics/influx-strategy/"
+/gateway/VERSION/vitals/vitals-prometheus-strategy/: "/gateway/VERSION/kong-enterprise/analytics/prometheus-strategy/"
+/gateway/VERSION/vitals/vitals-estimates/: "/gateway/VERSION/kong-enterprise/analytics/estimates/"
+/gateway/VERSION/admin-api/licenses/examples/: "/gateway/VERSION/licenses/examples/"
+/gateway/VERSION/admin-api/workspaces/examples/: "/gateway/VERSION/kong-enterprise/workspaces/"
+/gateway/VERSION/admin-api/rbac/examples/: "/gateway/VERSION/production/access-control/enable-rbac/"
+/gateway/VERSION/admin-api/admins/examples/: "/gateway/VERSION/production/access-control/register-admin-api/"
+/gateway/VERSION/admin-api/consumer-groups/examples/: "/gateway/VERSION/kong-enterprise/consumer-groups/"
+/gateway/VERSION/admin-api/event-hooks/examples/: "/gateway/VERSION/kong-enterprise/event-hooks/"
+/gateway/VERSION/admin-api/audit-log/: "/gateway/VERSION/kong-enterprise/audit-log/"
+/gateway/VERSION/admin-api/db-encryption/: "/gateway/VERSION/kong-enterprise/db-encryption/"
+/gateway/VERSION/admin-api/secure-admin-api/: "/gateway/VERSION/production/running-kong/secure-admin-api/"
+/gateway/VERSION/reference/db-less-and-declarative-config/: "/gateway/VERSION/production/deployment-topologies/db-less-and-declarative-config/"
+/gateway/VERSION/reference/loadbalancing/: "/gateway/VERSION/how-kong-works/load-balancing/"
+/gateway/VERSION/reference/proxy/: "/gateway/VERSION/how-kong-works/routing-traffic/"
+/gateway/VERSION/reference/health-checks-circuit-breakers/: "/gateway/VERSION/how-kong-works/health-checks/"
+/gateway/VERSION/reference/clustering/: "/gateway/VERSION/production/clustering/"
+/gateway/VERSION/reference/router-expressions-language/: "/gateway/VERSION/reference/expressions-language/"
+/gateway/VERSION/pdk/: "/gateway/VERSION/plugin-development/pdk/"
+/gateway/VERSION/pdk/kong.client/: "/gateway/VERSION/plugin-development/pdk/kong.client/"
+/gateway/VERSION/pdk/kong.client.tls/: "/gateway/VERSION/plugin-development/pdk/kong.client.tls/"
+/gateway/VERSION/availability-stages/: "/gateway/VERSION/stability/"
+/gateway/VERSION/pdk/kong.cluster/: "/gateway/VERSION/plugin-development/pdk/kong.cluster/"
+/gateway/VERSION/pdk/kong.ctx/: "/gateway/VERSION/plugin-development/pdk/kong.ctx/"
+/gateway/VERSION/pdk/kong.ip/: "/gateway/VERSION/plugin-development/pdk/kong.ip/"
+/gateway/VERSION/pdk/kong.log/: "/gateway/VERSION/plugin-development/pdk/kong.log/"
+/gateway/VERSION/pdk/kong.nginx/: "/gateway/VERSION/plugin-development/pdk/kong.nginx/"
+/gateway/VERSION/pdk/kong.node/: "/gateway/VERSION/plugin-development/pdk/kong.node/"
+/gateway/VERSION/pdk/kong.request/: "/gateway/VERSION/plugin-development/pdk/kong.request/"
+/gateway/VERSION/pdk/kong.response/: "/gateway/VERSION/plugin-development/pdk/kong.response/"
+/gateway/VERSION/pdk/kong.router/: "/gateway/VERSION/plugin-development/pdk/kong.router/"
+/gateway/VERSION/pdk/kong.service/: "/gateway/VERSION/plugin-development/pdk/kong.service/"
+/gateway/VERSION/pdk/kong.service.request/: "/gateway/VERSION/plugin-development/pdk/kong.service.request/"
+/gateway/VERSION/pdk/kong.service.response/: "/gateway/VERSION/plugin-development/pdk/kong.service.response/"
+/gateway/VERSION/pdk/kong.table/: "/gateway/VERSION/plugin-development/pdk/kong.table/"
+/gateway/VERSION/pdk/kong.vault/: "/gateway/VERSION/plugin-development/pdk/kong.vault/"
+/gateway/VERSION/plugin-development/plugin-configuration/: "/gateway/VERSION/plugin-development/configuration/"
+/gateway/VERSION/reference/external-plugins/: "/gateway/VERSION/plugin-development/pluginserver/go/"
+/gateway/VERSION/get-started/secure-services/: "/gateway/VERSION/get-started/key-authentication/"
+/gateway/VERSION/install/linux/os-support/: "/gateway/VERSION/support-policy/#supported-versions"
+/gateway/VERSION/install/kubernetes/deployment-options/: /gateway/VERSION/install/kubernetes/
+
+# KIC 3.0
+# No new page available
+/kubernetes-ingress-controller/VERSION/concepts/expression-based-router/: /kubernetes-ingress-controller/VERSION/
+/kubernetes-ingress-controller/VERSION/concepts/ingress-versions/: /kubernetes-ingress-controller/VERSION/
+/kubernetes-ingress-controller/VERSION/availability-stages/: /kubernetes-ingress-controller/VERSION/
+/kubernetes-ingress-controller/VERSION/deployment/overview/: /kubernetes-ingress-controller/VERSION/
+/kubernetes-ingress-controller/VERSION/guides/configuring-fallback-service/: /kubernetes-ingress-controller/VERSION/ 
+/kubernetes-ingress-controller/VERSION/guides/using-kong-with-knative/: /kubernetes-ingress-controller/VERSION/
+/kubernetes-ingress-controller/VERSION/guides/choose-gateway-image/: /kubernetes-ingress-controller/VERSION/
+
+# Redirected to new page
+/kubernetes-ingress-controller/VERSION/references/annotations/: /kubernetes-ingress-controller/VERSION/reference/annotations/
+/kubernetes-ingress-controller/VERSION/references/custom-resources/: /kubernetes-ingress-controller/VERSION/reference/custom-resources/
+/kubernetes-ingress-controller/VERSION/concepts/design/: /kubernetes-ingress-controller/VERSION/concepts/architecture/ 
+/kubernetes-ingress-controller/VERSION/concepts/k4k8s-with-kong-enterprise/: /kubernetes-ingress-controller/VERSION/license/
+/kubernetes-ingress-controller/VERSION/concepts/ha-and-scaling/: /kubernetes-ingress-controller/VERSION/guides/high-availability/kic/
+/kubernetes-ingress-controller/VERSION/concepts/ingress-classes/: /kubernetes-ingress-controller/VERSION/concepts/ingress/
+/kubernetes-ingress-controller/VERSION/concepts/deployment/: /kubernetes-ingress-controller/VERSION/production/deployment-topologies/
+/kubernetes-ingress-controller/VERSION/deployment/minikube/: /kubernetes-ingress-controller/VERSION/install/helm/
+/kubernetes-ingress-controller/VERSION/deployment/k4k8s/: /kubernetes-ingress-controller/VERSION/install/helm/
+/kubernetes-ingress-controller/VERSION/deployment/k4k8s-enterprise/: /kubernetes-ingress-controller/VERSION/install/helm/
+/kubernetes-ingress-controller/VERSION/deployment/kong-enterprise/: /kubernetes-ingress-controller/VERSION/install/helm/
+/kubernetes-ingress-controller/VERSION/deployment/aks/: /kubernetes-ingress-controller/VERSION/install/cloud/aks/
+/kubernetes-ingress-controller/VERSION/deployment/gke/: /kubernetes-ingress-controller/VERSION/install/cloud/gke/
+/kubernetes-ingress-controller/VERSION/deployment/eks/: /kubernetes-ingress-controller/VERSION/install/cloud/eks/
+/kubernetes-ingress-controller/VERSION/deployment/admission-webhook/: /kubernetes-ingress-controller/VERSION/concepts/admission-webhook/
+/kubernetes-ingress-controller/VERSION/deployment/install-gateway-apis/: /kubernetes-ingress-controller/VERSION/concepts/gateway-api/
+/kubernetes-ingress-controller/VERSION/guides/getting-started/: /kubernetes-ingress-controller/VERSION/get-started/
+/kubernetes-ingress-controller/VERSION/guides/upgrade/: /kubernetes-ingress-controller/VERSION/upgrade/kic/
+/kubernetes-ingress-controller/VERSION/guides/upgrade-kong-3x/: /kubernetes-ingress-controller/VERSION/upgrade/gateway/
+/kubernetes-ingress-controller/VERSION/guides/using-kongplugin-resource/: /kubernetes-ingress-controller/VERSION/concepts/custom-resources/
+/kubernetes-ingress-controller/VERSION/guides/using-kongingress-resource/: /kubernetes-ingress-controller/VERSION/guides/migrate/kongingress/
+/kubernetes-ingress-controller/VERSION/guides/using-consumer-credential-resource/: /kubernetes-ingress-controller/VERSION/concepts/custom-resources/
+/kubernetes-ingress-controller/VERSION/guides/using-tcpingress/: /kubernetes-ingress-controller/VERSION/guides/services/tcp/
+/kubernetes-ingress-controller/VERSION/guides/using-udpingress/: /kubernetes-ingress-controller/VERSION/guides/services/udp/
+/kubernetes-ingress-controller/VERSION/guides/configure-acl-plugin/: /kubernetes-ingress-controller/VERSION/plugins/acl/
+/kubernetes-ingress-controller/VERSION/guides/allowing-multiple-authentication-methods/: /kubernetes-ingress-controller/VERSION/plugins/authentication/
+/kubernetes-ingress-controller/VERSION/guides/using-external-service/: /kubernetes-ingress-controller/VERSION/guides/services/external/
+/kubernetes-ingress-controller/VERSION/guides/configuring-https-redirect/: /kubernetes-ingress-controller/VERSION/guides/services/https-redirect/
+/kubernetes-ingress-controller/VERSION/guides/redis-rate-limiting/: /kubernetes-ingress-controller/VERSION/plugins/rate-limiting/
+/kubernetes-ingress-controller/VERSION/guides/prometheus-grafana/: /kubernetes-ingress-controller/VERSION/production/observability/prometheus-grafana/
+/kubernetes-ingress-controller/VERSION/guides/configuring-health-checks/: /kubernetes-ingress-controller/VERSION/guides/high-availability/health-checks/
+/kubernetes-ingress-controller/VERSION/guides/setting-up-custom-plugins/: /kubernetes-ingress-controller/VERSION/plugins/custom/
+/kubernetes-ingress-controller/VERSION/guides/using-ingress-with-grpc/: /kubernetes-ingress-controller/VERSION/guides/services/grpc/
+/kubernetes-ingress-controller/VERSION/guides/using-mtls-auth-plugin/: /kubernetes-ingress-controller/VERSION/plugins/mtls/
+/kubernetes-ingress-controller/VERSION/guides/using-oidc-plugin/: /kubernetes-ingress-controller/VERSION/plugins/oidc/
+/kubernetes-ingress-controller/VERSION/guides/using-rewrites/: /kubernetes-ingress-controller/VERSION/guides/requests/rewrite-host/
+/kubernetes-ingress-controller/VERSION/guides/preserve-client-ip/: /kubernetes-ingress-controller/VERSION/guides/security/client-ip/
+/kubernetes-ingress-controller/VERSION/guides/using-multiple-backends/: /kubernetes-ingress-controller/VERSION/guides/services/multiple-backends/
+/kubernetes-ingress-controller/VERSION/guides/using-gateway-discovery/: /kubernetes-ingress-controller/VERSION/production/deployment-topologies/gateway-discovery/
+/kubernetes-ingress-controller/VERSION/references/cli-arguments/: /kubernetes-ingress-controller/VERSION/reference/cli-arguments/
+/kubernetes-ingress-controller/VERSION/references/plugin-compatibility/: /hub/plugins/compatibility/
+/kubernetes-ingress-controller/VERSION/references/version-compatibility/: /kubernetes-ingress-controller/VERSION/reference/version-compatibility/
+/kubernetes-ingress-controller/VERSION/references/supported-router-flavors/: /kubernetes-ingress-controller/VERSION/reference/faq/router/
+/kubernetes-ingress-controller/VERSION/troubleshooting/: /kubernetes-ingress-controller/VERSION/reference/troubleshooting/
+/kubernetes-ingress-controller/VERSION/references/kubernetes-events/: /kubernetes-ingress-controller/VERSION/production/observability/events/
+/kubernetes-ingress-controller/VERSION/references/prometheus/: /kubernetes-ingress-controller/VERSION/production/observability/prometheus/
+/kubernetes-ingress-controller/VERSION/references/feature-gates/: /kubernetes-ingress-controller/VERSION/reference/feature-gates/
+/kubernetes-ingress-controller/VERSION/references/gateway-api-support/: /kubernetes-ingress-controller/VERSION/gateway-api/
+/kubernetes-ingress-controller/VERSION/concepts/security/: /kubernetes-ingress-controller/VERSION/guides/security/kong-vault/
+/kubernetes-ingress-controller/VERSION/faq/: /kubernetes-ingress-controller/VERSION/reference/faq/router/
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

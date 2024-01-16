@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Style guide | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Style guide | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/contributing/style-guide/">
+  
+
+  
+    <meta name="robots" content="follow,index">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/contributing/style-guide/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Contribution guidelines
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/contributing/">Style guide and contribution guidelines</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/contributing/style-guide/">Style guide</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/contributing/style-guide.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Contribution guidelines
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/latest/">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/latest/">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/contributing/" class="active">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/">
+        
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Contribution guidelines
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-style-guidelines-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Style guidelines
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Style guidelines subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-2-style-guidelines-subtree" role="group" aria-label="Style guidelines">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/style-guide/">
+        
+
+Style guide
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/word-choice/">
+        
+
+Word choice and naming
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/notices/">
+        
+
+Notes and other notices
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/diagrams/">
+        
+
+Diagrams
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/user-interfaces/">
+        
+
+Documenting user interfaces
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/contribution-templates/">
+        
+
+Contribution templates
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-7-plugin-documentation-subtree">
+    
+      
+
+Plugin documentation
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Plugin documentation subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-2-7-plugin-documentation-subtree" role="group" aria-label="Plugin documentation">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/kong-plugins/">
+        
+
+Documenting Kong-owned plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/partner-plugins/">
+        
+
+Documenting partner plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-markdown-rules-and-formatting-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Markdown rules and formatting
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Markdown rules and formatting subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-markdown-rules-and-formatting-subtree" role="group" aria-label="Markdown rules and formatting">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/markdown-rules/">
+        
+
+Markdown rules
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/includes/">
+        
+
+Reusable content
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/variables/">
+        
+
+Variables
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/single-sourced-versions/">
+        
+
+Single-sourced versions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/single-sourced-plugins/">
+        
+
+Single-sourced plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/conditional-rendering/">
+        
+
+Conditional rendering
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-community-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Community
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Community subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-community-subtree" role="group" aria-label="Community">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/community/">
+        
+
+Welcome to the Kong Docs community
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/community-expectations/">
+        
+
+Community expectations
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/contributing/hackathons/">
+        
+
+Hackathons
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#language" class="active scroll-to">Language</a></li>
+  <li>
+<a href="#voice-and-tone" class="scroll-to">Voice and tone</a>
+    <ul>
+      <li><a href="#active-voice" class="scroll-to">Active voice</a></li>
+      <li><a href="#present-tense" class="scroll-to">Present tense</a></li>
+      <li><a href="#contractions" class="scroll-to">Contractions</a></li>
+      <li><a href="#latin-phrases" class="scroll-to">Latin phrases</a></li>
+      <li><a href="#recommendations" class="scroll-to">Recommendations</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#grammar-and-syntax" class="scroll-to">Grammar and syntax</a>
+    <ul>
+      <li><a href="#punctuation-rules" class="scroll-to">Punctuation rules</a></li>
+      <li><a href="#headings-and-page-titles" class="scroll-to">Headings and page titles</a></li>
+      <li><a href="#capitalization" class="scroll-to">Capitalization</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#formatting" class="scroll-to">Formatting</a>
+    <ul>
+      <li><a href="#automatic-formatting" class="scroll-to">Automatic formatting</a></li>
+      <li><a href="#content-types" class="scroll-to">Content types</a></li>
+      <li><a href="#placeholder-and-example-values" class="scroll-to">Placeholder and example values</a></li>
+      <li><a href="#code-formatting" class="scroll-to">Code formatting</a></li>
+    </ul>
+  </li>
+  <li><a href="#icons" class="scroll-to">Icons</a></li>
+  <li><a href="#links" class="scroll-to">Links</a></li>
+  <li><a href="#reference-style-guide" class="scroll-to">Reference style guide</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">Style guide
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          <h2 id="language">Language</h2>
+
+<p>The Kong docs use <a href="https://en.wikipedia.org/wiki/American_English" target="_blank" rel="noopener nofollow noreferrer ">American English (US English)</a>.
+There are some spelling, grammar, and vocabulary differences between American English and other varieties.</p>
+
+<p>Here are some examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use (American English)</th>
+      <th>❌  Don’t use (other variations)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The response <strong>should</strong> look like…</td>
+      <td>The response <strong>shall</strong> look like…</td>
+    </tr>
+    <tr>
+      <td>In the previous section, you <strong>learned</strong>…</td>
+      <td>In the previous section, you <strong>learnt</strong>…</td>
+    </tr>
+    <tr>
+      <td>Color, recognize, analyze</td>
+      <td>Colour, recognise, analyse</td>
+    </tr>
+    <tr>
+      <td>While</td>
+      <td>Whilst</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="voice-and-tone">Voice and tone</h2>
+
+<p>Write for people, not computers. You are human, Kong’s users are human – let’s write for each other.</p>
+
+<p>At Kong, we try to keep our tone <strong>conversational</strong>, but not at the expense of clarity.
+We keep language simple and concise, take things seriously when we need to, and keep our readers in mind in whatever we write.</p>
+
+<p>Here are some examples of parallel conversational and formal terms and phrasing:</p>
+
+<!--vale off-->
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<em>Run</em> the program.</td>
+      <td>
+<em>Execute</em> the program.</td>
+    </tr>
+    <tr>
+      <td>
+<em>Use</em> the Admin API.</td>
+      <td>
+<em>Utilize</em> the Admin API.</td>
+    </tr>
+    <tr>
+      <td>Open the link <em>to</em> do the thing.</td>
+      <td>Open the link <em>in order to</em> do the thing.</td>
+    </tr>
+    <tr>
+      <td>In the open tab, do the thing.</td>
+      <td>In the open tab that <em>appears</em>, do the thing. <br> In the open tab that <em>displays</em>, do the thing.</td>
+    </tr>
+    <tr>
+      <td>Clearly refer to subjects. <br>For example, say “Once you have added <em>the inputs section</em>, …”</td>
+      <td>Avoid generic pronouns. <br> For example, don’t say “Once you have added <em>this</em>, …”</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- vale on-->
+
+<h3 id="active-voice">Active voice</h3>
+
+<p>Use active voice, and avoid passive voice.</p>
+
+<p>With active voice, the subject performs an action. With passive voice, the action is being performed upon the subject:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Active</th>
+      <th>❌  Passive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The plugin <em>applies</em> rate limiting to consumers.</td>
+      <td>Rate limits <em>are applied to</em> consumers by the plugin.</td>
+    </tr>
+    <tr>
+      <td>You <em>can explore</em> the API using a browser.</td>
+      <td>The API <em>can be explored</em> using a browser.</td>
+    </tr>
+    <tr>
+      <td>The YAML file <em>specifies</em> the replica count.</td>
+      <td>The replica count <em>is specified</em> in the YAML file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There are exceptions to this guideline.
+You might use passive voice to communicate that the subject is passive and is having something done to it.</p>
+
+<p>For example: “The CA provider’s external account can be registered automatically”. 
+In this sentence, the account is passive and isn’t doing anything, so you can use passive voice.</p>
+
+<h3 id="present-tense">Present tense</h3>
+
+<p>Whenever possible, use present tense instead of past or future.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>This <code class="language-plaintext highlighter-rouge">command</code> <em>starts</em> a proxy.</td>
+      <td>This <code class="language-plaintext highlighter-rouge">command</code> <em>will start</em> a proxy.</td>
+    </tr>
+    <tr>
+      <td>This <code class="language-plaintext highlighter-rouge">command</code> <em>starts</em> a proxy.</td>
+      <td>This <code class="language-plaintext highlighter-rouge">command</code> <em>has started</em> a proxy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="contractions">Contractions</h3>
+
+<p>Don’t be afraid to use contractions (<em>can’t</em>, <em>isn’t</em>, <em>you’ll</em>, and so on)! It adds to the conversational tone.</p>
+
+<p>As with everything, there are exceptions to the rule.
+You can omit contractions when aiming for a more serious tone, typically to emphasize a warning or caution.</p>
+
+<p>For example, you might use a contraction in a phrase like “This plugin <strong>isn’t</strong> available in Konnect” to let a reader know about plugin availability.
+On the other hand, you might say “<strong>Do not</strong> use this plugin in Konnect because it will break things” to warn them about potential consequences.</p>
+
+<h3 id="latin-phrases">Latin phrases</h3>
+
+<p>Don’t use Latin phrases or short forms. Use the english version of the same phrase.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>For example, …</td>
+      <td>e.g., …</td>
+    </tr>
+    <tr>
+      <td>That is, …</td>
+      <td>i.e., …</td>
+    </tr>
+    <tr>
+      <td>So (or therefore), …</td>
+      <td>Ergo, …</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="recommendations">Recommendations</h3>
+
+<p>Recommendations should have a reason. If you’re recommending an approach, explain why.</p>
+
+<p>A recommendation should apply to most users. It’s not a suggestion. 
+For example, we wouldn’t recommend DB-less mode without context, but we could recommend it in a specific use case that explains why.</p>
+
+<p>When recommending a course of action, use the phrase “we recommend”.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<strong>We recommend</strong> using an access token <strong>because it’s more secure</strong>.</td>
+      <td>
+<strong>Kong recommends</strong> using an access token.</td>
+    </tr>
+    <tr>
+      <td>
+<strong>We don’t recommend</strong> storing a password in plaintext <strong>because it’s not secure</strong>.</td>
+      <td>
+<strong>It is recommended</strong> that you use an access token.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="grammar-and-syntax">Grammar and syntax</h2>
+
+<h3 id="punctuation-rules">Punctuation rules</h3>
+
+<p>Commas and periods always go inside quotation marks, and colons, semicolons, and dashes go outside.</p>
+
+<p>For example: “There was a storm last night,” Paul said.</p>
+
+<h4 id="list-punctuation">List punctuation</h4>
+
+<p>✅   Do use punctuation when constructing lists that contain full sentences:</p>
+
+<blockquote class="note no-icon">
+  <p>In DB-less mode, you configure Kong Gateway declaratively. Therefore, the Admin API is mostly read-only. The only tasks it can perform are all related to handling the declarative configuration, including:</p>
+
+  <ul>
+    <li>Setting a target’s health status in the load balancer.</li>
+    <li>Validating configurations against schemas.</li>
+    <li>Uploading the declarative configuration using the <code class="language-plaintext highlighter-rouge">/config</code> endpoint.</li>
+  </ul>
+</blockquote>
+
+<p>❌   Don’t use punctuation when creating ordered and unordered lists that are extensions of a sentence:</p>
+
+<blockquote class="note no-icon">
+  <p>Kong Mesh enables the microservices transformation with:</p>
+  <ul>
+    <li>Out-of-the-box service connectivity and discovery</li>
+    <li>Zero-trust security</li>
+    <li>Traffic reliability</li>
+    <li>Global observability across all traffic</li>
+  </ul>
+</blockquote>
+
+<h3 id="headings-and-page-titles">Headings and page titles</h3>
+
+<p>When writing section headings or page titles, be descriptive. 
+What is someone going to do in this section, or on this page? 
+If it’s an overview, what is it an overview of?</p>
+
+<p>For example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kong Gateway Overview</td>
+      <td>Overview</td>
+    </tr>
+    <tr>
+      <td>Improve Vitals performance with InfluxDB</td>
+      <td>InfluxDB</td>
+    </tr>
+    <tr>
+      <td>Query frequency and precision</td>
+      <td>Query behavior</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use sentence case for section headings. For example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Understanding traffic flow in Kong Gateway</td>
+      <td>Understanding Traffic Flow in Kong Gateway</td>
+    </tr>
+    <tr>
+      <td>Get started with the Request Transformer Advanced plugin</td>
+      <td>Get Started with the Request Transformer Advanced Plugin</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="capitalization">Capitalization</h3>
+
+<p>When documenting a user interface (UI), follow its formatting.
+If a term is capitalized in the UI and you are referring to the specific UI element, it should be capitalized in the documentation.</p>
+
+<p>Don’t capitalize the following terms:</p>
+
+<ul>
+  <li>application</li>
+  <li>certificate</li>
+  <li>consumer</li>
+  <li>control plane</li>
+  <li>database</li>
+  <li>data plane</li>
+  <li>developer</li>
+  <li>hybrid mode</li>
+  <li>plugin</li>
+  <li>route</li>
+  <li>service</li>
+  <li>service mesh</li>
+  <li>target</li>
+  <li>upstream</li>
+</ul>
+
+<h4 id="plugin-name-capitalization">Plugin name capitalization</h4>
+
+<ol>
+  <li>Capitalize the plugin <em>name</em> but not the word <em>plugin</em>. For example, “Rate Limiting plugin”.</li>
+  <li>Don’t capitalize the name if you’re using it in code. For example, <code class="language-plaintext highlighter-rouge">rate-limiting</code>.</li>
+  <li>Don’t capitalize if you’re referring to the concept, not the plugin.
+For example, “Set up rate limiting in Kong Gateway with the Rate Limiting plugin”.</li>
+</ol>
+
+<h4 id="kong-specific-term-capitalization">Kong-specific term capitalization</h4>
+
+<p>For product and component names, see <a href="/contributing/word-choice/">Word Choice</a>.</p>
+
+<p>Object/entity names (for example, service, route, upstream) should be lowercase.</p>
+
+<h2 id="formatting">Formatting</h2>
+
+<h3 id="automatic-formatting">Automatic formatting</h3>
+
+<p><a href="https://prettier.io/" target="_blank" rel="noopener nofollow noreferrer ">Prettier</a> is used to format all prose and code files. There are three ways to meet this standard:</p>
+
+<ul>
+  <li>Install the <a href="https://prettier.io/docs/en/editors.html" target="_blank" rel="noopener nofollow noreferrer ">Prettier plugin</a> for your editor</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">npx prettier --write ./your/edited/files.md</code> in the terminal</li>
+  <li>(Maintainers only) Add the <code class="language-plaintext highlighter-rouge">ci:autofix:prettier</code> label to a Pull Request</li>
+</ul>
+
+<p>All files in <code class="language-plaintext highlighter-rouge">app/_src</code> are formatted with Prettier. Prose in <code class="language-plaintext highlighter-rouge">app</code> has not been bulk-formatted and <em>may</em> be formatted as you edit those files.</p>
+
+<h3 id="content-types">Content types</h3>
+
+<p>At Kong, we use the four following standard content types when we write our documentation:</p>
+
+<ul>
+  <li>
+<a href="https://github.com/Kong/docs.konghq.com/blob/main/docs/templates/explanation-template.md" target="_blank" rel="noopener nofollow noreferrer ">Explanation</a>: Documentation that is understanding-oriented because it clarifies and discusses a particular topic.</li>
+  <li>
+<a href="https://github.com/Kong/docs.konghq.com/blob/main/docs/templates/how-to-template.md" target="_blank" rel="noopener nofollow noreferrer ">How-to</a>: Documentation that is goal-oriented and prescriptive and that takes readers through the steps to complete a real-world problem.</li>
+  <li>
+<a href="https://github.com/Kong/docs.konghq.com/blob/main/docs/templates/reference-template.md" target="_blank" rel="noopener nofollow noreferrer ">Reference</a>: Documentation that explains the technology, like API or command line documentation.</li>
+  <li>
+<a href="https://github.com/Kong/docs.konghq.com/blob/main/docs/templates/tutorial-template.md" target="_blank" rel="noopener nofollow noreferrer ">Tutorial</a>: Documentation that helps users learn about a topic by going step-by-step through a series of tasks.</li>
+</ul>
+
+<p>Every documentation page should fit one of these four content types.</p>
+
+<h3 id="placeholder-and-example-values">Placeholder and example values</h3>
+
+<p>The type of placeholder you use depends on context:</p>
+
+<ul>
+  <li>
+    <p><strong>Generic placeholder values:</strong> In most situations (such as plugin parameters, YAML examples, or Kong configuration), use all caps text and underscores between words.</p>
+
+    <p>For example: <code class="language-plaintext highlighter-rouge">service: SERVICE_NAME</code></p>
+  </li>
+  <li>
+    <p><strong>Placeholders in API URLs or OpenAPI specs</strong>: Enclose placeholders in <code class="language-plaintext highlighter-rouge">{ }</code> characters and write them in all caps,
+per <a href="https://swagger.io/docs/specification/describing-parameters/" target="_blank" rel="noopener nofollow noreferrer ">Swagger guidelines</a>.</p>
+
+    <p>For example: <code class="language-plaintext highlighter-rouge">/services/{SERVICE_NAME|ID}/plugins</code></p>
+  </li>
+  <li>
+<strong>Hostnames and example URLs:</strong>
+    <ul>
+      <li>
+        <p>For guides with examples that are intended to be runnable as-is, use <code class="language-plaintext highlighter-rouge">localhost</code> as the domain name.</p>
+
+        <p>For example: <code class="language-plaintext highlighter-rouge">curl -i -X https://localhost:8001/services</code></p>
+
+        <p>If you are following a guide where Kong Gateway is running on <code class="language-plaintext highlighter-rouge">localhost</code>, this example can be copied and pasted straight into a terminal.
+  It should work with no changes.</p>
+      </li>
+      <li>
+        <p>For situations where you need a generic domain name and the examples are illustrative only (not intended to be runnable as-is), use <code class="language-plaintext highlighter-rouge">example</code> or <code class="language-plaintext highlighter-rouge">example.com</code>.</p>
+
+        <p>For example: <code class="language-plaintext highlighter-rouge">user@example.com</code> or <code class="language-plaintext highlighter-rouge">https://example.okta.admin.com</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Path parameters</strong>
+    <ul>
+      <li>
+        <p>Path parameters must be denoted with curly braces <code class="language-plaintext highlighter-rouge">{}</code>.</p>
+
+        <p>For example: <code class="language-plaintext highlighter-rouge">http://localhost:8001/services/{service_id_or_name}/routes/{route_id_or_name}</code></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="inline-placeholders">Inline placeholders</h4>
+
+<p>If you’re adding a placeholder inline, such as in a sentence, enclose it in single
+backticks: `EXAMPLE_TEXT`</p>
+
+<h3 id="code-formatting">Code formatting</h3>
+
+<ul>
+  <li>Separate commands from output.</li>
+  <li>Include properly formatted code comments.</li>
+  <li>For long commands, split the code block into separate lines with <code class="language-plaintext highlighter-rouge">\</code>
+to avoid horizontal scrolling.</li>
+  <li>Never have more than one command in a block/example.</li>
+  <li>Set a language for code blocks, for example, bash, to enable syntax highlighting.
+    <ul>
+      <li><a href="https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers" target="_blank" rel="noopener nofollow noreferrer ">List of supported languages</a></li>
+    </ul>
+  </li>
+  <li>Do <strong>NOT</strong> use the command prompt marker ($) in code snippets.</li>
+</ul>
+
+<h2 id="icons">Icons</h2>
+
+<p>When deciding which icon to use for a doc, use the following guidelines:</p>
+
+<ol>
+  <li>
+    <p>Is there a Unicode version?</p>
+
+    <p>We use Unicode for common icons such as ✅  and ❌ . You can copy and paste a
+Unicode icon directly into markdown.</p>
+  </li>
+  <li>
+    <p>Is there a Font Awesome icon?</p>
+
+    <p>We also use the free version of Font Awesome to supplement Unicode icons.
+Check out <a href="https://fontawesome.com/v5/search?m=free" target="_blank" rel="noopener nofollow noreferrer ">their catalog</a> to find
+an icon code, then see our <a href="/contributing/markdown-rules/#icons">icon usage instructions</a>.</p>
+  </li>
+  <li>
+    <p>Does the <a href="https://github.com/Kong/docs.konghq.com/tree/main/app/assets/images/icons" target="_blank" rel="noopener nofollow noreferrer "><code class="language-plaintext highlighter-rouge">/_assets/images/icons/</code></a>
+folder contain the icon that you’re looking for?</p>
+
+    <p>For custom icons, we have to import them manually. This includes all of the
+icons used in docs navigation and all icons that are used for UI labels in
+Konnect and Kong’s UIs. If you find one, see our
+<a href="/contributing/markdown-rules/#icons">icon usage instructions</a>.</p>
+  </li>
+  <li>
+    <p>If the answer to all of the above is “no”, you can
+<a href="/contributing/markdown-rules/#icons">upload a custom image</a>.</p>
+  </li>
+</ol>
+
+<h2 id="links">Links</h2>
+
+<p>Write descriptive titles that make it clear what the reader is getting by clicking the link.
+Don’t use link titles like “Read more” and “Click here”:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>✅  Do use</th>
+      <th>❌  Don’t use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>For more information, see the <a href="#">style guide</a>.</td>
+      <td>For more information, <a href="#">click here</a>.</td>
+    </tr>
+    <tr>
+      <td>Learn about <a href="#">content best practices</a> in the Kong style guide.</td>
+      <td>Learn about content best practices <a href="#">here</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If the linked content is a larger area like a panel, add a <code class="language-plaintext highlighter-rouge">title</code> attribute that describes the linked content to the <code class="language-plaintext highlighter-rouge">a</code> tag.</p>
+
+<h2 id="reference-style-guide">Reference style guide</h2>
+
+<p>Follow Kong’s style guide whenever possible. However, we recommend using the <a href="https://developers.google.com/style/" target="_blank" rel="noopener nofollow noreferrer ">Google developer style guide</a> for style and formatting cases that our guide doesn’t cover.</p>
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=contributing" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"latest","product[0]":"Contribution guidelines"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Contribution guidelines<score=1>'],
+              facetFilters: [ 'version:latest']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

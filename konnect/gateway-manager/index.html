@@ -1,0 +1,4243 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About Gateway Manager | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="About Gateway Manager | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/konnect/gateway-manager/">
+  
+
+  
+    <meta name="robots" content="follow,index">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/konnect/gateway-manager/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Konnect
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/konnect/">Kong Konnect</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/konnect/gateway-manager/">About Gateway Manager</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/konnect/gateway-manager/index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Kong Konnect
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/latest/">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/konnect/" class="active">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/latest/">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-flag.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/">
+        
+
+Overview of Konnect
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/architecture/">
+        
+
+Architecture
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/network-resiliency/">
+        
+
+Network Resiliency and Availability
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/network/">
+        
+
+Port and Network Requirements
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/geo/">
+        
+
+Geographic Regions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/compatibility/">
+        
+
+Compatibility
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/availability-stages/">
+        
+
+Stages of Software Availability
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/updates/">
+        
+
+Release Notes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-9-support-subtree">
+    
+      
+
+Support
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Support subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-9-support-subtree" role="group" aria-label="Support">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/upgrade-faq/">
+        
+
+Control Plane Upgrades FAQ
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/support/data-plane-nodes/">
+        
+
+Supported Installation Options
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-get-started-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-quickstart-color.svg" alt="">
+
+
+Get Started
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-2-get-started-subtree" role="group" aria-label="Get Started">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/access-account/">
+        
+
+Create a Konnect Account
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/configure-data-plane-node/">
+        
+
+Set up a Data Plane Node
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/deploy-service/">
+        
+
+Proxy and Test a Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/productize-service/">
+        
+
+Productize a Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-6-get-started-with-the-dev-portal-subtree">
+    
+      
+
+Get Started with the Dev Portal
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Get Started with the Dev Portal subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-2-6-get-started-with-the-dev-portal-subtree" role="group" aria-label="Get Started with the Dev Portal">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/publish-service/">
+        
+
+Add Documentation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/app-registration/">
+        
+
+Register Applications
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/getting-started/import/">
+        
+
+Import Kong Gateway Entities into Konnect
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-gateway-manager-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-runtimes-nav.svg" alt="">
+
+
+Gateway Manager
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Gateway Manager subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-gateway-manager-subtree" role="group" aria-label="Gateway Manager">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-data-plane-nodes-subtree">
+    
+      
+
+Data Plane Nodes
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Data Plane Nodes subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-2-data-plane-nodes-subtree" role="group" aria-label="Data Plane Nodes">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/">
+        
+
+Installation Options
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/upgrade/">
+        
+
+Upgrade a Data Plane Node
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/verify-node/">
+        
+
+Verify a Data Plane Node
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/secure-communications/">
+        
+
+Secure Control Plane/Data Plane Communications
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/renew-certificates/">
+        
+
+Renew Data Plane Certificates
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/parameter-reference/">
+        
+
+Parameter Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/data-plane-nodes/custom-dp-labels/">
+        
+
+Using Custom DP Labels
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-3-control-plane-groups-subtree">
+    
+      
+
+Control Plane Groups
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Control Plane Groups subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-3-control-plane-groups-subtree" role="group" aria-label="Control Plane Groups">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/control-plane-groups/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/control-plane-groups/how-to/">
+        
+
+Working with Control Plane Groups
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/control-plane-groups/migrate/">
+        
+
+Migrate Configuration into Control Plane Groups
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/control-plane-groups/conflicts/">
+        
+
+Conflicts in Control Planes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-kong-gateway-configuration-in-konnect-subtree">
+    
+      
+
+Kong Gateway Configuration in Konnect
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Kong Gateway Configuration in Konnect subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-4-kong-gateway-configuration-in-konnect-subtree" role="group" aria-label="Kong Gateway Configuration in Konnect">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/configuration/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-2-manage-plugins-subtree">
+    
+      
+
+Manage Plugins
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Manage Plugins subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-4-2-manage-plugins-subtree" role="group" aria-label="Manage Plugins">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/plugins/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/plugins/add-custom-plugin/">
+        
+
+Adding Custom Plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/plugins/update-custom-plugin/">
+        
+
+Updating Custom Plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/../../gateway/latest/plugin-development/">
+        
+
+How to Create Custom Plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/../../hub/kong-inc/rate-limiting-advanced/how-to/">
+        
+
+Create Consumer Groups
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-4-secrets-management-subtree">
+    
+      
+
+Secrets Management
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Secrets Management subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-4-4-secrets-management-subtree" role="group" aria-label="Secrets Management">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/configuration/vaults/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/configuration/vaults/how-to/">
+        
+
+Set Up and Use a Vault in Konnect
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/declarative-config/">
+        
+
+Manage Control Plane Configuration with decK
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/kic/">
+        
+
+KIC Association
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/backup-restore/">
+        
+
+Backup and Restore
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/version-compatibility/">
+        
+
+Version Compatibility
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/gateway-manager/troubleshoot/">
+        
+
+Troubleshooting
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-mesh-manager-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-mesh-manager-nav.svg" alt="">
+
+
+Mesh Manager
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Mesh Manager subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-mesh-manager-subtree" role="group" aria-label="Mesh Manager">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/mesh-manager/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/mesh-manager/service-mesh/">
+        
+
+Create a mesh with the Kubernetes demo app
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/mesh-manager/migrate-zone/">
+        
+
+Migrate a self-managed zone control plane to Konnect
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-service-hub-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-servicehub-nav.svg" alt="">
+
+
+Service Hub
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Service Hub subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-5-service-hub-subtree" role="group" aria-label="Service Hub">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/servicehub/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-api-products-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-api-product.svg" alt="">
+
+
+API Products
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle API Products subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-api-products-subtree" role="group" aria-label="API Products">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api-products/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api-products/service-documentation/">
+        
+
+Manage API Product Documentation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-dev-portal-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-dev-portal-nav.svg" alt="">
+
+
+Dev Portal
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Dev Portal subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-dev-portal-subtree" role="group" aria-label="Dev Portal">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access/">
+        
+
+Access the Dev Portal
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/dev-reg/">
+        
+
+Sign Up for a Dev Portal Account
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-4-access-and-approval-subtree">
+    
+      
+
+Access and Approval
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Access and Approval subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-4-access-and-approval-subtree" role="group" aria-label="Access and Approval">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/manage-devs/">
+        
+
+Manage Developer Access
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/manage-teams/">
+        
+
+Manage Developer Team Access
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/add-teams/">
+        
+
+Add Developer Teams from IdPs
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/manage-app-reg-requests/">
+        
+
+Manage Application Registration Requests
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/manage-app-connections/">
+        
+
+Manage Application Registrations
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/auto-approve-devs-apps/">
+        
+
+Auto Approve Dev and App Registrations
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/access-and-approval/azure/">
+        
+
+Azure OIDC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-5-working-with-applications-subtree">
+    
+      
+
+Working with Applications
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Working with Applications subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-5-working-with-applications-subtree" role="group" aria-label="Working with Applications">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/application-overview/">
+        
+
+Application Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/enable-app-reg/">
+        
+
+Enable and Disable App Registration for API Product Versions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-5-3-dynamic-client-registration-subtree">
+    
+      
+
+Dynamic Client Registration
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Dynamic Client Registration subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-5-3-dynamic-client-registration-subtree" role="group" aria-label="Dynamic Client Registration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dynamic-client-registration/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dynamic-client-registration/okta/">
+        
+
+Okta
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dynamic-client-registration/curity/">
+        
+
+Curity
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dynamic-client-registration/auth0/">
+        
+
+Auth0
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dynamic-client-registration/azure/">
+        
+
+Azure
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dynamic-client-registration/custom/">
+        
+
+Custom IdP
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dev-apps/">
+        
+
+Create, Edit, and Delete an Application
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dev-reg-app-service/">
+        
+
+Register an Application with an API product
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/applications/dev-gen-creds/">
+        
+
+Generate Credentials for an Application
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/konnect-portal-management-automation/">
+        
+
+Konnect Portal Management API Automation Guide
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-7-customize-dev-portal-subtree">
+    
+      
+
+Customize Dev Portal
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Customize Dev Portal subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-7-customize-dev-portal-subtree" role="group" aria-label="Customize Dev Portal">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/customization/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/customization/self-hosted-portal/">
+        
+
+About Self-Hosted Dev Portal
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/customization/netlify/">
+        
+
+Host your Dev Portal with Netlify
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="https://www.npmjs.com/package/@kong/sdk-portal-js/" target="_blank" rel="noopener nofollow noreferrer ">
+        
+
+Dev Portal SDK
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/dev-portal/troubleshoot/">
+        
+
+Troubleshoot
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-analytics-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-analytics-nav.svg" alt="">
+
+
+Analytics
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Analytics subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-8-analytics-subtree" role="group" aria-label="Analytics">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/analytics/">
+        
+
+Introduction to Analytics
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-2-report-use-cases-subtree">
+    
+      
+
+Report Use Cases
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Report Use Cases subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-8-2-report-use-cases-subtree" role="group" aria-label="Report Use Cases">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/analytics/use-cases/">
+        
+
+Analyze API Usage and Performance
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/analytics/use-cases/latency/">
+        
+
+Diagnosing Latency Issues
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/analytics/reference/">
+        
+
+Reports Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/analytics/api-requests/">
+        
+
+API Requests
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/analytics/troubleshoot/">
+        
+
+Troubleshoot
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-org-management-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-organizations-nav.svg" alt="">
+
+
+Org Management
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Org Management subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-9-org-management-subtree" role="group" aria-label="Org Management">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/account-management/">
+        
+
+Plans and Billing
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-2-authentication-and-authorization-subtree">
+    
+      
+
+Authentication and Authorization
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Authentication and Authorization subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-9-2-authentication-and-authorization-subtree" role="group" aria-label="Authentication and Authorization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/auth/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-2-2-teams-subtree">
+    
+      
+
+Teams
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Teams subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-9-2-2-teams-subtree" role="group" aria-label="Teams">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/teams-and-roles/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/teams-and-roles/manage/">
+        
+
+Manage Teams
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/teams-and-roles/teams-reference/">
+        
+
+Teams Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/teams-and-roles/roles-reference/">
+        
+
+Roles Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/users/">
+        
+
+Manage Users
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/system-accounts/">
+        
+
+Manage System Accounts
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/social-identity-login/">
+        
+
+Social Identity Login
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/org-switcher/">
+        
+
+Org Switcher
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/oidc-idp/">
+        
+
+Set up SSO with OIDC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/okta-idp/">
+        
+
+Set up SSO with Okta
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/sessions-reference/">
+        
+
+Login Sessions Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/troubleshoot/">
+        
+
+Troubleshoot
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-3-audit-logging-subtree">
+    
+      
+
+Audit Logging
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Audit Logging subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-9-3-audit-logging-subtree" role="group" aria-label="Audit Logging">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/audit-logging/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/audit-logging/webhook/">
+        
+
+Set up an Audit Log Webhook
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/audit-logging/replay-job/">
+        
+
+Set up an Audit Log Replay Job
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/audit-logging/verify-signatures/">
+        
+
+Verify Audit Log Signatures
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/audit-logging/reference/">
+        
+
+Log Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/org-management/deactivation/">
+        
+
+Account and Org Deactivation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-api-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-admin-api-color.svg" alt="">
+
+
+API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-api-subtree" role="group" aria-label="API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-2-api-request-api-beta-subtree">
+    
+      
+
+API Request API (Beta)
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle API Request API (Beta) subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-2-api-request-api-beta-subtree" role="group" aria-label="API Request API (Beta)">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/api-requests/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-3-api-products-api-subtree">
+    
+      
+
+API Products API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle API Products API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-3-api-products-api-subtree" role="group" aria-label="API Products API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/api-products/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-4-audit-logs-api-subtree">
+    
+      
+
+Audit Logs API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Audit Logs API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-4-audit-logs-api-subtree" role="group" aria-label="Audit Logs API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/audit-logs/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/audit-logs/webhook/">
+        
+
+Audit Log Webhooks
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-5-control-plane-api-subtree">
+    
+      
+
+Control Plane API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Control Plane API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-5-control-plane-api-subtree" role="group" aria-label="Control Plane API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/control-planes/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-6-control-plane-configuration-api-subtree">
+    
+      
+
+Control Plane Configuration API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Control Plane Configuration API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-6-control-plane-configuration-api-subtree" role="group" aria-label="Control Plane Configuration API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/control-plane-configuration/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-7-identity-api-subtree">
+    
+      
+
+Identity API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Identity API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-7-identity-api-subtree" role="group" aria-label="Identity API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/identity-management/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/identity-management/identity-integration/">
+        
+
+Identity Integration Guide
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/identity-management/sso/">
+        
+
+SSO Customization
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-8-mesh-manager-api-subtree">
+    
+      
+
+Mesh Manager API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Mesh Manager API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-8-mesh-manager-api-subtree" role="group" aria-label="Mesh Manager API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/mesh-manager/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/latest/reference/http-api/" target="_blank">
+        
+
+Kong Mesh API Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-9-portal-client-api-subtree">
+    
+      
+
+Portal Client API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Portal Client API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-9-portal-client-api-subtree" role="group" aria-label="Portal Client API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/portal/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-10-portal-management-api-subtree">
+    
+      
+
+Portal Management API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Portal Management API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-10-portal-management-api-subtree" role="group" aria-label="Portal Management API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/portal-management/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-11-portal-rbac-api-subtree">
+    
+      
+
+Portal RBAC API
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Portal RBAC API subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-11-portal-rbac-api-subtree" role="group" aria-label="Portal RBAC API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/portal-rbac/latest/" target="_blank">
+        
+
+API Spec
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-12-deprecated-apis-subtree">
+    
+      
+
+Deprecated APIs
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Deprecated APIs subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-12-deprecated-apis-subtree" role="group" aria-label="Deprecated APIs">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/runtime-groups-configuration/latest/" target="_blank">
+        
+
+(Deprecated) Runtime Configuration API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/runtime-groups/latest/" target="_blank">
+        
+
+(Deprecated) Runtime Groups API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-13-reference-subtree">
+    
+      
+
+Reference
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-13-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/filtering/">
+        
+
+Filtering
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/api/errors/">
+        
+
+API Errors
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-11-reference-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Reference
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-11-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/reference/labels/">
+        
+
+Labels
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/konnect/reference/plugins/">
+        
+
+Plugin Ordering Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#control-planes" class="active scroll-to">Control planes</a>
+    <ul>
+      <li><a href="#kong-gateway-control-planes" class="scroll-to">Kong Gateway control planes</a></li>
+      <li><a href="#control-plane-groups" class="scroll-to">Control plane groups</a></li>
+      <li><a href="#control-plane-dashboard" class="scroll-to">Control plane dashboard</a></li>
+      <li><a href="#deleting-a-control-plane" class="scroll-to">Deleting a control plane</a></li>
+    </ul>
+  </li>
+  <li><a href="#data-plane-nodes" class="scroll-to">Data plane nodes</a></li>
+  <li><a href="#plugins" class="scroll-to">Plugins</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">About Gateway Manager
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          <p>The <a href="https://cloud.konghq.com/gateway-manager" target="_blank" rel="noopener nofollow noreferrer ">Gateway Manager</a>
+is a Kong Konnect functionality module
+that lets you catalog, connect to, and monitor the status of all control planes
+and data plane nodes in one place, as well as manage control plane configuration.</p>
+
+<p>The Gateway Manager overview page displays a list of
+control planes currently owned by the organization. From here, you can add or
+delete control planes, or go into each individual control plane to manage 
+data plane nodes and their global configuration.</p>
+
+<p><img src="/assets/images/products/konnect/gateway-manager/konnect-control-plane-dashboard.png" alt="gateway manager dashboard"></p>
+<blockquote>
+  <p><em><strong>Figure 1:</strong> Example Gateway Manager dashboard with several control planes, including the</em>
+<em>default control plane, a KIC control plane, and control planes for development and production.</em></p>
+</blockquote>
+
+<p>With Konnect hosting the control plane, a data plane node
+doesn’t need a database to store configuration data. Instead, configuration
+is stored in-memory on each node, and you can easily update all data plane nodes
+in a control plane with a few clicks.</p>
+
+<p>The Gateway Manager, and the Kong Konnect application as
+a whole, does not have access or visibility into the data flowing through your
+data plane nodes, and it does not store any data except the state and connection details
+for each node.</p>
+
+<h2 id="control-planes">Control planes</h2>
+
+<p>Konnect manages data plane configuration via control planes.</p>
+
+<p>Control planes come in three types:</p>
+
+<ul>
+  <li>
+    <p><a href="#kong-gateway-control-planes"><strong>Kong Gateway control plane</strong></a>: 
+  A collection of Kong Gateway data plane nodes sharing the same 
+  configuration and behavior space. Each control plane
+  manages configurations independently.</p>
+  </li>
+  <li>
+    <p><a href="#control-plane-groups"><strong>Control plane group</strong></a>: 
+  A type of control plane that manages central data plane nodes for multiple control planes.
+  It collects configuration from its member control planes and applies the 
+  aggregate config to a group of nodes.</p>
+
+    <p>This means that teams within a group share a cluster of Kong Gateway data 
+  plane nodes, where each team has its own segregated configuration.</p>
+  </li>
+  <li>
+    <p><a href="/konnect/gateway-manager/kic/"><strong>Kong Ingress Controller</strong></a>
+  Monitor the configuration of Kubernetes-based Kong Gateway data plane nodes.</p>
+  </li>
+</ul>
+
+<p>You can find a list of all control planes in your organization
+on the <a href="https://cloud.konghq.com/gateway-manager/" target="_blank" rel="noopener nofollow noreferrer ">Gateway Manager overview</a>.</p>
+
+<p>Access to each control plane is configurable on a team-by-team basis using
+entity-specific permissions. For more information, see <a href="/konnect/org-management/teams-and-roles/">Administer teams</a>.</p>
+
+<h3 id="kong-gateway-control-planes">Kong Gateway control planes</h3>
+
+<p>Every region in every organization starts with one default control plane.
+This control plane can’t be deleted, and its status as the default can’t be changed.</p>
+
+<p>With Konnect you can configure additional Kong Gateway
+control panes, each of which will have isolated configuration.
+Use multiple control planes in one Konnect organization to
+manage data plane nodes and their configuration in any groupings you want.</p>
+
+<p>Some common use cases for using multiple control planes include:</p>
+
+<ul>
+  <li>
+<strong>Environment separation:</strong> Split environments based on their purpose, such as
+development, staging, and production.</li>
+  <li>
+<strong>Region separation:</strong> Assign each control plane to a region or group of
+regions. Spin up data plane nodes in those regions for each control plane.</li>
+  <li>
+<strong>Team separation:</strong> Dedicate each control plane to a different team and share
+resources based on team purpose.</li>
+</ul>
+
+<p><img src="/assets/images/products/konnect/gateway-manager/konnect-control-planes-example.png" alt="control planes"></p>
+<blockquote>
+  <p><em><strong>Figure 1:</strong> Example control plane group configuration for three control planes: the default, a development CP, and a production CP. Konnect is the SaaS-managed global management plane that manages all of the control planes, while the control planes manage configuration for data plane nodes.</em></p>
+</blockquote>
+
+<h4 id="control-plane-configuration">Control plane configuration</h4>
+
+<p>For each control plane, you can spin up data plane nodes and configure
+the following Kong Gateway entities:</p>
+<ul>
+  <li>Gateway services</li>
+  <li>Routes</li>
+  <li>Consumers</li>
+  <li>Consumer Groups</li>
+  <li>Plugins</li>
+  <li>Upstreams</li>
+  <li>Certificates</li>
+  <li>SNIs</li>
+  <li>Vaults</li>
+  <li>Keys</li>
+</ul>
+
+<p>When there are multiple control planes, any entity configuration only
+applies to the control plane that it was created in. Consumers and
+their authentication mechanisms don’t carry over to other control planes.</p>
+
+<p><a href="/konnect/gateway-manager/configuration/">Kong Gateway configuration in Konnect →</a></p>
+
+<h3 id="control-plane-groups">Control plane groups</h3>
+
+<p>A control plane group is a read-only control plane that combines configuration from
+its members, which are standard Kong Gateway control planes. All of the members of a 
+control plane group share the same cluster of data plane nodes.</p>
+
+<p>The benefits of a control plane group include:</p>
+<ul>
+  <li>
+<strong>Shared infrastructure, individual config</strong>: Users or organizations can share infrastructure, 
+while teams still have their own standard control planes to manage individual configuration.</li>
+  <li>
+<strong>Modular clusters</strong>: Combine standard control planes in different ways to create unique configurations
+for different purposes.</li>
+  <li>
+<strong>Workspaces in the cloud</strong>: Control plane groups function similarly to Kong Gateway workspaces, with the added benefit of a cloud control plane.</li>
+</ul>
+
+<p>Learn more about control plane groups:</p>
+<ul>
+  <li><a href="/konnect/gateway-manager/control-plane-groups/">Intro to control plane groups</a></li>
+  <li><a href="/konnect/gateway-manager/control-plane-groups/how-to/">Set up and manage control plane groups</a></li>
+  <li><a href="/konnect/gateway-manager/control-plane-groups/migrate/">Migrate configuration into a control plane group</a></li>
+  <li><a href="/konnect/gateway-manager/control-plane-groups/conflicts/">Conflicts in control plane groups</a></li>
+</ul>
+
+<h3 id="control-plane-dashboard">Control plane dashboard</h3>
+
+<p>For each control plane, you can view traffic, error rate, and Kong Gateway service analytics for its data plane nodes. 
+This allows you to see how much of a control plane is used. You can also select the time frame of analytics that you want to display.</p>
+
+<h3 id="deleting-a-control-plane">Deleting a control plane</h3>
+
+<blockquote class="warning">
+  <p><strong>Warning:</strong> Deleting a control plane is irreversible. Make sure that you are
+certain that you want to delete the control plane, and that all entities and data plane
+nodes in the control plane the have been accounted for.</p>
+</blockquote>
+
+<p>To delete a control plane, you can use the Gateway Manager or the 
+Konnect 
+<a href="/konnect/api/control-planes/v2/">Control Plane API</a>.</p>
+
+<p>When a control plane is deleted, all associated entities are also deleted.
+This includes all entities configured in the Gateway Manager for this control plane.
+As a best practice, <a href="/konnect/gateway-manager/backup-restore/">back up</a> a 
+control plane’s configuration before deleting it to avoid losing necessary configuration.</p>
+
+<p>Data plane nodes that are still active when the control plane is deleted will not be
+terminated, but they will be orphaned. They will continue processing traffic
+using the last configuration they received until they are either connected to
+a new control plane or manually shut down.</p>
+
+<p>You cannot delete the default control plane.</p>
+
+<h2 id="data-plane-nodes">Data plane nodes</h2>
+
+<p>A data plane node is a single Kong Gateway instance. 
+Data plane nodes service traffic for the control plane.</p>
+
+<p>Kong does not host data plane nodes.
+You must deploy your own nodes, either on your own systems or in 
+an external cloud provider.</p>
+
+<p>The Gateway Manager simplifies data plane node deployment 
+by providing a script to provision a Kong Gateway data plane node in a 
+Docker container running Linux, on MacOS, or on Windows.</p>
+
+<p>You can also choose to manually configure data plane nodes on various platforms, including cloud providers.
+See the <a href="/konnect/gateway-manager/data-plane-nodes/">data plane node installation options</a> for more detail.</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>You can extend Konnect by using plugins. Kong provides a set of standard Lua plugins that get bundled with Konnect. The set of plugins you have access to depends on your installation.</p>
+
+<p>Custom plugins can also be developed by the Kong Community and are supported and maintained by the plugin creators. If they are published on the Kong Plugin Hub, they are called Community or Third-Party plugins.</p>
+
+<p>See the <a href="/konnect/reference/plugins/">Konnect plugin ordering documentation</a> for more information.</p>
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=konnect" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"latest","product[0]":"Kong Konnect"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:deck<score=1>', 'product:Plugin Hub<score=2>', 'product:Kong Konnect<score=3>'],
+              facetFilters: [ 'version:latest']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

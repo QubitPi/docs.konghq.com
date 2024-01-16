@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Loggly
+| Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Loggly
+| Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/loggly/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/loggly/2.6.x/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=logging">Logging</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/loggly/2.6.x/">Loggly</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              Introduction
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/loggly/2.6.x/">Overview</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/loggly/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_loggly.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">Loggly</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 2.6.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/">
+                    3.5.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/3.4.x/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/3.3.x/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/3.2.x/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/3.1.x/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/3.0.x/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/2.8.x/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/loggly/2.7.x/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/loggly/2.6.x/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/loggly/2.6.x/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/loggly/2.6.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/loggly/2.6.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/loggly/2.6.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#log-format" class="active scroll-to">Log format</a>
+    <ul>
+      <li><a href="#json-object-considerations" class="scroll-to">JSON object considerations</a></li>
+    </ul>
+  </li>
+  <li><a href="#kong-process-errors" class="scroll-to">Kong process errors</a></li>
+  <li>
+<a href="#custom-fields-by-lua" class="scroll-to">Custom Fields by Lua</a>
+    <ul>
+      <li><a href="#plugin-precedence-and-managing-fields" class="scroll-to">Plugin precedence and managing fields</a></li>
+      <li><a href="#limitations" class="scroll-to">Limitations</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+      
+        
+          <div class="old-version-banner">
+          You are browsing documentation for an outdated plugin version.
+          See the <a href="/hub/kong-inc/loggly/">latest documentation here</a>.
+          </div>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>
+  <p>
+    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/loggly/2.6.x/configuration/">Loggly configuration reference</a> doc.</em>
+  </p>
+</blockquote>
+
+
+
+
+
+
+<p>Log request and response data over UDP to <a href="https://www.loggly.com" target="_blank" rel="noopener nofollow noreferrer ">Loggly</a>.</p>
+
+<h2 id="log-format">Log format</h2>
+
+<p>Every request is logged to the System log in <a href="https://en.wikipedia.org/wiki/Syslog" target="_blank" rel="noopener nofollow noreferrer ">SYSLOG</a> standard, with the
+with <code class="language-plaintext highlighter-rouge">message</code> component formatted as described below.</p>
+
+<p><strong>Note:</strong> Make sure the Syslog daemon is running on the instance and it’s configured with the
+logging level severity the same as or lower than the set <code class="language-plaintext highlighter-rouge">config.log_level</code> for this plugin.</p>
+
+<!---shared with logging plugins: file-log, http-log, loggly, syslog, tcp-log, udp-log
+This example is from 2.2.1 per DOCS-1617 --->
+
+<p>Every request is logged separately in a JSON object, separated by a new line <code class="language-plaintext highlighter-rouge">\n</code>, with the following format:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"httpbin.org"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1614232642</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"connect_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"167290ee-c682-4ebf-bdea-e49a3ac5e260"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"read_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/anything"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1614232642</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"write_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"retries"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ws_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54baa5a9-23d6-41e0-9c9a-02434b010b25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"route"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"78f79740-c410-4fd9-a998-d0a60a99dc9b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"/log"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"protocols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"strip_path"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1614232648</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ws_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54baa5a9-23d6-41e0-9c9a-02434b010b25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_buffering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1614232648</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preserve_host"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"regex_priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"response_buffering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"https_redirect_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">426</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"path_handling"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"167290ee-c682-4ebf-bdea-e49a3ac5e260"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"querystring"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">138</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/log"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/log"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost:8000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accept-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip, deflate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user-agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTTPie/2.4.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accept"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*/*"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 25 Feb 2021 05:57:48 GMT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"close"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"access-control-allow-credentials"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"503"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gunicorn/19.9.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"via"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kong/2.2.1.0-enterprise-edition"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"x-kong-proxy-latency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"x-kong-upstream-latency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"457"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">827</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"latencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="mi">515</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kong"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"proxy"</span><span class="p">:</span><span class="w"> </span><span class="mi">457</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"tries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"balancer_latency"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"balancer_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1614232668399</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18.211.130.98"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"client_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.144.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"workspace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54baa5a9-23d6-41e0-9c9a-02434b010b25"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"upstream_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/anything"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"authenticated_entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c62c1455-9b1d-4f2d-8797-509ba83b8ae8"</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="nl">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ae974d6c-0f8a-4dc5-b701-fa0aa38592bd"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1674035962</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1614232668342</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="json-object-considerations">JSON object considerations</h3>
+
+<!---shared with logging plugins: file-log, http-log, loggly, syslog, tcp-log, udp-log DOCS-1617 --->
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">service</code>: Properties about the service associated with the requested route.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">route</code>: Properties about the specific route requested.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">request</code>: Properties about the request sent by the client.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">response</code>: Properties about the response sent to the client.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">latencies</code>: Latency data.
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong</code>: The internal Kong Gateway latency, in milliseconds, that it takes to process the request. It varies based on the actual processing flow. Generally, it consists of three parts:
+        <ul>
+          <li>The time it took to find the right upstream.</li>
+          <li>The time it took to receive the whole response from upstream.</li>
+          <li>The time it took to run all plugins executed before the log phase.</li>
+        </ul>
+      </li>
+      <li>
+<code class="language-plaintext highlighter-rouge">request</code>: The time in milliseconds that has elapsed between when the first bytes were read from the client and the last byte was sent to the client. This is useful for detecting slow clients.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">proxy</code>: The time in milliseconds that it took for the upstream to process the request. In other words, it’s the time elapsed between transferring the 
+request to the final service and when Kong Gateway starts receiving the response.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">tries</code>: a list of iterations made by the load balancer for this request.
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">balancer_start</code>: A Unix timestamp for when the balancer started.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">ip</code>: The IP address of the contacted balancer.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">port</code>: The port number of the contacted balancer.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">balancer_latency</code>: The latency of the balancer expressed in milliseconds.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">client_ip</code>: The original client IP address.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">workspace</code>: The UUID of the workspace associated with this request.</p>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">upstream_uri</code>: The URI, including query parameters, for the configured upstream.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">authenticated_entity</code>: Properties about the authenticated credential (if an authentication plugin has been enabled).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">consumer</code>: The authenticated consumer (if an authentication plugin has been enabled).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">started_at</code>: The unix timestamp of when the request has started to be processed.</li>
+</ul>
+
+<p>Log plugins enabled on services and routes contain information about the service or route.</p>
+
+<h2 id="kong-process-errors">Kong process errors</h2>
+
+<!---shared with logging plugins --->
+
+<p>This logging plugin logs HTTP request and response data, and also supports stream
+data (TCP, TLS, and UDP).</p>
+
+<p>The Kong process error file is the Nginx error file.
+You can find it at the following path:</p>
+
+<p><code class="language-plaintext highlighter-rouge">{prefix}/logs/error.log</code></p>
+
+<p>Configure the <a href="/gateway/latest/reference/configuration/#prefix">prefix</a> in 
+<code class="language-plaintext highlighter-rouge">kong.conf</code>.</p>
+
+<h2 id="custom-fields-by-lua">Custom Fields by Lua</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">custom_fields_by_lua</code> configuration allows for the dynamic modification of
+log fields using Lua code. Below is a snippet of an example configuration that 
+removes the <code class="language-plaintext highlighter-rouge">route</code> field from the logs:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/plugins <span class="se">\</span>
+... 
+  <span class="nt">--data</span> config.custom_fields_by_lua.route<span class="o">=</span><span class="s2">"return nil"</span>
+</code></pre></div></div>
+
+<p>Similarly, new fields can be added:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/plugins <span class="se">\</span>
+... 
+  <span class="nt">--data</span> config.custom_fields_by_lua.header<span class="o">=</span><span class="s2">"return kong.request.get_header('h1')"</span>
+</code></pre></div></div>
+
+<h3 id="plugin-precedence-and-managing-fields">Plugin precedence and managing fields</h3>
+
+<p>All logging plugins use the same table for logging. 
+If you set <code class="language-plaintext highlighter-rouge">custom_fields_by_lua</code> in one plugin, all logging plugins that execute after that plugin will also use the same configuration. 
+For example, if you configure fields via <code class="language-plaintext highlighter-rouge">custom_fields_by_lua</code> in <a href="/hub/kong-inc/file-log/">File Log</a>, those same fields will appear in <a href="/hub/kong-inc/kafka-log/">Kafka Log</a>, since File Log executes first.</p>
+
+<p>If you want all logging plugins to use the same configuration, we recommend using the <a href="/hub/kong-inc/pre-function/">Pre-function</a> plugin to call <a href="/gateway/latest/plugin-development/pdk/kong.log/#konglogset_serialize_valuekey-value-options">kong.log.set_serialize_value</a> so that the function is applied predictably and is easier to manage.</p>
+
+<p>If you <strong>don’t</strong> want all logging plugins to use the same configuration, you need to manually disable the relevant fields in each plugin.</p>
+
+<p>For example, if you configure a field in File Log that you don’t want appearing in Kafka Log, set that field to <code class="language-plaintext highlighter-rouge">return nil</code> in the Kafka Log plugin:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/plugins/ <span class="se">\</span>
+...
+  <span class="nt">--data</span> config.name<span class="o">=</span>kafka-log <span class="se">\</span>
+  <span class="nt">--data</span> config.custom_fields_by_lua.my_file_log_field<span class="o">=</span><span class="s2">"return nil"</span>
+</code></pre></div></div>
+
+<p>See the <a href="/gateway/latest/plugin-development/custom-logic/#plugins-execution-order">plugin execution order reference</a> for more details on plugin ordering.</p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>Lua code runs in a restricted sandbox environment, whose behavior is governed
+by the <code class="language-plaintext highlighter-rouge">untrusted_lua</code> <a href="/gateway/latest/reference/configuration">configuration properties</a> configuration
+properties.</p>
+
+<!---shared with plugins that accept custom lua code --->
+
+<p>Sandboxing consists of several limitations in the way the Lua code can be executed,
+for heightened security.</p>
+
+<p>The following functions are not available because they can be used to abuse the system:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">string.rep</code>: Can be used to allocate millions of bytes in one operation.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{set|get}metatable</code>: Can be used to modify the metatables of global objects (strings, numbers).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">collectgarbage</code>: Can be abused to kill the performance of other workers.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">_G</code>: Is the root node which has access to all functions. It is masked by a temporary table.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">load{file|string}</code>: Is deemed unsafe because it can grant access to the global environment.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">raw{get|set|equal}</code>: Potentially unsafe because sandboxing relies on some metatable manipulation.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">string.dump</code>: Can display confidential server information (such as implementation of functions).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">math.randomseed</code>: Can affect the host system. Kong Gateway already seeds the random number generator properly.</li>
+  <li>All <code class="language-plaintext highlighter-rouge">os.*</code> (except <code class="language-plaintext highlighter-rouge">os.clock</code>, <code class="language-plaintext highlighter-rouge">os.difftime</code>, and <code class="language-plaintext highlighter-rouge">os.time</code>). <code class="language-plaintext highlighter-rouge">os.execute</code> can significantly alter the host system.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">io.*</code>: Provides access to the hard drive.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">dofile|require</code>: Provides access to the hard drive.</li>
+</ul>
+
+<p>The exclusion of <code class="language-plaintext highlighter-rouge">require</code> means that plugins must only use PDK functions <code class="language-plaintext highlighter-rouge">kong.*</code>. The <code class="language-plaintext highlighter-rouge">ngx.*</code> abstraction is
+also available, but it is not guaranteed to be present in future versions of the plugin.</p>
+
+<p>In addition to the above restrictions:</p>
+
+<ul>
+  <li>All the provided modules (like <code class="language-plaintext highlighter-rouge">string</code> or <code class="language-plaintext highlighter-rouge">table</code>) are read-only and can’t be modified.</li>
+  <li>Bytecode execution is disabled.</li>
+</ul>
+
+<p>Further, as code runs in the context of the log phase, only <a href="/gateway/latest/pdk">PDK</a> methods
+that can run in said phase can be used.</p>
+
+
+
+
+
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/loggly/2.6.x/configuration/">Loggly Configuration</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.6.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:2.6.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

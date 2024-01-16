@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kong Mesh Changelog | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Kong Mesh Changelog | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/mesh/changelog/">
+  
+
+  
+    <meta name="robots" content="follow,index">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/mesh/changelog/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Mesh
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/mesh/">Kong Mesh</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/mesh/changelog/">Kong Mesh Changelog</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/mesh/changelog.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#251" class="active scroll-to">2.5.1</a></li>
+  <li><a href="#250" class="scroll-to">2.5.0</a></li>
+  <li><a href="#244" class="scroll-to">2.4.4</a></li>
+  <li><a href="#243" class="scroll-to">2.4.3</a></li>
+  <li><a href="#233" class="scroll-to">2.3.3</a></li>
+  <li><a href="#225" class="scroll-to">2.2.5</a></li>
+  <li><a href="#217" class="scroll-to">2.1.7</a></li>
+  <li><a href="#208" class="scroll-to">2.0.8</a></li>
+  <li><a href="#242" class="scroll-to">2.4.2</a></li>
+  <li><a href="#241" class="scroll-to">2.4.1</a></li>
+  <li><a href="#240" class="scroll-to">2.4.0</a></li>
+  <li><a href="#216" class="scroll-to">2.1.6</a></li>
+  <li><a href="#232" class="scroll-to">2.3.2</a></li>
+  <li><a href="#224" class="scroll-to">2.2.4</a></li>
+  <li><a href="#215" class="scroll-to">2.1.5</a></li>
+  <li><a href="#207" class="scroll-to">2.0.7</a></li>
+  <li><a href="#198" class="scroll-to">1.9.8</a></li>
+  <li><a href="#231" class="scroll-to">2.3.1</a></li>
+  <li><a href="#223" class="scroll-to">2.2.3</a></li>
+  <li><a href="#206" class="scroll-to">2.0.6</a></li>
+  <li><a href="#197" class="scroll-to">1.9.7</a></li>
+  <li><a href="#214" class="scroll-to">2.1.4</a></li>
+  <li><a href="#230" class="scroll-to">2.3.0</a></li>
+  <li><a href="#222" class="scroll-to">2.2.2</a></li>
+  <li><a href="#213" class="scroll-to">2.1.3</a></li>
+  <li><a href="#205" class="scroll-to">2.0.5</a></li>
+  <li><a href="#196" class="scroll-to">1.9.6</a></li>
+  <li><a href="#221" class="scroll-to">2.2.1</a></li>
+  <li><a href="#220" class="scroll-to">2.2.0</a></li>
+  <li><a href="#212" class="scroll-to">2.1.2</a></li>
+  <li><a href="#204" class="scroll-to">2.0.4</a></li>
+  <li><a href="#195" class="scroll-to">1.9.5</a></li>
+  <li><a href="#187" class="scroll-to">1.8.7</a></li>
+  <li><a href="#211" class="scroll-to">2.1.1</a></li>
+  <li><a href="#203" class="scroll-to">2.0.3</a></li>
+  <li><a href="#194" class="scroll-to">1.9.4</a></li>
+  <li><a href="#186" class="scroll-to">1.8.6</a></li>
+  <li><a href="#177" class="scroll-to">1.7.7</a></li>
+  <li><a href="#210" class="scroll-to">2.1.0</a></li>
+  <li><a href="#202" class="scroll-to">2.0.2</a></li>
+  <li><a href="#193" class="scroll-to">1.9.3</a></li>
+  <li><a href="#185" class="scroll-to">1.8.5</a></li>
+  <li><a href="#176" class="scroll-to">1.7.6</a></li>
+  <li><a href="#164" class="scroll-to">1.6.4</a></li>
+  <li><a href="#163" class="scroll-to">1.6.3</a></li>
+  <li><a href="#175" class="scroll-to">1.7.5</a></li>
+  <li><a href="#192" class="scroll-to">1.9.2</a></li>
+  <li><a href="#184" class="scroll-to">1.8.4</a></li>
+  <li><a href="#201" class="scroll-to">2.0.1</a></li>
+  <li>
+<a href="#200" class="scroll-to">2.0.0</a>
+    <ul>
+      <li><a href="#amazon-ecs" class="scroll-to">Amazon ECS</a></li>
+    </ul>
+  </li>
+  <li><a href="#191" class="scroll-to">1.9.1</a></li>
+  <li><a href="#183" class="scroll-to">1.8.3</a></li>
+  <li><a href="#174" class="scroll-to">1.7.4</a></li>
+  <li><a href="#190" class="scroll-to">1.9.0</a></li>
+  <li><a href="#182" class="scroll-to">1.8.2</a></li>
+  <li><a href="#181" class="scroll-to">1.8.1</a></li>
+  <li><a href="#172" class="scroll-to">1.7.2</a></li>
+  <li><a href="#180" class="scroll-to">1.8.0</a></li>
+  <li><a href="#171" class="scroll-to">1.7.1</a></li>
+  <li><a href="#170" class="scroll-to">1.7.0</a></li>
+  <li><a href="#161" class="scroll-to">1.6.1</a></li>
+  <li><a href="#160" class="scroll-to">1.6.0</a></li>
+  <li><a href="#151" class="scroll-to">1.5.1</a></li>
+  <li><a href="#150" class="scroll-to">1.5.0</a></li>
+  <li><a href="#141" class="scroll-to">1.4.1</a></li>
+  <li><a href="#134" class="scroll-to">1.3.4</a></li>
+  <li><a href="#140" class="scroll-to">1.4.0</a></li>
+  <li><a href="#133" class="scroll-to">1.3.3</a></li>
+  <li><a href="#132" class="scroll-to">1.3.2</a></li>
+  <li><a href="#131" class="scroll-to">1.3.1</a></li>
+  <li><a href="#130" class="scroll-to">1.3.0</a></li>
+  <li><a href="#126" class="scroll-to">1.2.6</a></li>
+  <li><a href="#125" class="scroll-to">1.2.5</a></li>
+  <li><a href="#124" class="scroll-to">1.2.4</a></li>
+  <li><a href="#123" class="scroll-to">1.2.3</a></li>
+  <li><a href="#122" class="scroll-to">1.2.2</a></li>
+  <li><a href="#121" class="scroll-to">1.2.1</a></li>
+  <li><a href="#120" class="scroll-to">1.2.0</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 no-sidebar" id="documentation">
+      <div class="toggles no-sidebar">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">Kong Mesh Changelog
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          <h1 id="changelog">Changelog</h1>
+<!-- Autogenerated with (github.com/kumahq/ci-tools) release-tool changelog.md -->
+
+<h2 id="251">2.5.1</h2>
+<blockquote>
+  <p>Released on 2023/12/12</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from bbfcb64fd56d to d2ced55cd  @kong-mesh</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>fix(kuma-cp): proxypatch should be the last policy (backport of #4931)  @kong-mesh</li>
+</ul>
+
+<h2 id="250">2.5.0</h2>
+<blockquote>
+  <p>Released on 2023/11/15</p>
+</blockquote>
+
+<p>Based on <a href="https://github.com/kumahq/kuma/releases/tag/2.5.0" target="_blank" rel="noopener nofollow noreferrer ">Kuma 2.5.0</a></p>
+
+<ul>
+  <li>chore(deps): build without containerd  @slonka</li>
+  <li>chore(deps): bump Kong/public-shared-actions from 1.12.0 to 1.13.0  @dependabot</li>
+  <li>chore(deps): bump actions/checkout from 3 to 4  @dependabot,@lukidzi</li>
+  <li>chore(deps): bump github.com/Kong/kauth-api from 1.114.0 to 1.118.0  @dependabot</li>
+  <li>chore(deps): bump github.com/Kong/shared-go/kauth from 1.0.9 to 1.2.5  @dependabot</li>
+  <li>chore(deps): bump github.com/Kong/shared-go/rest from 1.1.2 to 1.6.2  @dependabot</li>
+  <li>chore(deps): bump github.com/aws/aws-sdk-go from 1.44.329 to 1.47.1  @dependabot</li>
+  <li>chore(deps): bump github.com/cert-manager/cert-manager from 1.12.3 to 1.13.2  @dependabot</li>
+  <li>chore(deps): bump github.com/docker/docker from 24.0.5+incompatible to 24.0.6+incompatible  @dependabot</li>
+  <li>chore(deps): bump github.com/gruntwork-io/terratest from 0.45.0 to 0.46.0  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/api/auth/aws from 0.4.1 to 0.5.0  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/sdk from 0.9.2 to 0.10.2  @dependabot</li>
+  <li>chore(deps): bump github.com/open-policy-agent/opa from 0.55.0 to 0.56.0  @dependabot</li>
+  <li>chore(deps): bump github.com/open-policy-agent/opa-envoy-plugin from 0.55.0-envoy to 0.58.0-envoy  @dependabot</li>
+  <li>chore(deps): bump github.com/spf13/afero from 1.9.5 to 1.10.0  @dependabot</li>
+  <li>chore(deps): bump golang.org/x/net from 0.14.0 to 0.17.0  @dependabot</li>
+  <li>chore(deps): bump google.golang.org/grpc from 1.58.3 to 1.59.0  @dependabot</li>
+  <li>chore(deps): bump kuma and add missing dependency in <code class="language-plaintext highlighter-rouge">upgrade/kuma</code>  @lahabana</li>
+  <li>chore(deps): bump kumahq/kuma from 40da07fcd075 to bbfcb64fd  @kong-mesh</li>
+  <li>chore(deps): bump shadow-utils (backport of #4768)  @slonka</li>
+  <li>chore(deps): bump the go-opentelemetry-io group with 1 update  @dependabot</li>
+  <li>chore(deps): bump the go-opentelemetry-io-contrib group with 1 update  @dependabot</li>
+  <li>chore(deps): bump tibdex/github-app-token from 1.8.0 to 2.1.0  @dependabot</li>
+  <li>chore(deps): bump ubi9-minimal from 9.2-717 to 9.2-750.1697625013  @dependabot</li>
+  <li>chore(deps): downgrade testcontainers from v0.24.0 to v0.23.0  @jakubdyszkiewicz</li>
+  <li>chore(deps): remove pinned Helm version  @michaelbeaumont</li>
+  <li>chore(deps): remove ristretto pin  @michaelbeaumont</li>
+  <li>chore(deps): update shared-go  @slonka</li>
+  <li>chore(deps): update shared-go kauth dependency  @Automaat</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kong-mesh</li>
+  <li>feat(awsiam): add ability to assume roles for cross account auth  @michaelbeaumont</li>
+  <li>feat(awsiam): only require role name in rolesToAssumeForAccounts  @michaelbeaumont</li>
+  <li>feat(helm): remove license text for MinK zones  @johnharris85</li>
+  <li>feat(kuma-cp): allow to change mtls backends with skiping validation  @lukidzi</li>
+  <li>feat(kuma-cp): include tenant aware unary interceptor  @michaelbeaumont</li>
+  <li>feat(kuma-cp): introduce resource limiting capability  @bartsmykla</li>
+  <li>feat(kuma-cp): use ReadResourceManager for RBAC  @lukidzi</li>
+  <li>feat(tenants): do not ensure mesh default mesh resources manually  @jakubdyszkiewicz</li>
+  <li>feat(tenants): shard tenants for postgres  @jakubdyszkiewicz</li>
+  <li>fix(awsiam): refresh GetCallerIdentity request in DP  @michaelbeaumont</li>
+  <li>fix(certmanager): enable cert manager in universal global  @kong-mesh</li>
+  <li>fix(kmesh-cp): extend new zone name validation to be compliant with RFC1035 dns name  @Automaat</li>
+  <li>fix(kuma-cp): set cp mode for ACMCA plugin  @lukidzi</li>
+  <li>fix(tenants): sharding setup  @jakubdyszkiewicz</li>
+</ul>
+
+<h2 id="244">2.4.4</h2>
+<blockquote>
+  <p>Released on 2023/11/06</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from eeeb2a1eb7bd to b3131e7b6  @kong-mesh</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>fix(awsiam): refresh GetCallerIdentity request in DP (backport of #4674)  @kong-mesh</li>
+</ul>
+
+<h2 id="243">2.4.3</h2>
+<blockquote>
+  <p>Released on 2023/10/11</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from 80db656df125 to eeeb2a1eb  @kong-mesh</li>
+  <li>chore(deps): bump opa to 0.57  @slonka</li>
+</ul>
+
+<h2 id="233">2.3.3</h2>
+<blockquote>
+  <p>Released on 2023/10/11</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): build without containerd (backport of #4229)  @kong-mesh</li>
+  <li>chore(deps): bump kumahq/kuma from c56df80922be to 815b26399  @kong-mesh</li>
+  <li>chore(deps): bump opa to 0.57  @slonka</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>fix(audit): use background context (backport of #4035)  @kong-mesh</li>
+</ul>
+
+<h2 id="225">2.2.5</h2>
+<blockquote>
+  <p>Released on 2023/10/11</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): build without containerd (backport of #4229)  @kong-mesh</li>
+  <li>chore(deps): bump kumahq/kuma from 858fa348ff7f to 467b9011a  @kong-mesh</li>
+  <li>chore(deps): bump opa to 0.57  @slonka</li>
+  <li>fix(audit): use background context (backport of #4035)  @kong-mesh</li>
+</ul>
+
+<h2 id="217">2.1.7</h2>
+<blockquote>
+  <p>Released on 2023/10/11</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from bc5859add936 to f8e669466  @kong-mesh</li>
+  <li>fix(audit): use background context (backport of #4035)  @kong-mesh</li>
+</ul>
+
+<h2 id="208">2.0.8</h2>
+<blockquote>
+  <p>Released on 2023/10/11</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump github.com/docker/distribution from 2.8.2-beta.1 to 2.8.2  @michaelbeaumont</li>
+  <li>chore(deps): bump kumahq/kuma from 4ecbae54501e to 6ecaf21ff  @kong-mesh,@michaelbeaumont</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>fix(audit): use background context (backport of #4035)  @kong-mesh</li>
+</ul>
+
+<h2 id="242">2.4.2</h2>
+<blockquote>
+  <p>Released on 2023/10/02</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): build without containerd (backport of #4229)  @kong-mesh</li>
+  <li>chore(deps): bump kumahq/kuma from ecac076c0da2 to 80db656df  @kong-mesh</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>feat(awsiam): add ability to assume roles for cross account auth (backport of #4344)  @kong-mesh</li>
+  <li>feat(awsiam): only require role name in rolesToAssumeForAccounts (backport of #4365)  @kong-mesh</li>
+  <li>fix(auth): better error message when invalid token supplied (backport of #4429)  @kong-mesh</li>
+</ul>
+
+<h2 id="241">2.4.1</h2>
+<blockquote>
+  <p>Released on 2023/09/07</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from d7115ca38696 to ecac076c0  @kong-mesh</li>
+</ul>
+
+<h2 id="240">2.4.0</h2>
+<blockquote>
+  <p>Released on 2023/08/29</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump github.com/Kong/kauth-api from 1.95.0 to 1.113.0  @dependabot</li>
+  <li>chore(deps): bump github.com/Kong/shared-go/kauth from 1.0.1 to 1.0.5  @dependabot</li>
+  <li>chore(deps): bump github.com/Kong/shared-go/rest from 1.0.3 to 1.1.2  @dependabot</li>
+  <li>chore(deps): bump github.com/aws/aws-sdk-go from 1.44.268 to 1.44.329  @dependabot</li>
+  <li>chore(deps): bump github.com/cert-manager/cert-manager from 1.12.0 to 1.12.3  @dependabot</li>
+  <li>chore(deps): bump github.com/docker/docker from 24.0.0+incompatible to 24.0.5+incompatible  @dependabot</li>
+  <li>chore(deps): bump github.com/google/uuid from 1.3.0 to 1.3.1  @dependabot</li>
+  <li>chore(deps): bump github.com/gruntwork-io/terratest from 0.41.16 to 0.43.12  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/go-retryablehttp from 0.7.2 to 0.7.4  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/api from 1.9.1 to 1.9.2  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/api/auth/aws from 0.4.0 to 0.4.1  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/sdk from 0.9.0 to 0.9.2  @dependabot</li>
+  <li>chore(deps): bump github.com/kong/shared-go/kauth to 0.8.0  @michaelbeaumont</li>
+  <li>chore(deps): bump github.com/open-policy-agent/opa from 0.51.0 to 0.55.0  @dependabot,@michaelbeaumont</li>
+  <li>chore(deps): bump github.com/open-policy-agent/opa-envoy-plugin from 0.51.0-envoy to 0.55.0-envoy  @dependabot</li>
+  <li>chore(deps): bump kumahq/kuma from 0f4429297271 to d7115ca38  @bartsmykla,@kong-mesh</li>
+  <li>chore(deps): bump the k8s-libs group with 1 update  @dependabot</li>
+  <li>chore(deps): bump ubi9-minimal from 9.2-484 to 9.2-717  @dependabot</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kong-mesh</li>
+  <li>chore(release): merge release-2.3  @michaelbeaumont</li>
+  <li>feat(insights): trigger computation  @jakubdyszkiewicz</li>
+  <li>feat(kmesh-cp): add information about authorization data in requests when connection from zone to global cp  @Automaat</li>
+  <li>feat(kmesh-cp): disable external CA validation on global  @jakubdyszkiewicz</li>
+  <li>feat(kmesh-cp): do not assert tenants activity update  @jakubdyszkiewicz</li>
+  <li>feat(kuma-cp): add opentelemetry instrumentation for api-server Konnect client  @michaelbeaumont</li>
+  <li>feat(kuma-cp): add trace spans for zone auth konnect calls  @michaelbeaumont</li>
+  <li>feat(kuma-cp): add tracing to kauth pdp calls  @michaelbeaumont</li>
+  <li>feat(kuma-cp): create tenants resources concurrently  @lukidzi</li>
+  <li>feat(kuma-cp): removed 2nd call and unused CP key  @lukidzi</li>
+  <li>feat(license): support zone licensing  @lahabana</li>
+  <li>feat(security): add action to scan images we build  @slonka</li>
+  <li>feat(security): fix typo  @slonka</li>
+  <li>feat(security): rename the workflow and remove dot slash  @slonka</li>
+  <li>feat(security): rename workflow run-name  @slonka</li>
+  <li>feat(security): switch to repo uses  @slonka</li>
+  <li>feat(tracing): add TenantsWs spans  @michaelbeaumont</li>
+  <li>fix(.github): fix scan docker images  @lahabana</li>
+  <li>fix(audit): use background context  @jakubdyszkiewicz</li>
+  <li>fix(kmesh-cp): revert “add information about authorization data in re…  @Automaat</li>
+  <li>fix(kmesh-cp): tenants activity context and proceed with filter chain  @jakubdyszkiewicz</li>
+  <li>fix(kuma-cp): refresh only specific mesh when event triggered  @lukidzi</li>
+  <li>fix(license): rename zones to mesh_zones  @lahabana</li>
+</ul>
+
+<h2 id="216">2.1.6</h2>
+<blockquote>
+  <p>Released on 2023/08/15</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump github.com/docker/distribution from 2.8.2-beta.1 to 2.8.2  @michaelbeaumont</li>
+  <li>chore(deps): bump kumahq/kuma from 9b24e08ef23a to bc5859add  @kong-mesh,@michaelbeaumont</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+</ul>
+
+<h2 id="232">2.3.2</h2>
+<blockquote>
+  <p>Released on 2023/08/04</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from 45dd7ae494d4 to c56df8092  @kong-mesh</li>
+  <li>chore(deps): update containerd to v1.7.3  @michaelbeaumont</li>
+</ul>
+
+<h2 id="224">2.2.4</h2>
+<blockquote>
+  <p>Released on 2023/08/04</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump github.com/docker/distribution from 2.8.1 to 2.8.2  @michaelbeaumont</li>
+  <li>chore(deps): bump kumahq/kuma from 5a31d8ce5239 to 858fa348f  @kong-mesh,@michaelbeaumont</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>chore(deps): update containerd to v1.7.3  @michaelbeaumont</li>
+</ul>
+
+<h2 id="215">2.1.5</h2>
+<blockquote>
+  <p>Released on 2023/07/28</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): upgrade envoy to 1.24.10 <a href="https://github.com/kumahq/kuma/pull/7363" target="_blank" rel="noopener nofollow noreferrer ">#7363</a> @lukidzi</li>
+  <li>chore(deps): bump kumahq/kuma from 60a2d39e7d56 to 7ba3e3579  @kong-mesh</li>
+</ul>
+
+<h2 id="207">2.0.7</h2>
+<blockquote>
+  <p>Released on 2023/07/28</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): upgrade envoy to 1.24.10 <a href="https://github.com/kumahq/kuma/pull/7364" target="_blank" rel="noopener nofollow noreferrer ">#7364</a> @lukidzi</li>
+  <li>chore(deps): bump kumahq/kuma from d8705e29be4c to 4ecbae545  @kong-mesh</li>
+</ul>
+
+<h2 id="198">1.9.8</h2>
+<blockquote>
+  <p>Released on 2023/07/27</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): upgrade envoy to 1.24.10 <a href="https://github.com/kumahq/kuma/pull/7365" target="_blank" rel="noopener nofollow noreferrer ">#7365</a> @lukidzi</li>
+  <li>fix(kuma-cp): order resources for building VIPs (backport of #7333) <a href="https://github.com/kumahq/kuma/pull/7360" target="_blank" rel="noopener nofollow noreferrer ">#7360</a> @kumahq</li>
+</ul>
+
+<h2 id="231">2.3.1</h2>
+<blockquote>
+  <p>Released on 2023/07/21</p>
+</blockquote>
+
+<ul>
+  <li>update Envoy version to 1.26.3 which includes fix for <a href="https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r" target="_blank" rel="noopener nofollow noreferrer ">CVE-2023-35945</a>
+</li>
+  <li>chore(deps): bump kumahq/kuma from bba743f5ae56 to 45dd7ae49  @kong-mesh,@michaelbeaumont</li>
+</ul>
+
+<h2 id="223">2.2.3</h2>
+<blockquote>
+  <p>Released on 2023/07/21</p>
+  <ul>
+    <li>update Envoy version to 1.25.8 which includes fix for <a href="https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r" target="_blank" rel="noopener nofollow noreferrer ">CVE-2023-35945</a>
+</li>
+    <li>chore(deps): bump kumahq/kuma from 2e775e96a30e to fd7bb16d0  @kong-mesh</li>
+  </ul>
+</blockquote>
+
+<h2 id="206">2.0.6</h2>
+<blockquote>
+  <p>Released on 2023/07/21</p>
+  <ul>
+    <li>update Envoy version to 1.24.9 which includes fix for <a href="https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r" target="_blank" rel="noopener nofollow noreferrer ">CVE-2023-35945</a>
+</li>
+    <li>chore(deps): bump kumahq/kuma from c92a5afd5f13 to d8705e29b  @kong-mesh</li>
+  </ul>
+</blockquote>
+
+<h2 id="197">1.9.7</h2>
+<blockquote>
+  <p>Released on 2023/07/21</p>
+  <ul>
+    <li>update Envoy version to 1.24.9 which includes fix for <a href="https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r" target="_blank" rel="noopener nofollow noreferrer ">CVE-2023-35945</a>
+</li>
+    <li>chore(deps): bump kumahq/kuma from af41f882c68c to 0aaf921a0  @kong-mesh</li>
+  </ul>
+</blockquote>
+
+<h2 id="214">2.1.4</h2>
+<blockquote>
+  <p>Released on 2023/07/20</p>
+</blockquote>
+
+<ul>
+  <li>update Envoy version to 1.24.9 which includes fix for <a href="https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r" target="_blank" rel="noopener nofollow noreferrer ">CVE-2023-35945</a>
+</li>
+  <li>chore(deps): bump kumahq/kuma from a2cf8c765290 to 60a2d39e7  @kong-mesh</li>
+</ul>
+
+<h2 id="230">2.3.0</h2>
+<blockquote>
+  <p>Released on 2023/06/23</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump github.com/Kong/kauth-api from 1.94.0 to 1.100.0  @dependabot</li>
+  <li>chore(deps): bump github.com/aws/aws-sdk-go from 1.44.241 to 1.44.268  @dependabot</li>
+  <li>chore(deps): bump github.com/cert-manager/cert-manager from 1.11.0 to 1.12.0  @dependabot</li>
+  <li>chore(deps): bump github.com/docker/docker from 23.0.3+incompatible to 24.0.0+incompatible  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/api from 1.9.0 to 1.9.1  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/sdk from 0.8.1 to 0.9.0  @dependabot</li>
+  <li>chore(deps): bump github.com/testcontainers/testcontainers-go from 0.18.0 to 0.19.0  @dependabot</li>
+  <li>chore(deps): bump kumahq/kuma from d98ca8aacc47 to c96910d2e  @kong-mesh,@lahabana,@slonka</li>
+  <li>chore(deps): bump otel  @slonka</li>
+  <li>chore(deps): bump sigs.k8s.io/controller-runtime from 0.15.0-beta.0 to 0.15.0  @dependabot</li>
+  <li>chore(deps): bump tibdex/github-app-token from 1.7.0 to 1.8.0  @dependabot</li>
+  <li>chore(deps): bump ubi9-minimal from 9.1.0-1829 to 9.2-484  @dependabot</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kong-mesh</li>
+  <li>chore(release): merge release-2.2 to master  @slonka</li>
+  <li>feat(MeshGlobalRateLimit): add header based rate limiting  @Automaat</li>
+  <li>feat(MeshGlobalRateLimit): add ratelimit service auth  @bartsmykla</li>
+  <li>feat(MeshGlobalRateLimit): allow to configure MeshSubset in top level…  @Automaat</li>
+  <li>feat(MeshGlobalRateLimit): secure communication between ratelimit service and DPP with TLS  @Automaat</li>
+  <li>feat(MeshGlobalRateLimit): securing communication between DPP and ratelimit service MADR  @Automaat</li>
+  <li>feat(MeshOPA): support builtin gateway listeners   @michaelbeaumont</li>
+  <li>feat(config): remove konnect section from config  @jakubdyszkiewicz</li>
+  <li>feat(kuma-cp): added authz integration with kauth-pdp for api-server  @lukidzi</li>
+  <li>feat(kuma-cp): alternative store that supports multitenancy  @jakubdyszkiewicz</li>
+  <li>feat(kuma-cp): rename variable and add helm config  @lukidzi</li>
+  <li>feat(kuma-cp): use kauth to validate KDS token  @lukidzi</li>
+  <li>feat(mink): add endpoint to provision a zone  @slonka</li>
+  <li>feat(mink): fix running memory storage type and rls  @slonka</li>
+  <li>feat(mink): only initialize konnect client when the auth type is konnect  @slonka</li>
+  <li>feat(mink): owner tenant id fix  @slonka</li>
+  <li>feat(mink): provisioning a zone with kauth token  @slonka</li>
+  <li>feat(mink): reenable konnect specific migrations test  @slonka</li>
+  <li>feat(mink): rename the endpoint and payload to match front-end  @slonka</li>
+  <li>feat(mink): skip authnz on konnect health endpoint  @jakubdyszkiewicz</li>
+  <li>feat(mink): skip vcp header check on /health  @slonka</li>
+  <li>feat(multitenancy): introduce RLS  @slonka</li>
+  <li>feat(multitenancy): put tenant id in postgres events  @jakubdyszkiewicz</li>
+  <li>feat(multitenancy): rls for existing user  @jakubdyszkiewicz</li>
+  <li>fix(MeshOPA): apply policy to correct inbounds   @michaelbeaumont</li>
+  <li>fix(deployment): turn off cancel in progress for mink charts update  @slonka</li>
+  <li>fix(helm): add cert-manager RBAC  @johnharris85</li>
+  <li>fix(helm): update HPA API version  @johnharris85</li>
+  <li>fix(kauth): refresh service client tokens  @iamnande</li>
+  <li>fix(konnect): remove Bearer from the token  @lukidzi</li>
+  <li>fix(kuma-cp): change the order of columns in primary key  @lukidzi</li>
+  <li>fix(kuma-cp): disable kds token component when deployment type konnect  @lukidzi</li>
+  <li>fix(kuma-cp): fixed naming of a path  @lukidzi</li>
+  <li>fix(kuma-cp): fixed naming of envs and added missing env def  @lukidzi</li>
+  <li>fix(kuma-cp/run): don’t fail if valid kuma-cp args are passed  @michaelbeaumont</li>
+  <li>fix(mink): properly quote rls user in migration  @slonka</li>
+  <li>fix(mink): properly quote user for rls double escape  @slonka</li>
+  <li>fix(mink): use shared go claims for konnect client  @slonka</li>
+  <li>fix(rls): do not recreate db conns in a loop  @jakubdyszkiewicz</li>
+</ul>
+
+<h2 id="222">2.2.2</h2>
+<blockquote>
+  <p>Released on 2023/06/21</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from e30ace1c5856 to 2e775e96a  @kong-mesh</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kong-mesh</li>
+</ul>
+
+<h2 id="213">2.1.3</h2>
+<blockquote>
+  <p>Released on 2023/06/21</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from 7233fbcad813 to a2cf8c765  @kong-mesh</li>
+  <li>chore(deps): upgrade kuma version and Envoy to 1.24.8  @lukidzi</li>
+  <li>chore(deps): upgrade ubi image from 8.7 to 9.1  @lukidzi</li>
+</ul>
+
+<h2 id="205">2.0.5</h2>
+<blockquote>
+  <p>Released on 2023/06/21</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from f4117ec0c431 to c92a5afd5  @kong-mesh</li>
+  <li>chore(deps): upgrade kuma version and Envoy to 1.24.8  @lukidzi</li>
+  <li>chore(deps): upgrade ubi image from 8.7 to 9.1  @lukidzi</li>
+</ul>
+
+<h2 id="196">1.9.6</h2>
+<blockquote>
+  <p>Released on 2023/06/21</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from 22ae8e02c752 to af41f882c  @kong-mesh</li>
+  <li>chore(deps): fix security update for 1.9  @slonka</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>chore(deps): upgrade kuma version and Envoy to 1.24.8  @lukidzi</li>
+  <li>chore(deps): upgrade ubi image from 8.7 to 9.1  @lukidzi</li>
+</ul>
+
+<h2 id="221">2.2.1</h2>
+<blockquote>
+  <p>Released on 2023/05/10</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump kumahq/kuma from 9a2812c6b3a4 to e30ace1c5  @kong-mesh</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kong-mesh</li>
+</ul>
+
+<h2 id="220">2.2.0</h2>
+<blockquote>
+  <p>Released on 2023/04/14</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): bump actions/checkout from 2 to 3  @dependabot</li>
+  <li>chore(deps): bump actions/github-script from 5 to 6  @dependabot</li>
+  <li>chore(deps): bump actions/setup-go from 3 to 4  @dependabot</li>
+  <li>chore(deps): bump github.com/aws/aws-sdk-go from 1.44.187 to 1.44.236  @dependabot</li>
+  <li>chore(deps): bump github.com/emicklei/go-restful/v3 from 3.10.1 to 3.10.2  @dependabot</li>
+  <li>chore(deps): bump github.com/golang/protobuf from 1.5.2 to 1.5.3  @dependabot</li>
+  <li>chore(deps): bump github.com/gruntwork-io/terratest from 0.41.9 to 0.41.16  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/api from 1.8.3 to 1.9.0  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/api/auth/aws from 0.3.0 to 0.4.0  @dependabot</li>
+  <li>chore(deps): bump github.com/hashicorp/vault/sdk from 0.7.0 to 0.8.1  @dependabot</li>
+  <li>chore(deps): bump github.com/open-policy-agent/opa from 0.49.0 to 0.49.1  @dependabot</li>
+  <li>chore(deps): bump github.com/open-policy-agent/opa-envoy-plugin from 0.48.0-envoy to 0.49.2-envoy  @dependabot</li>
+  <li>chore(deps): bump gopkg.in/natefinch/lumberjack.v2 from 2.0.0 to 2.2.1  @dependabot</li>
+  <li>chore(deps): bump kumahq/kuma from c53b7eee1b7d to 9a2812c6b  @kong-mesh,@lahabana</li>
+  <li>chore(deps): bump peter-evans/create-pull-request from 4 to 5  @dependabot</li>
+  <li>chore(deps): bump ubi8/ubi-minimal from 8.7 to 8.7-1085  @dependabot</li>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kong-mesh</li>
+  <li>feat(MeshOPA): composable policies  @jakubdyszkiewicz</li>
+  <li>feat(authn): cache konnect auth tokens  @jakubdyszkiewicz</li>
+  <li>feat(authn): kauth integration  @jakubdyszkiewicz</li>
+  <li>feat(ca/certmanager): allow a CA to be provided in config  @michaelbeaumont</li>
+  <li>feat(ca/certmanager): option to set certificate dnsNames  @michaelbeaumont</li>
+  <li>feat(ca/certmanager): rename conf.ca to conf.caCert (backport #2963)  @mergify</li>
+  <li>feat(docker): update to UBI 9 images  @michaelbeaumont</li>
+  <li>feat(kuma-cp): add auth method for delta kds   @lukidzi</li>
+  <li>feat(policies): implement MeshGlobalRateLimit policy  @Automaat,@michaelbeaumont</li>
+  <li>fix(acm): use region of Private CA instead of control plane  @michaelbeaumont</li>
+  <li>fix(ca/certmanager): don’t block unnecessarily long, decrease wait interval  @michaelbeaumont</li>
+  <li>fix(ca/certmanager): don’t busy wait when getting certs  @michaelbeaumont</li>
+  <li>fix(ca/certmanager): don’t force common name to be set in CSRs  @michaelbeaumont</li>
+  <li>fix(docker): set entrypoint of base UBI image  @michaelbeaumont</li>
+  <li>fix(docker): set user as UID in image rather than name  @lahabana</li>
+  <li>fix(k8s): fix storage version migrator spinning  @slonka</li>
+  <li>fix(kuma-cp): don’t let CA requests for other meshes block generation  @michaelbeaumont</li>
+  <li>fix(vault): token renewal after secret change fix  @bartsmykla</li>
+</ul>
+
+<h2 id="212">2.1.2</h2>
+<blockquote>
+  <p>Released on 2023/04/07</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>feat(ca/certmanager): allow a CA to be provided in config (backport #2952)  @mergify</li>
+  <li>feat(ca/certmanager): rename conf.ca to conf.caCert  @michaelbeaumont</li>
+  <li>feat(cert-manager): option to set certificate dnsNames (backport #2855)  @mergify</li>
+  <li>fix(acm): use region of Private CA instead of control plane (backport #3101)  @mergify</li>
+  <li>fix(ca/certmanager): don’t block unnecessarily long, decrease wait interval (backport #2951)  @mergify</li>
+  <li>fix(ca/certmanager): don’t busy wait when getting certs (backport #2938)  @mergify</li>
+  <li>fix(kuma-cp): don’t let CA requests for other meshes block generation (backport #2953)  @mergify</li>
+  <li>fix(plugin/vault): token renew when secret change (backport #3025)  @mergify</li>
+  <li>fix(plugins/ca/certmanager): don’t force common name to be set in CSRs (backport #2795)  @mergify</li>
+</ul>
+
+<h2 id="204">2.0.4</h2>
+<blockquote>
+  <p>Released on 2023/04/07</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>fix(acm): use region of Private CA instead of control plane (backport #3101)  @mergify</li>
+  <li>fix(plugin/vault): token renew when secret change (backport #3025)  @mergify</li>
+  <li>fix(plugins/ca/certmanager): don’t force common name to be set in CSRs (backport #2795)  @mergify</li>
+</ul>
+
+<h2 id="195">1.9.5</h2>
+<blockquote>
+  <p>Released on 2023/04/06</p>
+</blockquote>
+
+<ul>
+  <li>fix(plugin/vault): token renew when secret change (backport #3025)  @mergify</li>
+  <li>fix(plugins/ca/certmanager): don’t force common name to be set in CSRs (backport #2795)  @mergify</li>
+</ul>
+
+<h2 id="187">1.8.7</h2>
+<blockquote>
+  <p>Released on 2023/04/06</p>
+</blockquote>
+
+<ul>
+  <li>fix(plugin/vault): token renew when secret change (backport #3025)  @mergify</li>
+</ul>
+
+<h2 id="211">2.1.1</h2>
+<blockquote>
+  <p>Released on 2023/02/16</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>chore(deps): use latest Kong/kong-mesh-gui  @kongmesh</li>
+  <li>feat(makefiles): remove explicit envoy version  @jakubdyszkiewicz</li>
+  <li>fix(ghaction): rename helm release action  @jakubdyszkiewicz</li>
+  <li>fix(makefiles): implicit BASE_KUMA_VERSION (backport #2720)  @mergify</li>
+</ul>
+
+<h2 id="203">2.0.3</h2>
+<blockquote>
+  <p>Released on 2023/02/16</p>
+</blockquote>
+
+<ul>
+  <li>feat(makefiles): remove explicit envoy version  @jakubdyszkiewicz</li>
+  <li>fix(ghaction): rename helm release action (backport #2729)  @mergify</li>
+  <li>fix(makefiles): implicit BASE_KUMA_VERSION (backport #2720)  @mergify</li>
+</ul>
+
+<h2 id="194">1.9.4</h2>
+<blockquote>
+  <p>Released on 2023/02/16</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>feat(makefiles): remove explicit envoy version  @jakubdyszkiewicz</li>
+  <li>fix(ghaction): rename helm release action (backport #2729)  @mergify</li>
+  <li>fix(makefiles): implicit BASE_KUMA_VERSION (backport #2720)  @mergify</li>
+</ul>
+
+<h2 id="186">1.8.6</h2>
+<blockquote>
+  <p>Released on 2023/02/16</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>feat(makefiles): remove explicit envoy version  @jakubdyszkiewicz</li>
+  <li>fix(ghaction): rename helm release action (backport #2729)  @mergify</li>
+  <li>fix(makefiles): implicit BASE_KUMA_VERSION (backport #2720)  @mergify</li>
+</ul>
+
+<h2 id="177">1.7.7</h2>
+<blockquote>
+  <p>Released on 2023/02/16</p>
+</blockquote>
+
+<ul>
+  <li>chore(deps): security update  @kong-mesh</li>
+  <li>feat(makefiles): remove explicit envoy version  @jakubdyszkiewicz</li>
+  <li>fix(ghaction): rename helm release action (backport #2729)  @mergify</li>
+  <li>fix(makefiles): implicit BASE_KUMA_VERSION (backport #2720)  @mergify</li>
+</ul>
+
+<h2 id="210">2.1.0</h2>
+<blockquote>
+  <p>Released on 2023/01/31</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/2.1.0" target="_blank" rel="noopener nofollow noreferrer ">Kuma 2.1.0</a></p>
+
+<ul>
+  <li>Added the MeshOPA policy. This policy is compliant with new <code class="language-plaintext highlighter-rouge">targetRef</code> standard. This policy will replace OPA Policy.</li>
+  <li>RBAC now supports <code class="language-plaintext highlighter-rouge">to</code> and <code class="language-plaintext highlighter-rouge">from</code> selectors in <code class="language-plaintext highlighter-rouge">targetRef</code> based policies</li>
+  <li>Added the ability to specify list of users that have admin rights by default.</li>
+  <li>Limited the number of OPA policies you can configure to one because of <a href="https://github.com/open-policy-agent/opa/issues/5595" target="_blank" rel="noopener nofollow noreferrer ">OPA limitations</a>.</li>
+</ul>
+
+<h2 id="202">2.0.2</h2>
+<blockquote>
+  <p>Released on 2023/01/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/2.0.2" target="_blank" rel="noopener nofollow noreferrer ">Kuma 2.0.2</a></p>
+
+<ul>
+  <li>Upgraded the Helm library version.</li>
+  <li>Upgraded the Go version to 1.18.9.</li>
+  <li>Fixed data caching. This bug might have caused certificates to regenerate.</li>
+  <li>Upgraded CoreDNS.</li>
+</ul>
+
+<h2 id="193">1.9.3</h2>
+<blockquote>
+  <p>Released on 2023/01/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.8.3" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.8.3</a></p>
+
+<ul>
+  <li>Upgraded the Helm library version.</li>
+  <li>Upgraded the Go version to 1.18.9.</li>
+  <li>Fixed data caching. This bug might have caused certificates to regenerate.</li>
+  <li>Upgraded CoreDNS.</li>
+</ul>
+
+<h2 id="185">1.8.5</h2>
+<blockquote>
+  <p>Released on 2023/01/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.7.4" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.7.4</a></p>
+
+<ul>
+  <li>Upgraded the Helm library version.</li>
+  <li>Upgraded the Go version to 1.18.9.</li>
+  <li>Fixed data caching. This bug might have caused certificates to regenerate.</li>
+  <li>Upgraded CoreDNS.</li>
+</ul>
+
+<h2 id="176">1.7.6</h2>
+<blockquote>
+  <p>Released on 2023/01/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.6.4" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.6.4</a></p>
+
+<ul>
+  <li>Upgraded the Helm library version.</li>
+  <li>Upgraded the Go version to 1.18.9.</li>
+  <li>Fixed data caching. This bug might have caused certificates to regenerate.</li>
+  <li>Upgraded CoreDNS.</li>
+</ul>
+
+<h2 id="164">1.6.4</h2>
+<blockquote>
+  <p>Released on 2023/01/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.5.4" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.5.4</a></p>
+
+<ul>
+  <li>Upgraded the Helm library version.</li>
+  <li>Upgraded the Go version to 1.18.9.</li>
+  <li>Fixed data caching. This bug might have caused certificates to regenerate.</li>
+  <li>Upgraded CoreDNS.</li>
+</ul>
+
+<h2 id="163">1.6.3</h2>
+<blockquote>
+  <p>Released on 2022/12/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.5.3" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.5.3</a></p>
+
+<ul>
+  <li>Fixed potential logging of secrets in kuma-cp.</li>
+  <li>Fixed KDS instability.</li>
+  <li>Fixed unnecessary CDS updates.</li>
+</ul>
+
+<h2 id="175">1.7.5</h2>
+<blockquote>
+  <p>Released on 2022/12/08</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.6.3" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.6.3</a></p>
+
+<ul>
+  <li>Fixed potential logging of secrets in kuma-cp.</li>
+  <li>Fixed KDS instability.</li>
+  <li>Fixed unnecessary CDS updates.</li>
+  <li>Fixed a bug where the OPA Agent stops returning valid decisions after KM CP crashes.</li>
+</ul>
+
+<h2 id="192">1.9.2</h2>
+<blockquote>
+  <p>Released on 2022/12/06</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.8.2" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.8.2</a></p>
+
+<ul>
+  <li>Fixed potential logging of secrets in kuma-cp.</li>
+  <li>Fixed KDS instability.</li>
+  <li>Fixed unnecessary CDS updates.</li>
+  <li>Fixed a bug where the OPA Agent stops returning valid decisions after KM CP crashes.</li>
+</ul>
+
+<h2 id="184">1.8.4</h2>
+<blockquote>
+  <p>Released on 2022/12/06</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.7.3" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.7.3</a></p>
+
+<ul>
+  <li>Fixed potential logging of secrets in kuma-cp.</li>
+  <li>Fixed KDS instability.</li>
+  <li>Fixed unnecessary CDS updates.</li>
+  <li>Fixed a bug where the OPA Agent stops returning valid decisions after KM CP crashes.</li>
+</ul>
+
+<h2 id="201">2.0.1</h2>
+<blockquote>
+  <p>Released on 2022/12/05</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/2.0.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 2.0.1</a></p>
+
+<ul>
+  <li>Fixed potential logging of secrets in kuma-cp.</li>
+  <li>Fixed KDS instability.</li>
+  <li>Fixed unnecessary CDS updates.</li>
+  <li>Fixed a bug where the OPA Agent stops returning valid decisions after KM CP crashes.</li>
+</ul>
+
+<h2 id="200">2.0.0</h2>
+<blockquote>
+  <p>Released on 2022/11/04</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/2.0.0" target="_blank" rel="noopener nofollow noreferrer ">Kuma 2.0.0</a></p>
+
+<h3 id="amazon-ecs">Amazon ECS</h3>
+
+<p>You can now configure the sidecar to authenticate using the IAM role of the ECS task it’s running as instead of using a data plane token. 
+The control plane interprets the tags on the role similar to how it interprets the data plane token.
+This simplifies the deployment and management of Kong Mesh on ECS.</p>
+
+<p>For more information, see <a href="/mesh/latest/installation/ecs/">Kong Mesh on Amazon ECS</a>.</p>
+
+<h2 id="191">1.9.1</h2>
+<blockquote>
+  <p>Released on 2022/10/07</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.8.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.8.1</a></p>
+
+<ul>
+  <li>Gateway: Added support for <code class="language-plaintext highlighter-rouge">retryOn</code> in retry policies.</li>
+  <li>Added support for evicted Pods.</li>
+  <li>Added support for wildcard tag value match in RBAC.</li>
+  <li>Prevents a potential data race by creating a deep copy of tags when generating outbounds.</li>
+</ul>
+
+<h2 id="183">1.8.3</h2>
+<blockquote>
+  <p>Released on 2022/10/07</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.7.2" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.7.2</a></p>
+
+<ul>
+  <li>Added support for evicted Pods.</li>
+  <li>Prevents a potential data race by creating a deep copy of tags when generating outbounds.</li>
+</ul>
+
+<h2 id="174">1.7.4</h2>
+<blockquote>
+  <p>Released on 2022/10/07</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.6.2" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.6.2</a></p>
+
+<ul>
+  <li>Added support for evicted Pods.</li>
+  <li>Prevents a potential data race by creating a deep copy of tags when generating outbounds.</li>
+</ul>
+
+<h2 id="190">1.9.0</h2>
+<blockquote>
+  <p>Released on 2022/08/23</p>
+</blockquote>
+
+<ul>
+  <li>Add “replace” function to CommonName template in CAs which support it (ACMPCA, cert-manager, Vault).</li>
+  <li>Fix ZoneControlPlane token generation by setting access type to RBAC in the generated default.</li>
+  <li>Improve RBAC logic by checking both old and new spec on updates.</li>
+  <li>Add configuration option for RBAC validation result logging.</li>
+  <li>Add cert-manager.io CA manager.</li>
+</ul>
+
+<h2 id="182">1.8.2</h2>
+<blockquote>
+  <p>Released on 2022/08/05</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.7.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.7.1</a></p>
+
+<ul>
+  <li>Fix RBAC: all tags specified in when section are required in policies.</li>
+  <li>Fix RBAC: <code class="language-plaintext highlighter-rouge">*</code> value in tag specified in when section means that the tag is required, but can have any value.</li>
+</ul>
+
+<h2 id="181">1.8.1</h2>
+<blockquote>
+  <p>Released on 2022/07/15</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.7.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.7.1</a></p>
+
+<ul>
+  <li>Check both old and new spec on Update</li>
+</ul>
+
+<h2 id="172">1.7.2</h2>
+<blockquote>
+  <p>Released on 2022/07/15</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.6.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.6.1</a></p>
+
+<ul>
+  <li>Check both old and new spec on Update</li>
+</ul>
+
+<h2 id="180">1.8.0</h2>
+<blockquote>
+  <p>Released on 2022/06/15</p>
+</blockquote>
+
+<p>New Features:</p>
+
+<ul>
+  <li>Support for arm64</li>
+  <li>Graceful shutdown of OPA</li>
+  <li>Role-based AWS authentication for Vault</li>
+  <li>Added a Vault AWS authentication option to set the server ID header</li>
+</ul>
+
+<p>Dependency upgrades:</p>
+
+<ul>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/aws/aws-sdk-go</code> from 1.40.56 to 1.44.21</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/hashicorp/go-retryablehttp</code> from 0.6.6 to 0.7.1</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/open-policy-agent/opa</code> from 0.38.1 to 0.40.0</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/open-policy-agent/opa-envoy-plugin</code> from 0.38.1-envoy-3 to 0.40.0-envoy</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">k8s.io/api</code> from 0.23.6 to 0.24.1</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">k8s.io/apimachinery</code> from 0.23.6 to 0.24.1</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">sigs.k8s.io/controller-runtime</code> from 0.11.2 to 0.12.1</li>
+</ul>
+
+<h2 id="171">1.7.1</h2>
+<blockquote>
+  <p>Released on 2022/06/14</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.6.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.6.1</a></p>
+
+<ul>
+  <li>Allow graceful shutdown of OPA</li>
+</ul>
+
+<h2 id="170">1.7.0</h2>
+<blockquote>
+  <p>Released on 2022/04/11</p>
+</blockquote>
+
+<p>New Features:</p>
+
+<ul>
+  <li>Add support for AWS Certificate Manager Private CA</li>
+  <li>Inspect API support for Open Policy Agent</li>
+  <li>Add license values to Mesh reports</li>
+</ul>
+
+<p>Dependency upgrades:</p>
+
+<ul>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/aws/aws-sdk-go</code> from 1.40.56 to 1.43.29</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/hashicorp/vault/api</code> from 1.3.1 to 1.5.0</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/open-policy-agent/opa</code> from 0.37.1 to 0.38.1</li>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/open-policy-agent/opa-envoy-plugin</code> from 0.37.1-envoy to 0.38.1-envoy-3</li>
+</ul>
+
+<h2 id="161">1.6.1</h2>
+<blockquote>
+  <p>Released on 2022/04/07</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.5.1" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.5.1</a></p>
+
+<ul>
+  <li>Remove the old JWT library</li>
+  <li>Make the Open Policy Agent timeout configurable</li>
+</ul>
+
+<p>Dependency upgrades:</p>
+
+<ul>
+  <li>Bump <code class="language-plaintext highlighter-rouge">github.com/open-policy-agent/opa</code> from 0.37.2 to 0.38.1</li>
+</ul>
+
+<h2 id="160">1.6.0</h2>
+<blockquote>
+  <p>Released on 2022/02/24</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/releases/tag/1.5.0" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.5.0</a></p>
+
+<ul>
+  <li>UBI images support.</li>
+  <li>ECS EC2 and Fargate first party support.</li>
+  <li>Update OPA agent to v0.37.2.</li>
+</ul>
+
+<h2 id="151">1.5.1</h2>
+<blockquote>
+  <p>Released on 2021/12/16</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#141" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.4.1</a></p>
+
+<ul>
+  <li>Default role-based access control (RBAC) for zone control planes is now restricted to the <code class="language-plaintext highlighter-rouge">admin</code> role.</li>
+  <li>Performance continues to be significantly improved.</li>
+  <li>Authentication tokens are now more secure.</li>
+</ul>
+
+<h2 id="150">1.5.0</h2>
+<blockquote>
+  <p>Released on 2021/11/22</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#140" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.4.0</a></p>
+
+<ul>
+  <li>Role-based Access Control (RBAC) is now available.</li>
+  <li>Support for Windows installation on Universal (VMs) is now available.</li>
+  <li>Renewable tokens in Vault are now supported.</li>
+</ul>
+
+<h2 id="141">1.4.1</h2>
+<blockquote>
+  <p>Released on 2021/10/06</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#131" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.3.1</a></p>
+
+<ul>
+  <li>Common Name (CN) support for Vault certificate storage is now available.</li>
+  <li>You can now disable zones as needed.</li>
+  <li>The number of PostgreSQL connections is now limited to 50 by default. The default value was previously unlimited; you can still configure the limit if needed.</li>
+  <li>You can now select a specific zone in the Kuma Service dashboard and in the Service to Service dashboard.</li>
+</ul>
+
+<h2 id="134">1.3.4</h2>
+<blockquote>
+  <p>Released on 2021/09/15</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#123" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.2.3</a></p>
+
+<ul>
+  <li>Moved to a Kuma fork of <code class="language-plaintext highlighter-rouge">go-control-plane</code> that fixes a Goroutine leak</li>
+</ul>
+
+<h2 id="140">1.4.0</h2>
+<blockquote>
+  <p>Released on 2021/08/25</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#130" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.3.0</a></p>
+
+<ul>
+  <li>You can now configure CA rotation in {{site.mesh_product_name}}.</li>
+  <li>A service map topology view is available that provides visualization of service traffic dependencies.</li>
+  <li>Support for mutual TLS in permissive mode is available, to support migrating applications into the service mesh.</li>
+  <li>You can now customize hostnames and ports for data plane proxies with a new virtual outbound policy.</li>
+  <li>You can more easily specify intermediate CAs with mTLS.</li>
+</ul>
+
+<h2 id="133">1.3.3</h2>
+<blockquote>
+  <p>Released on 2021/07/29</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#123" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.2.3</a></p>
+
+<ul>
+  <li>kumactl now always warns when the client and server versions cannot be confirmed to match.</li>
+  <li>The data plane proxy type is now checked for a valid value (one of <code class="language-plaintext highlighter-rouge">ingress</code> or <code class="language-plaintext highlighter-rouge">dataplane</code>).</li>
+  <li>Improvements to the control plane.</li>
+</ul>
+
+<h2 id="132">1.3.2</h2>
+<blockquote>
+  <p>Released on 2021/07/16</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#122" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.2.2</a></p>
+
+<ul>
+  <li>Datadog is now available as a traffic tracing option.</li>
+  <li>Message limit for gRPC stream is increased to better support Kuma discovery service (KDS)</li>
+  <li>Improved leader election during unexpected failures.</li>
+  <li>Improved SDS and XDS on rapid DP restarts.</li>
+  <li>Fixed HDS on the dataplane server when bootstrapping an ingress.</li>
+</ul>
+
+<h2 id="131">1.3.1</h2>
+<blockquote>
+  <p>Released on 2021/06/30</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#121" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.2.1</a></p>
+
+<ul>
+  <li>(Kuma) The data plane proxy now provides an advertised address to the control plane for communication in cases where the address is not directly reachable.</li>
+  <li>(Kuma) An SNI header is now added when TLS is enabled, to permit communication with external services that require it.</li>
+  <li>(Kong Mesh only) New parameters <code class="language-plaintext highlighter-rouge">pki</code> and <code class="language-plaintext highlighter-rouge">role</code> are available for Vault.</li>
+  <li>(Kong Mesh only) The CNI config name is now always prefixed with <code class="language-plaintext highlighter-rouge">kuma-cni</code>.</li>
+  <li>(Kong Mesh only) TTL is no longer validated for Vault.</li>
+</ul>
+
+<h2 id="130">1.3.0</h2>
+<blockquote>
+  <p>Released on 2021/06/17</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#120" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.2.0</a></p>
+
+<ul>
+  <li>New L7 Traffic Routing policy to route and modify HTTP traffic per path, method, header, or any other combination, with support for regex. Traffic can be modified before reaching the final destination.</li>
+  <li>New Rate-Limit policy to protect services from aggressive traffic. This policy can protect from downtime and improve the overall reliability of your applications.</li>
+  <li>The “Remote” control plane is renamed to “Zone” control plane. This means the “Ingress” resource is renamed “ZoneIngress”. Thanks to community users for providing the feedback that drove this effort.</li>
+  <li>Traffic Permissions now work with external services.</li>
+  <li>Improved performance of our DNS resolution.</li>
+  <li>More improvements, including a fix for GCP/GKE’s erratic IPv6 support.</li>
+  <li>Updated to Envoy 1.18.3.</li>
+</ul>
+
+<h2 id="126">1.2.6</h2>
+<blockquote>
+  <p>Released on 2021/05/13</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#116" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.1.6</a>.</p>
+
+<ul>
+  <li>Intermediate Certificate Authorities (CAs) are now supported with Vault integration.</li>
+  <li>You can now specify any and all tags in a Traffic Permission policy for Vault integration.</li>
+  <li>You can now specify TCP and HTTP health checks at the same time in the same policy. The health check policy also
+now includes a <code class="language-plaintext highlighter-rouge">reuse_connection</code> option.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">--gateway</code> flag is now available in the CLI.</li>
+  <li>You can now install an ingress controller with the CLI. {{site.base_gateway}} is the first supported ingress controller.</li>
+  <li>You can now install the Kuma demo application with the CLI.</li>
+</ul>
+
+<h2 id="125">1.2.5</h2>
+<blockquote>
+  <p>Released on 2021/04/30</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#115" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.1.5</a>.</p>
+
+<ul>
+  <li>⚠️ All installation scripts are updated to a new location because Bintray is shutting down. If you’ve written automation scripts that refer to the Bintray location, you need to update your scripts to point to the new location.</li>
+  <li>Transparent proxying is improved.</li>
+  <li>The GUI is improved.</li>
+  <li>The locality is now always set in a multi-zone deployment.</li>
+</ul>
+
+<h2 id="124">1.2.4</h2>
+<blockquote>
+  <p>Released on 2021/04/19</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#114" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.1.4</a>.</p>
+
+<p>Includes important bug fixes to version 1.1.3 of Kuma, plus improvements to the web UI.</p>
+
+<h2 id="123">1.2.3</h2>
+<blockquote>
+  <p>Released on 2021/04/16</p>
+</blockquote>
+
+<p>Built on top of <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#113" target="_blank" rel="noopener nofollow noreferrer ">Kuma 1.1.3</a>. Notably:</p>
+
+<ul>
+  <li>Built-in DNS provides support for specifying external services by original hostname and port</li>
+</ul>
+
+<h2 id="122">1.2.2</h2>
+<blockquote>
+  <p>Released on 2021/04/12</p>
+</blockquote>
+
+<p>Built on top of Kuma 1.1.2 with <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#112" target="_blank" rel="noopener nofollow noreferrer ">fixes and improvements</a>. Features include:</p>
+<ul>
+  <li>19 new observability charts and golden metrics.</li>
+  <li>IPv6 support across the service mesh.</li>
+  <li>New threshold configuration in the Circuit Breaker policy.</li>
+  <li>Performance improvements, especially with external services.</li>
+  <li>Stability improvements to kuma-cp and DNS resolution.</li>
+</ul>
+
+<h2 id="121">1.2.1</h2>
+<blockquote>
+  <p>Released on 2021/03/15</p>
+</blockquote>
+
+<ul>
+  <li>Fix to include the OPA CRD in the deployment</li>
+  <li>Build on top of Kuma 1.1.1 with <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#111" target="_blank" rel="noopener nofollow noreferrer ">fixes and improvements</a>
+</li>
+</ul>
+
+<h2 id="120">1.2.0</h2>
+<blockquote>
+  <p>Released on 2021/03/09</p>
+</blockquote>
+
+<ul>
+  <li>Added Open Policy Agent integration</li>
+  <li>Improved authentication support for control planes in multi-zone deployments, with the Kuma Discovery Protocol (KDS)</li>
+  <li>Added FIPS support to the data plane proxy sidecar</li>
+  <li>Added XDSv3 for control plane to data plane proxy communication</li>
+  <li>Build on top of Kuma 1.1.0 with <a href="https://github.com/kumahq/kuma/blob/master/CHANGELOG.md#110" target="_blank" rel="noopener nofollow noreferrer ">fixes and improvements</a>
+</li>
+</ul>
+
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=mesh" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"latest","product[0]":"Kong Mesh"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Mesh<score=1>'],
+              facetFilters: [ 'version:latest']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

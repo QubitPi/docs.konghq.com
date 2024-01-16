@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>deck diff - v1.7.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="deck diff - v1.7.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/deck/latest/reference/deck_diff/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/deck/1.7.x/reference/deck_diff/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          decK
+          
+        </div>
+        
+        <div class="version">
+          1.7.x
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/deck/">decK</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          Reference
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          Deck Diff
+          
+        </li>
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/deck/1.7.x/reference/deck_diff/">deck diff</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/deck/reference/deck_diff.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          decK
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/latest/">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/latest/">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/deck/latest/" class="active">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="versions-dropdown dropdown">
+      <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Version 1.7.x
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+          
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.29.x/reference/deck_diff/" data-version-id="1.29.x">
+            1.29.x
+             <em>(latest)</em>
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.28.x/reference/deck_diff/" data-version-id="1.28.x">
+            1.28.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.27.x/reference/deck_diff/" data-version-id="1.27.x">
+            1.27.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.26.x/reference/deck_diff/" data-version-id="1.26.x">
+            1.26.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.25.x/reference/deck_diff/" data-version-id="1.25.x">
+            1.25.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.24.x/reference/deck_diff/" data-version-id="1.24.x">
+            1.24.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.23.x/reference/deck_diff/" data-version-id="1.23.x">
+            1.23.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.22.x/reference/deck_diff/" data-version-id="1.22.x">
+            1.22.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.21.x/reference/deck_diff/" data-version-id="1.21.x">
+            1.21.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.20.x/reference/deck_diff/" data-version-id="1.20.x">
+            1.20.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.19.x/reference/deck_diff/" data-version-id="1.19.x">
+            1.19.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.18.x/reference/deck_diff/" data-version-id="1.18.x">
+            1.18.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.17.x/reference/deck_diff/" data-version-id="1.17.x">
+            1.17.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.16.x/reference/deck_diff/" data-version-id="1.16.x">
+            1.16.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.15.x/reference/deck_diff/" data-version-id="1.15.x">
+            1.15.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.14.x/reference/deck_diff/" data-version-id="1.14.x">
+            1.14.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.13.x/reference/deck_diff/" data-version-id="1.13.x">
+            1.13.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.12.x/reference/deck_diff/" data-version-id="1.12.x">
+            1.12.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.11.x/reference/deck_diff/" data-version-id="1.11.x">
+            1.11.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.10.x/reference/deck_diff/" data-version-id="1.10.x">
+            1.10.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.9.x/reference/deck_diff/" data-version-id="1.9.x">
+            1.9.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/1.8.x/reference/deck_diff/" data-version-id="1.8.x">
+            1.8.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li class="active" role="menuitem" tabindex="-1">
+          <a href="/deck/1.7.x/reference/deck_diff/" class="active" data-version-id="1.7.x">
+            1.7.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/pre-1.7" data-version-id="pre-1.7">
+            pre-1.7
+            
+          </a>
+        </li>
+        
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/">
+        
+  <img src="/assets/images/icons/documentation/icn-flag.svg" alt="">
+
+
+Introduction
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/terminology/">
+        
+
+Terminology
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/design-architecture/">
+        
+
+Architecture
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/compatibility-promise/">
+        
+
+Compatibility Promise
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="https://github.com/kong/deck/blob/main/CHANGELOG.md/" target="_blank" rel="noopener nofollow noreferrer ">
+        
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/installation/">
+        
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Installation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-guides-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-solution-guide.svg" alt="">
+
+
+Guides
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-guides-subtree" role="group" aria-label="Guides">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/getting-started/">
+        
+
+Getting Started with decK
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/backup-restore/">
+        
+
+Backup and Restore
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/ci-driven-configuration/">
+        
+
+Configuration as Code and GitOps
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/distributed-configuration/">
+        
+
+Distributed Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/best-practices/">
+        
+
+Best Practices
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/kong-enterprise/">
+        
+
+Using decK with Kong Gateway (Enterprise)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/run-with-docker/">
+        
+
+Run decK with Docker
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/multi-file-state/">
+        
+
+Using Multiple Files to Store Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/deduplicate-plugin-configuration/">
+        
+
+De-duplicate Plugin Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/guides/environment-variables/">
+        
+
+Using environment variables with decK
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-reference-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Reference
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-5-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/entities/">
+        
+
+Entities Managed by decK
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-2-deck-cli-reference-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck/">
+        
+
+decK CLI reference
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-2-deck-cli-reference-subtree" role="group" aria-label="decK CLI reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_convert/">
+        
+
+deck convert
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_diff/">
+        
+
+deck diff
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_dump/">
+        
+
+deck dump
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_ping/">
+        
+
+deck ping
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_reset/">
+        
+
+deck reset
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_sync/">
+        
+
+deck sync
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_validate/">
+        
+
+deck validate
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_version/">
+        
+
+deck version
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_konnect/">
+        
+
+deck konnect
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_konnect_diff/">
+        
+
+deck konnect diff
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_konnect_dump/">
+        
+
+deck konnect dump
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_konnect_ping/">
+        
+
+deck konnect ping
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/reference/deck_konnect_sync/">
+        
+
+deck konnect sync
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/deck/1.7.x/faqs/">
+        
+  <img src="/assets/images/icons/documentation/icn-faq-color.svg" alt="">
+
+
+FAQ
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#syntax" class="active scroll-to">Syntax</a></li>
+  <li><a href="#flags" class="scroll-to">Flags</a></li>
+  <li><a href="#global-flags" class="scroll-to">Global flags</a></li>
+  <li><a href="#see-also" class="scroll-to">See also</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+              <blockquote id="version-notice" class="important">
+                
+                You are browsing documentation for an outdated version.
+                
+                See the <a href="/deck/latest/reference/deck_diff/">latest documentation here</a>.
+              </blockquote>
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">deck diff
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          
+<p>The diff command is similar to a dry run of the ‘decK sync’ command.</p>
+
+<p>It loads entities from Kong and performs a diff with
+the entities in local files. This allows you to see the entities
+that will be created, updated, or deleted.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deck diff [command-specific flags] [global flags]
+</code></pre></div></div>
+
+<h2 id="flags">Flags</h2>
+
+<dl>
+  <dt>
+<code class="language-plaintext highlighter-rouge">-h</code>, <code class="language-plaintext highlighter-rouge">--help</code>
+</dt>
+  <dd>help for diff</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--non-zero-exit-code</code></dt>
+  <dd>return exit code 2 if there is a diff present,
+exit code 0 if no diff is found,
+and exit code 1 if an error occurs. (Default: <code class="language-plaintext highlighter-rouge">false</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--parallelism</code></dt>
+  <dd>Maximum number of concurrent operations. (Default: <code class="language-plaintext highlighter-rouge">10</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--rbac-resources-only</code></dt>
+  <dd>sync only the RBAC resources <strong>Kong Gateway Enterprise only</strong>. (Default: <code class="language-plaintext highlighter-rouge">false</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--select-tag</code></dt>
+  <dd>only entities matching tags specified via this flag are diffed.
+When this setting has multiple tag values, entities must match each of them.</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--skip-consumers</code></dt>
+  <dd>do not diff consumers or any plugins associated with consumers (Default: <code class="language-plaintext highlighter-rouge">false</code>)</dd>
+  <dt>
+<code class="language-plaintext highlighter-rouge">-s</code>, <code class="language-plaintext highlighter-rouge">--state</code>
+</dt>
+  <dd>file(s) containing Kong’s configuration.
+This flag can be specified multiple times for multiple files.
+Use <code class="language-plaintext highlighter-rouge">-</code> to read from stdin. (Default: <code class="language-plaintext highlighter-rouge">[kong.yaml]</code>)</dd>
+  <dt>
+<code class="language-plaintext highlighter-rouge">-w</code>, <code class="language-plaintext highlighter-rouge">--workspace</code>
+</dt>
+  <dd>Diff configuration with a specific workspace (Kong Gateway Enterprise only).
+This takes precedence over _workspace fields in state files.</dd>
+</dl>
+
+<h2 id="global-flags">Global flags</h2>
+
+<dl>
+  <dt><code class="language-plaintext highlighter-rouge">--analytics</code></dt>
+  <dd>Share anonymized data to help improve decK.
+Use <code class="language-plaintext highlighter-rouge">--analytics=false</code> to disable this. (Default: <code class="language-plaintext highlighter-rouge">true</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--ca-cert</code></dt>
+  <dd>Custom CA certificate (raw contents) to use to verify Kong’s Admin TLS certificate.
+This value can also be set using DECK_CA_CERT environment variable.
+This takes precedence over <code class="language-plaintext highlighter-rouge">--ca-cert-file</code> flag.</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--config</code></dt>
+  <dd>Config file (default is $HOME/.deck.yaml).</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--headers</code></dt>
+  <dd>HTTP headers (key:value) to inject in all requests to Kong’s Admin API.
+This flag can be specified multiple times to inject multiple headers.</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--kong-addr</code></dt>
+  <dd>HTTP address of Kong’s Admin API.
+This value can also be set using the environment variable DECK_KONG_ADDR
+ environment variable. (Default: <code class="language-plaintext highlighter-rouge">"http://localhost:8001"</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--konnect-addr</code></dt>
+  <dd>Address of the Konnect endpoint. (Default: <code class="language-plaintext highlighter-rouge">"https://us.api.konghq.com"</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--konnect-token</code></dt>
+  <dd>Token associated with your Konnect account. This takes precedence over the <code class="language-plaintext highlighter-rouge">--konnect-token-file</code> flag.</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--konnect-token-file</code></dt>
+  <dd>File containing the token associated with your Konnect account.</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--no-color</code></dt>
+  <dd>Disable colorized output (Default: <code class="language-plaintext highlighter-rouge">false</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--skip-workspace-crud</code></dt>
+  <dd>Skip API calls related to Workspaces (Kong Gateway Enterprise only). (Default: <code class="language-plaintext highlighter-rouge">false</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--tls-server-name</code></dt>
+  <dd>Name to use to verify the hostname in Kong’s Admin TLS certificate.
+This value can also be set using DECK_TLS_SERVER_NAME environment variable.</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--tls-skip-verify</code></dt>
+  <dd>Disable verification of Kong’s Admin TLS certificate.
+This value can also be set using DECK_TLS_SKIP_VERIFY environment variable. (Default: <code class="language-plaintext highlighter-rouge">false</code>)</dd>
+  <dt><code class="language-plaintext highlighter-rouge">--verbose</code></dt>
+  <dd>Enable verbose logging levels
+Setting this value to 2 outputs all HTTP requests/responses
+between decK and Kong. (Default: <code class="language-plaintext highlighter-rouge">0</code>)</dd>
+</dl>
+
+<h2 id="see-also">See also</h2>
+
+<ul>
+  <li>
+<a href="/deck/1.7.x/reference/deck/">deck</a>	 - Administer your Kong clusters declaratively</li>
+</ul>
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=deck" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"1.7.x","product[0]":"deck"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:deck<score=1>'],
+              facetFilters: [ 'version:1.7.x']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

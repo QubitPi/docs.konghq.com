@@ -1,0 +1,3140 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Getting started with the Kong Ingress Controller - v2.6.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Getting started with the Kong Ingress Controller - v2.6.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/kubernetes-ingress-controller/latest/get-started/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/kubernetes-ingress-controller/2.6.x/guides/getting-started/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Ingress Controller
+          
+        </div>
+        
+        <div class="version">
+          2.6.x
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/kubernetes-ingress-controller/2.6.x/">Kong Ingress Controller</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          Guides
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/kubernetes-ingress-controller/2.6.x/guides/getting-started/">Getting started with the Kong Ingress Controller</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/kic-v2/guides/getting-started.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Kong Ingress Controller
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/latest/">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/latest/">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/kubernetes-ingress-controller/latest/" class="active">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="versions-dropdown dropdown">
+      <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Version 2.6.x
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+          
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/3.0.x" data-version-id="3.0.x">
+            3.0.x
+             <em>(latest)</em>
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.12.x/guides/getting-started/" data-version-id="2.12.x">
+            2.12.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.11.x/guides/getting-started/" data-version-id="2.11.x">
+            2.11.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.10.x/guides/getting-started/" data-version-id="2.10.x">
+            2.10.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.9.x/guides/getting-started/" data-version-id="2.9.x">
+            2.9.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.8.x/guides/getting-started/" data-version-id="2.8.x">
+            2.8.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.7.x/guides/getting-started/" data-version-id="2.7.x">
+            2.7.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li class="active" role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.6.x/guides/getting-started/" class="active" data-version-id="2.6.x">
+            2.6.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.5.x/guides/getting-started/" data-version-id="2.5.x">
+            2.5.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.4.x/guides/getting-started/" data-version-id="2.4.x">
+            2.4.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.3.x/guides/getting-started/" data-version-id="2.3.x">
+            2.3.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.2.x/guides/getting-started/" data-version-id="2.2.x">
+            2.2.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.1.x/guides/getting-started/" data-version-id="2.1.x">
+            2.1.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/2.0.x/guides/getting-started/" data-version-id="2.0.x">
+            2.0.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/1.3.x/guides/getting-started/" data-version-id="1.3.x">
+            1.3.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/1.2.x/guides/getting-started/" data-version-id="1.2.x">
+            1.2.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/1.1.x/guides/getting-started/" data-version-id="1.1.x">
+            1.1.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/1.0.x/guides/getting-started/" data-version-id="1.0.x">
+            1.0.x
+            
+          </a>
+        </li>
+        
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/">
+        
+  <img src="/assets/images/icons/documentation/icn-kubernetes-color.svg" alt="">
+
+
+Introduction
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/faq/">
+        
+
+FAQ
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/support-policy/">
+        
+
+Version Support Policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/availability-stages/">
+        
+
+Stages of Software Availability
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="https://github.com/Kong/kubernetes-ingress-controller/blob/main/CHANGELOG.md/" target="_blank" rel="noopener nofollow noreferrer ">
+        
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-concepts-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-kubernetes-color.svg" alt="">
+
+
+Concepts
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Concepts subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-2-concepts-subtree" role="group" aria-label="Concepts">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/design/">
+        
+
+Architecture
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/custom-resources/">
+        
+
+Custom Resources
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/deployment/">
+        
+
+Deployment Methods
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/k4k8s-with-kong-enterprise/">
+        
+
+Kong for Kubernetes with Kong Gateway Enterprise
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/ha-and-scaling/">
+        
+
+High-Availability and Scaling
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/ingress-classes/">
+        
+
+Resource Classes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/security/">
+        
+
+Security
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/ingress-versions/">
+        
+
+Ingress Resource API Versions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/concepts/gateway-api/">
+        
+
+Gateway API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-deployment-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/overview/">
+        
+  <img src="/assets/images/icons/documentation/icn-kubernetes-color.svg" alt="">
+
+
+Deployment
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-deployment-subtree" role="group" aria-label="Deployment">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/minikube/">
+        
+
+Kong Ingress on Minikube
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/k4k8s/">
+        
+
+Kong for Kubernetes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/k4k8s-enterprise/">
+        
+
+Kong Enterprise for Kubernetes (DB-less)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/kong-enterprise/">
+        
+
+Kong Enterprise for Kubernetes (DB-backed)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/aks/">
+        
+
+Kong Ingress on AKS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/eks/">
+        
+
+Kong Ingress on EKS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/gke/">
+        
+
+Kong Ingress on GKE
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/admission-webhook/">
+        
+
+Admission Controller
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/deployment/install-gateway-apis/">
+        
+
+Installing Gateway APIs
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-guides-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/overview/">
+        
+  <img src="/assets/images/icons/documentation/icn-kubernetes-color.svg" alt="">
+
+
+Guides
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-guides-subtree" role="group" aria-label="Guides">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/getting-started/">
+        
+
+Getting Started with KIC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/upgrade/">
+        
+
+Upgrading from previous versions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/upgrade-kong-3x/">
+        
+
+Upgrading to Kong 3.x
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/choose-gateway-image/">
+        
+
+Using Kong Gateway Enterprise
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/getting-started-istio/">
+        
+
+Getting Started using Istio
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-6-using-custom-resources-subtree">
+    
+      
+
+Using Custom Resources
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Using Custom Resources subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-6-using-custom-resources-subtree" role="group" aria-label="Using Custom Resources">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-kongplugin-resource/">
+        
+
+Using the Kong(Cluster)Plugin Resource
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-kongingress-resource/">
+        
+
+Using the KongIngress Resource
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-consumer-credential-resource/">
+        
+
+Using KongConsumer and Credential Resources
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-tcpingress/">
+        
+
+Using the TCPIngress Resource
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-udpingress/">
+        
+
+Using the UDPIngress Resource
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/configure-acl-plugin/">
+        
+
+Using the ACL and JWT Plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/cert-manager/">
+        
+
+Using cert-manager with Kong
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/configuring-fallback-service/">
+        
+
+Configuring a Fallback Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-external-service/">
+        
+
+Using an External Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/configuring-https-redirect/">
+        
+
+Configuring HTTPS Redirects for Services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/redis-rate-limiting/">
+        
+
+Using Redis for Rate Limiting
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/prometheus-grafana/">
+        
+
+Integrate KIC with Prometheus/Grafana
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/configuring-health-checks/">
+        
+
+Configuring Circuit-Breaker and Health-Checking
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/setting-up-custom-plugins/">
+        
+
+Setting up a Custom Plugin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-ingress-with-grpc/">
+        
+
+Using Ingress with gRPC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/upstream-mtls/">
+        
+
+Setting up Upstream mTLS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-tcpingress/">
+        
+
+Exposing a TCP-based Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-udpingress/">
+        
+
+Exposing a UDP-based Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-mtls-auth-plugin/">
+        
+
+Using the mTLS Auth Plugin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-oidc-plugin/">
+        
+
+Using the OpenID Connect Plugin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-rewrites/">
+        
+
+Rewriting Hosts and Paths
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/preserve-client-ip/">
+        
+
+Preserving Client IP Address
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-gateway-api/">
+        
+
+Using Gateway API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/guides/using-kong-with-knative/">
+        
+
+Using Kong with Knative
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-references-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-kubernetes-color.svg" alt="">
+
+
+References
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle References subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-5-references-subtree" role="group" aria-label="References">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/annotations/">
+        
+
+KIC Annotations
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/cli-arguments/">
+        
+
+CLI Arguments
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/custom-resources/">
+        
+
+Custom Resource Definitions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/plugin-compatibility/">
+        
+
+Plugin Compatibility
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/version-compatibility/">
+        
+
+Version Compatibility
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/troubleshooting/">
+        
+
+Troubleshooting
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/prometheus/">
+        
+
+Prometheus Metrics
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/feature-gates/">
+        
+
+Feature Gates
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/2.6.x/references/gateway-api-support/">
+        
+
+Gateway API Support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.0.x/reference/file-access-permissions/">
+        
+
+File Permissions Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#overview" class="active scroll-to">Overview</a></li>
+  <li><a href="#installation" class="scroll-to">Installation</a></li>
+  <li><a href="#installing-the-gateway-apis" class="scroll-to">Installing the Gateway APIs</a></li>
+  <li><a href="#testing-connectivity-to-kong-gateway" class="scroll-to">Testing connectivity to Kong Gateway</a></li>
+  <li><a href="#deploy-an-echo-service" class="scroll-to">Deploy an echo service</a></li>
+  <li><a href="#create-a-configuration-group" class="scroll-to">Create a configuration group</a></li>
+  <li><a href="#add-routing-configuration" class="scroll-to">Add routing configuration</a></li>
+  <li><a href="#add-tls-configuration" class="scroll-to">Add TLS configuration</a></li>
+  <li><a href="#using-plugins-on-ingress--gateway-api-routes" class="scroll-to">Using plugins on Ingress / Gateway API Routes</a></li>
+  <li><a href="#using-plugins-on-services" class="scroll-to">Using plugins on Services</a></li>
+  <li><a href="#next-steps" class="scroll-to">Next steps</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+              <blockquote id="version-notice" class="important">
+                
+                You are browsing documentation for an outdated version.
+                
+                See the <a href="/kubernetes-ingress-controller/latest/get-started/">latest documentation here</a>.
+              </blockquote>
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">Getting started with the Kong Ingress Controller
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          <h2 id="overview">Overview</h2>
+
+<p>Deploy an upstream HTTP application, create a configuration group, add a route, and add a plugin using 
+Kong Gateway and Kong Ingress Controller.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Follow the <a href="/kubernetes-ingress-controller/2.6.x/deployment/overview/">deployment</a> documentation to install the Kong Ingress Controller on the Kubernetes cluster.</p>
+
+<h2 id="installing-the-gateway-apis">Installing the Gateway APIs</h2>
+
+<p>If you wish to use the Gateway APIs examples, follow the <a href="/kubernetes-ingress-controller/2.6.x/deployment/install-gateway-apis">supplemental
+Gateway APIs installation instructions</a>.</p>
+
+<h2 id="testing-connectivity-to-kong-gateway">Testing connectivity to Kong Gateway</h2>
+
+<p>Ensure that the <code class="language-plaintext highlighter-rouge">PROXY_IP</code> environment variable is
+set to contain the IP address or URL pointing to Kong Gateway.
+The <a href="/kubernetes-ingress-controller/2.6.x/deployment/overview">deployment guide</a> that you used to install the Kong Ingress Controller on the Kubernetes cluster provides the instructions to configure this environment variable.</p>
+
+<p>If everything is set correctly, a request to Kong Gateway returns
+a HTTP <code class="language-plaintext highlighter-rouge">404 Not Found</code> status code:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nv">$PROXY_IP</span>
+</code></pre></div></div>
+<p>The results should look like this:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 404 Not Found
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Content-Length: 48
+X-Kong-Response-Latency: 0
+Server: kong/3.0.0
+
+{"message":"no Route matched with those values"}
+</code></pre></div></div>
+
+<p>This is expected because Kong Gateway doesn’t know how to proxy the request yet.</p>
+
+<h2 id="deploy-an-echo-service">Deploy an echo service</h2>
+
+<p>To proxy requests, you need an upstream application to send a request to. Deploying this echo server provides a simple application that returns information about the Pod it’s running in:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> https://docs.konghq.com/assets/kubernetes-ingress-controller/examples/echo-service.yaml
+</code></pre></div></div>
+<p>The results should look like this:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service/echo created
+deployment.apps/echo created
+</code></pre></div></div>
+
+<h2 id="create-a-configuration-group">Create a configuration group</h2>
+
+<p>Ingress and Gateway APIs controllers need a configuration that indicates which set of
+routing configuration they should recognize. This allows multiple controllers to
+coexist in the same cluster. Before creating individual routes, you need to
+create a class configuration to associate routes with:</p>
+
+<div class="navtabs api ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="gateway-api" data-navtab-id="navtab-c0dce805-2cb0-4aec-bd17-cfe0d3b9363c-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Gateway API
+    </div>
+  
+    
+    <div data-slug="ingress" data-navtab-id="navtab-c0dce805-2cb0-4aec-bd17-cfe0d3b9363c-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Ingress
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="gateway-api" data-navtab-content="navtab-c0dce805-2cb0-4aec-bd17-cfe0d3b9363c-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+
+kind: GatewayClass
+metadata:
+  name: kong
+  annotations:
+    konghq.com/gatewayclass-unmanaged: 'true'
+
+spec:
+  controllerName: konghq.com/kic-gateway-controller
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+
+kind: Gateway
+metadata:
+  name: kong
+spec:
+  gatewayClassName: kong
+  listeners:
+  - name: proxy
+    port: 80
+    protocol: HTTP
+"</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div></div>
+<p>The results should look like this:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gatewayclass.gateway.networking.k8s.io/kong created
+gateway.gateway.networking.k8s.io/kong created
+</code></pre></div></div>
+
+    </div>
+  
+    
+    <div data-panel="ingress" data-navtab-content="navtab-c0dce805-2cb0-4aec-bd17-cfe0d3b9363c-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>Official distributions of Kong Ingress Controller come with a <code class="language-plaintext highlighter-rouge">kong</code>
+IngressClass by default. If <code class="language-plaintext highlighter-rouge">kubectl get ingressclass kong</code> does not return a
+<code class="language-plaintext highlighter-rouge">not found</code> error, you can skip this command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: kong
+spec:
+  controller: ingress-controllers.konghq.com/kong
+"</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div></div>
+<p>The results should look like this:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingressclass.networking.k8s.io/kong configured
+</code></pre></div></div>
+
+<p>After the controller has acknowledged the Gateway, it shows the proxy IP and 
+its status:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get gateway kong
+</code></pre></div></div>
+<p>The results should look like this:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME   CLASS   ADDRESS        READY   AGE
+kong   kong    203.0.113.42   True    4m46s
+</code></pre></div></div>
+
+    </div>
+  
+  </div>
+</div>
+
+<p>Kong Ingress Controller recognizes the <code class="language-plaintext highlighter-rouge">kong</code> IngressClass and
+<code class="language-plaintext highlighter-rouge">konghq.com/kic-gateway-controller</code> GatewayClass
+by default. Setting the <code class="language-plaintext highlighter-rouge">CONTROLLER_INGRESS_CLASS</code> or
+<code class="language-plaintext highlighter-rouge">CONTROLLER_GATEWAY_API_CONTROLLER_NAME</code> environment variable to
+another value overrides these defaults.</p>
+
+<h2 id="add-routing-configuration">Add routing configuration</h2>
+
+<p>Create routing configuration to proxy <code class="language-plaintext highlighter-rouge">/echo</code> requests to the echo server:</p>
+
+<div class="navtabs api ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="gateway-api" data-navtab-id="navtab-5638c747-d2a5-4dce-8db3-4b65a7b44a7a-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Gateway API
+    </div>
+  
+    
+    <div data-slug="ingress" data-navtab-id="navtab-5638c747-d2a5-4dce-8db3-4b65a7b44a7a-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Ingress
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="gateway-api" data-navtab-content="navtab-5638c747-d2a5-4dce-8db3-4b65a7b44a7a-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: echo
+  annotations:
+    konghq.com/strip-path: 'true'
+spec:
+  parentRefs:
+  - name: kong
+  hostnames:
+  - 'kong.example'
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /echo
+    backendRefs:
+    - name: echo
+      kind: Service
+      port: 1027
+"</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div></div>
+
+    </div>
+  
+    
+    <div data-panel="ingress" data-navtab-content="navtab-5638c747-d2a5-4dce-8db3-4b65a7b44a7a-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: echo
+  annotations:
+    konghq.com/strip-path: 'true'
+spec:
+  ingressClassName: kong
+  rules:
+  - host: kong.example
+    http:
+      paths:
+      - path: /echo
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: echo
+            port:
+              number: 1027
+"</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div></div>
+
+    </div>
+  
+  </div>
+</div>
+
+<p>The results should look like this:</p>
+
+<div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="gateway-api" data-navtab-id="navtab-0347919e-31e2-403b-9313-4425203802a5-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Gateway API
+    </div>
+  
+    
+    <div data-slug="ingress" data-navtab-id="navtab-0347919e-31e2-403b-9313-4425203802a5-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Ingress
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="gateway-api" data-navtab-content="navtab-0347919e-31e2-403b-9313-4425203802a5-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>httproute.gateway.networking.k8s.io/echo created
+</code></pre></div></div>
+
+    </div>
+  
+    
+    <div data-panel="ingress" data-navtab-content="navtab-0347919e-31e2-403b-9313-4425203802a5-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.networking.k8s.io/echo created
+</code></pre></div></div>
+
+    </div>
+  
+  </div>
+</div>
+
+<p>Test the routing rule:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-H</span> <span class="s1">'Host:kong.example'</span> <span class="nv">$PROXY_IP</span>/echo
+</code></pre></div></div>
+
+<p>The results should look like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 140
+Connection: keep-alive
+Date: Fri, 21 Apr 2023 12:24:55 GMT
+X-Kong-Upstream-Latency: 0
+X-Kong-Proxy-Latency: 1
+Via: kong/3.2.2
+
+Welcome, you are connected to node docker-desktop.
+Running on Pod echo-7f87468b8c-tzzv6.
+In namespace default.
+With IP address 10.1.0.237.
+...
+</code></pre></div></div>
+
+<p>If everything is deployed correctly, you should see the above response.
+This verifies that Kong Gateway can correctly route traffic to an application running inside Kubernetes.</p>
+
+<h2 id="add-tls-configuration">Add TLS configuration</h2>
+
+<p>The routing configuration can include a certificate to present when clients connect
+over HTTPS. This is not required, as Kong Gateway will serve a default
+certificate if it cannot find another, but including TLS configuration along
+with routing configuration is typical.</p>
+
+<ol>
+  <li>
+    <p>Create a test certificate for the <code class="language-plaintext highlighter-rouge">kong.example</code> hostname.</p>
+
+    <div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+     
+       
+    <div data-slug="openssl-111" data-navtab-id="navtab-9c5dff87-95ed-498a-aa53-7a71bad3f007-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      OpenSSL 1.1.1
+    </div>
+     
+       
+    <div data-slug="openssl-098" data-navtab-id="navtab-9c5dff87-95ed-498a-aa53-7a71bad3f007-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      OpenSSL 0.9.8
+    </div>
+     
+  </div>
+  <div class="navtab-contents">
+     
+       
+    <div data-panel="openssl-111" data-navtab-content="navtab-9c5dff87-95ed-498a-aa53-7a71bad3f007-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+         
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-subj</span> <span class="s1">'/CN=kong.example'</span> <span class="nt">-new</span> <span class="nt">-newkey</span> rsa:2048 <span class="nt">-sha256</span> <span class="se">\</span>
+  <span class="nt">-days</span> 365 <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-keyout</span> server.key <span class="nt">-out</span> server.crt <span class="se">\</span>
+  <span class="nt">-addext</span> <span class="s2">"subjectAltName = DNS:kong.example"</span> <span class="se">\</span>
+  <span class="nt">-addext</span> <span class="s2">"keyUsage = digitalSignature"</span> <span class="se">\</span>
+  <span class="nt">-addext</span> <span class="s2">"extendedKeyUsage = serverAuth"</span> 2&gt; /dev/null<span class="p">;</span>
+  openssl x509 <span class="nt">-in</span> server.crt <span class="nt">-subject</span> <span class="nt">-noout</span></code></pre></div></div>
+   
+    </div>
+     
+       
+    <div data-panel="openssl-098" data-navtab-content="navtab-9c5dff87-95ed-498a-aa53-7a71bad3f007-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+         
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-subj</span> <span class="s1">'/CN=kong.example'</span> <span class="nt">-new</span> <span class="nt">-newkey</span> rsa:2048 <span class="nt">-sha256</span> <span class="se">\</span>
+  <span class="nt">-days</span> 365 <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-keyout</span> server.key <span class="nt">-out</span> server.crt <span class="se">\</span>
+  <span class="nt">-extensions</span> EXT <span class="nt">-config</span> &lt;<span class="o">(</span> <span class="se">\</span>
+   <span class="nb">printf</span> <span class="s2">"[dn]</span><span class="se">\n</span><span class="s2">CN=kong.example</span><span class="se">\n</span><span class="s2">[req]</span><span class="se">\n</span><span class="s2">distinguished_name = dn</span><span class="se">\n</span><span class="s2">[EXT]</span><span class="se">\n</span><span class="s2">subjectAltName=DNS:kong.example</span><span class="se">\n</span><span class="s2">keyUsage=digitalSignature</span><span class="se">\n</span><span class="s2">extendedKeyUsage=serverAuth"</span><span class="o">)</span> 2&gt;/dev/null<span class="p">;</span>
+  openssl x509 <span class="nt">-in</span> server.crt <span class="nt">-subject</span> <span class="nt">-noout</span></code></pre></div></div>
+   
+    </div>
+     
+  </div>
+</div>
+
+    <p>The results should look like this:</p>
+
+    <div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+     
+       
+    <div data-slug="openssl-111" data-navtab-id="navtab-a77665a8-5812-4004-a0f9-8f84757e2d9f-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      OpenSSL 1.1.1
+    </div>
+     
+       
+    <div data-slug="openssl-098" data-navtab-id="navtab-a77665a8-5812-4004-a0f9-8f84757e2d9f-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      OpenSSL 0.9.8
+    </div>
+     
+  </div>
+  <div class="navtab-contents">
+     
+       
+    <div data-panel="openssl-111" data-navtab-content="navtab-a77665a8-5812-4004-a0f9-8f84757e2d9f-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+         
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject=CN = kong.example</code></pre></div></div>
+   
+    </div>
+     
+       
+    <div data-panel="openssl-098" data-navtab-content="navtab-a77665a8-5812-4004-a0f9-8f84757e2d9f-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+         
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject=CN = kong.example</code></pre></div></div>
+   
+    </div>
+     
+  </div>
+</div>
+
+    <p>Older OpenSSL versions, including the version provided with OS X Monterey, require using the alternative version of this command.</p>
+  </li>
+  <li>Create a Secret containing the certificate.
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> kubectl create secret tls kong.example <span class="nt">--cert</span><span class="o">=</span>./server.crt <span class="nt">--key</span><span class="o">=</span>./server.key
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> secret/kong.example created
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update your routing configuration to use this certificate.</p>
+
+    <div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+     
+       
+    <div data-slug="ingress" data-navtab-id="navtab-b29a9863-5c2f-49d0-aa8c-f24ac5f0d059-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Ingress
+    </div>
+     
+       
+    <div data-slug="gateway-api" data-navtab-id="navtab-b29a9863-5c2f-49d0-aa8c-f24ac5f0d059-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Gateway API
+    </div>
+     
+  </div>
+  <div class="navtab-contents">
+     
+       
+    <div data-panel="ingress" data-navtab-content="navtab-b29a9863-5c2f-49d0-aa8c-f24ac5f0d059-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+         
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl patch <span class="nt">--type</span> json ingress <span class="nb">echo</span> <span class="nt">-p</span><span class="o">=</span><span class="s1">'[{
+    "op":"add",
+	"path":"/spec/tls",
+	"value":[{
+        "hosts":["kong.example"],
+		"secretName":"kong.example"
+    }]
+}]'</span></code></pre></div></div>
+   
+    </div>
+     
+       
+    <div data-panel="gateway-api" data-navtab-content="navtab-b29a9863-5c2f-49d0-aa8c-f24ac5f0d059-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+         
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl patch <span class="nt">--type</span><span class="o">=</span>json gateway kong <span class="nt">-p</span><span class="o">=</span><span class="s1">'[{
+    "op":"add",
+    "path":"/spec/listeners/-",
+    "value":{
+        "name":"proxy-ssl",
+        "port":443,
+        "protocol":"HTTPS",
+        "tls":{
+            "certificateRefs":[{
+                "group":"",
+                "kind":"Secret",
+                "name":"kong.example"
+            }]
+        }
+    }
+}]'</span>
+</code></pre></div></div>
+   
+    </div>
+     
+  </div>
+</div>
+
+    <p>The results should look like this:</p>
+
+    <div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+     
+       
+    <div data-slug="ingress" data-navtab-id="navtab-447ed575-44f2-48db-ab83-0d14238a99e5-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Ingress
+    </div>
+     
+       
+    <div data-slug="gateway-api" data-navtab-id="navtab-447ed575-44f2-48db-ab83-0d14238a99e5-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Gateway API
+    </div>
+     
+  </div>
+  <div class="navtab-contents">
+     
+       
+    <div data-panel="ingress" data-navtab-content="navtab-447ed575-44f2-48db-ab83-0d14238a99e5-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+         
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.networking.k8s.io/echo patched</code></pre></div></div>
+   
+    </div>
+     
+       
+    <div data-panel="gateway-api" data-navtab-content="navtab-447ed575-44f2-48db-ab83-0d14238a99e5-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+         
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gateway.gateway.networking.k8s.io/kong patched</code></pre></div></div>
+   
+    </div>
+     
+  </div>
+</div>
+  </li>
+  <li>
+    <p>Send requests to verify if the configured certificate is served.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-ksv</span> https://kong.example/echo <span class="nt">--resolve</span> kong.example:443:<span class="nv">$PROXY_IP</span> 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A1</span> <span class="s2">"certificate:"</span>
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> * Server certificate:
+ *  subject: CN=kong.example
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="using-plugins-on-ingress--gateway-api-routes">Using plugins on Ingress / Gateway API Routes</h2>
+
+<ol>
+  <li>
+    <p>Setup a KongPlugin resource.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"
+ apiVersion: configuration.konghq.com/v1
+ kind: KongPlugin
+ metadata:
+   name: request-id
+ config:
+   header_name: my-request-id
+   echo_downstream: true
+ plugin: correlation-id
+ "</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> kongplugin.configuration.konghq.com/request-id created
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update your route configuration to use the new plugin.</p>
+
+    <div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+     
+       
+    <div data-slug="ingress" data-navtab-id="navtab-2c4646c4-45ae-40d2-abe6-656746c04409-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Ingress
+    </div>
+     
+       
+    <div data-slug="gateway-api" data-navtab-id="navtab-2c4646c4-45ae-40d2-abe6-656746c04409-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Gateway API
+    </div>
+     
+  </div>
+  <div class="navtab-contents">
+     
+       
+    <div data-panel="ingress" data-navtab-content="navtab-2c4646c4-45ae-40d2-abe6-656746c04409-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+         
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl annotate ingress <span class="nb">echo </span>konghq.com/plugins<span class="o">=</span>request-id</code></pre></div></div>
+   
+    </div>
+     
+       
+    <div data-panel="gateway-api" data-navtab-content="navtab-2c4646c4-45ae-40d2-abe6-656746c04409-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+         
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl annotate httproute <span class="nb">echo </span>konghq.com/plugins<span class="o">=</span>request-id</code></pre></div></div>
+   
+    </div>
+     
+  </div>
+</div>
+
+    <p>The results should look like this:</p>
+
+    <div class="navtabs codeblock ">
+  <div class="navtab-titles" role="tablist">
+     
+       
+    <div data-slug="ingress" data-navtab-id="navtab-a1879602-3994-476d-ae17-014f37d6387f-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Ingress
+    </div>
+     
+       
+    <div data-slug="gateway-api" data-navtab-id="navtab-a1879602-3994-476d-ae17-014f37d6387f-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Gateway API
+    </div>
+     
+  </div>
+  <div class="navtab-contents">
+     
+       
+    <div data-panel="ingress" data-navtab-content="navtab-a1879602-3994-476d-ae17-014f37d6387f-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+         
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.networking.k8s.io/echo annotated</code></pre></div></div>
+   
+    </div>
+     
+       
+    <div data-panel="gateway-api" data-navtab-content="navtab-a1879602-3994-476d-ae17-014f37d6387f-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+         
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>httproute.gateway.networking.k8s.io/echo annotated</code></pre></div></div>
+   
+    </div>
+     
+  </div>
+</div>
+
+    <p>Kong now applies your plugin configuration to all routes associated with this resource.</p>
+  </li>
+  <li>
+    <p>To verify, send another request through the proxy.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> http://kong.example/echo <span class="nt">--resolve</span> kong.example:80:<span class="nv">$PROXY_IP</span>
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Content-Type: text/plain; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Date: Thu, 10 Nov 2022 22:33:14 GMT
+Server: echoserver
+my-request-id: ea87894d-7f97-4710-84ae-cbc608bb8107#2
+X-Kong-Upstream-Latency: 0
+X-Kong-Proxy-Latency: 0
+Via: kong/3.1.1
+    
+Hostname: echo-fc6fd95b5-6lqnc
+
+Pod Information:
+	node name:	kind-control-plane
+	pod name:	echo-fc6fd95b5-6lqnc
+	pod namespace:	default
+	pod IP:	10.244.0.9
+...
+Request Headers:
+    ...
+	my-request-id=ea87894d-7f97-4710-84ae-cbc608bb8107#2
+...
+</code></pre></div>    </div>
+    <p>Requests that match the <code class="language-plaintext highlighter-rouge">echo</code> Ingress or HTTPRoute now include a <code class="language-plaintext highlighter-rouge">my-request-id</code> header with a unique ID in both their request headers upstream and their response headers downstream.</p>
+  </li>
+</ol>
+
+<h2 id="using-plugins-on-services">Using plugins on Services</h2>
+
+<p>Kong can also apply plugins to Services. This allows you execute the same
+plugin configuration on all requests to that Service, without configuring the same plugin on multiple Ingresses.</p>
+
+<ol>
+  <li>
+    <p>Create a KongPlugin resource.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"
+ apiVersion: configuration.konghq.com/v1
+ kind: KongPlugin
+ metadata:
+   name: rl-by-ip
+ config:
+   minute: 5
+   limit_by: ip
+   policy: local
+ plugin: rate-limiting
+ "</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> kongplugin.configuration.konghq.com/rl-by-ip created
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Apply the <code class="language-plaintext highlighter-rouge">konghq.com/plugins</code> annotation to the Kubernetes Service that needs rate-limiting.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> kubectl annotate service <span class="nb">echo </span>konghq.com/plugins<span class="o">=</span>rl-by-ip
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> service/echo annotated
+</code></pre></div>    </div>
+    <p>Kong now enforces a rate limit to requests proxied to this Service.</p>
+  </li>
+  <li>
+    <p>To verify, send a request.</p>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> http://kong.example/echo <span class="nt">--resolve</span> kong.example:80:<span class="nv">$PROXY_IP</span>
+</code></pre></div>    </div>
+    <p>The results should look like this:</p>
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 200 OK
+ Content-Type: text/plain; charset=UTF-8
+ Transfer-Encoding: chunked
+ Connection: keep-alive
+ X-RateLimit-Remaining-Minute: 4
+ RateLimit-Limit: 5
+ RateLimit-Remaining: 4
+ RateLimit-Reset: 13
+ X-RateLimit-Limit-Minute: 5
+ Date: Thu, 10 Nov 2022 22:47:47 GMT
+ Server: echoserver
+ my-request-id: ea87894d-7f97-4710-84ae-cbc608bb8107#3
+ X-Kong-Upstream-Latency: 1
+ X-Kong-Proxy-Latency: 1
+ Via: kong/3.1.1
+
+ Hostname: echo-fc6fd95b5-6lqnc
+ Pod Information:
+ 	node name:	kind-control-plane
+ 	pod name:	echo-fc6fd95b5-6lqnc
+ 	pod namespace:	default
+ 	pod IP:	10.244.0.9
+ ...
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="next-steps">Next steps</h2>
+
+<ul>
+  <li>To learn how to secure proxied routes, see the <a href="/kubernetes-ingress-controller/2.6.x/guides/configure-acl-plugin/">ACL and JWT Plugins Guide</a>.</li>
+  <li>The <a href="/kubernetes-ingress-controller/2.6.x/guides/using-external-service/">External Services Guide</a> explains how to proxy services outside of your Kubernetes cluster.</li>
+  <li>
+<a href="https://gateway-api.sigs.k8s.io/" target="_blank" rel="noopener nofollow noreferrer ">Gateway API</a> is a set of resources for
+configuring networking in Kubernetes. The Kong Ingress Controller supports Gateway API by default. To learn how to use Gateway API supported by the Kong Ingress Controller, see <a href="/kubernetes-ingress-controller/2.6.x/guides/using-gateway-api/">Using Gateway API</a>.</li>
+</ul>
+
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=kubernetes-ingress-controller" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.6.x","product[0]":"Kong Ingress Controller"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Gateway Operator<score=1>', 'product:Kong Ingress Controller<score=2>'],
+              facetFilters: [ 'version:2.6.x']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

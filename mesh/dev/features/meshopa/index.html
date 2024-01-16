@@ -1,0 +1,6910 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MeshOPA (beta) - OPA Policy Integration - vdev | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="MeshOPA (beta) - OPA Policy Integration - vdev | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/mesh/latest/features/meshopa/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/mesh/dev/features/meshopa/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Mesh
+          
+        </div>
+        
+        <div class="version">
+          dev
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/mesh/dev/">Kong Mesh</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          <a href="/mesh/dev/features/">Features</a>
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/mesh/dev/features/meshopa/">MeshOPA (beta) - OPA Policy Integration</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/mesh/features/meshopa.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Kong Mesh
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/latest/">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/mesh/latest/" class="active">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="versions-dropdown dropdown">
+      <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Version dev
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+          
+          
+          
+          
+          
+        <li class="active" role="menuitem" tabindex="-1">
+          <a href="/mesh/dev/features/meshopa/" class="active" data-version-id="dev">
+            dev
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/2.5.x/features/meshopa/" data-version-id="2.5.x">
+            2.5.x
+             <em>(latest)</em>
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/2.4.x/features/meshopa/" data-version-id="2.4.x">
+            2.4.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/2.3.x/features/meshopa/" data-version-id="2.3.x">
+            2.3.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/2.2.x/features/meshopa/" data-version-id="2.2.x">
+            2.2.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/2.1.x/features/meshopa/" data-version-id="2.1.x">
+            2.1.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/2.0.x" data-version-id="2.0.x">
+            2.0.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.9.x" data-version-id="1.9.x">
+            1.9.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.8.x" data-version-id="1.8.x">
+            1.8.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.7.x" data-version-id="1.7.x">
+            1.7.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.6.x" data-version-id="1.6.x">
+            1.6.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.5.x" data-version-id="1.5.x">
+            1.5.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.4.x" data-version-id="1.4.x">
+            1.4.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.3.x" data-version-id="1.3.x">
+            1.3.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/1.2.x" data-version-id="1.2.x">
+            1.2.x
+            
+          </a>
+        </li>
+        
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-flag.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/introduction/about-service-meshes/">
+        
+
+About service meshes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/">
+        
+
+Overview of Kong Mesh
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/introduction/how-kong-mesh-works/">
+        
+
+How Kong Mesh works
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/introduction/architecture/">
+        
+
+Architecture
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/availability-stages/">
+        
+
+Stages of software availability
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/support-policy/">
+        
+
+Version support policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/introduction/kuma-requirements/">
+        
+
+Mesh requirements
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/changelog/">
+        
+
+Release notes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/gettingstarted/">
+        
+  <img src="/assets/images/icons/documentation/icn-quickstart-color.svg" alt="">
+
+
+Getting Started
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-kong-mesh-in-production-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Kong Mesh in Production
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Kong Mesh in Production subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-kong-mesh-in-production-subtree" role="group" aria-label="Kong Mesh in Production">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-deployment-topologies-subtree">
+    
+      
+
+Deployment topologies
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Deployment topologies subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-2-deployment-topologies-subtree" role="group" aria-label="Deployment topologies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/deployment/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/deployment/stand-alone/">
+        
+
+Standalone deployment
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/deployment/multi-zone/">
+        
+
+Multi-zone deployment
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/install-kumactl/">
+        
+
+Install kumactl
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/use-mesh/">
+        
+
+Use Kong Mesh
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-5-control-plane-deployment-subtree">
+    
+      
+
+Control plane deployment
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Control plane deployment subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-5-control-plane-deployment-subtree" role="group" aria-label="Control plane deployment">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/license/">
+        
+
+Kong Mesh license
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/stand-alone/">
+        
+
+Deploy a standalone control plane
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/multi-zone/">
+        
+
+Deploy a multi-zone global control plane
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/zone-ingress/">
+        
+
+Zone Ingress
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/zoneegress/">
+        
+
+Zone Egress
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/zoneproxy-auth/">
+        
+
+Configure zone proxy authentication
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/reference/kuma-cp/">
+        
+
+Control plane configuration reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/systemd/">
+        
+
+Systemd
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/cp-deployment/kubernetes/">
+        
+
+Kubernetes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/mesh/">
+        
+
+Create multiple service meshes in a cluster
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-7-data-plane-configuration-subtree">
+    
+      
+
+Data plane configuration
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Data plane configuration subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-7-data-plane-configuration-subtree" role="group" aria-label="Data plane configuration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/dp-config/dpp/">
+        
+
+Data plane proxy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/dp-config/dpp-on-kubernetes/">
+        
+
+Configure the data plane on Kubernetes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/dp-config/dpp-on-universal/">
+        
+
+Configure the data plane on Universal
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/dp-config/cni/">
+        
+
+Configure the Kong Mesh CNI
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/dp-config/transparent-proxying/">
+        
+
+Configure transparent proxying
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/dp-config/ipv6/">
+        
+
+IPv6 support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-8-secure-your-deployment-subtree">
+    
+      
+
+Secure your deployment
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Secure your deployment subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-8-secure-your-deployment-subtree" role="group" aria-label="Secure your deployment">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/secure-deployment/secrets/">
+        
+
+Manage secrets
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/secure-deployment/api-access-control/">
+        
+
+Kong Mesh API access control
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/secure-deployment/api-server-auth/">
+        
+
+Authentication with the API server
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/secure-deployment/dp-auth/">
+        
+
+Authentication with the data plane proxy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/secure-deployment/dp-membership/">
+        
+
+Configure data plane proxy membership
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/secure-deployment/certificates/">
+        
+
+Secure access accross services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/rbac/">
+        
+
+Kong Mesh RBAC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/fips-support/">
+        
+
+FIPS support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/gui/">
+        
+
+Kong Mesh user interface
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-10-upgrades-and-tuning-subtree">
+    
+      
+
+Upgrades and tuning
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Upgrades and tuning subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-10-upgrades-and-tuning-subtree" role="group" aria-label="Upgrades and tuning">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/upgrades-tuning/upgrades/">
+        
+
+Upgrade Kong Mesh
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/upgrades-tuning/fine-tuning/">
+        
+
+Performance fine-tuning
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/production/init-containers/">
+        
+
+Init containers
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-deploy-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-manager-color.svg" alt="">
+
+
+Deploy
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Deploy subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-deploy-subtree" role="group" aria-label="Deploy">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/quickstart/kubernetes/">
+        
+
+Explore Kong Mesh with the Kubernetes demo app
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/quickstart/universal/">
+        
+
+Explore Kong Mesh with the Universal demo app
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-explore-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-solution-guide.svg" alt="">
+
+
+Explore
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Explore subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-5-explore-subtree" role="group" aria-label="Explore">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-1-gateway-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway/">
+        
+
+Gateway
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-1-gateway-subtree" role="group" aria-label="Gateway">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway/#delegated">
+        
+
+Delegated
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway/#builtin">
+        
+
+Builtin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-2-cli-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/cli/">
+        
+
+CLI
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-2-cli-subtree" role="group" aria-label="CLI">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/cli/#kumactl">
+        
+
+kumactl
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-3-observability-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/">
+        
+
+Observability
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-3-observability-subtree" role="group" aria-label="Observability">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/#demo-setup">
+        
+
+Demo setup
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/#control-plane-metrics">
+        
+
+Control plane metrics
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/#configuring-prometheus">
+        
+
+Configuring Prometheus
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/#configuring-grafana">
+        
+
+Configuring Grafana
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/#configuring-datadog">
+        
+
+Configuring Datadog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/observability/#observability-in-multi-zone">
+        
+
+Observability in multi-zone
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-4-inspect-api-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/inspect-api/">
+        
+
+Inspect API
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-4-inspect-api-subtree" role="group" aria-label="Inspect API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/inspect-api/#matched-policies">
+        
+
+Matched policies
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/inspect-api/#affected-data-plane-proxies">
+        
+
+Affected data plane proxies
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/inspect-api/#envoy-proxy-configuration">
+        
+
+Envoy proxy configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-5-kubernetes-gateway-api-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/">
+        
+
+Kubernetes Gateway API
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-5-kubernetes-gateway-api-subtree" role="group" aria-label="Kubernetes Gateway API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#installation">
+        
+
+Installation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#gateways">
+        
+
+Gateways
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#tls-termination">
+        
+
+TLS termination
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#customization">
+        
+
+Customization
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#multi-mesh">
+        
+
+Multi-mesh
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#multi-zone">
+        
+
+Multi-zone
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#service-to-service-routing">
+        
+
+GAMMA
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/explore/gateway-api/#how-it-works">
+        
+
+How it works
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-networking-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-brain-color.svg" alt="">
+
+
+Networking
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Networking subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-networking-subtree" role="group" aria-label="Networking">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/service-discovery/">
+        
+
+Service Discovery
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-2-dns-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/dns/">
+        
+
+DNS
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-6-2-dns-subtree" role="group" aria-label="DNS">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/dns/#how-it-works">
+        
+
+How it works
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/dns/#installation">
+        
+
+Installation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/dns/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/dns/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-3-non-mesh-traffic-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/non-mesh-traffic/">
+        
+
+Non-mesh traffic
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-6-3-non-mesh-traffic-subtree" role="group" aria-label="Non-mesh traffic">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/non-mesh-traffic/#incoming">
+        
+
+Incoming
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/networking/non-mesh-traffic/#outgoing">
+        
+
+Outgoing
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-monitor-manage-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/icn-analytics-nav.svg" alt="">
+
+
+Monitor &amp; manage
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Monitor &amp; manage subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-monitor-manage-subtree" role="group" aria-label="Monitor &amp; manage">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-1-dataplane-health-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/health/">
+        
+
+Dataplane Health
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-1-dataplane-health-subtree" role="group" aria-label="Dataplane Health">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/health/#circuit-breaker-policy">
+        
+
+Circuit Breaker Policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/health/#kubernetes-and-universal-service-probes">
+        
+
+Kubernetes and Universal Service Probes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/health/#health-check-policy">
+        
+
+Health Check Policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-2-control-plane-configuration-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/configuration/">
+        
+
+Control Plane Configuration
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-2-control-plane-configuration-subtree" role="group" aria-label="Control Plane Configuration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/configuration/#modifying-the-configuration">
+        
+
+Modifying the configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/configuration/#inspecting-the-configuration">
+        
+
+Inspecting the configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/documentation/configuration/#store">
+        
+
+Store
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-policies-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-documentation-small.svg" alt="">
+
+
+Policies
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Policies subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-8-policies-subtree" role="group" aria-label="Policies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/introduction/">
+        
+
+Introduction
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/general-notes-about-kong-mesh-policies/">
+        
+
+General notes about Kong Mesh policies
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/applying-policies/">
+        
+
+Applying Policies
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/how-kong-mesh-chooses-the-right-policy-to-apply/">
+        
+
+How Kong Mesh chooses the right policy to apply
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/targetref/">
+        
+
+Understanding TargetRef policies
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/protocol-support-in-kong-mesh/">
+        
+
+Protocol support in Kong Mesh
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-7-mutual-tls-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/mutual-tls/">
+        
+
+Mutual TLS
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-7-mutual-tls-subtree" role="group" aria-label="Mutual TLS">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/mutual-tls/#usage-of-builtin-ca">
+        
+
+Usage of "builtin" CA
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/mutual-tls/#usage-of-provided-ca">
+        
+
+Usage of "provided" CA
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/mutual-tls/#permissive-mtls">
+        
+
+Permissive mTLS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/mutual-tls/#certificate-rotation">
+        
+
+Certificate Rotation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-8-traffic-permissions-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-permissions/">
+        
+
+Traffic Permissions
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-8-traffic-permissions-subtree" role="group" aria-label="Traffic Permissions">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-permissions/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-permissions/#access-to-external-services">
+        
+
+Access to External Services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-9-traffic-route-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-route/">
+        
+
+Traffic Route
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-9-traffic-route-subtree" role="group" aria-label="Traffic Route">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-route/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-10-traffic-metrics-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-metrics/">
+        
+
+Traffic Metrics
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-10-traffic-metrics-subtree" role="group" aria-label="Traffic Metrics">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-metrics/#expose-metrics-from-data-plane-proxies">
+        
+
+Expose metrics from data plane proxies
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-metrics/#expose-metrics-from-applications">
+        
+
+Expose metrics from applications
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-metrics/#override-prometheus-settings-per-data-plane-proxy">
+        
+
+Override Prometheus settings per data plane proxy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-metrics/#filter-envoy-metrics">
+        
+
+Filter Envoy metrics
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-metrics/#secure-data-plane-proxy-metrics">
+        
+
+Secure data plane proxy metrics
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-11-traffic-trace-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-trace/">
+        
+
+Traffic Trace
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-11-traffic-trace-subtree" role="group" aria-label="Traffic Trace">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-trace/#add-a-tracing-backend-to-the-mesh">
+        
+
+Add a tracing backend to the mesh
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-trace/#add-traffictrace-resource">
+        
+
+Add TrafficTrace resource
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-12-traffic-log-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-log/">
+        
+
+Traffic Log
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-12-traffic-log-subtree" role="group" aria-label="Traffic Log">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-log/#add-a-logging-backend">
+        
+
+Add a logging backend
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-log/#add-a-trafficlog-resource">
+        
+
+Add a TrafficLog resource
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-log/#logging-external-services">
+        
+
+Logging external services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-log/#builtin-gateway-support">
+        
+
+Builtin Gateway support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/traffic-log/#access-log-format">
+        
+
+Access Log Format
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-13-locality-aware-load-balancing-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/locality-aware/">
+        
+
+Locality-aware Load Balancing
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-13-locality-aware-load-balancing-subtree" role="group" aria-label="Locality-aware Load Balancing">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/locality-aware/#enabling-locality-aware-load-balancing">
+        
+
+Enabling locality-aware load balancing
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-14-fault-injection-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/fault-injection/">
+        
+
+Fault Injection
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-14-fault-injection-subtree" role="group" aria-label="Fault Injection">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/fault-injection/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/fault-injection/#matching">
+        
+
+Matching
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-15-health-check-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/health-check/">
+        
+
+Health Check
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-15-health-check-subtree" role="group" aria-label="Health Check">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/health-check/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/health-check/#matching">
+        
+
+Matching
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-16-circuit-breaker-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/circuit-breaker/">
+        
+
+Circuit Breaker
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-16-circuit-breaker-subtree" role="group" aria-label="Circuit Breaker">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/circuit-breaker/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/circuit-breaker/#matching">
+        
+
+Matching
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/circuit-breaker/#builtin-gateway-support">
+        
+
+Builtin Gateway support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/circuit-breaker/#non-mesh-traffic">
+        
+
+Non-mesh traffic
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-17-external-service-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/external-services/">
+        
+
+External Service
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-17-external-service-subtree" role="group" aria-label="External Service">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/external-services/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/external-services/#builtin-gateway-support">
+        
+
+Builtin Gateway support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-18-retry-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/retry/">
+        
+
+Retry
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-18-retry-subtree" role="group" aria-label="Retry">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/retry/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/retry/#matching">
+        
+
+Matching
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/retry/#builtin-gateway-support">
+        
+
+Builtin Gateway support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-19-timeout-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/">
+        
+
+Timeout
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-19-timeout-subtree" role="group" aria-label="Timeout">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#default-general-purpose-timeout-policy">
+        
+
+Default general-purpose Timeout policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#matching">
+        
+
+Matching
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#builtin-gateway-support">
+        
+
+Builtin Gateway support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#inbound-timeouts">
+        
+
+Inbound timeouts
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/timeout/#non-mesh-traffic">
+        
+
+Non-mesh traffic
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-20-rate-limit-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/rate-limit/">
+        
+
+Rate Limit
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-20-rate-limit-subtree" role="group" aria-label="Rate Limit">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/rate-limit/#usage">
+        
+
+Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/rate-limit/#matching-destinations">
+        
+
+Matching destinations
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/rate-limit/#builtin-gateway-support">
+        
+
+Builtin Gateway support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-21-virtual-outbound-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/virtual-outbound/">
+        
+
+Virtual Outbound
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-21-virtual-outbound-subtree" role="group" aria-label="Virtual Outbound">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/virtual-outbound/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-22-meshgateway-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgateway/">
+        
+
+MeshGateway
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-22-meshgateway-subtree" role="group" aria-label="MeshGateway">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgateway/#tls-termination">
+        
+
+TLS Termination
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-23-meshgatewayroute-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgatewayroute/">
+        
+
+MeshGatewayRoute
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-23-meshgatewayroute-subtree" role="group" aria-label="MeshGatewayRoute">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgatewayroute/#listener-tags">
+        
+
+Listener tags
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgatewayroute/#matching">
+        
+
+Matching
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgatewayroute/#filters">
+        
+
+Filters
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgatewayroute/#reference">
+        
+
+Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshgatewayinstance/">
+        
+
+MeshGatewayInstance
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-25-service-health-probes-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/service-health-probes/">
+        
+
+Service Health Probes
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-25-service-health-probes-subtree" role="group" aria-label="Service Health Probes">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/service-health-probes/#kubernetes">
+        
+
+Kubernetes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/service-health-probes/#universal-probes">
+        
+
+Universal probes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-26-meshaccesslog-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshaccesslog/">
+        
+
+MeshAccessLog
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-26-meshaccesslog-subtree" role="group" aria-label="MeshAccessLog">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshaccesslog/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshaccesslog/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshaccesslog/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-27-meshcircuitbreaker-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshcircuitbreaker/">
+        
+
+MeshCircuitBreaker
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-27-meshcircuitbreaker-subtree" role="group" aria-label="MeshCircuitBreaker">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshcircuitbreaker/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshcircuitbreaker/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshcircuitbreaker/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-28-meshfaultinjection-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshfaultinjection/">
+        
+
+MeshFaultInjection
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-28-meshfaultinjection-subtree" role="group" aria-label="MeshFaultInjection">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshfaultinjection/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshfaultinjection/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshfaultinjection/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-29-meshhealthcheck-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhealthcheck/">
+        
+
+MeshHealthCheck
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-29-meshhealthcheck-subtree" role="group" aria-label="MeshHealthCheck">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhealthcheck/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhealthcheck/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhealthcheck/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-30-meshhttproute-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhttproute/">
+        
+
+MeshHTTPRoute
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-30-meshhttproute-subtree" role="group" aria-label="MeshHTTPRoute">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhttproute/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhttproute/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhttproute/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshhttproute/#merging">
+        
+
+Merging
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-31-meshproxypatch-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshproxypatch/">
+        
+
+MeshProxyPatch
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-31-meshproxypatch-subtree" role="group" aria-label="MeshProxyPatch">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshproxypatch/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshproxypatch/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshproxypatch/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshproxypatch/#merging">
+        
+
+Merging
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-32-meshratelimit-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshratelimit/">
+        
+
+MeshRateLimit
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-32-meshratelimit-subtree" role="group" aria-label="MeshRateLimit">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshratelimit/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshratelimit/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshratelimit/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-33-meshretry-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshretry/">
+        
+
+MeshRetry
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-33-meshretry-subtree" role="group" aria-label="MeshRetry">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshretry/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshretry/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshretry/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-34-meshtcproute-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtcproute/">
+        
+
+MeshTCPRoute
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-34-meshtcproute-subtree" role="group" aria-label="MeshTCPRoute">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtcproute/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtcproute/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtcproute/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtcproute/#route-policies-with-different-types-targeting-the-same-destination">
+        
+
+Route policies with different types targeting the same destination
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-35-meshtimeout-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtimeout/">
+        
+
+MeshTimeout
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-35-meshtimeout-subtree" role="group" aria-label="MeshTimeout">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtimeout/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtimeout/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtimeout/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-36-meshtrace-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrace/">
+        
+
+MeshTrace
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-36-meshtrace-subtree" role="group" aria-label="MeshTrace">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrace/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrace/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrace/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-37-meshtrafficpermission-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrafficpermission/">
+        
+
+MeshTrafficPermission
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-37-meshtrafficpermission-subtree" role="group" aria-label="MeshTrafficPermission">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrafficpermission/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrafficpermission/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshtrafficpermission/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-38-meshloadbalancingstrategy-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshloadbalancingstrategy/">
+        
+
+MeshLoadBalancingStrategy
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-38-meshloadbalancingstrategy-subtree" role="group" aria-label="MeshLoadBalancingStrategy">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshloadbalancingstrategy/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshloadbalancingstrategy/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/policies/meshloadbalancingstrategy/#examples">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/opa/">
+        
+
+OPA policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/meshopa/">
+        
+
+MeshOPA (beta)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/meshglobalratelimit/">
+        
+
+MeshGlobalRateLimit (beta)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-enterprise-features-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-enterprise-blue.svg" alt="">
+
+
+Enterprise Features
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Enterprise Features subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-9-enterprise-features-subtree" role="group" aria-label="Enterprise Features">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/vault/">
+        
+
+HashiCorp Vault CA
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/acmpca/">
+        
+
+Amazon ACM Private CA
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/cert-manager/">
+        
+
+cert-manager Private CA
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/opa/">
+        
+
+OPA policy support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/meshopa/">
+        
+
+MeshOPA (beta)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/kds-auth/">
+        
+
+Multi-zone authentication
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/fips-support/">
+        
+
+FIPS support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/ca-rotation/">
+        
+
+Certificate Authority rotation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/rbac/">
+        
+
+Role-Based Access Control
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-11-red-hat-subtree">
+    
+      
+
+Red Hat
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Red Hat subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-9-11-red-hat-subtree" role="group" aria-label="Red Hat">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/ubi-images/">
+        
+
+UBI Images
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/openshift-quickstart/">
+        
+
+Red Hat OpenShift Quickstart
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/installation/ecs/">
+        
+
+ECS Support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/access-audit/">
+        
+
+Auditing
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/features/meshglobalratelimit/">
+        
+
+MeshGlobalRateLimit (beta)
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-reference-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Reference
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-10-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/reference/http-api/">
+        
+
+HTTP API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/reference/kubernetes-annotations/">
+        
+
+Kubernetes annotations and labels
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/reference/data-collection/">
+        
+
+Kuma data collection
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/reference/kuma-cp/">
+        
+
+Control plane configuration reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/dev/reference/proxy-template/">
+        
+
+Envoy proxy template
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-11-community-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Community
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Community subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-11-community-subtree" role="group" aria-label="Community">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="https://kuma.io/community/" target="_blank" rel="noopener nofollow noreferrer ">
+        
+
+Contribute to Kuma
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#meshopa-policy-plugin" class="active scroll-to">MeshOPA policy plugin</a></li>
+  <li><a href="#targetref-support-matrix" class="scroll-to">TargetRef support matrix</a></li>
+  <li>
+<a href="#configuration" class="scroll-to">Configuration</a>
+    <ul>
+      <li><a href="#inline" class="scroll-to">Inline</a></li>
+      <li><a href="#with-secrets" class="scroll-to">With secrets</a></li>
+    </ul>
+  </li>
+  <li><a href="#configuration-1" class="scroll-to">Configuration</a></li>
+  <li><a href="#configuring-the-authorization-filter" class="scroll-to">Configuring the authorization filter</a></li>
+  <li><a href="#support-for-external-api-management-servers" class="scroll-to">Support for external API management servers</a></li>
+  <li><a href="#composing-policies" class="scroll-to">Composing policies</a></li>
+  <li><a href="#example" class="scroll-to">Example</a></li>
+  <li><a href="#all-policy-options" class="scroll-to">All policy options</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+              <blockquote id="version-notice" class="important">
+                
+                You are browsing documentation of an unreleased version.
+                
+                See the <a href="/mesh/latest/features/meshopa/">latest documentation here</a>.
+              </blockquote>
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">MeshOPA (beta) - OPA Policy Integration
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+            <blockquote class="important">
+              This feature is released as <a href="/gateway/latest/availability-stages/#beta">beta</a> and should not be depended upon in a production environment.
+
+              
+            </blockquote>
+          
+
+          <blockquote class="warning">
+  <p><strong>Warning:</strong> This policy uses the new policy matching algorithm and is in a beta state.
+It should not be mixed with the <a href="../opa">OPA Policy</a>.</p>
+</blockquote>
+
+<h2 id="meshopa-policy-plugin">MeshOPA policy plugin</h2>
+
+<p>Kong Mesh integrates the <a href="https://www.openpolicyagent.org/" target="_blank" rel="noopener nofollow noreferrer ">Open Policy Agent (OPA)</a> to provide access control for your services.</p>
+
+<p>The agent is included in the data plane proxy sidecar, instead of the more common deployment as a separate sidecar.</p>
+
+<p>When the <code class="language-plaintext highlighter-rouge">MeshOPA</code> policy is applied, the control plane configures the following:</p>
+
+<ul>
+  <li>The embedded policy agent, with the specified policy</li>
+  <li>Envoy, to use <a href="https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/http/ext_authz/v3/ext_authz.proto" target="_blank" rel="noopener nofollow noreferrer ">External Authorization</a> that points to the embedded policy agent</li>
+</ul>
+
+<h2 id="targetref-support-matrix">TargetRef support matrix</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>TargetRef type</th>
+      <th>top level</th>
+      <th>to</th>
+      <th>from</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mesh</td>
+      <td>✅</td>
+      <td>❌</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>MeshSubset</td>
+      <td>✅</td>
+      <td>❌</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>MeshService</td>
+      <td>✅</td>
+      <td>❌</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>MeshServiceSubset</td>
+      <td>✅</td>
+      <td>❌</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>MeshGatewayRoute</td>
+      <td>❌</td>
+      <td>❌</td>
+      <td>❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To learn more about the information in this table, see the <a href="/mesh/dev/policies/targetref">matching docs</a>.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>To apply a policy with MeshOPA, you must do the following:</p>
+
+<ul>
+  <li>Specify the group of data plane proxies to apply the policy to with the <code class="language-plaintext highlighter-rouge">targetRef</code> property.</li>
+  <li>Provide a policy with the <code class="language-plaintext highlighter-rouge">appendPolicies</code> property. Policies are defined in the <a href="https://www.openpolicyagent.org/docs/latest/policy-language/" target="_blank" rel="noopener nofollow noreferrer ">Rego language</a>.</li>
+  <li>Optionally provide custom configuration for the policy agent.</li>
+</ul>
+
+<p>You must also specify the HTTP protocol in your mesh configuration:</p>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kubernetes" data-navtab-id="navtab-188ef902-4da7-4e18-b568-91efbb144db4-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Kubernetes
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-188ef902-4da7-4e18-b568-91efbb144db4-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kubernetes" data-navtab-content="navtab-188ef902-4da7-4e18-b568-91efbb144db4-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<p>Add the HTTP protocol annotation to the Kubernetes Service configuration, with <code class="language-plaintext highlighter-rouge">appProtocol</code> field.</p>
+
+<p>Example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">web</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-example</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">web</span>
+  <span class="na">ports</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">port</span><span class="pi">:</span> <span class="m">8080</span>
+    <span class="na">appProtocol</span><span class="pi">:</span> <span class="s">http</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-188ef902-4da7-4e18-b568-91efbb144db4-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>Add the HTTP protocol tag to the <code class="language-plaintext highlighter-rouge">Dataplane</code> configuration.</p>
+
+<p>Example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">Dataplane</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">web</span>
+<span class="na">networking</span><span class="pi">:</span>
+  <span class="na">address</span><span class="pi">:</span> <span class="s">192.168.0.1</span>
+  <span class="na">inbound</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">port</span><span class="pi">:</span> <span class="m">80</span>
+    <span class="na">servicePort</span><span class="pi">:</span> <span class="m">8080</span>
+    <span class="na">tags</span><span class="pi">:</span>
+      <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web</span>
+      <span class="na">kuma.io/protocol</span><span class="pi">:</span> <span class="s">http</span> <span class="c1"># required for OPA support</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<p>For more information, see <a href="/mesh/dev/policies/protocol-support-in-kong-mesh/">the Kong Mesh documentation about protocol support</a>.</p>
+
+<h3 id="inline">Inline</h3>
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kubernetes" data-navtab-id="navtab-6589f1f7-701f-4eed-89f0-3a8577cab9e3-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Kubernetes
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-6589f1f7-701f-4eed-89f0-3a8577cab9e3-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kubernetes" data-navtab-content="navtab-6589f1f7-701f-4eed-89f0-3a8577cab9e3-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># optional, defaults to `default` if unset</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">agentConfig</span><span class="pi">:</span> <span class="c1"># optional</span>
+      <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># one of: inlineString, secret</span>
+        <span class="s">decision_logs:</span>
+          <span class="s">console: true</span>
+    <span class="na">appendPolicies</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">ignoreDecision</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># optional, defaults to 'false'</span>
+        <span class="na">rego</span><span class="pi">:</span>
+          <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># one of: inlineString, secret</span>
+            <span class="s">package envoy.authz</span>
+
+            <span class="s">import input.attributes.request.http as http_request</span>
+
+            <span class="s">default allow = false</span>
+
+            <span class="s">token = {"valid": valid, "payload": payload} {</span>
+                <span class="s">[_, encoded] := split(http_request.headers.authorization, " ")</span>
+                <span class="s">[valid, _, payload] := io.jwt.decode_verify(encoded, {"secret": "secret"})</span>
+            <span class="s">}</span>
+
+            <span class="s">allow {</span>
+                <span class="s">is_token_valid</span>
+                <span class="s">action_allowed</span>
+            <span class="s">}</span>
+
+            <span class="s">is_token_valid {</span>
+              <span class="s">token.valid</span>
+              <span class="s">now := time.now_ns() / 1000000000</span>
+              <span class="s">token.payload.nbf &lt;= now</span>
+              <span class="s">now &lt; token.payload.exp</span>
+            <span class="s">}</span>
+
+            <span class="s">action_allowed {</span>
+              <span class="s">http_request.method == "GET"</span>
+              <span class="s">token.payload.role == "admin"</span>
+            <span class="s">}</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-6589f1f7-701f-4eed-89f0-3a8577cab9e3-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">agentConfig</span><span class="pi">:</span> <span class="c1"># optional</span>
+      <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># one of: inlineString, secret</span>
+        <span class="s">decision_logs:</span>
+          <span class="s">console: true</span>
+    <span class="na">appendPolicies</span><span class="pi">:</span> <span class="c1"># optional</span>
+      <span class="pi">-</span> <span class="na">ignoreDecision</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># optional, defaults to 'false'</span>
+        <span class="na">rego</span><span class="pi">:</span>
+          <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># one of: inlineString, secret</span>
+            <span class="s">package envoy.authz</span>
+
+            <span class="s">import input.attributes.request.http as http_request</span>
+
+            <span class="s">default allow = false</span>
+
+            <span class="s">token = {"valid": valid, "payload": payload} {</span>
+                <span class="s">[_, encoded] := split(http_request.headers.authorization, " ")</span>
+                <span class="s">[valid, _, payload] := io.jwt.decode_verify(encoded, {"secret": "secret"})</span>
+            <span class="s">}</span>
+
+            <span class="s">allow {</span>
+                <span class="s">is_token_valid</span>
+                <span class="s">action_allowed</span>
+            <span class="s">}</span>
+
+            <span class="s">is_token_valid {</span>
+              <span class="s">token.valid</span>
+              <span class="s">now := time.now_ns() / 1000000000</span>
+              <span class="s">token.payload.nbf &lt;= now</span>
+              <span class="s">now &lt; token.payload.exp</span>
+            <span class="s">}</span>
+
+            <span class="s">action_allowed {</span>
+              <span class="s">http_request.method == "GET"</span>
+              <span class="s">token.payload.role == "admin"</span>
+            <span class="s">}</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<h3 id="with-secrets">With secrets</h3>
+
+<p>Encoding the policy in a <a href="/mesh/dev/production/secure-deployment/secrets/">Secret</a> provides some security for policies that contain sensitive data.</p>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kubernetes" data-navtab-id="navtab-eb23a08f-8963-455b-9b89-f55568202973-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Kubernetes
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-eb23a08f-8963-455b-9b89-f55568202973-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kubernetes" data-navtab-content="navtab-eb23a08f-8963-455b-9b89-f55568202973-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<ol>
+  <li>
+    <p>Define a Secret with a policy that’s Base64-encoded:</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Secret</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-policy</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">data</span><span class="pi">:</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s">cGFja2FnZSBlbnZveS5hdXRoegoKaW1wb3J0IGlucHV0LmF0dHJpYnV0ZXMucmVxdWVzdC5odHRwIGFzIGh0dHBfcmVxdWVzdAoKZGVmYXVsdCBhbGxvdyA9IGZhbHNlCgp0b2tlbiA9IHsidmFsaWQiOiB2YWxpZCwgInBheWxvYWQiOiBwYXlsb2FkfSB7CiAgICBbXywgZW5jb2RlZF0gOj0gc3BsaXQoaHR0cF9yZXF1ZXN0LmhlYWRlcnMuYXV0aG9yaXphdGlvbiwgIiAiKQogICAgW3ZhbGlkLCBfLCBwYXlsb2FkXSA6PSBpby5qd3QuZGVjb2RlX3ZlcmlmeShlbmNvZGVkLCB7InNlY3JldCI6ICJzZWNyZXQifSkKfQoKYWxsb3cgewogICAgaXNfdG9rZW5fdmFsaWQKICAgIGFjdGlvbl9hbGxvd2VkCn0KCmlzX3Rva2VuX3ZhbGlkIHsKICB0b2tlbi52YWxpZAogIG5vdyA6PSB0aW1lLm5vd19ucygpIC8gMTAwMDAwMDAwMAogIHRva2VuLnBheWxvYWQubmJmIDw9IG5vdwogIG5vdyA8IHRva2VuLnBheWxvYWQuZXhwCn0KCmFjdGlvbl9hbGxvd2VkIHsKICBodHRwX3JlcXVlc3QubWV0aG9kID09ICJHRVQiCiAgdG9rZW4ucGF5bG9hZC5yb2xlID09ICJhZG1pbiIKfQoK</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">system.kuma.io/secret</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Pass the Secret to <code class="language-plaintext highlighter-rouge">MeshOPA</code>:</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">appendPolicies</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rego</span><span class="pi">:</span>
+          <span class="na">secret</span><span class="pi">:</span> <span class="s">mopa-policy</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-eb23a08f-8963-455b-9b89-f55568202973-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<ol>
+  <li>
+    <p>Define a Secret with a policy that’s Base64-encoded:</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">Secret</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">sample-secret</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">data</span><span class="pi">:</span> <span class="s">cGFja2FnZSBlbnZveS5hdXRoegoKaW1wb3J0IGlucHV0LmF0dHJpYnV0ZXMucmVxdWVzdC5odHRwIGFzIGh0dHBfcmVxdWVzdAoKZGVmYXVsdCBhbGxvdyA9IGZhbHNlCgp0b2tlbiA9IHsidmFsaWQiOiB2YWxpZCwgInBheWxvYWQiOiBwYXlsb2FkfSB7CiAgICBbXywgZW5jb2RlZF0gOj0gc3BsaXQoaHR0cF9yZXF1ZXN0LmhlYWRlcnMuYXV0aG9yaXphdGlvbiwgIiAiKQogICAgW3ZhbGlkLCBfLCBwYXlsb2FkXSA6PSBpby5qd3QuZGVjb2RlX3ZlcmlmeShlbmNvZGVkLCB7InNlY3JldCI6ICJzZWNyZXQifSkKfQoKYWxsb3cgewogICAgaXNfdG9rZW5fdmFsaWQKICAgIGFjdGlvbl9hbGxvd2VkCn0KCmlzX3Rva2VuX3ZhbGlkIHsKICB0b2tlbi52YWxpZAogIG5vdyA6PSB0aW1lLm5vd19ucygpIC8gMTAwMDAwMDAwMAogIHRva2VuLnBheWxvYWQubmJmIDw9IG5vdwogIG5vdyA8IHRva2VuLnBheWxvYWQuZXhwCn0KCmFjdGlvbl9hbGxvd2VkIHsKICBodHRwX3JlcXVlc3QubWV0aG9kID09ICJHRVQiCiAgdG9rZW4ucGF5bG9hZC5yb2xlID09ICJhZG1pbiIKfQoK</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Pass the Secret to <code class="language-plaintext highlighter-rouge">MeshOPA</code>:</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">appendPolicies</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rego</span><span class="pi">:</span>
+          <span class="na">secret</span><span class="pi">:</span> <span class="s">mopa-policy</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<h2 id="configuration-1">Configuration</h2>
+
+<p>Kong Mesh defines a default configuration for OPA, but you can adjust the configuration to meet your environment’s requirements.</p>
+
+<p>The following environment variables are available:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Type</th>
+      <th>What it configures</th>
+      <th>Default value {:width=25%:}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KMESH_OPA_ADDR</td>
+      <td>string</td>
+      <td>Address OPA API server listens on</td>
+      <td><code class="language-plaintext highlighter-rouge">localhost:8181</code></td>
+    </tr>
+    <tr>
+      <td>KMESH_OPA_CONFIG_PATH</td>
+      <td>string</td>
+      <td>Path to file of initial config</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>KMESH_OPA_DIAGNOSTIC_ADDR</td>
+      <td>string</td>
+      <td>Address of OPA diagnostics server</td>
+      <td><code class="language-plaintext highlighter-rouge">0.0.0.0:8282</code></td>
+    </tr>
+    <tr>
+      <td>KMESH_OPA_ENABLED</td>
+      <td>bool</td>
+      <td>Whether <code class="language-plaintext highlighter-rouge">kuma-dp</code> starts embedded OPA</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>KMESH_OPA_EXT_AUTHZ_ADDR</td>
+      <td>string</td>
+      <td>Address of Envoy External AuthZ service</td>
+      <td><code class="language-plaintext highlighter-rouge">localhost:9191</code></td>
+    </tr>
+    <tr>
+      <td>KMESH_OPA_CONFIG_OVERRIDES</td>
+      <td>strings</td>
+      <td>Overrides for OPA configuration, in addition to config file(*)</td>
+      <td>nil</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kumactl" data-navtab-id="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      kumactl
+    </div>
+  
+    
+    <div data-slug="helm" data-navtab-id="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Helm
+    </div>
+  
+    
+    <div data-slug="pod" data-navtab-id="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-2" class="navtab-title" role="tab" aria-controls="navtab-id-2" tabindex="0">
+      Pod
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-3" class="navtab-title" role="tab" aria-controls="navtab-id-3" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kumactl" data-navtab-content="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<p>When you deploy the Mesh control plane, edit the <code class="language-plaintext highlighter-rouge">kong-mesh-control-plane-config</code> ConfigMap:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">ConfigMap</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">kong-mesh-control-plane-config</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+<span class="na">data</span><span class="pi">:</span>
+  <span class="na">config.yaml</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">runtime:</span>
+      <span class="s">kubernetes:</span>
+        <span class="s">injector:</span>
+          <span class="s">sidecarContainer:</span>
+            <span class="s">envVars:</span>
+              <span class="s">KMESH_OPA_ENABLED: "false"</span>
+              <span class="s">KMESH_OPA_ADDR: ":8888"</span>
+              <span class="s">KMESH_OPA_CONFIG_OVERRIDES: "config1:x,config2:y"</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="helm" data-navtab-content="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>Override the Helm value in <code class="language-plaintext highlighter-rouge">values.yaml</code></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kuma</span><span class="pi">:</span>
+  <span class="na">controlPlane</span><span class="pi">:</span>
+    <span class="na">config</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="s">runtime:</span>
+        <span class="s">kubernetes:</span>
+          <span class="s">injector:</span>
+            <span class="s">sidecarContainer:</span>
+              <span class="s">envVars:</span>
+                <span class="s">KMESH_OPA_ENABLED: "false"</span>
+                <span class="s">KMESH_OPA_ADDR: ":8888"</span>
+                <span class="s">KMESH_OPA_CONFIG_OVERRIDES: "config1:x,config2:y"</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="pod" data-navtab-content="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-2" class="navtab-content" role="tabpanel" id="navtab-id-2" tabindex="0" aria-labelledby="navtab-id-2">
+      
+<p>Override the config for individual data plane proxies by placing the appropriate annotations on the Pod:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">example-app</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kuma-example</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="s">...</span>
+  <span class="s">template</span><span class="err">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="s">...</span>
+      <span class="s">annotations</span><span class="err">:</span>
+        <span class="c1"># indicate to Kong Mesh that this Pod doesn't need a sidecar</span>
+        <span class="na">kuma.io/sidecar-env-vars</span><span class="pi">:</span> <span class="s2">"</span><span class="s">KMESH_OPA_ENABLED=false;KMESH_OPA_ADDR=:8888;KMESH_OPA_CONFIG_OVERRIDES=config1:x,config2:y"</span>
+</code></pre></div></div>
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-e549bd96-da38-4e64-8d44-2c24acf154d7-3" class="navtab-content" role="tabpanel" id="navtab-id-3" tabindex="0" aria-labelledby="navtab-id-3">
+      
+<p>The <code class="language-plaintext highlighter-rouge">run</code> command on the data plane proxy accepts the following equivalent parameters if you prefer not to set environment variables:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--opa-addr
+--opa-config-path
+--opa-diagnostic-addr
+--opa-enabled                    
+--opa-ext-authz-addr
+--opa-set strings
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<h2 id="configuring-the-authorization-filter">Configuring the authorization filter</h2>
+
+<p>You can configure the external authorization filter by adjusting the <code class="language-plaintext highlighter-rouge">authConfig</code> section.</p>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kubernetes" data-navtab-id="navtab-cea1f41a-1d6e-4c58-ad45-d46c1264fab2-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Kubernetes
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-cea1f41a-1d6e-4c58-ad45-d46c1264fab2-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kubernetes" data-navtab-content="navtab-cea1f41a-1d6e-4c58-ad45-d46c1264fab2-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># optional, defaults to `default` if unset</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">authConfig</span><span class="pi">:</span> <span class="c1"># optional</span>
+      <span class="na">statusOnError</span><span class="pi">:</span> <span class="m">413</span> <span class="c1"># optional: defaults to 403.</span>
+      <span class="na">onAgentFailure</span><span class="pi">:</span> <span class="s">allow</span> <span class="c1"># optional: one of 'allow' or 'deny', defaults to 'deny' defines the behavior when communication with the agent fails or the policy execution fails.</span>
+      <span class="na">requestBody</span><span class="pi">:</span> <span class="c1"># optional</span>
+          <span class="na">maxSize</span><span class="pi">:</span> <span class="m">1024</span> <span class="c1"># the max number of bytes to send to the agent, if we exceed this, the request to the agent will have: `x-envoy-auth-partial-body: true`.</span>
+          <span class="na">sendRawBody</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># use when the body is not plaintext. The agent request will have `raw_body` instead of `body`</span>
+<span class="nn">...</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-cea1f41a-1d6e-4c58-ad45-d46c1264fab2-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">authConfig</span><span class="pi">:</span> <span class="c1"># optional</span>
+      <span class="na">statusOnError</span><span class="pi">:</span> <span class="m">413</span> <span class="c1"># optional: defaults to 403. http statusCode to use when the connection to the agent failed.</span>
+      <span class="na">onAgentFailure</span><span class="pi">:</span> <span class="s">allow</span> <span class="c1"># optional: one of 'allow' or 'deny', defaults to 'deny'. defines the behavior when communication with the agent fails or the policy execution fails.</span>
+      <span class="na">requestBody</span><span class="pi">:</span> <span class="c1"># optional</span>
+        <span class="na">maxSize</span><span class="pi">:</span> <span class="m">1024</span> <span class="c1"># the maximum number of bytes to send to the agent, if we exceed this, the request to the agent will have: `x-envoy-auth-partial-body: true`.</span>
+        <span class="na">sendRawBody</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># use when the body is not plaintext. The agent request will have `raw_body` instead of `body`</span>
+<span class="nn">...</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<p>By default, the body will not be sent to the agent.
+To send it, set <code class="language-plaintext highlighter-rouge">authConfig.requestBody.maxSize</code> to the maximum size of your body.
+If the request body is larger than this parameter, it will be truncated and the header <code class="language-plaintext highlighter-rouge">x-envoy-auth-partial-body</code> will be set to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<h2 id="support-for-external-api-management-servers">Support for external API management servers</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">agentConfig</code> field lets you define a custom configuration that points to an external management server:</p>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kubernetes" data-navtab-id="navtab-db48aad3-eb0c-4f84-a60d-38541e578ca4-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Kubernetes
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-db48aad3-eb0c-4f84-a60d-38541e578ca4-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kubernetes" data-navtab-content="navtab-db48aad3-eb0c-4f84-a60d-38541e578ca4-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">agentConfig</span><span class="pi">:</span>
+      <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">services:</span>
+          <span class="s">acmecorp:</span>
+            <span class="s">url: https://example.com/control-plane-api/v1</span>
+            <span class="s">credentials:</span>
+              <span class="s">bearer:</span>
+                <span class="s">token: "bGFza2RqZmxha3NkamZsa2Fqc2Rsa2ZqYWtsc2RqZmtramRmYWxkc2tm"</span>
+
+        <span class="s">discovery:</span>
+          <span class="s">name: example</span>
+          <span class="s">resource: /configuration/example/discovery</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-db48aad3-eb0c-4f84-a60d-38541e578ca4-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">mopa-1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">agentConfig</span><span class="pi">:</span>
+      <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># one of: inlineString, secret</span>
+        <span class="s">services:</span>
+          <span class="s">acmecorp:</span>
+            <span class="s">url: https://example.com/control-plane-api/v1</span>
+            <span class="s">credentials:</span>
+              <span class="s">bearer:</span>
+                <span class="s">token: "bGFza2RqZmxha3NkamZsa2Fqc2Rsa2ZqYWtsc2RqZmtramRmYWxkc2tm"</span>
+        <span class="s">discovery:</span>
+          <span class="s">name: example</span>
+          <span class="s">resource: /configuration/example/discovery</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<h2 id="composing-policies">Composing policies</h2>
+<p>In your organization, the mesh operator may want to set a policy for subset of proxies in the mesh.
+At the same time, service owners may want to exercise additional policies.</p>
+
+<p>For example, the mesh operator may want to enable JWT token validation for all proxies in the mesh</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-mesh-operator</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">appendPolicies</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rego</span><span class="pi">:</span>
+          <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">package operator</span>
+            
+            <span class="s">import input.attributes.request.http as http_request</span>
+            
+            <span class="s">default allow = false</span>
+            
+            <span class="s">token = {"valid": valid, "payload": payload} {</span>
+                <span class="s">[_, encoded] := split(http_request.headers.authorization, " ")</span>
+                <span class="s">[valid, _, payload] := io.jwt.decode_verify(encoded, {"secret": "secret"})</span>
+            <span class="s">}</span>
+            
+            <span class="s">allow {</span>
+                <span class="s">is_token_valid</span>
+                <span class="s">action_allowed</span>
+            <span class="s">}</span>
+            
+            <span class="s">is_token_valid {</span>
+              <span class="s">token.valid</span>
+              <span class="s">now := time.now_ns() / 1000000000</span>
+              <span class="s">token.payload.nbf &lt;= now</span>
+              <span class="s">now &lt; token.payload.exp</span>
+            <span class="s">}</span>
+            
+            <span class="s">action_allowed {</span>
+              <span class="s">http_request.method == "GET"</span>
+              <span class="s">token.payload.role == "admin"</span>
+            <span class="s">}</span>
+</code></pre></div></div>
+
+<p>Service owner wants to block all requests on path <code class="language-plaintext highlighter-rouge">/blocked</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshOPA</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mopa-service-owner</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">test-server_kuma-demo_svc_80</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">appendPolicies</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rego</span><span class="pi">:</span>
+          <span class="na">inlineString</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">package serviceowner</span>
+            
+            <span class="s">default allow = true</span>
+            
+            <span class="s">deny {</span>
+              <span class="s">input.parsed_path == ["blocked"]</span>
+            <span class="s">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">appendPolicies</code> is a list you can append, therefore in the case of the data plane proxy <code class="language-plaintext highlighter-rouge">test-server_kuma-demo_svc_80</code> service, both policies will be applied.</p>
+
+<p>Kong Mesh will autogenerate an additional OPA decision policy:</p>
+<div class="language-rego highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ow">package</span> <span class="n">implicitkmesh</span>
+<span class="ow">import</span> <span class="n">data</span><span class="p">.</span><span class="n">operator</span>
+<span class="ow">import</span> <span class="n">data</span><span class="p">.</span><span class="n">serviceowner</span>
+
+<span class="n">allow</span> <span class="p">{</span>
+  <span class="n">data</span><span class="p">.</span><span class="n">operator</span><span class="p">.</span><span class="n">allow</span>
+  <span class="ow">not</span> <span class="n">data</span><span class="p">.</span><span class="n">operator</span><span class="p">.</span><span class="n">deny</span>
+  <span class="n">data</span><span class="p">.</span><span class="n">serviceowner</span><span class="p">.</span><span class="n">allow</span>
+  <span class="ow">not</span> <span class="n">data</span><span class="p">.</span><span class="n">serviceowner</span><span class="p">.</span><span class="n">deny</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>It also configures the OPA agent decision path (<code class="language-plaintext highlighter-rouge">plugins.envoy_ext_authz_grpc.path</code>) to <code class="language-plaintext highlighter-rouge">implicitkmesh/allow</code>.</p>
+
+<p>You can also add a rego policy which is not part of the decision.
+Set a <code class="language-plaintext highlighter-rouge">appendPolicies[*].ignoreDecision</code> to true so the rego policy won’t be added to autogenerated decision policy.
+This way, the mesh operator can expose utility functions to service owner.</p>
+
+<h2 id="example">Example</h2>
+
+<p>The following example shows how to deploy and test a sample MeshOPA policy on Kubernetes, using the kuma-demo application.</p>
+
+<ol>
+  <li>
+    <p>Deploy the example application:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> https://bit.ly/demokuma
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Make a request from the frontend to the backend:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>kubectl <span class="nb">exec</span> <span class="nt">-i</span> <span class="nt">-t</span> <span class="si">$(</span>kubectl get pod <span class="nt">-l</span> <span class="s2">"app=kuma-demo-frontend"</span> <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.items[0].metadata.name}'</span> <span class="nt">-n</span> kuma-demo<span class="si">)</span> <span class="nt">-n</span> kuma-demo <span class="nt">-c</span> kuma-fe <span class="nt">--</span> curl backend:3001 <span class="nt">-v</span>
+</code></pre></div>    </div>
+
+    <p>The output looks like:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Defaulting container name to kuma-fe.
+Use 'kubectl describe pod/kuma-demo-app-6787b4f7f5-m428c -n kuma-demo' to see all of the containers in this pod.
+*   Trying 10.111.108.218:3001...
+* TCP_NODELAY set
+* Connected to backend (10.111.108.218) port 3001 (#0)
+&gt; GET / HTTP/1.1
+&gt; Host: backend:3001
+&gt; User-Agent: curl/7.67.0
+&gt; Accept: */*
+&gt;
+* Mark bundle as not supporting multiuse
+&lt; HTTP/1.1 200 OK
+&lt; x-powered-by: Express
+&lt; cache-control: no-store, no-cache, must-revalidate, private
+&lt; access-control-allow-origin: *
+&lt; access-control-allow-methods: PUT, GET, POST, DELETE, OPTIONS
+&lt; access-control-allow-headers: *
+&lt; host: backend:3001
+&lt; user-agent: curl/7.67.0
+&lt; accept: */*
+&lt; x-forwarded-proto: http
+&lt; x-request-id: 1717af9c-2587-43b9-897f-f8061bba5ad4
+&lt; content-length: 90
+&lt; content-type: text/html; charset=utf-8
+&lt; date: Tue, 16 Mar 2021 15:33:18 GMT
+&lt; x-envoy-upstream-service-time: 1521
+&lt; server: envoy
+&lt;
+* Connection #0 to host backend left intact
+Hello World! Marketplace with sales and reviews made with &lt;3 by the OCTO team at Kong Inc.
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Apply a MeshOPA policy that requires a valid JWT token:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
+apiVersion: kuma.io/v1alpha1
+kind: MeshOPA
+metadata:
+  namespace: kong-mesh-system
+  name: mopa-1
+  labels:
+    kuma.io/mesh: default
+spec:
+  targetRef:
+    kind: Mesh
+  default:
+    appendPolicies:
+      - rego:
+          inlineString: |
+            package envoy.authz
+            import input.attributes.request.http as http_request
+
+            default allow = false
+
+            token = {</span><span class="se">\"</span><span class="s2">valid</span><span class="se">\"</span><span class="s2">: valid, </span><span class="se">\"</span><span class="s2">payload</span><span class="se">\"</span><span class="s2">: payload} {
+                [_, encoded] := split(http_request.headers.authorization, </span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">)
+                [valid, _, payload] := io.jwt.decode_verify(encoded, {</span><span class="se">\"</span><span class="s2">secret</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">secret</span><span class="se">\"</span><span class="s2">})
+            }
+
+            allow {
+                is_token_valid
+                action_allowed
+            }
+
+            is_token_valid {
+              token.valid
+              now := time.now_ns() / 1000000000
+              token.payload.nbf &lt;= now
+              now &lt; token.payload.exp
+            }
+
+            action_allowed {
+              http_request.method == </span><span class="se">\"</span><span class="s2">GET</span><span class="se">\"</span><span class="s2">
+              token.payload.role == </span><span class="se">\"</span><span class="s2">admin</span><span class="se">\"</span><span class="s2">
+            }
+"</span> | kubectl apply <span class="nt">-f</span> -
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Make an invalid request from the frontend to the backend:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>kubectl <span class="nb">exec</span> <span class="nt">-i</span> <span class="nt">-t</span> <span class="si">$(</span>kubectl get pod <span class="nt">-l</span> <span class="s2">"app=kuma-demo-frontend"</span> <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.items[0].metadata.name}'</span> <span class="nt">-n</span> kuma-demo<span class="si">)</span> <span class="nt">-n</span> kuma-demo <span class="nt">-c</span> kuma-fe <span class="nt">--</span> curl backend:3001 <span class="nt">-v</span>
+</code></pre></div>    </div>
+    <p>The output looks like:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Defaulting container name to kuma-fe.
+Use 'kubectl describe pod/kuma-demo-app-6787b4f7f5-bwvnb -n kuma-demo' to see all of the containers in this pod.
+*   Trying 10.105.146.164:3001...
+* TCP_NODELAY set
+* Connected to backend (10.105.146.164) port 3001 (#0)
+&gt; GET / HTTP/1.1
+&gt; Host: backend:3001
+&gt; User-Agent: curl/7.67.0
+&gt; Accept: */*
+&gt;
+* Mark bundle as not supporting multiuse
+&lt; HTTP/1.1 403 Forbidden
+&lt; date: Tue, 09 Mar 2021 16:50:40 GMT
+&lt; server: envoy
+&lt; x-envoy-upstream-service-time: 2
+&lt; content-length: 0
+&lt;
+* Connection #0 to host backend left intact
+</code></pre></div>    </div>
+
+    <p>Note the <code class="language-plaintext highlighter-rouge">HTTP/1.1 403 Forbidden</code> message. The application doesn’t allow a request without a valid token.</p>
+
+    <p>The policy can take up to 30 seconds to propagate, so if this request succeeds the first time, wait and then try again.</p>
+  </li>
+  <li>
+    <p>Make a valid request from the frontend to the backend.</p>
+
+    <p>Export the token into an environment variable:</p>
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJZbTlpIiwibmJmIjoxNTE0ODUxMTM5LCJleHAiOjI1MjQ2MDgwMDB9.H0-42LYzoWyQ_4MXAcED30u6lA5JE087eECV2nxDfXo"</span>
+</code></pre></div>    </div>
+
+    <p>Make the request:</p>
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>kubectl <span class="nb">exec</span> <span class="nt">-i</span> <span class="nt">-t</span> <span class="si">$(</span>kubectl get pod <span class="nt">-l</span> <span class="s2">"app=kuma-demo-frontend"</span> <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.items[0].metadata.name}'</span> <span class="nt">-n</span> kuma-demo<span class="si">)</span> <span class="nt">-n</span> kuma-demo <span class="nt">-c</span> kuma-fe <span class="nt">--</span> curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$ADMIN_TOKEN</span><span class="s2">"</span> backend:3001
+</code></pre></div>    </div>
+
+    <p>The output looks like:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Defaulting container name to kuma-fe.
+Use 'kubectl describe pod/kuma-demo-app-6787b4f7f5-m428c -n kuma-demo' to see all of the containers in this pod.
+*   Trying 10.111.108.218:3001...
+* TCP_NODELAY set
+* Connected to backend (10.111.108.218) port 3001 (#0)
+&gt; GET / HTTP/1.1
+&gt; Host: backend:3001
+&gt; User-Agent: curl/7.67.0
+&gt; Accept: */*
+&gt;
+* Mark bundle as not supporting multiuse
+&lt; HTTP/1.1 200 OK
+&lt; x-powered-by: Express
+&lt; cache-control: no-store, no-cache, must-revalidate, private
+&lt; access-control-allow-origin: *
+&lt; access-control-allow-methods: PUT, GET, POST, DELETE, OPTIONS
+&lt; access-control-allow-headers: *
+&lt; host: backend:3001
+&lt; user-agent: curl/7.67.0
+&lt; accept: */*
+&lt; x-forwarded-proto: http
+&lt; x-request-id: 8fd7b398-1ba2-4c2e-b229-5159d04d782e
+&lt; content-length: 90
+&lt; content-type: text/html; charset=utf-8
+&lt; date: Tue, 16 Mar 2021 17:26:00 GMT
+&lt; x-envoy-upstream-service-time: 261
+&lt; server: envoy
+&lt;
+* Connection #0 to host backend left intact
+Hello World! Marketplace with sales and reviews made with &lt;3 by the OCTO team at Kong Inc.
+</code></pre></div>    </div>
+
+    <p>The request is valid again because the token is signed with the <code class="language-plaintext highlighter-rouge">secret</code> private key, its payload includes the admin role, and it is not expired.</p>
+  </li>
+</ol>
+
+<!-- links -->
+
+<h2 id="all-policy-options">All policy options</h2>
+
+<div id="markdown_html"></div>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+
+<script defer src="https://brianwendt.github.io/json-schema-md-doc/lib/JSONSchemaMarkdown.js"></script>
+
+<script type="text/javascript">
+const data = {"description":"Spec is the specification of the Kuma MeshOPA resource.","properties":{"default":{"properties":{"agentConfig":{"description":"AgentConfig defines bootstrap OPA agent configuration.","properties":{"inline":{"description":"Data source is inline bytes.","format":"byte","type":"string"},"inlineString":{"description":"Data source is inline string`","type":"string"},"secret":{"description":"Data source is a secret with given Secret key.","type":"string"}},"type":"object"},"appendPolicies":{"description":"Policies define OPA policies that will be applied on OPA Agent.","items":{"properties":{"ignoreDecision":{"description":"If true, then policy won't be taken into account when making a decision.","type":"boolean"},"rego":{"description":"OPA Policy written in Rego. Available values: secret, inline, inlineString.","properties":{"inline":{"description":"Data source is inline bytes.","format":"byte","type":"string"},"inlineString":{"description":"Data source is inline string`","type":"string"},"secret":{"description":"Data source is a secret with given Secret key.","type":"string"}},"type":"object"}},"required":["rego"],"type":"object"},"type":"array"},"authConfig":{"description":"AuthConfig are configurations specific to the filter.","properties":{"onAgentFailure":{"description":"OnAgentFailure either 'allow' or 'deny' (default to deny) whether to allow requests when the authorization agent failed.","enum":["Allow","Deny"],"type":"string"},"requestBody":{"description":"RequestBody configuration to apply on the request body sent to the authorization agent (if absent, the body is not sent).","properties":{"maxSize":{"description":"MaxSize defines the maximum payload size sent to authorization agent. If the payload is larger it will be truncated and there will be a header `x-envoy-auth-partial-body: true`. If it is set to 0 no body will be sent to the agent.","format":"int32","type":"integer"},"sendRawBody":{"description":"SendRawBody enable sending raw body instead of the body encoded into UTF-8","type":"boolean"}},"type":"object"},"statusOnError":{"description":"StatusOnError is the http status to return when there's a connection failure between the dataplane and the authorization agent","format":"int32","type":"integer"},"timeout":{"description":"Timeout for the single gRPC request from Envoy to OPA Agent.","type":"string"}},"type":"object"}},"type":"object"},"targetRef":{"description":"TargetRef is a reference to the resource the policy takes an effect on. The resource could be either a real store object or virtual resource defined inplace.","properties":{"kind":{"description":"Kind of the referenced resource","enum":["Mesh","MeshSubset","MeshGateway","MeshService","MeshServiceSubset","MeshHTTPRoute"],"type":"string"},"mesh":{"description":"Mesh is reserved for future use to identify cross mesh resources.","type":"string"},"name":{"description":"Name of the referenced resource. Can only be used with kinds: `MeshService`, `MeshServiceSubset` and `MeshGatewayRoute`","type":"string"},"tags":{"additionalProperties":{"type":"string"},"description":"Tags used to select a subset of proxies by tags. Can only be used with kinds `MeshSubset` and `MeshServiceSubset`","type":"object"}},"type":"object"}},"required":["targetRef"],"type":"object"};
+document.addEventListener("DOMContentLoaded", function() {
+  // create an instance of JSONSchemaMarkdown
+  const Doccer = new JSONSchemaMarkdown();
+
+  // don't include the path of the field in the output
+  Doccer.writePath = function() {};
+
+  Doccer.load(data);
+  Doccer.generate();
+
+  const converter = new showdown.Converter();
+
+  // use the converter to make html from the markdown
+  document.getElementById("markdown_html").innerHTML = converter.makeHtml(Doccer.markdown);
+});
+</script>
+
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=mesh" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"dev","product[0]":"Kong Mesh"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Mesh<score=1>'],
+              facetFilters: [ 'version:dev']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

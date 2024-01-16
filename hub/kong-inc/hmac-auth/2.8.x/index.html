@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HMAC Auth
+| Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="HMAC Auth
+| Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/hmac-auth/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/hmac-auth/2.8.x/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=authentication">Authentication</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/hmac-auth/2.8.x/">HMAC Auth</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              Introduction
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/hmac-auth/2.8.x/">Overview</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/hmac-auth/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_hmac-auth.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">HMAC Auth</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 2.8.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/">
+                    3.5.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/3.4.x/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/3.3.x/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/3.2.x/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/3.1.x/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/3.0.x/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/hmac-auth/2.8.x/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/2.7.x/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/hmac-auth/2.6.x/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/hmac-auth/2.8.x/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/hmac-auth/2.8.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/hmac-auth/2.8.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/hmac-auth/2.8.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#usage" class="active scroll-to">Usage</a>
+    <ul>
+      <li><a href="#create-a-consumer" class="scroll-to">Create a Consumer</a></li>
+      <li><a href="#create-a-credential" class="scroll-to">Create a Credential</a></li>
+      <li><a href="#signature-authentication-scheme" class="scroll-to">Signature Authentication Scheme</a></li>
+      <li><a href="#signature-parameters" class="scroll-to">Signature Parameters</a></li>
+      <li><a href="#signature-string-construction" class="scroll-to">Signature String Construction</a></li>
+      <li><a href="#clock-skew" class="scroll-to">Clock Skew</a></li>
+      <li><a href="#body-validation" class="scroll-to">Body Validation</a></li>
+      <li><a href="#enforcing-headers" class="scroll-to">Enforcing Headers</a></li>
+      <li><a href="#hmac-example" class="scroll-to">HMAC Example</a></li>
+      <li><a href="#upstream-headers" class="scroll-to">Upstream Headers</a></li>
+      <li><a href="#paginate-through-the-hmac-credentials" class="scroll-to">Paginate through the HMAC credentials</a></li>
+      <li><a href="#retrieve-the-consumer-associated-with-a-credential" class="scroll-to">Retrieve the Consumer associated with a Credential</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+      
+        
+          <div class="old-version-banner">
+          You are browsing documentation for an outdated plugin version.
+          See the <a href="/hub/kong-inc/hmac-auth/">latest documentation here</a>.
+          </div>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>
+  <p>
+    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/hmac-auth/2.8.x/configuration/">HMAC Auth configuration reference</a> doc.</em>
+  </p>
+</blockquote>
+
+
+
+
+
+
+<p>Add HMAC Signature authentication to a service or a route
+to establish the integrity of incoming requests. The plugin validates the
+digital signature sent in the <code class="language-plaintext highlighter-rouge">Proxy-Authorization</code> or <code class="language-plaintext highlighter-rouge">Authorization</code> header
+(in that order). This plugin implementation is based off the
+<a href="https://tools.ietf.org/html/draft-cavage-http-signatures" target="_blank" rel="noopener nofollow noreferrer ">draft-cavage-http-signatures</a>
+draft with a slightly different signature scheme.</p>
+
+<blockquote class="important">
+  <p><strong>Important</strong>: Once the plugin is enabled, any user with a valid credential can access the service or route.
+To restrict usage to only some of the authenticated users, also add the
+<a href="/plugins/acl/">ACL</a> plugin (not covered here) and create allowed or
+denied groups of users.</p>
+</blockquote>
+
+<h2 id="usage">Usage</h2>
+
+<p>In order to use the plugin, you first need to create a Consumer to associate
+one or more credentials to.</p>
+
+<p>Note: Because the HMAC signature is generated by the client, you should make sure that Kong does not
+update or remove any request parameter used in HMAC signature before this plugin runs.</p>
+
+<h3 id="create-a-consumer">Create a Consumer</h3>
+
+<p>You need to associate a credential to an existing <a href="/gateway/latest/admin-api/#consumer-object">Consumer</a> object.
+A Consumer can have many credentials.</p>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="with-a-database" data-navtab-id="navtab-a7aaa1d1-8bf7-4dad-944e-1fca82f1f564-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      With a Database
+    </div>
+  
+    
+    <div data-slug="without-a-database" data-navtab-id="navtab-a7aaa1d1-8bf7-4dad-944e-1fca82f1f564-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Without a Database
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="with-a-database" data-navtab-content="navtab-a7aaa1d1-8bf7-4dad-944e-1fca82f1f564-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<p>To create a Consumer, you can execute the following request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-d</span> <span class="s2">"username=user123&amp;custom_id=SOME_CUSTOM_ID"</span> http://localhost:8001/consumers/
+</code></pre></div></div>
+
+    </div>
+  
+    
+    <div data-panel="without-a-database" data-navtab-content="navtab-a7aaa1d1-8bf7-4dad-944e-1fca82f1f564-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>Your declarative configuration file will need to have one or more Consumers. You can create them
+on the <code class="language-plaintext highlighter-rouge">consumers:</code> yaml section:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">consumers</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">username</span><span class="pi">:</span> <span class="s">user123</span>
+  <span class="na">custom_id</span><span class="pi">:</span> <span class="s">SOME_CUSTOM_ID</span>
+</code></pre></div></div>
+
+    </div>
+  
+  </div>
+</div>
+
+<p>In both cases, the parameters are as described below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>parameter</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">username</code><br><em>semi-optional</em>
+</td>
+      <td>The username of the consumer. Either this field or <code class="language-plaintext highlighter-rouge">custom_id</code> must be specified.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">custom_id</code><br><em>semi-optional</em>
+</td>
+      <td>A custom identifier used to map the consumer to another database. Either this field or <code class="language-plaintext highlighter-rouge">username</code> must be specified.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="create-a-credential">Create a Credential</h3>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="with-a-database" data-navtab-id="navtab-027e3387-2d6f-4431-8236-4ef283e54473-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      With a database
+    </div>
+  
+    
+    <div data-slug="without-a-database" data-navtab-id="navtab-027e3387-2d6f-4431-8236-4ef283e54473-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Without a database
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="with-a-database" data-navtab-content="navtab-027e3387-2d6f-4431-8236-4ef283e54473-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<p>You can provision new username/password credentials by making the following
+HTTP request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/consumers/<span class="o">{</span>consumer<span class="o">}</span>/hmac-auth <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"username=bob"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"secret=secret456"</span>
+</code></pre></div></div>
+
+    </div>
+  
+    
+    <div data-panel="without-a-database" data-navtab-content="navtab-027e3387-2d6f-4431-8236-4ef283e54473-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>You can add credentials on your declarative config file on the <code class="language-plaintext highlighter-rouge">hmacauth_credentials</code> yaml entry:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hmacauth_credentials</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">consumer</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">consumer</span><span class="pi">}</span>
+  <span class="na">username</span><span class="pi">:</span> <span class="s">bob</span>
+  <span class="na">secret</span><span class="pi">:</span> <span class="s">secret456</span>
+</code></pre></div></div>
+
+    </div>
+  
+  </div>
+</div>
+
+<p>In both cases, the fields/parameters work as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>field/parameter</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{consumer}</code></td>
+      <td>The <code class="language-plaintext highlighter-rouge">id</code> or <code class="language-plaintext highlighter-rouge">username</code> property of the <a href="/gateway/latest/admin-api/#consumer-object">Consumer</a> entity to associate the credentials to.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">username</code></td>
+      <td>The username to use in the HMAC Signature verification.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">secret</code><br><em>optional</em>
+</td>
+      <td>The secret to use in the HMAC Signature verification. Note that if this parameter isn’t provided, Kong will generate a value for you and send it as part of the response body.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="signature-authentication-scheme">Signature Authentication Scheme</h3>
+
+<p>The client is expected to send an <code class="language-plaintext highlighter-rouge">Authorization</code> or <code class="language-plaintext highlighter-rouge">Proxy-Authorization</code> header
+with the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>credentials := "hmac" params
+params := keyId "," algorithm ", " headers ", " signature
+keyId := "username" "=" plain-string
+algorithm := "algorithm" "=" DQUOTE (hmac-sha1|hmac-sha256|hmac-sha384|hmac-sha512) DQUOTE
+headers := "headers" "=" plain-string
+signature := "signature" "=" plain-string
+plain-string   = DQUOTE *( %x20-21 / %x23-5B / %x5D-7E ) DQUOTE
+</code></pre></div></div>
+
+<h3 id="signature-parameters">Signature Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>parameter</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>username</td>
+      <td>The <code class="language-plaintext highlighter-rouge">username</code> of the credential</td>
+    </tr>
+    <tr>
+      <td>algorithm</td>
+      <td>Digital signature algorithm used to create the signature</td>
+    </tr>
+    <tr>
+      <td>headers</td>
+      <td>List of HTTP header names, separated by a single space character, used to sign the request</td>
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Base64</code> encoded digital signature generated by the client</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="signature-string-construction">Signature String Construction</h3>
+
+<p>To generate the string that is signed with a key, the client
+MUST take the values of each HTTP header specified by <code class="language-plaintext highlighter-rouge">headers</code> in
+the order they appear.</p>
+
+<ol>
+  <li>
+    <p>If the header name is not <code class="language-plaintext highlighter-rouge">request-line</code> or <code class="language-plaintext highlighter-rouge">@request-target</code>,
+  append the lowercase header name followed with an ASCII colon <code class="language-plaintext highlighter-rouge">:</code> and an
+  ASCII space ` `.</p>
+  </li>
+  <li>
+    <p>If the header name is <code class="language-plaintext highlighter-rouge">request-line</code>, append the HTTP
+  request line (in ASCII format).</p>
+  </li>
+  <li>
+    <p>If the header name is <code class="language-plaintext highlighter-rouge">@request-target</code>, append the lowercase request method,
+ followed by a ASCII space ` ` and the request URI including any query strings;
+ otherwise append the header value.</p>
+  </li>
+  <li>
+    <p>If value is not the last value then append an ASCII newline <code class="language-plaintext highlighter-rouge">\n</code>.
+  The string MUST NOT include a trailing ASCII newline.</p>
+  </li>
+</ol>
+
+<blockquote class="note">
+  <p><strong>Note:</strong> The <code class="language-plaintext highlighter-rouge">@request-target</code> pseudo header was added in the 2.5.0
+  version of the plugin release. It is similar to the <code class="language-plaintext highlighter-rouge">request-line</code> pseudo header
+  except that the HTTP version was removed from the signature calculation. Otherwise,
+  semantically equivalent requests that uses HTTP/1.x and HTTP/2 will generate different
+  signature value. It is strongly recommended to use <code class="language-plaintext highlighter-rouge">@request-target</code>
+  instead of <code class="language-plaintext highlighter-rouge">request-line</code> with releases of this plugin after 2.5.0.</p>
+</blockquote>
+
+<h3 id="clock-skew">Clock Skew</h3>
+
+<p>The HMAC Authentication plugin also implements a clock skew check as described
+in the <a href="https://tools.ietf.org/html/draft-cavage-http-signatures-00#section-3.4" target="_blank" rel="noopener nofollow noreferrer ">specification</a> to prevent replay attacks. By default,
+a minimum lag of 300s in either direction (past/future) is allowed. Any request
+with a higher or lower date value will be rejected. The length of the clock
+skew can be edited through the plugin’s configuration by setting the
+<code class="language-plaintext highlighter-rouge">clock_skew</code> property (<code class="language-plaintext highlighter-rouge">config.clock_skew</code> POST parameters).</p>
+
+<p>The server and requesting client should be synchronized with NTP and a valid
+date (using GMT format) should be sent with either the <code class="language-plaintext highlighter-rouge">X-Date</code> or <code class="language-plaintext highlighter-rouge">Date</code>
+header.</p>
+
+<h3 id="body-validation">Body Validation</h3>
+
+<p>User can set <code class="language-plaintext highlighter-rouge">config.validate_request_body</code> as <code class="language-plaintext highlighter-rouge">true</code> to validate the request
+body. If it’s enabled the plugin will calculate the <code class="language-plaintext highlighter-rouge">SHA-256</code> HMAC digest of
+the request body and match it against the value of the <code class="language-plaintext highlighter-rouge">Digest</code> header. The
+Digest header needs to be in following format:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Digest: SHA-256=base64(sha256(&lt;body&gt;))
+</code></pre></div></div>
+
+<p>If there is no request body, the <code class="language-plaintext highlighter-rouge">Digest</code> should be set to the digest of a
+body of 0 length.</p>
+
+<p>Note: In order to create the digest of a request body, the plugin needs to
+retain it in memory, which might cause pressure on the worker’s Lua VM when
+dealing with large bodies (several MB) or during high request concurrency.</p>
+
+<h3 id="enforcing-headers">Enforcing Headers</h3>
+
+<p><code class="language-plaintext highlighter-rouge">config.enforce_headers</code> can be used to enforce any of the headers to be part
+of the signature creation. By default, the plugin doesn’t enforce which header
+needs to be used for the signature creation. The minimum recommended data to
+sign is the <code class="language-plaintext highlighter-rouge">@request-target</code>, <code class="language-plaintext highlighter-rouge">host</code>, and <code class="language-plaintext highlighter-rouge">date</code>. A strong signature would
+include all of the headers and a <code class="language-plaintext highlighter-rouge">digest</code> of the body.</p>
+
+<h3 id="hmac-example">HMAC Example</h3>
+
+<p>The HMAC plugin can be enabled on a service or a route. This example uses a service.</p>
+
+<ol>
+  <li>
+    <p>Enable the plugin on a service:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/services/example-service/plugins <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"name=hmac-auth"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"config.enforce_headers=date, @request-target"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"config.algorithms=hmac-sha1, hmac-sha256"</span>
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 201 Created
+ ...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add a consumer:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers/ <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"username=alice"</span>
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 201 Created
+ ...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add credential for the consumer:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers/alice/hmac-auth <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"username=alice123"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"secret=secret"</span>
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 201 Created
+ ...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Make an authorized request:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8000/requests <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Host: hmac.com"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Date: Thu, 22 Jun 2017 17:15:21 GMT"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: hmac username="alice123", algorithm="hmac-sha256", headers="date @request-target", signature="ujWCGHeec9Xd6UD2zlyxiNMCiXnDOWeVFMu5VeRUxtw="'</span>
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 200 OK
+ ...
+</code></pre></div>    </div>
+
+    <p>In the above request, we are composing the signing string using the <code class="language-plaintext highlighter-rouge">date</code> and
+ <code class="language-plaintext highlighter-rouge">@request-target</code> headers and creating the digest using the <code class="language-plaintext highlighter-rouge">hmac-sha256</code> to
+ hash the digest:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> signing_string="date: Thu, 22 Jun 2017 17:15:21 GMT\nGET /requests HTTP/1.1"
+ digest=HMAC-SHA256(&lt;signing_string&gt;, "secret")
+ base64_digest=base64(&lt;digest&gt;)
+</code></pre></div>    </div>
+
+    <p>So the final value of the <code class="language-plaintext highlighter-rouge">Authorization</code> header would look like:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> Authorization: hmac username="alice123", algorithm="hmac-sha256", headers="date @request-target", signature=&lt;base64_digest&gt;"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Validate the request body.</p>
+
+    <p>To enable body validation we would need to set <code class="language-plaintext highlighter-rouge">config.validate_request_body</code>
+ to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+    <p>The following example works the same way, whether the plugin was added to
+ a service or a route.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhost:8001/plugins/<span class="o">{</span>plugin-id<span class="o">}</span> <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s2">"config.validate_request_body=true"</span>
+</code></pre></div>    </div>
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 200 OK
+ ...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Now if the client includes the body digest in the request as the value of the
+<code class="language-plaintext highlighter-rouge">Digest</code> header, the plugin will validate the request body by calculating the
+<code class="language-plaintext highlighter-rouge">SHA-256</code> of the body and matching it against the <code class="language-plaintext highlighter-rouge">Digest</code> header’s value.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8000/requests <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Host: hmac.com"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Date: Thu, 22 Jun 2017 21:12:36 GMT"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Digest: SHA-256=SBH7QEtqnYUpEcIhDbmStNd1MxtHg2+feBfWc1105MA="</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: hmac username="alice123", algorithm="hmac-sha256", headers="date @request-target digest", signature="gaweQbATuaGmLrUr3HE0DzU1keWGCt3H96M28sSHTG8="'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"A small body"</span>
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 200 OK
+ ...
+</code></pre></div>    </div>
+
+    <p>In the above request we calculated the <code class="language-plaintext highlighter-rouge">SHA-256</code> digest of the body and set
+ the <code class="language-plaintext highlighter-rouge">Digest</code> header with the following format:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> body="A small body"
+ digest=SHA-256(body)
+ base64_digest=base64(digest)
+ Digest: SHA-256=&lt;base64_digest&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="upstream-headers">Upstream Headers</h3>
+
+<p>When a client has been authenticated, the plugin appends some headers to
+the request before proxying it to the upstream service, so that you
+can identify the consumer in your code:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Consumer-ID</code>: The ID of the consumer in Kong.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Consumer-Custom-ID</code>: The <code class="language-plaintext highlighter-rouge">custom_id</code> of the consumer (if set).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Consumer-Username</code>: The <code class="language-plaintext highlighter-rouge">username</code> of the consumer (if set).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Credential-Identifier</code>: The identifier of the credential (only if the consumer is not the <code class="language-plaintext highlighter-rouge">anonymous</code> consumer).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Anonymous-Consumer</code>: Is set to <code class="language-plaintext highlighter-rouge">true</code> if authentication fails, and the <code class="language-plaintext highlighter-rouge">anonymous</code> consumer is set instead.</li>
+</ul>
+
+<p>You can use this information on your side to implement additional logic.
+You can use the <code class="language-plaintext highlighter-rouge">X-Consumer-ID</code> value to query the Kong Admin API and retrieve
+more information about the consumer.</p>
+
+<h3 id="paginate-through-the-hmac-credentials">Paginate through the HMAC credentials</h3>
+
+<p>Paginate through the <code class="language-plaintext highlighter-rouge">hmac-auth</code> Credentials for all Consumers using the
+following request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET http://localhost:8001/hmac-auths
+</code></pre></div></div>
+
+<p>Example output:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1509681246000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75695322-e8a0-4109-aed4-5416b0308d85"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wQazJ304DW5huJklHgUfjfiSyCyTAEDZ"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c0d92ba9-8306-482a-b60d-0cfdd2f0e880"</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1509419793000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11d5cbfb-31b9-4a6d-8496-2f4a76500643"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zi6YHyvLaUCe21XMXKesTYiHSWy6m6CW"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3c2c8fc1-7245-4fbb-b48b-e5947e1ce941"</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1509681215000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eb0365bc-88ae-4568-be7c-db1eb7c16e5e"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NvHDTg5mp0ySFVJsITurtgyhEq1Cxbnv"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baz"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c0d92ba9-8306-482a-b60d-0cfdd2f0e880"</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You can filter the list by consumer by using this other path:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET http://localhost:8001/consumers/<span class="o">{</span>username or <span class="nb">id</span><span class="o">}</span>/hmac-auth
+</code></pre></div></div>
+
+<p>Example output:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1509419793000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11d5cbfb-31b9-4a6d-8496-2f4a76500643"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zi6YHyvLaUCe21XMXKesTYiHSWy6m6CW"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3c2c8fc1-7245-4fbb-b48b-e5947e1ce941"</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">username or id</code>: The username or id of the consumer whose credentials need to be listed</p>
+
+<h3 id="retrieve-the-consumer-associated-with-a-credential">Retrieve the Consumer associated with a Credential</h3>
+
+<p>It is possible to retrieve a <a href="/gateway/latest/admin-api/#consumer-object">Consumer</a> associated with an
+HMAC Credential using the following request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET http://localhost:8001/hmac-auths/<span class="o">{</span>hmac username or <span class="nb">id</span><span class="o">}</span>/consumer
+</code></pre></div></div>
+
+<p>Example output:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1507936639000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"username"</span><span class="p">:</span><span class="s2">"foo"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"c0d92ba9-8306-482a-b60d-0cfdd2f0e880"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">hmac username or id</code>: The <code class="language-plaintext highlighter-rouge">id</code> or <code class="language-plaintext highlighter-rouge">username</code> property of the HMAC Credential
+for which to get the associated <a href="/gateway/latest/admin-api/#consumer-object">Consumer</a>.
+Note that <code class="language-plaintext highlighter-rouge">username</code> accepted here is <strong>not</strong> the <code class="language-plaintext highlighter-rouge">username</code> property of a
+Consumer.</p>
+
+<hr>
+
+
+
+
+
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/hmac-auth/2.8.x/configuration/">HMAC Auth Configuration</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.8.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:2.8.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

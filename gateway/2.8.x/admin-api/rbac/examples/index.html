@@ -1,0 +1,6081 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RBAC Examples - v2.8.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="RBAC Examples - v2.8.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/gateway/latest/production/access-control/enable-rbac/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/gateway/2.8.x/admin-api/rbac/examples/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Gateway
+          
+        </div>
+        
+        <div class="version">
+          2.8.x
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/gateway/2.8.x/">Kong Gateway</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          <a href="/gateway/2.8.x/admin-api/">Admin API</a>
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          Rbac
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/gateway/2.8.x/admin-api/rbac/examples/">RBAC Examples</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/gateway/2.8.x/admin-api/rbac/examples.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Kong Gateway
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/gateway/latest/" class="active">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/latest/">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="versions-dropdown dropdown">
+      <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Version 2.8.x
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+          
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/3.5.x" data-version-id="3.5.x">
+            3.5.x
+             <em>(latest)</em>
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/3.4.x" data-version-id="3.4.x">
+            3.4.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/3.3.x" data-version-id="3.3.x">
+            3.3.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/3.2.x" data-version-id="3.2.x">
+            3.2.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/3.1.x" data-version-id="3.1.x">
+            3.1.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/3.0.x" data-version-id="3.0.x">
+            3.0.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li class="active" role="menuitem" tabindex="-1">
+          <a href="/gateway/2.8.x/admin-api/rbac/examples/" class="active" data-version-id="2.8.x">
+            2.8.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/2.7.x/admin-api/rbac/examples/" data-version-id="2.7.x">
+            2.7.x
+            
+          </a>
+        </li>
+        
+          
+          
+          
+          
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/2.6.x/admin-api/rbac/examples/" data-version-id="2.6.x">
+            2.6.x
+            
+          </a>
+        </li>
+        
+        
+        <li role="menuitem" tabindex="-1">
+          <a href="https://legacy-gateway--kongdocs.netlify.app/" target="_blank" rel="noopener nofollow noreferrer ">
+            Archive (pre-2.6)
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-flag.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/">
+        
+
+Overview of Kong Gateway
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/support-policy/">
+        
+
+Version Support Policy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/availability-stages/">
+        
+
+Stages of Software Availability
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/changelog/">
+        
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-install-and-run-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Install and Run
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Install and Run subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-2-install-and-run-subtree" role="group" aria-label="Install and Run">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/kubernetes/">
+        
+
+Kubernetes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/helm/">
+        
+
+Helm
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/openshift/">
+        
+
+OpenShift with Helm
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/docker/">
+        
+
+Docker
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/amazon-linux/">
+        
+
+Amazon Linux
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/centos/">
+        
+
+CentOS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/debian/">
+        
+
+Debian
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/rhel/">
+        
+
+RHEL
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/ubuntu/">
+        
+
+Ubuntu
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/migrate-ce-to-ke/">
+        
+
+Migrating from OSS to EE
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/upgrade-enterprise/">
+        
+
+Upgrade Kong Gateway
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/install-and-run/upgrade-oss/">
+        
+
+Upgrade Kong Gateway OSS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.4.x/upgrade/lts-upgrade/">
+        
+
+Upgrade from 2.8 LTS to 3.4 LTS
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-get-started-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-quickstart-color.svg" alt="">
+
+
+Get Started
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-get-started-subtree" role="group" aria-label="Get Started">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-1-quickstart-guide-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/quickstart/">
+        
+
+Quickstart Guide
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-1-quickstart-guide-subtree" role="group" aria-label="Quickstart Guide">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/quickstart/configuring-a-service/">
+        
+
+Configuring a Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/quickstart/configuring-a-grpc-service/">
+        
+
+Configuring a gRPC Service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/quickstart/enabling-plugins/">
+        
+
+Enabling Plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/quickstart/adding-consumers/">
+        
+
+Adding Consumers
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-comprehensive-guide-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/">
+        
+
+Comprehensive Guide
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-2-comprehensive-guide-subtree" role="group" aria-label="Comprehensive Guide">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/prepare/">
+        
+
+Prepare to Administer
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/expose-services/">
+        
+
+Expose your Services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/protect-services/">
+        
+
+Protect your Services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/improve-performance/">
+        
+
+Improve Performance
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/secure-services/">
+        
+
+Secure Services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/load-balancing/">
+        
+
+Set Up Intelligent Load Balancing
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/manage-teams/">
+        
+
+Manage Administrative Teams
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/get-started/comprehensive/dev-portal/">
+        
+
+Publish, Locate, and Consume Services
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-plan-and-deploy-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Plan and Deploy
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Plan and Deploy subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-plan-and-deploy-subtree" role="group" aria-label="Plan and Deploy">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/kong-user/">
+        
+
+Running Kong as a Non-Root User
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/sizing-guidelines/">
+        
+
+Resource Sizing Guidelines
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-3-hybrid-mode-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/hybrid-mode/">
+        
+
+Hybrid Mode
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-3-hybrid-mode-subtree" role="group" aria-label="Hybrid Mode">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/hybrid-mode/hybrid-mode-setup/">
+        
+
+Deploy Kong Gateway in Hybrid Mode
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/kubernetes-deployment-options/">
+        
+
+Kubernetes Deployment Options
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/systemd/">
+        
+
+Control Kong Gateway through systemd
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/performance-testing-framework/">
+        
+
+Performance Testing Framework
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/dns-considerations/">
+        
+
+DNS Considerations
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/default-ports/">
+        
+
+Default Ports
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-9-licenses-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/licenses/">
+        
+
+Licenses
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-9-licenses-subtree" role="group" aria-label="Licenses">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/licenses/access-license/">
+        
+
+Access Your License
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/licenses/deploy-license/">
+        
+
+Deploy Your License
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/licenses/report/">
+        
+
+Monitor License Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-10-security-subtree">
+    
+      
+
+Security
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Security subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-4-10-security-subtree" role="group" aria-label="Security">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/start-kong-securely/">
+        
+
+Start Kong Gateway Securely
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/db-encryption/">
+        
+
+Keyring and Data Encryption
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/kong-security-update-process/">
+        
+
+Kong Security Update Process
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-10-4-secrets-management-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/">
+        
+
+Secrets Management
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-10-4-secrets-management-subtree" role="group" aria-label="Secrets Management">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/getting-started/">
+        
+
+Getting Started
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/advanced-usage/">
+        
+
+Advanced Usage
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-10-4-3-backends-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/">
+        
+
+Backends
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-10-4-3-backends-subtree" role="group" aria-label="Backends">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/env/">
+        
+
+Environment Variables
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/aws-sm/">
+        
+
+AWS Secrets Manager
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/gcp-sm/">
+        
+
+GCP Secrets Manager
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/hashicorp-vault/">
+        
+
+Hashicorp Vault
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/reference-format/">
+        
+
+Reference Format
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-configure-subtree">
+    
+      
+  <img src="/assets/images/icons/konnect/konnect-settings.svg" alt="">
+
+
+Configure
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Configure subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-5-configure-subtree" role="group" aria-label="Configure">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-1-authentication-and-authorization-subtree">
+    
+      
+
+Authentication and Authorization
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Authentication and Authorization subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-5-1-authentication-and-authorization-subtree" role="group" aria-label="Authentication and Authorization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/">
+        
+
+Authentication Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-1-2-openid-connect-plugin-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-use-case/">
+        
+
+OpenID Connect Plugin
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-1-2-openid-connect-plugin-subtree" role="group" aria-label="OpenID Connect Plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-curity/">
+        
+
+OpenID Connect with Curity
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-azuread/">
+        
+
+OpenID Connect with Azure AD
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-google/">
+        
+
+OpenID Connect with Google
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-okta/">
+        
+
+OpenID Connect with Okta
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-auth0/">
+        
+
+OpenID Connect with Auth0
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/oidc-cognito/">
+        
+
+OpenID Connect with Cognito
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/">
+        
+
+OpenID Connect Plugin Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/allowing-multiple-authentication-methods/">
+        
+
+Allowing Multiple Authentication Methods
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-1-4-auth-for-kong-manager-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/">
+        
+
+Auth for Kong Manager
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-1-4-auth-for-kong-manager-subtree" role="group" aria-label="Auth for Kong Manager">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/super-admin/">
+        
+
+Create a Super Admin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/networking/">
+        
+
+Configure Networking
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/email/">
+        
+
+Configure Kong Manager to Send Email
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/reset-password/">
+        
+
+Reset Passwords and RBAC Tokens
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/workspaces/">
+        
+
+Configure Workspaces
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/basic/">
+        
+
+Basic Auth
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/ldap/">
+        
+
+LDAP
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/oidc-mapping/">
+        
+
+OIDC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/kong-manager/sessions/">
+        
+
+Sessions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-1-5-role-based-access-control-rbac-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/rbac/">
+        
+
+Role-based Access Control (RBAC)
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-1-5-role-based-access-control-rbac-subtree" role="group" aria-label="Role-based Access Control (RBAC)">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/rbac/add-role/">
+        
+
+Add a Role
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/rbac/add-user/">
+        
+
+Add a User
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/rbac/add-admin/">
+        
+
+Add an Admin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/auth/service-directory-mapping/">
+        
+
+Mapping LDAP Service Directory Groups to Kong Roles
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/grpc/">
+        
+
+Configure gRPC Plugins
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/graphql-quickstart/">
+        
+
+GraphQL Quickstart
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/logging/">
+        
+
+Logging Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/configure/network/">
+        
+
+Network and Firewall
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-dev-portal-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-dev-portal-color.svg" alt="">
+
+
+Dev Portal
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Dev Portal subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-dev-portal-subtree" role="group" aria-label="Dev Portal">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/enable-dev-portal/">
+        
+
+Enable the Dev Portal
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/structure-and-file-types/">
+        
+
+Structure and File Types
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/dev-portal/api/v1/">
+        
+
+Portal API Documentation
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/working-with-templates/">
+        
+
+Working with Templates
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/using-the-editor/">
+        
+
+Using the Editor
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-7-configuration-subtree">
+    
+      
+
+Configuration
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Configuration subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-7-configuration-subtree" role="group" aria-label="Configuration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-7-1-authentication-subtree">
+    
+      
+
+Authentication
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Authentication subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-7-1-authentication-subtree" role="group" aria-label="Authentication">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/authentication/basic-auth/">
+        
+
+Basic Auth
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/authentication/key-auth/">
+        
+
+Key Auth
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/authentication/oidc/">
+        
+
+OIDC
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/authentication/sessions/">
+        
+
+Sessions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/authentication/adding-registration-fields/">
+        
+
+Adding Custom Registration Fields
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/smtp/">
+        
+
+SMTP
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/configuration/workspaces/">
+        
+
+Workspaces
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-8-administration-subtree">
+    
+      
+
+Administration
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Administration subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-8-administration-subtree" role="group" aria-label="Administration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/managing-developers/">
+        
+
+Manage Developers
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/developer-permissions/">
+        
+
+Developer Roles and Content Permissions
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-8-3-application-registration-subtree">
+    
+      
+
+Application Registration
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Application Registration subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-8-3-application-registration-subtree" role="group" aria-label="Application Registration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/auth-provider-strategy/">
+        
+
+Authorization Provider Strategy
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/enable-application-registration/">
+        
+
+Enable Application Registration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/enable-key-auth-plugin/">
+        
+
+Enable Key Authentication for Application Registration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/3rd-party-oauth/">
+        
+
+External OAuth2 Support
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/okta-config/">
+        
+
+Set up Okta and Kong for external OAuth
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/azure-oidc-config/">
+        
+
+Set Up Azure AD and Kong for External Authentication
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/administration/application-registration/managing-applications/">
+        
+
+Manage Applications
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-9-customization-subtree">
+    
+      
+
+Customization
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Customization subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-6-9-customization-subtree" role="group" aria-label="Customization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/easy-theme-editing/">
+        
+
+Easy Theme Editing
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/migrating-templates/">
+        
+
+Migrating Templates Between Workspaces
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/markdown-extended/">
+        
+
+Markdown Rendering Module
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/emails/">
+        
+
+Customizing Portal Emails
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/adding-javascript-assets/">
+        
+
+Adding and Using JavaScript Assets
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/single-page-app/">
+        
+
+Single Page App in Dev Portal
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/theme-customization/alternate-openapi-renderer/">
+        
+
+Alternate OpenAPI Renderer
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/developer-portal/helpers/cli/">
+        
+
+Helpers CLI
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-monitor-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-vitals.svg" alt="">
+
+
+Monitor
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Monitor subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-7-monitor-subtree" role="group" aria-label="Monitor">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-1-kong-vitals-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/vitals/">
+        
+
+Kong Vitals
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-1-kong-vitals-subtree" role="group" aria-label="Kong Vitals">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/vitals/vitals-metrics/">
+        
+
+Metrics
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/vitals/vitals-reports/">
+        
+
+Reports
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/vitals/vitals-influx-strategy/">
+        
+
+Vitals with InfluxDB
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/vitals/vitals-prometheus-strategy/">
+        
+
+Vitals with Prometheus
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/vitals/vitals-estimates/">
+        
+
+Estimate Vitals Storage in PostgreSQL
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/prometheus/">
+        
+
+Prometheus plugin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/zipkin/">
+        
+
+Zipkin plugin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-reference-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Reference
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-8-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-admin-api-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/">
+        
+
+Admin API
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-admin-api-subtree" role="group" aria-label="Admin API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#db-less-mode">
+        
+
+DB-less Mode
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#declarative-configuration">
+        
+
+Declarative Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#supported-content-types">
+        
+
+Supported Content Types
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#information-routes">
+        
+
+Information Routes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#health-routes">
+        
+
+Health Routes
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#tags">
+        
+
+Tags
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#service-object">
+        
+
+Service Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#route-object">
+        
+
+Route Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#consumer-object">
+        
+
+Consumer Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#plugin-object">
+        
+
+Plugin Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#certificate-object">
+        
+
+Certificate Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#ca-certificate-object">
+        
+
+CA Certificate Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#sni-object">
+        
+
+SNI Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#upstream-object">
+        
+
+Upstream Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#target-object">
+        
+
+Target Object
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/#vaults-beta-entity">
+        
+
+Vaults Beta
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-17-licenses-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/licenses/reference/">
+        
+
+Licenses
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-17-licenses-subtree" role="group" aria-label="Licenses">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/licenses/reference/">
+        
+
+Licenses Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/licenses/examples/">
+        
+
+Licenses Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-18-workspaces-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/workspaces/reference/">
+        
+
+Workspaces
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-18-workspaces-subtree" role="group" aria-label="Workspaces">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/workspaces/reference/">
+        
+
+Workspaces Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/workspaces/examples/">
+        
+
+Workspace Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-19-rbac-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/rbac/reference/">
+        
+
+RBAC
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-19-rbac-subtree" role="group" aria-label="RBAC">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/rbac/reference/">
+        
+
+RBAC Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/rbac/examples/">
+        
+
+RBAC Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-20-admins-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/admins/reference/">
+        
+
+Admins
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-20-admins-subtree" role="group" aria-label="Admins">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/admins/reference/">
+        
+
+API Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/admins/examples/">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/developers/reference/">
+        
+
+Developers
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-22-consumer-groups-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/consumer-groups/reference/">
+        
+
+Consumer Groups
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-22-consumer-groups-subtree" role="group" aria-label="Consumer Groups">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/consumer-groups/reference/">
+        
+
+API Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/consumer-groups/examples/">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-1-23-event-hooks-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/event-hooks/reference/">
+        
+
+Event Hooks
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-1-23-event-hooks-subtree" role="group" aria-label="Event Hooks">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/event-hooks/reference/">
+        
+
+Event Hooks Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/event-hooks/examples/">
+        
+
+Examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/audit-log/">
+        
+
+Audit Logging
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/db-encryption/">
+        
+
+Keyring and Data Encryption
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/admin-api/secure-admin-api/">
+        
+
+Securing the Admin API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/db-less-and-declarative-config/">
+        
+
+DB-less and Declarative Configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/configuration/">
+        
+
+Configuration Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/cli/">
+        
+
+CLI Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/loadbalancing/">
+        
+
+Load Balancing Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/proxy/">
+        
+
+Proxy Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/rate-limiting/">
+        
+
+Rate Limiting Library
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/health-checks-circuit-breakers/">
+        
+
+Health Checks and Circuit Breakers Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/clustering/">
+        
+
+Clustering Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-10-plugin-development-kit-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/">
+        
+
+Plugin Development Kit
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-10-plugin-development-kit-subtree" role="group" aria-label="Plugin Development Kit">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.client/">
+        
+
+kong.client
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.client.tls/">
+        
+
+kong.client.tls
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.cluster/">
+        
+
+kong.cluster
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.ctx/">
+        
+
+kong.ctx
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.ip/">
+        
+
+kong.ip
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.log/">
+        
+
+kong.log
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.nginx/">
+        
+
+kong.nginx
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.node/">
+        
+
+kong.node
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.request/">
+        
+
+kong.request
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.response/">
+        
+
+kong.response
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.router/">
+        
+
+kong.router
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.service/">
+        
+
+kong.service
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.service.request/">
+        
+
+kong.service.request
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.service.response/">
+        
+
+kong.service.response
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.table/">
+        
+
+kong.table
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/pdk/kong.vault/">
+        
+
+kong.vault
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-11-plugin-development-guide-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/">
+        
+
+Plugin Development Guide
+
+      </a>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-11-plugin-development-guide-subtree" role="group" aria-label="Plugin Development Guide">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/">
+        
+
+Introduction
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/file-structure/">
+        
+
+File structure
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/custom-logic/">
+        
+
+Implementing custom logic
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/plugin-configuration/">
+        
+
+Plugin configuration
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/access-the-datastore/">
+        
+
+Accessing the datastore
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/custom-entities/">
+        
+
+Storing custom entities
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/entities-cache/">
+        
+
+Caching custom entities
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/admin-api/">
+        
+
+Extending the Admin API
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/tests/">
+        
+
+Writing tests
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plugin-development/distribution/">
+        
+
+(un)Installing your plugin
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/reference/external-plugins/">
+        
+
+Plugins in Other Languages
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.0.x/reference/file-access-permissions/">
+        
+
+File Permissions Reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#use-case" class="active scroll-to">Use Case</a></li>
+  <li><a href="#bootstrapping-the-first-rbac-userthe-super-admin" class="scroll-to">Bootstrapping the first RBAC user—the Super Admin</a></li>
+  <li><a href="#enforcing-rbac" class="scroll-to">Enforcing RBAC</a></li>
+  <li><a href="#super-admin-creates-the-teams-workspaces" class="scroll-to">Super Admin creates the teams Workspaces</a></li>
+  <li><a href="#super-admin-creates-one-admin-for-each-team" class="scroll-to">Super Admin Creates one Admin for each Team</a></li>
+  <li><a href="#super-admin-creates-admin-roles-for-teams" class="scroll-to">Super Admin Creates Admin Roles for Teams</a></li>
+  <li><a href="#team-admins-create-team-regular-users" class="scroll-to">Team Admins Create Team Regular Users</a></li>
+  <li><a href="#regular-team-users-use-their-tokens" class="scroll-to">Regular Team Users use their tokens</a></li>
+  <li>
+<a href="#entity-level-rbac-a-primer" class="scroll-to">Entity-Level RBAC: a Primer</a>
+    <ul>
+      <li><a href="#creating-entity-level-permissions" class="scroll-to">Creating Entity-Level Permissions</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#closing-remarks" class="scroll-to">Closing Remarks</a>
+    <ul>
+      <li><a href="#wildcards-in-permissions" class="scroll-to">Wildcards in Permissions</a></li>
+      <li><a href="#entities-concealing-in-entity-level-rbac" class="scroll-to">Entities Concealing in Entity-Level RBAC</a></li>
+      <li><a href="#creating-entities-in-entity-level-rbac" class="scroll-to">Creating Entities in Entity-Level RBAC</a></li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+              <blockquote id="version-notice" class="important">
+                
+                You are browsing documentation for an outdated version.
+                
+                See the <a href="/gateway/latest/production/access-control/enable-rbac/">latest documentation here</a>.
+              </blockquote>
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">RBAC Examples
+            
+
+            
+              <a href="https://konghq.com/pricing" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" target="_blank" rel="noopener nofollow noreferrer ">
+              </a>
+            
+          </h1>
+
+          
+
+          
+          
+
+          <p>This chapter aims to provide a step-by-step tutorial on how to set up
+RBAC and see it in action, with an end-to-end use case. The chosen
+use case demonstrates how <strong>RBAC with workspaces</strong> can be coupled
+to achieve a flexible organization of teams and users in complex
+hierarchies. Make sure to read the <a href="/gateway/2.8.x/configure/auth/rbac">RBAC Overview</a> page
+and to glance over the <a href="/gateway/2.8.x/admin-api/rbac/reference">RBAC Admin API</a> chapter, keeping it
+open as a reference.</p>
+
+<h2 id="use-case">Use Case</h2>
+
+<p>For the sake of example, let’s say a given company has a Kong Gateway
+cluster to be shared with 3 teams: teamA, teamB, and teamC. While the Kong
+cluster are shared among these teams, they want to be able to segment
+their entities in such a way that management of entities in one team doesn’t
+disrupt operation in some other team. As shown in the
+<a href="/gateway/2.8.x/admin-api/workspaces/examples">Workspaces Examples Page</a>, such a use case is possible
+with workspaces. On top of workspaces, though, each team wants to enforce
+access control over their Workspace, which is possible with RBAC. <strong>To sum up,
+Workspaces and RBAC are complementary: Workspaces provide segmentation of
+Admin API entities, while RBAC provides access control</strong>.</p>
+
+<h2 id="bootstrapping-the-first-rbac-userthe-super-admin">Bootstrapping the first RBAC user—the Super Admin</h2>
+
+<p><strong>Note:</strong> It is possible to create the first Super Admin at the time
+of migration as described in the <a href="/gateway/2.8.x/get-started/comprehensive">Getting Started Guide</a>.
+If you chose this option, skip to <a href="#enforcing-rbac">Enforcing RBAC</a>.</p>
+
+<p>Before anything, we will assume the Kong Admin—or, more interestingly,
+the KongOps Engineer—in charge of operating Kong, will create a Super Admin
+user, before actually enforcing RBAC and restarting Kong with RBAC enabled.</p>
+
+<p>As Kong ships with a handy set of default RBAC Roles—the <code class="language-plaintext highlighter-rouge">super-admin</code>,
+the <code class="language-plaintext highlighter-rouge">admin</code>, and <code class="language-plaintext highlighter-rouge">read-only</code>—the task of creating a Super Admin user is
+quite easy:</p>
+
+<p>Create the RBAC user, named <code class="language-plaintext highlighter-rouge">super-admin</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/rbac/users name=super-admin
+{
+  "user_token": "M8J5A88xKXa7FNKsMbgLMjkm6zI2anOY",
+  "id": "da80838d-49f8-40f6-b673-6fff3e2c305b",
+  "enabled": true,
+  "created_at": 1531009435000,
+  "name": "super-admin"
+}
+</code></pre></div></div>
+
+<p>As the <code class="language-plaintext highlighter-rouge">super-admin</code> user name coincides with an existing <code class="language-plaintext highlighter-rouge">super-admin</code>
+role, it gets automatically added to the <code class="language-plaintext highlighter-rouge">super-admin</code> role—which can be
+confirmed with the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/rbac/users/super-admin/roles
+{
+  "roles": [
+    {
+      "comment": "Full access to all endpoints, across all workspaces",
+      "created_at": 1531009724000,
+      "name": "super-admin",
+      "id": "b924ac91-e83f-4136-a5a4-4a7ff92594a8"
+    }
+  ],
+  "user": {
+    "created_at": 1531009858000,
+    "id": "e6897cc0-0c34-4a9c-9f0b-cc65b4f04d68",
+    "name": "super-admin",
+    "enabled": true,
+    "user_token": "vajeOlkybsn0q0VD9qw9B3nHYOErgY7b8"
+  }
+}
+
+</code></pre></div></div>
+
+<h2 id="enforcing-rbac">Enforcing RBAC</h2>
+
+<p>As the <code class="language-plaintext highlighter-rouge">super-admin</code> user has just been created, the Kong Admin may now
+restart Kong with RBAC enforced, with, e.g.:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>KONG_ENFORCE_RBAC=on kong restart
+</code></pre></div></div>
+
+<p><strong>NOTE</strong>: This is one of the possible ways of enforcing RBAC and restarting
+Kong; another possibility is editing the Kong configuration file and
+restarting.</p>
+
+<p>Before we move on, note that we will be using the Super Admin user, but we
+could, in fact, be moving without RBAC enabled, and having our Kong Admin do
+all the job of setting up the RBAC hierarchy. We want, however, to stress the
+fact that RBAC is powerful enough to allow a flexible separation of tasks. To
+summarize:</p>
+
+<ul>
+  <li>
+<strong>Kong Admin</strong>: this user has physical access to Kong infrastructure; her
+task is to bootstrap the Kong cluster as well as its configuration, including
+initial RBAC users;</li>
+  <li>
+<strong>RBAC Super Admin</strong>: created by the Kong Admin, has the role of managing
+RBAC users, roles, etc; this could all be done by the <strong>Kong Admin</strong>, but let’s
+give him a break.</li>
+</ul>
+
+<h2 id="super-admin-creates-the-teams-workspaces">Super Admin creates the teams Workspaces</h2>
+
+<p>The Super Admin will now set up our 3 teams: teamA, teamB, and teamC, creating
+one workspace for each, one admin for each. Enough talking.</p>
+
+<p>Creating workspaces for each team—this overlaps a bit with
+<a href="/gateway/2.8.x/admin-api/workspaces/examples">Workspaces Examples</a>, yes, but it will make our
+exploration of RBAC + Workspaces easier:</p>
+
+<p><strong>Team A</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/workspaces name=teamA Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "name": "teamA",
+  "created_at": 1531014100000,
+  "id": "1412f3a6-4d9b-4b9d-964e-60d8d63a9d46"
+}
+
+</code></pre></div></div>
+
+<p><strong>Team B</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/workspaces name=teamB Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "name": "teamB",
+  "created_at": 1531014143000,
+  "id": "7dee8c56-c6db-4125-b87a-b508baa33c66"
+}
+</code></pre></div></div>
+
+<p><strong>Team C</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/workspaces name=teamC Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "name": "teamC",
+  "created_at": 1531014171000,
+  "id": "542c8662-17cc-49eb-af50-6eb14f3b2e8a"
+}
+</code></pre></div></div>
+
+<p><strong>NOTE</strong>: this is the RBAC Super Admin creating workspaces—note his
+token being passed in through the <code class="language-plaintext highlighter-rouge">Kong-Admin-Token</code> HTTP header.</p>
+
+<h2 id="super-admin-creates-one-admin-for-each-team">Super Admin Creates one Admin for each Team</h2>
+
+<p><strong>Team A</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users name=adminA Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "user_token": "qv1VLIpl8kHj7lC1QOKwRdCMXanqEDii",
+  "id": "4d315ff9-8c1a-4844-9ea2-21b16204a154",
+  "enabled": true,
+  "created_at": 1531015165000,
+  "name": "adminA"
+}
+</code></pre></div></div>
+
+<p><strong>Team B</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamB/rbac/users name=adminB Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "user_token": "IX5vHVgYqM40tLcctdmzRtHyfxB4ToYv",
+  "id": "49641fc0-8c9d-4507-bc7a-2acac8f2903a",
+  "enabled": true,
+  "created_at": 1531015221000,
+  "name": "adminB"
+}
+</code></pre></div></div>
+
+<p><strong>Team C</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamC/rbac/users name=adminC Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "user_token": "w2f7tsuUW4BerXocZIMRQHE84nK2ZAo7",
+  "id": "74643f69-8852-49f9-b363-21971bac4f52",
+  "enabled": true,
+  "created_at": 1531015304000,
+  "name": "teamC"
+}
+</code></pre></div></div>
+
+<p>With this, all of the teams have one admin and each admin can only be seen
+in his corresponding workspace. To verify:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "total": 1,
+  "data": [
+    {
+      "created_at": 1531014784000,
+      "id": "1faaacd1-709f-4762-8c3e-79f268ec8faf",
+      "name": "adminA",
+      "enabled": true,
+      "user_token": "n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>Similarly, workspaces teamB and teamC only show their respective admins:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamB/rbac/users Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "total": 1,
+  "data": [
+    {
+      "created_at": 1531014805000,
+      "id": "3a829408-c1ee-4764-8222-2d280a5de441",
+      "name": "adminB",
+      "enabled": true,
+      "user_token": "C8b6kTTN10JFyU63ORjmCQwVbvK4maeq"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamC/rbac/users Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "total": 1,
+  "data": [
+    {
+      "created_at": 1531014813000,
+      "id": "84d43cdb-5274-4b74-ad22-615e50f005e3",
+      "name": "adminC",
+      "enabled": true,
+      "user_token": "zN5Nj8U1MiGR7vVQKvl8odaGBDI6mjgY"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h2 id="super-admin-creates-admin-roles-for-teams">Super Admin Creates Admin Roles for Teams</h2>
+
+<p>Super Admin is now done creating RBAC Admin users for each team; his next
+task is to create admin roles that will effectively grant permissions to admin
+users.</p>
+
+<p>The admin role must have access to all of the Admin API, restricted to his
+workspace.</p>
+
+<p>Setting up the Admin role—pay close attention to the request parameters:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/ name=admin Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "created_at": 1531016728000,
+  "id": "d40e61ab-8dad-4ef2-a48b-d11379f7b8d1",
+  "name": "admin"
+}
+</code></pre></div></div>
+
+<p>Creating role endpoint permissions:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/admin/endpoints/ endpoint=* workspace=teamA actions=* Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "total": 1,
+  "data": [
+    {
+      "endpoint": "*",
+      "created_at": 1531017322000,
+      "role_id": "d40e61ab-8dad-4ef2-a48b-d11379f7b8d1",
+      "actions": [
+        "delete",
+        "create",
+        "update",
+        "read"
+      ],
+      "negative": false,
+      "workspace": "teamA"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>Next logical step is to add the adminA user—admin of Team A—to the Admin
+role in his workspace:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/adminA/roles/ roles=admin Kong-Admin-Token:vajeOlkbsn0q0VD9qw9B3nHYOErgY7b8
+{
+  "roles": [
+    {
+      "comment": "Default user role generated for adminA",
+      "created_at": 1531014784000,
+      "id": "e2941b41-92a4-4f49-be89-f1a452bdecd0",
+      "name": "adminA"
+    },
+    {
+      "created_at": 1531016728000,
+      "id": "d40e61ab-8dad-4ef2-a48b-d11379f7b8d1",
+      "name": "admin"
+    }
+  ],
+  "user": {
+    "created_at": 1531014784000,
+    "id": "1faaacd1-709f-4762-8c3e-79f268ec8faf",
+    "name": "adminA",
+    "enabled": true,
+    "user_token": "n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG"
+  }
+}
+</code></pre></div></div>
+
+<p>Note the admin role in the list above.</p>
+
+<p>With these steps, Team A’s admin user is now able to manage his team. To
+validate that, let’s try to list RBAC users in Team B using Team A’s admin
+user token—and see that we are not allowed to do so:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamB/rbac/users Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "message": "Invalid RBAC credentials"
+}
+</code></pre></div></div>
+
+<p>Said admin is, however, allowed to list RBAC users in Team A’s workspace:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "total": 1,
+  "data": [
+    {
+      "created_at": 1531014784000,
+      "id": "1faaacd1-709f-4762-8c3e-79f268ec8faf",
+      "name": "adminA",
+      "enabled": true,
+      "user_token": "n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>If the same procedure is repeated for Team B and Team C, they will end up with
+a similar set up, with an admin role and an admin user, both restricted to the
+team’s workspace.</p>
+
+<p>And so Super Admin ends his participation; individual team admins are now able
+to set up his teams users and entities!</p>
+
+<h2 id="team-admins-create-team-regular-users">Team Admins Create Team Regular Users</h2>
+
+<p>From this point on, team admins are able to drive the process; the next logical
+step is for Team users to be created; such team users could be, for example,
+engineers that are part of Team A (or B or C). Let’s go ahead and do that,
+using Admin A’s user token.</p>
+
+<p>Before regular users can be created, a role needs to be available for them.
+Such a role needs to have permissions to all of Admin API endpoints, except
+RBAC and Workspaces—regular users will not need access to these in general
+and, if they do, the Admin can grant them.</p>
+
+<p><strong>Creating the regular users role</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/ name=users Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "created_at": 1531020346000,
+  "id": "9846b92c-6820-4741-ac31-425b3d6abc5b",
+  "name": "users"
+}
+</code></pre></div></div>
+
+<p><strong>Creating permissions in the regular users role</strong>:</p>
+
+<p>First, permission to all of Admin API—positive permission on *:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/users/endpoints/ endpoint=* workspace=teamA actions=* Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "endpoint": "*",
+  "created_at": 1531020573000,
+  "role_id": "9846b92c-6820-4741-ac31-425b3d6abc5b",
+  "actions": [
+    "delete",
+    "create",
+    "update",
+    "read"
+  ],
+  "negative": false,
+  "workspace": "teamA"
+}
+</code></pre></div></div>
+
+<p>Then, filter out RBAC and workspaces with negative permissions:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/users/endpoints/ endpoint=/rbac/* workspace=teamA actions=* Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "endpoint": "/rbac/*",
+  "created_at": 1531020744000,
+  "role_id": "9846b92c-6820-4741-ac31-425b3d6abc5b",
+  "actions": [
+    "delete",
+    "create",
+    "update",
+    "read"
+  ],
+  "negative": true,
+  "workspace": "teamA"
+}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/users/endpoints/ endpoint=/workspaces/* workspace=teamA actions=* Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "endpoint": "/workspaces/*",
+  "created_at": 1531020778000,
+  "role_id": "9846b92c-6820-4741-ac31-425b3d6abc5b",
+  "actions": [
+    "delete",
+    "create",
+    "update",
+    "read"
+  ],
+  "negative": true,
+  "workspace": "teamA"
+}
+</code></pre></div></div>
+
+<p><strong>IMPORTANT</strong>: as explained in the <a href="#wildcards-in-permissions">Wildcards in Permissions</a>
+section, the meaning of <code class="language-plaintext highlighter-rouge">*</code> is not the expected generic globbing one might
+be used to. As such, <code class="language-plaintext highlighter-rouge">/rbac/*</code> or <code class="language-plaintext highlighter-rouge">/workspaces/*</code> do not match all of the
+RBAC and Workspaces endpoints. For example, to cover all of the RBAC API,
+one would have to define permissions for the following endpoints:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/rbac/*</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/rbac/*/*</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/rbac/*/*/*</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/rbac/*/*/*/*</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/rbac/*/*/*/*/*</code></li>
+</ul>
+
+<p>Team A just got 3 new members: foogineer, bargineer, and bazgineer. Admin A
+will welcome them to the team by creating RBAC users for them and giving them
+access to Kong!</p>
+
+<p>Create foogineer:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users name=foogineer Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "created_at": 1531019797000,
+  "id": "0b4111da-2827-4767-8651-a327f7a559e9",
+  "name": "foogineer",
+  "enabled": true,
+  "user_token": "dNeYvYAwvjOJdoReVJZXF8vLBXQioKkI"
+}
+</code></pre></div></div>
+
+<p>Add foogineer to the <code class="language-plaintext highlighter-rouge">users</code> role:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/foogineer/roles roles=users Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "roles": [
+    {
+      "comment": "Default user role generated for foogineer",
+      "created_at": 1531019797000,
+      "id": "125c4212-b882-432d-a323-9cbe38b1d0df",
+      "name": "foogineer"
+    },
+    {
+      "created_at": 1531020346000,
+      "id": "9846b92c-6820-4741-ac31-425b3d6abc5b",
+      "name": "users"
+    }
+  ],
+  "user": {
+    "created_at": 1531019797000,
+    "id": "0b4111da-2827-4767-8651-a327f7a559e9",
+    "name": "foogineer",
+    "enabled": true,
+    "user_token": "dNeYvYAwvjOJdoReVJZXF8vLBXQioKkI"
+  }
+}
+</code></pre></div></div>
+
+<p>Create bargineer:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users name=bargineer Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "created_at": 1531019837000,
+  "id": "25dfa68e-32e8-48d8-815f-6fedfd2fb4a6",
+  "name": "bargineer",
+  "enabled": true,
+  "user_token": "eZj3WUc46wO3zEJbLP3Y4VGvNaUgGlyv"
+}
+</code></pre></div></div>
+
+<p>Add bargineer to the <code class="language-plaintext highlighter-rouge">users</code> role:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/bargineer/roles roles=users Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "roles": [
+    {
+      "comment": "Default user role generated for bargineer",
+      "created_at": 1531019837000,
+      "id": "3edb00c2-9ae1-423d-ac81-bec702c29e37",
+      "name": "bargineer"
+    },
+    {
+      "created_at": 1531020346000,
+      "id": "9846b92c-6820-4741-ac31-425b3d6abc5b",
+      "name": "users"
+    }
+  ],
+  "user": {
+    "created_at": 1531019837000,
+    "id": "25dfa68e-32e8-48d8-815f-6fedfd2fb4a6",
+    "name": "bargineer",
+    "enabled": true,
+    "user_token": "eZj3WUc46wO3zEJbLP3Y4VGvNaUgGlyv"
+  }
+}
+</code></pre></div></div>
+
+<p>Create bazgineer:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users name=bazgineer Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "created_at": 1531019937000,
+  "id": "ea7207d7-0d69-427b-b288-ce696b7f4690",
+  "name": "bazgineer",
+  "enabled": true,
+  "user_token": "r8NhaT213Zm8o1woQF4ZyQyCVjFRgGp3"
+}
+</code></pre></div></div>
+
+<p>Add bazgineer to the <code class="language-plaintext highlighter-rouge">users</code> role:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/bazgineer/roles roles=users Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "roles": [
+    {
+      "comment": "Default user role generated for bazgineer",
+      "created_at": 1531019937000,
+      "id": "fa409bb6-c86c-45d2-8a6b-ac8e71de2cc9",
+      "name": "bazgineer"
+    },
+    {
+      "created_at": 1531020346000,
+      "name": "users",
+      "id": "9846b92c-6820-4741-ac31-425b3d6abc5b"
+    }
+  ],
+  "user": {
+    "created_at": 1531019937000,
+    "id": "ea7207d7-0d69-427b-b288-ce696b7f4690",
+    "name": "bazgineer",
+    "enabled": true,
+    "user_token": "r8NhaT213Zm8o1woQF4ZyQyCVjFRgGp3"
+  }
+}
+</code></pre></div></div>
+
+<h2 id="regular-team-users-use-their-tokens">Regular Team Users use their tokens</h2>
+
+<p>foogineer, bargineer, and bazgineer all have gotten their RBAC user tokens
+from their Team A admin, and are now allowed to explore Kong—within the
+confines of their Team A workspace. Let’s validate they can in fact do anything
+they wish, except over RBAC and Workspaces.</p>
+
+<p>Try listing Workspaces:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/workspaces/ Kong-Admin-Token:dNeYvYAwvjOJdoReVJZXF8vLBXQioKkI
+{
+  "message": "foogineer, you do not have permissions to read this resource"
+}
+</code></pre></div></div>
+
+<p>Enable some plugin—e.g., key-auth:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/plugins name=key-auth Kong-Admin-Token:dNeYvYAwvjOJdoReVJZXF8vLBXQioKkI
+{
+  "created_at": 1531021732000,
+  "config": {
+    "key_in_body": false,
+    "run_on_preflight": true,
+    "anonymous": "",
+    "hide_credentials": false,
+    "key_names": [
+      "apikey"
+    ]
+  },
+  "id": "cdc85ef0-804b-4f92-aafd-3ff58512e445",
+  "enabled": true,
+  "name": "key-auth"
+}
+</code></pre></div></div>
+
+<p>List currently enabled plugins:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/plugins Kong-Admin-Token:dNeYvYAwvjOJdoReVJZXF8vLBXQioKkI
+{
+  "total": 1,
+  "data": [
+    {
+      "created_at": 1531021732000,
+      "config": {
+        "key_in_body": false,
+        "run_on_preflight": true,
+        "anonymous": "",
+        "hide_credentials": false,
+        "key_names": [
+          "apikey"
+        ]
+      },
+      "id": "cdc85ef0-804b-4f92-aafd-3ff58512e445",
+      "name": "key-auth",
+      "enabled": true
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>This ends our use case tutorial; it demonstrates the power of RBAC and
+workspaces with a real-world scenario. Following, we will approach <strong>Entity-Level
+RBAC</strong>, an extension of our powerful access control to entity-level granularity.</p>
+
+<h2 id="entity-level-rbac-a-primer">Entity-Level RBAC: a Primer</h2>
+
+<p>Kong Gateway’s new RBAC implementation goes one step further in permissions
+granularity: in addition to “endpoint” permissions, it supports entity-level
+permissions, meaning that particular entities, identified by their unique ID,
+can be allowed or disallowed access in a role.</p>
+
+<p>Refreshing our minds, RBAC is <a href="#enforcing-rbac">enforced</a> with the <code class="language-plaintext highlighter-rouge">enforce_rbac</code>
+configuration directive—or with its <code class="language-plaintext highlighter-rouge">KONG_ENFORCE_RBAC</code> environment variable
+counterpart. Such directive is an enum, with 4 possible values:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">on</code>: similarly to the previous RBAC implementation, applies Endpoint-level
+access control</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">entity</code>: applies <strong>only</strong> Entity-level access control</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">both</code>: applies <strong>both Endpoint and Entity level access control</strong>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">off</code>: disables RBAC enforcement</li>
+</ul>
+
+<p>If one sets it to either <code class="language-plaintext highlighter-rouge">entity</code> or <code class="language-plaintext highlighter-rouge">both</code>, Kong will enforce entity-level
+access control. However, as with endpoint-level access control, permissions
+must be bootstrapped before enforcement is enabled.</p>
+
+<h3 id="creating-entity-level-permissions">Creating Entity-Level Permissions</h3>
+
+<p>Team A just got one new, temporary, team member: qux. Admin A, the admin of
+Team A, has already created his qux RBAC user; he needs, however, to limit
+access that qux has over entities in Team A workspace, giving him read access
+to only a couple of entities—say, a Service and a Route. For that, he will
+use Entity-Level RBAC.</p>
+
+<p><strong>Admin A creates a role for the temporary user qux</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles name=qux-role Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "name": "qux-role",
+  "created_at": 1531065975000,
+  "id": "ffe93269-7993-4308-965e-0286d0bc87b9"
+}
+</code></pre></div></div>
+
+<p>We will assume the following entities exist:</p>
+
+<p>A service:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/services Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "next": null,
+  "data": [
+    {
+      "host": "httpbin.org",
+      "created_at": 1531066074,
+      "connect_timeout": 60000,
+      "id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43",
+      "protocol": "http",
+      "name": "service1",
+      "read_timeout": 60000,
+      "port": 80,
+      "path": null,
+      "updated_at": 1531066074,
+      "retries": 5,
+      "write_timeout": 60000
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>and a Route to that Service:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/routes Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "next": null,
+  "data": [
+    {
+      "created_at": 1531066253,
+      "id": "d25afc46-dc59-48b2-b04f-d3ebe19f6d4b",
+      "hosts": null,
+      "updated_at": 1531066253,
+      "preserve_host": false,
+      "regex_priority": 0,
+      "service": {
+        "id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43"
+      },
+      "paths": [
+        "/anything"
+      ],
+      "methods": null,
+      "strip_path": false,
+      "protocols": [
+        "http",
+        "https"
+      ]
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p><strong>Admin A creates entity permissions in qux-role</strong>:</p>
+
+<p>Add service1—whose ID is 3ed24101-19a7-4a0b-a10f-2f47bcd4ff43:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/qux-role/entities entity_id=3ed24101-19a7-4a0b-a10f-2f47bcd4ff43 actions=read Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "created_at": 1531066684000,
+  "role_id": "ffe93269-7993-4308-965e-0286d0bc87b9",
+  "entity_id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43",
+  "negative": false,
+  "entity_type": "services",
+  "actions": [
+    "read"
+  ]
+}
+</code></pre></div></div>
+
+<p>Add the route—whose ID is d25afc46-dc59-48b2-b04f-d3ebe19f6d4b:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/roles/qux-role/entities entity_id=d25afc46-dc59-48b2-b04f-d3ebe19f6d4b actions=read Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "created_at": 1531066728000,
+  "role_id": "ffe93269-7993-4308-965e-0286d0bc87b9",
+  "entity_id": "d25afc46-dc59-48b2-b04f-d3ebe19f6d4b",
+  "negative": false,
+  "entity_type": "routes",
+  "actions": [
+    "read"
+  ]
+}
+</code></pre></div></div>
+
+<p><strong>Admin A adds qux to his role</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/qux/roles roles=qux-role Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "roles": [
+    {
+      "comment": "Default user role generated for qux",
+      "created_at": 1531065373000,
+      "name": "qux",
+      "id": "31614171-4174-42b4-9fae-43c9ce14830f"
+    },
+    {
+      "created_at": 1531065975000,
+      "name": "qux-role",
+      "id": "ffe93269-7993-4308-965e-0286d0bc87b9"
+    }
+  ],
+  "user": {
+    "created_at": 1531065373000,
+    "id": "4d87bf78-5824-4756-b0d0-ceaa9bd9b2d5",
+    "name": "qux",
+    "enabled": true,
+    "user_token": "sUnv6uBehM91amYRNWESsgX3HzqoBnR5"
+  }
+}
+</code></pre></div></div>
+
+<p>Checking permissions appear listed:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/qux/permissions Kong-Admin-Token:n5bhjgv0speXp4N7rSUzUj8PGnl3F5eG
+{
+  "entities": {
+    "d25afc46-dc59-48b2-b04f-d3ebe19f6d4b": {
+      "actions": [
+        "read"
+      ],
+      "negative": false
+    },
+    "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43": {
+      "actions": [
+        "read"
+      ],
+      "negative": false
+    }
+  },
+  "endpoints": {}
+}
+</code></pre></div></div>
+
+<p>That is, 2 entities permissions and no endpoint permissions.</p>
+
+<p>Admin A is done setting up qux, and qux can now use his user token to read
+his two entities over Kong’s admin API.</p>
+
+<p>We will assume that Admin A <a href="#enforcing-rbac">enabled entity-level enforcement</a>.
+Note that as qux has <strong>no endpoint-level permissions</strong>, if both endpoint and
+entity-level enforcement is enabled, he will not be able to read his entities -
+endpoint-level validation comes before entity-level.</p>
+
+<p><strong>qux tries listing all RBAC users</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/users/ Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "message": "qux, you do not have permissions to read this resource"
+}
+</code></pre></div></div>
+
+<p><strong>qux tries listing all Workspaces</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/rbac/workspaces/ Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "message": "qux, you do not have permissions to read this resource"
+}
+</code></pre></div></div>
+
+<p><strong>qux tries to access service1</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/services/service1 Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "host": "httpbin.org",
+  "created_at": 1531066074,
+  "connect_timeout": 60000,
+  "id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43",
+  "protocol": "http",
+  "name": "service1",
+  "read_timeout": 60000,
+  "port": 80,
+  "path": null,
+  "updated_at": 1531066074,
+  "retries": 5,
+  "write_timeout": 60000
+}
+</code></pre></div></div>
+
+<p>Similarly, he can access his Route:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/routes/3ed24101-19a7-4a0b-a10f-2f47bcd4ff43 Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "created_at": 1531066253,
+  "strip_path": false,
+  "hosts": null,
+  "preserve_host": false,
+  "regex_priority": 0,
+  "updated_at": 1531066253,
+  "paths": [
+    "/anything"
+  ],
+  "service": {
+    "id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43"
+  },
+  "methods": null,
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "id": "d25afc46-dc59-48b2-b04f-d3ebe19f6d4b"
+}
+</code></pre></div></div>
+
+<h2 id="closing-remarks">Closing Remarks</h2>
+
+<p>We will end this chapter with a few closing remarks.</p>
+
+<h3 id="wildcards-in-permissions">Wildcards in Permissions</h3>
+
+<p>RBAC supports the use of wildcards—represented by the <code class="language-plaintext highlighter-rouge">*</code> character—in many
+aspects of permissions:</p>
+
+<p><strong>Creating endpoint permissions—<code class="language-plaintext highlighter-rouge">/rbac/roles/:role/endpoints</code></strong></p>
+
+<p>To create an endpoint permission, one must pass the parameters below, all of
+which can be replaced by a * character:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">endpoint</code>: <code class="language-plaintext highlighter-rouge">*</code> matches <strong>any endpoint</strong>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">workspace</code>: <code class="language-plaintext highlighter-rouge">*</code> matches <strong>any workspace</strong>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">actions</code>: <code class="language-plaintext highlighter-rouge">*</code> evaluates to <strong>all actions—read, update, create, delete</strong>
+</li>
+</ul>
+
+<p><strong>Special case</strong>: <code class="language-plaintext highlighter-rouge">endpoint</code>, in addition to a single <code class="language-plaintext highlighter-rouge">*</code>, also accepts <code class="language-plaintext highlighter-rouge">*</code>
+within the endpoint itself, replacing a URL segment between <code class="language-plaintext highlighter-rouge">/</code>; for example,
+all of the following are valid endpoints:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">/rbac/*</code>: where <code class="language-plaintext highlighter-rouge">*</code> replaces any possible segment—e.g., <code class="language-plaintext highlighter-rouge">/rbac/users</code>,
+<code class="language-plaintext highlighter-rouge">/rbac/roles</code>, etc</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">/services/*/plugins</code>: <code class="language-plaintext highlighter-rouge">*</code> matches any Service name or ID</li>
+</ul>
+
+<p>Note, however, that <code class="language-plaintext highlighter-rouge">*</code> <strong>is not</strong> a generic, shell-like, glob pattern.</p>
+
+<p>If <code class="language-plaintext highlighter-rouge">workspace</code> is omitted, it defaults to the current request’s workspace. For
+example, a role-endpoint permission created with <code class="language-plaintext highlighter-rouge">/teamA/roles/admin/endpoints</code>
+is scoped to workspace <code class="language-plaintext highlighter-rouge">teamA</code>.</p>
+
+<p><strong>Creating entity permissions—<code class="language-plaintext highlighter-rouge">/rbac/roles/:role/entities</code></strong></p>
+
+<p>Similarly, for entity permissions, the following parameters accept a <code class="language-plaintext highlighter-rouge">*</code>
+character:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">entity_id</code>: <code class="language-plaintext highlighter-rouge">*</code> matches <strong>any entity ID</strong>
+</li>
+</ul>
+
+<h3 id="entities-concealing-in-entity-level-rbac">Entities Concealing in Entity-Level RBAC</h3>
+
+<p>With Entity-Level RBAC enabled, endpoints that list all entities of a
+particular collection will only list entities that the user has access to;
+in the example above, if user qux listed all Routes, he would only get as
+response the entities he has access to—even though there could be more:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/routes Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "next": null,
+  "data": [
+    {
+      "created_at": 1531066253,
+      "id": "d25afc46-dc59-48b2-b04f-d3ebe19f6d4b",
+      "hosts": null,
+      "updated_at": 1531066253,
+      "preserve_host": false,
+      "regex_priority": 0,
+      "service": {
+        "id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43"
+      },
+      "paths": [
+        "/anything"
+      ],
+      "methods": null,
+      "strip_path": false,
+      "protocols": [
+        "http",
+        "https"
+      ]
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>Some Kong endpoints carry a <code class="language-plaintext highlighter-rouge">total</code> field in responses; with Entity-Level RBAC
+enabled, the global count of entities is displayed, but only entities the user
+has access to are themselves shown; for example, if Team A has a number of
+plugins configured, but qux only has access to one of them, the following
+would be the expected output for a GET request to <code class="language-plaintext highlighter-rouge">/teamA/plugins</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/plugins Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "total": 2,
+  "data": [
+    {
+      "created_at": 1531070344000,
+      "config": {
+        "key_in_body": false,
+        "run_on_preflight": true,
+        "anonymous": "",
+        "hide_credentials": false,
+        "key_names": [
+          "apikey"
+        ]
+      },
+      "id": "8813dd0b-3e9d-4bcf-8a10-3112654f86e7",
+      "name": "key-auth",
+      "enabled": true
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p>Notice the <code class="language-plaintext highlighter-rouge">total</code> field is 2, but qux only got one entity in the response.</p>
+
+<h3 id="creating-entities-in-entity-level-rbac">Creating Entities in Entity-Level RBAC</h3>
+
+<p>As entity-level RBAC provides access control to individual existing entities,
+it does not apply to creation of new entities; for that, endpoint-level
+permissions must be configured and enforced. For example, if endpoint-level
+permissions are not enforced, qux will be able to create new entities:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http :8001/teamA/routes paths[]=/anything service.id=3ed24101-19a7-4a0b-a10f-2f47bcd4ff43 strip_path=false Kong-Admin-Token:sUnv6uBehM91amYRNWESsgX3HzqoBnR5
+{
+  "created_at": 1531070828,
+  "strip_path": false,
+  "hosts": null,
+  "preserve_host": false,
+  "regex_priority": 0,
+  "updated_at": 1531070828,
+  "paths": [
+    "/anything"
+  ],
+  "service": {
+    "id": "3ed24101-19a7-4a0b-a10f-2f47bcd4ff43"
+  },
+  "methods": null,
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "id": "6ee76f74-3c96-46a9-ae48-72df0717d244"
+}
+</code></pre></div></div>
+
+<p>and qux will automatically have permissions to perform any actions to entities
+he created.</p>
+
+<hr>
+
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=gateway" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.8.x","product[0]":"Kong Gateway"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:deck<score=1>', 'product:Plugin Hub<score=2>', 'product:Kong Gateway<score=3>'],
+              facetFilters: [ 'version:2.8.x']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

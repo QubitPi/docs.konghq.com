@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mocking
+| Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Mocking
+| Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/mocking/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/mocking/2.8.x/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=traffic-control">Traffic Control</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/mocking/2.8.x/">Mocking</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              Introduction
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/mocking/2.8.x/">Overview</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/mocking/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_mocking.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">Mocking</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 2.8.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/">
+                    3.5.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/3.4.x/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/3.3.x/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/3.2.x/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/3.1.x/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/3.0.x/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/mocking/2.8.x/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/2.7.x/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mocking/2.6.x/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+  <a href="https://konghq.com/pricing" target="_blank" class="badge paid" aria-label="available with Konnect Paid subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/mocking/2.8.x/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/mocking/2.8.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/mocking/2.8.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/mocking/2.8.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#behavioral-headers" class="active scroll-to">Behavioral Headers</a>
+    <ul>
+      <li><a href="#x-kong-mocking-delay" class="scroll-to">X-Kong-Mocking-Delay</a></li>
+      <li><a href="#x-kong-mocking-example-id" class="scroll-to">X-Kong-Mocking-Example-Id</a></li>
+      <li><a href="#x-kong-mocking-status-code" class="scroll-to">X-Kong-Mocking-Status-Code</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#tutorial-example" class="scroll-to">Tutorial Example</a>
+    <ul>
+      <li><a href="#step-1-deploy-the-stock-api-example-spec" class="scroll-to">Step 1. Deploy the Stock API example spec</a></li>
+      <li><a href="#create-stock-service" class="scroll-to">Create the stock service</a></li>
+      <li><a href="#create-stock-quote-route" class="scroll-to">Create the get stock quote route</a></li>
+      <li><a href="#enable-mock-plugin" class="scroll-to">Enable the Mocking plugin</a></li>
+      <li><a href="#enable-cors-plugin" class="scroll-to">Enable the CORS plugin</a></li>
+      <li><a href="#testing123" class="scroll-to">Test the mock response</a></li>
+      <li><a href="#post-test" class="scroll-to">Disable the Mocking plugin and update the Service URL</a></li>
+    </ul>
+  </li>
+  <li><a href="#see-also" class="scroll-to">See also</a></li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+      
+        
+          <div class="old-version-banner">
+          You are browsing documentation for an outdated plugin version.
+          See the <a href="/hub/kong-inc/mocking/">latest documentation here</a>.
+          </div>
+        
+      
+
+      
+
+
+  
+    
+      <blockquote class="note" role="alert">
+        <p>
+          Did you know that you can try this plugin without talking to anyone for just $5/month with Kong Konnect? <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=" target="_blank" rel="noopener nofollow noreferrer ">Get started in under 5 minutes</a>.
+        </p>
+      </blockquote>
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>
+  <p>
+    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/mocking/2.8.x/configuration/">Mocking configuration reference</a> doc.</em>
+  </p>
+</blockquote>
+
+
+
+
+
+
+<p>Provide mock endpoints to test your APIs in development against your services.
+The Mocking plugin leverages standards based on the Open API Specification (OAS)
+for sending out mock responses to APIs. Mocking supports both Swagger 2.0 and OpenAPI 3.0.</p>
+
+<p>Benefits of service mocking with the Kong Mocking plugin:</p>
+
+<ul>
+  <li>Conforms to a design-first approach since mock responses are within OAS.</li>
+  <li>Accelerates development of services and APIs.</li>
+  <li>Promotes parallel development of APIs across distributed teams.</li>
+  <li>Easily enable and disable the Mocking plugin for flexibility when testing API behavior.</li>
+  <li>Provides an enhanced full lifecycle API development experience with Dev Portal
+integration.</li>
+</ul>
+
+<p>This plugin can mock <code class="language-plaintext highlighter-rouge">200</code>, <code class="language-plaintext highlighter-rouge">201</code>, and <code class="language-plaintext highlighter-rouge">204</code> responses.</p>
+
+<blockquote class="note">
+  <p><strong>Note</strong>: The plugin requires a spec to work. Depending on the Kong Gateway deployment mode, 
+set either the <a href="/hub/kong-inc/mocking/configuration/#config-api_specification_filename"><code class="language-plaintext highlighter-rouge">api_specification_filename</code></a> 
+or the <a href="/hub/kong-inc/mocking/configuration/#config-api_specification"><code class="language-plaintext highlighter-rouge">api_specification</code></a> parameter.</p>
+</blockquote>
+
+<h2 id="behavioral-headers">Behavioral Headers</h2>
+
+<p>Behavioral headers allow you to change the behavior of the Mocking plugin for the individual request without changing the configuration.</p>
+
+<h3 id="x-kong-mocking-delay">X-Kong-Mocking-Delay</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">X-Kong-Mocking-Delay</code> header tells the plugin how many milliseconds to delay before responding. The delay value must be between <code class="language-plaintext highlighter-rouge">0</code>(inclusive) and <code class="language-plaintext highlighter-rouge">10000</code>(inclusive), otherwise it returns a <code class="language-plaintext highlighter-rouge">400</code> error.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 400 Bad Request
+
+{
+    "message": "Invalid value for X-Kong-Mocking-Delay. The delay value should between 0 and 10000ms"
+}
+</code></pre></div></div>
+
+<h3 id="x-kong-mocking-example-id">X-Kong-Mocking-Example-Id</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">X-Kong-Mocking-Example-Id</code> header tells the plugin which response example is used when the endpoint has multiple examples for a single status code.</p>
+
+<p>OpenAPI 3.0 allows you to define multiple examples in a single MIME type. The following example has two candidate examples: <code class="language-plaintext highlighter-rouge">Hao</code> and <code class="language-plaintext highlighter-rouge">Sasha</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">paths</span><span class="pi">:</span>
+  <span class="na">/query_user</span><span class="pi">:</span>
+    <span class="na">get</span><span class="pi">:</span>
+      <span class="na">responses</span><span class="pi">:</span>
+        <span class="s1">'</span><span class="s">200'</span><span class="err">:</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s">A user object.</span>
+          <span class="na">content</span><span class="pi">:</span>
+            <span class="na">application/json</span><span class="pi">:</span>
+              <span class="na">examples</span><span class="pi">:</span>
+                <span class="na">Jessica</span><span class="pi">:</span>
+                  <span class="na">value</span><span class="pi">:</span>
+                    <span class="na">id</span><span class="pi">:</span> <span class="m">10</span>
+                    <span class="na">name</span><span class="pi">:</span> <span class="s">Hao</span>
+                <span class="na">Ron</span><span class="pi">:</span>
+                  <span class="na">value</span><span class="pi">:</span>
+                    <span class="na">id</span><span class="pi">:</span> <span class="m">20</span>
+                    <span class="na">name</span><span class="pi">:</span> <span class="s">Sasha</span>
+</code></pre></div></div>
+
+<p>Makes a request to choose a specific example to respond to:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET http://HOSTNAME:8000/query_user <span class="nt">-H</span> <span class="s2">"X-Kong-Mocking-Example-Id: Sasha"</span>
+</code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "id": 20,
+    "name": "Sasha"
+}
+</code></pre></div></div>
+
+<h3 id="x-kong-mocking-status-code">X-Kong-Mocking-Status-Code</h3>
+
+<p>By default, the plugin chooses the minimum status code that is defined in the corresponding method.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">X-Kong-Mocking-Status-Code</code> header allows requests to change the default status code selection behavior by specifying a status code that is defined in the corresponding method.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">paths</span><span class="pi">:</span>
+  <span class="na">/ping</span><span class="pi">:</span>
+    <span class="na">get</span><span class="pi">:</span>
+      <span class="na">responses</span><span class="pi">:</span>
+        <span class="s1">'</span><span class="s">200'</span><span class="err">:</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">200'</span>
+          <span class="na">content</span><span class="pi">:</span>
+            <span class="na">application/json</span><span class="pi">:</span>
+              <span class="na">example</span><span class="pi">:</span>
+                <span class="na">message</span><span class="pi">:</span> <span class="s1">'</span><span class="s">200'</span>
+      <span class="err">  </span><span class="s1">'</span><span class="s">500'</span><span class="err">:</span>
+          <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">500'</span>
+          <span class="na">content</span><span class="pi">:</span>
+            <span class="na">application/json</span><span class="pi">:</span>
+              <span class="na">example</span><span class="pi">:</span>
+                <span class="na">message</span><span class="pi">:</span> <span class="s1">'</span><span class="s">500'</span>
+</code></pre></div></div>
+
+<p>Makes a request to choose a specific status code to respond to:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://HOSTNAME:8000/ping <span class="nt">-H</span> <span class="s2">"X-Kong-Mocking-Status-Code: 500"</span>
+</code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 500 Internal Server Error
+
+{
+    "message": "500"
+}
+</code></pre></div></div>
+<h2 id="tutorial-example">Tutorial Example</h2>
+
+<p>This example tutorial steps you through testing a mock response for
+a stock quote service API.</p>
+
+<blockquote class="note">
+  <p><strong>Note:</strong> Before following the steps in this
+tutorial, you can view a video demonstration of the Mocking plugin
+used in conjunction with the Dev Portal. See the
+<a href="https://www.youtube.com/watch?v=l8uKbgkK6_I" target="_blank" rel="noopener nofollow noreferrer ">Service Mocking video demo</a>
+available on YouTube.</p>
+</blockquote>
+
+<p>Prerequisites:</p>
+
+<ul>
+  <li>Kong Gateway Enterprise environment with the Dev Portal enabled on at least one workspace. See
+<a href="/gateway/latest/developer-portal/enable-dev-portal/">enable the Dev Portal</a> using <code class="language-plaintext highlighter-rouge">kong.conf</code>. Also refer to
+the instructions for your environment:
+    <ul>
+      <li><a href="/gateway/latest/install-and-run/ubuntu/#enable-dev-portal">Ubuntu</a></li>
+      <li><a href="/gateway/latest/install-and-run/centos/#enable-dev-portal">CentOS</a></li>
+      <li><a href="/gateway/latest/install-and-run/amazon-linux/#enable-dev-portal">Amazon Linux 1 or 2</a></li>
+      <li><a href="/gateway/latest/install-and-run/rhel/#enable-dev-portal">RHEL</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>An Open API Specification (<code class="language-plaintext highlighter-rouge">yaml</code> or <code class="language-plaintext highlighter-rouge">json</code>) that has at least one API method with an
+embedded example response. Multiple examples within a spec are supported. See the
+<a href="#stock-spec">Stock API spec example</a>.</p>
+
+    <blockquote class="note">
+      <p><strong>Note:</strong> The spec must contain <code class="language-plaintext highlighter-rouge">200</code>, <code class="language-plaintext highlighter-rouge">201</code>, or <code class="language-plaintext highlighter-rouge">204</code> responses. The
+Mocking plugin doesn’t support any other response status codes.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Tutorial steps:</p>
+
+<ol>
+  <li>Deploy the example OAS spec that contains mocked responses to the <a href="#deploy-spec-portal">Dev Portal</a> or
+<a href="#deploy-spec-insomnia">Insomnia</a>.</li>
+  <li>Create the <a href="#create-stock-service">Stock service</a>.</li>
+  <li>Create the <a href="#create-stock-quote-route"><code class="language-plaintext highlighter-rouge">get stock quote</code> route</a>.</li>
+  <li>Enable the <a href="#enable-mock-plugin">Mocking plugin</a> on the <code class="language-plaintext highlighter-rouge">get stock quote</code> route.</li>
+  <li>Enable the <a href="#enable-cors-plugin">CORS plugin</a> on the <code class="language-plaintext highlighter-rouge">get stock quote</code> route.</li>
+  <li>
+<a href="#testing123">Test the mocked response</a> from the Dev Portal, Insomnia, or the command line.</li>
+  <li>When you’ve completed your API mock testing, <a href="#post-test">disable the Mocking plugin and update the service URL</a>.</li>
+</ol>
+
+<h3 id="step-1-deploy-the-stock-api-example-spec">Step 1. Deploy the Stock API example spec</h3>
+
+<p>Deploy the <a href="#stock-spec">Stock API spec example</a> to either the <a href="#deploy-spec-portal">Dev Portal</a> or
+<a href="#deploy-spec-insomnia">Insomnia</a>.</p>
+
+<h4 id="deploy-spec-portal">Deploy a spec to the Dev Portal</h4>
+
+<p>Follow these steps to deploy a spec to the Dev Portal using Kong Manager. You can
+copy and paste the <code class="language-plaintext highlighter-rouge">stock-01.json</code> example file into the Dev Portal using Editor Mode.</p>
+
+<p><img src="/assets/images/products/gateway/dev-portal/stock-spec-mock-example.png" alt="Dev Portal Specs"></p>
+
+<ol>
+  <li>Open Editor Mode and click <strong>New File</strong>.</li>
+  <li>Name the file <code class="language-plaintext highlighter-rouge">stock-01.json</code>.</li>
+  <li>Copy and paste the contents in the <a href="#stock-spec">example</a> into the new file.</li>
+</ol>
+
+<p>Alternatively, you can also use the <a href="/dev-portal/api/v1/">Portal Files API</a>
+to upload a spec to the Dev Portal.</p>
+
+<h4 id="deploy-spec-insomnia">Deploy a spec to Insomnia</h4>
+
+<ol>
+  <li>
+    <p>From the Insomnia dashboard, click <strong>Create</strong> &gt; <strong>Import from File</strong> and select the
+<code class="language-plaintext highlighter-rouge">stock-0.1.json</code> file.</p>
+
+    <p><img src="/assets/images/products/insomnia/insomnia-import-spec.png" alt="Insomnia Dashboard Import File"></p>
+  </li>
+  <li>
+    <p>Click <strong>Design Document</strong>, then click OK on the success message.</p>
+  </li>
+  <li>
+    <p>(Optional) Click <strong>Deploy to Portal</strong> to deploy the spec to the Dev Portal.</p>
+
+    <p><img src="/assets/images/products/insomnia/insomnia-deploy-spec-dev-portal.png" alt="Insomnia Dashboard Deploy Spec to Portal"></p>
+  </li>
+</ol>
+
+<h4 id="stock-spec">Stock API spec example</h4>
+
+<p>The mocked responses in the example Stock spec <code class="language-plaintext highlighter-rouge">stock-0.1.json</code> are between lines <code class="language-plaintext highlighter-rouge">38</code> to <code class="language-plaintext highlighter-rouge">59</code> for <code class="language-plaintext highlighter-rouge">GET stock/historical</code>,
+and from lines <code class="language-plaintext highlighter-rouge">86</code> to <code class="language-plaintext highlighter-rouge">103</code> for <code class="language-plaintext highlighter-rouge">GET stock/closing</code>.</p>
+
+<p>If applicable to your environment, replace the <code class="language-plaintext highlighter-rouge">host</code> entry in the spec with your
+IP address or URL for Kong Gateway.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">"swagger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"info"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock API"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock Information Service"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1:8000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"basePath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"schemes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"http"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"consumes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"application/json"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"produces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"application/json"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"/stock/historical"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"get"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"operationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET /stock/historical"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"produces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"application/json"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Production"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"query"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tickers"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"200"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status 200"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"application/json"</span><span class="p">:</span><span class="w">
+                                  </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"meta_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                  </span><span class="nl">"api_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"historical_stock_price_v2"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"num_total_data_points"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"credit_cost"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"start_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"yesterday"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"end_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"yesterday"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                                </span><span class="nl">"result_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                  </span><span class="nl">"AAPL"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                    </span><span class="nl">"date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-04-23"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"volume"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"high"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.75</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"low"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.87</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"adj_close"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">275.03</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"close"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.03</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"open"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.87</span><span class="w">
+                                  </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                              </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"/stock/closing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"get"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"operationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET /stock/closing"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"produces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"application/json"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Beta"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"query"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tickers"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"200"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status 200"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"application/json"</span><span class="p">:</span><span class="w">
+                                  </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"meta_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                  </span><span class="nl">"api_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"closing_stock_price_v1"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                                </span><span class="nl">"result_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                  </span><span class="nl">"AAPL"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                    </span><span class="nl">"date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-06-23"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"volume"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"high"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.75</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"low"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.87</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"adj_close"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">275.03</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"close"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.03</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"open"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">100.87</span><span class="w">
+                                  </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                              </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="create-stock-service">Create the stock service</h3>
+
+<p>This example creates a service named <code class="language-plaintext highlighter-rouge">Stock-Service</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/services <span class="se">\</span>
+  <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span>Stock-Service <span class="se">\</span>
+  <span class="nt">--data</span> <span class="nv">url</span><span class="o">=</span><span class="s1">'http://httpbin.org/anything'</span>
+</code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">201</span><span class="w"> </span><span class="err">Created</span><span class="w">
+</span><span class="err">Access-Control-Allow-Credentials:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="err">Access-Control-Allow-Origin:</span><span class="w"> </span><span class="err">http://localhost:</span><span class="mi">8002</span><span class="w">
+</span><span class="err">Connection:</span><span class="w"> </span><span class="err">keep-alive</span><span class="w">
+</span><span class="err">Content-Length:</span><span class="w"> </span><span class="mi">362</span><span class="w">
+</span><span class="err">Content-Type:</span><span class="w"> </span><span class="err">application/json;</span><span class="w"> </span><span class="err">charset=utf</span><span class="mi">-8</span><span class="w">
+</span><span class="err">Date:</span><span class="w"> </span><span class="err">Fri,</span><span class="w"> </span><span class="mi">23</span><span class="w"> </span><span class="err">Apr</span><span class="w"> </span><span class="mi">2021</span><span class="w"> </span><span class="mi">14</span><span class="err">:</span><span class="mi">16</span><span class="err">:</span><span class="mi">42</span><span class="w"> </span><span class="err">GMT</span><span class="w">
+</span><span class="err">Server:</span><span class="w"> </span><span class="err">kong/</span><span class="mf">2.4</span><span class="err">.</span><span class="mf">0.0</span><span class="err">-beta</span><span class="mi">1</span><span class="err">-enterprise-edition</span><span class="w">
+</span><span class="err">X-Kong-Admin-Latency:</span><span class="w"> </span><span class="mi">28</span><span class="w">
+</span><span class="err">X-Kong-Admin-Request-ID:</span><span class="w"> </span><span class="err">a</span><span class="mi">4</span><span class="err">WLWEHkurc</span><span class="mi">5</span><span class="err">IjKSZO</span><span class="mi">2</span><span class="err">fy</span><span class="mi">8</span><span class="err">GPmWd</span><span class="mi">6</span><span class="err">ffs</span><span class="mi">0</span><span class="w">
+</span><span class="err">vary:</span><span class="w"> </span><span class="err">Origin</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ca_certificates"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"client_certificate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"connect_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1619187402</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"httpbin"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94d95e04-bb28-4707-bef7-32307091b5dc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock-Service"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/anything"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"read_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"retries"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tls_verify"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tls_verify_depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1619187402</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"write_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="create-stock-quote-route">Create the get stock quote route</h3>
+
+<p>This example creates a route named <code class="language-plaintext highlighter-rouge">getStockQuote</code> on the service named <code class="language-plaintext highlighter-rouge">Stock-Service</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/services/Stock-Service/routes <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"name=getStockQuote"</span> <span class="se">\</span>
+    <span class="nt">--data</span> <span class="nv">paths</span><span class="o">=</span><span class="s2">"/stock/historical"</span>
+</code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8002
+Connection: keep-alive
+Content-Length: 497
+Content-Type: application/json; charset=utf-8
+Date: Fri, 23 Apr 2021 14:26:44 GMT
+Server: kong/2.4.0.0-beta1-enterprise-edition
+X-Kong-Admin-Latency: 29
+X-Kong-Admin-Request-ID: UtF0twm9PoeI3gD7SqH6XDvm3JRqKm8o
+vary: Origin
+
+{
+    "created_at": 1619188004,
+    "destinations": null,
+    "headers": null,
+    "hosts": null,
+    "https_redirect_status_code": 426,
+    "id": "5ada3c98-c732-4c05-903f-9ba8ef026776",
+    "methods": null,
+    "name": "getStockQuote",
+    "path_handling": "v0",
+    "paths": [
+        "/stock/historical"
+    ],
+    "preserve_host": false,
+    "protocols": [
+        "http",
+        "https"
+    ],
+    "regex_priority": 0,
+    "request_buffering": true,
+    "response_buffering": true,
+    "service": {
+        "id": "94d95e04-bb28-4707-bef7-32307091b5dc"
+    },
+    "snis": null,
+    "sources": null,
+    "strip_path": true,
+    "tags": null,
+    "updated_at": 1619188004
+}
+</code></pre></div></div>
+
+<h3 id="enable-mock-plugin">Enable the Mocking plugin</h3>
+
+<p>This example enables the Mocking plugin on the <code class="language-plaintext highlighter-rouge">getStockQuote</code> route.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/routes/getStockQuote/plugins <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"name=mocking"</span>  <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.api_specification_filename=stock-0.1.json"</span>
+</code></pre></div></div>
+
+<p>Optional configuration for random simulated delay:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/routes/getStockQuote/plugins <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"name=mocking"</span>  <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.api_specification_filename=stock-0.1.json"</span> <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.random_delay=true"</span> <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.max_delay_time=1"</span> <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.min_delay_time=0.001"</span>
+</code></pre></div></div>
+
+<p>DB-less or hybrid mode configuration must use <code class="language-plaintext highlighter-rouge">config.api_specification</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/routes/getStockQuote/plugins <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"name=mocking"</span>  <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.api_specification=&lt;spec_contents&gt;"</span>
+</code></pre></div></div>
+
+<p>Because a spec can be rather lengthy to put into a command, use a local variable to post
+a spec:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">mock_ex</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat </span>example.yaml<span class="si">)</span><span class="p">;</span> <span class="se">\</span>
+curl <span class="nt">-X</span> POST http://localhost:8001/routes/&lt;route_id&gt;/plugins <span class="se">\</span>
+  <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span>mocking <span class="se">\</span>
+  <span class="nt">--data</span> config.api_specification<span class="o">=</span><span class="s2">"</span><span class="nv">$mock_ex</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>In Kong Manager, you can copy and paste the contents of the spec directly into
+the <code class="language-plaintext highlighter-rouge">Config.Api Specification</code> text field.</p>
+
+<p><img src="/assets/images/products/gateway/dev-portal/km-config-api-spec-txt-fld.png" alt="Kong Manager Config API Spec Text Field"></p>
+
+<p>Response (random delay not enabled):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8002
+Connection: keep-alive
+Content-Length: 387
+Content-Type: application/json; charset=utf-8
+Date: Fri, 23 Apr 2021 20:40:51 GMT
+Server: kong/2.4.0.0-beta1-enterprise-edition
+X-Kong-Admin-Latency: 1510
+X-Kong-Admin-Request-ID: iCZdp9JsqWhtmGLStICwBcOY4jT2R391
+vary: Origin
+
+{
+    "config": {
+        "api_specification": null,
+        "api_specification_filename": "stock-0.1.json",
+        "max_delay_time": 1,
+        "min_delay_time": 0.001,
+        "random_delay": false
+    },
+    "consumer": null,
+    "created_at": 1619210451,
+    "enabled": true,
+    "id": "0d8ed6f6-6a4f-43df-8d81-980b5d9b2c7a",
+    "name": "mocking",
+    "protocols": [
+        "grpc",
+        "grpcs",
+        "http",
+        "https"
+    ],
+    "route": {
+        "id": "5ada3c98-c732-4c05-903f-9ba8ef026776"
+    },
+    "service": null,
+    "tags": null
+}
+</code></pre></div></div>
+
+<p>Response (random delay enabled):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8002
+Connection: keep-alive
+Content-Length: 386
+Content-Type: application/json; charset=utf-8
+Date: Tue, 11 May 2021 14:50:19 GMT
+Server: kong/2.4.0.0-beta1-enterprise-edition
+X-Kong-Admin-Latency: 15
+X-Kong-Admin-Request-ID: 2ZPP5GE3T6vL2bhbLRL7PBA2u9zgUEB8
+vary: Origin
+
+{
+    "config": {
+        "api_specification": null,
+        "api_specification_filename": "stock-0.1.json",
+        "max_delay_time": 1,
+        "min_delay_time": 0.001,
+        "random_delay": true
+    },
+    "consumer": null,
+    "created_at": 1620744619,
+    "enabled": true,
+    "id": "273edea0-477a-4d9c-bb00-1cf99e48f191",
+    "name": "mocking",
+    "protocols": [
+        "grpc",
+        "grpcs",
+        "http",
+        "https"
+    ],
+    "route": {
+        "id": "b0fad1db-eedf-4e1c-ace3-a394a640a514"
+    },
+    "service": null,
+    "tags": null
+}
+</code></pre></div></div>
+
+<h3 id="enable-cors-plugin">Enable the CORS plugin</h3>
+
+<p>Cross-origin resource sharing (CORS) is disabled by default for security reasons. To test the mock response
+from the Dev Portal, enable the <a href="/hub/kong-inc/cors/">CORS plugin</a> on the <code class="language-plaintext highlighter-rouge">getStockQuote</code> route.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/routes/getStockQuote/plugins <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"name=cors"</span>  <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s2">"config.origins=*"</span>
+</code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8002
+Connection: keep-alive
+Content-Length: 449
+Content-Type: application/json; charset=utf-8
+Date: Fri, 23 Apr 2021 20:46:25 GMT
+Server: kong/2.4.0.0-beta1-enterprise-edition
+X-Kong-Admin-Latency: 10
+X-Kong-Admin-Request-ID: niWS3bFPIUeHOfbLkQTQLS3qeIxSVoPx
+vary: Origin
+
+{
+   "config": {
+       "credentials": false,
+       "exposed_headers": null,
+       "headers": null,
+       "max_age": null,
+       "methods": [
+           "GET",
+           "HEAD",
+           "PUT",
+           "PATCH",
+           "POST",
+           "DELETE",
+           "OPTIONS",
+           "TRACE",
+           "CONNECT"
+       ],
+       "origins": [
+           "*"
+       ],
+       "preflight_continue": false
+   },
+   "consumer": null,
+   "created_at": 1619210785,
+   "enabled": true,
+   "id": "4573e790-b0b5-4535-a1ab-88c42ca56f69",
+   "name": "cors",
+   "protocols": [
+       "grpc",
+       "grpcs",
+       "http",
+       "https"
+   ],
+   "route": {
+       "id": "5ada3c98-c732-4c05-903f-9ba8ef026776"
+   },
+   "service": null,
+   "tags": null
+}
+</code></pre></div></div>
+
+<h3 id="testing123">Test the mock response</h3>
+
+<p>Test the mocked response from within the Dev Portal Service,
+<a href="https://insomnia.rest/download" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>, or from the command line.</p>
+
+<h4 id="dev-portal-mock-spec-test">Dev Portal mock spec test</h4>
+
+<p>Test the mock response from within the Dev Portal spec using the <strong>Try it out</strong> feature.</p>
+
+<ol>
+  <li>
+    <p>From the Dev Portal home page, click the <strong>Stock API</strong> Service tile.</p>
+
+    <p><img src="/assets/images/products/gateway/dev-portal/stock-service.png" alt="Dev Portal Services"></p>
+  </li>
+  <li>
+    <p>Click the <strong>GET /stock/historical</strong> method and the <strong>Try it out</strong> button.</p>
+  </li>
+  <li>
+    <p>Enter the ticker sign <strong>AAPL</strong> in the <strong>tickers</strong> box and click <strong>Execute</strong> to see the server response.</p>
+
+    <p><img src="/assets/images/products/gateway/dev-portal/tryitout-portal.png" alt="Try it out Dev Portal"></p>
+  </li>
+</ol>
+
+<h4 id="insomnia">Insomnia mock spec test</h4>
+
+<p>Test the mock response from within the Insomnia spec using the <strong>Try it out</strong> feature.</p>
+
+<ol>
+  <li>
+    <p>From the Insomnia dashboard, click the <strong>Stock API 0.1 Document</strong> tile.</p>
+
+    <p><img src="/assets/images/products/insomnia/insomnia-stock-spec.png" alt="Insomnia Dashboard"></p>
+  </li>
+  <li>
+    <p>Click the <strong>GET /stock/historical</strong> method and the <strong>Try it out</strong> button.</p>
+  </li>
+  <li>
+    <p>Enter the ticker sign <strong>AAPL</strong> in the <strong>tickers</strong> box and click <strong>Execute</strong> to see the server response.</p>
+
+    <p><img src="/assets/images/products/insomnia/tryitout-insomnia.png" alt="Try it out Insomnia"></p>
+  </li>
+</ol>
+
+<h4 id="command-line-test">Command line test</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:8000/stock/historical?tickers=AAPL"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
+</code></pre></div></div>
+
+<p>The response matches the mocked response from within the spec:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Connection: keep-alive
+Content-Length: 279
+Content-Type: application/json; charset=utf-8
+Date: Wed, 05 May 2021 19:59:06 GMT
+Server: kong/2.4.0.0-beta1-enterprise-edition
+X-Kong-Mocking-Plugin: true
+X-Kong-Response-Latency: 40
+vary: Origin
+
+{
+    "meta_data": {
+        "api_name": "historical_stock_price_v2",
+        "credit_cost": 10,
+        "end_date": "yesterday",
+        "num_total_data_points": 1,
+        "start_date": "yesterday"
+    },
+    "result_data": {
+        "AAPL": [
+            {
+                "adj_close": 275.03,
+                "close": 100.03,
+                "date": "2000-04-23",
+                "high": 100.75,
+                "low": 100.87,
+                "open": 100.87,
+                "volume": 33
+            }
+        ]
+    }
+}
+</code></pre></div></div>
+
+<h3 id="post-test">Disable the Mocking plugin and update the Service URL</h3>
+
+<p>When your API mock testing is completed, disable the Mocking plugin and update the service
+URL.</p>
+
+<p>Disable the Mocking plugin either in Kong Manager by clicking <strong>Disable</strong> for the plugin,
+or by using a command. You can copy and paste the plugin ID from within Kong Manager.</p>
+
+<p><img src="/assets/images/products/gateway/dev-portal/km-copy-plugin-id.png" alt="Copy Plugin ID"></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X PATCH http://localhost:8001/plugins/&lt;plugin-id&gt;  -i \
+    --data "name=mocking"  \
+    --data "enabled=false"
+</code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8002
+Connection: keep-alive
+Content-Length: 347
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 May 2021 18:18:11 GMT
+Server: kong/2.4.0.0-beta1-enterprise-edition
+X-Kong-Admin-Latency: 11
+X-Kong-Admin-Request-ID: 0s7xacYAUBFIY0LPanSkobV8mSdhOSvk
+vary: Origin
+{
+    "config": {
+        "api_specification": null,
+        "api_specification_filename": "stock-0.1.json",
+        "max_delay_time": 1,
+        "min_delay_time": 0.001,
+        "random_delay": false
+    },
+    "consumer": null,
+    "created_at": 1620403609,
+    "enabled": false,
+    "id": "9a7dbe34-da00-47df-9939-5787abf2d3a1",
+    "name": "mocking",
+    "protocols": [
+        "grpc",
+        "grpcs",
+        "http",
+        "https"
+    ],
+    "route": null,
+    "service": null,
+    "tags": null
+}
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">enabled</code> config reflects <code class="language-plaintext highlighter-rouge">false</code> in line <code class="language-plaintext highlighter-rouge">22</code>.</p>
+
+<p>The service URL can be anything for purposes of mocking. After you disable the Mocking plugin,
+ensure you set the actual URL for your service so that the response can be received.</p>
+
+<p><img src="/assets/images/products/gateway/dev-portal/km-service-url.png" alt="Set Real Service URL"></p>
+
+<h2 id="see-also">See also</h2>
+<ul>
+  <li><a href="https://support.insomnia.rest/collection/105-inso-cli" target="_blank" rel="noopener nofollow noreferrer "><code class="language-plaintext highlighter-rouge">inso</code> CLI documentation</a></li>
+</ul>
+
+
+
+
+
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/mocking/2.8.x/configuration/">Mocking Configuration</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.8.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:2.8.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

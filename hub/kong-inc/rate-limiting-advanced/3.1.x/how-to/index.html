@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How to create rate limiting tiers
+| Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="How to create rate limiting tiers
+| Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/rate-limiting-advanced/how-to/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
+<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
+          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="separator"></div>
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kuma</div>
+                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=traffic-control">Traffic Control</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/kong-inc/rate-limiting-advanced/3.1.x/">Rate Limiting Advanced</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/">How to</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/">How to create rate limiting tiers</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/rate-limiting-advanced/how-to/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_rate-limiting-advanced.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">How to create rate limiting tiers</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 3.1.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/how-to/">
+                    3.5.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.4.x/how-to/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.3.x/how-to/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.2.x/how-to/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.0.x/how-to/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/how-to/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/2.7.x/how-to/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/how-to/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge premium" aria-label="available with Konnect Premium subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/3.1.x/">
+        
+
+Overview
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/3.1.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+
+        
+          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        
+      
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/">
+        
+
+How to create rate limiting tiers
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/peak-traffic-rate-limit/">
+        
+
+Set rate limit based on peak or non-peak time
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/3.1.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+  </span>
+
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#create-rate-limiting-tiers" class="active scroll-to">Create rate limiting tiers</a></li>
+  <li><a href="#set-up-rate-limiting-advanced-config-for-consumer-group" class="scroll-to">Set up Rate Limiting Advanced config for consumer group</a></li>
+  <li><a href="#remove-consumer-from-group---group-view" class="scroll-to">Remove consumer from group - group view</a></li>
+  <li><a href="#remove-consumer-from-group---consumer-view" class="scroll-to">Remove consumer from group - consumer view</a></li>
+  <li><a href="#delete-consumer-group-configurations" class="scroll-to">Delete consumer group configurations</a></li>
+  <li><a href="#delete-consumer-group" class="scroll-to">Delete consumer group</a></li>
+  <li><a href="#manage-multiple-consumers" class="scroll-to">Manage multiple consumers</a></li>
+  <li><a href="#more-information" class="scroll-to">More Information</a></li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+      
+        
+          <div class="old-version-banner">
+          You are browsing documentation for an outdated plugin version.
+          See the <a href="/hub/kong-inc/rate-limiting-advanced/how-to/">latest documentation here</a>.
+          </div>
+        
+      
+
+      <p>With consumer groups, you can define rate limiting tiers and apply them to subsets of application consumers.</p>
+
+<p>You can define consumer groups as tiers, for example:</p>
+
+<ul>
+  <li>A <strong>gold tier</strong> consumer group with 1000 requests per minute</li>
+  <li>A <strong>silver tier</strong> consumer group with 10 requests per second</li>
+  <li>A <strong>bronze tier</strong> consumer group with 6 requests per second</li>
+</ul>
+
+<p>Consumers that are not in a consumer group default to the Rate Limiting advanced
+plugin’s configuration, so you can define tier groups for some users and
+have a default behavior for consumers without groups.</p>
+
+<p>To use consumer groups for rate limiting, you need to:</p>
+<ul>
+  <li>Create one or more consumer groups</li>
+  <li>Create consumers</li>
+  <li>Assign consumers to groups</li>
+  <li>Configure the Rate Limiting Advanced plugin with the <code class="language-plaintext highlighter-rouge">enforce_consumer_groups</code>
+and <code class="language-plaintext highlighter-rouge">consumer_groups</code> parameters, setting up the list of consumer groups that
+the plugin accepts</li>
+  <li>Configure rate limiting for each consumer group, overriding the plugin’s
+configuration</li>
+</ul>
+
+<h2 id="create-rate-limiting-tiers">Create rate limiting tiers</h2>
+
+<ol>
+  <li>
+    <p>Create a consumer group named <code class="language-plaintext highlighter-rouge">Gold</code>:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumer_groups <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span>Gold
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915521</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8a4bba3c-7f82-45f0-8121-ed4d2847c4a4"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a consumer, <code class="language-plaintext highlighter-rouge">Amal</code>:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">username</span><span class="o">=</span>Amal
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915577</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"custom_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8089a0e6-1d31-4e00-bf51-5b902899b4cb"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amal"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amal"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add <code class="language-plaintext highlighter-rouge">Amal</code> to the <code class="language-plaintext highlighter-rouge">Gold</code> consumer group:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumer_groups/Gold/consumers <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">consumer</span><span class="o">=</span>Amal
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915521</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8a4bba3c-7f82-45f0-8121-ed4d2847c4a4"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"consumers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915577</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8089a0e6-1d31-4e00-bf51-5b902899b4cb"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amal"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amal"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="set-up-rate-limiting-advanced-config-for-consumer-group">Set up Rate Limiting Advanced config for consumer group</h2>
+
+<ol>
+  <li>
+    <p>Enable the <a href="/hub/kong-inc/rate-limiting-advanced/">Rate Limiting Advanced plugin</a>,
+setting the rate limit to five requests (<code class="language-plaintext highlighter-rouge">config.limit</code>) for every
+30 seconds (<code class="language-plaintext highlighter-rouge">config.window_size</code>):</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/plugins/  <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span>rate-limiting-advanced <span class="se">\</span>
+ <span class="nt">--data</span> config.limit<span class="o">=</span>5 <span class="se">\</span>
+ <span class="nt">--data</span> config.window_size<span class="o">=</span>30 <span class="se">\</span>
+ <span class="nt">--data</span> config.window_type<span class="o">=</span>sliding <span class="se">\</span>
+ <span class="nt">--data</span> config.retry_after_jitter_max<span class="o">=</span>0 <span class="se">\</span>
+ <span class="nt">--data</span> config.enforce_consumer_groups<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+ <span class="nt">--data</span> config.consumer_groups<span class="o">=</span>Gold
+</code></pre></div>    </div>
+
+    <p>For consumer groups, the following parameters are required:</p>
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">config.enforce_consumer_groups=true</code>: enables consumer groups for this plugin.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">config.consumer_groups=Gold</code>: specifies a list of groups that this plugin allows overrides for.</li>
+    </ul>
+
+    <blockquote class="note">
+      <p><strong>Note:</strong> In this example, you’re configuring the plugin globally, so it
+ applies to all entities (services, routes, and consumers) in the
+ Kong Gateway instance. You can also apply it to a
+ <a href="/hub/kong-inc/rate-limiting-advanced/how-to/basic-example/">specific service or route</a>
+ for more granular control.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>The plugin you just set up applies to all consumers in the cluster. Change
+the rate limiting configuration for the <code class="language-plaintext highlighter-rouge">Gold</code> consumer group only, setting
+the limit to ten requests for every ten seconds:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> PUT http://localhost:8001/consumer_groups/Gold/overrides/plugins/rate-limiting-advanced <span class="se">\</span>
+ <span class="nt">--data</span> config.limit<span class="o">=</span>10 <span class="se">\</span>
+ <span class="nt">--data</span> config.window_size<span class="o">=</span>10 <span class="se">\</span>
+ <span class="nt">--data</span> config.retry_after_jitter_max<span class="o">=</span>1
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="mi">10</span><span class="w">
+       </span><span class="p">],</span><span class="w">
+       </span><span class="nl">"retry_after_jitter_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"window_size"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="mi">10</span><span class="w">
+       </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"plugin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rate-limiting-advanced"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check that it worked by looking at the <code class="language-plaintext highlighter-rouge">Gold</code> consumer group object:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>Notice the <code class="language-plaintext highlighter-rouge">plugins</code> object in the response, along with the parameters that you
+ just set for the Rate Limiting Advanced plugin:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915521</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8a4bba3c-7f82-45f0-8121-ed4d2847c4a4"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"consumers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915577</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8089a0e6-1d31-4e00-bf51-5b902899b4cb"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amal"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amal"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                     </span><span class="mi">10</span><span class="w">
+                 </span><span class="p">],</span><span class="w">
+                 </span><span class="nl">"retry_after_jitter_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                 </span><span class="nl">"window_size"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                     </span><span class="mi">10</span><span class="w">
+                 </span><span class="p">],</span><span class="w">
+                 </span><span class="nl">"window_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sliding"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8a4bba3c-7f82-45f0-8121-ed4d2847c4a4"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638916518</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b7c426a2-6fcc-4bfd-9b7a-b66e8f1ad260"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rate-limiting-advanced"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="remove-consumer-from-group---group-view">Remove consumer from group - group view</h2>
+
+<p>You can remove a consumer from a group by accessing <code class="language-plaintext highlighter-rouge">/consumers</code> or
+<code class="language-plaintext highlighter-rouge">/consumer_groups</code>. The following steps use <code class="language-plaintext highlighter-rouge">/consumer_groups</code>.</p>
+
+<ol>
+  <li>
+    <p>Check the <code class="language-plaintext highlighter-rouge">Gold</code> consumer group for the consumer name:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915521</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8a4bba3c-7f82-45f0-8121-ed4d2847c4a4"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"consumers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915577</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8089a0e6-1d31-4e00-bf51-5b902899b4cb"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amal"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amal"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Using the username or ID of the consumer (<code class="language-plaintext highlighter-rouge">Amal</code> in this example),
+remove the consumer from the group:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> DELETE http://localhost:8001/consumer_groups/Gold/consumers/Amal
+</code></pre></div>    </div>
+
+    <p>If successful, you receive the following response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 204 No Content
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To verify, check the consumer group configuration again:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>Response, with no consumers assigned:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638917780</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"be4bcfca-b1df-4fac-83cc-5cf6774bf48e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="remove-consumer-from-group---consumer-view">Remove consumer from group - consumer view</h2>
+
+<p>You can remove a consumer from a group by accessing <code class="language-plaintext highlighter-rouge">/consumers</code> or
+<code class="language-plaintext highlighter-rouge">/consumer_groups</code>. The following steps use <code class="language-plaintext highlighter-rouge">/consumers</code>.</p>
+
+<ol>
+  <li>
+    <p>If you know the consumer name and not the consumer group name,
+you can look up the group through the consumer:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumers/Amal/consumer_groups
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638915521</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8a4bba3c-7f82-45f0-8121-ed4d2847c4a4"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Using the username or ID of the group (<code class="language-plaintext highlighter-rouge">Gold</code> in this example),
+remove the consumer from the group:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> DELETE http://localhost:8001/consumers/Amal/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>If successful, you receive the following response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 204 No Content
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To verify, check the consumer object configuration:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>Response, with no consumers assigned:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638917780</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"be4bcfca-b1df-4fac-83cc-5cf6774bf48e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="delete-consumer-group-configurations">Delete consumer group configurations</h2>
+
+<p>You can also clear the configuration of a consumer group without deleting the consumer group itself.</p>
+
+<p>With this method, the consumers in the group aren’t deleted and are still in the consumer group.</p>
+
+<ol>
+  <li>
+    <p>Delete the consumer group configuration using the following request:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> DELETE http://localhost:8001/consumer_groups/Gold/overrides/plugins/rate-limiting-advanced
+</code></pre></div>    </div>
+
+    <p>If successful, you receive see the following response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 204 No Content
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To verify, check the consumer object configuration:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>Response, without a <code class="language-plaintext highlighter-rouge">plugins</code> object:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1638917780</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"be4bcfca-b1df-4fac-83cc-5cf6774bf48e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="delete-consumer-group">Delete consumer group</h2>
+
+<p>If you don’t need a consumer group anymore, you can delete it. This removes
+all consumers from the group, and deletes the group itself. The consumers in
+the group are not deleted.</p>
+
+<ol>
+  <li>
+    <p>Delete a consumer group using the following request:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> DELETE http://localhost:8001/consumer_groups/Gold
+</code></pre></div>    </div>
+
+    <p>If successful, you receive the following response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 204 No Content
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check the list of consumer groups to verify that the <code class="language-plaintext highlighter-rouge">Gold</code> group is gone:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumer_groups
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+ </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check a consumer that was in the group to make sure it still exists:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> GET http://localhost:8001/consumers/Amal
+</code></pre></div>    </div>
+
+    <p>An <code class="language-plaintext highlighter-rouge">HTTP/1.1 200 OK</code> response means the consumer exists.</p>
+  </li>
+</ol>
+
+<h2 id="manage-multiple-consumers">Manage multiple consumers</h2>
+
+<p>You can perform many <code class="language-plaintext highlighter-rouge">/consumer_groups</code> operations in bulk.</p>
+
+<ol>
+  <li>
+    <p>Assuming you deleted the group <code class="language-plaintext highlighter-rouge">Gold</code> in the previous section, create it again,
+along with another group named <code class="language-plaintext highlighter-rouge">Silver</code>:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumer_groups <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span>Gold
+
+ curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumer_groups <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span>Speedsters
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create two consumers, <code class="language-plaintext highlighter-rouge">Alex</code> and <code class="language-plaintext highlighter-rouge">Charlie</code>:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">username</span><span class="o">=</span>Alex
+
+ curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">username</span><span class="o">=</span>Charlie
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add both consumers to the <code class="language-plaintext highlighter-rouge">Speedsters</code> group:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumer_groups/Speedsters/consumers <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">consumer</span><span class="o">=</span>Alex <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">consumer</span><span class="o">=</span>Charlie
+</code></pre></div>    </div>
+
+    <p>Kong Gateway validates the provided list of consumers before assigning
+ them to the consumer group. To pass validation, consumers must exist and must
+ not be in the group already.</p>
+
+    <p>If any consumer fails validation, no consumers are assigned to the group.</p>
+
+    <p>Response, if everything is successful:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"consumer_group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1639432267</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a905151a-5767-40e8-804e-50eec4d0235b"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speedsters"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"consumers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1639432286</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ea904e1d-1f0d-4d5a-8391-cae60cb21d61"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alex"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alex"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1639432288</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"065d8249-6fe6-4d80-a0ae-f159caef7af0"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charlie"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charlie"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>You can clear all consumers from a group with one request. This may be useful
+if you need to cycle the group for a new batch of users.</p>
+
+    <p>For example, delete all consumers from the <code class="language-plaintext highlighter-rouge">Speedsters</code> group:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> DELETE http://localhost:8001/consumer_groups/Speedsters/consumers
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 204 No Content
+</code></pre></div>    </div>
+  </li>
+  <li>You can also add a consumer to multiple groups:
+    <ul>
+      <li>If all groups are allowed by the Rate Limiting Advanced plugin,
+ only the first group’s settings apply.</li>
+      <li>Otherwise, whichever group is specified in the Rate Limiting Advanced
+ plugin becomes active.</li>
+    </ul>
+
+    <p>Add <code class="language-plaintext highlighter-rouge">Alex</code> to two groups, <code class="language-plaintext highlighter-rouge">Gold</code> and <code class="language-plaintext highlighter-rouge">Speedsters</code>:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers/Alex/consumer_groups <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">group</span><span class="o">=</span>Gold <span class="se">\</span>
+ <span class="nt">--data</span> <span class="nv">group</span><span class="o">=</span>Speedsters
+</code></pre></div>    </div>
+
+    <p>The response should look something like this:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1639436091</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"custom_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6098d577-6741-4cf8-9c86-e68057b8f970"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alex"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"username_lower"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alex"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"consumer_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1639432267</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a905151a-5767-40e8-804e-50eec4d0235b"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1639436107</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2fd2bdd6-690c-4e49-8296-31f55015496d"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speedsters"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Finally, you can also remove a consumer from all groups:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-i</span> <span class="nt">-X</span> DELETE http://localhost:8001/consumers/Alex/consumer_groups
+</code></pre></div>    </div>
+
+    <p>Response:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> HTTP/1.1 204 No Content
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="more-information">More Information</h2>
+
+<ul>
+  <li>
+<a href="/gateway/latest/admin-api/consumer-groups/reference/">Consumer Groups API documentation</a>.</li>
+</ul>
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+      <div class="book-nav previous">
+        <span class="direction">Previous</span>
+        <a href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/basic-example/">Basic config examples for Rate Limiting Advanced</a>
+      </div>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/rate-limiting-advanced/3.1.x/how-to/peak-traffic-rate-limit/">Set rate limit based on peak or non-peak time</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    function onSubmit(response) {
+      document.getElementById("subscription_form").submit();
+      document.getElementById("follow_up_subscription_form").submit();
+      if (response.length == 0) {
+        alert("reCaptcha verification failed");
+      }
+    }
+  </script>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"3.1.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:3.1.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>
