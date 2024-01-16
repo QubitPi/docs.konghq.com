@@ -2108,17 +2108,17 @@ You can generate TLS certificate and key pair that you need for admission webhoo
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="helm-chart" data-navtab-id="navtab-7180d115-1a4f-40d4-a4bc-2db5675fc231-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="helm-chart" data-navtab-id="navtab-d781d9f7-e620-41f4-a14d-5deb454190a0-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Helm chart
     </div>
   
     
-    <div data-slug="script" data-navtab-id="navtab-7180d115-1a4f-40d4-a4bc-2db5675fc231-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="script" data-navtab-id="navtab-d781d9f7-e620-41f4-a14d-5deb454190a0-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Script
     </div>
   
     
-    <div data-slug="manual" data-navtab-id="navtab-7180d115-1a4f-40d4-a4bc-2db5675fc231-2" class="navtab-title" role="tab" aria-controls="navtab-id-2" tabindex="0">
+    <div data-slug="manual" data-navtab-id="navtab-d781d9f7-e620-41f4-a14d-5deb454190a0-2" class="navtab-title" role="tab" aria-controls="navtab-id-2" tabindex="0">
       Manual
     </div>
   
@@ -2126,7 +2126,7 @@ You can generate TLS certificate and key pair that you need for admission webhoo
   <div class="navtab-contents">
   
     
-    <div data-panel="helm-chart" data-navtab-content="navtab-7180d115-1a4f-40d4-a4bc-2db5675fc231-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="helm-chart" data-navtab-content="navtab-d781d9f7-e620-41f4-a14d-5deb454190a0-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <p>If you are using the <a href="https://github.com/Kong/charts/blob/main/charts/kong/README.md" target="_blank" rel="noopener nofollow noreferrer ">Helm chart</a>,
 you can enable the webhook by setting <code class="language-plaintext highlighter-rouge">ingressController.admissionWebhook.enabled=true</code>
@@ -2138,7 +2138,7 @@ in your values.yaml. It is set to <code class="language-plaintext highlighter-ro
     </div>
   
     
-    <div data-panel="script" data-navtab-content="navtab-7180d115-1a4f-40d4-a4bc-2db5675fc231-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="script" data-navtab-content="navtab-d781d9f7-e620-41f4-a14d-5deb454190a0-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <p>If you are using the stock YAML manifests to install and setup Kong for Kubernetes, then you can set up the admission webhook using a script. You need <code class="language-plaintext highlighter-rouge">kubectl</code> and <code class="language-plaintext highlighter-rouge">openssl</code> installed on your workstation for the script to work.</p>
 
@@ -2158,7 +2158,7 @@ validatingwebhookconfiguration.admissionregistration.k8s.io/kong-validations cre
     </div>
   
     
-    <div data-panel="manual" data-navtab-content="navtab-7180d115-1a4f-40d4-a4bc-2db5675fc231-2" class="navtab-content" role="tabpanel" id="navtab-id-2" tabindex="0" aria-labelledby="navtab-id-2">
+    <div data-panel="manual" data-navtab-content="navtab-d781d9f7-e620-41f4-a14d-5deb454190a0-2" class="navtab-content" role="tabpanel" id="navtab-id-2" tabindex="0" aria-labelledby="navtab-id-2">
       
 <p>Kubernetes API-server makes an HTTPS call to the admission webhook to verify if the custom resource is valid or not. For this to work, Kubernetes API-server needs to trust the CA certificate that is used to sign the admission webhook’s TLS certificate.</p>
 
