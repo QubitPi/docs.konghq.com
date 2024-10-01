@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>AKS - v3.0.x | Kong Docs</title>
+  <title>AKS - Kong Ingress Controller - v3.0.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="AKS - v3.0.x | Kong Docs">
+  <meta property="og:title" content="AKS - Kong Ingress Controller - v3.0.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -402,7 +404,6 @@
         <div class="version">
           3.0.x
           
-            <span>(latest)</span>
           
         </div>
         
@@ -537,6 +538,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -567,211 +571,83 @@
         <span>
           Version 3.0.x
           
-            <span>(latest)</span>
           
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/3.0.x/install/cloud/aks/" class="active" data-version-id="3.0.x">
-            3.0.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.12.x" data-version-id="2.12.x">
-            2.12.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.3.x/install/cloud/aks/" data-version-id="3.3.x">
+              3.3.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.11.x" data-version-id="2.11.x">
-            2.11.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.2.x/install/cloud/aks/" data-version-id="3.2.x">
+              3.2.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.10.x" data-version-id="2.10.x">
-            2.10.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.1.x/install/cloud/aks/" data-version-id="3.1.x">
+              3.1.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.9.x" data-version-id="2.9.x">
-            2.9.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.0.x/install/cloud/aks/" class="active" data-version-id="3.0.x">
+              3.0.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.8.x" data-version-id="2.8.x">
-            2.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.12.x/" data-version-id="2.12.x">
+              2.12.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.7.x" data-version-id="2.7.x">
-            2.7.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.11.x/" data-version-id="2.11.x">
+              2.11.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.6.x" data-version-id="2.6.x">
-            2.6.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.10.x/" data-version-id="2.10.x">
+              2.10.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.5.x" data-version-id="2.5.x">
-            2.5.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.9.x/" data-version-id="2.9.x">
+              2.9.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.4.x" data-version-id="2.4.x">
-            2.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.8.x/" data-version-id="2.8.x">
+              2.8.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.3.x" data-version-id="2.3.x">
-            2.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.7.x/" data-version-id="2.7.x">
+              2.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.2.x" data-version-id="2.2.x">
-            2.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.6.x/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.1.x" data-version-id="2.1.x">
-            2.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.0.x" data-version-id="2.0.x">
-            2.0.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.3.x" data-version-id="1.3.x">
-            1.3.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.2.x" data-version-id="1.2.x">
-            1.2.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.1.x" data-version-id="1.1.x">
-            1.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.0.x" data-version-id="1.0.x">
-            1.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.5.x/" data-version-id="2.5.x">
+              2.5.x (LTS)
+            </a>
+          </li>
         
         
       </ul>
@@ -790,13 +666,13 @@
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -812,6 +688,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -830,6 +708,8 @@ Kubernetes Gateway API
 
       </a>
     
+
+    
   </span>
 
   
@@ -847,6 +727,8 @@ Version Support Policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -863,6 +745,8 @@ Version Support Policy
 Changelog
 
       </a>
+    
+
     
   </span>
 
@@ -884,13 +768,13 @@ Changelog
 
 How KIC Works
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle How KIC Works subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle How KIC Works subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -906,6 +790,8 @@ How KIC Works
 Architecture
 
       </a>
+    
+
     
   </span>
 
@@ -924,6 +810,8 @@ Gateway API
 
       </a>
     
+
+    
   </span>
 
   
@@ -940,6 +828,8 @@ Gateway API
 Ingress
 
       </a>
+    
+
     
   </span>
 
@@ -958,6 +848,8 @@ Custom Resources
 
       </a>
     
+
+    
   </span>
 
   
@@ -975,6 +867,8 @@ Using Annotations
 
       </a>
     
+
+    
   </span>
 
   
@@ -991,6 +885,8 @@ Using Annotations
 Admission Webhook
 
       </a>
+    
+
     
   </span>
 
@@ -1012,13 +908,13 @@ Admission Webhook
 
 Get Started
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1034,6 +930,8 @@ Get Started
 Install KIC
 
       </a>
+    
+
     
   </span>
 
@@ -1052,6 +950,8 @@ Services and Routes
 
       </a>
     
+
+    
   </span>
 
   
@@ -1068,6 +968,8 @@ Services and Routes
 Rate Limiting
 
       </a>
+    
+
     
   </span>
 
@@ -1086,6 +988,8 @@ Proxy Caching
 
       </a>
     
+
+    
   </span>
 
   
@@ -1102,6 +1006,8 @@ Proxy Caching
 Key Authentication
 
       </a>
+    
+
     
   </span>
 
@@ -1123,13 +1029,13 @@ Key Authentication
 
 KIC in Production
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle KIC in Production subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle KIC in Production subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1143,13 +1049,13 @@ KIC in Production
 
 Deployment Topologies
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1165,6 +1071,8 @@ Deployment Topologies
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -1183,6 +1091,8 @@ Gateway Discovery
 
       </a>
     
+
+    
   </span>
 
   
@@ -1200,6 +1110,8 @@ Database Backed
 
       </a>
     
+
+    
   </span>
 
   
@@ -1216,6 +1128,8 @@ Database Backed
 Traditional (sidecar)
 
       </a>
+    
+
     
   </span>
 
@@ -1236,13 +1150,13 @@ Traditional (sidecar)
 
 Installation Methods
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Installation Methods subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Installation Methods subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1258,6 +1172,8 @@ Installation Methods
 Helm
 
       </a>
+    
+
     
   </span>
 
@@ -1275,6 +1191,8 @@ Helm
 Kong Gateway Operator
 
       </a>
+    
+
     
   </span>
 
@@ -1295,13 +1213,13 @@ Kong Gateway Operator
 
 Cloud Deployment
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Cloud Deployment subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Cloud Deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1317,6 +1235,8 @@ Cloud Deployment
 Azure
 
       </a>
+    
+
     
   </span>
 
@@ -1335,6 +1255,8 @@ Amazon
 
       </a>
     
+
+    
   </span>
 
   
@@ -1351,6 +1273,8 @@ Amazon
 Google
 
       </a>
+    
+
     
   </span>
 
@@ -1374,6 +1298,8 @@ Enterprise License
 
       </a>
     
+
+    
   </span>
 
   
@@ -1388,13 +1314,13 @@ Enterprise License
 
 Observability
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Observability subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Observability subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1410,6 +1336,8 @@ Observability
 Prometheus Metrics
 
       </a>
+    
+
     
   </span>
 
@@ -1428,6 +1356,8 @@ Configuring Prometheus and Grafana
 
       </a>
     
+
+    
   </span>
 
   
@@ -1444,6 +1374,8 @@ Configuring Prometheus and Grafana
 Kubernetes Events
 
       </a>
+    
+
     
   </span>
 
@@ -1464,13 +1396,13 @@ Kubernetes Events
 
 Upgrading
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Upgrading subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrading subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1486,6 +1418,8 @@ Upgrading
 Kong Gateway
 
       </a>
+    
+
     
   </span>
 
@@ -1503,6 +1437,8 @@ Kong Gateway
 Ingress Controller
 
       </a>
+    
+
     
   </span>
 
@@ -1529,13 +1465,13 @@ Ingress Controller
 
 Guides
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1549,13 +1485,13 @@ Guides
 
 Service Configuration
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Service Configuration subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Service Configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1571,6 +1507,8 @@ Service Configuration
 HTTP Service
 
       </a>
+    
+
     
   </span>
 
@@ -1589,6 +1527,8 @@ TCP Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1605,6 +1545,8 @@ TCP Service
 UDP Service
 
       </a>
+    
+
     
   </span>
 
@@ -1623,6 +1565,8 @@ gRPC Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1639,6 +1583,8 @@ gRPC Service
 TLS
 
       </a>
+    
+
     
   </span>
 
@@ -1657,6 +1603,8 @@ External Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1673,6 +1621,8 @@ External Service
 HTTPS Redirects
 
       </a>
+    
+
     
   </span>
 
@@ -1691,6 +1641,8 @@ Multiple Backend Services
 
       </a>
     
+
+    
   </span>
 
   
@@ -1707,6 +1659,8 @@ Multiple Backend Services
 Configuring Gateway API resources across namespaces
 
       </a>
+    
+
     
   </span>
 
@@ -1727,13 +1681,13 @@ Configuring Gateway API resources across namespaces
 
 Request Manipulation
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Request Manipulation subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Request Manipulation subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1743,12 +1697,14 @@ Request Manipulation
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/3.0.x/guides/requests/rewrite-host/">
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/3.0.x/guides/requests/rewrite-host-and-paths/">
         
 
 Rewriting Hosts and Paths
 
       </a>
+    
+
     
   </span>
 
@@ -1767,6 +1723,8 @@ Rewrite Annotation
 
       </a>
     
+
+    
   </span>
 
   
@@ -1783,6 +1741,8 @@ Rewrite Annotation
 Customizing load-balancing behavior
 
       </a>
+    
+
     
   </span>
 
@@ -1803,13 +1763,13 @@ Customizing load-balancing behavior
 
 High Availability
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle High Availability subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle High Availability subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1825,6 +1785,8 @@ High Availability
 KIC High Availability
 
       </a>
+    
+
     
   </span>
 
@@ -1843,6 +1805,8 @@ Service Health Checks
 
       </a>
     
+
+    
   </span>
 
   
@@ -1859,6 +1823,8 @@ Service Health Checks
 Last Known Good Config
 
       </a>
+    
+
     
   </span>
 
@@ -1879,13 +1845,13 @@ Last Known Good Config
 
 Security
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Security subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Security subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1901,6 +1867,8 @@ Security
 Kong Vaults
 
       </a>
+    
+
     
   </span>
 
@@ -1919,6 +1887,8 @@ Using Workspaces
 
       </a>
     
+
+    
   </span>
 
   
@@ -1936,6 +1906,8 @@ Preserving Client IP
 
       </a>
     
+
+    
   </span>
 
   
@@ -1952,6 +1924,8 @@ Preserving Client IP
 Kubernetes Secrets in Plugins
 
       </a>
+    
+
     
   </span>
 
@@ -1972,13 +1946,13 @@ Kubernetes Secrets in Plugins
 
 Migrate
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Migrate subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Migrate subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1994,6 +1968,8 @@ Migrate
 KongIngress to KongUpstreamPolicy
 
       </a>
+    
+
     
   </span>
 
@@ -2012,6 +1988,8 @@ Migrating from Ingress to Gateway
 
       </a>
     
+
+    
   </span>
 
   
@@ -2028,6 +2006,8 @@ Migrating from Ingress to Gateway
 Credential Type Labels
 
       </a>
+    
+
     
   </span>
 
@@ -2048,13 +2028,13 @@ Credential Type Labels
 
 Customize Deployments
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Customize Deployments subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Customize Deployments subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2070,6 +2050,8 @@ Customize Deployments
 Images
 
       </a>
+    
+
     
   </span>
 
@@ -2090,13 +2072,13 @@ Images
 
 Custom Ingress Class
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Custom Ingress Class subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Custom Ingress Class subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2112,6 +2094,8 @@ Custom Ingress Class
 Internal / External Traffic
 
       </a>
+    
+
     
   </span>
 
@@ -2138,13 +2122,13 @@ Internal / External Traffic
 
 Plugins
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Plugins subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugins subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2160,6 +2144,8 @@ Plugins
 Custom Plugins
 
       </a>
+    
+
     
   </span>
 
@@ -2178,6 +2164,8 @@ Authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -2194,6 +2182,8 @@ Authentication
 ACL
 
       </a>
+    
+
     
   </span>
 
@@ -2212,6 +2202,8 @@ Rate Limiting
 
       </a>
     
+
+    
   </span>
 
   
@@ -2229,6 +2221,8 @@ mTLS
 
       </a>
     
+
+    
   </span>
 
   
@@ -2245,6 +2239,8 @@ mTLS
 OIDC
 
       </a>
+    
+
     
   </span>
 
@@ -2266,13 +2262,13 @@ OIDC
 
 Reference
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2288,6 +2284,8 @@ Reference
 Troubleshooting
 
       </a>
+    
+
     
   </span>
 
@@ -2306,6 +2304,8 @@ Version Compatibility
 
       </a>
     
+
+    
   </span>
 
   
@@ -2322,6 +2322,8 @@ Version Compatibility
 Annotations
 
       </a>
+    
+
     
   </span>
 
@@ -2340,6 +2342,8 @@ Configuration Options
 
       </a>
     
+
+    
   </span>
 
   
@@ -2357,6 +2361,8 @@ Beta Feature Gates
 
       </a>
     
+
+    
   </span>
 
   
@@ -2371,13 +2377,13 @@ Beta Feature Gates
 
 FAQ
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle FAQ subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle FAQ subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2393,6 +2399,8 @@ FAQ
 Plugin Compatibility
 
       </a>
+    
+
     
   </span>
 
@@ -2411,6 +2419,8 @@ Kong Router
 
       </a>
     
+
+    
   </span>
 
   
@@ -2427,6 +2437,8 @@ Kong Router
 Custom nginx.conf
 
       </a>
+    
+
     
   </span>
 
@@ -2450,6 +2462,8 @@ Custom Resource Definitions
 
       </a>
     
+
+    
   </span>
 
   
@@ -2466,6 +2480,8 @@ Custom Resource Definitions
 Resources Requiring Setting Ingress Class
 
       </a>
+    
+
     
   </span>
 
@@ -2484,6 +2500,8 @@ Gateway API migration
 
       </a>
     
+
+    
   </span>
 
   
@@ -2500,6 +2518,8 @@ Gateway API migration
 Required Permissions for Installation
 
       </a>
+    
+
     
   </span>
 
@@ -2550,6 +2570,13 @@ Required Permissions for Installation
 
       <div class="page-content">
         <div class="content show-anchor-links">
+          
+            
+              <blockquote id="version-notice" class="important">
+                You are browsing documentation for an older version.
+            
+                See the <a href="/kubernetes-ingress-controller/latest/install/cloud/aks/">latest documentation here</a>.
+              </blockquote>
           
 
           <h1 tabindex="-1" id="main" class="page-content-title">AKS
@@ -2711,13 +2738,12 @@ kong-gateway-proxy                   LoadBalancer   10.0.92.49   20.232.82.183  
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -2865,8 +2891,8 @@ kong-gateway-proxy                   LoadBalancer   10.0.92.49   20.232.82.183  
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -2876,16 +2902,6 @@ kong-gateway-proxy                   LoadBalancer   10.0.92.49   20.232.82.183  
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

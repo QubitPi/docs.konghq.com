@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Conditional rendering | Kong Docs</title>
+  <title>Conditional rendering - Contribution Guidelines | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Conditional rendering | Kong Docs">
+  <meta property="og:title" content="Conditional rendering - Contribution Guidelines | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -494,6 +496,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -535,6 +540,8 @@ Contribution guidelines
 
       </a>
     
+
+    
   </span>
 
   
@@ -550,13 +557,13 @@ Contribution guidelines
 
 Style guidelines
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Style guidelines subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Style guidelines subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -572,6 +579,8 @@ Style guidelines
 Style guide
 
       </a>
+    
+
     
   </span>
 
@@ -590,6 +599,8 @@ Word choice and naming
 
       </a>
     
+
+    
   </span>
 
   
@@ -606,6 +617,8 @@ Word choice and naming
 Notes and other notices
 
       </a>
+    
+
     
   </span>
 
@@ -624,6 +637,8 @@ Diagrams
 
       </a>
     
+
+    
   </span>
 
   
@@ -640,6 +655,8 @@ Diagrams
 Documenting user interfaces
 
       </a>
+    
+
     
   </span>
 
@@ -658,6 +675,8 @@ Contribution templates
 
       </a>
     
+
+    
   </span>
 
   
@@ -672,13 +691,13 @@ Contribution templates
 
 Plugin documentation
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Plugin documentation subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugin documentation subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -694,6 +713,8 @@ Plugin documentation
 Documenting Kong-owned plugins
 
       </a>
+    
+
     
   </span>
 
@@ -711,6 +732,8 @@ Documenting Kong-owned plugins
 Documenting partner plugins
 
       </a>
+    
+
     
   </span>
 
@@ -737,13 +760,13 @@ Documenting partner plugins
 
 Markdown rules and formatting
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Markdown rules and formatting subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Markdown rules and formatting subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -759,6 +782,8 @@ Markdown rules and formatting
 Markdown rules
 
       </a>
+    
+
     
   </span>
 
@@ -777,6 +802,8 @@ Reusable content
 
       </a>
     
+
+    
   </span>
 
   
@@ -793,6 +820,8 @@ Reusable content
 Variables
 
       </a>
+    
+
     
   </span>
 
@@ -811,6 +840,8 @@ Single-sourced versions
 
       </a>
     
+
+    
   </span>
 
   
@@ -828,6 +859,8 @@ Single-sourced plugins
 
       </a>
     
+
+    
   </span>
 
   
@@ -844,6 +877,8 @@ Single-sourced plugins
 Conditional rendering
 
       </a>
+    
+
     
   </span>
 
@@ -865,13 +900,13 @@ Conditional rendering
 
 Community
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Community subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Community subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -887,6 +922,8 @@ Community
 Welcome to the Kong Docs community
 
       </a>
+    
+
     
   </span>
 
@@ -905,6 +942,8 @@ Community expectations
 
       </a>
     
+
+    
   </span>
 
   
@@ -921,6 +960,8 @@ Community expectations
 Hackathons
 
       </a>
+    
+
     
   </span>
 
@@ -961,9 +1002,8 @@ Hackathons
 <a href="#conditionally-render-content-by-version" class="scroll-to">Conditionally render content by version</a>
     <ul>
       <li><a href="#table-rows" class="scroll-to">Table rows</a></li>
-      <li><a href="#inline-content" class="scroll-to">Inline content</a></li>
+      <li><a href="#whitespace-control" class="scroll-to">Whitespace control</a></li>
       <li><a href="#front-matter" class="scroll-to">Front matter</a></li>
-      <li><a href="#plugin-parameters" class="scroll-to">Plugin parameters</a></li>
     </ul>
   </li>
 </ul>
@@ -1020,19 +1060,15 @@ This will show only for Kong Gateway.
 <p>You can use conditional rendering by version for any content in the <code class="language-plaintext highlighter-rouge">app/_src</code> or <code class="language-plaintext highlighter-rouge">app/_hub</code> directories.</p>
 
 <p>As we add new functionality, we want content on a page to be displayed only for specific releases of a product. 
-You can use the <code class="language-plaintext highlighter-rouge">if_version</code> block for this, or <code class="language-plaintext highlighter-rouge">if_plugin_version</code> for any content in the Plugin Hub.</p>
+You can use the <code class="language-plaintext highlighter-rouge">if_version</code> block for this.</p>
 
+<p><code class="language-plaintext highlighter-rouge">if_version</code> supports the following filters:</p>
 <ul>
   <li>
-<code class="language-plaintext highlighter-rouge">if_version</code> is used by Kong Gateway, Kong Mesh, Kong Ingress Controller, and decK documentation.</li>
+<code class="language-plaintext highlighter-rouge">eq</code>: Render content that <strong>equals</strong> the provided version. It also supports a comma-separated list of values, i.e. <code class="language-plaintext highlighter-rouge">if_version eq:1.1.x,1.3.x</code>
+</li>
   <li>
-<code class="language-plaintext highlighter-rouge">if_plugin_version</code> can only be used for plugin documentation in the <code class="language-plaintext highlighter-rouge">app/_hub</code> directory.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">if_version</code> and <code class="language-plaintext highlighter-rouge">if_plugin_version</code> support the following filters:</p>
-<ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">eq</code>: Render content that <strong>equals</strong> the provided version.</li>
+<code class="language-plaintext highlighter-rouge">neq</code>: Render content that does not <strong>equal</strong> the provided version.</li>
   <li>
 <code class="language-plaintext highlighter-rouge">gte</code>: Render content that is <strong>equal or greater than</strong> the provided version.</li>
   <li>
@@ -1041,27 +1077,20 @@ You can use the <code class="language-plaintext highlighter-rouge">if_version</c
 
 <p>For example, <code class="language-plaintext highlighter-rouge">eq</code> displays content for only one specific version:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if_version eq:1.11.x %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% if_version eq:1.11.x %}
 This will only show for version 1.11.x
 {% endif_version %}
-</code></pre></div></div>
-
-<p>Or for a plugin:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if_plugin_version eq:2.8.x %}
-This will only show for plugin version 2.8.x
-{% endif_plugin_version %}
 
 </code></pre></div></div>
 
 <p>Greater than (<code class="language-plaintext highlighter-rouge">gte</code>) and less than (<code class="language-plaintext highlighter-rouge">lte</code>) are <strong>inclusive</strong> of the version provided:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if_version gte:1.11.x %}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% if_version gte:1.11.x %}
 This will only show for version 1.11.x and later (1.12.x, 2.0.0 etc)
 {% endif_version %}
 
-{% if_plugin_version lte:2.8.x %}
-This will only show for plugin version 2.8.x and earlier (2.7.x, 2.6.x etc)
-{% endif_plugin_version %}
 
 {% if_version gte:1.11.x lte:1.19.x %}
 This will show for versions 1.11.x through 1.19.x, inclusive
@@ -1071,29 +1100,34 @@ This will show for versions 1.11.x through 1.19.x, inclusive
 <h3 id="table-rows">Table rows</h3>
 
 <p>When working with tables, you can set a conditional filter for a given row. 
-The filter expects new lines before and after <code class="language-plaintext highlighter-rouge">if_version</code> or <code class="language-plaintext highlighter-rouge">if_plugin_version</code>:</p>
+The filter expects new lines before and after <code class="language-plaintext highlighter-rouge">if_version</code>:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Name  | One         | Two    |
 |-------|-------------|--------|
 | Test1 | Works       | Shows  |
 
+
 {% if_version gte: 1.11.x %}
 | Test2 | Conditional | Hidden |
 {% endif_version %}
+
 
 | Test1 | Works       | Shows  |
 </code></pre></div></div>
 
 <p>The above will be rendered as a single table.</p>
 
-<h3 id="inline-content">Inline content</h3>
+<h3 id="whitespace-control">Whitespace control</h3>
 
-<p>If you want to conditionally render content in a sentence, you can use <code class="language-plaintext highlighter-rouge">if_version</code> or <code class="language-plaintext highlighter-rouge">if_plugin_version</code>
-and specify <code class="language-plaintext highlighter-rouge">inline:true</code>:</p>
+<p><code class="language-plaintext highlighter-rouge">if_version</code> uses the same implementation as Liquid’s <code class="language-plaintext highlighter-rouge">if</code> tag. Therefore, it has the same <a href="https://shopify.github.io/liquid/basics/whitespace/" target="_blank" rel="noopener nofollow noreferrer ">whitespace control</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello {% if_version eq:1.0.0 inline:true %}everyone in the {% endif_version %} world.
+<p>When rendering lists with <code class="language-plaintext highlighter-rouge">if_version</code> or <code class="language-plaintext highlighter-rouge">if</code>, there’s a caveat: you must add a hyphen to the right side of the tags (for consistency, it could be either side) to render them correctly.</p>
 
-Hello {% if_plugin_version lte:2.8.x inline:true %}everyone in the {% endif_plugin_version %} world.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Item 1
+{% if_version gte:3.6.x -%}
+* Item 2
+{% endif_version -%}
+* Item 3
 </code></pre></div></div>
 
 <h3 id="front-matter">Front matter</h3>
@@ -1102,7 +1136,7 @@ Hello {% if_plugin_version lte:2.8.x inline:true %}everyone in the {% endif_plug
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s">Page Here</span>
-<span class="na">alpha</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># This is the default, but is here for completeness</span>
+<span class="na">alpha</span><span class="pi">:</span> <span class="kc">false</span> <span class="c1"># This is the default, but is here for completeness</span>
 
 <span class="na">overrides</span><span class="pi">:</span>
   <span class="na">alpha</span><span class="pi">:</span>
@@ -1125,48 +1159,6 @@ Hello {% if_plugin_version lte:2.8.x inline:true %}everyone in the {% endif_plug
     <span class="na">Private Beta</span><span class="pi">:</span>
       <span class="na">lte</span><span class="pi">:</span> <span class="s">2.8.x</span>
 <span class="nn">---</span>
-</code></pre></div></div>
-
-<h3 id="plugin-parameters">Plugin parameters</h3>
-
-<p>Generated parameters for files in the <code class="language-plaintext highlighter-rouge">app/_hub</code> directory can specify <code class="language-plaintext highlighter-rouge">minimum_version</code> and <code class="language-plaintext highlighter-rouge">maximum_version</code> fields.
-Here’s an example where <code class="language-plaintext highlighter-rouge">access_token_name</code> will only be shown for versions <code class="language-plaintext highlighter-rouge">1.4.0</code> to <code class="language-plaintext highlighter-rouge">1.7.0</code>, while <code class="language-plaintext highlighter-rouge">demo_field</code> will always be shown:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">params</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">sample-plugin</span>
-  <span class="na">service_id</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="na">route_id</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="na">consumer_id</span><span class="pi">:</span> <span class="no">false</span>
-  <span class="na">dbless_compatible</span><span class="pi">:</span> <span class="s2">"</span><span class="s">yes"</span>
-  <span class="na">config</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">demo_field</span>
-      <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">`access_token`"</span>
-      <span class="na">datatype</span><span class="pi">:</span> <span class="s">string</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">This is a demo_field</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">access_token_name</span>
-      <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
-      <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">`access_token`"</span>
-      <span class="na">datatype</span><span class="pi">:</span> <span class="s">array of string elements</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">This is a description</span>
-      <span class="na">minimum_version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.4.0"</span>
-      <span class="na">maximum_version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.7.0"</span>
-</code></pre></div></div>
-
-<p>Both <code class="language-plaintext highlighter-rouge">minimum_version</code> and <code class="language-plaintext highlighter-rouge">maximum_version</code> are optional.</p>
-
-<p>You can do the same for plugin protocols:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">params</span><span class="pi">:</span>
-  <span class="na">protocols</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">http</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">https</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">grpc</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">grpcs</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ws</span>
-      <span class="na">minimum_version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.0.x"</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">wss</span>
-      <span class="na">minimum_version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.0.x"</span>
 </code></pre></div></div>
 
 
@@ -1239,13 +1231,12 @@ Here’s an example where <code class="language-plaintext highlighter-rouge">acc
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -1393,8 +1384,8 @@ Here’s an example where <code class="language-plaintext highlighter-rouge">acc
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -1404,16 +1395,6 @@ Here’s an example where <code class="language-plaintext highlighter-rouge">acc
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Zipkin - Plugin - v3.5.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Zipkin - Plugin - v3.5.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/zipkin/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/zipkin/3.5.x/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=analytics-monitoring">Analytics &amp; Monitoring</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/zipkin/3.5.x/">Zipkin</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              Introduction
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/zipkin/3.5.x/">Overview</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/zipkin/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_zipkin.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">Zipkin</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 3.5.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/unreleased/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/">
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.7.x/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.6.x/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/zipkin/3.5.x/">
+                    3.5.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.4.x/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.3.x/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.2.x/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.1.x/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.0.x/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/2.8.x/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/2.7.x/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/2.6.x/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge oss" aria-label="open-source" rel="noopener nofollow noreferrer "> </a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/zipkin/3.5.x/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/zipkin/3.5.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/zipkin/3.5.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/zipkin/3.5.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=zipkin" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
+  </ul>
+
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#queueing" class="active scroll-to">Queueing</a></li>
+  <li><a href="#trace-ids-in-serialized-logs" class="scroll-to">Trace IDs in serialized logs</a></li>
+  <li>
+<a href="#how-it-works" class="scroll-to">How it Works</a>
+    <ul>
+      <li><a href="#reporter" class="scroll-to">Reporter</a></li>
+      <li><a href="#spans" class="scroll-to">Spans</a></li>
+      <li><a href="#propagation" class="scroll-to">Propagation</a></li>
+      <li><a href="#see-also" class="scroll-to">See also</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          
+          
+      
+        
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
+        
+      
+
+      
+
+
+
+
+
+
+<blockquote>
+  <p>
+    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/zipkin/3.5.x/configuration/">Zipkin configuration reference</a> doc.</em>
+  </p>
+</blockquote>
+
+
+
+
+
+
+
+<p>Propagate Zipkin distributed tracing spans and report spans to a Zipkin server.</p>
+
+<h2 id="queueing">Queueing</h2>
+
+<p>The zipkin plugin uses a queue to decouple the production and
+consumption of data. This reduces the number of concurrent requests
+made to the upstream server under high load situations and provides
+buffering during temporary network or upstream outages.</p>
+
+<p>You can set several parameters to configure the behavior and capacity
+of the queues used by the plugin. For more information about how to
+use these parameters, see
+<a href="/gateway/latest/kong-plugins/queue/reference/">Plugin Queuing Reference</a>
+in the Kong Gateway documentation.</p>
+
+<p>The queue parameters all reside in a record under the key <code class="language-plaintext highlighter-rouge">queue</code> in
+the <code class="language-plaintext highlighter-rouge">config</code> parameter section of the plugin.</p>
+
+<p>Queues are not shared between workers and queueing parameters are
+scoped to one worker.  For whole-system capacity planning, the number
+of workers need to be considered when setting queue parameters.</p>
+
+<h2 id="trace-ids-in-serialized-logs">Trace IDs in serialized logs</h2>
+
+<p>When the Zipkin plugin is configured along with a plugin that uses the 
+<a href="/gateway/latest/plugin-development/pdk/kong.log/#konglogserialize">Log Serializer</a>,
+the trace ID of each request is added to the key <code class="language-plaintext highlighter-rouge">trace_id</code> in the serialized log output.</p>
+
+<p>The value of this field is an object that can contain different formats
+of the current request’s trace ID. In case of multiple tracing headers in the
+same request, the <code class="language-plaintext highlighter-rouge">trace_id</code> field includes one trace ID format
+for each different header format, as in the following example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"trace_id": {
+  "b3": "4bf92f3577b34da6a3ce929d0e0e4736",
+  "datadog": "11803532876627986230"
+},
+</code></pre></div></div>
+
+<hr>
+<h2 id="how-it-works">How it Works</h2>
+
+<p>When enabled, <a href="https://github.com/Kong/kong-plugin-zipkin" target="_blank" rel="noopener nofollow noreferrer ">this plugin</a> traces requests in a way compatible with <a href="https://zipkin.io/" target="_blank" rel="noopener nofollow noreferrer ">zipkin</a>.</p>
+
+<p>The code is structured around an <a href="http://opentracing.io/" target="_blank" rel="noopener nofollow noreferrer ">OpenTracing</a> core using the <a href="https://github.com/Kong/opentracing-lua" target="_blank" rel="noopener nofollow noreferrer ">opentracing-lua library</a> to collect timing data of a request in each of Kong’s phases.
+The plugin uses <code class="language-plaintext highlighter-rouge">opentracing-lua</code> compatible extractor, injector, and reporters to implement Zipkin’s protocols.</p>
+
+<h3 id="reporter">Reporter</h3>
+
+<p>An OpenTracing “reporter” is how tracing data is reported to another system.
+This plugin records tracing data for a given request, and sends it as a batch to a Zipkin server using <a href="https://zipkin.io/zipkin-api/#/default/post_spans" target="_blank" rel="noopener nofollow noreferrer ">the Zipkin v2 API</a>. Note that zipkin version 1.31 or higher is required.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">http_endpoint</code> configuration variable must contain the full uri including scheme, host, port and path sections (i.e. your uri likely ends in <code class="language-plaintext highlighter-rouge">/api/v2/spans</code>).</p>
+
+<h3 id="spans">Spans</h3>
+
+<p>The plugin does <em>request sampling</em>. For each request which triggers the plugin, a random number between 0 and 1 is chosen.</p>
+
+<p>If the number is smaller than the configured <code class="language-plaintext highlighter-rouge">sample_ratio</code>, then a trace with several spans will be generated. If <code class="language-plaintext highlighter-rouge">sample_ratio</code> is set to 1, then all requests will generate a trace (this might be very noisy).</p>
+
+<p>For each request that gets traced, the following spans are produced:</p>
+
+<ul>
+  <li>
+    <p><strong>Request span</strong>: 1 per request. Encompasses the whole request in kong (kind: SERVER).
+The Proxy and Balancer spans are children of this span. It contains the following logs/annotations for the rewrite phase:</p>
+
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">krs</code> - <code class="language-plaintext highlighter-rouge">kong.rewrite.start</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">krf</code> - <code class="language-plaintext highlighter-rouge">kong.rewrite.finish</code>
+</li>
+    </ul>
+
+    <p>The Request span has the following tags:</p>
+
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">lc</code>: Hardcoded to <code class="language-plaintext highlighter-rouge">kong</code>.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong.service</code>: The uuid of the service matched when processing the request, if any.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong.service_name</code>: The name of the service matched when processing the request, if service exists and has a <code class="language-plaintext highlighter-rouge">name</code> attribute.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong.route</code>: The uuid of the route matched when processing the request, if any (it can be nil on non-matched requests).</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong.route_name</code>: The name of the route matched when processing the request, if route exists and has a <code class="language-plaintext highlighter-rouge">name</code> attribute.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">http.method</code>: The HTTP method used on the original request (only for HTTP requests).</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">http.path</code>: The path of the request (only for HTTP requests).</li>
+      <li>If the plugin <code class="language-plaintext highlighter-rouge">tags_header</code> config option is set, and the request contains headers with the appropriate name and correct encoding tags, then the trace will include the tags.</li>
+      <li>If the plugin <code class="language-plaintext highlighter-rouge">static_tags</code> config option is set, then the tags in the config option will be included in the trace.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Proxy span</strong>: 1 per request, encompassing most of Kong’s internal processing of a request (kind: CLIENT).
+Contains the following logs/annotations for the start/finish of the of the Kong plugin phases:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">kas</code> - <code class="language-plaintext highlighter-rouge">kong.access.start</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kaf</code> - <code class="language-plaintext highlighter-rouge">kong.access.finish</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kbs</code> - <code class="language-plaintext highlighter-rouge">kong.body_filter.start</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kbf</code> - <code class="language-plaintext highlighter-rouge">kong.body_filter.finish</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">khs</code> - <code class="language-plaintext highlighter-rouge">kong.header_filter.start</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">khf</code> - <code class="language-plaintext highlighter-rouge">kong.header_filter.finish</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kps</code> - <code class="language-plaintext highlighter-rouge">kong.preread.start</code> (only for stream requests)</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kpf</code> - <code class="language-plaintext highlighter-rouge">kong.preread.finish</code> (only for stream requests)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Balancer span(s)</strong>: 0 or more per request, each encompassing one balancer attempt (kind: CLIENT).
+Contains the following tags specific to load balancing:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong.balancer.try</code>: A number indicating the attempt (1 for the first load-balancing attempt, 2 for the second, and so on).</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">peer.ipv4</code> or <code class="language-plaintext highlighter-rouge">peer.ipv6</code> for the balancer IP.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">peer.port</code> for the balanced port.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">error</code>: Set to <code class="language-plaintext highlighter-rouge">true</code> if the balancing attempt was unsuccessful, otherwise unset.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">http.status_code</code>: The HTTP status code received, in case of error.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong.balancer.state</code>: An NGINX-specific description of the error, <code class="language-plaintext highlighter-rouge">next/failed</code> for HTTP failures, or <code class="language-plaintext highlighter-rouge">0</code> for stream failures.
+ Equivalent to <code class="language-plaintext highlighter-rouge">state_name</code> in OpenResty’s balancer’s <code class="language-plaintext highlighter-rouge">get_last_failure</code> function.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="propagation">Propagation</h3>
+
+<p>The Zipkin plugin supports propagation of the following header formats:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">w3c</code>: <a href="https://www.w3.org/TR/trace-context/" target="_blank" rel="noopener nofollow noreferrer ">W3C trace context</a>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">b3</code> and <code class="language-plaintext highlighter-rouge">b3-single</code>: <a href="https://github.com/openzipkin/b3-propagation" target="_blank" rel="noopener nofollow noreferrer ">Zipkin headers</a>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">jaeger</code>: <a href="https://www.jaegertracing.io/docs/client-libraries/#propagation-format" target="_blank" rel="noopener nofollow noreferrer ">Jaeger headers</a>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ot</code>: <a href="https://github.com/opentracing/specification/blob/master/rfc/trace_identifiers.md" target="_blank" rel="noopener nofollow noreferrer ">OpenTracing headers</a>
+</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">datadog</code>: <a href="https://docs.datadoghq.com/tracing/trace_collection/library_config/go/#trace-context-propagation-for-distributed-tracing" target="_blank" rel="noopener nofollow noreferrer ">Datadog headers</a></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">aws</code>: <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader" target="_blank" rel="noopener nofollow noreferrer ">AWS X-Ray header</a></p>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">gcp</code>: <a href="https://cloud.google.com/trace/docs/setup#force-trace" target="_blank" rel="noopener nofollow noreferrer ">GCP X-Cloud-Trace-Context header</a>
+</li>
+</ul>
+
+<p>The plugin detects the propagation format from the headers and will use the appropriate format to propagate the span context.
+If no appropriate format is found, the plugin will fallback to the default format, which is <code class="language-plaintext highlighter-rouge">b3</code>.</p>
+
+<h3 id="see-also">See also</h3>
+
+<p>For more information, read the <a href="https://konghq.com/blog/tracing-with-zipkin-in-kong-2-1-0" target="_blank" rel="noopener nofollow noreferrer ">Kong blog post</a>.</p>
+
+
+
+
+
+
+
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/zipkin/3.5.x/configuration/">Zipkin Configuration</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"3.5.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:3.5.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

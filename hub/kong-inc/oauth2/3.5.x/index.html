@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OAuth 2.0 Authentication - Plugin - v3.5.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="OAuth 2.0 Authentication - Plugin - v3.5.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/oauth2/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/oauth2/3.5.x/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=authentication">Authentication</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/oauth2/3.5.x/">OAuth 2.0 Authentication</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              Introduction
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/oauth2/3.5.x/">Overview</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/oauth2/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_oauth2.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">OAuth 2.0 Authentication</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 3.5.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/unreleased/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/">
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.7.x/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.6.x/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/oauth2/3.5.x/">
+                    3.5.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.4.x/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.3.x/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.2.x/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.1.x/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.0.x/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/2.8.x/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/2.7.x/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/2.6.x/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge oss" aria-label="open-source" rel="noopener nofollow noreferrer "> </a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/oauth2/3.5.x/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/oauth2/3.5.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/oauth2/3.5.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/oauth2/3.5.x/how-to/oauth2rla/">
+        
+
+Set rate limit for Oauth2 tokens
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/oauth2/3.5.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=oauth2" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
+  </ul>
+
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#usage" class="active scroll-to">Usage</a>
+    <ul>
+      <li><a href="#endpoints" class="scroll-to">Endpoints</a></li>
+      <li><a href="#create-a-consumer" class="scroll-to">Create a Consumer</a></li>
+      <li><a href="#create-an-application" class="scroll-to">Create an Application</a></li>
+    </ul>
+  </li>
+  <li><a href="#migrating-access-tokens" class="scroll-to">Migrating Access Tokens</a></li>
+  <li><a href="#viewing-and-invalidating-access-tokens" class="scroll-to">Viewing and Invalidating Access Tokens</a></li>
+  <li><a href="#upstream-headers" class="scroll-to">Upstream Headers</a></li>
+  <li>
+<a href="#oauth-20-flows" class="scroll-to">OAuth 2.0 Flows</a>
+    <ul>
+      <li><a href="#client-credentials" class="scroll-to">Client Credentials</a></li>
+      <li><a href="#authorization-code" class="scroll-to">Authorization Code</a></li>
+    </ul>
+  </li>
+  <li><a href="#legacy-systems-only-resource-owner-password-credentials" class="scroll-to">(Legacy systems only) Resource owner password credentials</a></li>
+  <li><a href="#refresh-token" class="scroll-to">Refresh Token</a></li>
+  <li><a href="#grpc-requests" class="scroll-to">gRPC requests</a></li>
+  <li><a href="#websocket-requests" class="scroll-to">WebSocket requests</a></li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          
+          
+      
+        
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
+        
+      
+
+      
+<blockquote class="compatibility">
+  <strong>This plugin is not compatible with Konnect</strong>
+</blockquote>
+
+
+
+
+
+
+
+<blockquote>
+  <p>
+    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/oauth2/3.5.x/configuration/">OAuth 2.0 Authentication configuration reference</a> doc.</em>
+  </p>
+</blockquote>
+
+
+
+
+
+
+
+<p>Add an OAuth 2.0 authentication layer with one of the following grant flows:</p>
+<ul>
+  <li><a href="https://tools.ietf.org/html/rfc6749#section-4.1" target="_blank" rel="noopener nofollow noreferrer ">Authorization Code Grant</a></li>
+  <li><a href="https://tools.ietf.org/html/rfc6749#section-4.4" target="_blank" rel="noopener nofollow noreferrer ">Client Credentials</a></li>
+  <li><a href="https://tools.ietf.org/html/rfc6749#section-4.2" target="_blank" rel="noopener nofollow noreferrer ">Implicit Grant</a></li>
+  <li><a href="https://tools.ietf.org/html/rfc6749#section-4.3" target="_blank" rel="noopener nofollow noreferrer ">Resource Owner Password Credentials Grant</a></li>
+</ul>
+
+<blockquote class="important">
+  <p><strong>Important</strong>:</p>
+  <ul>
+    <li>Once applied, any user with a valid credential can access the service.
+To restrict usage to only some of the authenticated users, also add the
+<a href="/hub/kong-inc/acl/">ACL</a> plugin (not covered here) and create allowed or
+denied groups of users.</li>
+    <li>As per the OAuth2 specs, this plugin requires the
+underlying service to be served over HTTPS. To avoid any
+confusion, we recommend that you configure the route used to serve the
+underlying service to only accept HTTPS traffic (using its <code class="language-plaintext highlighter-rouge">protocols</code>
+property).</li>
+  </ul>
+</blockquote>
+
+<h2 id="usage">Usage</h2>
+
+<p>In order to use the plugin, you first need to create a consumer to associate one or more credentials to. The Consumer represents a developer using the upstream service.</p>
+
+<blockquote class="important">
+  <p>This plugin requires a database in order to work effectively. It <strong>does not</strong> work in DB-less or hybrid mode.</p>
+</blockquote>
+
+<h3 id="endpoints">Endpoints</h3>
+
+<p>By default the OAuth 2.0 plugin listens on the following endpoints when a client consumes the underlying Service via the <a href="https://docs.konghq.com/latest/configuration/#proxy_listen" target="_blank" rel="noopener nofollow noreferrer ">proxy port</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/oauth2/authorize</code></td>
+      <td>The endpoint to the Authorization Server that provisions authorization codes for the <a href="https://tools.ietf.org/html/rfc6749#section-4.1" target="_blank" rel="noopener nofollow noreferrer ">Authorization Code</a> flow, or the access token when the <a href="https://tools.ietf.org/html/rfc6749#section-4.2" target="_blank" rel="noopener nofollow noreferrer ">Implicit Grant</a> flow is enabled. Only <code class="language-plaintext highlighter-rouge">POST</code> is supported.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/oauth2/token</code></td>
+      <td>The endpoint to the Authorization Server that provision access tokens. This is also the only endpoint to use for the <a href="https://tools.ietf.org/html/rfc6749#section-4.4" target="_blank" rel="noopener nofollow noreferrer ">Client Credentials</a> and <a href="https://tools.ietf.org/html/rfc6749#section-4.3" target="_blank" rel="noopener nofollow noreferrer ">Resource Owner Password Credentials Grant</a> flows. Only <code class="language-plaintext highlighter-rouge">POST</code> is supported.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/oauth2_tokens</code></td>
+      <td>The endpoint to the Authorization Server that allows creating new tokens. Useful on migrations (see below).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/oauth2_tokens/:token_id</code></td>
+      <td>The endpoint to the Authorization Server that allows reading, modifying and deleting access tokens.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The clients trying to authorize and request access tokens must use these endpoints. Remember that the endpoints above must be combined with the right URI path or headers that you normally use to match a configured Route through Kong.</p>
+
+<h3 id="create-a-consumer">Create a Consumer</h3>
+
+<p>You need to associate a credential to an existing <a href="/gateway/api/admin-ee/latest/#/Consumers/list-consumer/">Consumer</a> object. To create a Consumer, you can execute the following request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/consumers/ <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"username=user123"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"custom_id=SOME_CUSTOM_ID"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>parameter</th>
+      <th>default</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">username</code><br><em>semi-optional</em>
+</td>
+      <td> </td>
+      <td>The username of the consumer. Either this field or <code class="language-plaintext highlighter-rouge">custom_id</code> must be specified.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">custom_id</code><br><em>semi-optional</em>
+</td>
+      <td> </td>
+      <td>A custom identifier used to map the consumer to another database. Either this field or <code class="language-plaintext highlighter-rouge">username</code> must be specified.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A <a href="/gateway/api/admin-ee/latest/#/Consumers/list-consumer/">Consumer</a> can have many credentials.</p>
+
+<h3 id="create-an-application">Create an Application</h3>
+
+<p>Then you can finally provision new OAuth 2.0 credentials (also called “OAuth applications”) by making the following HTTP request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/consumers/<span class="o">{</span>consumer_id<span class="o">}</span>/oauth2 <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"name=Test%20Application"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"client_id=SOME-CLIENT-ID"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"client_secret=SOME-CLIENT-SECRET"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"redirect_uris=http://some-domain/endpoint/"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"hash_secret=true"</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">consumer_id</code>: The <a href="/gateway/api/admin-ee/latest/#/Consumers/list-consumer/">Consumer</a> entity to associate the credentials to</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>form parameter</th>
+      <th>default</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td> </td>
+      <td>The name to associate to the credential. In OAuth 2.0 this would be the application name.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">client_id</code><br><em>optional</em>
+</td>
+      <td> </td>
+      <td>You can optionally set your own unique <code class="language-plaintext highlighter-rouge">client_id</code>. If missing, the plugin will generate one.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">client_secret</code><br><em>optional</em>
+</td>
+      <td> </td>
+      <td>You can optionally set your own unique <code class="language-plaintext highlighter-rouge">client_secret</code>. If missing, the plugin will generate one.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">redirect_uris</code></td>
+      <td> </td>
+      <td>An array with one or more URLs in your app where users will be sent after authorization (<a href="https://tools.ietf.org/html/rfc6749#section-3.1.2" target="_blank" rel="noopener nofollow noreferrer ">RFC 6742 Section 3.1.2</a>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hash_secret</code></td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>A boolean flag that indicates whether the <code class="language-plaintext highlighter-rouge">client_secret</code> field will be stored in hashed form. If enabled on existing plugin instances, client secrets are hashed on the fly upon first usage.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="migrating-access-tokens">Migrating Access Tokens</h2>
+
+<p>If you are migrating your existing OAuth 2.0 applications and access tokens over to Kong, then you can:</p>
+
+<ul>
+  <li>Migrate consumers and applications by creating OAuth 2.0 applications as explained above.</li>
+  <li>Migrate access tokens using the <code class="language-plaintext highlighter-rouge">/oauth2_tokens</code> endpoints in the Kong’s Admin API. For example:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://localhost:8001/oauth2_tokens <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'credential.id=KONG-APPLICATION-ID'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"token_type=bearer"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"access_token=SOME-TOKEN"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"refresh_token=SOME-TOKEN"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"expires_in=3600"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>form parameter</th>
+      <th>default</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">credential</code></td>
+      <td> </td>
+      <td>Contains the ID of the OAuth 2.0 application created on Kong.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">token_type</code><br><em>optional</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">bearer</code></td>
+      <td>The <a href="https://tools.ietf.org/html/rfc6749#section-7.1" target="_blank" rel="noopener nofollow noreferrer ">token type</a>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">access_token</code><br><em>optional</em>
+</td>
+      <td> </td>
+      <td>You can optionally set your own access token value, otherwise a random string will be generated.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">refresh_token</code><br><em>optional</em>
+</td>
+      <td> </td>
+      <td>You can optionally set your own unique refresh token value, otherwise no refresh token will be generated.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">expires_in</code></td>
+      <td> </td>
+      <td>The expiration time (in seconds) of the access token.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">scope</code><br><em>optional</em>
+</td>
+      <td> </td>
+      <td>The authorized scope associated with the token.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">authenticated_userid</code><br><em>optional</em>
+</td>
+      <td> </td>
+      <td>The custom ID of the user who authorized the application.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="viewing-and-invalidating-access-tokens">Viewing and Invalidating Access Tokens</h2>
+
+<p>Active tokens can be listed and modified using the Admin API. A GET on the <code class="language-plaintext highlighter-rouge">/oauth2_tokens</code> endpoint returns the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sX</span> GET http://localhost:8001/oauth2_tokens/
+</code></pre></div></div>
+
+<p>Response:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1523386491000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOEtUHwg0das9PhsasVmgMGbZn7nWSgK"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"credential_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2c74324f-fa2d-434b-b6de-bd138652158f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610740e5-700a-45f0-889a-5c7f0422c48d"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"898dfc5f-20f9-4315-a028-2ecb0193f834"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1523386680000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58eat7UHEiPOmjNb16uQAxt4vu3fbu95"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"credential_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2c74324f-fa2d-434b-b6de-bd138652158f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"edff2fc7-1634-4fb5-b714-de9435531e10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"898dfc5f-20f9-4315-a028-2ecb0193f834"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">credential_id</code> is the ID of the OAuth application at <code class="language-plaintext highlighter-rouge">localhost:8001/consumers/{consumer_id}/oauth2</code> and <code class="language-plaintext highlighter-rouge">service_id</code> is the API or service that the token is valid for.</p>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">expires_in</code> is static and does not decrement based on elapsed time: you must add it to <code class="language-plaintext highlighter-rouge">created_at</code> to calculate when the token will expire.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DELETE http://localhost:8001/oauth2_tokens/&lt;token ID&gt;</code> allows you to immediately invalidate a token if needed.</p>
+
+<h2 id="upstream-headers">Upstream Headers</h2>
+
+<p>When a client has been authenticated and authorized, the plugin will append some headers to the request before proxying it to the upstream service, so that you can identify the consumer and the end-user in your code:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Consumer-ID</code>, the ID of the Consumer on Kong</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Consumer-Custom-ID</code>, the <code class="language-plaintext highlighter-rouge">custom_id</code> of the Consumer (if set)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Consumer-Username</code>, the <code class="language-plaintext highlighter-rouge">username</code> of the Consumer (if set)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Credential-Identifier</code>, the <code class="language-plaintext highlighter-rouge">client_id</code> of the credential (if set), representing the client and the credential associated. See <a href="#create-an-application">Create an Application</a> for more information.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Authenticated-Scope</code>, the comma-separated list of scopes that the end user has authenticated, if available (only if the consumer is not the ‘anonymous’ consumer)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Authenticated-Userid</code>, the logged-in user ID who has granted permission to the client (only if the consumer is not the ‘anonymous’ consumer)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">X-Anonymous-Consumer</code>, will be set to <code class="language-plaintext highlighter-rouge">true</code> when authentication failed, and the ‘anonymous’ consumer was set instead.</li>
+</ul>
+
+<p>You can use this information on your side to implement additional logic. You can use the <code class="language-plaintext highlighter-rouge">X-Consumer-ID</code> value to query the Kong Admin API and retrieve more information about the Consumer.</p>
+
+<hr>
+
+<h2 id="oauth-20-flows">OAuth 2.0 Flows</h2>
+
+<h3 id="client-credentials">Client Credentials</h3>
+
+<p>The <a href="https://tools.ietf.org/html/rfc6749#section-4.4" target="_blank" rel="noopener nofollow noreferrer ">Client Credentials</a> flow works out of the box, without building any authorization page.
+The clients need to use the <code class="language-plaintext highlighter-rouge">/oauth2/token</code> endpoint to request an access token.</p>
+
+<p>You can access the <code class="language-plaintext highlighter-rouge">/oauth2/token</code> endpoint to retrieve the <code class="language-plaintext highlighter-rouge">access_token</code> in the following ways:</p>
+
+<ul>
+  <li>
+    <p>Using a POST request, set <code class="language-plaintext highlighter-rouge">Content-Type</code> to <code class="language-plaintext highlighter-rouge">application/x-www-form-urlencoded</code> and send the credentials as form data:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  curl <span class="nt">-i</span> <span class="nt">-X</span> POST <span class="s1">'https://example.service.com/oauth2/token'</span> <span class="se">\</span>
+    <span class="nt">--header</span> <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
+    <span class="nt">--data-urlencode</span> <span class="s1">'client_id=XXXX'</span> <span class="se">\</span>
+    <span class="nt">--data-urlencode</span> <span class="s1">'client_secret=XXXX'</span> <span class="se">\</span>
+    <span class="nt">--data-urlencode</span> <span class="s1">'grant_type=client_credentials'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Using a POST request, set <code class="language-plaintext highlighter-rouge">_Content-Type</code> to <code class="language-plaintext highlighter-rouge">application/json</code> and send the credentials as a JSON body:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  curl <span class="nt">-i</span> <span class="nt">-X</span> POST <span class="s1">'https://example.service.com/oauth2/token'</span> <span class="se">\</span>
+    <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+    <span class="nt">--data-raw</span> <span class="s1">'{ "client_id": "XXXXX", "client_secret": "XXXX", "grant_type": "client_credentials" }'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Using a POST request, send the credentials in URL query parameters:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  curl <span class="nt">-i</span> <span class="nt">-X</span> POST <span class="s1">'https://example.service.com/oauth2/token?client_id=XXXX&amp;client_secret=XXXX&amp;grant_type=client_credentials'</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="authorization-code">Authorization Code</h3>
+
+<p>After provisioning Consumers and associating OAuth 2.0 credentials to them, it is important to understand how the OAuth 2.0 authorization flow works. As opposed to most of the Kong plugins, the OAuth 2.0 plugin requires some little additional work on your side to make everything work well:</p>
+
+<ul>
+  <li>You <strong>must</strong> implement an authorization page on your web application, that will talk with the plugin server-side.</li>
+  <li>
+<em>Optionally</em> you need to explain on your website/documentation how to consume your OAuth 2.0 protected services, so that developers accessing your service know how to build their client implementations</li>
+</ul>
+
+<h4 id="the-flow-explained">The flow explained</h4>
+
+<p>Building the authorization page is going to be the primary task that the plugin itself cannot do out of the box, because it requires to check that the user is properly logged in, and this operation is strongly tied with your authentication implementation.</p>
+
+<p>The authorization page is made of two parts:</p>
+
+<ul>
+  <li>The frontend page that the user will see, and that will allow him to authorize the client application to access his data</li>
+  <li>The backend that will process the HTML form displayed in the frontend, that will talk with the OAuth 2.0 plugin on Kong, and that will ultimately redirect the user to a third party URL.</li>
+</ul>
+
+<p>You can see a sample implementation in <a href="https://github.com/Kong/kong-oauth2-hello-world" target="_blank" rel="noopener nofollow noreferrer ">node.js + express.js</a> on GitHub.</p>
+
+<p>A diagram representing this flow:</p>
+
+<p><img src="/assets/images/products/plugins/oauth2/oauth2-flow.png" alt="OAuth2 flow"></p>
+
+<ol>
+  <li>
+    <p>The client application will redirect the end user to the authorization page on your web application, passing <code class="language-plaintext highlighter-rouge">client_id</code>, <code class="language-plaintext highlighter-rouge">response_type</code> and <code class="language-plaintext highlighter-rouge">scope</code> (if required) as query string parameters. This is a sample authorization page:</p>
+
+    <center><img title="OAuth 2.0 Prompt" src="/assets/images/products/plugins/oauth2/oauth2-prompt.png"></center>
+  </li>
+  <li>
+    <p>Before showing the actual authorization page, the web application will make sure that the user is logged in.</p>
+  </li>
+  <li>
+    <p>The client application will send the <code class="language-plaintext highlighter-rouge">client_id</code> in the query string, from which the web application can retrieve both the OAuth 2.0 application name, and developer name, by making the following request to Kong:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl localhost:8001/oauth2?client_id<span class="o">=</span>XXX
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If the end user authorized the application, the form will submit the data to your backend with a <code class="language-plaintext highlighter-rouge">POST</code> request, sending the <code class="language-plaintext highlighter-rouge">client_id</code>, <code class="language-plaintext highlighter-rouge">response_type</code> and <code class="language-plaintext highlighter-rouge">scope</code> parameters that were placed in <code class="language-plaintext highlighter-rouge">&lt;input type="hidden" .. /&gt;</code> fields.</p>
+  </li>
+  <li>
+    <p>The backend must add the <code class="language-plaintext highlighter-rouge">provision_key</code> and <code class="language-plaintext highlighter-rouge">authenticated_userid</code> parameters to the <code class="language-plaintext highlighter-rouge">client_id</code>, <code class="language-plaintext highlighter-rouge">response_type</code> and <code class="language-plaintext highlighter-rouge">scope</code> parameters and it will make a <code class="language-plaintext highlighter-rouge">POST</code> request to Kong at your Service address, on the <code class="language-plaintext highlighter-rouge">/oauth2/authorize</code> endpoint. If an <code class="language-plaintext highlighter-rouge">Authorization</code> header has been sent by the client, that must be added too. The equivalent of:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl https://your.service.com/oauth2/authorize <span class="se">\</span>
+   <span class="nt">--header</span> <span class="s2">"Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"client_id=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"response_type=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"scope=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"provision_key=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"authenticated_userid=XXX"</span>
+</code></pre></div>    </div>
+
+    <p>The <code class="language-plaintext highlighter-rouge">provision_key</code> is the key the plugin has generated when it has been added to the Service while <code class="language-plaintext highlighter-rouge">authenticated_userid</code> is the ID of the logged-in end user who has granted the permission.</p>
+  </li>
+  <li>
+    <p>Kong will respond with a JSON response:</p>
+
+    <div class="language-json highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"redirect_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://some/url"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>With either a <code class="language-plaintext highlighter-rouge">200 OK</code> or <code class="language-plaintext highlighter-rouge">400 Bad Request</code> response code depending if the request was successful or not.</p>
+  </li>
+  <li>
+    <p>In <strong>both</strong> cases, ignore the response status code and just redirect the user to whatever URI is being returned in the <code class="language-plaintext highlighter-rouge">redirect_uri</code> property.</p>
+  </li>
+  <li>
+    <p>The client application will take it from here, and will continue the flow with Kong with no other interaction with your web application. Like exchanging the authorization code for an access token if it’s an Authorization Code Grant flow.</p>
+  </li>
+  <li>
+    <p>Once the Access Token has been retrieved, the client application will make requests on behalf of the user to your upstream service.</p>
+  </li>
+  <li>
+    <p>Access Tokens can expire, and when that happens the client application needs to renew the Access Token with Kong and retrieve a new one.</p>
+  </li>
+</ol>
+
+<p>In this flow, the steps that you need to implement are:</p>
+
+<ul>
+  <li>The login page, you probably already have it (step 2)</li>
+  <li>The Authorization page, with its backend that will simply collect the values, make a <code class="language-plaintext highlighter-rouge">POST</code> request to Kong and redirect the user to whatever URL Kong has returned (steps 3 to 7).</li>
+</ul>
+
+<hr>
+
+<h2 id="legacy-systems-only-resource-owner-password-credentials">(Legacy systems only) Resource owner password credentials</h2>
+
+<blockquote class="important">
+  <p><strong>Important</strong>: The OAuth2 Security Best Practice explicitly mentions that Resource Owner Password Credentials
+  <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-13#section-3.4" target="_blank" rel="noopener nofollow noreferrer ">“MUST NOT BE USED”</a>.
+  The following section is left here as a reference for supporting legacy systems.</p>
+</blockquote>
+
+<p>The <a href="https://tools.ietf.org/html/rfc6749#section-4.3" target="_blank" rel="noopener nofollow noreferrer ">Resource Owner Password Credentials Grant</a> is a much simpler version of the Authorization Code flow, but it still requires to build an authorization backend (without the frontend) in order to make it work properly.</p>
+
+<p><img src="/assets/images/products/plugins/oauth2/oauth2-flow2.png" alt="OAuth 2.0 Flow"></p>
+
+<ol>
+  <li>
+    <p>On the first request, the client application makes a request with some OAuth2 parameters to your web application.</p>
+  </li>
+  <li>
+    <p>The backend of your web application adds the <code class="language-plaintext highlighter-rouge">provision_key</code> and <code class="language-plaintext highlighter-rouge">grant_type</code> parameters to the parameters originally sent by the client, then makes a <code class="language-plaintext highlighter-rouge">POST</code> request to Kong using the <code class="language-plaintext highlighter-rouge">/oauth2/token</code> endpoint of the configured plugin. If an <code class="language-plaintext highlighter-rouge">Authorization</code> header is sent by the client, that must be added too. For example:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl https://your.service.com/oauth2/token <span class="se">\</span>
+   <span class="nt">--header</span> <span class="s2">"Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"client_id=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"client_secret=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"grant_type=password"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"scope=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"provision_key=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"authenticated_userid=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"username=XXX"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"password=XXX"</span>
+</code></pre></div>    </div>
+
+    <p>The <code class="language-plaintext highlighter-rouge">provision_key</code> is the key the plugin has generated when it has been added to the Service, while <code class="language-plaintext highlighter-rouge">authenticated_userid</code> is the ID of the end user whose <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">password</code> belong to.</p>
+  </li>
+  <li>
+    <p>Kong will respond with a JSON response</p>
+  </li>
+  <li>
+    <p>The JSON response sent by Kong must be sent back to the original client as it is. If the operation is successful, this response will include an access token, otherwise it will include an error.</p>
+  </li>
+</ol>
+
+<p>In this flow, the steps that you need to implement are:</p>
+
+<ul>
+  <li>The backend endpoint that will process the original request and will authenticate the <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">password</code> values sent by the client, and if the authentication is successful, make the request to Kong and return back to the client whatever response Kong has sent back.</li>
+</ul>
+
+<hr>
+
+<h2 id="refresh-token">Refresh Token</h2>
+
+<p>When your access token expires, you can generate a new access token using the refresh token you received in conjunction to your expired access token.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://your.service.com/oauth2/token <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"grant_type=refresh_token"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"client_id=XXX"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"client_secret=XXX"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s2">"refresh_token=XXX"</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="grpc-requests">gRPC requests</h2>
+
+<p>The same access tokens can be used by gRPC applications:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grpcurl <span class="nt">-H</span> <span class="s1">'authorization: bearer XXX'</span> ...
+</code></pre></div></div>
+
+<p>Note that the rest of the credentials flow uses HTTPS and not gRPC protocol.  Depending on your application, you might have to configure the <code class="language-plaintext highlighter-rouge">oauth2</code> plugin on two separate routes: one under <code class="language-plaintext highlighter-rouge">protocols: ["https"]</code> and another under <code class="language-plaintext highlighter-rouge">protocols: ["grpcs"]</code>.</p>
+
+<h2 class="badge enterprise" id="websocket-requests">WebSocket requests</h2>
+
+<p>This plugin cannot issue new tokens from a WebSocket route, because the request
+will be rejected as an invalid WebSocket handshake. Therefore, to use this
+plugin with WebSocket services, an additional non-WebSocket route must be used
+to issue tokens.</p>
+
+<ol>
+  <li>Create a WebSocket service:
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-X</span> POST http://localhost:8001/services/ <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"name=my-websocket-service"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"url=ws://my-websocket-backend:8080/"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Attach a route to the service:
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-X</span> POST http://localhost:8001/services/my-websocket-service/routes <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"name=my-websocket-route"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"protocols=wss"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"hosts=my-websocket-hostname.com"</span> <span class="se">\</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Attach an OAuth2 plugin instance to the service:</p>
+
+    <blockquote class="note">
+      <p><strong>Note</strong>: Setting <code class="language-plaintext highlighter-rouge">global_credentials=true</code> is necessary to allow tokens
+ created by other plugin instances.</p>
+    </blockquote>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-x</span> POST http://localhost:8001/services/my-websocket-service/plugins <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"name=oauth2"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"config.scopes=email"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"config.scopes=profile"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"config.global_credentials=true"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Create another route to handle token creation:
+    <blockquote>
+      <p><strong>Note</strong>: Adding a POST method matcher ensures that regular WebSocket
+ handshake requests will not match this route.</p>
+    </blockquote>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-X</span> POST http://localhost:8001/routes <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"name=my-websocket-token-helper"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"protocols=https"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"hosts=my-websocket-hostname.com"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"methods=POST"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Finally, add the additional OAuth2 plugin instance, using the route:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> curl <span class="nt">-x</span> POST http://localhost:8001/routes/my-websocket-token-helper/plugins <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"name=oauth2"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"config.scopes=email"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"config.scopes=profile"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"config.global_credentials=true"</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Client token requests (for example: <code class="language-plaintext highlighter-rouge">POST https://my-websocket-hostname.com/oauth2/authorize</code>)
+will be handled by the <code class="language-plaintext highlighter-rouge">oauth2</code> plugin instance attached to the <code class="language-plaintext highlighter-rouge">my-websocket-token-helper</code>
+route, and tokens issued by this route can be used in the WebSocket handshake
+request to the <code class="language-plaintext highlighter-rouge">my-websocket-route</code> route.</p>
+
+
+
+
+
+
+
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/oauth2/3.5.x/configuration/">OAuth 2.0 Authentication Configuration</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"3.5.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:3.5.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

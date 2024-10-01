@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Mutual TLS Authentication Configuration | Kong Docs</title>
+  <title>Mutual TLS Authentication Configuration - Plugin | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Mutual TLS Authentication Configuration | Kong Docs">
+  <meta property="og:title" content="Mutual TLS Authentication Configuration - Plugin | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -465,15 +466,39 @@
                 Gateway
                 
 
-                Version 3.5.x <em>(latest)</em>
+                Version 3.8.x <em>(latest)</em>
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
                 
                 
+                <li class="">
+                  <a href="/hub/kong-inc/mtls-auth/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
                 <li class="active">
                   <a href="/hub/kong-inc/mtls-auth/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mtls-auth/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mtls-auth/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/mtls-auth/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,11 +559,11 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
-  <a href="https://konghq.com/pricing" target="_blank" class="badge paid" aria-label="available with Konnect Paid subscription" rel="noopener nofollow noreferrer "> </a>
-
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -579,13 +604,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -601,6 +626,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -625,6 +652,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -640,13 +669,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -662,6 +691,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -680,6 +711,8 @@ Add Certificate Authorities
 
       </a>
     
+
+    
   </span>
 
   
@@ -696,6 +729,8 @@ Add Certificate Authorities
 Manual Mappings Between Certificate and Consumer Objects
 
       </a>
+    
+
     
   </span>
 
@@ -720,13 +755,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=mtls-auth" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -758,6 +803,9 @@ Changelog
     <div class="page-content-container v2" id="documentation">
       <div class="page-content">
         <div class="content show-anchor-links">
+          
+
+          
           
       
         
@@ -791,7 +839,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -800,7 +848,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-mtls-auth</code>.</p>
+mtls-auth</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -815,9 +869,22 @@ mtls-auth</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>mtls-auth_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -833,8 +900,8 @@ mtls-auth</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -851,8 +918,8 @@ mtls-auth</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -918,6 +985,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -926,6 +995,8 @@ mtls-auth</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -965,6 +1036,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -974,6 +1047,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>An optional string (consumer UUID or username) value to use as an “anonymous” consumer if authentication fails. If empty (default null), the request fails with an authentication failure <code class="language-plaintext highlighter-rouge">4xx</code>. Note that this value must refer to the consumer <code class="language-plaintext highlighter-rouge">id</code> or <code class="language-plaintext highlighter-rouge">username</code> attribute, and <strong>not</strong> its <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
 </div>
+
+    
 
     
 
@@ -1030,6 +1105,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
         <span>
@@ -1043,6 +1120,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Whether to match the subject name of the client-supplied certificate against consumer’s <code class="language-plaintext highlighter-rouge">username</code> and/or <code class="language-plaintext highlighter-rouge">custom_id</code> attribute. If set to <code class="language-plaintext highlighter-rouge">[]</code> (the empty array), then auto-matching is disabled.</p>
 </div>
+
+    
 
     
 
@@ -1097,6 +1176,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1106,6 +1187,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>List of CA Certificates strings to use as Certificate Authorities (CA) when validating a client certificate. At least one is required but you can specify as many as needed. The value of this array is comprised of primary keys (<code class="language-plaintext highlighter-rouge">id</code>).</p>
 </div>
+
+    
 
     
 
@@ -1166,6 +1249,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1175,6 +1260,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Cache expiry time in seconds.</p>
 </div>
+
+    
 
     
 
@@ -1231,6 +1318,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1240,6 +1329,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Skip consumer lookup once certificate is trusted against the configured CA list.</p>
 </div>
+
+    
 
     
 
@@ -1296,6 +1387,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1305,6 +1398,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Allow certificate verification with only an intermediate certificate. When this is enabled, you don’t need to upload the full chain to Kong Certificates.</p>
 </div>
+
+    
 
     
 
@@ -1357,6 +1452,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>CN</code>, <code>DN</code></span>
 
@@ -1372,6 +1469,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Certificate property to use as the authenticated group. Valid values are <code class="language-plaintext highlighter-rouge">CN</code> (Common Name) or <code class="language-plaintext highlighter-rouge">DN</code> (Distinguished Name). Once <code class="language-plaintext highlighter-rouge">skip_consumer_lookup</code> is applied, any client with a valid certificate can access the Service/API. To restrict usage to only some of the authenticated users, also add the ACL plugin (not covered here) and create allowed or denied groups of users.</p>
 </div>
+
+    
 
     
 
@@ -1424,6 +1523,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>SKIP</code>, <code>IGNORE_CA_ERROR</code>, <code>STRICT</code></span>
 
@@ -1439,6 +1540,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Controls client certificate revocation check behavior. If set to <code class="language-plaintext highlighter-rouge">SKIP</code>, no revocation check is performed. If set to <code class="language-plaintext highlighter-rouge">IGNORE_CA_ERROR</code>, the plugin respects the revocation status when either OCSP or CRL URL is set, and doesn’t fail on network issues. If set to <code class="language-plaintext highlighter-rouge">STRICT</code>, the plugin only treats the certificate as valid when it’s able to verify the revocation status.</p>
 </div>
+
+    
 
     
 
@@ -1493,6 +1596,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1502,6 +1607,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>HTTP timeout threshold in milliseconds when communicating with the OCSP server or downloading CRL.</p>
 </div>
+
+    
 
     
 
@@ -1556,6 +1663,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1565,6 +1674,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>The length of time in milliseconds between refreshes of the revocation check status cache.</p>
 </div>
+
+    
 
     
 
@@ -1619,6 +1730,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1628,6 +1741,67 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>Sends the distinguished names (DN) of the configured CA list in the TLS handshake message.</p>
 </div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-default_consumer">
+      default_consumer
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The UUID or username of the consumer to use when a trusted client certificate is presented but no consumer matches. Note that this value must refer to the consumer <code class="language-plaintext highlighter-rouge">id</code> or <code class="language-plaintext highlighter-rouge">username</code> attribute, and <strong>not</strong> its <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
+</div>
+
+    
 
     
 
@@ -1674,6 +1848,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1683,6 +1859,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>A string representing a host name, such as example.com.</p>
 </div>
+
+    
 
     
 
@@ -1721,6 +1899,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1744,6 +1924,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>An integer representing a port number between 0 and 65535, inclusive.</p>
 </div>
+
+    
 
     
 
@@ -1790,6 +1972,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1799,6 +1983,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>A string representing a host name, such as example.com.</p>
 </div>
+
+    
 
     
 
@@ -1837,6 +2023,8 @@ mtls-auth</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1860,6 +2048,8 @@ mtls-auth</code>.</p>
     <div class="field-description">
 <p>An integer representing a port number between 0 and 65535, inclusive.</p>
 </div>
+
+    
 
     
 
@@ -1971,7 +2161,7 @@ mtls-auth</code>.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -2119,8 +2309,8 @@ mtls-auth</code>.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -2130,16 +2320,6 @@ mtls-auth</code>.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

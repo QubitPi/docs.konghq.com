@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Admin API - v2.8.x | Kong Docs</title>
+  <title>Admin API - Kong Gateway - v2.8.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Admin API - v2.8.x | Kong Docs">
+  <meta property="og:title" content="Admin API - Kong Gateway - v2.8.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -402,6 +404,9 @@
         <div class="version">
           2.8.x
           
+          
+            <span>LTS</span>
+          
         </div>
         
       </div>
@@ -499,6 +504,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -529,110 +537,91 @@
         <span>
           Version 2.8.x
           
+          
+            <span>(LTS)</span>
+          
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/3.5.x/admin-api/" data-version-id="3.5.x">
-            3.5.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/3.4.x/admin-api/" data-version-id="3.4.x">
-            3.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/unreleased/admin-api/" data-version-id="3.9.x">
+              <em>unreleased</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/3.3.x/admin-api/" data-version-id="3.3.x">
-            3.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.8.x/admin-api/" data-version-id="3.8.x">
+              3.8.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/3.2.x/admin-api/" data-version-id="3.2.x">
-            3.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.7.x/admin-api/" data-version-id="3.7.x">
+              3.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/3.1.x/admin-api/" data-version-id="3.1.x">
-            3.1.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.6.x/admin-api/" data-version-id="3.6.x">
+              3.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/3.0.x/admin-api/" data-version-id="3.0.x">
-            3.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.5.x/admin-api/" data-version-id="3.5.x">
+              3.5.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/gateway/2.8.x/admin-api/" class="active" data-version-id="2.8.x">
-            2.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.4.x/admin-api/" data-version-id="3.4.x">
+              3.4.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/2.7.x/admin-api/" data-version-id="2.7.x">
-            2.7.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.3.x/admin-api/" data-version-id="3.3.x">
+              3.3.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway/2.6.x/admin-api/" data-version-id="2.6.x">
-            2.6.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.2.x/admin-api/" data-version-id="3.2.x">
+              3.2.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.1.x/admin-api/" data-version-id="3.1.x">
+              3.1.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.0.x/admin-api/" data-version-id="3.0.x">
+              3.0.x
+            </a>
+          </li>
+        
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/gateway/2.8.x/admin-api/" class="active" data-version-id="2.8.x">
+              2.8.x (LTS)
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/2.7.x/admin-api/" data-version-id="2.7.x">
+              2.7.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/2.6.x/admin-api/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
         
         <li role="menuitem" tabindex="-1">
@@ -657,13 +646,13 @@
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -679,6 +668,8 @@ Introduction
 Overview of Kong Gateway
 
       </a>
+    
+
     
   </span>
 
@@ -697,6 +688,8 @@ Version Support Policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -714,6 +707,8 @@ Stages of Software Availability
 
       </a>
     
+
+    
   </span>
 
   
@@ -730,6 +725,8 @@ Stages of Software Availability
 Changelog
 
       </a>
+    
+
     
   </span>
 
@@ -751,13 +748,13 @@ Changelog
 
 Install and Run
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Install and Run subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Install and Run subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -773,6 +770,8 @@ Install and Run
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -791,6 +790,8 @@ Kubernetes
 
       </a>
     
+
+    
   </span>
 
   
@@ -807,6 +808,8 @@ Kubernetes
 Helm
 
       </a>
+    
+
     
   </span>
 
@@ -825,6 +828,8 @@ OpenShift with Helm
 
       </a>
     
+
+    
   </span>
 
   
@@ -841,6 +846,8 @@ OpenShift with Helm
 Docker
 
       </a>
+    
+
     
   </span>
 
@@ -859,6 +866,8 @@ Amazon Linux
 
       </a>
     
+
+    
   </span>
 
   
@@ -875,6 +884,8 @@ Amazon Linux
 CentOS
 
       </a>
+    
+
     
   </span>
 
@@ -893,6 +904,8 @@ Debian
 
       </a>
     
+
+    
   </span>
 
   
@@ -909,6 +922,8 @@ Debian
 RHEL
 
       </a>
+    
+
     
   </span>
 
@@ -927,6 +942,8 @@ Ubuntu
 
       </a>
     
+
+    
   </span>
 
   
@@ -943,6 +960,8 @@ Ubuntu
 Migrating from OSS to EE
 
       </a>
+    
+
     
   </span>
 
@@ -961,6 +980,8 @@ Upgrade Kong Gateway
 
       </a>
     
+
+    
   </span>
 
   
@@ -978,6 +999,8 @@ Upgrade Kong Gateway OSS
 
       </a>
     
+
+    
   </span>
 
   
@@ -994,6 +1017,8 @@ Upgrade Kong Gateway OSS
 Upgrade from 2.8 LTS to 3.4 LTS
 
       </a>
+    
+
     
   </span>
 
@@ -1015,13 +1040,13 @@ Upgrade from 2.8 LTS to 3.4 LTS
 
 Get Started
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1038,6 +1063,12 @@ Quickstart Guide
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Quickstart Guide subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1053,6 +1084,8 @@ Quickstart Guide
 Configuring a Service
 
       </a>
+    
+
     
   </span>
 
@@ -1071,6 +1104,8 @@ Configuring a gRPC Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1088,6 +1123,8 @@ Enabling Plugins
 
       </a>
     
+
+    
   </span>
 
   
@@ -1104,6 +1141,8 @@ Enabling Plugins
 Adding Consumers
 
       </a>
+    
+
     
   </span>
 
@@ -1127,6 +1166,12 @@ Comprehensive Guide
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Comprehensive Guide subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1142,6 +1187,8 @@ Comprehensive Guide
 Prepare to Administer
 
       </a>
+    
+
     
   </span>
 
@@ -1160,6 +1207,8 @@ Expose your Services
 
       </a>
     
+
+    
   </span>
 
   
@@ -1176,6 +1225,8 @@ Expose your Services
 Protect your Services
 
       </a>
+    
+
     
   </span>
 
@@ -1194,6 +1245,8 @@ Improve Performance
 
       </a>
     
+
+    
   </span>
 
   
@@ -1210,6 +1263,8 @@ Improve Performance
 Secure Services
 
       </a>
+    
+
     
   </span>
 
@@ -1228,6 +1283,8 @@ Set Up Intelligent Load Balancing
 
       </a>
     
+
+    
   </span>
 
   
@@ -1245,6 +1302,8 @@ Manage Administrative Teams
 
       </a>
     
+
+    
   </span>
 
   
@@ -1261,6 +1320,8 @@ Manage Administrative Teams
 Publish, Locate, and Consume Services
 
       </a>
+    
+
     
   </span>
 
@@ -1287,13 +1348,13 @@ Publish, Locate, and Consume Services
 
 Plan and Deploy
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Plan and Deploy subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plan and Deploy subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1309,6 +1370,8 @@ Plan and Deploy
 Running Kong as a Non-Root User
 
       </a>
+    
+
     
   </span>
 
@@ -1327,6 +1390,8 @@ Resource Sizing Guidelines
 
       </a>
     
+
+    
   </span>
 
   
@@ -1344,6 +1409,12 @@ Hybrid Mode
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Hybrid Mode subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1359,6 +1430,8 @@ Hybrid Mode
 Deploy Kong Gateway in Hybrid Mode
 
       </a>
+    
+
     
   </span>
 
@@ -1382,6 +1455,8 @@ Kubernetes Deployment Options
 
       </a>
     
+
+    
   </span>
 
   
@@ -1398,6 +1473,8 @@ Kubernetes Deployment Options
 Control Kong Gateway through systemd
 
       </a>
+    
+
     
   </span>
 
@@ -1416,6 +1493,8 @@ Performance Testing Framework
 
       </a>
     
+
+    
   </span>
 
   
@@ -1432,6 +1511,8 @@ Performance Testing Framework
 DNS Considerations
 
       </a>
+    
+
     
   </span>
 
@@ -1450,6 +1531,8 @@ Default Ports
 
       </a>
     
+
+    
   </span>
 
   
@@ -1467,6 +1550,12 @@ Licenses
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Licenses subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1482,6 +1571,8 @@ Licenses
 Access Your License
 
       </a>
+    
+
     
   </span>
 
@@ -1500,6 +1591,8 @@ Deploy Your License
 
       </a>
     
+
+    
   </span>
 
   
@@ -1516,6 +1609,8 @@ Deploy Your License
 Monitor License Usage
 
       </a>
+    
+
     
   </span>
 
@@ -1536,13 +1631,13 @@ Monitor License Usage
 
 Security
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Security subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Security subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1558,6 +1653,8 @@ Security
 Start Kong Gateway Securely
 
       </a>
+    
+
     
   </span>
 
@@ -1576,6 +1673,8 @@ Keyring and Data Encryption
 
       </a>
     
+
+    
   </span>
 
   
@@ -1592,6 +1691,8 @@ Keyring and Data Encryption
 Kong Security Update Process
 
       </a>
+    
+
     
   </span>
 
@@ -1610,6 +1711,12 @@ Secrets Management
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Secrets Management subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1625,6 +1732,8 @@ Secrets Management
 Getting Started
 
       </a>
+    
+
     
   </span>
 
@@ -1643,6 +1752,8 @@ Advanced Usage
 
       </a>
     
+
+    
   </span>
 
   
@@ -1660,6 +1771,12 @@ Backends
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Backends subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1675,6 +1792,8 @@ Backends
 Environment Variables
 
       </a>
+    
+
     
   </span>
 
@@ -1693,6 +1812,8 @@ AWS Secrets Manager
 
       </a>
     
+
+    
   </span>
 
   
@@ -1706,9 +1827,11 @@ AWS Secrets Manager
       <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/gcp-sm/">
         
 
-GCP Secrets Manager
+GCP Secret Manager
 
       </a>
+    
+
     
   </span>
 
@@ -1723,9 +1846,11 @@ GCP Secrets Manager
       <a class="sidebar-link" tabindex="-1" href="/gateway/2.8.x/plan-and-deploy/security/secrets-management/backends/hashicorp-vault/">
         
 
-Hashicorp Vault
+HashiCorp Vault
 
       </a>
+    
+
     
   </span>
 
@@ -1748,6 +1873,8 @@ Hashicorp Vault
 Reference Format
 
       </a>
+    
+
     
   </span>
 
@@ -1779,13 +1906,13 @@ Reference Format
 
 Configure
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Configure subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Configure subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1799,13 +1926,13 @@ Configure
 
 Authentication and Authorization
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Authentication and Authorization subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authentication and Authorization subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1821,6 +1948,8 @@ Authentication and Authorization
 Authentication Reference
 
       </a>
+    
+
     
   </span>
 
@@ -1839,6 +1968,12 @@ OpenID Connect Plugin
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle OpenID Connect Plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1854,6 +1989,8 @@ OpenID Connect Plugin
 OpenID Connect with Curity
 
       </a>
+    
+
     
   </span>
 
@@ -1872,6 +2009,8 @@ OpenID Connect with Azure AD
 
       </a>
     
+
+    
   </span>
 
   
@@ -1888,6 +2027,8 @@ OpenID Connect with Azure AD
 OpenID Connect with Google
 
       </a>
+    
+
     
   </span>
 
@@ -1906,6 +2047,8 @@ OpenID Connect with Okta
 
       </a>
     
+
+    
   </span>
 
   
@@ -1922,6 +2065,8 @@ OpenID Connect with Okta
 OpenID Connect with Auth0
 
       </a>
+    
+
     
   </span>
 
@@ -1940,6 +2085,8 @@ OpenID Connect with Cognito
 
       </a>
     
+
+    
   </span>
 
   
@@ -1956,6 +2103,8 @@ OpenID Connect with Cognito
 OpenID Connect Plugin Reference
 
       </a>
+    
+
     
   </span>
 
@@ -1979,6 +2128,8 @@ Allowing Multiple Authentication Methods
 
       </a>
     
+
+    
   </span>
 
   
@@ -1996,6 +2147,12 @@ Auth for Kong Manager
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Auth for Kong Manager subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2011,6 +2168,8 @@ Auth for Kong Manager
 Create a Super Admin
 
       </a>
+    
+
     
   </span>
 
@@ -2029,6 +2188,8 @@ Configure Networking
 
       </a>
     
+
+    
   </span>
 
   
@@ -2045,6 +2206,8 @@ Configure Networking
 Configure Kong Manager to Send Email
 
       </a>
+    
+
     
   </span>
 
@@ -2063,6 +2226,8 @@ Reset Passwords and RBAC Tokens
 
       </a>
     
+
+    
   </span>
 
   
@@ -2079,6 +2244,8 @@ Reset Passwords and RBAC Tokens
 Configure Workspaces
 
       </a>
+    
+
     
   </span>
 
@@ -2097,6 +2264,8 @@ Basic Auth
 
       </a>
     
+
+    
   </span>
 
   
@@ -2113,6 +2282,8 @@ Basic Auth
 LDAP
 
       </a>
+    
+
     
   </span>
 
@@ -2131,6 +2302,8 @@ OIDC
 
       </a>
     
+
+    
   </span>
 
   
@@ -2147,6 +2320,8 @@ OIDC
 Sessions
 
       </a>
+    
+
     
   </span>
 
@@ -2170,6 +2345,12 @@ Role-based Access Control (RBAC)
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Role-based Access Control (RBAC) subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2185,6 +2366,8 @@ Role-based Access Control (RBAC)
 Add a Role
 
       </a>
+    
+
     
   </span>
 
@@ -2203,6 +2386,8 @@ Add a User
 
       </a>
     
+
+    
   </span>
 
   
@@ -2219,6 +2404,8 @@ Add a User
 Add an Admin
 
       </a>
+    
+
     
   </span>
 
@@ -2242,6 +2429,8 @@ Mapping LDAP Service Directory Groups to Kong Roles
 
       </a>
     
+
+    
   </span>
 
   
@@ -2264,6 +2453,8 @@ Configure gRPC Plugins
 
       </a>
     
+
+    
   </span>
 
   
@@ -2280,6 +2471,8 @@ Configure gRPC Plugins
 GraphQL Quickstart
 
       </a>
+    
+
     
   </span>
 
@@ -2298,6 +2491,8 @@ Logging Reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -2314,6 +2509,8 @@ Logging Reference
 Network and Firewall
 
       </a>
+    
+
     
   </span>
 
@@ -2335,13 +2532,13 @@ Network and Firewall
 
 Dev Portal
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Dev Portal subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Dev Portal subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2357,6 +2554,8 @@ Dev Portal
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -2375,6 +2574,8 @@ Enable the Dev Portal
 
       </a>
     
+
+    
   </span>
 
   
@@ -2391,6 +2592,8 @@ Enable the Dev Portal
 Structure and File Types
 
       </a>
+    
+
     
   </span>
 
@@ -2409,6 +2612,8 @@ Portal API Documentation
 
       </a>
     
+
+    
   </span>
 
   
@@ -2425,6 +2630,8 @@ Portal API Documentation
 Working with Templates
 
       </a>
+    
+
     
   </span>
 
@@ -2443,6 +2650,8 @@ Using the Editor
 
       </a>
     
+
+    
   </span>
 
   
@@ -2457,13 +2666,13 @@ Using the Editor
 
 Configuration
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Configuration subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2477,13 +2686,13 @@ Configuration
 
 Authentication
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Authentication subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authentication subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2499,6 +2708,8 @@ Authentication
 Basic Auth
 
       </a>
+    
+
     
   </span>
 
@@ -2517,6 +2728,8 @@ Key Auth
 
       </a>
     
+
+    
   </span>
 
   
@@ -2533,6 +2746,8 @@ Key Auth
 OIDC
 
       </a>
+    
+
     
   </span>
 
@@ -2551,6 +2766,8 @@ Sessions
 
       </a>
     
+
+    
   </span>
 
   
@@ -2567,6 +2784,8 @@ Sessions
 Adding Custom Registration Fields
 
       </a>
+    
+
     
   </span>
 
@@ -2590,6 +2809,8 @@ SMTP
 
       </a>
     
+
+    
   </span>
 
   
@@ -2606,6 +2827,8 @@ SMTP
 Workspaces
 
       </a>
+    
+
     
   </span>
 
@@ -2626,13 +2849,13 @@ Workspaces
 
 Administration
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Administration subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Administration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2648,6 +2871,8 @@ Administration
 Manage Developers
 
       </a>
+    
+
     
   </span>
 
@@ -2666,6 +2891,8 @@ Developer Roles and Content Permissions
 
       </a>
     
+
+    
   </span>
 
   
@@ -2680,13 +2907,13 @@ Developer Roles and Content Permissions
 
 Application Registration
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Application Registration subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Application Registration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2702,6 +2929,8 @@ Application Registration
 Authorization Provider Strategy
 
       </a>
+    
+
     
   </span>
 
@@ -2720,6 +2949,8 @@ Enable Application Registration
 
       </a>
     
+
+    
   </span>
 
   
@@ -2736,6 +2967,8 @@ Enable Application Registration
 Enable Key Authentication for Application Registration
 
       </a>
+    
+
     
   </span>
 
@@ -2754,6 +2987,8 @@ External OAuth2 Support
 
       </a>
     
+
+    
   </span>
 
   
@@ -2770,6 +3005,8 @@ External OAuth2 Support
 Set up Okta and Kong for external OAuth
 
       </a>
+    
+
     
   </span>
 
@@ -2788,6 +3025,8 @@ Set Up Azure AD and Kong for External Authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -2804,6 +3043,8 @@ Set Up Azure AD and Kong for External Authentication
 Manage Applications
 
       </a>
+    
+
     
   </span>
 
@@ -2829,13 +3070,13 @@ Manage Applications
 
 Customization
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Customization subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Customization subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2851,6 +3092,8 @@ Customization
 Easy Theme Editing
 
       </a>
+    
+
     
   </span>
 
@@ -2869,6 +3112,8 @@ Migrating Templates Between Workspaces
 
       </a>
     
+
+    
   </span>
 
   
@@ -2885,6 +3130,8 @@ Migrating Templates Between Workspaces
 Markdown Rendering Module
 
       </a>
+    
+
     
   </span>
 
@@ -2903,6 +3150,8 @@ Customizing Portal Emails
 
       </a>
     
+
+    
   </span>
 
   
@@ -2919,6 +3168,8 @@ Customizing Portal Emails
 Adding and Using JavaScript Assets
 
       </a>
+    
+
     
   </span>
 
@@ -2937,6 +3188,8 @@ Single Page App in Dev Portal
 
       </a>
     
+
+    
   </span>
 
   
@@ -2953,6 +3206,8 @@ Single Page App in Dev Portal
 Alternate OpenAPI Renderer
 
       </a>
+    
+
     
   </span>
 
@@ -2976,6 +3231,8 @@ Helpers CLI
 
       </a>
     
+
+    
   </span>
 
   
@@ -2996,13 +3253,13 @@ Helpers CLI
 
 Monitor
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Monitor subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Monitor subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3019,6 +3276,12 @@ Kong Vitals
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Vitals subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3034,6 +3297,8 @@ Kong Vitals
 Metrics
 
       </a>
+    
+
     
   </span>
 
@@ -3052,6 +3317,8 @@ Reports
 
       </a>
     
+
+    
   </span>
 
   
@@ -3068,6 +3335,8 @@ Reports
 Vitals with InfluxDB
 
       </a>
+    
+
     
   </span>
 
@@ -3086,6 +3355,8 @@ Vitals with Prometheus
 
       </a>
     
+
+    
   </span>
 
   
@@ -3102,6 +3373,8 @@ Vitals with Prometheus
 Estimate Vitals Storage in PostgreSQL
 
       </a>
+    
+
     
   </span>
 
@@ -3125,6 +3398,8 @@ Prometheus plugin
 
       </a>
     
+
+    
   </span>
 
   
@@ -3141,6 +3416,8 @@ Prometheus plugin
 Zipkin plugin
 
       </a>
+    
+
     
   </span>
 
@@ -3162,13 +3439,13 @@ Zipkin plugin
 
 Reference
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3185,6 +3462,12 @@ Admin API
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Admin API subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3200,6 +3483,8 @@ Admin API
 DB-less Mode
 
       </a>
+    
+
     
   </span>
 
@@ -3218,6 +3503,8 @@ Declarative Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -3234,6 +3521,8 @@ Declarative Configuration
 Supported Content Types
 
       </a>
+    
+
     
   </span>
 
@@ -3252,6 +3541,8 @@ Information Routes
 
       </a>
     
+
+    
   </span>
 
   
@@ -3268,6 +3559,8 @@ Information Routes
 Health Routes
 
       </a>
+    
+
     
   </span>
 
@@ -3286,6 +3579,8 @@ Tags
 
       </a>
     
+
+    
   </span>
 
   
@@ -3302,6 +3597,8 @@ Tags
 Service Object
 
       </a>
+    
+
     
   </span>
 
@@ -3320,6 +3617,8 @@ Route Object
 
       </a>
     
+
+    
   </span>
 
   
@@ -3336,6 +3635,8 @@ Route Object
 Consumer Object
 
       </a>
+    
+
     
   </span>
 
@@ -3354,6 +3655,8 @@ Plugin Object
 
       </a>
     
+
+    
   </span>
 
   
@@ -3370,6 +3673,8 @@ Plugin Object
 Certificate Object
 
       </a>
+    
+
     
   </span>
 
@@ -3388,6 +3693,8 @@ CA Certificate Object
 
       </a>
     
+
+    
   </span>
 
   
@@ -3404,6 +3711,8 @@ CA Certificate Object
 SNI Object
 
       </a>
+    
+
     
   </span>
 
@@ -3422,6 +3731,8 @@ Upstream Object
 
       </a>
     
+
+    
   </span>
 
   
@@ -3438,6 +3749,8 @@ Upstream Object
 Target Object
 
       </a>
+    
+
     
   </span>
 
@@ -3456,6 +3769,8 @@ Vaults Beta
 
       </a>
     
+
+    
   </span>
 
   
@@ -3473,6 +3788,12 @@ Licenses
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Licenses subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3488,6 +3809,8 @@ Licenses
 Licenses Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3505,6 +3828,8 @@ Licenses Reference
 Licenses Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3528,6 +3853,12 @@ Workspaces
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Workspaces subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3543,6 +3874,8 @@ Workspaces
 Workspaces Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3560,6 +3893,8 @@ Workspaces Reference
 Workspace Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3583,6 +3918,12 @@ RBAC
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle RBAC subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3598,6 +3939,8 @@ RBAC
 RBAC Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3615,6 +3958,8 @@ RBAC Reference
 RBAC Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3638,6 +3983,12 @@ Admins
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Admins subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3653,6 +4004,8 @@ Admins
 API Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3670,6 +4023,8 @@ API Reference
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3693,6 +4048,8 @@ Developers
 
       </a>
     
+
+    
   </span>
 
   
@@ -3710,6 +4067,12 @@ Consumer Groups
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Consumer Groups subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3725,6 +4088,8 @@ Consumer Groups
 API Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3742,6 +4107,8 @@ API Reference
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3765,6 +4132,12 @@ Event Hooks
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Event Hooks subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3780,6 +4153,8 @@ Event Hooks
 Event Hooks Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3797,6 +4172,8 @@ Event Hooks Reference
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3820,6 +4197,8 @@ Audit Logging
 
       </a>
     
+
+    
   </span>
 
   
@@ -3837,6 +4216,8 @@ Keyring and Data Encryption
 
       </a>
     
+
+    
   </span>
 
   
@@ -3853,6 +4234,8 @@ Keyring and Data Encryption
 Securing the Admin API
 
       </a>
+    
+
     
   </span>
 
@@ -3876,6 +4259,8 @@ DB-less and Declarative Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -3892,6 +4277,8 @@ DB-less and Declarative Configuration
 Configuration Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3910,6 +4297,8 @@ CLI Reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -3926,6 +4315,8 @@ CLI Reference
 Load Balancing Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3944,6 +4335,8 @@ Proxy Reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -3960,6 +4353,8 @@ Proxy Reference
 Rate Limiting Library
 
       </a>
+    
+
     
   </span>
 
@@ -3978,6 +4373,8 @@ Health Checks and Circuit Breakers Reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -3994,6 +4391,8 @@ Health Checks and Circuit Breakers Reference
 Clustering Reference
 
       </a>
+    
+
     
   </span>
 
@@ -4012,6 +4411,12 @@ Plugin Development Kit
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugin Development Kit subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4027,6 +4432,8 @@ Plugin Development Kit
 kong.client
 
       </a>
+    
+
     
   </span>
 
@@ -4045,6 +4452,8 @@ kong.client.tls
 
       </a>
     
+
+    
   </span>
 
   
@@ -4061,6 +4470,8 @@ kong.client.tls
 kong.cluster
 
       </a>
+    
+
     
   </span>
 
@@ -4079,6 +4490,8 @@ kong.ctx
 
       </a>
     
+
+    
   </span>
 
   
@@ -4095,6 +4508,8 @@ kong.ctx
 kong.ip
 
       </a>
+    
+
     
   </span>
 
@@ -4113,6 +4528,8 @@ kong.log
 
       </a>
     
+
+    
   </span>
 
   
@@ -4129,6 +4546,8 @@ kong.log
 kong.nginx
 
       </a>
+    
+
     
   </span>
 
@@ -4147,6 +4566,8 @@ kong.node
 
       </a>
     
+
+    
   </span>
 
   
@@ -4163,6 +4584,8 @@ kong.node
 kong.request
 
       </a>
+    
+
     
   </span>
 
@@ -4181,6 +4604,8 @@ kong.response
 
       </a>
     
+
+    
   </span>
 
   
@@ -4197,6 +4622,8 @@ kong.response
 kong.router
 
       </a>
+    
+
     
   </span>
 
@@ -4215,6 +4642,8 @@ kong.service
 
       </a>
     
+
+    
   </span>
 
   
@@ -4231,6 +4660,8 @@ kong.service
 kong.service.request
 
       </a>
+    
+
     
   </span>
 
@@ -4249,6 +4680,8 @@ kong.service.response
 
       </a>
     
+
+    
   </span>
 
   
@@ -4266,6 +4699,8 @@ kong.table
 
       </a>
     
+
+    
   </span>
 
   
@@ -4282,6 +4717,8 @@ kong.table
 kong.vault
 
       </a>
+    
+
     
   </span>
 
@@ -4305,6 +4742,12 @@ Plugin Development Guide
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugin Development Guide subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4320,6 +4763,8 @@ Plugin Development Guide
 Introduction
 
       </a>
+    
+
     
   </span>
 
@@ -4338,6 +4783,8 @@ File structure
 
       </a>
     
+
+    
   </span>
 
   
@@ -4354,6 +4801,8 @@ File structure
 Implementing custom logic
 
       </a>
+    
+
     
   </span>
 
@@ -4372,6 +4821,8 @@ Plugin configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4388,6 +4839,8 @@ Plugin configuration
 Accessing the datastore
 
       </a>
+    
+
     
   </span>
 
@@ -4406,6 +4859,8 @@ Storing custom entities
 
       </a>
     
+
+    
   </span>
 
   
@@ -4422,6 +4877,8 @@ Storing custom entities
 Caching custom entities
 
       </a>
+    
+
     
   </span>
 
@@ -4440,6 +4897,8 @@ Extending the Admin API
 
       </a>
     
+
+    
   </span>
 
   
@@ -4457,6 +4916,8 @@ Writing tests
 
       </a>
     
+
+    
   </span>
 
   
@@ -4473,6 +4934,8 @@ Writing tests
 (un)Installing your plugin
 
       </a>
+    
+
     
   </span>
 
@@ -4496,6 +4959,8 @@ Plugins in Other Languages
 
       </a>
     
+
+    
   </span>
 
   
@@ -4512,6 +4977,8 @@ Plugins in Other Languages
 File Permissions Reference
 
       </a>
+    
+
     
   </span>
 
@@ -4553,10 +5020,10 @@ File Permissions Reference
       <div class="page-content">
         <div class="content show-anchor-links">
           
+            
               <blockquote id="version-notice" class="important">
-                
-                You are browsing documentation for an outdated version.
-                
+                You are browsing documentation for an older version.
+            
                 See the <a href="/gateway/latest/admin-api/">latest documentation here</a>.
               </blockquote>
           
@@ -8741,7 +9208,7 @@ the following order: main certificate on the top, followed by any intermediates.
       <td style="text-align: right">
 <code class="language-plaintext highlighter-rouge">snis</code><br><em>shorthand-attribute</em>
 </td>
-      <td>An array of zero or more hostnames to associate with this certificate as SNIs. This is a sugar parameter that will, under the hood, create an SNI object and associate it with this certificate for your convenience. To set this attribute this certificate must have a valid private key associated with it.</td>
+      <td>An array of zero or more hostnames to associate with this certificate as SNIs. This is a convenience parameter: under the hood, it creates an SNI object and associates it with this certificate. To set this attribute this certificate must have a valid private key associated with it.</td>
     </tr>
     <tr>
       <td style="text-align: right">
@@ -8957,7 +9424,7 @@ the following order: main certificate on the top, followed by any intermediates.
       <td style="text-align: right">
 <code class="language-plaintext highlighter-rouge">snis</code><br><em>shorthand-attribute</em>
 </td>
-      <td>An array of zero or more hostnames to associate with this certificate as SNIs. This is a sugar parameter that will, under the hood, create an SNI object and associate it with this certificate for your convenience. To set this attribute this certificate must have a valid private key associated with it.</td>
+      <td>An array of zero or more hostnames to associate with this certificate as SNIs. This is a convenience parameter: under the hood, it creates an SNI object and associates it with this certificate. To set this attribute this certificate must have a valid private key associated with it.</td>
     </tr>
     <tr>
       <td style="text-align: right">
@@ -9074,7 +9541,7 @@ the following order: main certificate on the top, followed by any intermediates.
       <td style="text-align: right">
 <code class="language-plaintext highlighter-rouge">snis</code><br><em>shorthand-attribute</em>
 </td>
-      <td>An array of zero or more hostnames to associate with this certificate as SNIs. This is a sugar parameter that will, under the hood, create an SNI object and associate it with this certificate for your convenience. To set this attribute this certificate must have a valid private key associated with it.</td>
+      <td>An array of zero or more hostnames to associate with this certificate as SNIs. This is a convenience parameter: under the hood, it creates an SNI object and associates it with this certificate. To set this attribute this certificate must have a valid private key associated with it.</td>
     </tr>
     <tr>
       <td style="text-align: right">
@@ -11906,7 +12373,7 @@ The target object with the latest <code class="language-plaintext highlighter-ro
 <h2 id="vaults-beta-entity">Vaults Beta Entity</h2>
 
 <p>Vault entities are used to configure different Vault connectors. Examples of
-Vaults are Environment Variables, Hashicorp Vault and AWS Secrets Manager.</p>
+Vaults are Environment Variables, HashiCorp Vault and AWS Secrets Manager.</p>
 
 <p>Configuring a Vault allows referencing the secrets with other entities. For
 example a certificate entity can store a reference to a certificate and key,
@@ -12359,13 +12826,12 @@ body is not allowed.</p>
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -12513,8 +12979,8 @@ body is not allowed.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -12524,16 +12990,6 @@ body is not allowed.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

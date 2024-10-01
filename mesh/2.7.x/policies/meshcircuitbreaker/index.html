@@ -1,0 +1,6310 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MeshCircuitBreaker - Kong Mesh - v2.7.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="MeshCircuitBreaker - Kong Mesh - v2.7.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/mesh/latest/policies/meshcircuitbreaker/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/mesh/2.7.x/policies/meshcircuitbreaker/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Mesh
+          
+        </div>
+        
+        <div class="version">
+          2.7.x
+          
+          
+            <span>LTS</span>
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/mesh/2.7.x/">Kong Mesh</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          Policies
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/mesh/2.7.x/policies/meshcircuitbreaker/">MeshCircuitBreaker</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/kumahq/kuma-website/edit/master/app/_src/policies/meshcircuitbreaker.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Kong Mesh
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway/latest/">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/mesh/latest/" class="active">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="versions-dropdown dropdown">
+      <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Version 2.7.x
+          
+          
+            <span>(LTS)</span>
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/dev/policies/meshcircuitbreaker/" data-version-id="2.9.x">
+              <em>dev</em>
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.8.x/policies/meshcircuitbreaker/" data-version-id="2.8.x">
+              2.8.x <em>(latest)</em>
+            </a>
+          </li>
+        
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/mesh/2.7.x/policies/meshcircuitbreaker/" class="active" data-version-id="2.7.x">
+              2.7.x (LTS)
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.6.x/policies/meshcircuitbreaker/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.5.x/policies/meshcircuitbreaker/" data-version-id="2.5.x">
+              2.5.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.4.x/policies/meshcircuitbreaker/" data-version-id="2.4.x">
+              2.4.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.3.x/policies/meshcircuitbreaker/" data-version-id="2.3.x">
+              2.3.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.2.x/policies/meshcircuitbreaker/" data-version-id="2.2.x">
+              2.2.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.1.x/policies/meshcircuitbreaker/" data-version-id="2.1.x">
+              2.1.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.0.x/" data-version-id="2.0.x">
+              2.0.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.9.x/" data-version-id="1.9.x">
+              1.9.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.8.x/" data-version-id="1.8.x">
+              1.8.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.7.x/" data-version-id="1.7.x">
+              1.7.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.6.x/" data-version-id="1.6.x">
+              1.6.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.5.x/" data-version-id="1.5.x">
+              1.5.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.4.x/" data-version-id="1.4.x">
+              1.4.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.3.x/" data-version-id="1.3.x">
+              1.3.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.2.x/" data-version-id="1.2.x">
+              1.2.x
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-flag.svg" alt="">
+
+
+Introduction
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/introduction/about-service-meshes/">
+        
+
+About service meshes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/">
+        
+
+Overview of Kong Mesh
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/introduction/how-kong-mesh-works/">
+        
+
+How Kong Mesh works
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/introduction/architecture/">
+        
+
+Architecture
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/availability-stages/">
+        
+
+Stages of software availability
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/support-policy/">
+        
+
+Version support policy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/sbom/">
+        
+
+Software Bill of Materials
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/introduction/kuma-requirements/">
+        
+
+Mesh requirements
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/changelog/">
+        
+
+Release notes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-quickstart-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-quickstart-color.svg" alt="">
+
+
+Quickstart
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Quickstart subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-2-quickstart-subtree" role="group" aria-label="Quickstart">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/quickstart/kubernetes-demo/">
+        
+
+Deploy Kong Mesh on Kubernetes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/quickstart/universal-demo/">
+        
+
+Deploy Kuma on Universal
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-kong-mesh-in-production-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Kong Mesh in Production
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Mesh in Production subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-kong-mesh-in-production-subtree" role="group" aria-label="Kong Mesh in Production">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-deployment-topologies-subtree">
+    
+      
+
+Deployment topologies
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment topologies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-2-deployment-topologies-subtree" role="group" aria-label="Deployment topologies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/deployment/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/deployment/single-zone/">
+        
+
+Single-zone deployment
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/deployment/multi-zone/">
+        
+
+Multi-zone deployment
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/install-kumactl/">
+        
+
+Install kumactl
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/use-mesh/">
+        
+
+Use Kong Mesh
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-5-control-plane-deployment-subtree">
+    
+      
+
+Control plane deployment
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Control plane deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-5-control-plane-deployment-subtree" role="group" aria-label="Control plane deployment">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/license/">
+        
+
+Kong Mesh license
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/single-zone/">
+        
+
+Deploy a single-zone control plane
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/multi-zone/">
+        
+
+Deploy a multi-zone global control plane
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/zone-ingress/">
+        
+
+Zone Ingress
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/zoneegress/">
+        
+
+Zone Egress
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/zoneproxy-auth/">
+        
+
+Configure zone proxy authentication
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/reference/kuma-cp/">
+        
+
+Control plane configuration reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/systemd/">
+        
+
+Systemd
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/cp-deployment/kubernetes/">
+        
+
+Kubernetes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/cli/">
+        
+
+kumactl
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/mesh/">
+        
+
+Configuring your Mesh and multi-tenancy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-7-data-plane-configuration-subtree">
+    
+      
+
+Data plane configuration
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Data plane configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-7-data-plane-configuration-subtree" role="group" aria-label="Data plane configuration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/dp-config/dpp/">
+        
+
+Data plane proxy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/dp-config/dpp-on-kubernetes/">
+        
+
+Configure the data plane on Kubernetes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/dp-config/dpp-on-universal/">
+        
+
+Configure the data plane on Universal
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/dp-config/cni/">
+        
+
+Configure the Kong Mesh CNI
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/dp-config/transparent-proxying/">
+        
+
+Configure transparent proxying
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/dp-config/ipv6/">
+        
+
+IPv6 support
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-8-secure-your-deployment-subtree">
+    
+      
+
+Secure your deployment
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Secure your deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-8-secure-your-deployment-subtree" role="group" aria-label="Secure your deployment">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/secure-deployment/secrets/">
+        
+
+Manage secrets
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/secure-deployment/api-server-auth/">
+        
+
+Authentication with the API server
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/secure-deployment/dp-auth/">
+        
+
+Authentication with the data plane proxy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/secure-deployment/dp-membership/">
+        
+
+Configure data plane proxy membership
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/secure-deployment/certificates/">
+        
+
+Secure access accross services
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/rbac/">
+        
+
+Kong Mesh RBAC
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/fips-support/">
+        
+
+FIPS support
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/gui/">
+        
+
+Kong Mesh user interface
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-10-inspect-api-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/inspect-api/">
+        
+
+Inspect API
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Inspect API subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-10-inspect-api-subtree" role="group" aria-label="Inspect API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/inspect-api/#matched-policies">
+        
+
+Matched policies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/inspect-api/#affected-data-plane-proxies">
+        
+
+Affected data plane proxies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/inspect-api/#envoy-proxy-configuration">
+        
+
+Envoy proxy configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-11-upgrades-and-tuning-subtree">
+    
+      
+
+Upgrades and tuning
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrades and tuning subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-11-upgrades-and-tuning-subtree" role="group" aria-label="Upgrades and tuning">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/upgrades-tuning/upgrades/">
+        
+
+Upgrade Kong Mesh
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/upgrades-tuning/fine-tuning/">
+        
+
+Performance fine-tuning
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/production/upgrades-tuning/upgrade-notes/">
+        
+
+Version specific upgrade notes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-12-control-plane-configuration-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/documentation/configuration/">
+        
+
+Control Plane Configuration
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Control Plane Configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-12-control-plane-configuration-subtree" role="group" aria-label="Control Plane Configuration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/documentation/configuration/#modifying-the-configuration">
+        
+
+Modifying the configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/documentation/configuration/#inspecting-the-configuration">
+        
+
+Inspecting the configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/documentation/configuration/#store">
+        
+
+Store
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-using-kong-mesh-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-overview-color.svg" alt="">
+
+
+Using Kong Mesh
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using Kong Mesh subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-using-kong-mesh-subtree" role="group" aria-label="Using Kong Mesh">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-1-zero-trust-application-security-subtree">
+    
+      
+
+Zero Trust &amp; Application Security
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Zero Trust &amp; Application Security subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-1-zero-trust-application-security-subtree" role="group" aria-label="Zero Trust &amp; Application Security">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/mutual-tls/">
+        
+
+Mutual TLS
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/external-services/">
+        
+
+External Service
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-2-resiliency-failover-subtree">
+    
+      
+
+Resiliency &amp; Failover
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Resiliency &amp; Failover subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-2-resiliency-failover-subtree" role="group" aria-label="Resiliency &amp; Failover">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/documentation/health/">
+        
+
+Dataplane Health
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/service-health-probes/">
+        
+
+Service Health Probes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-3-managing-incoming-traffic-with-gateways-subtree">
+    
+      
+
+Managing incoming traffic with gateways
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Managing incoming traffic with gateways subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-3-managing-incoming-traffic-with-gateways-subtree" role="group" aria-label="Managing incoming traffic with gateways">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/overview/">
+        
+
+How ingress works in Kuma
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/delegated/">
+        
+
+Delegated gateways
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/builtin/">
+        
+
+Built-in gateways
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/builtin-k8s/">
+        
+
+Running built-in gateway pods on Kubernetes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/builtin-listeners/">
+        
+
+Configuring built-in listeners
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/builtin-routes/">
+        
+
+Configuring built-in routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/using-mesh/managing-ingress-traffic/gateway-api/">
+        
+
+Using the Kubernetes Gateway API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-4-observability-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/">
+        
+
+Observability
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Observability subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-4-observability-subtree" role="group" aria-label="Observability">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/#demo-setup">
+        
+
+Demo setup
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/#control-plane-observability">
+        
+
+Control plane metrics
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/#configuring-prometheus">
+        
+
+Configuring Prometheus
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/#configuring-grafana">
+        
+
+Configuring Grafana
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/#configuring-datadog">
+        
+
+Configuring Datadog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/explore/observability/#observability-in-multi-zone">
+        
+
+Observability in multi-zone
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-5-route-traffic-shaping-subtree">
+    
+      
+
+Route &amp; Traffic shaping
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Route &amp; Traffic shaping subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-5-route-traffic-shaping-subtree" role="group" aria-label="Route &amp; Traffic shaping">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/protocol-support-in-kong-mesh/">
+        
+
+Protocol support in Kong Mesh
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-6-service-discovery-networking-subtree">
+    
+      
+
+Service Discovery &amp; Networking
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Service Discovery &amp; Networking subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-6-service-discovery-networking-subtree" role="group" aria-label="Service Discovery &amp; Networking">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/networking/service-discovery/">
+        
+
+Service Discovery
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/networking/dns/">
+        
+
+DNS
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/networking/non-mesh-traffic/">
+        
+
+Non-mesh traffic
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/networking/transparent-proxying/">
+        
+
+Transparent Proxying
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-policies-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-documentation-small.svg" alt="">
+
+
+Policies
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Policies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-policies-subtree" role="group" aria-label="Policies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/introduction/">
+        
+
+Introduction
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/applying-policies/">
+        
+
+Applying Policies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/targetref/">
+        
+
+Understanding TargetRef policies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-4-meshaccesslog-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshaccesslog/">
+        
+
+MeshAccessLog
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshAccessLog subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-4-meshaccesslog-subtree" role="group" aria-label="MeshAccessLog">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshaccesslog/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshaccesslog/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshaccesslog/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-5-meshcircuitbreaker-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshcircuitbreaker/">
+        
+
+MeshCircuitBreaker
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshCircuitBreaker subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-5-meshcircuitbreaker-subtree" role="group" aria-label="MeshCircuitBreaker">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshcircuitbreaker/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshcircuitbreaker/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshcircuitbreaker/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-6-meshfaultinjection-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshfaultinjection/">
+        
+
+MeshFaultInjection
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshFaultInjection subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-6-meshfaultinjection-subtree" role="group" aria-label="MeshFaultInjection">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshfaultinjection/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshfaultinjection/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshfaultinjection/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-7-meshhealthcheck-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhealthcheck/">
+        
+
+MeshHealthCheck
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshHealthCheck subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-7-meshhealthcheck-subtree" role="group" aria-label="MeshHealthCheck">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhealthcheck/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhealthcheck/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhealthcheck/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-8-meshhttproute-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhttproute/">
+        
+
+MeshHTTPRoute
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshHTTPRoute subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-8-meshhttproute-subtree" role="group" aria-label="MeshHTTPRoute">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhttproute/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhttproute/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhttproute/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshhttproute/#merging">
+        
+
+Merging
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-9-meshmetric-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshmetric/">
+        
+
+MeshMetric
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshMetric subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-9-meshmetric-subtree" role="group" aria-label="MeshMetric">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshmetric/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshmetric/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshmetric/#prometheus">
+        
+
+Prometheus
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshmetric/#opentelemetry">
+        
+
+OpenTelemetry
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshmetric/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-10-meshproxypatch-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshproxypatch/">
+        
+
+MeshProxyPatch
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshProxyPatch subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-10-meshproxypatch-subtree" role="group" aria-label="MeshProxyPatch">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshproxypatch/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshproxypatch/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshproxypatch/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshproxypatch/#merging">
+        
+
+Merging
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-11-meshratelimit-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshratelimit/">
+        
+
+MeshRateLimit
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshRateLimit subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-11-meshratelimit-subtree" role="group" aria-label="MeshRateLimit">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshratelimit/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshratelimit/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshratelimit/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-12-meshretry-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshretry/">
+        
+
+MeshRetry
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshRetry subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-12-meshretry-subtree" role="group" aria-label="MeshRetry">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshretry/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshretry/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshretry/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-13-meshtcproute-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtcproute/">
+        
+
+MeshTCPRoute
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTCPRoute subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-13-meshtcproute-subtree" role="group" aria-label="MeshTCPRoute">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtcproute/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtcproute/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtcproute/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtcproute/#route-policies-with-different-types-targeting-the-same-destination">
+        
+
+Route policies with different types targeting the same destination
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-14-meshtimeout-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtimeout/">
+        
+
+MeshTimeout
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTimeout subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-14-meshtimeout-subtree" role="group" aria-label="MeshTimeout">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtimeout/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtimeout/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtimeout/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-15-meshtrace-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrace/">
+        
+
+MeshTrace
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTrace subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-15-meshtrace-subtree" role="group" aria-label="MeshTrace">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrace/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrace/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrace/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-16-meshtrafficpermission-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrafficpermission/">
+        
+
+MeshTrafficPermission
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTrafficPermission subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-16-meshtrafficpermission-subtree" role="group" aria-label="MeshTrafficPermission">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrafficpermission/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrafficpermission/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshtrafficpermission/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-17-meshloadbalancingstrategy-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshloadbalancingstrategy/">
+        
+
+MeshLoadBalancingStrategy
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshLoadBalancingStrategy subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-17-meshloadbalancingstrategy-subtree" role="group" aria-label="MeshLoadBalancingStrategy">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshloadbalancingstrategy/#targetref-support-matrix">
+        
+
+TargetRef support matrix
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshloadbalancingstrategy/#configuration">
+        
+
+Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshloadbalancingstrategy/#examples">
+        
+
+Examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/meshopa/">
+        
+
+MeshOPA (beta)
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/meshglobalratelimit/">
+        
+
+MeshGlobalRateLimit (beta)
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-20-previous-policies-subtree">
+    
+      
+
+Previous Policies
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Previous Policies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-20-previous-policies-subtree" role="group" aria-label="Previous Policies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/general-notes-about-kong-mesh-policies/">
+        
+
+General notes about Kong Mesh policies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/how-kong-mesh-chooses-the-right-policy-to-apply/">
+        
+
+How Kong Mesh chooses the right policy to apply
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/traffic-permissions/">
+        
+
+Traffic Permissions
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/traffic-route/">
+        
+
+Traffic Route
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/traffic-metrics/">
+        
+
+Traffic Metrics
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/traffic-trace/">
+        
+
+Traffic Trace
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/traffic-log/">
+        
+
+Traffic Log
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/locality-aware/">
+        
+
+Locality-aware Load Balancing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/fault-injection/">
+        
+
+Fault Injection
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/health-check/">
+        
+
+Health Check
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/circuit-breaker/">
+        
+
+Circuit Breaker
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/retry/">
+        
+
+Retry
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/timeout/">
+        
+
+Timeout
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/rate-limit/">
+        
+
+Rate Limit
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/virtual-outbound/">
+        
+
+Virtual Outbound
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/policies/meshgatewayroute/">
+        
+
+MeshGatewayRoute
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/opa/">
+        
+
+OPA policy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-guides-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-learning.svg" alt="">
+
+
+Guides
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-6-guides-subtree" role="group" aria-label="Guides">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/guides/federate/">
+        
+
+Federate zone control plane
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/guides/gateway-builtin/">
+        
+
+Add a builtin Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/guides/gateway-delegated/">
+        
+
+Add Kong as a delegated Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/guides/otel-metrics/">
+        
+
+Collect Metrics with OpenTelemetry
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/guides/migration-to-the-new-policies/">
+        
+
+Migration to the new policies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-enterprise-features-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-enterprise-blue.svg" alt="">
+
+
+Enterprise Features
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Enterprise Features subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-enterprise-features-subtree" role="group" aria-label="Enterprise Features">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/vault/">
+        
+
+HashiCorp Vault CA
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/acmpca/">
+        
+
+Amazon ACM Private CA
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/cert-manager/">
+        
+
+cert-manager Private CA
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/opa/">
+        
+
+OPA policy support
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/meshopa/">
+        
+
+MeshOPA (beta)
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/kds-auth/">
+        
+
+Multi-zone authentication
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/fips-support/">
+        
+
+FIPS support
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/ca-rotation/">
+        
+
+Certificate Authority rotation
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/rbac/">
+        
+
+Role-Based Access Control
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-11-red-hat-subtree">
+    
+      
+
+Red Hat
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Red Hat subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-11-red-hat-subtree" role="group" aria-label="Red Hat">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/ubi-images/">
+        
+
+UBI Images
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/openshift-quickstart/">
+        
+
+Red Hat OpenShift Quickstart
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/installation/ecs/">
+        
+
+ECS Support
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/access-audit/">
+        
+
+Auditing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/meshglobalratelimit/">
+        
+
+MeshGlobalRateLimit (beta)
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/features/signed-images/">
+        
+
+Verify signatures for signed Kong Mesh images
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-reference-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Reference
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/reference/http-api/">
+        
+
+HTTP API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/reference/kubernetes-annotations/">
+        
+
+Kubernetes annotations and labels
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/reference/data-collection/">
+        
+
+Kuma data collection
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/reference/kuma-cp/">
+        
+
+Control plane configuration reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.7.x/reference/proxy-template/">
+        
+
+Envoy proxy template
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-community-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Community
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Community subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-9-community-subtree" role="group" aria-label="Community">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="https://kuma.io/community/" target="_blank" rel="noopener nofollow noreferrer ">
+        
+
+Contribute to Kuma
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li><a href="#targetref-support-matrix" class="active scroll-to">TargetRef support matrix</a></li>
+  <li>
+<a href="#configuration" class="scroll-to">Configuration</a>
+    <ul>
+      <li><a href="#connection-limits" class="scroll-to">Connection limits</a></li>
+      <li><a href="#outlier-detection" class="scroll-to">Outlier detection</a></li>
+      <li><a href="#examples" class="scroll-to">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#all-policy-options" class="scroll-to">All policy options</a></li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+            
+              <blockquote id="version-notice" class="important">
+                You are browsing documentation for an older version.
+            
+                See the <a href="/mesh/latest/policies/meshcircuitbreaker/">latest documentation here</a>.
+              </blockquote>
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">MeshCircuitBreaker
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          <blockquote class="important">
+  <p>
+</p>
+<p>This policy uses new policy matching algorithm.
+Do <strong>not</strong> combine with <a href="/mesh/2.7.x/policies/circuit-breaker">CircuitBreaker</a>.</p>
+
+</blockquote>
+
+<p>This policy will look for errors in the live traffic being exchanged between our data plane proxies. It will mark a data
+proxy as unhealthy if certain conditions are met. The policy will ensure that no additional traffic can reach an
+unhealthy data plane proxy until it is healthy again.</p>
+
+<p>Circuit breakers - unlike active <a href="/mesh/2.7.x/policies/meshhealthcheck/">MeshHealthChecks</a> - do not send
+additional traffic to our data plane proxies but they rather inspect the existing service traffic. They are also
+commonly used to prevent cascading failures.</p>
+
+<blockquote class="note">
+  <p>
+</p>
+<p>Like a real-world circuit breaker when the circuit is <strong>closed</strong> then traffic between a source and destination data
+plane proxy is allowed to freely flow through it. When it is <strong>open</strong> then the traffic is interrupted.</p>
+
+</blockquote>
+
+<p>The conditions that determine when a circuit breaker is closed or open are being configured on connection limits or
+outlier detection basis. For outlier detection to open circuit breaker you can configure what we call “detectors”.
+This policy provides 5 different types of detectors, and they are triggered on some deviations in the upstream service
+behavior. All detectors could coexist on the same outbound interface.</p>
+
+<p>Once one of the detectors has been triggered the corresponding data plane proxy is ejected from the set of the load
+balancer for a period equal to <a href="#outlier-detection">baseEjectionTime</a>. Every further ejection of the same data plane
+proxy will further extend the <a href="#outlier-detection">baseEjectionTime</a> multiplied by the number of ejections: for example
+the 4th ejection will be lasting for a period of time of <code class="language-plaintext highlighter-rouge">4 * baseEjectionTime</code>.</p>
+
+<p>This policy provides <strong>passive</strong> checks.
+If you want to configure <strong>active</strong> checks, please utilize the <a href="/mesh/2.7.x/policies/meshhealthcheck">MeshHealthCheck</a>
+policy.
+Data plane proxies with <strong>passive</strong> checks won’t explicitly send requests to other data plane proxies to determine if
+target proxies are healthy or not.</p>
+
+<h2 id="targetref-support-matrix">TargetRef support matrix</h2>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="" data-navtab-id="Sidecar" class="navtab-title" role="tab" aria-controls="Sidecar" tabindex="0">
+      Sidecar 
+    </div>
+  
+    
+    <div data-slug="-w" data-navtab-id="Builtin-Gateway" class="navtab-title" role="tab" aria-controls="Builtin-Gateway" tabindex="0">
+      Builtin Gateway 
+    </div>
+  
+    
+    <div data-slug="-w" data-navtab-id="Delegated-Gateway" class="navtab-title" role="tab" aria-controls="Delegated-Gateway" tabindex="0">
+      Delegated Gateway 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Sidecar" class="navtab-content" role="tabpanel" id="Sidecar" tabindex="0">
+      
+<table>
+  <thead>
+    <tr>
+      <th><code class="language-plaintext highlighter-rouge">targetRef</code></th>
+      <th>Allowed kinds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">targetRef.kind</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">MeshSubset</code>, <code class="language-plaintext highlighter-rouge">MeshService</code>, <code class="language-plaintext highlighter-rouge">MeshServiceSubset</code>
+</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">to[].targetRef.kind</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">MeshService</code>
+</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">from[].targetRef.kind</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Mesh</code></td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  
+    <div data-navtab-content="Builtin-Gateway" class="navtab-content" role="tabpanel" id="Builtin-Gateway" tabindex="0">
+      
+<table>
+  <thead>
+    <tr>
+      <th><code class="language-plaintext highlighter-rouge">targetRef</code></th>
+      <th>Allowed kinds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">targetRef.kind</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">MeshGateway</code>, <code class="language-plaintext highlighter-rouge">MeshGateway</code> with listener <code class="language-plaintext highlighter-rouge">tags</code>
+</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">to[].targetRef.kind</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">MeshService</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  
+    <div data-navtab-content="Delegated-Gateway" class="navtab-content" role="tabpanel" id="Delegated-Gateway" tabindex="0">
+      
+<table>
+  <thead>
+    <tr>
+      <th><code class="language-plaintext highlighter-rouge">targetRef</code></th>
+      <th>Allowed kinds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">targetRef.kind</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">MeshSubset</code>, <code class="language-plaintext highlighter-rouge">MeshService</code>, <code class="language-plaintext highlighter-rouge">MeshServiceSubset</code>
+</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">to[].targetRef.kind</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">MeshService</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  
+  </div>
+</div>
+
+<p>To learn more about the information in this table, see the <a href="/mesh/2.7.x/policies/targetref">matching docs</a>.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="connection-limits">Connection limits</h3>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">maxConnections</code></strong> - (optional) The maximum number of connections allowed to be made to the upstream Envoy Cluster.
+If not specified then equal to “1024”.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">maxConnectionPools</code></strong> - (optional) The maximum number of connection pools per Envoy Cluster that are concurrently
+supported at once. Set this for Envoy Clusters which create a large number of connection pools. If not specified, the
+default is unlimited.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">maxPendingRequests</code></strong> - (optional) The maximum number of pending requests that are allowed to the upstream Envoy
+Cluster. This limit is applied as a connection limit for non-HTTP traffic. If not specified then equal to “1024”.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">maxRetries</code></strong> - (optional) The maximum number of parallel retries that will be allowed to the upstream Envoy
+Cluster. If not specified then equal to “3”.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">maxRequests</code></strong> - (optional) The maximum number of parallel requests that are allowed to be made to the upstream
+Envoy Cluster. This limit does not apply to non-HTTP traffic. If not specified then equal to “1024”.</li>
+</ul>
+
+<h3 id="outlier-detection">Outlier detection</h3>
+
+<p>Outlier detection can be configured for <a href="/mesh/2.7.x/policies/protocol-support-in-kong-mesh">HTTP, TCP or gRPC</a> traffic.</p>
+
+<blockquote class="important">
+  <p>
+</p>
+<p>For <strong>gRPC</strong> requests, the outlier detection will use the HTTP status mapped from the <code>grpc-status</code> response header.</p>
+
+</blockquote>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">disabled</code></strong> - (optional) When set to true, outlierDetection configuration won’t take any effect.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">interval</code></strong> - (optional) The time interval between ejection analysis sweeps. This can result in both new ejections
+and hosts being returned to service.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">baseEjectionTime</code></strong> - (optional) The base time that a host is ejected for. The real time is equal to the base time
+multiplied by the number of times the host has been ejected.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">maxEjectionPercent</code></strong> - (optional) The maximum % of an upstream Envoy Clusters that can be ejected due to outlier
+detection. Defaults to 10% but will eject at least one host regardless of the value.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">splitExternalAndLocalErrors</code></strong> - (optional) Determines whether to distinguish local origin failures from external
+errors. If set to true the following configuration parameters are taken into
+account: <code class="language-plaintext highlighter-rouge">detectors.localOriginFailures.consecutive</code>.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">detectors</code></strong> - Contains configuration for supported outlier detectors. At least one detector needs to be configured
+when policy is configured for outlier detection.</li>
+</ul>
+
+<h4 id="detectors-configuration">Detectors configuration</h4>
+
+<p>Configuration for supported outlier detectors. At least one detector needs to be configured when policy is configured for outlier detection.</p>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="-" data-navtab-id="Total-Failures" class="navtab-title" role="tab" aria-controls="Total-Failures" tabindex="0">
+      Total Failures 
+    </div>
+  
+    
+    <div data-slug="w-" data-navtab-id="Gateway-Failures" class="navtab-title" role="tab" aria-controls="Gateway-Failures" tabindex="0">
+      Gateway Failures 
+    </div>
+  
+    
+    <div data-slug="--" data-navtab-id="Locally-Originated-Failures" class="navtab-title" role="tab" aria-controls="Locally-Originated-Failures" tabindex="0">
+      Locally Originated Failures 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Success-Rate" class="navtab-title" role="tab" aria-controls="Success-Rate" tabindex="0">
+      Success Rate 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Failure-Percentage" class="navtab-title" role="tab" aria-controls="Failure-Percentage" tabindex="0">
+      Failure Percentage 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Total-Failures" class="navtab-content" role="tabpanel" id="Total-Failures" tabindex="0">
+      
+<p>Depending on mode the outlier detection can take into account all or externally originated (transaction) errors only.</p>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="-" data-navtab-id="Default-Mode" class="navtab-title" role="tab" aria-controls="Default-Mode" tabindex="0">
+      Default Mode 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Split-Mode" class="navtab-title" role="tab" aria-controls="Split-Mode" tabindex="0">
+      Split Mode 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Default-Mode" class="navtab-content" role="tabpanel" id="Default-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Default mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is not set or equal <code>false</code></p>
+
+</blockquote>
+
+<p>This detection type takes into account all generated errors: <strong>locally originated</strong> and <strong>externally originated</strong> (transaction) errors.</p>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">totalFailures.consecutive</code></strong> - The number of consecutive server-side error responses
+(for HTTP traffic, 5xx responses; for TCP traffic, connection failures; etc.) before a consecutive total failure ejection occurs.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">totalFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    <div data-navtab-content="Split-Mode" class="navtab-content" role="tabpanel" id="Split-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Split Mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is equal <code>true</code></p>
+
+</blockquote>
+
+<p>This detection type takes into account only externally originated (transaction) errors, ignoring locally originated ones.</p>
+
+<p><a href="/mesh/2.7.x/policies/protocol-support-in-kong-mesh"><strong>HTTP</strong></a></p>
+
+<p>If an upstream host is an HTTP-server, only 5xx types of error are taken into account (see Consecutive Gateway Failure for exceptions).</p>
+
+<blockquote class="important">
+  <p>
+</p>
+<p>Properly formatted responses, even when they carry an operational error (like index not found, access denied) are not taken into account.</p>
+
+</blockquote>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">totalFailures.consecutive</code></strong> - The number of consecutive server-side error responses (for HTTP traffic, 5xx responses) before a consecutive total failure ejection occurs.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">totalFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+
+    </div>
+  
+    <div data-navtab-content="Gateway-Failures" class="navtab-content" role="tabpanel" id="Gateway-Failures" tabindex="0">
+      
+<p>Depending on mode the outlier detection can take into account gateway failures with locally originated failures (default mode) or gateway failures only (split mode).</p>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="-" data-navtab-id="Default-Mode" class="navtab-title" role="tab" aria-controls="Default-Mode" tabindex="0">
+      Default Mode 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Split-Mode" class="navtab-title" role="tab" aria-controls="Split-Mode" tabindex="0">
+      Split Mode 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Default-Mode" class="navtab-content" role="tabpanel" id="Default-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Default mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is not set or equal <code>false</code></p>
+
+</blockquote>
+
+<p>This detection type takes into account a subset of <strong>5xx</strong> errors, called “gateway errors” (<strong>502</strong>, <strong>503</strong> or <strong>504</strong> status code) and local origin failures, such as <strong>timeout</strong>, <strong>TCP reset</strong> etc.</p>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">gatewayFailures.consecutive</code></strong> - The number of consecutive gateway failures (502, 503, 504 status codes) before a consecutive
+gateway failure ejection occurs.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">gatewayFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    <div data-navtab-content="Split-Mode" class="navtab-content" role="tabpanel" id="Split-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Split Mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is equal <code>true</code></p>
+
+</blockquote>
+
+<p>This detection type takes into account a subset of <strong>5xx</strong> errors, called “gateway errors” (<strong>502</strong>, <strong>503</strong> or <strong>504</strong> status code).</p>
+
+<blockquote class="important">
+  <p>
+</p>
+<p>This detector is supported only for HTTP traffic.</p>
+
+</blockquote>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">gatewayFailures.consecutive</code></strong> - The number of consecutive gateway failures (502, 503, 504 status codes) before a consecutive
+gateway failure ejection occurs.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">gatewayFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+
+    </div>
+  
+    <div data-navtab-content="Locally-Originated-Failures" class="navtab-content" role="tabpanel" id="Locally-Originated-Failures" tabindex="0">
+      
+<blockquote class="important">
+  <p>
+</p>
+<p>This detection is supported only in Split Mode</p>
+
+</blockquote>
+
+<p>This detection takes into account only locally originated errors (timeout, reset, etc).</p>
+
+<p>If Envoy repeatedly cannot connect to an upstream host or communication with the upstream host is repeatedly interrupted, it will be ejected. Various locally originated problems are detected: timeout, TCP reset, ICMP errors, etc.</p>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="-" data-navtab-id="Split-Mode" class="navtab-title" role="tab" aria-controls="Split-Mode" tabindex="0">
+      Split Mode 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Default-Mode" class="navtab-title" role="tab" aria-controls="Default-Mode" tabindex="0">
+      Default Mode 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Split-Mode" class="navtab-content" role="tabpanel" id="Split-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Split Mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is equal <code>true</code></p>
+
+</blockquote>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">localOriginFailures.consecutive</code></strong> - The number of consecutive locally originated failures before ejection occurs.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">localOriginFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+</code></pre></div></div>
+
+    </div>
+  
+    <div data-navtab-content="Default-Mode" class="navtab-content" role="tabpanel" id="Default-Mode" tabindex="0">
+      
+<p>This detection is not supported in the Default Mode</p>
+
+
+    </div>
+  
+  </div>
+</div>
+
+
+    </div>
+  
+    <div data-navtab-content="Success-Rate" class="navtab-content" role="tabpanel" id="Success-Rate" tabindex="0">
+      
+<p>Success Rate based outlier detection aggregates success rate data from every host in an Envoy Cluster. Then at given intervals ejects hosts based on statistical outlier detection.</p>
+
+<p>Success Rate outlier detection will not be calculated for a host if its request volume over the aggregation interval is less than the value of <code class="language-plaintext highlighter-rouge">successRate.requestVolume</code>
+value.</p>
+
+<p>Moreover, detection will not be performed for a cluster if the number of hosts with the minimum required request volume in an interval is less than the <code class="language-plaintext highlighter-rouge">successRate.minimumHosts</code> value.</p>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="-" data-navtab-id="Default-Mode" class="navtab-title" role="tab" aria-controls="Default-Mode" tabindex="0">
+      Default Mode 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Split-Mode" class="navtab-title" role="tab" aria-controls="Split-Mode" tabindex="0">
+      Split Mode 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Default-Mode" class="navtab-content" role="tabpanel" id="Default-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Default mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is not set or equal <code>false</code></p>
+
+</blockquote>
+
+<p>This detection type takes into account all types of errors: locally and externally originated.</p>
+
+
+    </div>
+  
+    <div data-navtab-content="Split-Mode" class="navtab-content" role="tabpanel" id="Split-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Split Mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is equal <code>true</code></p>
+
+</blockquote>
+
+<p>Locally originated errors and externally originated (transaction) errors are counted and treated separately.</p>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">successRate.minimumHosts</code></strong> - The number of hosts in an Envoy Cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the Cluster.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">successRate.requestVolume</code></strong> - The minimum number of total requests that must be collected in one interval (as defined by the interval duration configured in outlierDetection section) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">successRate.standardDeviationFactor</code></strong> - This factor is used to determine the ejection threshold for success rate outlier ejection. The ejection threshold is the difference between the mean success rate, and the product of this factor and the standard deviation of the mean success rate: mean - (standard_deviation *success_rate_standard_deviation_factor). Either int or decimal represented as string.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">successRate</span><span class="pi">:</span>
+            <span class="na">minimumHosts</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">requestVolume</span><span class="pi">:</span> <span class="m">10</span>
+            <span class="na">standardDeviationFactor</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.9"</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    <div data-navtab-content="Failure-Percentage" class="navtab-content" role="tabpanel" id="Failure-Percentage" tabindex="0">
+      
+<p>Failure Percentage based outlier detection functions similarly to success rate detection, in that it relies on success rate data from each host in an Envoy Cluster. However, rather than compare those values to the mean success rate of the Cluster as a whole, they are compared to a flat user-configured threshold. This threshold is configured via the <a href="#outlier-detection"><code class="language-plaintext highlighter-rouge">failurePercentageThreshold</code></a> field.</p>
+
+<p>The other configuration fields for failure percentage based detection are similar to the fields for success rate detection. As with success rate detection, detection will not be performed for a host if its request volume over the aggregation interval is less than the <code class="language-plaintext highlighter-rouge">failurePercentage.requestVolume</code> value.</p>
+
+<p>Detection also will not be performed for an Envoy Cluster if the number of hosts with the minimum required request volume in an interval is less than the <code class="language-plaintext highlighter-rouge">failurePercentage.minimumHosts</code> value.</p>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="-" data-navtab-id="Default-Mode" class="navtab-title" role="tab" aria-controls="Default-Mode" tabindex="0">
+      Default Mode 
+    </div>
+  
+    
+    <div data-slug="-" data-navtab-id="Split-Mode" class="navtab-title" role="tab" aria-controls="Split-Mode" tabindex="0">
+      Split Mode 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Default-Mode" class="navtab-content" role="tabpanel" id="Default-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Default mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is not set or equal <code>false</code></p>
+
+</blockquote>
+
+<p>This detection type takes into account all types of errors: locally and externally originated.</p>
+
+
+    </div>
+  
+    <div data-navtab-content="Split-Mode" class="navtab-content" role="tabpanel" id="Split-Mode" tabindex="0">
+      
+<blockquote class="note">
+  <p>
+</p>
+<p>Split Mode is when <a href="#outlier-detection"><code>splitExternalAndLocalErrors</code></a> is equal <code>true</code></p>
+
+</blockquote>
+
+<p>Locally originated errors and externally originated (transaction) errors are counted and treated separately.</p>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<p><strong>Configuration</strong></p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">failurePercentage.requestVolume</code></strong> - The minimum number of hosts in an Envoy Cluster in order to perform failure percentage-based ejection. If the total number of hosts in the Cluster is less than this value, failure percentage-based ejection will not be performed.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">failurePercentage.minimumHosts</code></strong> - The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to perform failure percentage-based ejection for this host. If the volume is lower than this setting, failure percentage-based ejection will not be performed for this host.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">failurePercentage.threshold</code></strong> - The failure percentage to use when determining failure percentage-based outlier detection. If the failure percentage of a given host is greater than or equal to this value, it will be ejected.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">circuit-breaker</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">failurePercentage</span><span class="pi">:</span>
+            <span class="na">requestVolume</span><span class="pi">:</span> <span class="m">10</span>
+            <span class="na">minimumHosts</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">threshold</span><span class="pi">:</span> <span class="m">85</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<hr>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="basic-circuit-breaker-for-outbound-traffic-from-web-to-backend-service">Basic circuit breaker for outbound traffic from web, to backend service</h4>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="" data-navtab-id="Kubernetes" class="navtab-title" role="tab" aria-controls="Kubernetes" tabindex="0">
+      Kubernetes 
+    </div>
+  
+    
+    <div data-slug="" data-navtab-id="Universal" class="navtab-title" role="tab" aria-controls="Universal" tabindex="0">
+      Universal 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Kubernetes" class="navtab-content" role="tabpanel" id="Kubernetes" tabindex="0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">web-to-backend-circuit-breaker</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">web_kuma-demo_svc_8080</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">backend_kuma-demo_svc_8080</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">connectionLimits</span><span class="pi">:</span>
+        <span class="na">maxConnections</span><span class="pi">:</span> <span class="m">2</span>
+        <span class="na">maxPendingRequests</span><span class="pi">:</span> <span class="m">8</span>
+        <span class="na">maxRetries</span><span class="pi">:</span> <span class="m">2</span>
+        <span class="na">maxRequests</span><span class="pi">:</span> <span class="m">2</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    <div data-navtab-content="Universal" class="navtab-content" role="tabpanel" id="Universal" tabindex="0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">web-to-backend-circuit-breaker</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">web</span>
+  <span class="na">to</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">connectionLimits</span><span class="pi">:</span>
+        <span class="na">maxConnections</span><span class="pi">:</span> <span class="m">2</span>
+        <span class="na">maxPendingRequests</span><span class="pi">:</span> <span class="m">8</span>
+        <span class="na">maxRetries</span><span class="pi">:</span> <span class="m">2</span>
+        <span class="na">maxRequests</span><span class="pi">:</span> <span class="m">2</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<h4 id="outlier-detection-for-inbound-traffic-to-backend-service">Outlier detection for inbound traffic to backend service</h4>
+
+<div class="navtabs code">
+  <div class="navtab-titles" role="tablist">
+    
+    
+    <div data-slug="" data-navtab-id="Kubernetes" class="navtab-title" role="tab" aria-controls="Kubernetes" tabindex="0">
+      Kubernetes 
+    </div>
+  
+    
+    <div data-slug="" data-navtab-id="Universal" class="navtab-title" role="tab" aria-controls="Universal" tabindex="0">
+      Universal 
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    <div data-navtab-content="Kubernetes" class="navtab-content" role="tabpanel" id="Kubernetes" tabindex="0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">backend-inbound-outlier-detection</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kong-mesh-system</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">kuma.io/mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">web_kuma-demo_svc_8080</span>
+  <span class="na">from</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">interval</span><span class="pi">:</span> <span class="s">5s</span>
+        <span class="na">baseEjectionTime</span><span class="pi">:</span> <span class="s">30s</span>
+        <span class="na">maxEjectionPercent</span><span class="pi">:</span> <span class="m">20</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">totalFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+          <span class="na">gatewayFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+          <span class="na">localOriginFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+          <span class="na">successRate</span><span class="pi">:</span>
+            <span class="na">minimumHosts</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">requestVolume</span><span class="pi">:</span> <span class="m">10</span>
+            <span class="na">standardDeviationFactor</span><span class="pi">:</span> <span class="m">1.9</span>
+          <span class="na">failurePercentage</span><span class="pi">:</span>
+            <span class="na">requestVolume</span><span class="pi">:</span> <span class="m">10</span>
+            <span class="na">minimumHosts</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">threshold</span><span class="pi">:</span> <span class="m">85</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    <div data-navtab-content="Universal" class="navtab-content" role="tabpanel" id="Universal" tabindex="0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">MeshCircuitBreaker</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">backend-inbound-outlier-detection</span>
+<span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">targetRef</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">web</span>
+  <span class="na">from</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">Mesh</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">outlierDetection</span><span class="pi">:</span>
+        <span class="na">interval</span><span class="pi">:</span> <span class="s">5s</span>
+        <span class="na">baseEjectionTime</span><span class="pi">:</span> <span class="s">30s</span>
+        <span class="na">maxEjectionPercent</span><span class="pi">:</span> <span class="m">20</span>
+        <span class="na">splitExternalAndLocalErrors</span><span class="pi">:</span> <span class="kc">true</span>
+        <span class="na">detectors</span><span class="pi">:</span>
+          <span class="na">totalFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+          <span class="na">gatewayFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+          <span class="na">localOriginFailures</span><span class="pi">:</span>
+            <span class="na">consecutive</span><span class="pi">:</span> <span class="m">10</span>
+          <span class="na">successRate</span><span class="pi">:</span>
+            <span class="na">minimumHosts</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">requestVolume</span><span class="pi">:</span> <span class="m">10</span>
+            <span class="na">standardDeviationFactor</span><span class="pi">:</span> <span class="m">1.9</span>
+          <span class="na">failurePercentage</span><span class="pi">:</span>
+            <span class="na">requestVolume</span><span class="pi">:</span> <span class="m">10</span>
+            <span class="na">minimumHosts</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">threshold</span><span class="pi">:</span> <span class="m">85</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<h2 id="all-policy-options">All policy options</h2>
+
+<div id="markdown_html"></div>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+
+<script defer src="https://brianwendt.github.io/json-schema-md-doc/lib/JSONSchemaMarkdown.js"></script>
+
+<script type="text/javascript">
+const data = {"description":"Spec is the specification of the Kuma MeshCircuitBreaker resource.","properties":{"from":{"description":"From list makes a match between clients and corresponding configurations","items":{"properties":{"default":{"description":"Default is a configuration specific to the group of destinations\nreferenced in 'targetRef'","properties":{"connectionLimits":{"description":"ConnectionLimits contains configuration of each circuit breaking limit,\nwhich when exceeded makes the circuit breaker to become open (no traffic\nis allowed like no current is allowed in the circuits when physical\ncircuit breaker ir open)","properties":{"maxConnectionPools":{"description":"The maximum number of connection pools per cluster that are concurrently\nsupported at once. Set this for clusters which create a large number of\nconnection pools.","format":"int32","type":"integer"},"maxConnections":{"description":"The maximum number of connections allowed to be made to the upstream\ncluster.","format":"int32","type":"integer"},"maxPendingRequests":{"description":"The maximum number of pending requests that are allowed to the upstream\ncluster. This limit is applied as a connection limit for non-HTTP\ntraffic.","format":"int32","type":"integer"},"maxRequests":{"description":"The maximum number of parallel requests that are allowed to be made\nto the upstream cluster. This limit does not apply to non-HTTP traffic.","format":"int32","type":"integer"},"maxRetries":{"description":"The maximum number of parallel retries that will be allowed to\nthe upstream cluster.","format":"int32","type":"integer"}},"type":"object"},"outlierDetection":{"description":"OutlierDetection contains the configuration of the process of dynamically\ndetermining whether some number of hosts in an upstream cluster are\nperforming unlike the others and removing them from the healthy load\nbalancing set. Performance might be along different axes such as\nconsecutive failures, temporal success rate, temporal latency, etc.\nOutlier detection is a form of passive health checking.","properties":{"baseEjectionTime":{"description":"The base time that a host is ejected for. The real time is equal to\nthe base time multiplied by the number of times the host has been\nejected.","type":"string"},"detectors":{"description":"Contains configuration for supported outlier detectors","properties":{"failurePercentage":{"description":"Failure Percentage based outlier detection functions similarly to success\nrate detection, in that it relies on success rate data from each host in\na cluster. However, rather than compare those values to the mean success\nrate of the cluster as a whole, they are compared to a flat\nuser-configured threshold. This threshold is configured via the\noutlierDetection.failurePercentageThreshold field.\nThe other configuration fields for failure percentage based detection are\nsimilar to the fields for success rate detection. As with success rate\ndetection, detection will not be performed for a host if its request\nvolume over the aggregation interval is less than the\noutlierDetection.detectors.failurePercentage.requestVolume value.\nDetection also will not be performed for a cluster if the number of hosts\nwith the minimum required request volume in an interval is less than the\noutlierDetection.detectors.failurePercentage.minimumHosts value.","properties":{"minimumHosts":{"description":"The minimum number of hosts in a cluster in order to perform failure\npercentage-based ejection. If the total number of hosts in the cluster is\nless than this value, failure percentage-based ejection will not be\nperformed.","format":"int32","type":"integer"},"requestVolume":{"description":"The minimum number of total requests that must be collected in one\ninterval (as defined by the interval duration above) to perform failure\npercentage-based ejection for this host. If the volume is lower than this\nsetting, failure percentage-based ejection will not be performed for this\nhost.","format":"int32","type":"integer"},"threshold":{"description":"The failure percentage to use when determining failure percentage-based\noutlier detection. If the failure percentage of a given host is greater\nthan or equal to this value, it will be ejected.","format":"int32","type":"integer"}},"type":"object"},"gatewayFailures":{"description":"In the default mode (outlierDetection.splitExternalLocalOriginErrors is\nfalse) this detection type takes into account a subset of 5xx errors,\ncalled \"gateway errors\" (502, 503 or 504 status code) and local origin\nfailures, such as timeout, TCP reset etc.\nIn split mode (outlierDetection.splitExternalLocalOriginErrors is true)\nthis detection type takes into account a subset of 5xx errors, called\n\"gateway errors\" (502, 503 or 504 status code) and is supported only by\nthe http router.","properties":{"consecutive":{"description":"The number of consecutive gateway failures (502, 503, 504 status codes)\nbefore a consecutive gateway failure ejection occurs.","format":"int32","type":"integer"}},"type":"object"},"localOriginFailures":{"description":"This detection type is enabled only when\noutlierDetection.splitExternalLocalOriginErrors is true and takes into\naccount only locally originated errors (timeout, reset, etc).\nIf Envoy repeatedly cannot connect to an upstream host or communication\nwith the upstream host is repeatedly interrupted, it will be ejected.\nVarious locally originated problems are detected: timeout, TCP reset,\nICMP errors, etc. This detection type is supported by http router and\ntcp proxy.","properties":{"consecutive":{"description":"The number of consecutive locally originated failures before ejection\noccurs. Parameter takes effect only when splitExternalAndLocalErrors\nis set to true.","format":"int32","type":"integer"}},"type":"object"},"successRate":{"description":"Success Rate based outlier detection aggregates success rate data from\nevery host in a cluster. Then at given intervals ejects hosts based on\nstatistical outlier detection. Success Rate outlier detection will not be\ncalculated for a host if its request volume over the aggregation interval\nis less than the outlierDetection.detectors.successRate.requestVolume\nvalue.\nMoreover, detection will not be performed for a cluster if the number of\nhosts with the minimum required request volume in an interval is less\nthan the outlierDetection.detectors.successRate.minimumHosts value.\nIn the default configuration mode\n(outlierDetection.splitExternalLocalOriginErrors is false) this detection\ntype takes into account all types of errors: locally and externally\noriginated.\nIn split mode (outlierDetection.splitExternalLocalOriginErrors is true),\nlocally originated errors and externally originated (transaction) errors\nare counted and treated separately.","properties":{"minimumHosts":{"description":"The number of hosts in a cluster that must have enough request volume to\ndetect success rate outliers. If the number of hosts is less than this\nsetting, outlier detection via success rate statistics is not performed\nfor any host in the cluster.","format":"int32","type":"integer"},"requestVolume":{"description":"The minimum number of total requests that must be collected in one\ninterval (as defined by the interval duration configured in\noutlierDetection section) to include this host in success rate based\noutlier detection. If the volume is lower than this setting, outlier\ndetection via success rate statistics is not performed for that host.","format":"int32","type":"integer"},"standardDeviationFactor":{"anyOf":[{"type":"integer"},{"type":"string"}],"description":"This factor is used to determine the ejection threshold for success rate\noutlier ejection. The ejection threshold is the difference between\nthe mean success rate, and the product of this factor and the standard\ndeviation of the mean success rate: mean - (standard_deviation *\nsuccess_rate_standard_deviation_factor).\nEither int or decimal represented as string.","x-kubernetes-int-or-string":true}},"type":"object"},"totalFailures":{"description":"In the default mode (outlierDetection.splitExternalAndLocalErrors is\nfalse) this detection type takes into account all generated errors:\nlocally originated and externally originated (transaction) errors.\nIn split mode (outlierDetection.splitExternalLocalOriginErrors is true)\nthis detection type takes into account only externally originated\n(transaction) errors, ignoring locally originated errors.\nIf an upstream host is an HTTP-server, only 5xx types of error are taken\ninto account (see Consecutive Gateway Failure for exceptions).\nProperly formatted responses, even when they carry an operational error\n(like index not found, access denied) are not taken into account.","properties":{"consecutive":{"description":"The number of consecutive server-side error responses (for HTTP traffic,\n5xx responses; for TCP traffic, connection failures; for Redis, failure\nto respond PONG; etc.) before a consecutive total failure ejection\noccurs.","format":"int32","type":"integer"}},"type":"object"}},"type":"object"},"disabled":{"description":"When set to true, outlierDetection configuration won't take any effect","type":"boolean"},"interval":{"description":"The time interval between ejection analysis sweeps. This can result in\nboth new ejections and hosts being returned to service.","type":"string"},"maxEjectionPercent":{"description":"The maximum % of an upstream cluster that can be ejected due to outlier\ndetection. Defaults to 10% but will eject at least one host regardless of\nthe value.","format":"int32","type":"integer"},"splitExternalAndLocalErrors":{"description":"Determines whether to distinguish local origin failures from external\nerrors. If set to true the following configuration parameters are taken\ninto account: detectors.localOriginFailures.consecutive","type":"boolean"}},"type":"object"}},"type":"object"},"targetRef":{"description":"TargetRef is a reference to the resource that represents a group of\ndestinations.","properties":{"kind":{"description":"Kind of the referenced resource","enum":["Mesh","MeshSubset","MeshGateway","MeshService","MeshServiceSubset","MeshHTTPRoute"],"type":"string"},"mesh":{"description":"Mesh is reserved for future use to identify cross mesh resources.","type":"string"},"name":{"description":"Name of the referenced resource. Can only be used with kinds: `MeshService`,\n`MeshServiceSubset` and `MeshGatewayRoute`","type":"string"},"proxyTypes":{"description":"ProxyTypes specifies the data plane types that are subject to the policy. When not specified,\nall data plane types are targeted by the policy.","items":{"enum":["Sidecar","Gateway"],"type":"string"},"minItems":1,"type":"array"},"tags":{"additionalProperties":{"type":"string"},"description":"Tags used to select a subset of proxies by tags. Can only be used with kinds\n`MeshSubset` and `MeshServiceSubset`","type":"object"}},"type":"object"}},"required":["targetRef"],"type":"object"},"type":"array"},"targetRef":{"description":"TargetRef is a reference to the resource the policy takes an effect on.\nThe resource could be either a real store object or virtual resource\ndefined in place.","properties":{"kind":{"description":"Kind of the referenced resource","enum":["Mesh","MeshSubset","MeshGateway","MeshService","MeshServiceSubset","MeshHTTPRoute"],"type":"string"},"mesh":{"description":"Mesh is reserved for future use to identify cross mesh resources.","type":"string"},"name":{"description":"Name of the referenced resource. Can only be used with kinds: `MeshService`,\n`MeshServiceSubset` and `MeshGatewayRoute`","type":"string"},"proxyTypes":{"description":"ProxyTypes specifies the data plane types that are subject to the policy. When not specified,\nall data plane types are targeted by the policy.","items":{"enum":["Sidecar","Gateway"],"type":"string"},"minItems":1,"type":"array"},"tags":{"additionalProperties":{"type":"string"},"description":"Tags used to select a subset of proxies by tags. Can only be used with kinds\n`MeshSubset` and `MeshServiceSubset`","type":"object"}},"type":"object"},"to":{"description":"To list makes a match between the consumed services and corresponding\nconfigurations","items":{"properties":{"default":{"description":"Default is a configuration specific to the group of destinations\nreferenced in 'targetRef'","properties":{"connectionLimits":{"description":"ConnectionLimits contains configuration of each circuit breaking limit,\nwhich when exceeded makes the circuit breaker to become open (no traffic\nis allowed like no current is allowed in the circuits when physical\ncircuit breaker ir open)","properties":{"maxConnectionPools":{"description":"The maximum number of connection pools per cluster that are concurrently\nsupported at once. Set this for clusters which create a large number of\nconnection pools.","format":"int32","type":"integer"},"maxConnections":{"description":"The maximum number of connections allowed to be made to the upstream\ncluster.","format":"int32","type":"integer"},"maxPendingRequests":{"description":"The maximum number of pending requests that are allowed to the upstream\ncluster. This limit is applied as a connection limit for non-HTTP\ntraffic.","format":"int32","type":"integer"},"maxRequests":{"description":"The maximum number of parallel requests that are allowed to be made\nto the upstream cluster. This limit does not apply to non-HTTP traffic.","format":"int32","type":"integer"},"maxRetries":{"description":"The maximum number of parallel retries that will be allowed to\nthe upstream cluster.","format":"int32","type":"integer"}},"type":"object"},"outlierDetection":{"description":"OutlierDetection contains the configuration of the process of dynamically\ndetermining whether some number of hosts in an upstream cluster are\nperforming unlike the others and removing them from the healthy load\nbalancing set. Performance might be along different axes such as\nconsecutive failures, temporal success rate, temporal latency, etc.\nOutlier detection is a form of passive health checking.","properties":{"baseEjectionTime":{"description":"The base time that a host is ejected for. The real time is equal to\nthe base time multiplied by the number of times the host has been\nejected.","type":"string"},"detectors":{"description":"Contains configuration for supported outlier detectors","properties":{"failurePercentage":{"description":"Failure Percentage based outlier detection functions similarly to success\nrate detection, in that it relies on success rate data from each host in\na cluster. However, rather than compare those values to the mean success\nrate of the cluster as a whole, they are compared to a flat\nuser-configured threshold. This threshold is configured via the\noutlierDetection.failurePercentageThreshold field.\nThe other configuration fields for failure percentage based detection are\nsimilar to the fields for success rate detection. As with success rate\ndetection, detection will not be performed for a host if its request\nvolume over the aggregation interval is less than the\noutlierDetection.detectors.failurePercentage.requestVolume value.\nDetection also will not be performed for a cluster if the number of hosts\nwith the minimum required request volume in an interval is less than the\noutlierDetection.detectors.failurePercentage.minimumHosts value.","properties":{"minimumHosts":{"description":"The minimum number of hosts in a cluster in order to perform failure\npercentage-based ejection. If the total number of hosts in the cluster is\nless than this value, failure percentage-based ejection will not be\nperformed.","format":"int32","type":"integer"},"requestVolume":{"description":"The minimum number of total requests that must be collected in one\ninterval (as defined by the interval duration above) to perform failure\npercentage-based ejection for this host. If the volume is lower than this\nsetting, failure percentage-based ejection will not be performed for this\nhost.","format":"int32","type":"integer"},"threshold":{"description":"The failure percentage to use when determining failure percentage-based\noutlier detection. If the failure percentage of a given host is greater\nthan or equal to this value, it will be ejected.","format":"int32","type":"integer"}},"type":"object"},"gatewayFailures":{"description":"In the default mode (outlierDetection.splitExternalLocalOriginErrors is\nfalse) this detection type takes into account a subset of 5xx errors,\ncalled \"gateway errors\" (502, 503 or 504 status code) and local origin\nfailures, such as timeout, TCP reset etc.\nIn split mode (outlierDetection.splitExternalLocalOriginErrors is true)\nthis detection type takes into account a subset of 5xx errors, called\n\"gateway errors\" (502, 503 or 504 status code) and is supported only by\nthe http router.","properties":{"consecutive":{"description":"The number of consecutive gateway failures (502, 503, 504 status codes)\nbefore a consecutive gateway failure ejection occurs.","format":"int32","type":"integer"}},"type":"object"},"localOriginFailures":{"description":"This detection type is enabled only when\noutlierDetection.splitExternalLocalOriginErrors is true and takes into\naccount only locally originated errors (timeout, reset, etc).\nIf Envoy repeatedly cannot connect to an upstream host or communication\nwith the upstream host is repeatedly interrupted, it will be ejected.\nVarious locally originated problems are detected: timeout, TCP reset,\nICMP errors, etc. This detection type is supported by http router and\ntcp proxy.","properties":{"consecutive":{"description":"The number of consecutive locally originated failures before ejection\noccurs. Parameter takes effect only when splitExternalAndLocalErrors\nis set to true.","format":"int32","type":"integer"}},"type":"object"},"successRate":{"description":"Success Rate based outlier detection aggregates success rate data from\nevery host in a cluster. Then at given intervals ejects hosts based on\nstatistical outlier detection. Success Rate outlier detection will not be\ncalculated for a host if its request volume over the aggregation interval\nis less than the outlierDetection.detectors.successRate.requestVolume\nvalue.\nMoreover, detection will not be performed for a cluster if the number of\nhosts with the minimum required request volume in an interval is less\nthan the outlierDetection.detectors.successRate.minimumHosts value.\nIn the default configuration mode\n(outlierDetection.splitExternalLocalOriginErrors is false) this detection\ntype takes into account all types of errors: locally and externally\noriginated.\nIn split mode (outlierDetection.splitExternalLocalOriginErrors is true),\nlocally originated errors and externally originated (transaction) errors\nare counted and treated separately.","properties":{"minimumHosts":{"description":"The number of hosts in a cluster that must have enough request volume to\ndetect success rate outliers. If the number of hosts is less than this\nsetting, outlier detection via success rate statistics is not performed\nfor any host in the cluster.","format":"int32","type":"integer"},"requestVolume":{"description":"The minimum number of total requests that must be collected in one\ninterval (as defined by the interval duration configured in\noutlierDetection section) to include this host in success rate based\noutlier detection. If the volume is lower than this setting, outlier\ndetection via success rate statistics is not performed for that host.","format":"int32","type":"integer"},"standardDeviationFactor":{"anyOf":[{"type":"integer"},{"type":"string"}],"description":"This factor is used to determine the ejection threshold for success rate\noutlier ejection. The ejection threshold is the difference between\nthe mean success rate, and the product of this factor and the standard\ndeviation of the mean success rate: mean - (standard_deviation *\nsuccess_rate_standard_deviation_factor).\nEither int or decimal represented as string.","x-kubernetes-int-or-string":true}},"type":"object"},"totalFailures":{"description":"In the default mode (outlierDetection.splitExternalAndLocalErrors is\nfalse) this detection type takes into account all generated errors:\nlocally originated and externally originated (transaction) errors.\nIn split mode (outlierDetection.splitExternalLocalOriginErrors is true)\nthis detection type takes into account only externally originated\n(transaction) errors, ignoring locally originated errors.\nIf an upstream host is an HTTP-server, only 5xx types of error are taken\ninto account (see Consecutive Gateway Failure for exceptions).\nProperly formatted responses, even when they carry an operational error\n(like index not found, access denied) are not taken into account.","properties":{"consecutive":{"description":"The number of consecutive server-side error responses (for HTTP traffic,\n5xx responses; for TCP traffic, connection failures; for Redis, failure\nto respond PONG; etc.) before a consecutive total failure ejection\noccurs.","format":"int32","type":"integer"}},"type":"object"}},"type":"object"},"disabled":{"description":"When set to true, outlierDetection configuration won't take any effect","type":"boolean"},"interval":{"description":"The time interval between ejection analysis sweeps. This can result in\nboth new ejections and hosts being returned to service.","type":"string"},"maxEjectionPercent":{"description":"The maximum % of an upstream cluster that can be ejected due to outlier\ndetection. Defaults to 10% but will eject at least one host regardless of\nthe value.","format":"int32","type":"integer"},"splitExternalAndLocalErrors":{"description":"Determines whether to distinguish local origin failures from external\nerrors. If set to true the following configuration parameters are taken\ninto account: detectors.localOriginFailures.consecutive","type":"boolean"}},"type":"object"}},"type":"object"},"targetRef":{"description":"TargetRef is a reference to the resource that represents a group of\ndestinations.","properties":{"kind":{"description":"Kind of the referenced resource","enum":["Mesh","MeshSubset","MeshGateway","MeshService","MeshServiceSubset","MeshHTTPRoute"],"type":"string"},"mesh":{"description":"Mesh is reserved for future use to identify cross mesh resources.","type":"string"},"name":{"description":"Name of the referenced resource. Can only be used with kinds: `MeshService`,\n`MeshServiceSubset` and `MeshGatewayRoute`","type":"string"},"proxyTypes":{"description":"ProxyTypes specifies the data plane types that are subject to the policy. When not specified,\nall data plane types are targeted by the policy.","items":{"enum":["Sidecar","Gateway"],"type":"string"},"minItems":1,"type":"array"},"tags":{"additionalProperties":{"type":"string"},"description":"Tags used to select a subset of proxies by tags. Can only be used with kinds\n`MeshSubset` and `MeshServiceSubset`","type":"object"}},"type":"object"}},"required":["targetRef"],"type":"object"},"type":"array"}},"required":["targetRef"],"type":"object"};
+document.addEventListener("DOMContentLoaded", function() {
+  function removeNewlinesFromDescriptions(obj) {
+    for (const key in obj) {
+      if (typeof obj[key] === 'object') {
+        // Recursively process nested objects
+        removeNewlinesFromDescriptions(obj[key]);
+      } else if (key === 'description' && typeof obj[key] === 'string') {
+        // Replace newlines in description values
+        obj[key] = obj[key].replace(/\n/g, '');
+      }
+    }
+  }
+
+  // create an instance of JSONSchemaMarkdown
+  const Doccer = new JSONSchemaMarkdown();
+  // don't include the path of the field in the output
+  Doccer.writePath = function() {};
+  // remove new lines in description
+  removeNewlinesFromDescriptions(data)
+
+  Doccer.load(data);
+  Doccer.generate();
+
+  const converter = new showdown.Converter();
+  // use the converter to make html from the markdown
+  document.getElementById("markdown_html").innerHTML = converter.makeHtml(Doccer.markdown);
+});
+</script>
+
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=mesh" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.7.x","product[0]":"Kong Mesh"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Mesh<score=1>'],
+              facetFilters: [ 'version:2.7.x']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

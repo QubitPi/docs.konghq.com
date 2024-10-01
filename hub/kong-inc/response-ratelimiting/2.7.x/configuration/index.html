@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Response Rate Limiting Configuration | Kong Docs</title>
+  <title>Response Rate Limiting Configuration - Plugin - v2.7.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Response Rate Limiting Configuration | Kong Docs">
+  <meta property="og:title" content="Response Rate Limiting Configuration - Plugin - v2.7.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/response-ratelimiting/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/response-ratelimiting/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/response-ratelimiting/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/response-ratelimiting/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/response-ratelimiting/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,9 +559,15 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
 
 
 
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge oss" aria-label="open-source" rel="noopener nofollow noreferrer "> </a>
 
 
         </div>
@@ -575,13 +606,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -597,6 +628,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -621,6 +654,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -636,13 +671,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -658,6 +693,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -682,13 +719,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=response-ratelimiting" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -721,12 +768,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/response-ratelimiting/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -764,7 +817,7 @@ the <code class="language-plaintext highlighter-rouge">redis</code> policy (whic
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -773,7 +826,13 @@ the <code class="language-plaintext highlighter-rouge">redis</code> policy (whic
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-response-ratelimiting</code>.</p>
+response-ratelimiting</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -791,8 +850,8 @@ response-ratelimiting</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -809,8 +868,8 @@ response-ratelimiting</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -827,8 +886,8 @@ response-ratelimiting</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the consumer the plugin targets.
-          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/consumers/CONSUMER_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/consumers/{consumerName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -892,6 +951,8 @@ response-ratelimiting</code>.</p>
     
 
     
+
+    
       
       
     
@@ -900,6 +961,8 @@ response-ratelimiting</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -947,6 +1010,8 @@ response-ratelimiting</code>.</p>
     
 
     
+
+    
       
       
     
@@ -956,6 +1021,8 @@ response-ratelimiting</code>.</p>
     <div class="field-description">
 <p>The name of the response header used to increment the counters.</p>
 </div>
+
+    
 
     
 
@@ -1008,6 +1075,8 @@ response-ratelimiting</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>consumer</code>, <code>credential</code>, <code>ip</code></span>
 
@@ -1023,6 +1092,8 @@ response-ratelimiting</code>.</p>
     <div class="field-description">
 <p>The entity that will be used when aggregating the limits: <code class="language-plaintext highlighter-rouge">consumer</code>, <code class="language-plaintext highlighter-rouge">credential</code>, <code class="language-plaintext highlighter-rouge">ip</code>. If the <code class="language-plaintext highlighter-rouge">consumer</code> or the <code class="language-plaintext highlighter-rouge">credential</code> cannot be determined, the system will always fallback to <code class="language-plaintext highlighter-rouge">ip</code>.</p>
 </div>
+
+    
 
     
 
@@ -1075,6 +1146,8 @@ response-ratelimiting</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>local</code>, <code>cluster</code>, <code>redis</code></span>
 
@@ -1108,6 +1181,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
 <p>For details on which policy should be used, refer to the
 <a href="/hub/kong-inc/rate-limiting/#implementation-considerations">implementation considerations</a>.</p>
 </div>
+
+    
 
     
 
@@ -1164,6 +1239,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       
       
     
@@ -1173,6 +1250,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>A boolean value that determines if the requests should be proxied even if Kong has troubles connecting a third-party datastore. If <code class="language-plaintext highlighter-rouge">true</code>, requests will be proxied anyway, effectively disabling the rate-limiting function until the datastore is working again. If <code class="language-plaintext highlighter-rouge">false</code>, then the clients will see <code class="language-plaintext highlighter-rouge">500</code> errors.</p>
 </div>
+
+    
 
     
 
@@ -1219,6 +1298,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       
       
     
@@ -1228,6 +1309,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>When using the <code class="language-plaintext highlighter-rouge">redis</code> policy, this property specifies the address to the Redis server.</p>
 </div>
+
+    
 
     
 
@@ -1274,6 +1357,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1297,6 +1382,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>When using the <code class="language-plaintext highlighter-rouge">redis</code> policy, this property specifies the port of the Redis server.</p>
 </div>
+
+    
 
     
 
@@ -1337,6 +1424,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>0</code>
@@ -1357,6 +1446,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>When using the <code class="language-plaintext highlighter-rouge">redis</code> policy, this property specifies the password to connect to the Redis server.</p>
 </div>
+
+    
 
     
 
@@ -1411,6 +1502,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       
       
     
@@ -1420,6 +1513,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>When using the <code class="language-plaintext highlighter-rouge">redis</code> policy, this property specifies the timeout in milliseconds of any command submitted to the Redis server.</p>
 </div>
+
+    
 
     
 
@@ -1474,6 +1569,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       
       
     
@@ -1483,6 +1580,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>When using the <code class="language-plaintext highlighter-rouge">redis</code> policy, this property specifies Redis database to use.</p>
 </div>
+
+    
 
     
 
@@ -1539,6 +1638,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       
       
     
@@ -1548,6 +1649,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>A boolean value that determines if the requests should be blocked as soon as one limit is being exceeded. This will block requests that are supposed to consume other limits too.</p>
 </div>
+
+    
 
     
 
@@ -1604,6 +1707,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       
       
     
@@ -1613,6 +1718,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <div class="field-description">
 <p>Optionally hide informative response headers.</p>
 </div>
+
+    
 
     
 
@@ -1655,6 +1762,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>1</code>
@@ -1674,6 +1783,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1785,7 +1896,7 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -1933,8 +2044,8 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -1944,16 +2055,6 @@ For DB-less mode or Konnect, use one of <code class="language-plaintext highligh
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

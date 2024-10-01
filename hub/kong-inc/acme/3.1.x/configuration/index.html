@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ACME Configuration | Kong Docs</title>
+  <title>ACME Configuration - Plugin - v3.1.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="ACME Configuration | Kong Docs">
+  <meta property="og:title" content="ACME Configuration - Plugin - v3.1.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/acme/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/acme/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/acme/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/acme/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/acme/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,9 +559,15 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
 
 
 
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge oss" aria-label="open-source" rel="noopener nofollow noreferrer "> </a>
 
 
         </div>
@@ -575,13 +606,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -597,6 +628,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -621,6 +654,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -636,13 +671,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -658,6 +693,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -676,6 +713,8 @@ Getting started with ACME
 
       </a>
     
+
+    
   </span>
 
   
@@ -693,6 +732,8 @@ Local testing and development
 
       </a>
     
+
+    
   </span>
 
   
@@ -709,6 +750,8 @@ Local testing and development
 Configure the plugin with Redis
 
       </a>
+    
+
     
   </span>
 
@@ -733,6 +776,8 @@ ACME Plugin API Reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -751,13 +796,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=acme" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -790,12 +845,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/acme/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -827,7 +888,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -836,7 +897,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-acme</code>.</p>
+acme</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -906,6 +973,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -914,6 +983,8 @@ acme</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -951,6 +1022,8 @@ acme</code>.</p>
     
 
     
+
+    
       <span>
         <strong>matches: </strong>
         <code>%w*%p*@+%w*%.?%w*</code>
@@ -977,6 +1050,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>The account identifier. Can be reused in a different plugin instance.</p>
 </div>
+
+    
 
     
 
@@ -1031,6 +1106,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1040,6 +1117,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>The ACMEv2 API endpoint to use. You can specify the <a href="https://letsencrypt.org/docs/staging-environment/" target="_blank" rel="noopener nofollow noreferrer ">Let’s Encrypt staging environment</a> for testing. Kong doesn’t automatically delete staging certificates. If you use the same domain in test and production environments, you need to manually delete those certificates after testing.</p>
 </div>
+
+    
 
     
 
@@ -1094,6 +1173,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1103,6 +1184,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>If you are using Let’s Encrypt, you must set this to <code class="language-plaintext highlighter-rouge">true</code> to agree the <a href="https://letsencrypt.org/repository/" target="_blank" rel="noopener nofollow noreferrer ">Terms of Service</a>.</p>
 </div>
+
+    
 
     
 
@@ -1157,6 +1240,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1166,6 +1251,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>External account binding (EAB) key id. You usually don’t need to set this unless it is explicitly required by the CA.</p>
 </div>
+
+    
 
     
 
@@ -1220,6 +1307,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1229,6 +1318,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>External account binding (EAB) base64-encoded URL string of the HMAC key. You usually don’t need to set this unless it is explicitly required by the CA.</p>
 </div>
+
+    
 
     
 
@@ -1281,6 +1372,8 @@ acme</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>rsa</code>, <code>ecc</code></span>
 
@@ -1296,6 +1389,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>The certificate type to create. The possible values are <code class="language-plaintext highlighter-rouge">'rsa'</code> for RSA certificate or <code class="language-plaintext highlighter-rouge">'ecc'</code> for EC certificate.</p>
 </div>
+
+    
 
     
 
@@ -1348,6 +1443,8 @@ acme</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>2048</code>, <code>3072</code>, <code>4096</code></span>
 
@@ -1363,6 +1460,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>RSA private key size for the certificate. The possible values are 2048, 3072, or 4096.</p>
 </div>
+
+    
 
     
 
@@ -1417,6 +1516,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1426,6 +1527,8 @@ acme</code>.</p>
     <div class="field-description">
 <p>Days remaining to renew the certificate before it expires.</p>
 </div>
+
+    
 
     
 
@@ -1474,6 +1577,8 @@ acme</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1490,6 +1595,8 @@ The ACME plugin checks this configuration before checking any certificate in <co
 
 <p>If this field is left empty, all top-level domains (TLDs) are allowed.</p>
 </div>
+
+    
 
     
 
@@ -1548,6 +1655,8 @@ The ACME plugin checks this configuration before checking any certificate in <co
     
 
     
+
+    
       
       
     
@@ -1557,6 +1666,8 @@ The ACME plugin checks this configuration before checking any certificate in <co
     <div class="field-description">
 <p>If set to <code class="language-plaintext highlighter-rouge">true</code>, the plugin allows all domains and ignores any values in the <code class="language-plaintext highlighter-rouge">domains</code> list.</p>
 </div>
+
+    
 
     
 
@@ -1611,6 +1722,8 @@ The ACME plugin checks this configuration before checking any certificate in <co
     
 
     
+
+    
       
       
     
@@ -1621,6 +1734,8 @@ The ACME plugin checks this configuration before checking any certificate in <co
 <p>Minutes to wait for each domain that fails to create a certificate. This applies to both a
 new certificate and a renewal certificate.</p>
 </div>
+
+    
 
     
 
@@ -1673,6 +1788,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>kong</code>, <code>shm</code>, <code>redis</code>, <code>consul</code>, <code>vault</code></span>
 
@@ -1688,6 +1805,8 @@ new certificate and a renewal certificate.</p>
     <div class="field-description">
 <p>The backend storage type to use. The possible values are <code class="language-plaintext highlighter-rouge">'kong'</code>, <code class="language-plaintext highlighter-rouge">'shm'</code>, <code class="language-plaintext highlighter-rouge">'redis'</code>, <code class="language-plaintext highlighter-rouge">'consul'</code>, or <code class="language-plaintext highlighter-rouge">'vault'</code>. In DB-less mode, <code class="language-plaintext highlighter-rouge">'kong'</code> storage is unavailable. Note that <code class="language-plaintext highlighter-rouge">'shm'</code> storage does not persist during Kong restarts and does not work for Kong running on different machines, so consider using one of <code class="language-plaintext highlighter-rouge">'kong'</code>, <code class="language-plaintext highlighter-rouge">'redis'</code>, <code class="language-plaintext highlighter-rouge">'consul'</code>, or <code class="language-plaintext highlighter-rouge">'vault'</code> in production. Please refer to the Hybrid Mode sections below as well.</p>
 </div>
+
+    
 
     
 
@@ -1740,6 +1859,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -1748,6 +1869,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -1793,6 +1916,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -1801,6 +1926,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -1848,6 +1975,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -1856,6 +1985,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1915,6 +2046,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -1923,6 +2056,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1975,6 +2110,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -1983,6 +2120,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -2022,6 +2161,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2030,6 +2171,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2068,6 +2211,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -2090,6 +2235,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2136,6 +2283,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2144,6 +2293,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2194,6 +2345,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2202,6 +2355,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2258,6 +2413,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2266,6 +2423,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2322,6 +2481,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2330,6 +2491,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2376,6 +2539,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2384,6 +2549,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2447,6 +2614,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2455,6 +2624,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -2502,6 +2673,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2510,6 +2683,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2556,6 +2731,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2564,6 +2741,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2602,6 +2781,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -2624,6 +2805,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2670,6 +2853,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2678,6 +2863,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2724,6 +2911,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2732,6 +2921,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2782,6 +2973,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2790,6 +2983,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2853,6 +3048,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2861,6 +3058,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -2908,6 +3107,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2916,6 +3117,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2962,6 +3165,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -2970,6 +3175,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3008,6 +3215,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -3030,6 +3239,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3076,6 +3287,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3084,6 +3297,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3130,6 +3345,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3138,6 +3355,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3188,6 +3407,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3196,6 +3417,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3250,6 +3473,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3258,6 +3483,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3304,6 +3531,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3312,6 +3541,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3364,6 +3595,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>token</code>, <code>kubernetes</code></span>
 
@@ -3378,6 +3611,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3424,6 +3659,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3432,6 +3669,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3478,6 +3717,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3486,6 +3727,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3532,6 +3775,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3540,6 +3785,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3608,6 +3855,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3616,6 +3865,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3670,6 +3921,8 @@ new certificate and a renewal certificate.</p>
     
 
     
+
+    
       
       
     
@@ -3678,6 +3931,8 @@ new certificate and a renewal certificate.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3789,7 +4044,7 @@ new certificate and a renewal certificate.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -3937,8 +4192,8 @@ new certificate and a renewal certificate.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -3948,16 +4203,6 @@ new certificate and a renewal certificate.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

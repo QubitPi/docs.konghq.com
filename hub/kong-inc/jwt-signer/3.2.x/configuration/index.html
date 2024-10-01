@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Kong JWT Signer Configuration | Kong Docs</title>
+  <title>Kong JWT Signer Configuration - Plugin - v3.2.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Kong JWT Signer Configuration | Kong Docs">
+  <meta property="og:title" content="Kong JWT Signer Configuration - Plugin - v3.2.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/jwt-signer/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/jwt-signer/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/jwt-signer/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/jwt-signer/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/jwt-signer/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -535,8 +560,8 @@
         <div class="meta--content-badges">
           
 
-
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -577,13 +602,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -599,6 +624,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -623,6 +650,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -638,13 +667,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -660,6 +689,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -684,13 +715,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=jwt-signer" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -723,12 +764,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/jwt-signer/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -760,7 +807,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -769,7 +816,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-jwt-signer</code>.</p>
+jwt-signer</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -784,9 +837,22 @@ jwt-signer</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>jwt-signer_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -802,8 +868,8 @@ jwt-signer</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -820,8 +886,8 @@ jwt-signer</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -887,6 +953,8 @@ jwt-signer</code>.</p>
     
 
     
+
+    
       
       
     
@@ -895,6 +963,8 @@ jwt-signer</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -934,6 +1004,8 @@ jwt-signer</code>.</p>
     
 
     
+
+    
       
       
     
@@ -945,6 +1017,8 @@ jwt-signer</code>.</p>
 error, the plugin sends an <code class="language-plaintext highlighter-rouge">WWW-Authenticate</code> header with the <code class="language-plaintext highlighter-rouge">realm</code>
 attribute value.</p>
 </div>
+
+    
 
     
 
@@ -999,6 +1073,8 @@ attribute value.</p>
     
 
     
+
+    
       
       
     
@@ -1010,6 +1086,8 @@ attribute value.</p>
 accepted by default. If you need to accept such tokens for verification,
 enable this setting.</p>
 </div>
+
+    
 
     
 
@@ -1064,6 +1142,8 @@ enable this setting.</p>
     
 
     
+
+    
       
       
     
@@ -1076,6 +1156,8 @@ the logging level on Kong nodes, which requires a reload, use this
 parameter to enable instrumentation for the request. The parameter writes
 log entries with some added information using <code class="language-plaintext highlighter-rouge">ngx.CRIT</code> (CRITICAL) level.</p>
 </div>
+
+    
 
     
 
@@ -1130,6 +1212,8 @@ log entries with some added information using <code class="language-plaintext hi
     
 
     
+
+    
       
       
     
@@ -1141,6 +1225,8 @@ log entries with some added information using <code class="language-plaintext hi
 Original <code class="language-plaintext highlighter-rouge">iss</code> claim of the incoming token (possibly introspected) is
 stored in <code class="language-plaintext highlighter-rouge">original_iss</code> claim of the newly signed access token.</p>
 </div>
+
+    
 
     
 
@@ -1195,6 +1281,8 @@ stored in <code class="language-plaintext highlighter-rouge">original_iss</code>
     
 
     
+
+    
       
       
     
@@ -1204,6 +1292,8 @@ stored in <code class="language-plaintext highlighter-rouge">original_iss</code>
     <div class="field-description">
 <p>The name of the keyset containing signing keys.</p>
 </div>
+
+    
 
     
 
@@ -1250,6 +1340,8 @@ stored in <code class="language-plaintext highlighter-rouge">original_iss</code>
     
 
     
+
+    
       
       
     
@@ -1263,6 +1355,8 @@ signature of the access token. If you don’t specify a URI and you pass a
 JWT token to the plugin, then the plugin responds with
 <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>.</p>
 </div>
+
+    
 
     
 
@@ -1317,6 +1411,8 @@ JWT token to the plugin, then the plugin responds with
     
 
     
+
+    
       
       
     
@@ -1331,6 +1427,8 @@ do anything with <code class="language-plaintext highlighter-rouge">access token
 Any header can be used to pass the access token to the plugin. Two predefined
 values are <code class="language-plaintext highlighter-rouge">authorization:bearer</code> and <code class="language-plaintext highlighter-rouge">authorization:basic</code>.</p>
 </div>
+
+    
 
     
 
@@ -1385,6 +1483,8 @@ values are <code class="language-plaintext highlighter-rouge">authorization:bear
     
 
     
+
+    
       
       
     
@@ -1397,6 +1497,8 @@ is added to the token’s <code class="language-plaintext highlighter-rouge">exp
 Kong servers’ current time in seconds. You can disable access token
 <code class="language-plaintext highlighter-rouge">expiry</code> verification altogether with <code class="language-plaintext highlighter-rouge">config.verify_access_token_expiry</code>.</p>
 </div>
+
+    
 
     
 
@@ -1445,6 +1547,8 @@ Kong servers’ current time in seconds. You can disable access token
     
 
     
+
+    
       
       
     
@@ -1461,6 +1565,8 @@ needs to have the value of <code class="language-plaintext highlighter-rouge">"s
 the upstream access. If required scopes are
 not found in access token, the plugin responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -1521,6 +1627,8 @@ not found in access token, the plugin responds with <code class="language-plaint
     
 
     
+
+    
       
       
     
@@ -1536,6 +1644,8 @@ If the claim is not found in the access token, and you have specified
 <code class="language-plaintext highlighter-rouge">config.access_token_scopes_required</code>,
 the plugin responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -1588,6 +1698,8 @@ the plugin responds with <code class="language-plaintext highlighter-rouge">403 
     
 
     
+
+    
       
       
     
@@ -1607,6 +1719,8 @@ to other plugins such as <a href="/hub/kong-inc/acl/">ACL</a> or <a href="/hub/k
 The JWT Signer plugin also sets a couple of standard Kong
 upstream consumer headers.</p>
 </div>
+
+    
 
     
 
@@ -1667,6 +1781,8 @@ upstream consumer headers.</p>
     
 
     
+
+    
       
       
         <span>
@@ -1683,6 +1799,8 @@ it tries to find a matching Kong consumer from properties defined using
 this configuration parameter. The parameter can take an array of
 alues. Valid values are <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">username</code>, and <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
 </div>
+
+    
 
     
 
@@ -1741,6 +1859,8 @@ alues. Valid values are <code class="language-plaintext highlighter-rouge">id</c
     
 
     
+
+    
       
       
     
@@ -1751,6 +1871,8 @@ alues. Valid values are <code class="language-plaintext highlighter-rouge">id</c
 <p>Removes the <code class="language-plaintext highlighter-rouge">config.access_token_request_header</code> from the request after reading its
 value. With <code class="language-plaintext highlighter-rouge">config.access_token_upstream_header</code>, you can specify the upstream header where the plugin adds the Kong signed token. If you don’t specify a value, such as use <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">""</code> (empty string), the plugin does not even try to sign or re-sign the token.</p>
 </div>
+
+    
 
     
 
@@ -1805,6 +1927,8 @@ value. With <code class="language-plaintext highlighter-rouge">config.access_tok
     
 
     
+
+    
       
       
     
@@ -1816,6 +1940,8 @@ value. With <code class="language-plaintext highlighter-rouge">config.access_tok
 time (in seconds) of the original access token, you can specify a value that is added to
 the original access token’s <code class="language-plaintext highlighter-rouge">exp</code> claim.</p>
 </div>
+
+    
 
     
 
@@ -1862,6 +1988,8 @@ the original access token’s <code class="language-plaintext highlighter-rouge"
     
 
     
+
+    
       
       
     
@@ -1874,6 +2002,8 @@ introspection, you need to specify the OAuth 2.0 introspection endpoint URI
 with this configuration parameter. Otherwise, the plugin does not try
 introspection and returns <code class="language-plaintext highlighter-rouge">401 Unauthorized</code> instead.</p>
 </div>
+
+    
 
     
 
@@ -1920,6 +2050,8 @@ introspection and returns <code class="language-plaintext highlighter-rouge">401
     
 
     
+
+    
       
       
     
@@ -1935,6 +2067,8 @@ to this configuration parameter. You are responsible for providing the full stri
 of the header and doing all of the necessary encodings (such as base64)
 required on a given endpoint.</p>
 </div>
+
+    
 
     
 
@@ -1981,6 +2115,8 @@ required on a given endpoint.</p>
     
 
     
+
+    
       
       
     
@@ -1992,6 +2128,8 @@ required on a given endpoint.</p>
 when the plugin introspects the opaque access token, use this config parameter
 to specify them. You should URL encode the value. For example: <code class="language-plaintext highlighter-rouge">resource=</code> or <code class="language-plaintext highlighter-rouge">a=1&amp;b=&amp;c</code>.</p>
 </div>
+
+    
 
     
 
@@ -2046,6 +2184,8 @@ to specify them. You should URL encode the value. For example: <code class="lang
     
 
     
+
+    
       
       
     
@@ -2057,6 +2197,8 @@ to specify them. You should URL encode the value. For example: <code class="lang
 use this parameter to specify the value. By default, the plugin
 sends <code class="language-plaintext highlighter-rouge">hint=access_token</code>.</p>
 </div>
+
+    
 
     
 
@@ -2105,6 +2247,8 @@ sends <code class="language-plaintext highlighter-rouge">hint=access_token</code
     
 
     
+
+    
       
       
     
@@ -2123,6 +2267,8 @@ of using introspection JSON directly. If the key cannot be found, the
 plugin responds with <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>. Also if the key is found
 but cannot be decoded as JWT, it also responds with <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>.</p>
 </div>
+
+    
 
     
 
@@ -2175,6 +2321,8 @@ but cannot be decoded as JWT, it also responds with <code class="language-plaint
     
 
     
+
+    
       
       
     
@@ -2190,6 +2338,8 @@ that the claim needs to have value of <code class="language-plaintext highlighte
 access. If required scopes are not found in access token introspection results (<code class="language-plaintext highlighter-rouge">JSON</code>),
 the plugin responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -2252,6 +2402,8 @@ the plugin responds with <code class="language-plaintext highlighter-rouge">403 
     
 
     
+
+    
       
       
     
@@ -2266,6 +2418,8 @@ hich can be given as <code class="language-plaintext highlighter-rouge">realm_ac
 token introspection results, and you have specified <code class="language-plaintext highlighter-rouge">config.access_token_introspection_scopes_required</code>,
 the plugin responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -2318,6 +2472,8 @@ the plugin responds with <code class="language-plaintext highlighter-rouge">403 
     
 
     
+
+    
       
       
     
@@ -2338,6 +2494,8 @@ communicate this information to other plugins such as <a href="/hub/kong-inc/acl
 or <a href="/hub/kong-inc/rate-limiting/">rate limiting</a>. The JWT Signer plugin also
 sets a couple of standard Kong upstream consumer headers.</p>
 </div>
+
+    
 
     
 
@@ -2398,6 +2556,8 @@ sets a couple of standard Kong upstream consumer headers.</p>
     
 
     
+
+    
       
       
         <span>
@@ -2413,6 +2573,8 @@ sets a couple of standard Kong upstream consumer headers.</p>
 find a matching Kong consumer from properties defined using this configuration parameter. The parameter
 can take an array of values. Valid values are <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">username</code>, and <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
 </div>
+
+    
 
     
 
@@ -2471,6 +2633,8 @@ can take an array of values. Valid values are <code class="language-plaintext hi
     
 
     
+
+    
       
       
     
@@ -2484,6 +2648,8 @@ checking token expiry against Kong servers current time in seconds. You
 can disable access token introspection <code class="language-plaintext highlighter-rouge">expiry</code> verification altogether
 with <code class="language-plaintext highlighter-rouge">config.verify_access_token_introspection_expiry</code>.</p>
 </div>
+
+    
 
     
 
@@ -2530,6 +2696,8 @@ with <code class="language-plaintext highlighter-rouge">config.verify_access_tok
     
 
     
+
+    
       
       
     
@@ -2542,6 +2710,8 @@ The plugin tries to introspect twice if the first request
 fails for some reason. If both requests timeout, then the plugin runs two times the
 <code class="language-plaintext highlighter-rouge">config.access_token_introspection_timeout</code> on access token introspection.</p>
 </div>
+
+    
 
     
 
@@ -2596,6 +2766,8 @@ fails for some reason. If both requests timeout, then the plugin runs two times 
     
 
     
+
+    
       <span>
   Must be one of: <code>HS256</code>, <code>HS384</code>, <code>HS512</code>, <code>RS256</code>, <code>RS512</code>, <code>ES256</code>, <code>ES384</code>, <code>ES512</code>, <code>PS256</code>, <code>PS384</code>, <code>PS512</code>, <code>EdDSA</code></span>
 
@@ -2632,6 +2804,8 @@ specifies which <code class="language-plaintext highlighter-rouge">keyset</code>
 the specified signing algorithm.</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -2686,6 +2860,8 @@ the specified signing algorithm.</li>
     
 
     
+
+    
       
       
     
@@ -2700,6 +2876,8 @@ Use this parameter to allow the request to proceed even when there is no token t
 If the token is provided, then this parameter has no effect (look other parameters to enable and
 disable checks in that case).</p>
 </div>
+
+    
 
     
 
@@ -2754,6 +2932,8 @@ disable checks in that case).</p>
     
 
     
+
+    
       
       
     
@@ -2763,6 +2943,8 @@ disable checks in that case).</p>
     <div class="field-description">
 <p>Quickly turn access token signature verification off and on as needed.</p>
 </div>
+
+    
 
     
 
@@ -2817,6 +2999,8 @@ disable checks in that case).</p>
     
 
     
+
+    
       
       
     
@@ -2826,6 +3010,8 @@ disable checks in that case).</p>
     <div class="field-description">
 <p>Quickly turn access token expiry verification off and on as needed.</p>
 </div>
+
+    
 
     
 
@@ -2880,6 +3066,8 @@ disable checks in that case).</p>
     
 
     
+
+    
       
       
     
@@ -2890,6 +3078,8 @@ disable checks in that case).</p>
 <p>Quickly turn off and on the access token
 required scopes verification, specified with <code class="language-plaintext highlighter-rouge">config.access_token_scopes_required</code>.</p>
 </div>
+
+    
 
     
 
@@ -2944,6 +3134,8 @@ required scopes verification, specified with <code class="language-plaintext hig
     
 
     
+
+    
       
       
     
@@ -2953,6 +3145,8 @@ required scopes verification, specified with <code class="language-plaintext hig
     <div class="field-description">
 <p>Quickly turn access token introspection expiry verification off and on as needed.</p>
 </div>
+
+    
 
     
 
@@ -3007,6 +3201,8 @@ required scopes verification, specified with <code class="language-plaintext hig
     
 
     
+
+    
       
       
     
@@ -3018,6 +3214,8 @@ required scopes verification, specified with <code class="language-plaintext hig
 introspection scopes verification, specified with
 <code class="language-plaintext highlighter-rouge">config.access_token_introspection_scopes_required</code>.</p>
 </div>
+
+    
 
     
 
@@ -3072,6 +3270,8 @@ introspection scopes verification, specified with
     
 
     
+
+    
       
       
     
@@ -3081,6 +3281,8 @@ introspection scopes verification, specified with
     <div class="field-description">
 <p>Whether to cache access token introspection results.</p>
 </div>
+
+    
 
     
 
@@ -3135,6 +3337,8 @@ introspection scopes verification, specified with
     
 
     
+
+    
       
       
     
@@ -3150,6 +3354,8 @@ want to do checks to a JWT token provided with introspection JSON specified with
 disable further checks on a payload before the new token is signed. If you set this
 to <code class="language-plaintext highlighter-rouge">true</code>, the expiry or scopes are not checked on a payload.</p>
 </div>
+
+    
 
     
 
@@ -3204,6 +3410,8 @@ to <code class="language-plaintext highlighter-rouge">true</code>, the expiry or
     
 
     
+
+    
       
       
     
@@ -3214,6 +3422,8 @@ to <code class="language-plaintext highlighter-rouge">true</code>, the expiry or
 <p>If you don’t want to support opaque access tokens, change this
 configuration parameter to <code class="language-plaintext highlighter-rouge">false</code> to disable introspection.</p>
 </div>
+
+    
 
     
 
@@ -3268,6 +3478,8 @@ configuration parameter to <code class="language-plaintext highlighter-rouge">fa
     
 
     
+
+    
       
       
     
@@ -3280,6 +3492,8 @@ is <code class="language-plaintext highlighter-rouge">kong</code> by default. Th
 (possibly introspected) is stored in the <code class="language-plaintext highlighter-rouge">original_iss</code> claim of
 the newly signed channel token.</p>
 </div>
+
+    
 
     
 
@@ -3334,6 +3548,8 @@ the newly signed channel token.</p>
     
 
     
+
+    
       
       
     
@@ -3343,6 +3559,8 @@ the newly signed channel token.</p>
     <div class="field-description">
 <p>The name of the keyset containing signing keys.</p>
 </div>
+
+    
 
     
 
@@ -3389,6 +3607,8 @@ the newly signed channel token.</p>
     
 
     
+
+    
       
       
     
@@ -3401,6 +3621,8 @@ the plugin can fetch the public keys (JWKS) to verify the signature of the chann
 If you don’t specify a URI and you pass a JWT token to the plugin, then the plugin responds
 with <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>.</p>
 </div>
+
+    
 
     
 
@@ -3447,6 +3669,8 @@ with <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>.
     
 
     
+
+    
       
       
     
@@ -3461,6 +3685,8 @@ do anything with the channel token, then you can set this to <code class="langua
 token to this plugin. Two predefined values are <code class="language-plaintext highlighter-rouge">authorization:bearer</code>
 and <code class="language-plaintext highlighter-rouge">authorization:basic</code>.</p>
 </div>
+
+    
 
     
 
@@ -3515,6 +3741,8 @@ and <code class="language-plaintext highlighter-rouge">authorization:basic</code
     
 
     
+
+    
       
       
     
@@ -3527,6 +3755,8 @@ will be added to token’s <code class="language-plaintext highlighter-rouge">ex
 time in seconds. You can disable channel token <code class="language-plaintext highlighter-rouge">expiry</code> verification altogether with
 <code class="language-plaintext highlighter-rouge">config.verify_channel_token_expiry</code>.</p>
 </div>
+
+    
 
     
 
@@ -3575,6 +3805,8 @@ time in seconds. You can disable channel token <code class="language-plaintext h
     
 
     
+
+    
       
       
     
@@ -3589,6 +3821,8 @@ to have values <code class="language-plaintext highlighter-rouge">"employee"</co
 <code class="language-plaintext highlighter-rouge">"superadmin"</code> to be successfully authorized for the upstream access. If required scopes are not
 found in the channel token, the plugin responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -3649,6 +3883,8 @@ found in the channel token, the plugin responds with <code class="language-plain
     
 
     
+
+    
       
       
     
@@ -3662,6 +3898,8 @@ use <code class="language-plaintext highlighter-rouge">[ "realm_access", "roles"
 If the claim is not found in the channel token, and you have specified <code class="language-plaintext highlighter-rouge">config.channel_token_scopes_required</code>,
 the plugin responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -3714,6 +3952,8 @@ the plugin responds with <code class="language-plaintext highlighter-rouge">403 
     
 
     
+
+    
       
       
     
@@ -3732,6 +3972,8 @@ when you want to communicate this information
 to other plugins such as <a href="/hub/kong-inc/acl/">ACL</a> or <a href="/hub/kong-inc/rate-limiting/">rate limiting</a>.
 The JWT Signer plugin also sets a couple of standard Kong upstream consumer headers.</p>
 </div>
+
+    
 
     
 
@@ -3792,6 +4034,8 @@ The JWT Signer plugin also sets a couple of standard Kong upstream consumer head
     
 
     
+
+    
       
       
         <span>
@@ -3807,6 +4051,8 @@ The JWT Signer plugin also sets a couple of standard Kong upstream consumer head
 to find a matching Kong consumer from properties defined using this configuration parameter.
 The parameter can take an array of valid values: <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">username</code>, and <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
 </div>
+
+    
 
     
 
@@ -3857,6 +4103,8 @@ The parameter can take an array of valid values: <code class="language-plaintext
     
 
     
+
+    
       
       
     
@@ -3870,6 +4118,8 @@ With <code class="language-plaintext highlighter-rouge">config.channel_token_ups
 adds the Kong-signed token. If you don’t specify a value (so <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">""</code> empty string),
 the plugin does not attempt to re-sign the token.</p>
 </div>
+
+    
 
     
 
@@ -3924,6 +4174,8 @@ the plugin does not attempt to re-sign the token.</p>
     
 
     
+
+    
       
       
     
@@ -3934,6 +4186,8 @@ the plugin does not attempt to re-sign the token.</p>
 <p>If you want to add or perhaps subtract (using negative value) expiry time of the original channel token,
 you can specify a value that is added to the original channel token’s <code class="language-plaintext highlighter-rouge">exp</code> claim.</p>
 </div>
+
+    
 
     
 
@@ -3980,6 +4234,8 @@ you can specify a value that is added to the original channel token’s <code cl
     
 
     
+
+    
       
       
     
@@ -3992,6 +4248,8 @@ specify the OAuth 2.0 introspection endpoint URI with this configuration paramet
 Otherwise the plugin will not try introspection, and instead returns <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>
 when using opaque channel tokens.</p>
 </div>
+
+    
 
     
 
@@ -4038,6 +4296,8 @@ when using opaque channel tokens.</p>
     
 
     
+
+    
       
       
     
@@ -4051,6 +4311,8 @@ you should enter the value of <code class="language-plaintext highlighter-rouge"
 You are responsible for providing the full string of the header and doing
 all the necessary encodings (such as base64) required on a given endpoint.</p>
 </div>
+
+    
 
     
 
@@ -4101,6 +4363,8 @@ all the necessary encodings (such as base64) required on a given endpoint.</p>
     
 
     
+
+    
       
       
     
@@ -4112,6 +4376,8 @@ all the necessary encodings (such as base64) required on a given endpoint.</p>
 opaque channel token, you can use this config parameter to specify them. You should URL encode the value.
 For example: <code class="language-plaintext highlighter-rouge">resource=</code> or <code class="language-plaintext highlighter-rouge">a=1&amp;b=&amp;c</code>.</p>
 </div>
+
+    
 
     
 
@@ -4162,6 +4428,8 @@ For example: <code class="language-plaintext highlighter-rouge">resource=</code>
     
 
     
+
+    
       
       
     
@@ -4172,6 +4440,8 @@ For example: <code class="language-plaintext highlighter-rouge">resource=</code>
 <p>If you need to give <code class="language-plaintext highlighter-rouge">hint</code> parameter when introspecting a channel token, you can use this parameter to
 specify the value of such parameter. By default, a <code class="language-plaintext highlighter-rouge">hint</code> isn’t sent with channel token introspection.</p>
 </div>
+
+    
 
     
 
@@ -4224,6 +4494,8 @@ specify the value of such parameter. By default, a <code class="language-plainte
     
 
     
+
+    
       
       
     
@@ -4239,6 +4511,8 @@ in JSON of the introspection results and uses that as a channel token instead of
 directly. If the key cannot be found, the plugin responds with <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>. Also if the key
 is found but cannot be decoded as JWT, the plugin responds with <code class="language-plaintext highlighter-rouge">401 Unauthorized</code>.</p>
 </div>
+
+    
 
     
 
@@ -4291,6 +4565,8 @@ is found but cannot be decoded as JWT, the plugin responds with <code class="lan
     
 
     
+
+    
       
       
     
@@ -4306,6 +4582,8 @@ claim needs to have the value of <code class="language-plaintext highlighter-rou
 If required scopes are not found in channel token introspection results (<code class="language-plaintext highlighter-rouge">JSON</code>), the plugin
 responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -4366,6 +4644,8 @@ responds with <code class="language-plaintext highlighter-rouge">403 Forbidden</
     
 
     
+
+    
       
       
     
@@ -4380,6 +4660,8 @@ nested claims. For example, with Keycloak you could use <code class="language-pl
 and you have specified <code class="language-plaintext highlighter-rouge">config.channel_token_introspection_scopes_required</code>, the plugin responds
 with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p>
 </div>
+
+    
 
     
 
@@ -4432,6 +4714,8 @@ with <code class="language-plaintext highlighter-rouge">403 Forbidden</code>.</p
     
 
     
+
+    
       
       
     
@@ -4452,6 +4736,8 @@ is useful when you want to communicate this information to other plugins such as
 JWT Signer plugin also sets a couple of standard
 Kong upstream consumer headers.</p>
 </div>
+
+    
 
     
 
@@ -4512,6 +4798,8 @@ Kong upstream consumer headers.</p>
     
 
     
+
+    
       
       
         <span>
@@ -4527,6 +4815,8 @@ Kong upstream consumer headers.</p>
 find a matching Kong consumer from properties defined using this configuration parameter. The parameter
 can take an array of values. Valid values are <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
 </div>
+
+    
 
     
 
@@ -4585,6 +4875,8 @@ can take an array of values. Valid values are <code class="language-plaintext hi
     
 
     
+
+    
       
       
     
@@ -4597,6 +4889,8 @@ The value will be added to introspection results (<code class="language-plaintex
 against Kong servers current time (in seconds). You can disable channel token introspection <code class="language-plaintext highlighter-rouge">expiry</code>
 verification altogether with <code class="language-plaintext highlighter-rouge">config.verify_channel_token_introspection_expiry</code>.</p>
 </div>
+
+    
 
     
 
@@ -4643,6 +4937,8 @@ verification altogether with <code class="language-plaintext highlighter-rouge">
     
 
     
+
+    
       
       
     
@@ -4654,6 +4950,8 @@ verification altogether with <code class="language-plaintext highlighter-rouge">
 fails for some reason. If both requests timeout, then the plugin runs two times the
 <code class="language-plaintext highlighter-rouge">config.access_token_introspection_timeout</code> on channel token introspection.</p>
 </div>
+
+    
 
     
 
@@ -4708,6 +5006,8 @@ fails for some reason. If both requests timeout, then the plugin runs two times 
     
 
     
+
+    
       <span>
   Must be one of: <code>HS256</code>, <code>HS384</code>, <code>HS512</code>, <code>RS256</code>, <code>RS512</code>, <code>ES256</code>, <code>ES384</code>, <code>ES512</code>, <code>PS256</code>, <code>PS384</code>, <code>PS512</code>, <code>EdDSA</code></span>
 
@@ -4743,6 +5043,8 @@ supported values:</p>
 <p>The <code class="language-plaintext highlighter-rouge">config.channel_token_issuer</code> specifies which <code class="language-plaintext highlighter-rouge">keyset</code>
 is used to sign the new token issued by Kong using the specified signing algorithm.</p>
 </div>
+
+    
 
     
 
@@ -4797,6 +5099,8 @@ is used to sign the new token issued by Kong using the specified signing algorit
     
 
     
+
+    
       
       
     
@@ -4811,6 +5115,8 @@ Enable this parameter to allow the request to proceed even when there is no chan
 to check. If the channel token is provided, then this parameter has no effect
 (look other parameters to enable and disable checks in that case).</p>
 </div>
+
+    
 
     
 
@@ -4865,6 +5171,8 @@ to check. If the channel token is provided, then this parameter has no effect
     
 
     
+
+    
       
       
     
@@ -4874,6 +5182,8 @@ to check. If the channel token is provided, then this parameter has no effect
     <div class="field-description">
 <p>Quickly turn on/off the channel token signature verification.</p>
 </div>
+
+    
 
     
 
@@ -4928,6 +5238,8 @@ to check. If the channel token is provided, then this parameter has no effect
     
 
     
+
+    
       
       
     
@@ -4936,6 +5248,8 @@ to check. If the channel token is provided, then this parameter has no effect
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -4990,6 +5304,8 @@ to check. If the channel token is provided, then this parameter has no effect
     
 
     
+
+    
       
       
     
@@ -5000,6 +5316,8 @@ to check. If the channel token is provided, then this parameter has no effect
 <p>Quickly turn on/off the channel token required scopes
 verification specified with <code class="language-plaintext highlighter-rouge">config.channel_token_scopes_required</code>.</p>
 </div>
+
+    
 
     
 
@@ -5054,6 +5372,8 @@ verification specified with <code class="language-plaintext highlighter-rouge">c
     
 
     
+
+    
       
       
     
@@ -5064,6 +5384,8 @@ verification specified with <code class="language-plaintext highlighter-rouge">c
 <p>Quickly turn on/off the channel token introspection expiry
 verification.</p>
 </div>
+
+    
 
     
 
@@ -5118,6 +5440,8 @@ verification.</p>
     
 
     
+
+    
       
       
     
@@ -5128,6 +5452,8 @@ verification.</p>
 <p>Quickly turn on/off the channel token introspection scopes
 verification specified with <code class="language-plaintext highlighter-rouge">config.channel_token_introspection_scopes_required</code>.</p>
 </div>
+
+    
 
     
 
@@ -5182,6 +5508,8 @@ verification specified with <code class="language-plaintext highlighter-rouge">c
     
 
     
+
+    
       
       
     
@@ -5191,6 +5519,8 @@ verification specified with <code class="language-plaintext highlighter-rouge">c
     <div class="field-description">
 <p>Whether to cache channel token introspection results.</p>
 </div>
+
+    
 
     
 
@@ -5245,6 +5575,8 @@ verification specified with <code class="language-plaintext highlighter-rouge">c
     
 
     
+
+    
       
       
     
@@ -5260,6 +5592,8 @@ want to do checks to a JWT token provided with introspection JSON specified with
 disable further checks on a payload before the new token is signed. If you set this
 to <code class="language-plaintext highlighter-rouge">true</code> (default), the expiry or scopes are not checked on a payload.</p>
 </div>
+
+    
 
     
 
@@ -5314,6 +5648,8 @@ to <code class="language-plaintext highlighter-rouge">true</code> (default), the
     
 
     
+
+    
       
       
     
@@ -5324,6 +5660,8 @@ to <code class="language-plaintext highlighter-rouge">true</code> (default), the
 <p>If you don’t want to support opaque channel tokens, disable introspection by
 changing this configuration parameter to <code class="language-plaintext highlighter-rouge">false</code>.</p>
 </div>
+
+    
 
     
 
@@ -5435,7 +5773,7 @@ changing this configuration parameter to <code class="language-plaintext highlig
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -5583,8 +5921,8 @@ changing this configuration parameter to <code class="language-plaintext highlig
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -5594,16 +5932,6 @@ changing this configuration parameter to <code class="language-plaintext highlig
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

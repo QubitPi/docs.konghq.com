@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Exposing a TCP Service - v2.11.x | Kong Docs</title>
+  <title>Exposing a TCP Service - Kong Ingress Controller - v2.11.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Exposing a TCP Service - v2.11.x | Kong Docs">
+  <meta property="og:title" content="Exposing a TCP Service - Kong Ingress Controller - v2.11.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -402,6 +404,7 @@
         <div class="version">
           2.11.x
           
+          
         </div>
         
       </div>
@@ -517,6 +520,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -547,209 +553,83 @@
         <span>
           Version 2.11.x
           
+          
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/3.0.x" data-version-id="3.0.x">
-            3.0.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.12.x/guides/using-tcpingress/" data-version-id="2.12.x">
-            2.12.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.3.x/" data-version-id="3.3.x">
+              3.3.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.11.x/guides/using-tcpingress/" class="active" data-version-id="2.11.x">
-            2.11.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.2.x/" data-version-id="3.2.x">
+              3.2.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.10.x/guides/using-tcpingress/" data-version-id="2.10.x">
-            2.10.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.1.x/" data-version-id="3.1.x">
+              3.1.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.9.x/guides/using-tcpingress/" data-version-id="2.9.x">
-            2.9.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.0.x/" data-version-id="3.0.x">
+              3.0.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.8.x/guides/using-tcpingress/" data-version-id="2.8.x">
-            2.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.12.x/guides/using-tcpingress/" data-version-id="2.12.x">
+              2.12.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.7.x/guides/using-tcpingress/" data-version-id="2.7.x">
-            2.7.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.11.x/guides/using-tcpingress/" class="active" data-version-id="2.11.x">
+              2.11.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.6.x/guides/using-tcpingress/" data-version-id="2.6.x">
-            2.6.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.10.x/guides/using-tcpingress/" data-version-id="2.10.x">
+              2.10.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.5.x/guides/using-tcpingress/" data-version-id="2.5.x">
-            2.5.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.9.x/guides/using-tcpingress/" data-version-id="2.9.x">
+              2.9.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.4.x/guides/using-tcpingress/" data-version-id="2.4.x">
-            2.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.8.x/guides/using-tcpingress/" data-version-id="2.8.x">
+              2.8.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.3.x/guides/using-tcpingress/" data-version-id="2.3.x">
-            2.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.7.x/guides/using-tcpingress/" data-version-id="2.7.x">
+              2.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.2.x/guides/using-tcpingress/" data-version-id="2.2.x">
-            2.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.6.x/guides/using-tcpingress/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.1.x/guides/using-tcpingress/" data-version-id="2.1.x">
-            2.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.0.x/guides/using-tcpingress/" data-version-id="2.0.x">
-            2.0.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.3.x/guides/using-tcpingress/" data-version-id="1.3.x">
-            1.3.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.2.x/guides/using-tcpingress/" data-version-id="1.2.x">
-            1.2.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.1.x/guides/using-tcpingress/" data-version-id="1.1.x">
-            1.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.0.x/guides/using-tcpingress/" data-version-id="1.0.x">
-            1.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.5.x/guides/using-tcpingress/" data-version-id="2.5.x">
+              2.5.x (LTS)
+            </a>
+          </li>
         
         
       </ul>
@@ -771,6 +651,12 @@ Introduction
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -786,6 +672,8 @@ Introduction
 FAQ
 
       </a>
+    
+
     
   </span>
 
@@ -804,6 +692,8 @@ Version Support Policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -821,6 +711,8 @@ Stages of Software Availability
 
       </a>
     
+
+    
   </span>
 
   
@@ -837,6 +729,8 @@ Stages of Software Availability
 Changelog
 
       </a>
+    
+
     
   </span>
 
@@ -858,13 +752,13 @@ Changelog
 
 Concepts
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Concepts subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Concepts subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -880,6 +774,8 @@ Concepts
 Architecture
 
       </a>
+    
+
     
   </span>
 
@@ -898,6 +794,8 @@ Custom Resources
 
       </a>
     
+
+    
   </span>
 
   
@@ -914,6 +812,8 @@ Custom Resources
 Deployment Methods
 
       </a>
+    
+
     
   </span>
 
@@ -932,6 +832,8 @@ Kong for Kubernetes with Kong Gateway Enterprise
 
       </a>
     
+
+    
   </span>
 
   
@@ -948,6 +850,8 @@ Kong for Kubernetes with Kong Gateway Enterprise
 High-Availability and Scaling
 
       </a>
+    
+
     
   </span>
 
@@ -966,6 +870,8 @@ Resource Classes
 
       </a>
     
+
+    
   </span>
 
   
@@ -982,6 +888,8 @@ Resource Classes
 Security
 
       </a>
+    
+
     
   </span>
 
@@ -1000,6 +908,8 @@ Ingress Resource API Versions
 
       </a>
     
+
+    
   </span>
 
   
@@ -1017,6 +927,8 @@ Gateway API
 
       </a>
     
+
+    
   </span>
 
   
@@ -1033,6 +945,8 @@ Gateway API
 Expression Based Router
 
       </a>
+    
+
     
   </span>
 
@@ -1057,6 +971,12 @@ Deployment
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1072,6 +992,8 @@ Deployment
 Kong Ingress on Minikube
 
       </a>
+    
+
     
   </span>
 
@@ -1090,6 +1012,8 @@ Kong for Kubernetes
 
       </a>
     
+
+    
   </span>
 
   
@@ -1106,6 +1030,8 @@ Kong for Kubernetes
 Kong Enterprise for Kubernetes (DB-less)
 
       </a>
+    
+
     
   </span>
 
@@ -1124,6 +1050,8 @@ Kong Enterprise for Kubernetes (DB-backed)
 
       </a>
     
+
+    
   </span>
 
   
@@ -1140,6 +1068,8 @@ Kong Enterprise for Kubernetes (DB-backed)
 Kong Ingress on AKS
 
       </a>
+    
+
     
   </span>
 
@@ -1158,6 +1088,8 @@ Kong Ingress on EKS
 
       </a>
     
+
+    
   </span>
 
   
@@ -1174,6 +1106,8 @@ Kong Ingress on EKS
 Kong Ingress on GKE
 
       </a>
+    
+
     
   </span>
 
@@ -1192,6 +1126,8 @@ Admission Webhook
 
       </a>
     
+
+    
   </span>
 
   
@@ -1208,6 +1144,8 @@ Admission Webhook
 Installing Gateway APIs
 
       </a>
+    
+
     
   </span>
 
@@ -1232,6 +1170,12 @@ Guides
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1247,6 +1191,8 @@ Guides
 Getting Started with KIC
 
       </a>
+    
+
     
   </span>
 
@@ -1265,6 +1211,8 @@ Upgrading from previous versions
 
       </a>
     
+
+    
   </span>
 
   
@@ -1281,6 +1229,8 @@ Upgrading from previous versions
 Upgrading to Kong 3.x
 
       </a>
+    
+
     
   </span>
 
@@ -1299,6 +1249,8 @@ Using Kong Gateway Enterprise
 
       </a>
     
+
+    
   </span>
 
   
@@ -1316,6 +1268,8 @@ Getting Started using Istio
 
       </a>
     
+
+    
   </span>
 
   
@@ -1330,13 +1284,13 @@ Getting Started using Istio
 
 Using Custom Resources
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using Custom Resources subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using Custom Resources subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1352,6 +1306,8 @@ Using Custom Resources
 Using the KongPlugin Resource
 
       </a>
+    
+
     
   </span>
 
@@ -1370,6 +1326,8 @@ Using the KongIngress Resource
 
       </a>
     
+
+    
   </span>
 
   
@@ -1386,6 +1344,8 @@ Using the KongIngress Resource
 Using KongConsumer and KongCredential Resources
 
       </a>
+    
+
     
   </span>
 
@@ -1404,6 +1364,8 @@ Using the TCPIngress Resource
 
       </a>
     
+
+    
   </span>
 
   
@@ -1420,6 +1382,8 @@ Using the TCPIngress Resource
 Using the UDPIngress Resource
 
       </a>
+    
+
     
   </span>
 
@@ -1443,6 +1407,8 @@ Using the ACL and JWT Plugins
 
       </a>
     
+
+    
   </span>
 
   
@@ -1459,6 +1425,8 @@ Using the ACL and JWT Plugins
 Using cert-manager with Kong
 
       </a>
+    
+
     
   </span>
 
@@ -1477,6 +1445,8 @@ Allowing Multiple Authentication Methods
 
       </a>
     
+
+    
   </span>
 
   
@@ -1493,6 +1463,8 @@ Allowing Multiple Authentication Methods
 Configuring a Fallback Service
 
       </a>
+    
+
     
   </span>
 
@@ -1511,6 +1483,8 @@ Using an External Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1527,6 +1501,8 @@ Using an External Service
 Configuring HTTPS Redirects for Services
 
       </a>
+    
+
     
   </span>
 
@@ -1545,6 +1521,8 @@ Using Redis for Rate Limiting
 
       </a>
     
+
+    
   </span>
 
   
@@ -1561,6 +1539,8 @@ Using Redis for Rate Limiting
 Integrate KIC with Prometheus/Grafana
 
       </a>
+    
+
     
   </span>
 
@@ -1579,6 +1559,8 @@ Configuring Circuit-Breaker and Health-Checking
 
       </a>
     
+
+    
   </span>
 
   
@@ -1595,6 +1577,8 @@ Configuring Circuit-Breaker and Health-Checking
 Setting up a Custom Plugin
 
       </a>
+    
+
     
   </span>
 
@@ -1613,6 +1597,8 @@ Setting up Upstream mTLS
 
       </a>
     
+
+    
   </span>
 
   
@@ -1627,13 +1613,13 @@ Setting up Upstream mTLS
 
 Exposing a TCP/UDP/gRPC Service
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Exposing a TCP/UDP/gRPC Service subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Exposing a TCP/UDP/gRPC Service subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1649,6 +1635,8 @@ Exposing a TCP/UDP/gRPC Service
 Exposing a TCP Service
 
       </a>
+    
+
     
   </span>
 
@@ -1667,6 +1655,8 @@ Exposing a UDP Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1683,6 +1673,8 @@ Exposing a UDP Service
 Exposing a gRPC service
 
       </a>
+    
+
     
   </span>
 
@@ -1706,6 +1698,8 @@ Using the mTLS Auth Plugin
 
       </a>
     
+
+    
   </span>
 
   
@@ -1722,6 +1716,8 @@ Using the mTLS Auth Plugin
 Using the OpenID Connect Plugin
 
       </a>
+    
+
     
   </span>
 
@@ -1740,6 +1736,8 @@ Rewriting Hosts and Paths
 
       </a>
     
+
+    
   </span>
 
   
@@ -1756,6 +1754,8 @@ Rewriting Hosts and Paths
 Preserving Client IP Address
 
       </a>
+    
+
     
   </span>
 
@@ -1774,6 +1774,8 @@ Using Kong with Knative
 
       </a>
     
+
+    
   </span>
 
   
@@ -1790,6 +1792,8 @@ Using Kong with Knative
 Using Multiple Backend Services
 
       </a>
+    
+
     
   </span>
 
@@ -1808,6 +1812,8 @@ Using Gateway Discovery
 
       </a>
     
+
+    
   </span>
 
   
@@ -1824,6 +1830,8 @@ Using Gateway Discovery
 Routing by Header
 
       </a>
+    
+
     
   </span>
 
@@ -1845,13 +1853,13 @@ Routing by Header
 
 References
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle References subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle References subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1867,6 +1875,8 @@ References
 KIC Annotations
 
       </a>
+    
+
     
   </span>
 
@@ -1885,6 +1895,8 @@ CLI Arguments
 
       </a>
     
+
+    
   </span>
 
   
@@ -1901,6 +1913,8 @@ CLI Arguments
 Custom Resource Definitions
 
       </a>
+    
+
     
   </span>
 
@@ -1919,6 +1933,8 @@ Plugin Compatibility
 
       </a>
     
+
+    
   </span>
 
   
@@ -1935,6 +1951,8 @@ Plugin Compatibility
 Version Compatibility
 
       </a>
+    
+
     
   </span>
 
@@ -1953,6 +1971,8 @@ Supported Kong Router Flavors
 
       </a>
     
+
+    
   </span>
 
   
@@ -1969,6 +1989,8 @@ Supported Kong Router Flavors
 Troubleshooting
 
       </a>
+    
+
     
   </span>
 
@@ -1987,6 +2009,8 @@ Kubernetes Events
 
       </a>
     
+
+    
   </span>
 
   
@@ -2003,6 +2027,8 @@ Kubernetes Events
 Prometheus Metrics
 
       </a>
+    
+
     
   </span>
 
@@ -2021,6 +2047,8 @@ Feature Gates
 
       </a>
     
+
+    
   </span>
 
   
@@ -2037,6 +2065,8 @@ Feature Gates
 Supported Gateway API Features
 
       </a>
+    
+
     
   </span>
 
@@ -2108,10 +2138,10 @@ Supported Gateway API Features
       <div class="page-content">
         <div class="content show-anchor-links">
           
+            
               <blockquote id="version-notice" class="important">
-                
-                You are browsing documentation for an outdated version.
-                
+                You are browsing documentation for an older version.
+            
                 See the <a href="/kubernetes-ingress-controller/latest/guides/services/tcp/">latest documentation here</a>.
               </blockquote>
           
@@ -2141,7 +2171,7 @@ Supported Gateway API Features
 <strong>SNI based routing</strong>: {site.base_gateway}} accepts a TLS-encrypted stream at the specified port and can route traffic to different services based on the <code class="language-plaintext highlighter-rouge">SNI</code> present in the TLS handshake. Kong Gateway also terminates the TLS handshake and forward the TCP stream to the Kubernetes Service.</li>
 </ul>
 
-<details>
+<details class="custom">
   <summary>
 <blockquote class="note">
   <p style="cursor: pointer">Before you begin ensure that you have <u>Installed Kong Ingress Controller</u> with Gateway API support in your Kubernetes cluster and are able to connect to Kong. </p>
@@ -2391,12 +2421,12 @@ deployment.apps/echo created
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="ingress" data-navtab-id="navtab-efa23cf3-a4bb-4db2-a1af-2f6e4d73ea01-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="ingress" data-navtab-id="navtab-efa2aeba-dac2-43a8-ae35-0a6cc54ad642-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Ingress
     </div>
   
     
-    <div data-slug="gateway-api" data-navtab-id="navtab-efa23cf3-a4bb-4db2-a1af-2f6e4d73ea01-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="gateway-api" data-navtab-id="navtab-efa2aeba-dac2-43a8-ae35-0a6cc54ad642-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Gateway API
     </div>
   
@@ -2404,7 +2434,7 @@ deployment.apps/echo created
   <div class="navtab-contents">
   
     
-    <div data-panel="ingress" data-navtab-content="navtab-efa23cf3-a4bb-4db2-a1af-2f6e4d73ea01-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="ingress" data-navtab-content="navtab-efa2aeba-dac2-43a8-ae35-0a6cc54ad642-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"apiVersion: configuration.konghq.com/v1beta1
 kind: TCPIngress
@@ -2427,7 +2457,7 @@ spec:
     </div>
   
     
-    <div data-panel="gateway-api" data-navtab-content="navtab-efa23cf3-a4bb-4db2-a1af-2f6e4d73ea01-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="gateway-api" data-navtab-content="navtab-efa2aeba-dac2-43a8-ae35-0a6cc54ad642-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TCPRoute
@@ -2470,12 +2500,12 @@ receives on port 9000 to <code class="language-plaintext highlighter-rouge">echo
   <div class="navtab-titles" role="tablist">
      
        
-    <div data-slug="ingress" data-navtab-id="navtab-ce5edd7d-9cfe-4507-9bde-e622e1e8f104-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="ingress" data-navtab-id="navtab-b98e6ce1-4ec4-453d-85f4-30de76db7dfb-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Ingress
     </div>
      
        
-    <div data-slug="gateway-api" data-navtab-id="navtab-ce5edd7d-9cfe-4507-9bde-e622e1e8f104-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="gateway-api" data-navtab-id="navtab-b98e6ce1-4ec4-453d-85f4-30de76db7dfb-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Gateway API
     </div>
      
@@ -2483,14 +2513,14 @@ receives on port 9000 to <code class="language-plaintext highlighter-rouge">echo
   <div class="navtab-contents">
      
        
-    <div data-panel="ingress" data-navtab-content="navtab-ce5edd7d-9cfe-4507-9bde-e622e1e8f104-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="ingress" data-navtab-content="navtab-b98e6ce1-4ec4-453d-85f4-30de76db7dfb-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
          
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get tcpingress</code></pre></div></div>
    
     </div>
      
        
-    <div data-panel="gateway-api" data-navtab-content="navtab-ce5edd7d-9cfe-4507-9bde-e622e1e8f104-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="gateway-api" data-navtab-content="navtab-b98e6ce1-4ec4-453d-85f4-30de76db7dfb-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
          
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get tcproute echo-plaintext <span class="nt">-ojsonpath</span><span class="o">=</span><span class="s1">'{.status.parents[0].conditions[?(@.reason=="Accepted")]}'</span></code></pre></div></div>
    
@@ -2505,12 +2535,12 @@ receives on port 9000 to <code class="language-plaintext highlighter-rouge">echo
   <div class="navtab-titles" role="tablist">
      
        
-    <div data-slug="ingress" data-navtab-id="navtab-d4c8ac5d-41f1-4065-94a7-f83240f454c4-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="ingress" data-navtab-id="navtab-80af630c-82ea-4a01-9634-d2be9938a7c0-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Ingress
     </div>
      
        
-    <div data-slug="gateway-api" data-navtab-id="navtab-d4c8ac5d-41f1-4065-94a7-f83240f454c4-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="gateway-api" data-navtab-id="navtab-80af630c-82ea-4a01-9634-d2be9938a7c0-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Gateway API
     </div>
      
@@ -2518,7 +2548,7 @@ receives on port 9000 to <code class="language-plaintext highlighter-rouge">echo
   <div class="navtab-contents">
      
        
-    <div data-panel="ingress" data-navtab-content="navtab-d4c8ac5d-41f1-4065-94a7-f83240f454c4-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="ingress" data-navtab-content="navtab-80af630c-82ea-4a01-9634-d2be9938a7c0-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
          
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME             ADDRESS        AGE
 echo-plaintext   &lt;PROXY_IP&gt;   3m18s
@@ -2527,7 +2557,7 @@ echo-plaintext   &lt;PROXY_IP&gt;   3m18s
     </div>
      
        
-    <div data-panel="gateway-api" data-navtab-content="navtab-d4c8ac5d-41f1-4065-94a7-f83240f454c4-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="gateway-api" data-navtab-content="navtab-80af630c-82ea-4a01-9634-d2be9938a7c0-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
          
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"lastTransitionTime":"2022-11-14T19:48:51Z","message":"","observedGeneration":2,"reason":"Accepted","status":"True","type":"Accepted"}
 </code></pre></div></div>
@@ -2578,12 +2608,12 @@ with routing configuration is typical.</p>
   <div class="navtab-titles" role="tablist">
      
        
-    <div data-slug="openssl-111" data-navtab-id="navtab-cf004875-4e90-47cc-86c9-e554f594f906-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="openssl-111" data-navtab-id="navtab-3e46219b-0060-44f7-96a6-72bf8e2b1043-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       OpenSSL 1.1.1
     </div>
      
        
-    <div data-slug="openssl-098" data-navtab-id="navtab-cf004875-4e90-47cc-86c9-e554f594f906-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="openssl-098" data-navtab-id="navtab-3e46219b-0060-44f7-96a6-72bf8e2b1043-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       OpenSSL 0.9.8
     </div>
      
@@ -2591,7 +2621,7 @@ with routing configuration is typical.</p>
   <div class="navtab-contents">
      
        
-    <div data-panel="openssl-111" data-navtab-content="navtab-cf004875-4e90-47cc-86c9-e554f594f906-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="openssl-111" data-navtab-content="navtab-3e46219b-0060-44f7-96a6-72bf8e2b1043-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
          
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-subj</span> <span class="s1">'/CN=tls9443.kong.example'</span> <span class="nt">-new</span> <span class="nt">-newkey</span> rsa:2048 <span class="nt">-sha256</span> <span class="se">\</span>
   <span class="nt">-days</span> 365 <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-keyout</span> server.key <span class="nt">-out</span> server.crt <span class="se">\</span>
@@ -2603,7 +2633,7 @@ with routing configuration is typical.</p>
     </div>
      
        
-    <div data-panel="openssl-098" data-navtab-content="navtab-cf004875-4e90-47cc-86c9-e554f594f906-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="openssl-098" data-navtab-content="navtab-3e46219b-0060-44f7-96a6-72bf8e2b1043-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
          
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-subj</span> <span class="s1">'/CN=tls9443.kong.example'</span> <span class="nt">-new</span> <span class="nt">-newkey</span> rsa:2048 <span class="nt">-sha256</span> <span class="se">\</span>
   <span class="nt">-days</span> 365 <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-keyout</span> server.key <span class="nt">-out</span> server.crt <span class="se">\</span>
@@ -2622,12 +2652,12 @@ with routing configuration is typical.</p>
   <div class="navtab-titles" role="tablist">
      
        
-    <div data-slug="openssl-111" data-navtab-id="navtab-51d94617-6453-408a-8139-1b76b4f2161b-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="openssl-111" data-navtab-id="navtab-05d51edd-d47e-441c-b316-ffa7bbfe0482-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       OpenSSL 1.1.1
     </div>
      
        
-    <div data-slug="openssl-098" data-navtab-id="navtab-51d94617-6453-408a-8139-1b76b4f2161b-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="openssl-098" data-navtab-id="navtab-05d51edd-d47e-441c-b316-ffa7bbfe0482-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       OpenSSL 0.9.8
     </div>
      
@@ -2635,14 +2665,14 @@ with routing configuration is typical.</p>
   <div class="navtab-contents">
      
        
-    <div data-panel="openssl-111" data-navtab-content="navtab-51d94617-6453-408a-8139-1b76b4f2161b-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="openssl-111" data-navtab-content="navtab-05d51edd-d47e-441c-b316-ffa7bbfe0482-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
          
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject=CN = tls9443.kong.example</code></pre></div></div>
    
     </div>
      
        
-    <div data-panel="openssl-098" data-navtab-content="navtab-51d94617-6453-408a-8139-1b76b4f2161b-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="openssl-098" data-navtab-content="navtab-05d51edd-d47e-441c-b316-ffa7bbfe0482-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
          
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject=CN = tls9443.kong.example</code></pre></div></div>
    
@@ -2669,12 +2699,12 @@ with routing configuration is typical.</p>
   <div class="navtab-titles" role="tablist">
      
        
-    <div data-slug="ingress" data-navtab-id="navtab-620085bc-f7b4-44f5-90e4-3051716da715-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="ingress" data-navtab-id="navtab-1064eef4-7516-4cac-8113-d3105cdb3427-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Ingress
     </div>
      
        
-    <div data-slug="gateway-api" data-navtab-id="navtab-620085bc-f7b4-44f5-90e4-3051716da715-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="gateway-api" data-navtab-id="navtab-1064eef4-7516-4cac-8113-d3105cdb3427-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Gateway API
     </div>
      
@@ -2682,7 +2712,7 @@ with routing configuration is typical.</p>
   <div class="navtab-contents">
      
        
-    <div data-panel="ingress" data-navtab-content="navtab-620085bc-f7b4-44f5-90e4-3051716da715-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="ingress" data-navtab-content="navtab-1064eef4-7516-4cac-8113-d3105cdb3427-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
          
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"apiVersion: configuration.konghq.com/v1beta1
 kind: TCPIngress
@@ -2706,7 +2736,7 @@ spec:
     </div>
      
        
-    <div data-panel="gateway-api" data-navtab-content="navtab-620085bc-f7b4-44f5-90e4-3051716da715-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="gateway-api" data-navtab-content="navtab-1064eef4-7516-4cac-8113-d3105cdb3427-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
          
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TLSRoute
@@ -2734,12 +2764,12 @@ spec:
   <div class="navtab-titles" role="tablist">
      
        
-    <div data-slug="ingress" data-navtab-id="navtab-32fe2cfb-95b6-4250-bc59-c899b00b6000-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="ingress" data-navtab-id="navtab-3e00f466-9cf6-4901-89ab-d43c8bbd4fb0-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Ingress
     </div>
      
        
-    <div data-slug="gateway-api" data-navtab-id="navtab-32fe2cfb-95b6-4250-bc59-c899b00b6000-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="gateway-api" data-navtab-id="navtab-3e00f466-9cf6-4901-89ab-d43c8bbd4fb0-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Gateway API
     </div>
      
@@ -2747,14 +2777,14 @@ spec:
   <div class="navtab-contents">
      
        
-    <div data-panel="ingress" data-navtab-content="navtab-32fe2cfb-95b6-4250-bc59-c899b00b6000-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="ingress" data-navtab-content="navtab-3e00f466-9cf6-4901-89ab-d43c8bbd4fb0-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
          
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tcpingress.configuration.konghq.com/echo-tls created</code></pre></div></div>
    
     </div>
      
        
-    <div data-panel="gateway-api" data-navtab-content="navtab-32fe2cfb-95b6-4250-bc59-c899b00b6000-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="gateway-api" data-navtab-content="navtab-3e00f466-9cf6-4901-89ab-d43c8bbd4fb0-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
          
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tcproute.gateway.networking.k8s.io/echo-tls created</code></pre></div></div>
    
@@ -2853,13 +2883,12 @@ hello
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -3007,8 +3036,8 @@ hello
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -3018,16 +3047,6 @@ hello
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

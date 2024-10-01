@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Using KongIngress resource - v2.10.x | Kong Docs</title>
+  <title>Using KongIngress resource - Kong Ingress Controller - v2.10.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Using KongIngress resource - v2.10.x | Kong Docs">
+  <meta property="og:title" content="Using KongIngress resource - Kong Ingress Controller - v2.10.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -402,6 +404,7 @@
         <div class="version">
           2.10.x
           
+          
         </div>
         
       </div>
@@ -517,6 +520,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -547,209 +553,83 @@
         <span>
           Version 2.10.x
           
+          
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/3.0.x" data-version-id="3.0.x">
-            3.0.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.12.x/guides/using-kongingress-resource/" data-version-id="2.12.x">
-            2.12.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.3.x/" data-version-id="3.3.x">
+              3.3.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.11.x/guides/using-kongingress-resource/" data-version-id="2.11.x">
-            2.11.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.2.x/" data-version-id="3.2.x">
+              3.2.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.10.x/guides/using-kongingress-resource/" class="active" data-version-id="2.10.x">
-            2.10.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.1.x/" data-version-id="3.1.x">
+              3.1.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.9.x/guides/using-kongingress-resource/" data-version-id="2.9.x">
-            2.9.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.0.x/" data-version-id="3.0.x">
+              3.0.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.8.x/guides/using-kongingress-resource/" data-version-id="2.8.x">
-            2.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.12.x/guides/using-kongingress-resource/" data-version-id="2.12.x">
+              2.12.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.7.x/guides/using-kongingress-resource/" data-version-id="2.7.x">
-            2.7.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.11.x/guides/using-kongingress-resource/" data-version-id="2.11.x">
+              2.11.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.6.x/guides/using-kongingress-resource/" data-version-id="2.6.x">
-            2.6.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.10.x/guides/using-kongingress-resource/" class="active" data-version-id="2.10.x">
+              2.10.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.5.x/guides/using-kongingress-resource/" data-version-id="2.5.x">
-            2.5.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.9.x/guides/using-kongingress-resource/" data-version-id="2.9.x">
+              2.9.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.4.x/guides/using-kongingress-resource/" data-version-id="2.4.x">
-            2.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.8.x/guides/using-kongingress-resource/" data-version-id="2.8.x">
+              2.8.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.3.x/guides/using-kongingress-resource/" data-version-id="2.3.x">
-            2.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.7.x/guides/using-kongingress-resource/" data-version-id="2.7.x">
+              2.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.2.x/guides/using-kongingress-resource/" data-version-id="2.2.x">
-            2.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.6.x/guides/using-kongingress-resource/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.1.x/guides/using-kongingress-resource/" data-version-id="2.1.x">
-            2.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.0.x/guides/using-kongingress-resource/" data-version-id="2.0.x">
-            2.0.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.3.x/guides/using-kongingress-resource/" data-version-id="1.3.x">
-            1.3.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.2.x/guides/using-kongingress-resource/" data-version-id="1.2.x">
-            1.2.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.1.x/guides/using-kongingress-resource/" data-version-id="1.1.x">
-            1.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.0.x/guides/using-kongingress-resource/" data-version-id="1.0.x">
-            1.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.5.x/guides/using-kongingress-resource/" data-version-id="2.5.x">
+              2.5.x (LTS)
+            </a>
+          </li>
         
         
       </ul>
@@ -771,6 +651,12 @@ Introduction
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -786,6 +672,8 @@ Introduction
 FAQ
 
       </a>
+    
+
     
   </span>
 
@@ -804,6 +692,8 @@ Version Support Policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -821,6 +711,8 @@ Stages of Software Availability
 
       </a>
     
+
+    
   </span>
 
   
@@ -837,6 +729,8 @@ Stages of Software Availability
 Changelog
 
       </a>
+    
+
     
   </span>
 
@@ -858,13 +752,13 @@ Changelog
 
 Concepts
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Concepts subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Concepts subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -880,6 +774,8 @@ Concepts
 Architecture
 
       </a>
+    
+
     
   </span>
 
@@ -898,6 +794,8 @@ Custom Resources
 
       </a>
     
+
+    
   </span>
 
   
@@ -914,6 +812,8 @@ Custom Resources
 Deployment Methods
 
       </a>
+    
+
     
   </span>
 
@@ -932,6 +832,8 @@ Kong for Kubernetes with Kong Gateway Enterprise
 
       </a>
     
+
+    
   </span>
 
   
@@ -948,6 +850,8 @@ Kong for Kubernetes with Kong Gateway Enterprise
 High-Availability and Scaling
 
       </a>
+    
+
     
   </span>
 
@@ -966,6 +870,8 @@ Resource Classes
 
       </a>
     
+
+    
   </span>
 
   
@@ -982,6 +888,8 @@ Resource Classes
 Security
 
       </a>
+    
+
     
   </span>
 
@@ -1000,6 +908,8 @@ Ingress Resource API Versions
 
       </a>
     
+
+    
   </span>
 
   
@@ -1017,6 +927,8 @@ Gateway API
 
       </a>
     
+
+    
   </span>
 
   
@@ -1033,6 +945,8 @@ Gateway API
 Expression Based Router
 
       </a>
+    
+
     
   </span>
 
@@ -1057,6 +971,12 @@ Deployment
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1072,6 +992,8 @@ Deployment
 Kong Ingress on Minikube
 
       </a>
+    
+
     
   </span>
 
@@ -1090,6 +1012,8 @@ Kong for Kubernetes
 
       </a>
     
+
+    
   </span>
 
   
@@ -1106,6 +1030,8 @@ Kong for Kubernetes
 Kong Enterprise for Kubernetes (DB-less)
 
       </a>
+    
+
     
   </span>
 
@@ -1124,6 +1050,8 @@ Kong Enterprise for Kubernetes (DB-backed)
 
       </a>
     
+
+    
   </span>
 
   
@@ -1140,6 +1068,8 @@ Kong Enterprise for Kubernetes (DB-backed)
 Kong Ingress on AKS
 
       </a>
+    
+
     
   </span>
 
@@ -1158,6 +1088,8 @@ Kong Ingress on EKS
 
       </a>
     
+
+    
   </span>
 
   
@@ -1174,6 +1106,8 @@ Kong Ingress on EKS
 Kong Ingress on GKE
 
       </a>
+    
+
     
   </span>
 
@@ -1192,6 +1126,8 @@ Admission Webhook
 
       </a>
     
+
+    
   </span>
 
   
@@ -1208,6 +1144,8 @@ Admission Webhook
 Installing Gateway APIs
 
       </a>
+    
+
     
   </span>
 
@@ -1232,6 +1170,12 @@ Guides
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1247,6 +1191,8 @@ Guides
 Getting Started with KIC
 
       </a>
+    
+
     
   </span>
 
@@ -1265,6 +1211,8 @@ Upgrading from previous versions
 
       </a>
     
+
+    
   </span>
 
   
@@ -1281,6 +1229,8 @@ Upgrading from previous versions
 Upgrading to Kong 3.x
 
       </a>
+    
+
     
   </span>
 
@@ -1299,6 +1249,8 @@ Using Kong Gateway Enterprise
 
       </a>
     
+
+    
   </span>
 
   
@@ -1316,6 +1268,8 @@ Getting Started using Istio
 
       </a>
     
+
+    
   </span>
 
   
@@ -1330,13 +1284,13 @@ Getting Started using Istio
 
 Using Custom Resources
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using Custom Resources subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using Custom Resources subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1352,6 +1306,8 @@ Using Custom Resources
 Using the KongPlugin Resource
 
       </a>
+    
+
     
   </span>
 
@@ -1370,6 +1326,8 @@ Using the KongIngress Resource
 
       </a>
     
+
+    
   </span>
 
   
@@ -1386,6 +1344,8 @@ Using the KongIngress Resource
 Using KongConsumer and KongCredential Resources
 
       </a>
+    
+
     
   </span>
 
@@ -1404,6 +1364,8 @@ Using the TCPIngress Resource
 
       </a>
     
+
+    
   </span>
 
   
@@ -1420,6 +1382,8 @@ Using the TCPIngress Resource
 Using the UDPIngress Resource
 
       </a>
+    
+
     
   </span>
 
@@ -1443,6 +1407,8 @@ Using the ACL and JWT Plugins
 
       </a>
     
+
+    
   </span>
 
   
@@ -1459,6 +1425,8 @@ Using the ACL and JWT Plugins
 Using cert-manager with Kong
 
       </a>
+    
+
     
   </span>
 
@@ -1477,6 +1445,8 @@ Allowing Multiple Authentication Methods
 
       </a>
     
+
+    
   </span>
 
   
@@ -1493,6 +1463,8 @@ Allowing Multiple Authentication Methods
 Configuring a Fallback Service
 
       </a>
+    
+
     
   </span>
 
@@ -1511,6 +1483,8 @@ Using an External Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1527,6 +1501,8 @@ Using an External Service
 Configuring HTTPS Redirects for Services
 
       </a>
+    
+
     
   </span>
 
@@ -1545,6 +1521,8 @@ Using Redis for Rate Limiting
 
       </a>
     
+
+    
   </span>
 
   
@@ -1561,6 +1539,8 @@ Using Redis for Rate Limiting
 Integrate KIC with Prometheus/Grafana
 
       </a>
+    
+
     
   </span>
 
@@ -1579,6 +1559,8 @@ Configuring Circuit-Breaker and Health-Checking
 
       </a>
     
+
+    
   </span>
 
   
@@ -1595,6 +1577,8 @@ Configuring Circuit-Breaker and Health-Checking
 Setting up a Custom Plugin
 
       </a>
+    
+
     
   </span>
 
@@ -1613,6 +1597,8 @@ Setting up Upstream mTLS
 
       </a>
     
+
+    
   </span>
 
   
@@ -1627,13 +1613,13 @@ Setting up Upstream mTLS
 
 Exposing a TCP/UDP/gRPC Service
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Exposing a TCP/UDP/gRPC Service subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Exposing a TCP/UDP/gRPC Service subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1649,6 +1635,8 @@ Exposing a TCP/UDP/gRPC Service
 Exposing a TCP Service
 
       </a>
+    
+
     
   </span>
 
@@ -1667,6 +1655,8 @@ Exposing a UDP Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1683,6 +1673,8 @@ Exposing a UDP Service
 Exposing a gRPC service
 
       </a>
+    
+
     
   </span>
 
@@ -1706,6 +1698,8 @@ Using the mTLS Auth Plugin
 
       </a>
     
+
+    
   </span>
 
   
@@ -1722,6 +1716,8 @@ Using the mTLS Auth Plugin
 Using the OpenID Connect Plugin
 
       </a>
+    
+
     
   </span>
 
@@ -1740,6 +1736,8 @@ Rewriting Hosts and Paths
 
       </a>
     
+
+    
   </span>
 
   
@@ -1756,6 +1754,8 @@ Rewriting Hosts and Paths
 Preserving Client IP Address
 
       </a>
+    
+
     
   </span>
 
@@ -1774,6 +1774,8 @@ Using Kong with Knative
 
       </a>
     
+
+    
   </span>
 
   
@@ -1790,6 +1792,8 @@ Using Kong with Knative
 Using Multiple Backend Services
 
       </a>
+    
+
     
   </span>
 
@@ -1808,6 +1812,8 @@ Using Gateway Discovery
 
       </a>
     
+
+    
   </span>
 
   
@@ -1824,6 +1830,8 @@ Using Gateway Discovery
 Routing by Header
 
       </a>
+    
+
     
   </span>
 
@@ -1845,13 +1853,13 @@ Routing by Header
 
 References
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle References subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle References subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1867,6 +1875,8 @@ References
 KIC Annotations
 
       </a>
+    
+
     
   </span>
 
@@ -1885,6 +1895,8 @@ CLI Arguments
 
       </a>
     
+
+    
   </span>
 
   
@@ -1901,6 +1913,8 @@ CLI Arguments
 Custom Resource Definitions
 
       </a>
+    
+
     
   </span>
 
@@ -1919,6 +1933,8 @@ Plugin Compatibility
 
       </a>
     
+
+    
   </span>
 
   
@@ -1935,6 +1951,8 @@ Plugin Compatibility
 Version Compatibility
 
       </a>
+    
+
     
   </span>
 
@@ -1953,6 +1971,8 @@ Supported Kong Router Flavors
 
       </a>
     
+
+    
   </span>
 
   
@@ -1969,6 +1989,8 @@ Supported Kong Router Flavors
 Troubleshooting
 
       </a>
+    
+
     
   </span>
 
@@ -1987,6 +2009,8 @@ Kubernetes Events
 
       </a>
     
+
+    
   </span>
 
   
@@ -2003,6 +2027,8 @@ Kubernetes Events
 Prometheus Metrics
 
       </a>
+    
+
     
   </span>
 
@@ -2021,6 +2047,8 @@ Feature Gates
 
       </a>
     
+
+    
   </span>
 
   
@@ -2037,6 +2065,8 @@ Feature Gates
 Supported Gateway API Features
 
       </a>
+    
+
     
   </span>
 
@@ -2093,10 +2123,10 @@ Supported Gateway API Features
       <div class="page-content">
         <div class="content show-anchor-links">
           
+            
               <blockquote id="version-notice" class="important">
-                
-                You are browsing documentation for an outdated version.
-                
+                You are browsing documentation for an older version.
+            
                 See the <a href="/kubernetes-ingress-controller/latest/guides/migrate/kongingress/">latest documentation here</a>.
               </blockquote>
           
@@ -2187,12 +2217,12 @@ create a class configuration to associate routes with:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="gateway-api" data-navtab-id="navtab-6869f714-c9c7-4c0d-bc59-c767b50e85fd-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="gateway-api" data-navtab-id="navtab-5528bd27-a50c-4d03-8b05-b4a2b21f1ee9-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Gateway API
     </div>
   
     
-    <div data-slug="ingress" data-navtab-id="navtab-6869f714-c9c7-4c0d-bc59-c767b50e85fd-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="ingress" data-navtab-id="navtab-5528bd27-a50c-4d03-8b05-b4a2b21f1ee9-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Ingress
     </div>
   
@@ -2200,25 +2230,22 @@ create a class configuration to associate routes with:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="gateway-api" data-navtab-content="navtab-6869f714-c9c7-4c0d-bc59-c767b50e85fd-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="gateway-api" data-navtab-content="navtab-5528bd27-a50c-4d03-8b05-b4a2b21f1ee9-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
 ---
 
 apiVersion: gateway.networking.k8s.io/v1beta1
-
 kind: GatewayClass
 metadata:
   name: kong
   annotations:
     konghq.com/gatewayclass-unmanaged: 'true'
-
 spec:
   controllerName: konghq.com/kic-gateway-controller
 ---
 
 apiVersion: gateway.networking.k8s.io/v1beta1
-
 kind: Gateway
 metadata:
   name: kong
@@ -2238,7 +2265,7 @@ gateway.gateway.networking.k8s.io/kong created
     </div>
   
     
-    <div data-panel="ingress" data-navtab-content="navtab-6869f714-c9c7-4c0d-bc59-c767b50e85fd-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="ingress" data-navtab-content="navtab-5528bd27-a50c-4d03-8b05-b4a2b21f1ee9-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <p>Official distributions of Kong Ingress Controller come with a <code class="language-plaintext highlighter-rouge">kong</code>
 IngressClass by default. If <code class="language-plaintext highlighter-rouge">kubectl get ingressclass kong</code> does not return a
@@ -2292,12 +2319,12 @@ by defining an Ingress.</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-87a3195f-9cbf-4106-91b7-756495bdc71f-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-00b4e92b-6bbb-400e-8690-80c2f1fd5d02-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-87a3195f-9cbf-4106-91b7-756495bdc71f-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-00b4e92b-6bbb-400e-8690-80c2f1fd5d02-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2305,7 +2332,7 @@ by defining an Ingress.</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-87a3195f-9cbf-4106-91b7-756495bdc71f-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-00b4e92b-6bbb-400e-8690-80c2f1fd5d02-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
 apiVersion: networking.k8s.io/v1
@@ -2330,7 +2357,7 @@ spec:
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-87a3195f-9cbf-4106-91b7-756495bdc71f-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-00b4e92b-6bbb-400e-8690-80c2f1fd5d02-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.extensions/demo created
 </code></pre></div></div>
@@ -2346,12 +2373,12 @@ spec:
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-8772426f-106f-4ade-bfe6-345e404b169c-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-bca52b30-1b22-47b8-ad77-5ff67d81e755-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-8772426f-106f-4ade-bfe6-345e404b169c-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-bca52b30-1b22-47b8-ad77-5ff67d81e755-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2359,7 +2386,7 @@ spec:
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-8772426f-106f-4ade-bfe6-345e404b169c-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-bca52b30-1b22-47b8-ad77-5ff67d81e755-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nv">$PROXY_IP</span>/foo
 </code></pre></div></div>
@@ -2367,7 +2394,7 @@ spec:
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-8772426f-106f-4ade-bfe6-345e404b169c-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-bca52b30-1b22-47b8-ad77-5ff67d81e755-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Content-Type: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>UTF-8
@@ -2423,12 +2450,12 @@ defining the new behaviour:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-8557b0af-8f73-4989-a678-fdc554e1d9f7-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-87ce51cd-3784-4fa2-9e42-1c031ae5eb14-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-8557b0af-8f73-4989-a678-fdc554e1d9f7-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-87ce51cd-3784-4fa2-9e42-1c031ae5eb14-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2436,7 +2463,7 @@ defining the new behaviour:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-8557b0af-8f73-4989-a678-fdc554e1d9f7-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-87ce51cd-3784-4fa2-9e42-1c031ae5eb14-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"apiVersion: configuration.konghq.com/v1
 kind: KongIngress
@@ -2452,7 +2479,7 @@ upstream:
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-8557b0af-8f73-4989-a678-fdc554e1d9f7-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-87ce51cd-3784-4fa2-9e42-1c031ae5eb14-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kongingress.configuration.konghq.com/test created
 </code></pre></div></div>
@@ -2469,12 +2496,12 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-91185f4e-7b93-457c-80dd-62b9b2b3bdbc-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-3f271192-25ef-49d0-8929-c6a1756da16a-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-91185f4e-7b93-457c-80dd-62b9b2b3bdbc-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-3f271192-25ef-49d0-8929-c6a1756da16a-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2482,7 +2509,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-91185f4e-7b93-457c-80dd-62b9b2b3bdbc-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-3f271192-25ef-49d0-8929-c6a1756da16a-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl patch service <span class="nb">echo</span> <span class="nt">-p</span> <span class="s1">'{"metadata":{"annotations":{"konghq.com/override":"sample-customization"}}}'</span>
 </code></pre></div></div>
@@ -2490,7 +2517,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-91185f4e-7b93-457c-80dd-62b9b2b3bdbc-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-3f271192-25ef-49d0-8929-c6a1756da16a-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service/echo patched
 </code></pre></div></div>
@@ -2507,12 +2534,12 @@ same Pod:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-70354c94-16eb-47d3-853e-6f9ad9581fd9-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-c0f1e97e-0793-4916-9518-03dd93d9bd3c-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-70354c94-16eb-47d3-853e-6f9ad9581fd9-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-c0f1e97e-0793-4916-9518-03dd93d9bd3c-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2520,7 +2547,7 @@ same Pod:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-70354c94-16eb-47d3-853e-6f9ad9581fd9-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-c0f1e97e-0793-4916-9518-03dd93d9bd3c-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>n <span class="k">in</span> <span class="o">{</span>1..5<span class="o">}</span><span class="p">;</span> <span class="k">do </span>curl <span class="nt">-s</span> <span class="nv">$PROXY_IP</span>/foo | <span class="nb">grep</span> <span class="s2">"pod name:"</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div></div>
@@ -2528,7 +2555,7 @@ same Pod:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-70354c94-16eb-47d3-853e-6f9ad9581fd9-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-c0f1e97e-0793-4916-9518-03dd93d9bd3c-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	pod name:	echo-588c888c78-6jrmn
 	pod name:	echo-588c888c78-6jrmn
@@ -2549,12 +2576,12 @@ same replica when using the same value:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-8bdd0c58-4b9c-4994-8556-44ce6f0e0edf-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-c4d61104-4028-4e06-a3a5-f50aaf7009a9-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-8bdd0c58-4b9c-4994-8556-44ce6f0e0edf-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-c4d61104-4028-4e06-a3a5-f50aaf7009a9-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2562,7 +2589,7 @@ same replica when using the same value:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-8bdd0c58-4b9c-4994-8556-44ce6f0e0edf-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-c4d61104-4028-4e06-a3a5-f50aaf7009a9-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>n <span class="k">in</span> <span class="o">{</span>1..3<span class="o">}</span><span class="p">;</span> <span class="k">do
   </span>curl <span class="nt">-s</span> <span class="nv">$PROXY_IP</span>/foo <span class="nt">-H</span> <span class="s2">"x-lb: foo"</span> | <span class="nb">grep</span> <span class="s2">"pod name:"</span><span class="p">;</span>
@@ -2574,7 +2601,7 @@ same replica when using the same value:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-8bdd0c58-4b9c-4994-8556-44ce6f0e0edf-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-c4d61104-4028-4e06-a3a5-f50aaf7009a9-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	pod name:	echo-588c888c78-nk4jc
 	pod name:	echo-588c888c78-nk4jc
@@ -2599,12 +2626,12 @@ replica:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-1a9f6252-fcc6-4154-b7b5-b839aebccd93-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-6ab0e0c6-66d4-4219-8b59-9d901bd645bb-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-1a9f6252-fcc6-4154-b7b5-b839aebccd93-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-6ab0e0c6-66d4-4219-8b59-9d901bd645bb-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2612,7 +2639,7 @@ replica:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-1a9f6252-fcc6-4154-b7b5-b839aebccd93-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-6ab0e0c6-66d4-4219-8b59-9d901bd645bb-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl patch deploy <span class="nb">echo</span> <span class="nt">--patch</span> <span class="s1">'{"spec": {"replicas": 3}}'</span>
 </code></pre></div></div>
@@ -2620,7 +2647,7 @@ replica:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-1a9f6252-fcc6-4154-b7b5-b839aebccd93-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-6ab0e0c6-66d4-4219-8b59-9d901bd645bb-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deployment.apps/echo patched
 </code></pre></div></div>
@@ -2634,12 +2661,12 @@ replica:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-c98e6b75-6a9a-4a22-984d-96bec4e46116-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-d94bdda9-5ab3-4d95-83e4-38ed43a1151c-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-c98e6b75-6a9a-4a22-984d-96bec4e46116-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-d94bdda9-5ab3-4d95-83e4-38ed43a1151c-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2647,7 +2674,7 @@ replica:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-c98e6b75-6a9a-4a22-984d-96bec4e46116-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-d94bdda9-5ab3-4d95-83e4-38ed43a1151c-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>n <span class="k">in</span> <span class="o">{</span>1..3<span class="o">}</span><span class="p">;</span> <span class="k">do
   </span>curl <span class="nt">-s</span> <span class="nv">$PROXY_IP</span>/foo <span class="nt">-H</span> <span class="s2">"x-lb: foo"</span> | <span class="nb">grep</span> <span class="s2">"pod name:"</span><span class="p">;</span>
@@ -2659,7 +2686,7 @@ replica:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-c98e6b75-6a9a-4a22-984d-96bec4e46116-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-d94bdda9-5ab3-4d95-83e4-38ed43a1151c-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	pod name:	echo-588c888c78-nk4jc
 	pod name:	echo-588c888c78-d477r
@@ -2731,12 +2758,12 @@ name:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-559a3747-9ac1-4a17-8f2e-7fcc7d421caf-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-3f1db34e-fb83-4641-add4-2816e542a5f2-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-559a3747-9ac1-4a17-8f2e-7fcc7d421caf-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-3f1db34e-fb83-4641-add4-2816e542a5f2-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2744,7 +2771,7 @@ name:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-559a3747-9ac1-4a17-8f2e-7fcc7d421caf-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-3f1db34e-fb83-4641-add4-2816e542a5f2-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
 apiVersion: networking.k8s.io/v1
@@ -2769,7 +2796,7 @@ spec:
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-559a3747-9ac1-4a17-8f2e-7fcc7d421caf-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-3f1db34e-fb83-4641-add4-2816e542a5f2-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.extensions/demo-copy created
 </code></pre></div></div>
@@ -2792,12 +2819,12 @@ using DB-less mode, as both routes are then re-added at the same time.</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-36906b4d-9bc3-4688-b412-54a4a4045726-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-e030a22a-f175-4725-a156-88601d5820e9-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-36906b4d-9bc3-4688-b412-54a4a4045726-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-e030a22a-f175-4725-a156-88601d5820e9-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2805,7 +2832,7 @@ using DB-less mode, as both routes are then re-added at the same time.</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-36906b4d-9bc3-4688-b412-54a4a4045726-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-e030a22a-f175-4725-a156-88601d5820e9-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
 ---
@@ -2835,7 +2862,7 @@ route:
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-36906b4d-9bc3-4688-b412-54a4a4045726-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-e030a22a-f175-4725-a156-88601d5820e9-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kongingress.configuration.konghq.com/header-alpha created
 kongingress.configuration.konghq.com/header-bravo created
@@ -2853,12 +2880,12 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-0714b4d4-7c1e-46ce-87ca-9ea466a05f84-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-10cc2d8c-7659-4d9c-a51e-3b443262ac01-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-0714b4d4-7c1e-46ce-87ca-9ea466a05f84-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-10cc2d8c-7659-4d9c-a51e-3b443262ac01-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2866,7 +2893,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-0714b4d4-7c1e-46ce-87ca-9ea466a05f84-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-10cc2d8c-7659-4d9c-a51e-3b443262ac01-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl patch ingress demo <span class="nt">-p</span> <span class="s1">'{"metadata":{"annotations":{"konghq.com/override":"header-alpha"}}}'</span>
 </code></pre></div></div>
@@ -2874,7 +2901,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-0714b4d4-7c1e-46ce-87ca-9ea466a05f84-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-10cc2d8c-7659-4d9c-a51e-3b443262ac01-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.extensions/demo patched
 </code></pre></div></div>
@@ -2888,12 +2915,12 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-33932bed-0010-4fd2-b4a9-47fb1652c638-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-59627612-2ac3-4a89-a472-d9c80710500f-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-33932bed-0010-4fd2-b4a9-47fb1652c638-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-59627612-2ac3-4a89-a472-d9c80710500f-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2901,7 +2928,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-33932bed-0010-4fd2-b4a9-47fb1652c638-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-59627612-2ac3-4a89-a472-d9c80710500f-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl patch ingress demo-copy <span class="nt">-p</span> <span class="s1">'{"metadata":{"annotations":{"konghq.com/override":"header-bravo"}}}'</span>
 </code></pre></div></div>
@@ -2909,7 +2936,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-33932bed-0010-4fd2-b4a9-47fb1652c638-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-59627612-2ac3-4a89-a472-d9c80710500f-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ingress.extensions/demo-copy patched
 </code></pre></div></div>
@@ -2925,12 +2952,12 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-d6f4edee-187d-4fd0-8d08-c729af4f773a-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-8941c0ea-12be-4655-9769-5eb5b6d00f72-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-d6f4edee-187d-4fd0-8d08-c729af4f773a-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-8941c0ea-12be-4655-9769-5eb5b6d00f72-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2938,7 +2965,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-d6f4edee-187d-4fd0-8d08-c729af4f773a-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-8941c0ea-12be-4655-9769-5eb5b6d00f72-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nv">$PROXY_IP</span>/foo
 </code></pre></div></div>
@@ -2946,7 +2973,7 @@ using the <code class="language-plaintext highlighter-rouge">konghq.com/override
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-d6f4edee-187d-4fd0-8d08-c729af4f773a-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-8941c0ea-12be-4655-9769-5eb5b6d00f72-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span><span class="s2">"message"</span>:<span class="s2">"no Route matched with those values"</span><span class="o">}</span>
 </code></pre></div></div>
@@ -2963,12 +2990,12 @@ You’ll be able to access both routes depending on which header you use:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-0424f686-47a9-4a46-ab68-566c68fb17ce-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-d2d5530c-5426-47f1-8d18-b79d6a3f4497-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-0424f686-47a9-4a46-ab68-566c68fb17ce-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-d2d5530c-5426-47f1-8d18-b79d6a3f4497-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -2976,7 +3003,7 @@ You’ll be able to access both routes depending on which header you use:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-0424f686-47a9-4a46-ab68-566c68fb17ce-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-d2d5530c-5426-47f1-8d18-b79d6a3f4497-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sv</span> <span class="nv">$PROXY_IP</span>/foo <span class="nt">-H</span> <span class="s2">"kong-debug: 1"</span> <span class="nt">-H</span> <span class="s2">"x-split: alpha"</span> 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-i</span> kong-route-name
 </code></pre></div></div>
@@ -2984,7 +3011,7 @@ You’ll be able to access both routes depending on which header you use:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-0424f686-47a9-4a46-ab68-566c68fb17ce-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-d2d5530c-5426-47f1-8d18-b79d6a3f4497-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt; Kong-Route-Name: default.demo.00
 </code></pre></div></div>
@@ -2998,12 +3025,12 @@ You’ll be able to access both routes depending on which header you use:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-e24202de-f5c2-4fad-b2c7-f2a301418f20-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-704229c7-5057-4e85-90f1-589db6d01c18-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-e24202de-f5c2-4fad-b2c7-f2a301418f20-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-704229c7-5057-4e85-90f1-589db6d01c18-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -3011,7 +3038,7 @@ You’ll be able to access both routes depending on which header you use:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-e24202de-f5c2-4fad-b2c7-f2a301418f20-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-704229c7-5057-4e85-90f1-589db6d01c18-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sv</span> <span class="nv">$PROXY_IP</span>/foo <span class="nt">-H</span> <span class="s2">"kong-debug: 1"</span> <span class="nt">-H</span> <span class="s2">"x-split: bravo"</span> <span class="nt">-H</span> <span class="s2">"x-legacy: enabled"</span>  2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-i</span> kong-route-name
 </code></pre></div></div>
@@ -3019,7 +3046,7 @@ You’ll be able to access both routes depending on which header you use:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-e24202de-f5c2-4fad-b2c7-f2a301418f20-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-704229c7-5057-4e85-90f1-589db6d01c18-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt; Kong-Route-Name: default.demo-copy.00
 </code></pre></div></div>
@@ -3033,12 +3060,12 @@ You’ll be able to access both routes depending on which header you use:</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="command" data-navtab-id="navtab-96f413dc-2260-4d82-bd50-be909c76e614-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="command" data-navtab-id="navtab-74e54831-56af-4959-994a-b87c36423b43-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Command
     </div>
   
     
-    <div data-slug="response" data-navtab-id="navtab-96f413dc-2260-4d82-bd50-be909c76e614-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="response" data-navtab-id="navtab-74e54831-56af-4959-994a-b87c36423b43-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Response
     </div>
   
@@ -3046,7 +3073,7 @@ You’ll be able to access both routes depending on which header you use:</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="command" data-navtab-content="navtab-96f413dc-2260-4d82-bd50-be909c76e614-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="command" data-navtab-content="navtab-74e54831-56af-4959-994a-b87c36423b43-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sv</span> <span class="nv">$PROXY_IP</span>/foo <span class="nt">-H</span> <span class="s2">"kong-debug: 1"</span> <span class="nt">-H</span> <span class="s2">"x-split: charlie"</span> <span class="nt">-H</span> <span class="s2">"x-legacy: enabled"</span>  2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-i</span> kong-route-name
 </code></pre></div></div>
@@ -3054,7 +3081,7 @@ You’ll be able to access both routes depending on which header you use:</p>
     </div>
   
     
-    <div data-panel="response" data-navtab-content="navtab-96f413dc-2260-4d82-bd50-be909c76e614-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="response" data-navtab-content="navtab-74e54831-56af-4959-994a-b87c36423b43-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt; Kong-Route-Name: default.demo-copy.00
 </code></pre></div></div>
@@ -3137,13 +3164,12 @@ individual values configured for a given header.</p>
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -3291,8 +3317,8 @@ individual values configured for a given header.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -3302,16 +3328,6 @@ individual values configured for a given header.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

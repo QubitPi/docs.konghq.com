@@ -1,0 +1,3672 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GraphQL Rate Limiting Advanced Configuration - Plugin - v3.6.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="GraphQL Rate Limiting Advanced Configuration - Plugin - v3.6.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/graphql-rate-limiting-advanced/configuration/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/configuration/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=traffic-control">Traffic Control</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/">GraphQL Rate Limiting Advanced</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/configuration/">Configuration</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/kong-ee/edit/master/plugins-ee/graphql-rate-limiting-advanced/kong/plugins/graphql-rate-limiting-advanced/schema.lua" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_graphql-rate-limiting-advanced.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">GraphQL Rate Limiting Advanced Configuration</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 3.6.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/configuration/">
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.5.x/configuration/">
+                    3.5.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.4.x/configuration/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.3.x/configuration/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.2.x/configuration/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.1.x/configuration/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.0.x/configuration/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/2.8.x/configuration/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/2.7.x/configuration/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/graphql-rate-limiting-advanced/2.6.x/configuration/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/how-to/costs/">
+        
+
+Managing costs
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/how-to/">
+        
+
+Getting Started with GraphQL and Kong Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/api/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-reference.svg" alt="">
+
+
+Costs API reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=graphql-rate-limiting-advanced" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
+  </ul>
+
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#configuration" class="active scroll-to">Configuration</a>
+    <ul>
+      <li><a href="#" class="scroll-to">Compatible protocols</a></li>
+      <li><a href="#parameters" class="scroll-to">Parameters</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          
+          
+      
+        
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
+        
+      
+
+      <h2 id="configuration">Configuration</h2>
+
+
+  <p>This plugin is <strong>partially compatible</strong> with DB-less mode.</p>
+
+
+
+  <p>The cluster strategy is not supported in DB-less and hybrid modes. For Kong
+Gateway in DB-less or hybrid mode, use the <code class="language-plaintext highlighter-rouge">redis</code> strategy.</p>
+
+
+
+
+  
+  
+    
+    
+      <h3>Compatible protocols</h3>
+      <p>The GraphQL Rate Limiting Advanced plugin is compatible with the following protocols:</p>
+      <p> <code>grpc</code>, <code>grpcs</code>, <code>http</code>, <code>https</code></p>
+      
+    
+  
+
+
+<h3 id="parameters">Parameters</h3>
+
+<p>Here's a list of all the parameters which can be used in this plugin's configuration: </p>
+
+<ul class="fields">
+  <li class="field">
+    <div class="field-overview">
+      <h4 id="name">name or plugin</h4>
+    </div>
+    <div class="field-attributes">
+      <span><strong>string</strong></span>
+      <span class="required"><strong>required</strong></span>
+    </div>
+    <div class="field-description-and-children">
+      
+      <p class="field-description">The name of the plugin, in this case <code>
+graphql-rate-limiting-advanced</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
+    </div>
+  </li>
+
+  
+    <li class="field">
+      <div class="field-overview">
+        <h4 id="instance_name">instance_name</h4>
+      </div>
+      <div class="field-attributes">
+        <span><strong>string</strong></span>
+      </div>
+      <div class="field-description-and-children">
+        <p class="field-description">
+          An optional custom name to identify an instance of the plugin, for example <code>graphql-rate-limiting-advanced_my-service</code>.
+        </p>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
+    </li>
+  
+
+  
+    <li class="field">
+      <div class="field-overview">
+        <h4 id="service">service.name or service.id</h4>
+      </div>
+      <div class="field-attributes">
+        <span><strong>string</strong></span>
+        
+      </div>
+      <div class="field-description-and-children">
+        <p class="field-description">
+          The name or ID of the service the plugin targets.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
+        </p>
+      </div>
+    </li>
+  
+
+  
+    <li class="field">
+      <div class="field-overview">
+        <h4 id="route">route.name or route.id</h4>
+      </div>
+      <div class="field-attributes">
+        <span><strong>string</strong></span>
+      </div>
+      <div class="field-description-and-children">
+        <p class="field-description">
+          The name or ID of the route the plugin targets.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
+        </p>
+      </div>
+    </li>
+  
+
+  
+    <li class="field">
+      <div class="field-overview">
+        <h4 id="consumer">consumer.name or consumer.id</h4>
+      </div>
+      <div class="field-attributes">
+        <span><strong>string</strong></span>
+      </div>
+      <div class="field-description-and-children">
+        <p class="field-description">
+          The name or ID of the consumer the plugin targets.
+          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/consumers/{consumerName|Id}/plugins</code>.
+        </p>
+      </div>
+    </li>
+  
+
+  
+
+  <li class="field">
+    <div class="field-overview">
+      <h4 id="enabled">enabled</h4>
+    </div>
+    <div class="field-attributes">
+      <span><strong>boolean</strong></span>
+      <span><strong>default: </strong><code>true</code></span>
+    </div>
+    <div class="field-description-and-children">
+      <p class="field-description">Whether this plugin will be applied.</p>
+    </div>
+  </li>
+
+  
+
+  
+    <li class="field">
+  <div class="field-overview">
+    <h4 id="config">
+      config
+    </h4>
+    
+      <span class="field-subfield__expand">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>record</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+</div>
+
+    
+
+    
+      <div class="field-subfield__params">
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-identifier">
+      identifier
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>consumer</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>ip</code>, <code>credential</code>, <code>consumer</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>How to define the rate limit key. Can be <code class="language-plaintext highlighter-rouge">ip</code>, <code class="language-plaintext highlighter-rouge">credential</code>, <code class="language-plaintext highlighter-rouge">consumer</code>.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-window_size">
+      window_size
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>number</code>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>One or more window sizes to apply a limit to (defined in seconds).</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-window_type">
+      window_type
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>sliding</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>fixed</code>, <code>sliding</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Sets the time window to either <code class="language-plaintext highlighter-rouge">sliding</code> or <code class="language-plaintext highlighter-rouge">fixed</code>.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-limit">
+      limit
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>number</code>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>One or more requests-per-window limits to apply.</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-sync_rate">
+      sync_rate
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>number</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>How often to sync counter data to the central data store. A value of 0 results in synchronous behavior; a value of -1 ignores sync behavior entirely and only stores counters in node memory. A value greater than 0 syncs the counters in that many number of seconds.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-namespace">
+      namespace
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The rate limiting library namespace to use for this plugin instance. NOTE: For the plugin instances sharing the same namespace, all the configurations that are required for synchronizing counters, e.g. <code class="language-plaintext highlighter-rouge">strategy</code>, <code class="language-plaintext highlighter-rouge">redis</code>, <code class="language-plaintext highlighter-rouge">sync_rate</code>, <code class="language-plaintext highlighter-rouge">window_size</code>, <code class="language-plaintext highlighter-rouge">dictionary_name</code>, need to be the same.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-strategy">
+      strategy
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>cluster</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>cluster</code>, <code>redis</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The rate-limiting strategy to use for retrieving and incrementing the limits.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-dictionary_name">
+      dictionary_name
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>kong_rate_limiting_counters</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The shared dictionary where counters will be stored until the next sync cycle.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-hide_client_headers">
+      hide_client_headers
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>boolean</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>false</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Optionally hide informative response headers. Available options: <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-cost_strategy">
+      cost_strategy
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>default</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>default</code>, <code>node_quantifier</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Strategy to use to evaluate query costs. Either <code class="language-plaintext highlighter-rouge">default</code> or <code class="language-plaintext highlighter-rouge">node_quantifier</code>.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-score_factor">
+      score_factor
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>number</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>1</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>A scoring factor to multiply (or divide) the cost. The <code class="language-plaintext highlighter-rouge">score_factor</code> must always be greater than 0.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-max_cost">
+      max_cost
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>number</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>0</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>A defined maximum cost per query. 0 means unlimited.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis">
+      redis
+    </h4>
+    
+      <span class="field-subfield__expand">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>record</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+</div>
+
+    
+
+    
+      <div class="field-subfield__params">
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-host">
+      host
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>A string representing a host name, such as example.com.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-port">
+      port
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>0</code>
+        <code>65535</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>An integer representing a port number between 0 and 65535, inclusive.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-timeout">
+      timeout
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>2000</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>0</code>
+        <code>2147483646</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-connect_timeout">
+      connect_timeout
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>0</code>
+        <code>2147483646</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-send_timeout">
+      send_timeout
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>0</code>
+        <code>2147483646</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-read_timeout">
+      read_timeout
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>0</code>
+        <code>2147483646</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-username">
+      username
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+      <span>
+        <strong>referenceable</strong>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Username to use for Redis connections. If undefined, ACL authentication won’t be performed. This requires Redis v6.0.0+. To be compatible with Redis v5.x.y, you can set it to <code class="language-plaintext highlighter-rouge">default</code>.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-password">
+      password
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+      <span>
+        <strong>referenceable</strong>
+      </span>
+    
+
+    
+      <span>
+        <strong>encrypted</strong>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Password to use for Redis connections. If undefined, no AUTH commands are sent to Redis.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-sentinel_username">
+      sentinel_username
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+      <span>
+        <strong>referenceable</strong>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Sentinel username to authenticate with a Redis Sentinel instance. If undefined, ACL authentication won’t be performed. This requires Redis v6.2.0+.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-sentinel_password">
+      sentinel_password
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+      <span>
+        <strong>referenceable</strong>
+      </span>
+    
+
+    
+      <span>
+        <strong>encrypted</strong>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Sentinel password to authenticate with a Redis Sentinel instance. If undefined, no AUTH commands are sent to Redis Sentinels.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-database">
+      database
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>0</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Database to use for the Redis connection when using the <code class="language-plaintext highlighter-rouge">redis</code> strategy</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-keepalive_pool_size">
+      keepalive_pool_size
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>256</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>1</code>
+        <code>2147483646</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The size limit for every cosocket connection pool associated with every remote server, per worker process. If neither <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code> nor <code class="language-plaintext highlighter-rouge">keepalive_backlog</code> is specified, no pool is created. If <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code> isn’t specified but <code class="language-plaintext highlighter-rouge">keepalive_backlog</code> is specified, then the pool uses the default value. Try to increase (e.g. 512) this value if latency is high or throughput is low.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-keepalive_backlog">
+      keepalive_backlog
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>between: </strong>
+        <code>0</code>
+        <code>2147483646</code>
+      </span>
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Limits the total number of opened connections for a pool. If the connection pool is full, connection queues above the limit go into the backlog queue. If the backlog queue is full, subsequent connect operations fail and return <code class="language-plaintext highlighter-rouge">nil</code>. Queued operations (subject to set timeouts) resume once the number of connections in the pool is less than <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code>. If latency is high or throughput is low, try increasing this value. Empirically, this value is larger than <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code>.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-sentinel_master">
+      sentinel_master
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Sentinel master to use for Redis connections. Defining this value implies using Redis Sentinel.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-sentinel_role">
+      sentinel_role
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>master</code>, <code>slave</code>, <code>any</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Sentinel role to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined. Defining this value implies using Redis Sentinel.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-sentinel_addresses">
+      sentinel_addresses
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>string</code>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>len_min: </strong>
+        <code>1</code>
+      </span>
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Sentinel addresses to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined. Defining this value implies using Redis Sentinel. Each string element must be a hostname. The minimum length of the array is 1 element.</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-cluster_addresses">
+      cluster_addresses
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>string</code>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+        <strong>len_min: </strong>
+        <code>1</code>
+      </span>
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Cluster addresses to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined. Defining this value implies using Redis Cluster. Each string element must be a hostname. The minimum length of the array is 1 element.</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-ssl">
+      ssl
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>boolean</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>false</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>If set to true, uses SSL to connect to Redis.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-ssl_verify">
+      ssl_verify
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>boolean</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>false</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>If set to true, verifies the validity of the server SSL certificate. If setting this parameter, also configure <code class="language-plaintext highlighter-rouge">lua_ssl_trusted_certificate</code> in <code class="language-plaintext highlighter-rouge">kong.conf</code> to specify the CA (or server) certificate used by your Redis server. You may also need to configure <code class="language-plaintext highlighter-rouge">lua_ssl_verify_depth</code> accordingly.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-redis-server_name">
+      server_name
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>A string representing an SNI (server name indication) value for TLS.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+      </div>
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+      </div>
+    
+
+    
+      
+    
+  </div>
+</li>
+
+  
+</ul>
+
+
+
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+      <div class="book-nav previous">
+        <span class="direction">Previous</span>
+        <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/">GraphQL Rate Limiting Advanced</a>
+      </div>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/graphql-rate-limiting-advanced/3.6.x/how-to/basic-example/">Basic config examples for GraphQL Rate Limiting Advanced</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"3.6.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:3.6.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

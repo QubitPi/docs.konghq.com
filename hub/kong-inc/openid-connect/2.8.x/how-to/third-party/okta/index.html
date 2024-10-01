@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OpenID Connect with Okta - Plugin - v2.8.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="OpenID Connect with Okta - Plugin - v2.8.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/hub/kong-inc/openid-connect/how-to/third-party/okta/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<!-- BEGIN PAGE OUTPUT -->
+<div class="search-selector">Plugin Hub</div>
+
+<div class="page v2 hub" data-url="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/okta/">
+  <div class="page--header-background"></div>
+  <div class="container">
+    
+
+
+<header class="page-header">
+  <div class="page-header--nav">
+    <i class="sidebar-toggle"></i>
+
+    
+      <ul class="breadcrumbs">
+        <li class="breadcrumb-item">
+          <a href="/hub/">
+            <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Plugin Hub icon">
+          </a>
+        </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/?category=authentication">Authentication</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              <a href="/hub/kong-inc/openid-connect/2.8.x/">OpenID Connect</a>
+            
+          </li>
+        
+          <li class="breadcrumb-item">
+            
+              How to
+            
+          </li>
+        
+          <li class="breadcrumb-item active">
+            
+              <a href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/okta/">OpenID Connect with Okta</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/openid-connect/how-to/third-party/_okta.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+  </div>
+  <div class="page-header--info">
+    <div class="page-header--info-icon">
+      
+      <img src="/assets/images/icons/hub/kong-inc_openid-connect.png" alt="header icon">
+      
+    </div>
+    <div class="page-header--info-meta">
+      <div class="meta--title">
+        <h1 id="main" tabindex="-1">OpenID Connect with Okta</h1>
+
+        
+          <div>
+            <div class="versions-dropdown dropdown">
+              <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Gateway
+                
+
+                Version 2.8.x
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+                
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/unreleased/how-to/third-party/okta/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/how-to/third-party/okta/">
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.7.x/how-to/third-party/okta/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.6.x/how-to/third-party/okta/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.5.x/how-to/third-party/okta/">
+                    3.5.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.4.x/how-to/third-party/okta/">
+                    3.4.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.3.x/how-to/third-party/okta/">
+                    3.3.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/okta/">
+                    3.2.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.1.x/how-to/third-party/okta/">
+                    3.1.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.0.x/how-to/third-party/okta/">
+                    3.0.x
+                  </a>
+                </li>
+                
+                <li class="active">
+                  <a href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/okta/">
+                    2.8.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/2.7.x/how-to/third-party/okta/">
+                    2.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/2.6.x/how-to/third-party/okta/">
+                    2.6.x
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+      <div class="meta--content">
+        <div class="meta--content-title"><span>By Kong Inc.</span></div>
+        <div class="meta--content-badges">
+          
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+    <aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <ul class="sidebar-container" role="tree" aria-label="Plugin's Documentation">
+    <li class="sidebar-item plugin-hub" role="none">
+      <span role="treeitem" class="sidebar-label">
+        <a class="sidebar-link" tabindex="-1" href="/hub/">
+          
+  <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="">
+
+
+Plugin Hub
+
+        </a>
+      </span>
+    </li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-overview.svg" alt="">
+
+
+Introduction
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/primary-config-params/">
+        
+
+Important config parameters
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/support/">
+        
+
+Supported credentials, grants, and tested IdPs
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/configuration/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-configuration.svg" alt="">
+
+
+Configuration reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-using-the-plugin-subtree">
+    
+      
+  <img src="/assets/images/icons/hub-layout/icn-how-to.svg" alt="">
+
+
+Using the plugin
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-using-the-plugin-subtree" role="group" aria-label="Using the plugin">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/basic-example/">
+        
+
+Basic config examples
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-authentication-subtree">
+    
+      
+
+Authentication
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authentication subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-2-authentication-subtree" role="group" aria-label="Authentication">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/authorization-code-flow/">
+        
+
+Authorization code flow
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/client-credentials/">
+        
+
+Client credentials grant
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/introspection/">
+        
+
+Introspection
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/jwt-access-token/">
+        
+
+JWT access token
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/kong-oauth-token/">
+        
+
+Kong OAuth token
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/password-grant/">
+        
+
+Password grant
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/refresh-token/">
+        
+
+Refresh token grant
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/session/">
+        
+
+Session
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authentication/user-info/">
+        
+
+User info
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-3-authorization-subtree">
+    
+      
+
+Authorization
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authorization subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-3-authorization-subtree" role="group" aria-label="Authorization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authorization/acl/">
+        
+
+ACL
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authorization/claims/">
+        
+
+Claims
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/authorization/consumer/">
+        
+
+Consumer
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-third-party-subtree">
+    
+      
+
+Third Party
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Third Party subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-4-third-party-subtree" role="group" aria-label="Third Party">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/auth0/">
+        
+
+OpenID Connect with Auth0
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/azure-ad/">
+        
+
+OpenID Connect with Azure AD
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/cognito/">
+        
+
+OpenID Connect with Amazon Cognito
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/curity/">
+        
+
+OpenID Connect with Curity
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/google/">
+        
+
+OpenID Connect with Google
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/okta/">
+        
+
+OpenID Connect with Okta
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/debugging/">
+        
+
+Debugging
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/headers/">
+        
+
+Headers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/logout/">
+        
+
+Logout
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/how-to/records/">
+        
+
+Records reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/api/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-reference.svg" alt="">
+
+
+OpenID Connect API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/2.8.x/changelog/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-changelog.svg" alt="">
+
+
+Changelog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+    
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=openid-connect" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
+  </ul>
+
+</aside>
+
+
+    <aside class="docs-toc" id="plugin-toc">
+  <i class="fa fa-times close-sidebar"></i>
+  <i class="fa fa-chevron-right collapse-toc"></i>
+  <i class="far fa-list-alt expand-toc"></i>
+
+  
+    <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#authorization-code-flow-with-the-openid-connect-plugin-and-okta" class="active scroll-to">Authorization code flow with the OpenID Connect plugin and Okta</a>
+    <ul>
+      <li><a href="#sign-in-flow" class="scroll-to">Sign-in flow</a></li>
+      <li><a href="#access-flow" class="scroll-to">Access flow</a></li>
+      <li><a href="#session-flow" class="scroll-to">Session flow</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#example-of-configuring-the-oidc-plugin-with-okta" class="scroll-to">Example of configuring the OIDC plugin with Okta</a>
+    <ul>
+      <li><a href="#prerequisites" class="scroll-to">Prerequisites</a></li>
+      <li><a href="#configure-okta" class="scroll-to">Configure Okta</a></li>
+      <li><a href="#configure-the-oidc-plugin-in-kong-gateway" class="scroll-to">Configure the OIDC plugin in Kong Gateway</a></li>
+      <li><a href="#test-your-configuration" class="scroll-to">Test your configuration</a></li>
+      <li><a href="#access-restrictions" class="scroll-to">Access restrictions</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  
+</aside>
+
+
+    <div class="page-content-container v2" id="documentation">
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+
+          
+          
+      
+        
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
+        
+      
+
+      <p>This guide covers an example OpenID Connect plugin configuration to authenticate browser clients using an Okta identity provider.</p>
+
+<p>For information about configuring OIDC using Okta as an Identity provider
+in conjunction with the Application Registration plugin, see
+<a href="/gateway/latest/kong-enterprise/dev-portal/authentication/okta-config">Set Up External Portal Application Authentication with Okta and OIDC</a>.</p>
+
+<h2 id="authorization-code-flow-with-the-openid-connect-plugin-and-okta">Authorization code flow with the OpenID Connect plugin and Okta</h2>
+
+<h3 id="sign-in-flow">Sign-in flow</h3>
+
+<!--vale off-->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      'primaryColor': '#fff',
+      'primaryBorderColor': '#4a86e8',
+      'primaryTextColor': '#495c64',
+      'secondaryColor': '#fff',
+      'secondaryTextColor': '#5096f2',
+      'tertiaryBorderColor': '#AAB4BB',
+      'edgeLabelBackground': '#fff',
+      'fontFamily': 'Roboto',
+      'fontSize': '15px',
+      'lineColor': '#99b0c0',
+      'activationBorderColor': '#c2d4e0',
+      'sequenceNumberColor': '#fff'
+    }
+  });
+</script>
+
+<pre class="mermaid"> 
+sequenceDiagram
+    autonumber
+    participant client as Client <br>(e.g. mobile app)
+    participant kong as Kong
+    participant okta as Okta
+    activate client
+    activate kong
+    client-&gt;&gt;kong: Client initiates sign-in
+    kong-&gt;&gt;client: Kong sends auth cookie<br>and redirects to Okta
+    deactivate kong
+    activate okta
+    client-&gt;&gt;okta: Client signs in to Okta
+    okta-&gt;&gt;client: Okta sends auth code<br>and redirects to Kong
+    deactivate okta
+    deactivate client
+  </pre>
+<!--vale on-->
+
+<ol>
+  <li>If the client does not have a session cookie, it initiates sign in with Kong.</li>
+  <li>Kong responds to the client with an <strong>authorization cookie</strong> and a location to redirect (with Okta as the header).</li>
+  <li>the client redirects to Okta so the user can sign in.</li>
+  <li>Okta responds with an <strong>authorization code</strong> and a location to redirect (with Kong as the header).</li>
+</ol>
+
+<p>At this point, the client has successfully signed in and has an <strong>authorization code</strong> (from Okta) and an <strong>authorization cookie</strong> (from Kong).</p>
+
+<h3 id="access-flow">Access flow</h3>
+
+<!--vale off-->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      'primaryColor': '#fff',
+      'primaryBorderColor': '#4a86e8',
+      'primaryTextColor': '#495c64',
+      'secondaryColor': '#fff',
+      'secondaryTextColor': '#5096f2',
+      'tertiaryBorderColor': '#AAB4BB',
+      'edgeLabelBackground': '#fff',
+      'fontFamily': 'Roboto',
+      'fontSize': '15px',
+      'lineColor': '#99b0c0',
+      'activationBorderColor': '#c2d4e0',
+      'sequenceNumberColor': '#fff'
+    }
+  });
+</script>
+
+<pre class="mermaid"> 
+sequenceDiagram
+    autonumber 5
+    participant client as Client <br>(e.g. mobile app)
+    participant kong as Kong
+    participant okta as Okta
+    participant service as Upstream service
+    activate client
+    activate kong
+    client-&gt;&gt;kong: Client forwards auth code from Okta<br>and auth cookie from Kong
+    deactivate client
+    activate okta
+    kong-&gt;&gt;okta: Kong verifies auth code with Okta
+    okta-&gt;&gt;kong: Okta sends access token and ID token
+    deactivate okta
+    activate service
+    kong-&gt;&gt;service: Kong sends<br> client request<br>with access token
+    service-&gt;&gt;kong: Service sends<br>response to Kong
+    deactivate service
+    activate client
+    kong-&gt;&gt;client: Kong sends service response<br>with a session cookie
+    deactivate client
+    deactivate kong
+  </pre>
+<!--vale on-->
+
+<ol>
+  <li>The client redirects to Kong and automatically sends the <strong>authorization code</strong> (from Okta) and an <strong>authorization cookie</strong> (from Kong).</li>
+  <li>Kong verifies the <strong>authorization code</strong> with Okta.</li>
+  <li>Okta sends and <strong>access token</strong> and <strong>ID token</strong> to Kong.</li>
+  <li>Kong proxies the client request with the <strong>access token</strong> from Okta.</li>
+  <li>Kong receives a service response.</li>
+  <li>Kong sends the service response to the client, along with a <strong>session cookie</strong> for future access.</li>
+</ol>
+
+<p>At this point, the client now has a <strong>session</strong> with Kong that allows mediated access to the service.</p>
+
+<h3 id="session-flow">Session flow</h3>
+
+<!--vale off-->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      'primaryColor': '#fff',
+      'primaryBorderColor': '#4a86e8',
+      'primaryTextColor': '#495c64',
+      'secondaryColor': '#fff',
+      'secondaryTextColor': '#5096f2',
+      'tertiaryBorderColor': '#AAB4BB',
+      'edgeLabelBackground': '#fff',
+      'fontFamily': 'Roboto',
+      'fontSize': '15px',
+      'lineColor': '#99b0c0',
+      'activationBorderColor': '#c2d4e0',
+      'sequenceNumberColor': '#fff'
+    }
+  });
+</script>
+
+<pre class="mermaid"> 
+sequenceDiagram
+    autonumber 11
+    participant client as Client <br>(e.g. mobile app)
+    participant kong as Kong
+    participant service as Upstream service
+    activate client
+    activate kong
+    client-&gt;&gt;kong: Client sends request<br>with session cookie (from Kong)
+    deactivate client
+    activate service
+    kong-&gt;&gt;service: Kong sends access token<br>(from Okta)
+    service-&gt;&gt;kong: Service sends response to Kong
+    deactivate service
+    activate client
+    kong-&gt;&gt;client: Kong sends service response to client
+    deactivate kong
+    deactivate client
+  </pre>
+<!--vale on-->
+
+<ol>
+  <li>The client sends requests with a <strong>session cookie</strong>.</li>
+  <li>Kong matches the session cookie to the associate <strong>access token</strong> and proxies the request.</li>
+  <li>Kong gets a response from the service.</li>
+  <li>Kong sends the response to the client.</li>
+</ol>
+
+<p>Kong’s session with the client ensures that the client does not need to make constant requests to Okta. The duration of the session can be configured.</p>
+
+<h2 id="example-of-configuring-the-oidc-plugin-with-okta">Example of configuring the OIDC plugin with Okta</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>The steps in the guide offer an example of configuring OIDC with Okta on a specific route. To follow this guide, you need the following:</p>
+
+<ul>
+  <li>A <a href="https://developer.okta.com" target="_blank" rel="noopener nofollow noreferrer ">developer account</a> with Okta.</li>
+  <li>A running version of Kong Gateway.</li>
+  <li>Access to the <a href="/hub/kong-inc/openid-connect/">OpenID Connect plugin</a>.</li>
+  <li>A <a href="/gateway/latest/admin-api/#service-object">service</a>
+and <a href="/gateway/latest/admin-api/#route-object">route</a> in
+Kong Gateway whose access you want to protect with Okta. For this
+guide, assume the route is in the default workspace.</li>
+  <li>If using Kong Gateway locally, you need Internet access.</li>
+  <li>
+    <p>Any network access control to your Kong node must allow traffic to and from Okta, the upstream service, and the client.</p>
+
+    <p>For security reasons, make sure all requests are sent over HTTPS, and make the Kong proxy available
+   with a fully-qualified domain name and <a href="/gateway/latest/admin-api/#certificate-object">properly configured certificate</a>.
+   Authorization tokens should also be stored securely.</p>
+  </li>
+</ul>
+
+<h3 id="configure-okta">Configure Okta</h3>
+
+<ol>
+  <li>
+<a href="https://developer.okta.com/docs/guides/add-an-external-idp/openidconnect/register-app-in-okta/" target="_blank" rel="noopener nofollow noreferrer ">Register</a> the application you are using Kong to proxy.</li>
+  <li>From the left menu, select <strong>Applications</strong>, then <strong>Create App Integration</strong>.</li>
+  <li>
+    <p>Select the application type:</p>
+
+    <ol>
+      <li>Under <strong>Sign-in method</strong>, select <strong>OIDC - OpenID Connect</strong>.</li>
+      <li>Under <strong>Application Type</strong>, select <strong>Web Application</strong>.</li>
+    </ol>
+  </li>
+  <li>Select <strong>Next</strong>. Configure the application:
+    <ol>
+      <li>Create a unique name for your application.</li>
+      <li>Under <strong>Grant Type</strong>, select <strong>Authorization Code</strong>.</li>
+      <li>
+        <p>In both the <strong>Sign-in redirect URIs</strong> and
+ <strong>Sign-out redirect URIs</strong> fields, enter a location handled by your route
+ in Kong Gateway.</p>
+
+        <p>For this example, you can enter <code class="language-plaintext highlighter-rouge">https://kong.com/api</code>.</p>
+      </li>
+      <li>In the Assignments section, for <strong>Controlled access</strong>, choose your
+ preferred access level for this application. This preferred access level sets the permissions for
+ Okta admins.</li>
+    </ol>
+
+    <p>Do not select <strong>Allow everyone in your organization to access</strong> otherwise the <strong>access token</strong> won’t be verified against Okta.</p>
+
+    <p>Either select <strong>Limit access to selected groups</strong> or <strong>Skip group assignment for now</strong> and assign the users and groups in a later step.</p>
+  </li>
+  <li>
+    <p>Save your settings to generate connection details.</p>
+
+    <p>Leave this page open. You’ll need the details here to configure the Kong OIDC plugin.</p>
+  </li>
+  <li>
+    <p>Add an Authorization Server. From the left sidebar, go to
+<strong>Security &gt; API &gt; Authorization Server</strong> and create a server named
+ <strong>Kong API Management</strong> with an audience and description. Click <strong>Save</strong>.</p>
+
+    <p>On the page that appears, note the <strong>Issuer</strong> address. You need this address
+ to configure the Kong OIDC Plugin.</p>
+  </li>
+  <li>Now add a policy from the <strong>Access Policies</strong> tab.
+    <ol>
+      <li>Click <strong>Add New Access Policy</strong> and add a <strong>Name</strong> and <strong>Description</strong>
+</li>
+      <li>Add a <strong>rule</strong>
+</li>
+      <li>Assign a <strong>Rule Name</strong> and use the default settings, or adjust to your requirements.</li>
+      <li>Click <strong>Create Rule</strong>
+</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="configure-the-oidc-plugin-in-kong-gateway">Configure the OIDC plugin in Kong Gateway</h3>
+
+<h4 id="minimum-configuration-requirements">Minimum configuration requirements</h4>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="configure-plugin-with-kong-manager" data-navtab-id="navtab-ed8ddc38-f78e-41a3-ac11-e8ac2c5aef72-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Configure plugin with Kong Manager
+    </div>
+  
+    
+    <div data-slug="configure-plugin-with-admin-api" data-navtab-id="navtab-ed8ddc38-f78e-41a3-ac11-e8ac2c5aef72-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Configure plugin with Admin API
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="configure-plugin-with-kong-manager" data-navtab-content="navtab-ed8ddc38-f78e-41a3-ac11-e8ac2c5aef72-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<ol>
+  <li>
+    <p>In Kong Manager, from the Workspaces tab, select the workspace where your
+route is configured.</p>
+  </li>
+  <li>
+    <p>Click <strong>Routes</strong> in the left navigation.</p>
+  </li>
+  <li>
+    <p>On the Routes page, select the route you have configured to protect with
+Okta and click <strong>View</strong>.</p>
+  </li>
+  <li>
+    <p>Scroll to the bottom of the page and click <strong>Add Plugin</strong>.</p>
+  </li>
+  <li>
+    <p>Select the <strong>OpenID Connect</strong> plugin.</p>
+  </li>
+  <li>
+    <p>On the plugin’s configuration, in the <strong>Common</strong> tab, configure the
+following, at minimum:</p>
+
+    <ol>
+      <li>
+        <p><strong>Issuer (Discovery Document URI)</strong>:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> https://{YOUR_OKTA_DOMAIN}/oauth2/{YOUR_AUTH_SERVER}/.well-known/openid-configuration
+</code></pre></div>        </div>
+
+        <p>The <code class="language-plaintext highlighter-rouge">issuer</code> URL can be found in your Authorization Server settings.</p>
+      </li>
+      <li>
+        <p><strong>Client ID</strong>: <code class="language-plaintext highlighter-rouge">{YOUR_CLIENT_ID}</code></p>
+
+        <p>Replace <code class="language-plaintext highlighter-rouge">YOUR_CLIENT_ID</code> with the client ID shown in your Okta
+ application’s <strong>General</strong> page.</p>
+      </li>
+      <li>
+        <p><strong>Client Secret</strong>: <code class="language-plaintext highlighter-rouge">{YOUR_CLIENT_SECRET}</code></p>
+
+        <p>Replace <code class="language-plaintext highlighter-rouge">YOUR_CLIENT_SECRET</code> with the client secret shown in your Okta
+ application’s <strong>General</strong> page.</p>
+      </li>
+      <li>
+        <p><strong>Auth Methods</strong>: <code class="language-plaintext highlighter-rouge">Authorization code flow</code></p>
+
+        <p>This parameter lists of all the authentication methods
+ that you want the plugin to accept. If you don’t select an auth method,
+ all auth methods are allowed by default.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>On the <strong>Authorization</strong> tab, configure the following, at a minimum:</p>
+
+    <ol>
+      <li>
+        <p>For <strong>config.scopes</strong>, enter <code class="language-plaintext highlighter-rouge">openid, email, profile</code>. This parameter is the scope of what OpenID Connect checks.</p>
+      </li>
+      <li>
+        <p>For <strong>config.scopes claim</strong>, enter <code class="language-plaintext highlighter-rouge">scp</code>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Switch to the <strong>Advanced</strong> tab and fill out <strong>config.redirect_uri</strong> with
+ <code class="language-plaintext highlighter-rouge">https://kong.com/api</code>.</p>
+
+    <p>The <code class="language-plaintext highlighter-rouge">redirect_uri</code> should be the URI you specified earlier when configuring
+  your app. This is the <code class="language-plaintext highlighter-rouge">redirect_uri</code> of the client defined with <code class="language-plaintext highlighter-rouge">client_id</code> (also used as a redirection URI for the authorization code flow).</p>
+  </li>
+  <li>
+    <p>Click <strong>Create</strong> to save and apply the plugin to the route.</p>
+  </li>
+</ol>
+
+<p>For a list of all available configuration parameters and what they do, see the
+<a href="/hub/kong-inc/openid-connect">OIDC plugin reference</a>.</p>
+
+
+    </div>
+  
+    
+    <div data-panel="configure-plugin-with-admin-api" data-navtab-content="navtab-ed8ddc38-f78e-41a3-ac11-e8ac2c5aef72-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>Configure the OpenID Connect plugin using the following sample values:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> POST https://localhost:8001/routes/ROUTE_ID/plugins <span class="se">\</span>
+  <span class="nt">--data</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"openid-connect"</span>                                                                             <span class="se">\</span>
+  <span class="nt">--data</span> config.issuer<span class="o">=</span><span class="s2">"https://YOUR_OKTA_DOMAIN/oauth2/YOUR_AUTH_SERVER/.well-known/openid-configuration"</span> <span class="se">\</span>
+  <span class="nt">--data</span> config.client_id<span class="o">=</span><span class="s2">"YOUR_CLIENT_ID"</span>                                                                 <span class="se">\</span>
+  <span class="nt">--data</span> config.client_secret<span class="o">=</span><span class="s2">"YOUR_CLIENT_SECRET"</span>                                                         <span class="se">\</span>
+  <span class="nt">--data</span> config.redirect_uri<span class="o">=</span><span class="s2">"https://kong.com/api"</span>                                                        <span class="se">\</span>
+  <span class="nt">--data</span> config.scopes_claim<span class="o">=</span><span class="s2">"scp"</span>                                                                         <span class="se">\</span>
+  <span class="nt">--data</span> config.scopes<span class="o">=</span><span class="s2">"openid"</span>                                                                            <span class="se">\</span>
+  <span class="nt">--data</span> config.scopes<span class="o">=</span><span class="s2">"email"</span>                                                                             <span class="se">\</span>
+  <span class="nt">--data</span> config.scopes<span class="o">=</span><span class="s2">"profile"</span>                                                                           <span class="se">\</span>
+  <span class="nt">--data</span> config.auth_methods<span class="o">=</span>authorization_code
+</code></pre></div></div>
+
+<p>In this example, the configuration contains the following values:</p>
+
+<ul>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">issuer</code></strong>: The issuer <code class="language-plaintext highlighter-rouge">url</code> from which OpenID Connect configuration can be discovered. Using Okta, specify the domain and server in the path:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">https://YOUR_OKTA_DOMAIN/oauth2/YOUR_AUTH_SERVER/.well-known/openid-configuration</code></li>
+    </ul>
+  </li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">auth_method</code></strong>: A list of authentication methods to use with the plugin, such as passwords, introspection tokens, etc. The majority of cases use <code class="language-plaintext highlighter-rouge">authorization_code</code>, and Kong Gateway will accept all methods if no methods are specified.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">client_id</code></strong>: The <code class="language-plaintext highlighter-rouge">client_id</code> of the OpenID Connect client registered in OpenID Connect Provider. Okta provides one to identify itself.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">client_secret</code></strong>: The <code class="language-plaintext highlighter-rouge">client_secret</code> of the OpenID Connect client registered in OpenID Connect Provider. These credentials should never be publicly exposed.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">config.scopes</code></strong>:  The scope of what OpenID Connect checks. This is set to <code class="language-plaintext highlighter-rouge">openid</code> by default. You must also set <code class="language-plaintext highlighter-rouge">email</code> and <code class="language-plaintext highlighter-rouge">profile</code> for this example.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">config.scopes_claim</code></strong>: This should be set to <code class="language-plaintext highlighter-rouge">scp</code>.</li>
+  <li>
+<strong><code class="language-plaintext highlighter-rouge">config.redirect_uri</code></strong>: The <code class="language-plaintext highlighter-rouge">redirect_uri</code> of the client defined with <code class="language-plaintext highlighter-rouge">client_id</code> (also used as a redirection URI for the authorization code flow).</li>
+</ul>
+
+<p>For a list of all available configuration parameters and what they do, see the
+<a href="/hub/kong-inc/openid-connect/configuration/">OIDC plugin reference</a>.</p>
+
+
+    </div>
+  
+  </div>
+</div>
+
+<p>Visiting a URL matched by that route in a browser will now redirect to Okta’s authentication
+site and return you to the redirect URI after authenticating.</p>
+
+<h3 id="test-your-configuration">Test your configuration</h3>
+
+<p>Test the following conditions to ensure a successful integration of the OIDC plugin with Okta:</p>
+
+<ul>
+  <li>Unauthorized access to a route is blocked</li>
+  <li>Authorized access is allowed after login/providing first set of credentials
+    <ul>
+      <li>Ensure the identity is registered with the IdP</li>
+      <li>Steps for debugging</li>
+    </ul>
+  </li>
+  <li>Authorized access is allowed on immediate subsequent attempts
+    <ul>
+      <li>Perhaps highlight where the cookie is stored</li>
+    </ul>
+  </li>
+  <li>Previously authorized access is no longer allowed after cookie terminates
+    <ul>
+      <li>Set a very short TTL on the session to ensure the tester doesn’t need to wait long to get locked out</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="access-restrictions">Access restrictions</h3>
+
+<p>The example configuration allows users to authenticate and access the route even though
+no Consumer was created for them. Any user with a valid account in the directory
+will have access to the route. The OIDC plugin allows this as the simplest authentication option,
+but you may wish to restrict access further. There are several options for this:</p>
+
+<ul>
+  <li>Consumer Mapping</li>
+  <li>Pseudo-Consumer Mapping</li>
+</ul>
+
+<h4 id="consumer-mapping">Consumer mapping</h4>
+
+<p>If you need to interact with other Kong plugins using consumer information, you
+can add configuration that maps account data received from the identity provider to a Kong consumer.
+For this example, the user’s Okta’s AD account GUID is mapped to a Consumer by setting it
+as the <code class="language-plaintext highlighter-rouge">custom_id</code> on their consumer:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> POST http://localhost:8001/consumers/ <span class="se">\</span>
+  <span class="nt">--data</span> <span class="nv">username</span><span class="o">=</span><span class="s2">"Yoda"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="nv">custom_id</span><span class="o">=</span><span class="s2">"e5634b31-d67f-4661-a6fb-b6cb77849bcf"</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhost:8001/plugins/OIDC_PLUGIN_ID <span class="se">\</span>
+  <span class="nt">--data</span> config.consumer_by<span class="o">=</span><span class="s2">"custom_id"</span> <span class="se">\</span>
+  <span class="nt">--data</span> config.consumer_claim<span class="o">=</span><span class="s2">"sub"</span>
+</code></pre></div></div>
+
+<p>Now, if a user logs into an Okta account with the GUID <code class="language-plaintext highlighter-rouge">e5634b31-d67f-4661-a6fb-b6cb77849bcf</code>, Kong will apply configuration associated with the Consumer <code class="language-plaintext highlighter-rouge">Yoda</code> to their requests.</p>
+
+<p>This also requires that clients login using an account mapped to some Consumer, which might
+not be desirable (e.g., you apply OpenID Connect to a service, but only use plugins
+requiring a Consumer on some routes). To deal with this, you can set the <code class="language-plaintext highlighter-rouge">anonymous</code> parameter
+in your OIDC plugin configuration to the ID of a generic Consumer, which will
+then be used for all authenticated users that cannot be mapped to some other Consumer.
+You can alternately set <code class="language-plaintext highlighter-rouge">consumer_optional</code> to <code class="language-plaintext highlighter-rouge">true</code> to allow similar logins
+without mapping an anonymous Consumer.</p>
+
+<h4 id="pseudo-consumers">Pseudo-consumers</h4>
+
+<p>For plugins that typically require consumers, the OIDC plugin can provide a consumer ID based on the value of a claim without mapping to an actual Consumer. Setting <code class="language-plaintext highlighter-rouge">credential_claim</code> to a claim <a href="/hub/kong-inc/openid-connect/configuration/#configcredential_claim">in your plugin configuration</a> will extract the value of that claim and use it where Kong would normally use a consumer ID. Note that this may not work with all consumer-related functionality.</p>
+
+<p>Similarly, setting <code class="language-plaintext highlighter-rouge">authenticated_groups_claim</code> will extract that claim’s value and use it as a group for the ACL plugin.</p>
+
+
+    
+          
+  <div class="book-nav-container">
+    <hr>
+    
+      <div class="book-nav previous">
+        <span class="direction">Previous</span>
+        <a href="/hub/kong-inc/openid-connect/2.8.x/how-to/third-party/google/">OpenID Connect with Google</a>
+      </div>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/hub/kong-inc/openid-connect/2.8.x/changelog/">OpenID Connect Changelog</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+    <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+<!-- <script>
+/* eslint-disable */
+  window.intercomSettings = {
+    app_id: "gwoi3d8y"
+  };
+</script>
+
+<script>
+/* eslint-disable */
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gwoi3d8y';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+ -->
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"2.8.x","product[0]":"Plugin Hub"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:Kong Konnect<score=1>', 'product:Kong Gateway<score=2>', 'product:Plugin Hub<score=3>'],
+              facetFilters: [ 'version:2.8.x']
+            }
+            
+          });
+      </script>
+    
+  </body>
+
+  
+
+</html>

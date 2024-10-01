@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Custom Resource Definitions API Reference - v1.1.x | Kong Docs</title>
+  <title>Custom Resource Definitions API Reference - Kong Gateway Operator | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Custom Resource Definitions API Reference - v1.1.x | Kong Docs">
+  <meta property="og:title" content="Custom Resource Definitions API Reference - Kong Gateway Operator | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -399,9 +401,10 @@
         </div>
         
         <div class="version">
-          1.1.x
+          1.3.x
           
             <span>(latest)</span>
+          
           
         </div>
         
@@ -477,7 +480,7 @@
         <div class="github-links">
   <div class="github-links--edit">
     
-      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/gateway-operator/reference/custom-resources/1.1.x.md" target="_blank" rel="noopener nofollow noreferrer ">
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/gateway-operator/reference/custom-resources/1.3.x.md" target="_blank" rel="noopener nofollow noreferrer ">
         <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
       </a>
     
@@ -518,6 +521,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -546,37 +552,39 @@
     <div class="versions-dropdown dropdown">
       <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
         <span>
-          Version 1.1.x
+          Version 1.3.x
           
             <span>(latest)</span>
+          
           
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/gateway-operator/1.1.x/reference/custom-resources/" class="active" data-version-id="1.1.x">
-            1.1.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/gateway-operator/1.0.x/reference/custom-resources/" data-version-id="1.0.x">
-            1.0.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/gateway-operator/1.3.x/reference/custom-resources/" class="active" data-version-id="1.3.x">
+              1.3.x <em>(latest)</em>
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway-operator/1.2.x/reference/custom-resources/" data-version-id="1.2.x">
+              1.2.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway-operator/1.1.x/reference/custom-resources/" data-version-id="1.1.x">
+              1.1.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway-operator/1.0.x/reference/custom-resources/" data-version-id="1.0.x">
+              1.0.x
+            </a>
+          </li>
         
         
       </ul>
@@ -595,13 +603,13 @@
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -611,12 +619,14 @@ Introduction
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/1.1.x/">
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/1.3.x/">
         
 
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -632,13 +642,13 @@ Overview
 
 Deployment Topologies
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -654,6 +664,8 @@ Deployment Topologies
 Hybrid Mode
 
       </a>
+    
+
     
   </span>
 
@@ -671,6 +683,8 @@ Hybrid Mode
 DB-less Mode
 
       </a>
+    
+
     
   </span>
 
@@ -691,13 +705,13 @@ DB-less Mode
 
 Key Concepts
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Key Concepts subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Key Concepts subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -713,6 +727,8 @@ Key Concepts
 Gateway API
 
       </a>
+    
+
     
   </span>
 
@@ -730,6 +746,27 @@ Gateway API
 Gateway Configuration
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/concepts/managed-gateways/">
+        
+
+Managed Gateways
+
+      </a>
+    
+
     
   </span>
 
@@ -753,6 +790,8 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
@@ -766,9 +805,11 @@ Changelog
       <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/support/">
         
 
-Support
+Version Support Policy
 
       </a>
+    
+
     
   </span>
 
@@ -786,6 +827,8 @@ Support
 FAQ
 
       </a>
+    
+
     
   </span>
 
@@ -807,13 +850,13 @@ FAQ
 
 Get Started
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -827,13 +870,13 @@ Get Started
 
 Konnect
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Konnect subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Konnect subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -849,6 +892,8 @@ Konnect
 Install Gateway Operator
 
       </a>
+    
+
     
   </span>
 
@@ -867,6 +912,8 @@ Deploy a Data Plane
 
       </a>
     
+
+    
   </span>
 
   
@@ -883,6 +930,8 @@ Deploy a Data Plane
 Create a Route
 
       </a>
+    
+
     
   </span>
 
@@ -903,13 +952,13 @@ Create a Route
 
 Kong Ingress Controller
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Kong Ingress Controller subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Ingress Controller subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -925,6 +974,8 @@ Kong Ingress Controller
 Install Gateway Operator
 
       </a>
+    
+
     
   </span>
 
@@ -943,6 +994,8 @@ Create a Gateway
 
       </a>
     
+
+    
   </span>
 
   
@@ -960,6 +1013,8 @@ Create a Route
 
       </a>
     
+
+    
   </span>
 
   
@@ -977,84 +1032,7 @@ Create a Route
 
     
       <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-customization-subtree">
-    
-      
-  <img src="/assets/images/icons/documentation/icn-solution-guide.svg" alt="">
-
-
-Customization
-
-
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Customization subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
-  </span>
-
-  
-    <ul class="items" id="id-3-customization-subtree" role="group" aria-label="Customization">
-      
-        
-        <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label">
-    
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/customization/data-plane-image/">
-        
-
-Set data plane image
-
-      </a>
-    
-  </span>
-
-  
-</li>
-
-      
-        
-        <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label">
-    
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/customization/sidecars/">
-        
-
-Deploying Sidecars
-
-      </a>
-    
-  </span>
-
-  
-</li>
-
-      
-        
-        <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label">
-    
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/customization/pod-template-spec/">
-        
-
-Customizing PodTemplateSpec
-
-      </a>
-    
-  </span>
-
-  
-</li>
-
-      
-    </ul>
-  
-</li>
-
-    
-      <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-production-deployment-subtree">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-production-deployment-subtree">
     
       
   <img src="/assets/images/icons/icn-server.svg" alt="">
@@ -1062,17 +1040,17 @@ Customizing PodTemplateSpec
 
 Production Deployment
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Production Deployment subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Production Deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
-    <ul class="items" id="id-4-production-deployment-subtree" role="group" aria-label="Production Deployment">
+    <ul class="items" id="id-3-production-deployment-subtree" role="group" aria-label="Production Deployment">
       
         
         <li class="sidebar-item" role="none">
@@ -1084,6 +1062,8 @@ Production Deployment
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -1102,6 +1082,8 @@ Install
 
       </a>
     
+
+    
   </span>
 
   
@@ -1112,15 +1094,162 @@ Install
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/monitoring/">
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/license/">
         
 
-Monitoring
+Enterprise License
 
       </a>
     
+
+    
   </span>
 
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-monitoring-subtree">
+    
+      
+
+Monitoring
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Monitoring subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-4-monitoring-subtree" role="group" aria-label="Monitoring">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/monitoring/metrics/">
+        
+
+Metrics
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-2-status-fields-subtree">
+    
+      
+
+Status fields
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Status fields subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-4-2-status-fields-subtree" role="group" aria-label="Status fields">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/monitoring/status/overview/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/monitoring/status/dataplane/">
+        
+
+DataPlane
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/monitoring/status/controlplane/">
+        
+
+ControlPlane
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/monitoring/status/gateway/">
+        
+
+Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
   
 </li>
 
@@ -1136,8 +1265,238 @@ Upgrade Gateway Operator
 
       </a>
     
+
+    
   </span>
 
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-guides-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-solution-guide.svg" alt="">
+
+
+Guides
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-guides-subtree" role="group" aria-label="Guides">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/ai-gateway/">
+        
+
+AI Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-2-customization-subtree">
+    
+      
+
+Customization
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Customization subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-2-customization-subtree" role="group" aria-label="Customization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/customization/data-plane-image/">
+        
+
+Set data plane image
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/customization/sidecars/">
+        
+
+Deploying Sidecars
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/customization/pod-template-spec/">
+        
+
+Customizing PodTemplateSpec
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/autoscaling-kong/">
+        
+
+Autoscaling Kong Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-4-autoscaling-workloads-subtree">
+    
+      
+
+Autoscaling Workloads
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Autoscaling Workloads subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-4-autoscaling-workloads-subtree" role="group" aria-label="Autoscaling Workloads">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/autoscaling-workloads/overview/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/autoscaling-workloads/prometheus/">
+        
+
+Prometheus
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/autoscaling-workloads/datadog/">
+        
+
+Datadog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
   
 </li>
 
@@ -1150,13 +1509,13 @@ Upgrade Gateway Operator
 
 Upgrading Data Planes
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Upgrading Data Planes subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrading Data Planes subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1166,12 +1525,14 @@ Upgrading Data Planes
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/upgrade/data-plane/rolling/">
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/upgrade/data-plane/rolling/">
         
 
 Rolling Deployment
 
       </a>
+    
+
     
   </span>
 
@@ -1183,12 +1544,14 @@ Rolling Deployment
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/production/upgrade/data-plane/blue-green/">
+      <a class="sidebar-link" tabindex="-1" href="/gateway-operator/latest/guides/upgrade/data-plane/blue-green/">
         
 
 Blue / Green Deployment
 
       </a>
+    
+
     
   </span>
 
@@ -1215,13 +1578,13 @@ Blue / Green Deployment
 
 Reference
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1235,13 +1598,13 @@ Reference
 
 Custom Resources
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Custom Resources subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Custom Resources subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1257,6 +1620,8 @@ Custom Resources
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -1275,6 +1640,8 @@ GatewayConfiguration
 
       </a>
     
+
+    
   </span>
 
   
@@ -1292,6 +1659,8 @@ ControlPlane
 
       </a>
     
+
+    
   </span>
 
   
@@ -1308,6 +1677,8 @@ ControlPlane
 DataPlane
 
       </a>
+    
+
     
   </span>
 
@@ -1331,6 +1702,8 @@ License
 
       </a>
     
+
+    
   </span>
 
   
@@ -1347,6 +1720,8 @@ License
 Version Compatibility
 
       </a>
+    
+
     
   </span>
 
@@ -1386,40 +1761,18 @@ Version Compatibility
   <li>
 <a href="#gateway-operatorkonghqcomv1alpha1" class="scroll-to">gateway-operator.konghq.com/v1alpha1</a>
     <ul>
-      <li><a href="#controlplane" class="scroll-to">ControlPlane</a></li>
-      <li><a href="#gatewayconfiguration" class="scroll-to">GatewayConfiguration</a></li>
-      <li><a href="#controlplaneoptions" class="scroll-to">ControlPlaneOptions</a></li>
-      <li><a href="#controlplanespec" class="scroll-to">ControlPlaneSpec</a></li>
-      <li><a href="#deploymentoptions" class="scroll-to">DeploymentOptions</a></li>
-      <li><a href="#gatewayconfigurationspec" class="scroll-to">GatewayConfigurationSpec</a></li>
+      <li><a href="#aigateway" class="scroll-to">AIGateway</a></li>
+      <li><a href="#dataplanemetricsextension" class="scroll-to">DataPlaneMetricsExtension</a></li>
+      <li><a href="#types" class="scroll-to">Types</a></li>
     </ul>
   </li>
   <li>
 <a href="#gateway-operatorkonghqcomv1beta1" class="scroll-to">gateway-operator.konghq.com/v1beta1</a>
     <ul>
+      <li><a href="#controlplane" class="scroll-to">ControlPlane</a></li>
       <li><a href="#dataplane" class="scroll-to">DataPlane</a></li>
-      <li><a href="#address" class="scroll-to">Address</a></li>
-      <li><a href="#addresssourcetype" class="scroll-to">AddressSourceType</a></li>
-      <li><a href="#addresstype" class="scroll-to">AddressType</a></li>
-      <li><a href="#bluegreenstrategy" class="scroll-to">BlueGreenStrategy</a></li>
-      <li><a href="#dataplanedeploymentoptions" class="scroll-to">DataPlaneDeploymentOptions</a></li>
-      <li><a href="#dataplanenetworkoptions" class="scroll-to">DataPlaneNetworkOptions</a></li>
-      <li><a href="#dataplaneoptions" class="scroll-to">DataPlaneOptions</a></li>
-      <li><a href="#dataplanerolloutstatus" class="scroll-to">DataPlaneRolloutStatus</a></li>
-      <li><a href="#dataplanerolloutstatusdeployment" class="scroll-to">DataPlaneRolloutStatusDeployment</a></li>
-      <li><a href="#dataplanerolloutstatusservices" class="scroll-to">DataPlaneRolloutStatusServices</a></li>
-      <li><a href="#dataplaneservices" class="scroll-to">DataPlaneServices</a></li>
-      <li><a href="#dataplanespec" class="scroll-to">DataPlaneSpec</a></li>
-      <li><a href="#deploymentoptions-1" class="scroll-to">DeploymentOptions</a></li>
-      <li><a href="#promotion" class="scroll-to">Promotion</a></li>
-      <li><a href="#promotionstrategy" class="scroll-to">PromotionStrategy</a></li>
-      <li><a href="#rollout" class="scroll-to">Rollout</a></li>
-      <li><a href="#rolloutresourceplan" class="scroll-to">RolloutResourcePlan</a></li>
-      <li><a href="#rolloutresourceplandeployment" class="scroll-to">RolloutResourcePlanDeployment</a></li>
-      <li><a href="#rolloutresources" class="scroll-to">RolloutResources</a></li>
-      <li><a href="#rolloutstatusservice" class="scroll-to">RolloutStatusService</a></li>
-      <li><a href="#rolloutstrategy" class="scroll-to">RolloutStrategy</a></li>
-      <li><a href="#serviceoptions" class="scroll-to">ServiceOptions</a></li>
+      <li><a href="#gatewayconfiguration" class="scroll-to">GatewayConfiguration</a></li>
+      <li><a href="#types-1" class="scroll-to">Types</a></li>
     </ul>
   </li>
 </ul>
@@ -1462,11 +1815,824 @@ Version Compatibility
 <p>Package v1alpha1 contains API Schema definitions for the operator v1alpha1 API group</p>
 
 <ul>
-  <li><a href="#controlplane">ControlPlane</a></li>
-  <li><a href="#gatewayconfiguration">GatewayConfiguration</a></li>
+  <li><a href="#aigateway">AIGateway</a></li>
+  <li>
+<a href="#dataplanemetricsextension">DataPlaneMetricsExtension</a>
+    <h3 id="aigateway">AIGateway</h3>
+  </li>
 </ul>
 
-<h3 id="controlplane">ControlPlane</h3>
+<p>AIGateway is a network Gateway enabling access and management for AI &amp;
+Machine Learning models such as Large Language Models (LLM).<br><br>
+The underlying technology for the AIGateway is the Kong Gateway configured
+with a variety of plugins which provide the the AI featureset.<br><br>
+This is a list of the plugins, which are available in Kong Gateway v3.6.x+:<br><br></p>
+<ul>
+  <li>ai-proxy (https://github.com/kong/kong/tree/master/kong/plugins/ai-proxy)</li>
+  <li>ai-request-transformer (https://github.com/kong/kong/tree/master/kong/plugins/ai-request-transformer)</li>
+  <li>ai-response-transformers (https://github.com/kong/kong/tree/master/kong/plugins/ai-response-transformer)</li>
+  <li>ai-prompt-template (https://github.com/kong/kong/tree/master/kong/plugins/ai-prompt-template)</li>
+  <li>ai-prompt-guard-plugin (https://github.com/kong/kong/tree/master/kong/plugins/ai-prompt-guard)</li>
+  <li>ai-prompt-decorator-plugin (https://github.com/kong/kong/tree/master/kong/plugins/ai-prompt-decorator)<br><br>
+So effectively the AIGateway resource provides a bespoke Gateway resource
+(which it owns and manages) with the gateway, consumers and plugin
+configurations automated and configurable via Kubernetes APIs.<br><br>
+The current iteration only supports the proxy itself, but the API is being
+built with room for future growth in several dimensions. For instance:<br><br>
+</li>
+  <li>Supporting auxiliary functions (e.g. decorator, guard, templater, token-rate-limit)</li>
+  <li>Supporting request/response transformers</li>
+  <li>Supporting more than just LLMs (e.g. CCNs, GANs, e.t.c.)</li>
+  <li>Supporting more hosting options for LLMs (e.g. self hosted)</li>
+  <li>Supporting more AI cloud providers</li>
+  <li>Supporting more AI cloud provider features<br><br>
+The validation rules throughout are set up to ensure at least one
+cloud-provider-based LLM is specified, but in the future when we have more
+model types and more hosting options for those types so we may want to look
+into using CEL validation to ensure that at least one model configuration is
+provided. We may also want to use CEL to validate things like identifier
+unique-ness, e.t.c.<br><br>
+See: https://kubernetes.io/docs/reference/using-api/cel/</li>
+</ul>
+
+<!-- ai_gateway description placeholder -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">gateway-operator.konghq.com/v1alpha1</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">AIGateway</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+</td>
+      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">spec</code> <em><a href="#aigatewayspec">AIGatewaySpec</a></em>
+</td>
+      <td>Spec is the desired state of the AIGateway.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">status</code> <em><a href="#aigatewaystatus">AIGatewayStatus</a></em>
+</td>
+      <td>Status is the observed state of the AIGateway.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dataplanemetricsextension">DataPlaneMetricsExtension</h3>
+
+<p>DataPlaneMetricsExtension holds the configuration for the DataPlane metrics extension.
+It can be attached to a ControlPlane using its spec.extensions.
+When attached it will make the ControlPlane configure its DataPlane with
+the specified metrics configuration.
+Additionally, it will also make the operator expose DataPlane’s metrics
+enriched with metadata required for in-cluster Kubernetes autoscaling.<br><br>
+NOTE: This is an enterprise feature. In order to use it you need to use
+the EE version of Kong Gateway Operator with a valid license.</p>
+
+<!-- data_plane_metrics_extension description placeholder -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">gateway-operator.konghq.com/v1alpha1</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">DataPlaneMetricsExtension</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+</td>
+      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">spec</code> <em><a href="#dataplanemetricsextensionspec">DataPlaneMetricsExtensionSpec</a></em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">status</code> <em><a href="#dataplanemetricsextensionstatus">DataPlaneMetricsExtensionStatus</a></em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="types">Types</h3>
+
+<p>In this section you will find types that the CRDs rely on.</p>
+<h4 id="aicloudprovider">AICloudProvider</h4>
+
+<p>AICloudProvider is the organization that provides API access to Large Language
+Models (LLMs).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em><a href="#aicloudprovidername">AICloudProviderName</a></em>
+</td>
+      <td>Name is the unique name of an LLM provider.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#cloudhostedlargelanguagemodel">CloudHostedLargeLanguageModel</a></li>
+</ul>
+
+<h4 id="aicloudproviderapitokenref">AICloudProviderAPITokenRef</h4>
+
+<p>AICloudProviderAPITokenRef is an reference to another object which contains
+the API token for an AI cloud provider.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td>Name is the name of the reference object.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em>string</em>
+</td>
+      <td>Namespace is the namespace of the reference object.<br><br> If not specified, it will be assumed to be the same namespace as the object which references it.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td>Kind is the API object kind<br><br> If not specified, it will be assumed to be “Secret”. If a Secret is used as the Kind, the secret must contain a single key-value pair where the value is the secret API token. The key can be named anything, as long as there’s only one entry, but by convention it should be “apiToken”.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigatewayspec">AIGatewaySpec</a></li>
+</ul>
+
+<h4 id="aicloudprovidername">AICloudProviderName</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>AICloudProviderName indicates the unique name of a supported AI cloud
+provider.</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aicloudprovider">AICloudProvider</a></li>
+</ul>
+
+<h4 id="aigatewayconsumerref">AIGatewayConsumerRef</h4>
+
+<p>AIGatewayConsumerRef indicates the Secret resource containing the credentials
+for the Kong consumer.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td>Name is the name of the reference object.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em>string</em>
+</td>
+      <td>Namespace is the namespace of the reference object.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigatewayendpoint">AIGatewayEndpoint</a></li>
+</ul>
+
+<h4 id="aigatewayendpoint">AIGatewayEndpoint</h4>
+
+<p>AIGatewayEndpoint is a network endpoint for accessing an AIGateway.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">network</code> <em><a href="#endpointnetworkaccesshint">EndpointNetworkAccessHint</a></em>
+</td>
+      <td>NetworkAccessHint is a hint to the user about what kind of network access is expected for the reachability of this endpoint.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">url</code> <em>string</em>
+</td>
+      <td>URL is the URL to access the endpoint from the network indicated by the NetworkAccessHint.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">models</code> <em>string array</em>
+</td>
+      <td>AvailableModels is a list of the identifiers of all the AI models that are accessible from this endpoint.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">consumer</code> <em><a href="#aigatewayconsumerref">AIGatewayConsumerRef</a></em>
+</td>
+      <td>Consumer is a reference to the Secret that contains the credentials for the Kong consumer that is allowed to access this endpoint.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+</td>
+      <td>Conditions describe the current conditions of the AIGatewayEndpoint.<br><br> Known condition types are:<br><br>   - “Provisioning”   - “EndpointReady”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigatewaystatus">AIGatewayStatus</a></li>
+</ul>
+
+<h4 id="aigatewayspec">AIGatewaySpec</h4>
+
+<p>AIGatewaySpec defines the desired state of an AIGateway.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">gatewayClassName</code> <em>string</em>
+</td>
+      <td>GatewayClassName is the name of the GatewayClass which is responsible for the AIGateway.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">largeLanguageModels</code> <em><a href="#largelanguagemodels">LargeLanguageModels</a></em>
+</td>
+      <td>LargeLanguageModels is a list of Large Language Models (LLMs) to be managed by the AI Gateway.<br><br> This is a required field because we only support LLMs at the moment. In future iterations we may support other model types.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">cloudProviderCredentials</code> <em><a href="#aicloudproviderapitokenref">AICloudProviderAPITokenRef</a></em>
+</td>
+      <td>CloudProviderCredentials is a reference to an object (e.g. a Kubernetes Secret) which contains the credentials needed to access the APIs of cloud providers.<br><br> This is the global configuration that will be used by DEFAULT for all model configurations. A secret configured this way MAY include any number of key-value pairs equal to the number of providers you have, but used this way the keys MUST be named according to their providers (e.g. “openai”, “azure”, “cohere”, e.t.c.). For example:<br><br>   apiVersion: v1   kind: Secret   metadata:     name: devteam-ai-cloud-providers   type: Opaque   data:     openai: <strong>**</strong><strong>**</strong><strong>***     azure: **</strong><strong>**</strong><strong>**</strong>*     cohere: <strong>**</strong><strong>**</strong>*****<br><br> See AICloudProviderName for a list of known and valid cloud providers.<br><br> Note that the keys are NOT case-sensitive (e.g. “OpenAI”, “openai”, and “openAI” are all valid and considered the same keys) but if there are duplicates endpoints failures conditions will be emitted and endpoints will not be configured until the duplicates are resolved.<br><br> This is currently considered required, but in future iterations will be optional as we do things like enable configuring credentials at the model level.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigateway">AIGateway</a></li>
+</ul>
+
+<h4 id="aigatewaystatus">AIGatewayStatus</h4>
+
+<p>AIGatewayStatus defines the observed state of AIGateway.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">endpoints</code> <em><a href="#aigatewayendpoint">AIGatewayEndpoint</a> array</em>
+</td>
+      <td>Endpoints are collections of the URL, credentials and metadata needed in order to access models served by the AIGateway for inference.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+</td>
+      <td>Conditions describe the current conditions of the AIGateway.<br><br> Known condition types are:<br><br>   - “Accepted”   - “Provisioning”   - “EndpointsReady”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigateway">AIGateway</a></li>
+</ul>
+
+<h4 id="cloudhostedlargelanguagemodel">CloudHostedLargeLanguageModel</h4>
+
+<p>CloudHostedLargeLanguageModel is the configuration for Large Language Models
+(LLM) hosted by a known and supported AI cloud provider (e.g. OpenAI, Cohere,
+Azure, e.t.c.).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">identifier</code> <em>string</em>
+</td>
+      <td>Identifier is the unique name which identifies the LLM. This will be used as part of the requests made to an AIGateway endpoint. For instance: if you provided the identifier “devteam-gpt-access”, then you would access this model via “https://${endpoint}/devteam-gpt-access” and supply it with your consumer credentials to authenticate requests.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">model</code> <em>string</em>
+</td>
+      <td>Model is the model name of the LLM (e.g. gpt-3.5-turbo, phi-2, e.t.c.).<br><br> If not specified, whatever the cloud provider specifies as the default model will be used.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">promptType</code> <em><a href="#llmprompttype">LLMPromptType</a></em>
+</td>
+      <td>PromptType is the type of prompt to be used for inference requests to the LLM (e.g. “chat”, “completions”).<br><br> If “chat” is specified, prompts sent by the user will be interactive, contextual and stateful. The LLM will dynamically answer questions and simulate a dialogue, while also keeping track of the conversation to provide contextually relevant responses.<br><br> If “completions” is specified, prompts sent by the user will be stateless and “one-shot”. The LLM will provide a single response to the prompt, without any context from previous prompts.<br><br> If not specified, “completions” will be used as the default.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">defaultPrompts</code> <em><a href="#llmprompt">LLMPrompt</a> array</em>
+</td>
+      <td>DefaultPrompts is a list of prompts that should be provided to the LLM by default. This is generally used to influence inference behavior, for instance by providing a “system” role prompt that instructs the LLM to take on a certain persona.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">defaultPromptParams</code> <em><a href="#llmpromptparams">LLMPromptParams</a></em>
+</td>
+      <td>DefaultPromptParams configures the parameters which will be sent with any and every inference request.<br><br> If this is set, there is currently no way to override these parameters at the individual prompt level. This is an expected feature from later releases of our AI plugins.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">aiCloudProvider</code> <em><a href="#aicloudprovider">AICloudProvider</a></em>
+</td>
+      <td>AICloudProvider defines the cloud provider that will fulfill the LLM requests for this CloudHostedLargeLanguageModel</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#largelanguagemodels">LargeLanguageModels</a></li>
+</ul>
+
+<h4 id="dataplanemetricsextensionspec">DataPlaneMetricsExtensionSpec</h4>
+
+<p>DataPlaneMetricsExtensionSpec defines the spec for the DataPlaneMetricsExtension.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">serviceSelector</code> <em><a href="#serviceselector">ServiceSelector</a></em>
+</td>
+      <td>ServiceSelector holds the service selector specifying the services for which metrics should be collected.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">config</code> <em><a href="#metricsconfig">MetricsConfig</a></em>
+</td>
+      <td>Config holds the configuration for the DataPlane metrics.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplanemetricsextension">DataPlaneMetricsExtension</a></li>
+</ul>
+
+<h4 id="dataplanemetricsextensionstatus">DataPlaneMetricsExtensionStatus</h4>
+
+<p>DataPlaneMetricsExtensionStatus defines the status of the DataPlaneMetricsExtension.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">controlPlaneRef</code> <em><a href="#namespacedref">NamespacedRef</a></em>
+</td>
+      <td>ControlPlaneRef is a reference to the ControlPlane that this is associated with. This field is set by the operator when this extension is associated with a ControlPlane through its extensions spec. There can only be one ControlPlane associated with a given DataPlaneMetricsExtension. When this is unset it means that the association has been removed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplanemetricsextension">DataPlaneMetricsExtension</a></li>
+</ul>
+
+<h4 id="endpointnetworkaccesshint">EndpointNetworkAccessHint</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>EndpointNetworkAccessHint provides a human readable indication of what kind
+of network access is expected for a Gateway.<br><br>
+This isn’t meant to reflect knowledge of any specific network by name, which
+is why it includes “hint” in the name. It’s meant to be a hint to the user
+such as “internet-accessible”, “internal-only”.</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigatewayendpoint">AIGatewayEndpoint</a></li>
+</ul>
+
+<h4 id="extensionref">ExtensionRef</h4>
+
+<p>ExtensionRef corresponds to another resource in the Kubernetes cluster which
+defines extended behavior for a resource (e.g. ControlPlane).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">group</code> <em>string</em>
+</td>
+      <td>Group is the group of the extension resource.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td>Kind is kind of the extension resource.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td>Name is the name of the referred resource.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em>string</em>
+</td>
+      <td>Namespace is the namespace of the referred resource.<br><br> For namespace-scoped resources if no Namespace is provided then the namespace of the parent object MUST be used.<br><br> This field MUST not be set when referring to cluster-scoped resources.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controlplaneoptions">ControlPlaneOptions</a></li>
+  <li><a href="#controlplanespec">ControlPlaneSpec</a></li>
+</ul>
+
+<h4 id="llmprompt">LLMPrompt</h4>
+
+<p>LLMPrompt is a text prompt that includes parameters, a role and content.<br><br>
+This is intended for situations like when you need to provide roles in a
+prompt to an LLM in order to influence its behavior and responses.<br><br>
+For example, you might want to provide a “system” role and tell the LLM
+something like “you are a helpful assistant who responds in the style of
+Sherlock Holmes”.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">content</code> <em>string</em>
+</td>
+      <td>Content is the prompt text sent for inference.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">role</code> <em><a href="#llmpromptrole">LLMPromptRole</a></em>
+</td>
+      <td>Role indicates the role of the prompt. This is used to identify the prompt’s purpose, such as “system” or “user” and can influence the behavior of the LLM.<br><br> If not specified, “user” will be used as the default.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#cloudhostedlargelanguagemodel">CloudHostedLargeLanguageModel</a></li>
+</ul>
+
+<h4 id="llmpromptparams">LLMPromptParams</h4>
+
+<p>LLMPromptParams contains parameters that can be used to control the behavior
+of a large language model (LLM) when generating text based on a prompt.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">temperature</code> <em>string</em>
+</td>
+      <td>Temperature controls the randomness of predictions by scaling the logits before applying softmax. A lower temperature (e.g., 0.0 to 0.7) makes the model more confident in its predictions, leading to more repetitive and deterministic outputs. A higher temperature (e.g., 0.8 to 1.0) increases randomness, generating more diverse and creative outputs. At very high temperatures, the outputs may become nonsensical or highly unpredictable.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">maxTokens</code> <em>integer</em>
+</td>
+      <td>Max Tokens specifies the maximum length of the model’s output in terms of the number of tokens (words or pieces of words). This parameter limits the output’s size, ensuring the model generates content within a manageable scope. A token can be a word or part of a word, depending on the model’s tokenizer.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">topK</code> <em>integer</em>
+</td>
+      <td>TopK sampling is a technique where the model’s prediction is limited to the K most likely next tokens at each step of the generation process. The probability distribution is truncated to these top K tokens, and the next token is randomly sampled from this subset. This method helps in reducing the chance of selecting highly improbable tokens, making the text more coherent. A smaller K leads to more predictable text, while a larger K allows for more diversity but with an increased risk of incoherence.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">topP</code> <em>string</em>
+</td>
+      <td>TopP (also known as nucleus sampling) is an alternative to top K sampling. Instead of selecting the top K tokens, top P sampling chooses from the smallest set of tokens whose cumulative probability exceeds the threshold P. This method dynamically adjusts the number of tokens considered at each step, depending on their probability distribution. It helps in maintaining diversity while also avoiding very unlikely tokens. A higher P value increases diversity but can lead to less coherence, whereas a lower P value makes the model’s outputs more focused and coherent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#cloudhostedlargelanguagemodel">CloudHostedLargeLanguageModel</a></li>
+</ul>
+
+<h4 id="llmpromptrole">LLMPromptRole</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>LLMPromptRole indicates the role of a prompt for a large language model (LLM).</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#llmprompt">LLMPrompt</a></li>
+</ul>
+
+<h4 id="llmprompttype">LLMPromptType</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>LLMPromptType indicates the type of prompt to be used for a large
+language model (LLM).</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#cloudhostedlargelanguagemodel">CloudHostedLargeLanguageModel</a></li>
+</ul>
+
+<h4 id="largelanguagemodels">LargeLanguageModels</h4>
+
+<p>LargeLanguageModels is a list of Large Language Models (LLM) hosted in
+various ways (cloud hosted, self hosted, e.t.c.) which the AIGateway should
+serve and manage traffic for.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">cloudHosted</code> <em><a href="#cloudhostedlargelanguagemodel">CloudHostedLargeLanguageModel</a> array</em>
+</td>
+      <td>CloudHosted configures LLMs hosted and served by cloud providers.<br><br> This is currently a required field, requiring at least one cloud-hosted LLM be specified, however in future iterations we may add other hosting options such as self-hosted LLMs as separate fields.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#aigatewayspec">AIGatewaySpec</a></li>
+</ul>
+
+<h4 id="metricsconfig">MetricsConfig</h4>
+
+<p>MetricsConfig holds the configuration for the DataPlane metrics.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">latency</code> <em>boolean</em>
+</td>
+      <td>Latency indicates whether latency metrics are enabled for the DataPlane. This translates into deployed instances having <code class="language-plaintext highlighter-rouge">latency_metrics</code> option set on the Prometheus plugin.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">bandwidth</code> <em>boolean</em>
+</td>
+      <td>Bandwidth indicates whether bandwidth metrics are enabled for the DataPlane. This translates into deployed instances having <code class="language-plaintext highlighter-rouge">bandwidth_metrics</code> option set on the Prometheus plugin.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">upstreamHealth</code> <em>boolean</em>
+</td>
+      <td>UpstreamHealth indicates whether upstream health metrics are enabled for the DataPlane. This translates into deployed instances having <code class="language-plaintext highlighter-rouge">upstream_health_metrics</code> option set on the Prometheus plugin.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">statusCode</code> <em>boolean</em>
+</td>
+      <td>StatusCode indicates whether status code metrics are enabled for the DataPlane. This translates into deployed instances having <code class="language-plaintext highlighter-rouge">status_code_metrics</code> option set on the Prometheus plugin.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplanemetricsextensionspec">DataPlaneMetricsExtensionSpec</a></li>
+</ul>
+
+<h4 id="namespacedref">NamespacedRef</h4>
+
+<p>NamespacedRef is a reference to a namespaced resource.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td>Name is the name of the referred resource.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em>string</em>
+</td>
+      <td>Namespace is the namespace of the referred resource.<br><br> For namespace-scoped resources if no Namespace is provided then the namespace of the parent object MUST be used.<br><br> This field MUST not be set when referring to cluster-scoped resources.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplanemetricsextensionstatus">DataPlaneMetricsExtensionStatus</a></li>
+  <li><a href="#extensionref">ExtensionRef</a></li>
+</ul>
+
+<h4 id="serviceselector">ServiceSelector</h4>
+
+<p>ServiceSelector holds the service selector specification.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">matchNames</code> <em><a href="#serviceselectorentry">ServiceSelectorEntry</a> array</em>
+</td>
+      <td>MatchNames holds the list of Services names to match.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplanemetricsextensionspec">DataPlaneMetricsExtensionSpec</a></li>
+</ul>
+
+<h4 id="serviceselectorentry">ServiceSelectorEntry</h4>
+
+<p>ServiceSelectorEntry holds the name of a service to match.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td>Name is the name of the service to match.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#serviceselector">ServiceSelector</a></li>
+</ul>
+
+<h2 id="gateway-operatorkonghqcomv1beta1">gateway-operator.konghq.com/v1beta1</h2>
+
+<p>Package v1beta1 contains API Schema definitions for the gateway-operator.konghq.com v1beta1 API group</p>
+
+<ul>
+  <li><a href="#controlplane">ControlPlane</a></li>
+  <li><a href="#dataplane">DataPlane</a></li>
+  <li>
+<a href="#gatewayconfiguration">GatewayConfiguration</a>
+    <h3 id="controlplane">ControlPlane</h3>
+  </li>
+</ul>
 
 <p>ControlPlane is the Schema for the controlplanes API</p>
 
@@ -1484,7 +2650,7 @@ Version Compatibility
       <td>
 <code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
 </td>
-      <td><code class="language-plaintext highlighter-rouge">gateway-operator.konghq.com/v1alpha1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">gateway-operator.konghq.com/v1beta1</code></td>
     </tr>
     <tr>
       <td>
@@ -1494,7 +2660,7 @@ Version Compatibility
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
 </td>
       <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
     </tr>
@@ -1504,199 +2670,14 @@ Version Compatibility
 </td>
       <td> </td>
     </tr>
-  </tbody>
-</table>
-
-<h3 id="gatewayconfiguration">GatewayConfiguration</h3>
-
-<p>GatewayConfiguration is the Schema for the gatewayconfigurations API</p>
-
-<!-- gateway_configuration description placeholder -->
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
-</td>
-      <td><code class="language-plaintext highlighter-rouge">gateway-operator.konghq.com/v1alpha1</code></td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
-</td>
-      <td><code class="language-plaintext highlighter-rouge">GatewayConfiguration</code></td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
-</td>
-      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">spec</code> <em><a href="#gatewayconfigurationspec">GatewayConfigurationSpec</a></em>
+<code class="language-plaintext highlighter-rouge">status</code> <em><a href="#controlplanestatus">ControlPlaneStatus</a></em>
 </td>
       <td> </td>
     </tr>
   </tbody>
 </table>
-
-<h3 id="controlplaneoptions">ControlPlaneOptions</h3>
-
-<p>ControlPlaneOptions indicates the specific information needed to deploy and connect a ControlPlane to a DataPlane object.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">deployment</code> <em><a href="#deploymentoptions">DeploymentOptions</a></em>
-</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">dataplane</code> <em>string</em>
-</td>
-      <td>DataPlanes refers to the named DataPlane objects which this ControlPlane is responsible for. Currently they must be in the same namespace as the Dataplane.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Appears in:</em></p>
-<ul>
-  <li><a href="#controlplanespec">ControlPlaneSpec</a></li>
-  <li><a href="#gatewayconfigurationspec">GatewayConfigurationSpec</a></li>
-</ul>
-
-<h3 id="controlplanespec">ControlPlaneSpec</h3>
-
-<p>ControlPlaneSpec defines the desired state of ControlPlane</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">deployment</code> <em><a href="#deploymentoptions">DeploymentOptions</a></em>
-</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">dataplane</code> <em>string</em>
-</td>
-      <td>DataPlanes refers to the named DataPlane objects which this ControlPlane is responsible for. Currently they must be in the same namespace as the Dataplane.</td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">gatewayClass</code> <em>ObjectName</em>
-</td>
-      <td>GatewayClass indicates the Gateway resources which this ControlPlane should be responsible for configuring routes for (e.g. HTTPRoute, TCPRoute, UDPRoute, TLSRoute, e.t.c.). <br><br> Required for the ControlPlane to have any effect: at least one Gateway must be present for configuration to be pushed to the data-plane and only Gateway resources can be used to identify data-plane entities.</td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">ingressClass</code> <em>string</em>
-</td>
-      <td>IngressClass enables support for the older Ingress resource and indicates which Ingress resources this ControlPlane should be responsible for. <br><br> Routing configured this way will be applied to the Gateway resources indicated by GatewayClass. <br><br> If omitted, Ingress resources will not be supported by the ControlPlane.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Appears in:</em></p>
-<ul>
-  <li><a href="#controlplane">ControlPlane</a></li>
-</ul>
-
-<h3 id="deploymentoptions">DeploymentOptions</h3>
-
-<p>DeploymentOptions is a shared type used on objects to indicate that their configuration results in a Deployment which is managed by the Operator and includes options for managing Deployments such as the the number of replicas or pod options like container image and resource requirements. version, as well as Env variable overrides.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">replicas</code> <em>integer</em>
-</td>
-      <td>Replicas describes the number of desired pods. This is a pointer to distinguish between explicit zero and not specified. This only affects the DataPlane deployments for now, for more details on ControlPlane scaling please see https://github.com/Kong/gateway-operator/issues/736.</td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">podTemplateSpec</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#podtemplatespec-v1-core" target="_blank" rel="noopener nofollow noreferrer ">PodTemplateSpec</a></em>
-</td>
-      <td>PodTemplateSpec defines PodTemplateSpec for Deployment’s pods.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Appears in:</em></p>
-<ul>
-  <li><a href="#controlplaneoptions">ControlPlaneOptions</a></li>
-  <li><a href="#controlplanespec">ControlPlaneSpec</a></li>
-</ul>
-
-<h3 id="gatewayconfigurationspec">GatewayConfigurationSpec</h3>
-
-<p>GatewayConfigurationSpec defines the desired state of GatewayConfiguration</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">dataPlaneOptions</code> <em><a href="#dataplaneoptions">DataPlaneOptions</a></em>
-</td>
-      <td>DataPlaneOptions is the specification for configuration overrides for DataPlane resources that will be created for the Gateway.</td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">controlPlaneOptions</code> <em><a href="#controlplaneoptions">ControlPlaneOptions</a></em>
-</td>
-      <td>ControlPlaneOptions is the specification for configuration overrides for ControlPlane resources that will be created for the Gateway.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Appears in:</em></p>
-<ul>
-  <li><a href="#gatewayconfiguration">GatewayConfiguration</a></li>
-</ul>
-
-<h2 id="gateway-operatorkonghqcomv1beta1">gateway-operator.konghq.com/v1beta1</h2>
-
-<p>Package v1beta1 contains API Schema definitions for the gateway-operator.konghq.com v1beta1 API group</p>
-
-<ul>
-  <li><a href="#dataplane">DataPlane</a></li>
-</ul>
 
 <h3 id="dataplane">DataPlane</h3>
 
@@ -1726,7 +2707,7 @@ Version Compatibility
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
 </td>
       <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
     </tr>
@@ -1736,10 +2717,66 @@ Version Compatibility
 </td>
       <td> </td>
     </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">status</code> <em><a href="#dataplanestatus">DataPlaneStatus</a></em>
+</td>
+      <td> </td>
+    </tr>
   </tbody>
 </table>
 
-<h3 id="address">Address</h3>
+<h3 id="gatewayconfiguration">GatewayConfiguration</h3>
+
+<p>GatewayConfiguration is the Schema for the gatewayconfigurations API</p>
+
+<!-- gateway_configuration description placeholder -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">gateway-operator.konghq.com/v1beta1</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">GatewayConfiguration</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+</td>
+      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">spec</code> <em><a href="#gatewayconfigurationspec">GatewayConfigurationSpec</a></em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">status</code> <em><a href="#gatewayconfigurationstatus">GatewayConfigurationStatus</a></em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="types-1">Types</h3>
+
+<p>In this section you will find types that the CRDs rely on.</p>
+<h4 id="address">Address</h4>
 
 <p>Address describes an address which can be either an IP address or a hostname.</p>
 
@@ -1761,7 +2798,7 @@ Version Compatibility
       <td>
 <code class="language-plaintext highlighter-rouge">value</code> <em>string</em>
 </td>
-      <td>Value of the address. The validity of the values will depend on the type and support by the controller. <br><br> Examples: <code class="language-plaintext highlighter-rouge">1.2.3.4</code>, <code class="language-plaintext highlighter-rouge">128::1</code>, <code class="language-plaintext highlighter-rouge">my-ip-address</code>.</td>
+      <td>Value of the address. The validity of the values will depend on the type and support by the controller.<br><br> Examples: <code class="language-plaintext highlighter-rouge">1.2.3.4</code>, <code class="language-plaintext highlighter-rouge">128::1</code>, <code class="language-plaintext highlighter-rouge">my-ip-address</code>.</td>
     </tr>
     <tr>
       <td>
@@ -1778,13 +2815,11 @@ Version Compatibility
   <li><a href="#rolloutstatusservice">RolloutStatusService</a></li>
 </ul>
 
-<h3 id="addresssourcetype">AddressSourceType</h3>
-
+<h4 id="addresssourcetype">AddressSourceType</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p>AddressSourceType defines the type of source this address represents. 
- Can be one of:</p>
-
+<p>AddressSourceType defines the type of source this address represents.<br><br>
+Can be one of:<br><br></p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">PublicLoadBalancer</code></li>
   <li><code class="language-plaintext highlighter-rouge">PrivateLoadBalancer</code></li>
@@ -1797,13 +2832,11 @@ Version Compatibility
   <li><a href="#address">Address</a></li>
 </ul>
 
-<h3 id="addresstype">AddressType</h3>
-
+<h4 id="addresstype">AddressType</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p>AddressType defines how a network address is represented as a text string. 
- Can be one of:</p>
-
+<p>AddressType defines how a network address is represented as a text string.<br><br>
+Can be one of:<br><br></p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">IPAddress</code></li>
   <li><code class="language-plaintext highlighter-rouge">Hostname</code></li>
@@ -1814,7 +2847,7 @@ Version Compatibility
   <li><a href="#address">Address</a></li>
 </ul>
 
-<h3 id="bluegreenstrategy">BlueGreenStrategy</h3>
+<h4 id="bluegreenstrategy">BlueGreenStrategy</h4>
 
 <p>BlueGreenStrategy defines the Blue Green deployment strategy.</p>
 
@@ -1846,9 +2879,163 @@ Version Compatibility
   <li><a href="#rolloutstrategy">RolloutStrategy</a></li>
 </ul>
 
-<h3 id="dataplanedeploymentoptions">DataPlaneDeploymentOptions</h3>
+<h4 id="controlplanedeploymentoptions">ControlPlaneDeploymentOptions</h4>
 
-<p>DataPlaneDeploymentOptions specifies options for the Deployments (as in the Kubernetes resource “Deployment”) which are created and managed for the DataPlane resource.</p>
+<p>ControlPlaneDeploymentOptions is a shared type used on objects to indicate that their
+configuration results in a Deployment which is managed by the Operator and
+includes options for managing Deployments such as the the number of replicas
+or pod options like container image and resource requirements.
+version, as well as Env variable overrides.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">replicas</code> <em>integer</em>
+</td>
+      <td>Replicas describes the number of desired pods. This is a pointer to distinguish between explicit zero and not specified. This only affects the DataPlane deployments for now, for more details on ControlPlane scaling please see https://github.com/Kong/gateway-operator/issues/736.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">podTemplateSpec</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#podtemplatespec-v1-core" target="_blank" rel="noopener nofollow noreferrer ">PodTemplateSpec</a></em>
+</td>
+      <td>PodTemplateSpec defines PodTemplateSpec for Deployment’s pods.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controlplaneoptions">ControlPlaneOptions</a></li>
+  <li><a href="#controlplanespec">ControlPlaneSpec</a></li>
+</ul>
+
+<h4 id="controlplaneoptions">ControlPlaneOptions</h4>
+
+<p>ControlPlaneOptions indicates the specific information needed to
+deploy and connect a ControlPlane to a DataPlane object.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">deployment</code> <em><a href="#controlplanedeploymentoptions">ControlPlaneDeploymentOptions</a></em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">dataplane</code> <em>string</em>
+</td>
+      <td>DataPlanes refers to the named DataPlane objects which this ControlPlane is responsible for. Currently they must be in the same namespace as the DataPlane.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">extensions</code> <em><a href="#extensionref">ExtensionRef</a> array</em>
+</td>
+      <td>Extensions provide additional or replacement features for the ControlPlane resources to influence or enhance functionality.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controlplanespec">ControlPlaneSpec</a></li>
+  <li><a href="#gatewayconfigurationspec">GatewayConfigurationSpec</a></li>
+</ul>
+
+<h4 id="controlplanespec">ControlPlaneSpec</h4>
+
+<p>ControlPlaneSpec defines the desired state of ControlPlane</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">deployment</code> <em><a href="#controlplanedeploymentoptions">ControlPlaneDeploymentOptions</a></em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">dataplane</code> <em>string</em>
+</td>
+      <td>DataPlanes refers to the named DataPlane objects which this ControlPlane is responsible for. Currently they must be in the same namespace as the DataPlane.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">extensions</code> <em><a href="#extensionref">ExtensionRef</a> array</em>
+</td>
+      <td>Extensions provide additional or replacement features for the ControlPlane resources to influence or enhance functionality.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">gatewayClass</code> <em><a href="#objectname">ObjectName</a></em>
+</td>
+      <td>GatewayClass indicates the Gateway resources which this ControlPlane should be responsible for configuring routes for (e.g. HTTPRoute, TCPRoute, UDPRoute, TLSRoute, e.t.c.).<br><br> Required for the ControlPlane to have any effect: at least one Gateway must be present for configuration to be pushed to the data-plane and only Gateway resources can be used to identify data-plane entities.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">ingressClass</code> <em>string</em>
+</td>
+      <td>IngressClass enables support for the older Ingress resource and indicates which Ingress resources this ControlPlane should be responsible for.<br><br> Routing configured this way will be applied to the Gateway resources indicated by GatewayClass.<br><br> If omitted, Ingress resources will not be supported by the ControlPlane.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controlplane">ControlPlane</a></li>
+</ul>
+
+<h4 id="controlplanestatus">ControlPlaneStatus</h4>
+
+<p>ControlPlaneStatus defines the observed state of ControlPlane</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+</td>
+      <td>Conditions describe the current conditions of the Gateway.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controlplane">ControlPlane</a></li>
+</ul>
+
+<h4 id="dataplanedeploymentoptions">DataPlaneDeploymentOptions</h4>
+
+<p>DataPlaneDeploymentOptions specifies options for the Deployments (as in the Kubernetes
+resource “Deployment”) which are created and managed for the DataPlane resource.</p>
 
 <table>
   <thead>
@@ -1868,11 +3055,17 @@ Version Compatibility
       <td>
 <code class="language-plaintext highlighter-rouge">replicas</code> <em>integer</em>
 </td>
-      <td>Replicas describes the number of desired pods. This is a pointer to distinguish between explicit zero and not specified. This only affects the DataPlane deployments for now, for more details on ControlPlane scaling please see https://github.com/Kong/gateway-operator/issues/736.</td>
+      <td>Replicas describes the number of desired pods. This is a pointer to distinguish between explicit zero and not specified. This is effectively shorthand for setting a scaling minimum and maximum to the same value. This field and the scaling field are mutually exclusive: You can only configure one or the other.</td>
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">podTemplateSpec</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#podtemplatespec-v1-core" target="_blank" rel="noopener nofollow noreferrer ">PodTemplateSpec</a></em>
+<code class="language-plaintext highlighter-rouge">scaling</code> <em><a href="#scaling">Scaling</a></em>
+</td>
+      <td>Scaling defines the scaling options for the deployment.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">podTemplateSpec</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#podtemplatespec-v1-core" target="_blank" rel="noopener nofollow noreferrer ">PodTemplateSpec</a></em>
 </td>
       <td>PodTemplateSpec defines PodTemplateSpec for Deployment’s pods. It’s being applied on top of the generated Deployments using <a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/util/strategicpatch#StrategicMergePatch" target="_blank" rel="noopener nofollow noreferrer ">StrategicMergePatch</a>.</td>
     </tr>
@@ -1883,9 +3076,10 @@ Version Compatibility
 <ul>
   <li><a href="#dataplaneoptions">DataPlaneOptions</a></li>
   <li><a href="#dataplanespec">DataPlaneSpec</a></li>
+  <li><a href="#gatewayconfigdataplaneoptions">GatewayConfigDataPlaneOptions</a></li>
 </ul>
 
-<h3 id="dataplanenetworkoptions">DataPlaneNetworkOptions</h3>
+<h4 id="dataplanenetworkoptions">DataPlaneNetworkOptions</h4>
 
 <p>DataPlaneNetworkOptions defines network related options for a DataPlane.</p>
 
@@ -1903,6 +3097,12 @@ Version Compatibility
 </td>
       <td>Services indicates the configuration of Kubernetes Services needed for the topology of various forms of traffic (including ingress, e.t.c.) to and from the DataPlane.</td>
     </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">konnectCertificate</code> <em><a href="#konnectcertificateoptions">KonnectCertificateOptions</a></em>
+</td>
+      <td>KonnectCA is the certificate authority that the operator uses to provision client certificates the DataPlane will use to authenticate itself to the Konnect API. Requires Enterprise.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -1912,9 +3112,10 @@ Version Compatibility
   <li><a href="#dataplanespec">DataPlaneSpec</a></li>
 </ul>
 
-<h3 id="dataplaneoptions">DataPlaneOptions</h3>
+<h4 id="dataplaneoptions">DataPlaneOptions</h4>
 
-<p>DataPlaneOptions defines the information specifically needed to deploy the DataPlane.</p>
+<p>DataPlaneOptions defines the information specifically needed to
+deploy the DataPlane.</p>
 
 <table>
   <thead>
@@ -1942,10 +3143,9 @@ Version Compatibility
 <p><em>Appears in:</em></p>
 <ul>
   <li><a href="#dataplanespec">DataPlaneSpec</a></li>
-  <li><a href="#gatewayconfigurationspec">GatewayConfigurationSpec</a></li>
 </ul>
 
-<h3 id="dataplanerolloutstatus">DataPlaneRolloutStatus</h3>
+<h4 id="dataplanerolloutstatus">DataPlaneRolloutStatus</h4>
 
 <p>DataPlaneRolloutStatus describes the DataPlane rollout status.</p>
 
@@ -1971,7 +3171,7 @@ Version Compatibility
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
 </td>
       <td>Conditions contains the status conditions about the rollout.</td>
     </tr>
@@ -1983,9 +3183,10 @@ Version Compatibility
   <li><a href="#dataplanestatus">DataPlaneStatus</a></li>
 </ul>
 
-<h3 id="dataplanerolloutstatusdeployment">DataPlaneRolloutStatusDeployment</h3>
+<h4 id="dataplanerolloutstatusdeployment">DataPlaneRolloutStatusDeployment</h4>
 
-<p>DataPlaneRolloutStatusDeployment is a rollout status field which contains fields specific for Deployments during the rollout.</p>
+<p>DataPlaneRolloutStatusDeployment is a rollout status field which contains
+fields specific for Deployments during the rollout.</p>
 
 <table>
   <thead>
@@ -2009,9 +3210,10 @@ Version Compatibility
   <li><a href="#dataplanerolloutstatus">DataPlaneRolloutStatus</a></li>
 </ul>
 
-<h3 id="dataplanerolloutstatusservices">DataPlaneRolloutStatusServices</h3>
+<h4 id="dataplanerolloutstatusservices">DataPlaneRolloutStatusServices</h4>
 
-<p>DataPlaneRolloutStatusServices describes the status of the services during DataPlane rollout.</p>
+<p>DataPlaneRolloutStatusServices describes the status of the services during
+DataPlane rollout.</p>
 
 <table>
   <thead>
@@ -2041,9 +3243,9 @@ Version Compatibility
   <li><a href="#dataplanerolloutstatus">DataPlaneRolloutStatus</a></li>
 </ul>
 
-<h3 id="dataplaneservices">DataPlaneServices</h3>
+<h4 id="dataplaneserviceoptions">DataPlaneServiceOptions</h4>
 
-<p>DataPlaneServices contains Services related DataPlane configuration.</p>
+<p>DataPlaneServiceOptions contains Services related DataPlane configuration.</p>
 
 <table>
   <thead>
@@ -2055,7 +3257,89 @@ Version Compatibility
   <tbody>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">ingress</code> <em><a href="#serviceoptions">ServiceOptions</a></em>
+<code class="language-plaintext highlighter-rouge">ports</code> <em><a href="#dataplaneserviceport">DataPlaneServicePort</a> array</em>
+</td>
+      <td>Ports defines the list of ports that are exposed by the service. The ports field allows defining the name, port and targetPort of the underlying service ports, while the protocol is defaulted to TCP, as it is the only protocol currently supported.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">type</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#servicetype-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceType</a></em>
+</td>
+      <td>Type determines how the Service is exposed. Defaults to <code class="language-plaintext highlighter-rouge">LoadBalancer</code>.<br><br> Valid options are <code class="language-plaintext highlighter-rouge">LoadBalancer</code> and <code class="language-plaintext highlighter-rouge">ClusterIP</code>.<br><br> <code class="language-plaintext highlighter-rouge">ClusterIP</code> allocates a cluster-internal IP address for load-balancing to endpoints.<br><br> <code class="language-plaintext highlighter-rouge">LoadBalancer</code> builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP.<br><br> More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">annotations</code> <em>object (keys:string, values:string)</em>
+</td>
+      <td>Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.<br><br> More info: http://kubernetes.io/docs/user-guide/annotations</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">externalTrafficPolicy</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#serviceexternaltrafficpolicy-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceExternalTrafficPolicy</a></em>
+</td>
+      <td>ExternalTrafficPolicy describes how nodes distribute service traffic they receive on one of the Service’s “externally-facing” addresses (NodePorts, ExternalIPs, and LoadBalancer IPs). If set to “Local”, the proxy will configure the service in a way that assumes that external load balancers will take care of balancing the service traffic between nodes, and so each node will deliver traffic only to the node-local endpoints of the service, without masquerading the client source IP. (Traffic mistakenly sent to a node with no endpoints will be dropped.) The default value, “Cluster”, uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features). Note that traffic sent to an External IP or LoadBalancer IP from within the cluster will always get “Cluster” semantics, but clients sending to a NodePort from within the cluster may need to take traffic policy into account when picking a node.<br><br> More info: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplaneservices">DataPlaneServices</a></li>
+</ul>
+
+<h4 id="dataplaneserviceport">DataPlaneServicePort</h4>
+
+<p>DataPlaneServicePort contains information on service’s port.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td>The name of this port within the service. This must be a DNS_LABEL. All ports within a ServiceSpec must have unique names. When considering the endpoints for a Service, this must match the ‘name’ field in the EndpointPort. Optional if only one ServicePort is defined on this service.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">port</code> <em>integer</em>
+</td>
+      <td>The port that will be exposed by this service.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">targetPort</code> <em><a href="#intorstring">IntOrString</a></em>
+</td>
+      <td>Number or name of the port to access on the pods targeted by the service. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. If this is a string, it will be looked up as a named port in the target Pod’s container ports. If this is not specified, the value of the ‘port’ field is used (an identity map). This field is ignored for services with clusterIP=None, and should be omitted or set equal to the ‘port’ field. More info: https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplaneserviceoptions">DataPlaneServiceOptions</a></li>
+</ul>
+
+<h4 id="dataplaneservices">DataPlaneServices</h4>
+
+<p>DataPlaneServices contains Services related DataPlane configuration, shared with the GatewayConfiguration.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">ingress</code> <em><a href="#dataplaneserviceoptions">DataPlaneServiceOptions</a></em>
 </td>
       <td>Ingress is the Kubernetes Service that will be used to expose ingress traffic for the DataPlane. Here you can determine whether the DataPlane will be exposed outside the cluster (e.g. using a LoadBalancer type Services) or only internally (e.g. ClusterIP), and inject any additional annotations you need on the service (for instance, if you need to influence a cloud provider LoadBalancer configuration).</td>
     </tr>
@@ -2067,7 +3351,7 @@ Version Compatibility
   <li><a href="#dataplanenetworkoptions">DataPlaneNetworkOptions</a></li>
 </ul>
 
-<h3 id="dataplanespec">DataPlaneSpec</h3>
+<h4 id="dataplanespec">DataPlaneSpec</h4>
 
 <p>DataPlaneSpec defines the desired state of DataPlane</p>
 
@@ -2099,9 +3383,75 @@ Version Compatibility
   <li><a href="#dataplane">DataPlane</a></li>
 </ul>
 
-<h3 id="deploymentoptions-1">DeploymentOptions</h3>
+<h4 id="dataplanestatus">DataPlaneStatus</h4>
 
-<p>DeploymentOptions is a shared type used on objects to indicate that their configuration results in a Deployment which is managed by the Operator and includes options for managing Deployments such as the number of replicas or pod options like container image and resource requirements. version, as well as Env variable overrides.</p>
+<p>DataPlaneStatus defines the observed state of DataPlane</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+</td>
+      <td>Conditions describe the status of the DataPlane.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">service</code> <em>string</em>
+</td>
+      <td>Service indicates the Service that exposes the DataPlane’s configured routes</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">addresses</code> <em><a href="#address">Address</a> array</em>
+</td>
+      <td>Addresses lists the addresses that have actually been bound to the DataPlane.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">selector</code> <em>string</em>
+</td>
+      <td>Selector contains a unique DataPlane identifier used as a deterministic label selector that is used throughout its dependent resources. This is used e.g. as a label selector for DataPlane’s Services and Deployments.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">readyReplicas</code> <em>integer</em>
+</td>
+      <td>ReadyReplicas indicates how many replicas have reported to be ready.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">replicas</code> <em>integer</em>
+</td>
+      <td>Replicas indicates how many replicas have been set for the DataPlane.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">rollout</code> <em><a href="#dataplanerolloutstatus">DataPlaneRolloutStatus</a></em>
+</td>
+      <td>RolloutStatus contains information about the rollout. It is set only if a rollout strategy was configured in the spec.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplane">DataPlane</a></li>
+</ul>
+
+<h4 id="deploymentoptions">DeploymentOptions</h4>
+
+<p>DeploymentOptions is a shared type used on objects to indicate that their
+configuration results in a Deployment which is managed by the Operator and
+includes options for managing Deployments such as the number of replicas
+or pod options like container image and resource requirements.
+version, as well as Env variable overrides.</p>
 
 <table>
   <thead>
@@ -2115,11 +3465,17 @@ Version Compatibility
       <td>
 <code class="language-plaintext highlighter-rouge">replicas</code> <em>integer</em>
 </td>
-      <td>Replicas describes the number of desired pods. This is a pointer to distinguish between explicit zero and not specified. This only affects the DataPlane deployments for now, for more details on ControlPlane scaling please see https://github.com/Kong/gateway-operator/issues/736.</td>
+      <td>Replicas describes the number of desired pods. This is a pointer to distinguish between explicit zero and not specified. This is effectively shorthand for setting a scaling minimum and maximum to the same value. This field and the scaling field are mutually exclusive: You can only configure one or the other.</td>
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">podTemplateSpec</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#podtemplatespec-v1-core" target="_blank" rel="noopener nofollow noreferrer ">PodTemplateSpec</a></em>
+<code class="language-plaintext highlighter-rouge">scaling</code> <em><a href="#scaling">Scaling</a></em>
+</td>
+      <td>Scaling defines the scaling options for the deployment.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">podTemplateSpec</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#podtemplatespec-v1-core" target="_blank" rel="noopener nofollow noreferrer ">PodTemplateSpec</a></em>
 </td>
       <td>PodTemplateSpec defines PodTemplateSpec for Deployment’s pods. It’s being applied on top of the generated Deployments using <a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/util/strategicpatch#StrategicMergePatch" target="_blank" rel="noopener nofollow noreferrer ">StrategicMergePatch</a>.</td>
     </tr>
@@ -2131,9 +3487,297 @@ Version Compatibility
   <li><a href="#dataplanedeploymentoptions">DataPlaneDeploymentOptions</a></li>
 </ul>
 
-<h3 id="promotion">Promotion</h3>
+<h4 id="gatewayconfigdataplanenetworkoptions">GatewayConfigDataPlaneNetworkOptions</h4>
 
-<p>Promotion is a type that contains fields that define how the operator handles promotion of resources during a blue/green rollout.</p>
+<p>GatewayConfigDataPlaneNetworkOptions defines network related options for a DataPlane.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">services</code> <em><a href="#gatewayconfigdataplaneservices">GatewayConfigDataPlaneServices</a></em>
+</td>
+      <td>Services indicates the configuration of Kubernetes Services needed for the topology of various forms of traffic (including ingress, etc.) to and from the DataPlane.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#gatewayconfigdataplaneoptions">GatewayConfigDataPlaneOptions</a></li>
+</ul>
+
+<h4 id="gatewayconfigdataplaneoptions">GatewayConfigDataPlaneOptions</h4>
+
+<p>GatewayConfigDataPlaneOptions indicates the specific information needed to
+configure and deploy a DataPlane object.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">deployment</code> <em><a href="#dataplanedeploymentoptions">DataPlaneDeploymentOptions</a></em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">network</code> <em><a href="#gatewayconfigdataplanenetworkoptions">GatewayConfigDataPlaneNetworkOptions</a></em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#gatewayconfigurationspec">GatewayConfigurationSpec</a></li>
+</ul>
+
+<h4 id="gatewayconfigdataplaneservices">GatewayConfigDataPlaneServices</h4>
+
+<p>GatewayConfigDataPlaneServices contains Services related DataPlane configuration.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">ingress</code> <em><a href="#gatewayconfigserviceoptions">GatewayConfigServiceOptions</a></em>
+</td>
+      <td>Ingress is the Kubernetes Service that will be used to expose ingress traffic for the DataPlane. Here you can determine whether the DataPlane will be exposed outside the cluster (e.g. using a LoadBalancer type Services) or only internally (e.g. ClusterIP), and inject any additional annotations you need on the service (for instance, if you need to influence a cloud provider LoadBalancer configuration).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#gatewayconfigdataplanenetworkoptions">GatewayConfigDataPlaneNetworkOptions</a></li>
+</ul>
+
+<h4 id="gatewayconfigserviceoptions">GatewayConfigServiceOptions</h4>
+
+<p>GatewayConfigServiceOptions is used to includes options to customize the ingress service,
+such as the annotations.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">type</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#servicetype-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceType</a></em>
+</td>
+      <td>Type determines how the Service is exposed. Defaults to <code class="language-plaintext highlighter-rouge">LoadBalancer</code>.<br><br> Valid options are <code class="language-plaintext highlighter-rouge">LoadBalancer</code> and <code class="language-plaintext highlighter-rouge">ClusterIP</code>.<br><br> <code class="language-plaintext highlighter-rouge">ClusterIP</code> allocates a cluster-internal IP address for load-balancing to endpoints.<br><br> <code class="language-plaintext highlighter-rouge">LoadBalancer</code> builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP.<br><br> More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">annotations</code> <em>object (keys:string, values:string)</em>
+</td>
+      <td>Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.<br><br> More info: http://kubernetes.io/docs/user-guide/annotations</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">externalTrafficPolicy</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#serviceexternaltrafficpolicy-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceExternalTrafficPolicy</a></em>
+</td>
+      <td>ExternalTrafficPolicy describes how nodes distribute service traffic they receive on one of the Service’s “externally-facing” addresses (NodePorts, ExternalIPs, and LoadBalancer IPs). If set to “Local”, the proxy will configure the service in a way that assumes that external load balancers will take care of balancing the service traffic between nodes, and so each node will deliver traffic only to the node-local endpoints of the service, without masquerading the client source IP. (Traffic mistakenly sent to a node with no endpoints will be dropped.) The default value, “Cluster”, uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features). Note that traffic sent to an External IP or LoadBalancer IP from within the cluster will always get “Cluster” semantics, but clients sending to a NodePort from within the cluster may need to take traffic policy into account when picking a node.<br><br> More info: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#gatewayconfigdataplaneservices">GatewayConfigDataPlaneServices</a></li>
+</ul>
+
+<h4 id="gatewayconfigurationspec">GatewayConfigurationSpec</h4>
+
+<p>GatewayConfigurationSpec defines the desired state of GatewayConfiguration</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">dataPlaneOptions</code> <em><a href="#gatewayconfigdataplaneoptions">GatewayConfigDataPlaneOptions</a></em>
+</td>
+      <td>DataPlaneOptions is the specification for configuration overrides for DataPlane resources that will be created for the Gateway.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">controlPlaneOptions</code> <em><a href="#controlplaneoptions">ControlPlaneOptions</a></em>
+</td>
+      <td>ControlPlaneOptions is the specification for configuration overrides for ControlPlane resources that will be created for the Gateway.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#gatewayconfiguration">GatewayConfiguration</a></li>
+</ul>
+
+<h4 id="gatewayconfigurationstatus">GatewayConfigurationStatus</h4>
+
+<p>GatewayConfigurationStatus defines the observed state of GatewayConfiguration</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+</td>
+      <td>Conditions describe the current conditions of the GatewayConfigurationStatus.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#gatewayconfiguration">GatewayConfiguration</a></li>
+</ul>
+
+<h4 id="horizontalscaling">HorizontalScaling</h4>
+
+<p>HorizontalScaling defines horizontal scaling options for the deployment.
+It holds all the options from the HorizontalPodAutoscalerSpec besides the
+ScaleTargetRef which is being controlled by the Operator.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">minReplicas</code> <em>integer</em>
+</td>
+      <td>minReplicas is the lower limit for the number of replicas to which the autoscaler can scale down.  It defaults to 1 pod.  minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured.  Scaling is active as long as at least one metric value is available.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">maxReplicas</code> <em>integer</em>
+</td>
+      <td>maxReplicas is the upper limit for the number of replicas to which the autoscaler can scale up. It cannot be less that minReplicas.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metrics</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#metricspec-v2-autoscaling" target="_blank" rel="noopener nofollow noreferrer ">MetricSpec</a> array</em>
+</td>
+      <td>metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used).  The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods.  Ergo, metrics used must decrease as the pod count is increased, and vice-versa.  See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">behavior</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#horizontalpodautoscalerbehavior-v2-autoscaling" target="_blank" rel="noopener nofollow noreferrer ">HorizontalPodAutoscalerBehavior</a></em>
+</td>
+      <td>behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default HPAScalingRules for scale up and scale down are used.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#scaling">Scaling</a></li>
+</ul>
+
+<h4 id="konnectcertificateoptions">KonnectCertificateOptions</h4>
+
+<p>KonnectCertificateOptions indicates how the operator should manage the certificates that managed entities will use
+to interact with Konnect.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">issuer</code> <em><a href="#namespacedname">NamespacedName</a></em>
+</td>
+      <td>Issuer is the cert-manager Issuer or ClusterIssuer the operator will use to request certificates. When Namespace is set, the operator will retrieve the Issuer with that Name in that Namespace. When Namespace is omitted, the operator will retrieve the ClusterIssuer with that name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplanenetworkoptions">DataPlaneNetworkOptions</a></li>
+</ul>
+
+<h4 id="namespacedname">NamespacedName</h4>
+
+<p>NamespacedName is a resource identified by name and optional namespace.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em>string</em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#konnectcertificateoptions">KonnectCertificateOptions</a></li>
+</ul>
+
+<h4 id="promotion">Promotion</h4>
+
+<p>Promotion is a type that contains fields that define how the operator handles
+promotion of resources during a blue/green rollout.</p>
 
 <table>
   <thead>
@@ -2157,16 +3801,18 @@ Version Compatibility
   <li><a href="#bluegreenstrategy">BlueGreenStrategy</a></li>
 </ul>
 
-<h3 id="promotionstrategy">PromotionStrategy</h3>
-
+<h4 id="promotionstrategy">PromotionStrategy</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p>PromotionStrategy is the type of promotion strategy consts. 
- Allowed values:</p>
-
+<p>PromotionStrategy is the type of promotion strategy consts.<br><br>
+Allowed values:<br><br></p>
 <ul>
   <li>
-<code class="language-plaintext highlighter-rouge">BreakBeforePromotion</code> is a promotion strategy which will ensure all new resources are ready and then break, to enable manual inspection. The user must indicate manually when they want the promotion to continue. That can be done by annotating the <code class="language-plaintext highlighter-rouge">DataPlane</code> object with <code class="language-plaintext highlighter-rouge">"gateway-operator.konghq.com/promote-when-ready": "true"</code>.</li>
+<code class="language-plaintext highlighter-rouge">BreakBeforePromotion</code> is a promotion strategy which will ensure all new
+resources are ready and then break, to enable manual inspection.
+The user must indicate manually when they want the promotion to continue.
+That can be done by annotating the <code class="language-plaintext highlighter-rouge">DataPlane</code> object with
+<code class="language-plaintext highlighter-rouge">"gateway-operator.konghq.com/promote-when-ready": "true"</code>.</li>
 </ul>
 
 <p><em>Appears in:</em></p>
@@ -2174,7 +3820,7 @@ Version Compatibility
   <li><a href="#promotion">Promotion</a></li>
 </ul>
 
-<h3 id="rollout">Rollout</h3>
+<h4 id="rollout">Rollout</h4>
 
 <p>Rollout defines options for rollouts.</p>
 
@@ -2200,9 +3846,10 @@ Version Compatibility
   <li><a href="#dataplanedeploymentoptions">DataPlaneDeploymentOptions</a></li>
 </ul>
 
-<h3 id="rolloutresourceplan">RolloutResourcePlan</h3>
+<h4 id="rolloutresourceplan">RolloutResourcePlan</h4>
 
-<p>RolloutResourcePlan is a type that holds rollout resource plan related fields which control how the operator handles resources during and after a rollout.</p>
+<p>RolloutResourcePlan is a type that holds rollout resource plan related fields
+which control how the operator handles resources during and after a rollout.</p>
 
 <table>
   <thead>
@@ -2226,16 +3873,19 @@ Version Compatibility
   <li><a href="#rolloutresources">RolloutResources</a></li>
 </ul>
 
-<h3 id="rolloutresourceplandeployment">RolloutResourcePlanDeployment</h3>
-
+<h4 id="rolloutresourceplandeployment">RolloutResourcePlanDeployment</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p>RolloutResourcePlanDeployment is the type that holds the resource plan for managing the Deployment objects during and after a rollout. 
- Allowed values:</p>
-
+<p>RolloutResourcePlanDeployment is the type that holds the resource plan for
+managing the Deployment objects during and after a rollout.<br><br>
+Allowed values:<br><br></p>
 <ul>
   <li>
-<code class="language-plaintext highlighter-rouge">ScaleDownOnPromotionScaleUpOnRollout</code> is a rollout resource plan for Deployment which makes the operator scale down the Deployment to 0 when the rollout is not initiated by a spec change and then to scale it up when the rollout is initiated (the owner resource like a DataPlane is patched or updated).</li>
+<code class="language-plaintext highlighter-rouge">ScaleDownOnPromotionScaleUpOnRollout</code> is a rollout
+resource plan for Deployment which makes the operator scale down
+the Deployment to 0 when the rollout is not initiated by a spec change
+and then to scale it up when the rollout is initiated (the owner resource
+like a DataPlane is patched or updated).</li>
 </ul>
 
 <p><em>Appears in:</em></p>
@@ -2243,9 +3893,10 @@ Version Compatibility
   <li><a href="#rolloutresourceplan">RolloutResourcePlan</a></li>
 </ul>
 
-<h3 id="rolloutresources">RolloutResources</h3>
+<h4 id="rolloutresources">RolloutResources</h4>
 
-<p>RolloutResources is the type which contains the fields which control how the operator manages the resources it manages during or after the rollout concludes.</p>
+<p>RolloutResources is the type which contains the fields which control how the operator
+manages the resources it manages during or after the rollout concludes.</p>
 
 <table>
   <thead>
@@ -2269,9 +3920,10 @@ Version Compatibility
   <li><a href="#bluegreenstrategy">BlueGreenStrategy</a></li>
 </ul>
 
-<h3 id="rolloutstatusservice">RolloutStatusService</h3>
+<h4 id="rolloutstatusservice">RolloutStatusService</h4>
 
-<p>RolloutStatusService is a struct which contains status information about services that are exposed as part of the rollout.</p>
+<p>RolloutStatusService is a struct which contains status information about
+services that are exposed as part of the rollout.</p>
 
 <table>
   <thead>
@@ -2301,7 +3953,7 @@ Version Compatibility
   <li><a href="#dataplanerolloutstatusservices">DataPlaneRolloutStatusServices</a></li>
 </ul>
 
-<h3 id="rolloutstrategy">RolloutStrategy</h3>
+<h4 id="rolloutstrategy">RolloutStrategy</h4>
 
 <p>RolloutStrategy holds the rollout strategy options.</p>
 
@@ -2327,9 +3979,9 @@ Version Compatibility
   <li><a href="#rollout">Rollout</a></li>
 </ul>
 
-<h3 id="serviceoptions">ServiceOptions</h3>
+<h4 id="scaling">Scaling</h4>
 
-<p>ServiceOptions is used to includes options to customize the ingress service, such as the annotations.</p>
+<p>Scaling defines the scaling options for the deployment.</p>
 
 <table>
   <thead>
@@ -2341,25 +3993,59 @@ Version Compatibility
   <tbody>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">type</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#servicetype-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceType</a></em>
+<code class="language-plaintext highlighter-rouge">horizontal</code> <em><a href="#horizontalscaling">HorizontalScaling</a></em>
 </td>
-      <td>Type determines how the Service is exposed. Defaults to <code class="language-plaintext highlighter-rouge">LoadBalancer</code>. <br><br> Valid options are <code class="language-plaintext highlighter-rouge">LoadBalancer</code> and <code class="language-plaintext highlighter-rouge">ClusterIP</code>. <br><br> <code class="language-plaintext highlighter-rouge">ClusterIP</code> allocates a cluster-internal IP address for load-balancing to endpoints. <br><br> <code class="language-plaintext highlighter-rouge">LoadBalancer</code> builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP. <br><br> More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types</td>
-    </tr>
-    <tr>
-      <td>
-<code class="language-plaintext highlighter-rouge">annotations</code> <em>object (keys:string, values:string)</em>
-</td>
-      <td>Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. <br><br> More info: http://kubernetes.io/docs/user-guide/annotations</td>
+      <td>HorizontalScaling defines horizontal scaling options for the deployment.</td>
     </tr>
   </tbody>
 </table>
 
 <p><em>Appears in:</em></p>
 <ul>
-  <li><a href="#dataplaneservices">DataPlaneServices</a></li>
+  <li><a href="#dataplanedeploymentoptions">DataPlaneDeploymentOptions</a></li>
+  <li><a href="#deploymentoptions">DeploymentOptions</a></li>
 </ul>
 
-<!-- vale on -->
+<h4 id="serviceoptions">ServiceOptions</h4>
+
+<p>ServiceOptions is used to includes options to customize the ingress service,
+such as the annotations.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">type</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#servicetype-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceType</a></em>
+</td>
+      <td>Type determines how the Service is exposed. Defaults to <code class="language-plaintext highlighter-rouge">LoadBalancer</code>.<br><br> Valid options are <code class="language-plaintext highlighter-rouge">LoadBalancer</code> and <code class="language-plaintext highlighter-rouge">ClusterIP</code>.<br><br> <code class="language-plaintext highlighter-rouge">ClusterIP</code> allocates a cluster-internal IP address for load-balancing to endpoints.<br><br> <code class="language-plaintext highlighter-rouge">LoadBalancer</code> builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP.<br><br> More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">annotations</code> <em>object (keys:string, values:string)</em>
+</td>
+      <td>Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.<br><br> More info: http://kubernetes.io/docs/user-guide/annotations</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">externalTrafficPolicy</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#serviceexternaltrafficpolicy-v1-core" target="_blank" rel="noopener nofollow noreferrer ">ServiceExternalTrafficPolicy</a></em>
+</td>
+      <td>ExternalTrafficPolicy describes how nodes distribute service traffic they receive on one of the Service’s “externally-facing” addresses (NodePorts, ExternalIPs, and LoadBalancer IPs). If set to “Local”, the proxy will configure the service in a way that assumes that external load balancers will take care of balancing the service traffic between nodes, and so each node will deliver traffic only to the node-local endpoints of the service, without masquerading the client source IP. (Traffic mistakenly sent to a node with no endpoints will be dropped.) The default value, “Cluster”, uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features). Note that traffic sent to an External IP or LoadBalancer IP from within the cluster will always get “Cluster” semantics, but clients sending to a NodePort from within the cluster may need to take traffic policy into account when picking a node.<br><br> More info: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#dataplaneserviceoptions">DataPlaneServiceOptions</a></li>
+  <li><a href="#gatewayconfigserviceoptions">GatewayConfigServiceOptions</a></li>
+</ul>
+
 
 
           
@@ -2431,13 +4117,12 @@ Version Compatibility
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -2585,8 +4270,8 @@ Version Compatibility
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -2596,16 +4281,6 @@ Version Compatibility
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

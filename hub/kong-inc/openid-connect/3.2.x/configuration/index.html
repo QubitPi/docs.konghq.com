@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>OpenID Connect Configuration | Kong Docs</title>
+  <title>OpenID Connect Configuration - Plugin - v3.2.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="OpenID Connect Configuration | Kong Docs">
+  <meta property="og:title" content="OpenID Connect Configuration - Plugin - v3.2.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/openid-connect/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/openid-connect/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/openid-connect/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,11 +559,11 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
-
-  <a href="https://konghq.com/pricing" target="_blank" class="badge premium" aria-label="available with Konnect Premium subscription" rel="noopener nofollow noreferrer "> </a>
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -579,13 +604,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -601,6 +626,46 @@ Introduction
 Overview
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/primary-config-params/">
+        
+
+Important config parameters
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/support/">
+        
+
+Supported credentials, grants, and tested IdPs
+
+      </a>
+    
+
     
   </span>
 
@@ -625,6 +690,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -640,13 +707,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -663,6 +730,199 @@ Basic config examples
 
       </a>
     
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-authentication-subtree">
+    
+      
+
+Authentication
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authentication subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-2-authentication-subtree" role="group" aria-label="Authentication">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/authorization-code-flow/">
+        
+
+Authorization code flow
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/client-credentials/">
+        
+
+Client credentials grant
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/introspection/">
+        
+
+Introspection
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/jwt-access-token/">
+        
+
+JWT access token
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/kong-oauth-token/">
+        
+
+Kong OAuth token
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/password-grant/">
+        
+
+Password grant
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/refresh-token/">
+        
+
+Refresh token grant
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/session/">
+        
+
+Session
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authentication/user-info/">
+        
+
+User info
+
+      </a>
+    
+
+    
   </span>
 
   
@@ -670,6 +930,328 @@ Basic config examples
 
       
     </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-3-authorization-subtree">
+    
+      
+
+Authorization
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authorization subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-3-authorization-subtree" role="group" aria-label="Authorization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authorization/acl/">
+        
+
+ACL
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authorization/claims/">
+        
+
+Claims
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/authorization/consumer/">
+        
+
+Consumer
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-third-party-subtree">
+    
+      
+
+Third Party
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Third Party subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-4-third-party-subtree" role="group" aria-label="Third Party">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/auth0/">
+        
+
+OpenID Connect with Auth0
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/azure-ad/">
+        
+
+OpenID Connect with Azure AD
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/cognito/">
+        
+
+OpenID Connect with Amazon Cognito
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/curity/">
+        
+
+OpenID Connect with Curity
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/google/">
+        
+
+OpenID Connect with Google
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/third-party/okta/">
+        
+
+OpenID Connect with Okta
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/debugging/">
+        
+
+Debugging
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/headers/">
+        
+
+Headers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/logout/">
+        
+
+Logout
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/how-to/records/">
+        
+
+Records reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/openid-connect/3.2.x/api/">
+        
+  <img src="/assets/images/icons/hub-layout/icn-reference.svg" alt="">
+
+
+OpenID Connect API
+
+      </a>
+    
+
+    
+  </span>
+
   
 </li>
 
@@ -686,13 +1268,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=openid-connect" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -711,7 +1303,6 @@ Changelog
     <ul>
       <li><a href="#" class="scroll-to">Compatible protocols</a></li>
       <li><a href="#parameters" class="scroll-to">Parameters</a></li>
-      <li><a href="#deprecated-parameters" class="scroll-to">Deprecated parameters</a></li>
     </ul>
   </li>
 </ul>
@@ -726,12 +1317,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/openid-connect/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -763,7 +1360,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -772,7 +1369,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-openid-connect</code>.</p>
+openid-connect</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -787,9 +1390,22 @@ openid-connect</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>openid-connect_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -805,8 +1421,8 @@ openid-connect</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -823,8 +1439,8 @@ openid-connect</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -890,6 +1506,8 @@ openid-connect</code>.</p>
     
 
     
+
+    
       
       
     
@@ -898,6 +1516,8 @@ openid-connect</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -939,6 +1559,8 @@ openid-connect</code>.</p>
     
 
     
+
+    
       
       
     
@@ -952,6 +1574,8 @@ openid-connect</code>.</p>
 are cached to the Kong configuration database.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -1000,6 +1624,8 @@ are cached to the Kong configuration database.</p>
     
 
     
+
+    
       
       
     
@@ -1009,6 +1635,8 @@ are cached to the Kong configuration database.</p>
     <div class="field-description">
 <p>Extra header names passed to the discovery endpoint.</p>
 </div>
+
+    
 
     
 
@@ -1061,6 +1689,8 @@ are cached to the Kong configuration database.</p>
     
 
     
+
+    
       
       
     
@@ -1070,6 +1700,8 @@ are cached to the Kong configuration database.</p>
     <div class="field-description">
 <p>Extra header values passed to the discovery endpoint.</p>
 </div>
+
+    
 
     
 
@@ -1122,6 +1754,8 @@ are cached to the Kong configuration database.</p>
     
 
     
+
+    
       
       
     
@@ -1131,6 +1765,8 @@ are cached to the Kong configuration database.</p>
     <div class="field-description">
 <p>JWKS URIs whose public keys are trusted (in addition to the keys found with the discovery).</p>
 </div>
+
+    
 
     
 
@@ -1189,6 +1825,8 @@ are cached to the Kong configuration database.</p>
     
 
     
+
+    
       
       
     
@@ -1205,6 +1843,8 @@ attempt does not yield a JWK that can validate the token, Kong will wait the spe
 number of seconds before retrying the discovery.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -1261,6 +1901,8 @@ number of seconds before retrying the discovery.</p>
     
 
     
+
+    
       
       
         <span>
@@ -1294,6 +1936,8 @@ number of seconds before retrying the discovery.</p>
 <code class="language-plaintext highlighter-rouge">session</code>: session cookie authentication</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -1354,6 +1998,8 @@ number of seconds before retrying the discovery.</p>
     
 
     
+
+    
       
       
     
@@ -1378,6 +2024,8 @@ Other settings that are associated with the client are:</p>
 
 <p>Use the same array index when configuring related settings for the client.</p>
 </div>
+
+    
 
     
 
@@ -1438,6 +2086,8 @@ Other settings that are associated with the client are:</p>
     
 
     
+
+    
       
       
     
@@ -1451,6 +2101,8 @@ Other settings that are associated with the client are:</p>
 the identity provider endpoints.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -1481,6 +2133,8 @@ the identity provider endpoints.</p>
         of type <code>string</code>
       
     </span>
+
+    
 
     
 
@@ -1538,6 +2192,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
         <div class="field-subfield__params">
           
@@ -1590,6 +2246,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1599,6 +2257,8 @@ in the plugin configuration.</p>
     <div class="field-description">
 <p>The JWK used for the <code class="language-plaintext highlighter-rouge">private_key_jwt</code> authentication.</p>
 </div>
+
+    
 
     
 
@@ -1641,6 +2301,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1649,6 +2311,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1695,6 +2359,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1703,6 +2369,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1749,6 +2417,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1757,6 +2427,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1805,6 +2477,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1813,6 +2487,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1863,6 +2539,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1871,6 +2549,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1917,6 +2597,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1925,6 +2607,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1971,6 +2655,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -1979,6 +2665,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2027,6 +2715,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2035,6 +2725,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2085,6 +2777,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2093,6 +2787,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2139,6 +2835,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2147,6 +2845,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2201,6 +2901,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2209,6 +2911,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2255,6 +2959,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2263,6 +2969,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2309,6 +3017,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2317,6 +3027,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2363,6 +3075,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2371,6 +3085,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2417,6 +3133,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2425,6 +3143,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2471,6 +3191,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2479,6 +3201,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2533,6 +3257,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2541,6 +3267,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2595,6 +3323,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2603,6 +3333,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2657,6 +3389,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2665,6 +3399,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2719,6 +3455,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2727,6 +3465,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2781,6 +3521,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2789,6 +3531,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2843,6 +3587,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2851,6 +3597,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2905,6 +3653,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2913,6 +3663,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2967,6 +3719,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -2975,6 +3729,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3029,6 +3785,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -3037,6 +3795,8 @@ in the plugin configuration.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -3071,6 +3831,8 @@ in the plugin configuration.</p>
         of type <code>string</code>
       
     </span>
+
+    
 
     
 
@@ -3136,6 +3898,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
         <div class="field-subfield__params">
           
@@ -3190,6 +3954,8 @@ in the plugin configuration.</p>
     
 
     
+
+    
       
       
     
@@ -3201,6 +3967,8 @@ in the plugin configuration.</p>
 For example, setting this value to <code class="language-plaintext highlighter-rouge">Client</code>, and sending the request header <code class="language-plaintext highlighter-rouge">Client: 1</code> will cause the plugin
 to use the first client (see: <code class="language-plaintext highlighter-rouge">config.client_id</code>) from the client array.</p>
 </div>
+
+    
 
     
 
@@ -3249,6 +4017,8 @@ to use the first client (see: <code class="language-plaintext highlighter-rouge"
     
 
     
+
+    
       
       
     
@@ -3258,6 +4028,8 @@ to use the first client (see: <code class="language-plaintext highlighter-rouge"
     <div class="field-description">
 <p>The redirect URI passed to the authorization and token endpoints.</p>
 </div>
+
+    
 
     
 
@@ -3310,6 +4082,8 @@ to use the first client (see: <code class="language-plaintext highlighter-rouge"
     
 
     
+
+    
       
       
     
@@ -3324,6 +4098,8 @@ flow with possible query args preserved from the original request when <code cla
 is enabled.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -3376,6 +4152,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3385,6 +4163,8 @@ is enabled.</p>
     <div class="field-description">
 <p>Where to redirect the client after the logout.</p>
 </div>
+
+    
 
     
 
@@ -3437,6 +4217,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3446,6 +4228,8 @@ is enabled.</p>
     <div class="field-description">
 <p>Where to redirect the client on forbidden requests.</p>
 </div>
+
+    
 
     
 
@@ -3504,6 +4288,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3513,6 +4299,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The error message for the forbidden requests (when not using the redirection).</p>
 </div>
+
+    
 
     
 
@@ -3567,6 +4355,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3576,6 +4366,8 @@ is enabled.</p>
     <div class="field-description">
 <p>Destroy any active session for the forbidden requests.</p>
 </div>
+
+    
 
     
 
@@ -3624,6 +4416,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3633,6 +4427,8 @@ is enabled.</p>
     <div class="field-description">
 <p>Where to redirect the client on unauthorized requests.</p>
 </div>
+
+    
 
     
 
@@ -3691,6 +4487,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3700,6 +4498,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The error message for the unauthorized requests (when not using the redirection).</p>
 </div>
+
+    
 
     
 
@@ -3748,6 +4548,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3757,6 +4559,8 @@ is enabled.</p>
     <div class="field-description">
 <p>Where to redirect the client when unexpected errors happen with the requests.</p>
 </div>
+
+    
 
     
 
@@ -3813,6 +4617,8 @@ is enabled.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>query</code>, <code>form_post</code>, <code>fragment</code></span>
 
@@ -3836,6 +4642,8 @@ is enabled.</p>
 <code class="language-plaintext highlighter-rouge">fragment</code>: Instructs the identity provider to pass parameters in uri fragment (rarely useful as the plugin itself cannot read it)</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -3892,6 +4700,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3901,6 +4711,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The response type passed to the authorization endpoint.</p>
 </div>
+
+    
 
     
 
@@ -3961,6 +4773,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -3970,6 +4784,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The scopes passed to the authorization and token endpoints.</p>
 </div>
+
+    
 
     
 
@@ -4022,6 +4838,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4031,6 +4849,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The audience passed to the authorization endpoint.</p>
 </div>
+
+    
 
     
 
@@ -4083,6 +4903,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4092,6 +4914,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The issuers allowed to be present in the tokens (<code class="language-plaintext highlighter-rouge">iss</code> claim).</p>
 </div>
+
+    
 
     
 
@@ -4144,6 +4968,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4157,6 +4983,8 @@ is enabled.</p>
   <li>When <code class="language-plaintext highlighter-rouge">["scope1", "scope2"]</code> are in different array indices, either <code class="language-plaintext highlighter-rouge">scope1</code> OR <code class="language-plaintext highlighter-rouge">scope2</code> need to be present in access token (or introspection results).</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -4217,6 +5045,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4226,6 +5056,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The claim that contains the scopes.</p>
 </div>
+
+    
 
     
 
@@ -4278,6 +5110,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4291,6 +5125,8 @@ is enabled.</p>
   <li>When <code class="language-plaintext highlighter-rouge">["audience1", "audience2"]</code> are in different array indices, either <code class="language-plaintext highlighter-rouge">audience1</code> OR <code class="language-plaintext highlighter-rouge">audience2</code> need to be present in access token (or introspection results).</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -4351,6 +5187,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4360,6 +5198,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The claim that contains the audience.</p>
 </div>
+
+    
 
     
 
@@ -4412,6 +5252,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4425,6 +5267,8 @@ is enabled.</p>
   <li>When <code class="language-plaintext highlighter-rouge">["group1", "group2"]</code> are in different array indices, either <code class="language-plaintext highlighter-rouge">group1</code> OR <code class="language-plaintext highlighter-rouge">group2</code> need to be present in access token (or introspection results).</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -4485,6 +5329,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4494,6 +5340,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The claim that contains the groups.</p>
 </div>
+
+    
 
     
 
@@ -4546,6 +5394,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4559,6 +5409,8 @@ is enabled.</p>
   <li>When <code class="language-plaintext highlighter-rouge">["role1", "role2"]</code> are in different array indices, either <code class="language-plaintext highlighter-rouge">role1</code> OR <code class="language-plaintext highlighter-rouge">role2</code> need to be present in access token (or introspection results).</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -4619,6 +5471,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4628,6 +5482,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The claim that contains the roles.</p>
 </div>
+
+    
 
     
 
@@ -4680,6 +5536,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4689,6 +5547,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The allowed values for the <code class="language-plaintext highlighter-rouge">hd</code> claim.</p>
 </div>
+
+    
 
     
 
@@ -4739,6 +5599,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4748,6 +5610,8 @@ is enabled.</p>
     <div class="field-description">
 <p>The maximum age (in seconds) compared to the <code class="language-plaintext highlighter-rouge">auth_time</code> claim.</p>
 </div>
+
+    
 
     
 
@@ -4796,6 +5660,8 @@ is enabled.</p>
     
 
     
+
+    
       
       
     
@@ -4808,6 +5674,8 @@ with ACL plugin, but it also enables IdP managed groups with other applications
 and integrations (for example, Kong Manager and Dev Portal). The OpenID Connect
 plugin itself does not do anything other than set the context value.</p>
 </div>
+
+    
 
     
 
@@ -4858,6 +5726,8 @@ plugin itself does not do anything other than set the context value.</p>
     
 
     
+
+    
       
       
     
@@ -4867,6 +5737,8 @@ plugin itself does not do anything other than set the context value.</p>
     <div class="field-description">
 <p>The authorization endpoint.</p>
 </div>
+
+    
 
     
 
@@ -4915,6 +5787,8 @@ plugin itself does not do anything other than set the context value.</p>
     
 
     
+
+    
       
       
     
@@ -4924,6 +5798,8 @@ plugin itself does not do anything other than set the context value.</p>
     <div class="field-description">
 <p>Extra query argument names passed to the authorization endpoint.</p>
 </div>
+
+    
 
     
 
@@ -4976,6 +5852,8 @@ plugin itself does not do anything other than set the context value.</p>
     
 
     
+
+    
       
       
     
@@ -4985,6 +5863,8 @@ plugin itself does not do anything other than set the context value.</p>
     <div class="field-description">
 <p>Extra query argument values passed to the authorization endpoint.</p>
 </div>
+
+    
 
     
 
@@ -5037,6 +5917,8 @@ plugin itself does not do anything other than set the context value.</p>
     
 
     
+
+    
       
       
     
@@ -5046,6 +5928,8 @@ plugin itself does not do anything other than set the context value.</p>
     <div class="field-description">
 <p>Extra query arguments passed from the client to the authorization endpoint.</p>
 </div>
+
+    
 
     
 
@@ -5104,6 +5988,8 @@ plugin itself does not do anything other than set the context value.</p>
     
 
     
+
+    
       
       
     
@@ -5114,6 +6000,8 @@ plugin itself does not do anything other than set the context value.</p>
 <p>The authorization cookie rolling timeout in seconds.
 Specifies how long the authorization cookie can be used until it needs to be renewed.</p>
 </div>
+
+    
 
     
 
@@ -5168,6 +6056,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     
 
     
+
+    
       
       
     
@@ -5177,6 +6067,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     <div class="field-description">
 <p>The authorization cookie name.</p>
 </div>
+
+    
 
     
 
@@ -5221,6 +6113,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     
 
     
+
+    
       <span>
         <strong>starts_with: </strong>
         <code>/</code>
@@ -5245,6 +6139,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     <div class="field-description">
 <p>The authorization cookie Path flag.</p>
 </div>
+
+    
 
     
 
@@ -5291,6 +6187,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     
 
     
+
+    
       
       
     
@@ -5300,6 +6198,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     <div class="field-description">
 <p>The authorization cookie Domain flag.</p>
 </div>
+
+    
 
     
 
@@ -5352,6 +6252,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     
 
     
+
+    
       <span>
   Must be one of: <code>Strict</code>, <code>Lax</code>, <code>None</code>, <code>Default</code></span>
 
@@ -5377,6 +6279,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
 <code class="language-plaintext highlighter-rouge">Default</code>: Do not explicitly specify a SameSite attribute.</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -5431,6 +6335,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     
 
     
+
+    
       
       
     
@@ -5440,6 +6346,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     <div class="field-description">
 <p>Forbids JavaScript from accessing the cookie, for example, through the <code class="language-plaintext highlighter-rouge">Document.cookie</code> property.</p>
 </div>
+
+    
 
     
 
@@ -5486,6 +6394,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
     
 
     
+
+    
       
       
     
@@ -5496,6 +6406,8 @@ Specifies how long the authorization cookie can be used until it needs to be ren
 <p>Cookie is only sent to the server when a request is made with the https: scheme (except on localhost),
 and therefore is more resistant to man-in-the-middle attacks.</p>
 </div>
+
+    
 
     
 
@@ -5550,6 +6462,8 @@ and therefore is more resistant to man-in-the-middle attacks.</p>
     
 
     
+
+    
       
       
     
@@ -5565,6 +6479,8 @@ is modified to include the original query arguments, and the browser will not di
 them in the location field.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -5611,6 +6527,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -5620,6 +6538,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -5644,6 +6564,8 @@ them in the location field.</p>
       <strong>string</strong>
       
     </span>
+
+    
 
     
 
@@ -5695,6 +6617,8 @@ them in the location field.</p>
     
 
     
+
+    
       
     
   </div>
@@ -5739,6 +6663,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -5748,6 +6674,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra header names passed to the token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -5800,6 +6728,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -5809,6 +6739,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra header values passed to the token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -5861,6 +6793,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -5870,6 +6804,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra headers passed from the client to the token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -5922,6 +6858,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -5931,6 +6869,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The names of token endpoint response headers to forward to the downstream client.</p>
 </div>
+
+    
 
     
 
@@ -5981,6 +6921,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -5990,6 +6932,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Add a prefix to the token endpoint response headers before forwarding them to the downstream client.</p>
 </div>
+
+    
 
     
 
@@ -6038,6 +6982,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
         <span>
@@ -6061,6 +7007,8 @@ them in the location field.</p>
 <code class="language-plaintext highlighter-rouge">refresh_token</code> with refresh token grant</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -6113,6 +7061,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6122,6 +7072,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra post argument names passed to the token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6174,6 +7126,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6183,6 +7137,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra post argument values passed to the token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6235,6 +7191,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6254,6 +7212,8 @@ them in the location field.</p>
 
 <p>In this case, the token would take the <code class="language-plaintext highlighter-rouge">scope</code> value from the query parameter or from the request body and send it to the token endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6304,6 +7264,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6313,6 +7275,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6337,6 +7301,8 @@ them in the location field.</p>
       <strong>string</strong>
       
     </span>
+
+    
 
     
 
@@ -6384,6 +7350,8 @@ them in the location field.</p>
 <code class="language-plaintext highlighter-rouge">none</code>: do not authenticate</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -6438,6 +7406,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6447,6 +7417,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Introspection hint parameter value passed to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6501,6 +7473,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6510,6 +7484,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Check that the introspection response has an <code class="language-plaintext highlighter-rouge">active</code> claim with a value of <code class="language-plaintext highlighter-rouge">true</code>.</p>
 </div>
+
+    
 
     
 
@@ -6562,6 +7538,8 @@ them in the location field.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>application/json</code>, <code>application/token-introspection+jwt</code>, <code>application/jwt</code></span>
 
@@ -6585,6 +7563,8 @@ them in the location field.</p>
 <code class="language-plaintext highlighter-rouge">application/jwt</code>: introspection response as JWT (from the obsolete IETF draft document)</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -6633,6 +7613,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6642,6 +7624,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra header names passed to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6694,6 +7678,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6703,6 +7689,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra header values passed to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6755,6 +7743,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6764,6 +7754,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra headers passed from the client to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6816,6 +7808,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6825,6 +7819,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra post argument names passed to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6877,6 +7873,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6886,6 +7884,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra post argument values passed to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -6938,6 +7938,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -6947,6 +7949,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra post arguments passed from the client to the introspection endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7005,6 +8009,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7014,6 +8020,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Specifies whether to introspect the JWT access tokens (can be used to check for revocations).</p>
 </div>
+
+    
 
     
 
@@ -7060,6 +8068,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7069,6 +8079,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The revocation endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7093,6 +8105,8 @@ them in the location field.</p>
       <strong>string</strong>
       
     </span>
+
+    
 
     
 
@@ -7144,6 +8158,8 @@ them in the location field.</p>
     
 
     
+
+    
       
     
   </div>
@@ -7186,6 +8202,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7195,6 +8213,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The end session endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7241,6 +8261,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7250,6 +8272,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7302,6 +8326,8 @@ them in the location field.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>application/json</code>, <code>application/jwt</code></span>
 
@@ -7323,6 +8349,8 @@ them in the location field.</p>
 <code class="language-plaintext highlighter-rouge">application/jwt</code>: user info response as JWT (from the obsolete IETF draft document)</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -7371,6 +8399,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7380,6 +8410,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra header names passed to the user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7432,6 +8464,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7441,6 +8475,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra header values passed to the user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7493,6 +8529,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7502,6 +8540,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra headers passed from the client to the user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7554,6 +8594,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7563,6 +8605,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra query argument names passed to the user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7615,6 +8659,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7624,6 +8670,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra query argument values passed to the user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7676,6 +8724,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7685,6 +8735,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Extra query arguments passed from the client to the user info endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7735,6 +8787,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7744,6 +8798,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The token exchange endpoint.</p>
 </div>
+
+    
 
     
 
@@ -7798,6 +8854,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7807,6 +8865,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The session secret.</p>
 </div>
+
+    
 
     
 
@@ -7861,6 +8921,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7870,6 +8932,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The session audience, which is the intended target application. For example <code class="language-plaintext highlighter-rouge">"my-application"</code>.</p>
 </div>
+
+    
 
     
 
@@ -7924,6 +8988,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7933,6 +8999,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The session cookie name.</p>
 </div>
+
+    
 
     
 
@@ -7987,6 +9055,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -7996,6 +9066,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Enables or disables persistent sessions.</p>
 </div>
+
+    
 
     
 
@@ -8050,6 +9122,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -8059,6 +9133,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>Persistent session cookie name. Use with the <code class="language-plaintext highlighter-rouge">remember</code> configuration parameter.</p>
 </div>
+
+    
 
     
 
@@ -8113,6 +9189,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -8122,6 +9200,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The persistent session rolling timeout window, in seconds.</p>
 </div>
+
+    
 
     
 
@@ -8176,6 +9256,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -8185,6 +9267,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The persistent session absolute timeout limit, in seconds.</p>
 </div>
+
+    
 
     
 
@@ -8239,6 +9323,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -8248,6 +9334,8 @@ them in the location field.</p>
     <div class="field-description">
 <p>The session cookie idle time in seconds.</p>
 </div>
+
+    
 
     
 
@@ -8302,6 +9390,8 @@ them in the location field.</p>
     
 
     
+
+    
       
       
     
@@ -8312,6 +9402,8 @@ them in the location field.</p>
 <p>The session cookie rolling timeout in seconds.
 Specifies how long the session can be used until it needs to be renewed.</p>
 </div>
+
+    
 
     
 
@@ -8366,6 +9458,8 @@ Specifies how long the session can be used until it needs to be renewed.</p>
     
 
     
+
+    
       
       
     
@@ -8376,6 +9470,8 @@ Specifies how long the session can be used until it needs to be renewed.</p>
 <p>The session cookie absolute timeout in seconds.
 Specifies how long the session can be used until it is no longer valid.</p>
 </div>
+
+    
 
     
 
@@ -8420,6 +9516,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     
 
     
+
+    
       <span>
         <strong>starts_with: </strong>
         <code>/</code>
@@ -8444,6 +9542,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     <div class="field-description">
 <p>The session cookie Path flag.</p>
 </div>
+
+    
 
     
 
@@ -8490,6 +9590,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     
 
     
+
+    
       
       
     
@@ -8499,6 +9601,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     <div class="field-description">
 <p>The session cookie Domain flag.</p>
 </div>
+
+    
 
     
 
@@ -8551,6 +9655,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>Strict</code>, <code>Lax</code>, <code>None</code>, <code>Default</code></span>
 
@@ -8576,6 +9682,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
 <code class="language-plaintext highlighter-rouge">Default</code>: Do not explicitly specify a <code class="language-plaintext highlighter-rouge">SameSite</code> attribute.</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -8630,6 +9738,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     
 
     
+
+    
       
       
     
@@ -8639,6 +9749,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     <div class="field-description">
 <p>Forbids JavaScript from accessing the cookie, for example, through the <code class="language-plaintext highlighter-rouge">Document.cookie</code> property.</p>
 </div>
+
+    
 
     
 
@@ -8685,6 +9797,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
     
 
     
+
+    
       
       
     
@@ -8695,6 +9809,8 @@ Specifies how long the session can be used until it is no longer valid.</p>
 <p>Cookie is only sent to the server when a request is made with the https: scheme (except on localhost),
 and therefore is more resistant to man-in-the-middle attacks.</p>
 </div>
+
+    
 
     
 
@@ -8743,6 +9859,8 @@ and therefore is more resistant to man-in-the-middle attacks.</p>
     
 
     
+
+    
       
       
         <span>
@@ -8759,6 +9877,8 @@ Accepted values are: <code class="language-plaintext highlighter-rouge">id</code
 <code class="language-plaintext highlighter-rouge">absolute-timeout</code>.
 For example, <code class="language-plaintext highlighter-rouge">{ "id", "timeout" }</code> sets both <code class="language-plaintext highlighter-rouge">Session-Id</code> and <code class="language-plaintext highlighter-rouge">Session-Timeout</code> in the request headers.</p>
 </div>
+
+    
 
     
 
@@ -8811,6 +9931,8 @@ For example, <code class="language-plaintext highlighter-rouge">{ "id", "timeout
     
 
     
+
+    
       
       
         <span>
@@ -8827,6 +9949,8 @@ Accepted values are: <code class="language-plaintext highlighter-rouge">id</code
 <code class="language-plaintext highlighter-rouge">absolute-timeout</code>.
 For example: <code class="language-plaintext highlighter-rouge">{ "id", "timeout" }</code> injects both <code class="language-plaintext highlighter-rouge">Session-Id</code> and <code class="language-plaintext highlighter-rouge">Session-Timeout</code> in the response headers.</p>
 </div>
+
+    
 
     
 
@@ -8883,6 +10007,8 @@ For example: <code class="language-plaintext highlighter-rouge">{ "id", "timeout
     
 
     
+
+    
       <span>
   Must be one of: <code>cookie</code>, <code>memcache</code>, <code>memcached</code>, <code>redis</code></span>
 
@@ -8906,6 +10032,8 @@ For example: <code class="language-plaintext highlighter-rouge">{ "id", "timeout
 <code class="language-plaintext highlighter-rouge">redis</code>: stores session data in Redis</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -8960,6 +10088,8 @@ For example: <code class="language-plaintext highlighter-rouge">{ "id", "timeout
     
 
     
+
+    
       
       
     
@@ -8971,6 +10101,8 @@ For example: <code class="language-plaintext highlighter-rouge">{ "id", "timeout
 This metadata includes information about the active sessions for a specific audience
 belonging to a specific subject.</p>
 </div>
+
+    
 
     
 
@@ -9025,6 +10157,8 @@ belonging to a specific subject.</p>
     
 
     
+
+    
       
       
     
@@ -9034,6 +10168,8 @@ belonging to a specific subject.</p>
     <div class="field-description">
 <p>When set to <code class="language-plaintext highlighter-rouge">true</code>, audiences are forced to share the same subject.</p>
 </div>
+
+    
 
     
 
@@ -9088,6 +10224,8 @@ belonging to a specific subject.</p>
     
 
     
+
+    
       
       
     
@@ -9098,6 +10236,8 @@ belonging to a specific subject.</p>
 <p>When set to <code class="language-plaintext highlighter-rouge">true</code>, the value of subject is hashed before being stored.
 Only applies when <code class="language-plaintext highlighter-rouge">session_store_metadata</code> is enabled.</p>
 </div>
+
+    
 
     
 
@@ -9152,6 +10292,8 @@ Only applies when <code class="language-plaintext highlighter-rouge">session_sto
     
 
     
+
+    
       
       
     
@@ -9163,6 +10305,8 @@ Only applies when <code class="language-plaintext highlighter-rouge">session_sto
 Hashing the storage key means it is impossible to decrypt data from the storage
 without a cookie.</p>
 </div>
+
+    
 
     
 
@@ -9209,6 +10353,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9218,6 +10364,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The memcached session key prefix.</p>
 </div>
+
+    
 
     
 
@@ -9264,6 +10412,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9273,6 +10423,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The memcached unix socket path.</p>
 </div>
+
+    
 
     
 
@@ -9327,6 +10479,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9336,6 +10490,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The memcached host.</p>
 </div>
+
+    
 
     
 
@@ -9382,6 +10538,8 @@ without a cookie.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -9405,6 +10563,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The memcached port.</p>
 </div>
+
+    
 
     
 
@@ -9451,6 +10611,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9460,6 +10622,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The Redis session key prefix.</p>
 </div>
+
+    
 
     
 
@@ -9506,6 +10670,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9515,6 +10681,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The Redis unix socket path.</p>
 </div>
+
+    
 
     
 
@@ -9569,6 +10737,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9578,6 +10748,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The Redis host</p>
 </div>
+
+    
 
     
 
@@ -9624,6 +10796,8 @@ without a cookie.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -9647,6 +10821,8 @@ without a cookie.</p>
     <div class="field-description">
 <p>The Redis port.</p>
 </div>
+
+    
 
     
 
@@ -9697,6 +10873,8 @@ without a cookie.</p>
     
 
     
+
+    
       
       
     
@@ -9708,6 +10886,8 @@ without a cookie.</p>
 If undefined, ACL authentication will not be performed.
 This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <code class="language-plaintext highlighter-rouge">default</code>.</p>
 </div>
+
+    
 
     
 
@@ -9762,6 +10942,8 @@ This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <cod
     
 
     
+
+    
       
       
     
@@ -9772,6 +10954,8 @@ This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <cod
 <p>Password to use for Redis connection when the <code class="language-plaintext highlighter-rouge">redis</code> session storage is defined.
 If undefined, no AUTH commands are sent to Redis.</p>
 </div>
+
+    
 
     
 
@@ -9818,6 +11002,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -9827,6 +11013,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     <div class="field-description">
 <p>The Redis connection timeout in milliseconds.</p>
 </div>
+
+    
 
     
 
@@ -9873,6 +11061,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -9882,6 +11072,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     <div class="field-description">
 <p>The Redis read timeout in milliseconds.</p>
 </div>
+
+    
 
     
 
@@ -9928,6 +11120,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -9937,6 +11131,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     <div class="field-description">
 <p>The Redis send timeout in milliseconds.</p>
 </div>
+
+    
 
     
 
@@ -9991,6 +11187,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -10000,6 +11198,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     <div class="field-description">
 <p>Use SSL/TLS for Redis connection.</p>
 </div>
+
+    
 
     
 
@@ -10054,6 +11254,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -10063,6 +11265,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     <div class="field-description">
 <p>Verify Redis server certificate.</p>
 </div>
+
+    
 
     
 
@@ -10109,6 +11313,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -10118,6 +11324,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     <div class="field-description">
 <p>The SNI used for connecting the Redis server.</p>
 </div>
+
+    
 
     
 
@@ -10170,6 +11378,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -10180,6 +11390,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
 <p>The Redis cluster node host. Takes an array of host records, with
 either <code class="language-plaintext highlighter-rouge">ip</code> or <code class="language-plaintext highlighter-rouge">host</code>, and <code class="language-plaintext highlighter-rouge">port</code> values.</p>
 </div>
+
+    
 
     
 
@@ -10232,6 +11444,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10240,6 +11454,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -10286,6 +11502,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -10308,6 +11526,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -10362,6 +11582,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10371,6 +11593,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>The Redis cluster maximum redirects.</p>
 </div>
+
+    
 
     
 
@@ -10425,6 +11649,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10434,6 +11660,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>Specifies whether to always verify tokens stored in the session.</p>
 </div>
+
+    
 
     
 
@@ -10488,6 +11716,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10497,6 +11727,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>The claim to match against the JWT session cookie.</p>
 </div>
+
+    
 
     
 
@@ -10543,6 +11775,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10552,6 +11786,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>The name of the JWT session cookie.</p>
 </div>
+
+    
 
     
 
@@ -10608,6 +11844,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
         <span>
@@ -10632,6 +11870,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
 </li>
 </ul>
 </div>
+
+    
 
     
 
@@ -10682,6 +11922,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10691,6 +11933,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>The name of the cookie in which the bearer token is passed.</p>
 </div>
+
+    
 
     
 
@@ -10747,6 +11991,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
         <span>
@@ -10768,6 +12014,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
 <code class="language-plaintext highlighter-rouge">body</code>: search from the HTTP request body</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -10828,6 +12076,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
         <span>
@@ -10849,6 +12099,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
 <code class="language-plaintext highlighter-rouge">body</code>: search the HTTP request body</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -10909,6 +12161,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
         <span>
@@ -10930,6 +12184,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
 <code class="language-plaintext highlighter-rouge">body</code>: search the HTTP request body</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -10980,6 +12236,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -10989,6 +12247,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>The name of the parameter used to pass the id token.</p>
 </div>
+
+    
 
     
 
@@ -11045,6 +12305,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
         <span>
@@ -11066,6 +12328,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
 <code class="language-plaintext highlighter-rouge">body</code>: search the HTTP request body</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -11116,6 +12380,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -11125,6 +12391,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     <div class="field-description">
 <p>The name of the parameter used to pass the refresh token.</p>
 </div>
+
+    
 
     
 
@@ -11179,6 +12447,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
     
 
     
+
+    
       
       
     
@@ -11189,6 +12459,8 @@ either <code class="language-plaintext highlighter-rouge">ip</code> or <code cla
 <p>Specifies whether the plugin should try to refresh (soon to be) expired access tokens if the
 plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</code> available.</p>
 </div>
+
+    
 
     
 
@@ -11237,6 +12509,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11246,6 +12520,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream header claims.</p>
 </div>
+
+    
 
     
 
@@ -11298,6 +12574,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11307,6 +12585,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream header names for the claim values.</p>
 </div>
+
+    
 
     
 
@@ -11365,6 +12645,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11374,6 +12656,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream access token header.</p>
 </div>
+
+    
 
     
 
@@ -11420,6 +12704,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11429,6 +12715,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream access token JWK header.</p>
 </div>
+
+    
 
     
 
@@ -11475,6 +12763,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11484,6 +12774,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream id token header.</p>
 </div>
+
+    
 
     
 
@@ -11530,6 +12822,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11539,6 +12833,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream id token JWK header.</p>
 </div>
+
+    
 
     
 
@@ -11585,6 +12881,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11594,6 +12892,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream refresh token header.</p>
 </div>
+
+    
 
     
 
@@ -11640,6 +12940,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11649,6 +12951,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream user info header.</p>
 </div>
+
+    
 
     
 
@@ -11695,6 +12999,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11704,6 +13010,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream user info JWT header (in case the user info returns a JWT response).</p>
 </div>
+
+    
 
     
 
@@ -11750,6 +13058,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11759,6 +13069,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream introspection header.</p>
 </div>
+
+    
 
     
 
@@ -11805,6 +13117,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11813,6 +13127,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -11859,6 +13175,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11868,6 +13186,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The upstream session id header.</p>
 </div>
+
+    
 
     
 
@@ -11916,6 +13236,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11925,6 +13247,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream header claims.</p>
 </div>
+
+    
 
     
 
@@ -11977,6 +13301,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -11986,6 +13312,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream header names for the claim values.</p>
 </div>
+
+    
 
     
 
@@ -12036,6 +13364,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12045,6 +13375,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream access token header.</p>
 </div>
+
+    
 
     
 
@@ -12091,6 +13423,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12100,6 +13434,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream access token JWK header.</p>
 </div>
+
+    
 
     
 
@@ -12146,6 +13482,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12155,6 +13493,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream id token header.</p>
 </div>
+
+    
 
     
 
@@ -12201,6 +13541,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12210,6 +13552,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream id token JWK header.</p>
 </div>
+
+    
 
     
 
@@ -12256,6 +13600,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12265,6 +13611,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream refresh token header.</p>
 </div>
+
+    
 
     
 
@@ -12311,6 +13659,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12320,6 +13670,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream user info header.</p>
 </div>
+
+    
 
     
 
@@ -12366,6 +13718,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12375,6 +13729,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream user info JWT header (in case the user info returns a JWT response).</p>
 </div>
+
+    
 
     
 
@@ -12421,6 +13777,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12430,6 +13788,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream introspection header.</p>
 </div>
+
+    
 
     
 
@@ -12476,6 +13836,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12484,6 +13846,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -12530,6 +13894,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12539,6 +13905,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The downstream session id header.</p>
 </div>
+
+    
 
     
 
@@ -12595,6 +13963,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
         <span>
@@ -12628,6 +13998,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 <code class="language-plaintext highlighter-rouge">session</code>: enable for session cookie authentication</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -12684,6 +14056,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       <span>
   Must be one of: <code>upstream</code>, <code>response</code>, <code>redirect</code></span>
 
@@ -12707,6 +14081,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 <code class="language-plaintext highlighter-rouge">redirect</code>: redirect to a different location</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -12763,6 +14139,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
         <span>
@@ -12788,6 +14166,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 <code class="language-plaintext highlighter-rouge">introspection</code>: include introspection response</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -12844,6 +14224,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       <span>
   Must be one of: <code>query</code>, <code>fragment</code></span>
 
@@ -12865,6 +14247,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 <code class="language-plaintext highlighter-rouge">fragment</code>: place tokens in url fragment (not readable by servers)</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -12911,6 +14295,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12920,6 +14306,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The request query argument that activates the logout.</p>
 </div>
+
+    
 
     
 
@@ -12966,6 +14354,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -12975,6 +14365,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The request body argument that activates the logout.</p>
 </div>
+
+    
 
     
 
@@ -13021,6 +14413,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13030,6 +14424,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The request URI suffix that activates the logout.</p>
 </div>
+
+    
 
     
 
@@ -13086,6 +14482,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
         <span>
@@ -13107,6 +14505,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 <code class="language-plaintext highlighter-rouge">DELETE</code>: HTTP DELETE method</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -13165,6 +14565,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13174,6 +14576,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Revoke tokens as part of the logout.</p>
 </div>
+
+    
 
     
 
@@ -13228,6 +14632,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13237,6 +14643,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Revoke the access token as part of the logout.</p>
 </div>
+
+    
 
     
 
@@ -13291,6 +14699,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13300,6 +14710,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Revoke the refresh token as part of the logout.</p>
 </div>
+
+    
 
     
 
@@ -13348,6 +14760,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13357,6 +14771,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The claim used for consumer mapping.</p>
 </div>
+
+    
 
     
 
@@ -13417,6 +14833,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
         <span>
@@ -13441,6 +14859,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 </li>
 </ul>
 </div>
+
+    
 
     
 
@@ -13499,6 +14919,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13508,6 +14930,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Do not terminate the request if consumer mapping fails.</p>
 </div>
+
+    
 
     
 
@@ -13564,6 +14988,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13573,6 +14999,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The claim used to derive virtual credentials (e.g. to be consumed by the rate-limiting plugin), in case the consumer mapping is not used.</p>
 </div>
+
+    
 
     
 
@@ -13623,6 +15051,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13632,6 +15062,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>An optional string (consumer UUID or username) value that functions as an “anonymous” consumer if authentication fails. If empty (default null), requests that fail authentication will return a <code class="language-plaintext highlighter-rouge">4xx</code> HTTP status code. This value must refer to the consumer <code class="language-plaintext highlighter-rouge">id</code> or <code class="language-plaintext highlighter-rouge">username</code> attribute, and <strong>not</strong> its <code class="language-plaintext highlighter-rouge">custom_id</code>.</p>
 </div>
+
+    
 
     
 
@@ -13686,6 +15118,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13695,6 +15129,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Specifies whether to run this plugin on pre-flight (<code class="language-plaintext highlighter-rouge">OPTIONS</code>) requests.</p>
 </div>
+
+    
 
     
 
@@ -13749,6 +15185,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13758,6 +15196,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Allow some leeway on the ttl / expiry verification.</p>
 </div>
+
+    
 
     
 
@@ -13812,6 +15252,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13821,6 +15263,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Verify plugin configuration against discovery.</p>
 </div>
+
+    
 
     
 
@@ -13875,6 +15319,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13884,6 +15330,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Verify nonce on authorization code flow.</p>
 </div>
+
+    
 
     
 
@@ -13938,6 +15386,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -13947,6 +15397,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Verify tokens for standard claims.</p>
 </div>
+
+    
 
     
 
@@ -14001,6 +15453,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14010,6 +15464,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Verify signature of tokens.</p>
 </div>
+
+    
 
     
 
@@ -14060,6 +15516,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
         <span>
@@ -14089,6 +15547,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
 <code class="language-plaintext highlighter-rouge">userinfo</code>: OpenID Connect user info endpoint authentication</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -14147,6 +15607,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14156,6 +15618,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Enable shared secret, for example, HS256, signatures (when disabled they will not be accepted).</p>
 </div>
+
+    
 
     
 
@@ -14182,6 +15646,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
         of type <code>string</code>
       
     </span>
+
+    
 
     
 
@@ -14241,6 +15707,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
         <div class="field-subfield__params">
           
@@ -14295,6 +15763,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14304,6 +15774,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The default cache ttl in seconds that is used in case the cached object does not specify the expiry.</p>
 </div>
+
+    
 
     
 
@@ -14350,6 +15822,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14359,6 +15833,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The maximum cache ttl in seconds (enforced).</p>
 </div>
+
+    
 
     
 
@@ -14405,6 +15881,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14414,6 +15892,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The minimum cache ttl in seconds (enforced).</p>
 </div>
+
+    
 
     
 
@@ -14460,6 +15940,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14469,6 +15951,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The negative cache ttl in seconds.</p>
 </div>
+
+    
 
     
 
@@ -14515,6 +15999,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14524,6 +16010,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>The resurrection ttl in seconds.</p>
 </div>
+
+    
 
     
 
@@ -14578,6 +16066,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14587,6 +16077,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     <div class="field-description">
 <p>Cache the token endpoint requests.</p>
 </div>
+
+    
 
     
 
@@ -14633,6 +16125,8 @@ plugin has a <code class="language-plaintext highlighter-rouge">refresh_token</c
     
 
     
+
+    
       
       
     
@@ -14648,6 +16142,8 @@ plugin and want to share token endpoint caches between the plugin
 instances, set the salt to the same value on each plugin instance.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -14702,6 +16198,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     
 
     
+
+    
       
       
     
@@ -14711,6 +16209,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     <div class="field-description">
 <p>Cache the introspection endpoint requests.</p>
 </div>
+
+    
 
     
 
@@ -14765,6 +16265,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     
 
     
+
+    
       
       
     
@@ -14774,6 +16276,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     <div class="field-description">
 <p>Cache the token exchange endpoint requests.</p>
 </div>
+
+    
 
     
 
@@ -14828,6 +16332,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     
 
     
+
+    
       
       
     
@@ -14837,6 +16343,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     <div class="field-description">
 <p>Cache the user info requests.</p>
 </div>
+
+    
 
     
 
@@ -14891,6 +16399,8 @@ instances, set the salt to the same value on each plugin instance.</p>
     
 
     
+
+    
       
       
     
@@ -14905,6 +16415,8 @@ credential mapping, authenticated groups, and upstream and downstream headers.</
 user info requests (see: <code class="language-plaintext highlighter-rouge">config.cache_user_info</code>).</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -14959,6 +16471,8 @@ user info requests (see: <code class="language-plaintext highlighter-rouge">conf
     
 
     
+
+    
       
       
     
@@ -14972,6 +16486,8 @@ user info requests (see: <code class="language-plaintext highlighter-rouge">conf
 remove those that were used for successful authentication.</p>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -15026,6 +16542,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15041,6 +16559,8 @@ remove those that were used for successful authentication.</p>
 <code class="language-plaintext highlighter-rouge">1.0</code>: HTTP 1.0</li>
 </ul>
 </div>
+
+    
 
     
 
@@ -15087,6 +16607,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15096,6 +16618,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>The HTTP proxy</p>
 </div>
+
+    
 
     
 
@@ -15142,6 +16666,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15151,6 +16677,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>The HTTP proxy authorization.</p>
 </div>
+
+    
 
     
 
@@ -15197,6 +16725,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15206,6 +16736,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>The HTTPS proxy</p>
 </div>
+
+    
 
     
 
@@ -15252,6 +16784,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15261,6 +16795,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>The HTTPS proxy authorization.</p>
 </div>
+
+    
 
     
 
@@ -15307,6 +16843,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15316,6 +16854,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>Do not use proxy with these hosts.</p>
 </div>
+
+    
 
     
 
@@ -15370,6 +16910,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15379,6 +16921,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>Use keepalive with the HTTP client.</p>
 </div>
+
+    
 
     
 
@@ -15433,6 +16977,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15442,6 +16988,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>Verify identity provider server certificate.</p>
 </div>
+
+    
 
     
 
@@ -15496,6 +17044,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15505,6 +17055,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>Network IO timeout in milliseconds.</p>
 </div>
+
+    
 
     
 
@@ -15559,6 +17111,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15568,6 +17122,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>Display errors on failure responses.</p>
 </div>
+
+    
 
     
 
@@ -15622,6 +17178,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15631,6 +17189,8 @@ remove those that were used for successful authentication.</p>
     <div class="field-description">
 <p>If <code class="language-plaintext highlighter-rouge">consumer_by</code> is set to <code class="language-plaintext highlighter-rouge">username</code>, specify whether <code class="language-plaintext highlighter-rouge">username</code> can match consumers case-insensitively.</p>
 </div>
+
+    
 
     
 
@@ -15685,6 +17245,8 @@ remove those that were used for successful authentication.</p>
     
 
     
+
+    
       
       
     
@@ -15696,6 +17258,8 @@ remove those that were used for successful authentication.</p>
 of the JSON object containing the claims.
 If this parameter is set to <code class="language-plaintext highlighter-rouge">true</code>, the plugin explicitly resolves these distributed claims.</p>
 </div>
+
+    
 
     
 
@@ -15719,16 +17283,6 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   
 </ul>
 
-
-
-<h3 id="deprecated-parameters">Deprecated parameters</h3>
-
-<blockquote class="important">
-  <strong>Important:</strong> The following fields have been deprecated and will be 
-  removed in a future version. 
-  <br>
-  See the <a href="../changelog/" class="no-link-icon">changelog</a> for this plugin for new field mapping info.
-</blockquote>
 
   <ul class="fields">
     
@@ -15766,6 +17320,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -15774,6 +17330,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -15818,6 +17383,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -15826,6 +17393,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -15870,6 +17446,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -15878,6 +17456,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -15922,6 +17509,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -15930,6 +17519,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -15974,6 +17572,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -15982,6 +17582,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16026,6 +17635,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16034,6 +17645,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16078,6 +17698,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16086,6 +17708,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16130,6 +17761,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16138,6 +17771,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16182,6 +17824,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16190,6 +17834,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16234,6 +17887,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16242,6 +17897,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16286,6 +17950,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16294,6 +17960,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16338,6 +18013,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16346,6 +18023,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16390,6 +18076,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16398,6 +18086,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16442,6 +18139,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16450,6 +18149,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16494,6 +18202,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16502,6 +18212,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16546,6 +18265,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
 
     
+
+    
       
       
     
@@ -16554,6 +18275,15 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">This field has been deprecated and will be removed in a future version..</span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -16576,7 +18306,7 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     
       <div class="book-nav previous">
         <span class="direction">Previous</span>
-        <a href="/hub/kong-inc/openid-connect/3.2.x/">OpenID Connect</a>
+        <a href="/hub/kong-inc/openid-connect/3.2.x/support/">Supported credentials, grants, and tested IdPs</a>
       </div>
     
     
@@ -16653,7 +18383,7 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -16801,8 +18531,8 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -16812,16 +18542,6 @@ If this parameter is set to <code class="language-plaintext highlighter-rouge">t
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,9 +21,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -494,18 +496,55 @@
 </div>
 <ul>
   <li>
-<a href="#110" class="active scroll-to">1.1.0</a>
+<a href="#130" class="active scroll-to">1.3.0</a>
     <ul>
-      <li><a href="#added" class="scroll-to">Added</a></li>
-      <li><a href="#changes" class="scroll-to">Changes</a></li>
       <li><a href="#fixes" class="scroll-to">Fixes</a></li>
+      <li><a href="#changes" class="scroll-to">Changes</a></li>
+      <li><a href="#breaking-changes" class="scroll-to">Breaking Changes</a></li>
+      <li><a href="#added" class="scroll-to">Added</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#123" class="scroll-to">1.2.3</a>
+    <ul>
+      <li><a href="#fixes-1" class="scroll-to">Fixes</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#122" class="scroll-to">1.2.2</a>
+    <ul>
+      <li><a href="#note-retracted" class="scroll-to"><strong>NOTE: Retracted</strong></a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#121" class="scroll-to">1.2.1</a>
+    <ul>
+      <li><a href="#fixes-2" class="scroll-to">Fixes</a></li>
+      <li><a href="#changes-1" class="scroll-to">Changes</a></li>
+    </ul>
+  </li>
+  <li><a href="#120" class="scroll-to">1.2.0</a></li>
+  <li><a href="#highlights" class="scroll-to">Highlights</a></li>
+  <li>
+<a href="#added-1" class="scroll-to">Added</a>
+    <ul>
+      <li><a href="#changes-2" class="scroll-to">Changes</a></li>
+      <li><a href="#fixes-3" class="scroll-to">Fixes</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#110" class="scroll-to">1.1.0</a>
+    <ul>
+      <li><a href="#added-2" class="scroll-to">Added</a></li>
+      <li><a href="#changes-3" class="scroll-to">Changes</a></li>
+      <li><a href="#fixes-4" class="scroll-to">Fixes</a></li>
     </ul>
   </li>
   <li>
 <a href="#103" class="scroll-to">1.0.3</a>
     <ul>
-      <li><a href="#fixes-1" class="scroll-to">Fixes</a></li>
-      <li><a href="#added-1" class="scroll-to">Added</a></li>
+      <li><a href="#fixes-5" class="scroll-to">Fixes</a></li>
+      <li><a href="#added-3" class="scroll-to">Added</a></li>
     </ul>
   </li>
   <li>
@@ -517,8 +556,8 @@
   <li>
 <a href="#101" class="scroll-to">1.0.1</a>
     <ul>
-      <li><a href="#fixes-2" class="scroll-to">Fixes</a></li>
-      <li><a href="#changes-1" class="scroll-to">Changes</a></li>
+      <li><a href="#fixes-6" class="scroll-to">Fixes</a></li>
+      <li><a href="#changes-4" class="scroll-to">Changes</a></li>
     </ul>
   </li>
   <li>
@@ -554,24 +593,234 @@
 
           <p>Changelog for supported Kong Gateway Operator versions.</p>
 
+<h2 id="130">1.3.0</h2>
+
+<p><strong>Release Date</strong> 2024/06/24</p>
+
+<h3 id="fixes">Fixes</h3>
+
+<ul>
+  <li>Fix the <code class="language-plaintext highlighter-rouge">ControlPlane</code> extensions controller to gracefully handle the
+absence of a Kong Gateway Enterprise license on startup.</li>
+  <li>Do not require existence of <code class="language-plaintext highlighter-rouge">certmanager.io/v1.certificates</code> CRD when
+<code class="language-plaintext highlighter-rouge">KonnectCertificateOptions</code> is empty in <code class="language-plaintext highlighter-rouge">DataPlane</code>.</li>
+  <li>Fix version reporting in logs and via <code class="language-plaintext highlighter-rouge">-version</code> CLI arg</li>
+  <li>Fix enforcing up to date <code class="language-plaintext highlighter-rouge">ControlPlane</code>’s <code class="language-plaintext highlighter-rouge">ValidatingWebhookConfiguration</code>
+</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Gateway</code> do not have their <code class="language-plaintext highlighter-rouge">Ready</code> status condition set anymore.</li>
+  <li>This aligns with Gateway API and its conformance test suite.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Gateway</code>s’ listeners now have their <code class="language-plaintext highlighter-rouge">attachedRoutes</code> count filled in status.</li>
+  <li>Detect when <code class="language-plaintext highlighter-rouge">ControlPlane</code> has its admission webhook disabled via</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">CONTROLLER_ADMISSION_WEBHOOK_LISTEN</code> environment variable and ensure that</li>
+  <li>relevant webhook resources are not created/deleted.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">OwnerReferences</code> on cluster-wide resources to indicate their owner are now</li>
+  <li>replaced by a proper set of labels to identify <code class="language-plaintext highlighter-rouge">kind</code>, <code class="language-plaintext highlighter-rouge">namespace</code>, and</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">name</code> of the owning object.</li>
+  <li>Default version of <code class="language-plaintext highlighter-rouge">ControlPlane</code> is bumped to 3.2.0</li>
+</ul>
+
+<h3 id="breaking-changes">Breaking Changes</h3>
+
+<ul>
+  <li>Changes project layout to match <code class="language-plaintext highlighter-rouge">kubebuilder</code> <code class="language-plaintext highlighter-rouge">v4</code>. Some import paths (due to dir renames) have changed
+<code class="language-plaintext highlighter-rouge">apis</code> -&gt; <code class="language-plaintext highlighter-rouge">api</code> and <code class="language-plaintext highlighter-rouge">controllers</code> -&gt; <code class="language-plaintext highlighter-rouge">controller</code>.</li>
+</ul>
+
+<h3 id="added">Added</h3>
+
+<ul>
+  <li>Add <code class="language-plaintext highlighter-rouge">ExternalTrafficPolicy</code> to <code class="language-plaintext highlighter-rouge">DataPlane</code>’s <code class="language-plaintext highlighter-rouge">ServiceOptions</code>
+</li>
+</ul>
+
+<h2 id="123">1.2.3</h2>
+
+<p><strong>Release Date</strong> 2024/04/24</p>
+
+<h3 id="fixes-1">Fixes</h3>
+
+<ul>
+  <li>Fixed an issue where the managed <code class="language-plaintext highlighter-rouge">Gateway</code>s controller wasn’t able to reduce
+the created <code class="language-plaintext highlighter-rouge">DataPlane</code> objects when too many were created.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Gateway</code> controller will no longer set <code class="language-plaintext highlighter-rouge">DataPlane</code> deployment’s replicas
+to the default value when <code class="language-plaintext highlighter-rouge">DataPlaneOptions</code> in <code class="language-plaintext highlighter-rouge">GatewayConfiguration</code> define
+a scaling strategy. This effectively allows users to use <code class="language-plaintext highlighter-rouge">DataPlane</code> horizontal
+autoscaling with <code class="language-plaintext highlighter-rouge">GatewayConfiguration</code> because the generated <code class="language-plaintext highlighter-rouge">DataPlane</code> deployment
+won’t be rejected.</li>
+  <li>Made creating a <code class="language-plaintext highlighter-rouge">DataPlane</code> index conditional based on enabling the <code class="language-plaintext highlighter-rouge">ControlPlane</code>
+controller. This allows KGO to run without the <code class="language-plaintext highlighter-rouge">ControlPlane</code> CRD with its controller
+disabled.</li>
+</ul>
+
+<h2 id="122">1.2.2</h2>
+
+<p><strong>Release Date</strong> 2024/04/23</p>
+
+<h3 id="note-retracted"><strong>NOTE: Retracted</strong></h3>
+
+<p>v1.2.2 was retracted due to a misplaced git tag.
+Due to <a href="https://sum.golang.org/#faq-retract-version" target="_blank" rel="noopener nofollow noreferrer ">Golang’s proxy caching modules indefinitely</a> we needed to retract this version.
+v1.2.3 contains all the changes that v1.2.2 intended to contain.</p>
+
+<h2 id="121">1.2.1</h2>
+
+<p><strong>Release Date</strong> 2024/03/20</p>
+
+<h3 id="fixes-2">Fixes</h3>
+
+<ul>
+  <li>Fixed an issue where operator wasn’t able to update <code class="language-plaintext highlighter-rouge">ControlPlane</code> <code class="language-plaintext highlighter-rouge">ClusterRole</code> or <code class="language-plaintext highlighter-rouge">ClusterRoleBinding</code>
+when they got out of date.</li>
+  <li>Add missing watch RBAC policy rule for cert-manager’s Certificate resources</li>
+</ul>
+
+<h3 id="changes-1">Changes</h3>
+
+<ul>
+  <li>KGO now uses <code class="language-plaintext highlighter-rouge">GATEWAY_OPERATOR_</code> prefix for all flags, including the <code class="language-plaintext highlighter-rouge">zap</code> related logging flags.</li>
+</ul>
+
+<h2 id="120">1.2.0</h2>
+
+<p><strong>Release Date</strong> 2024/03/15</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>🎓 The Managed <code class="language-plaintext highlighter-rouge">Gateway</code>s feature is now GA.</li>
+  <li>🎓 <code class="language-plaintext highlighter-rouge">ControlPlane</code> and <code class="language-plaintext highlighter-rouge">GatewayConfig</code> APIs have been promoted to <code class="language-plaintext highlighter-rouge">v1beta1</code>.</li>
+  <li>✨ <code class="language-plaintext highlighter-rouge">DataPlane</code>s managed by <code class="language-plaintext highlighter-rouge">Gateway</code>s can be now scaled horizontally through the
+<code class="language-plaintext highlighter-rouge">GatewayConfiguration</code> API.</li>
+  <li>✨ <code class="language-plaintext highlighter-rouge">Gateway</code> listeners are dynamically mapped to the <code class="language-plaintext highlighter-rouge">DataPlane</code> proxy service ports.</li>
+  <li>🧠 The new feature <code class="language-plaintext highlighter-rouge">AIGateway</code> has been released in <code class="language-plaintext highlighter-rouge">alpha</code> stage.</li>
+  <li>✨ Kong Gateway Operator exposes metrics with latency that can be used for autoscaling of your workloads.</li>
+  <li>✨ Automated handling of certificates for Konnect’s PKI mode with cert-manager.</li>
+</ul>
+
+<h2 id="added-1">Added</h2>
+
+<ul>
+  <li>Added support for specifying command line flags through environment
+variables having the <code class="language-plaintext highlighter-rouge">GATEWAY_OPERATOR_</code> prefix.</li>
+  <li>Add horizontal autoscaling for <code class="language-plaintext highlighter-rouge">DataPlane</code>s using its <code class="language-plaintext highlighter-rouge">scaling.horizontal</code> spec
+field.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ControlPlane</code>s now use Gateway Discovery by default, with Service DNS Strategy.
+Additionally, the <code class="language-plaintext highlighter-rouge">DataPlane</code> readiness probe has been changed to <code class="language-plaintext highlighter-rouge">/status/ready</code>
+when the <code class="language-plaintext highlighter-rouge">DataPlane</code> is managed by a <code class="language-plaintext highlighter-rouge">Gateway</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Gateway</code>s and <code class="language-plaintext highlighter-rouge">Listener</code>s <code class="language-plaintext highlighter-rouge">Accepted</code> and <code class="language-plaintext highlighter-rouge">Conflicted</code> conditions are now set
+and enforced based on the Gateway API specifications.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ControlPlane</code> <code class="language-plaintext highlighter-rouge">ClusterRole</code>s and <code class="language-plaintext highlighter-rouge">ClusterRoleBinding</code>s are enforced and kept
+up to date by the <code class="language-plaintext highlighter-rouge">ControlPlane</code> controller.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Gateway</code> listeners are now dynamically mapped to <code class="language-plaintext highlighter-rouge">DataPlane</code> ingress service
+ports. This means that the change of a <code class="language-plaintext highlighter-rouge">Gateway</code> spec leads to a <code class="language-plaintext highlighter-rouge">DataPlane</code> reconfiguration,
+along with an ingress service update.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">--enable-controller-gateway</code> and <code class="language-plaintext highlighter-rouge">--enable-controller-controlplane</code> command
+line flags are set to <code class="language-plaintext highlighter-rouge">true</code> by default to enable controllers for <code class="language-plaintext highlighter-rouge">Gateway</code>s
+and <code class="language-plaintext highlighter-rouge">ControlPlane</code>s.</li>
+  <li>When the <code class="language-plaintext highlighter-rouge">Gateway</code> controller provisions a <code class="language-plaintext highlighter-rouge">ControlPlane</code>, it sets the <code class="language-plaintext highlighter-rouge">CONTROLLER_GATEWAY_TO_RECONCILE</code>
+env variable to let the <code class="language-plaintext highlighter-rouge">ControlPlane</code> reconcile
+that specific <code class="language-plaintext highlighter-rouge">Gateway</code> only.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ControlPlane</code> is now deployed with a validating webhook server turned on. This
+involves creating <code class="language-plaintext highlighter-rouge">ValidatingWebhookConfiguration</code>, a <code class="language-plaintext highlighter-rouge">Service</code> that exposes the
+webhook and a <code class="language-plaintext highlighter-rouge">Secret</code> that holds a TLS certificate. The <code class="language-plaintext highlighter-rouge">Secret</code> is mounted in
+the <code class="language-plaintext highlighter-rouge">ControlPlane</code>’s <code class="language-plaintext highlighter-rouge">Pod</code> for the webhook server to use it.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">konnectCertificate</code> field to the DataPlane resource.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">v1alpha1.AIGateway</code> as an experimental API. This can be enabled by
+manually deploying the <code class="language-plaintext highlighter-rouge">AIGateway</code> CRD and enabling the feature on the
+controller manager with the <code class="language-plaintext highlighter-rouge">--enable-controller-aigateway</code> flag.</li>
+  <li>Added validation on checking if ports in <code class="language-plaintext highlighter-rouge">KONG_PORT_MAPS</code> and <code class="language-plaintext highlighter-rouge">KONG_PROXY_LISTEN</code>
+environment variables of deployment options in <code class="language-plaintext highlighter-rouge">DataPlane</code> match the <code class="language-plaintext highlighter-rouge">ports</code>
+in the ingress service options of the <code class="language-plaintext highlighter-rouge">DataPlane</code>.</li>
+  <li>Support for KongLicense CRD to manage Kong Gateway Enterprise licenses.</li>
+  <li>New ControlPlane extensions controller to manage control plane extensions with initial support for <code class="language-plaintext highlighter-rouge">DataPlaneMetricsExtension</code>.</li>
+  <li>DataPlane Prometheus metrics scrapping support for <code class="language-plaintext highlighter-rouge">DataPlaneMetricsExtension</code>.</li>
+  <li>DataPlane resources can provision cert-manager Certificate resources from a (Cluster) Issuer for use with Konnect’s PKI mode.</li>
+  <li>ControlPlane extensions controller now checks for a valid Kong enterprise license.</li>
+</ul>
+
+<h3 id="changes-2">Changes</h3>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">GatewayConfiguration</code> API has been promoted from <code class="language-plaintext highlighter-rouge">v1alpha1</code> to <code class="language-plaintext highlighter-rouge">v1beta1</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">ControlPlane</code> API has been promoted from <code class="language-plaintext highlighter-rouge">v1alpha1</code> to <code class="language-plaintext highlighter-rouge">v1beta1</code>.</li>
+  <li>The CRD’s short names of <code class="language-plaintext highlighter-rouge">ControlPlane</code>, <code class="language-plaintext highlighter-rouge">DataPlane</code> and <code class="language-plaintext highlighter-rouge">GatewayConfiguration</code>
+has been changed to <code class="language-plaintext highlighter-rouge">kocp</code>, <code class="language-plaintext highlighter-rouge">kodp</code> and <code class="language-plaintext highlighter-rouge">kogc</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ControlPlane</code> (Kong Ingress Controller) default and minimum version has been
+bumped to 3.1.2.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">DataPlane</code> (Kong Gateway) default version has been bumped to <code class="language-plaintext highlighter-rouge">v3.6.0</code>.</li>
+</ul>
+
+<h3 id="fixes-3">Fixes</h3>
+
+<ul>
+  <li>Fixed a problem where the operator would not set the defaults to <code class="language-plaintext highlighter-rouge">PodTemplateSpec</code>
+patch and because of that it would detect a change and try to reconcile the owned
+resource where in fact the change was not there.
+One of the symptoms of this bug could have been a <code class="language-plaintext highlighter-rouge">StartupProbe</code> set in <code class="language-plaintext highlighter-rouge">PodSpec</code>
+preventing the <code class="language-plaintext highlighter-rouge">DataPlane</code> from getting correct status information.</li>
+  <li>If the Gateway controller is enabled, <code class="language-plaintext highlighter-rouge">DataPlane</code> and <code class="language-plaintext highlighter-rouge">ControlPlane</code> controllers
+get enabled as well.</li>
+  <li>Fix applying the <code class="language-plaintext highlighter-rouge">PodTemplateSpec</code> patch so that it’s not applied when the
+calculated patch (resulting from the generated manifest and current in-cluster
+state) is empty.
+One of the symptoms of this bug was that when users tried to apply a <code class="language-plaintext highlighter-rouge">ReadinessProbe</code>
+which specified a port name instead of a number (which is what’s generated by
+the operator) it would never reconcile and the status conditions would never get
+up to date <code class="language-plaintext highlighter-rouge">ObservedGeneration</code>.</li>
+  <li>Fix manager RBAC permissions which prevented the operator from being able to
+create <code class="language-plaintext highlighter-rouge">ControlPlane</code>’s <code class="language-plaintext highlighter-rouge">ClusterRole</code>s, list pods or list <code class="language-plaintext highlighter-rouge">EndpointSlices</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">DataPlane</code>s with BlueGreen rollout strategy enabled will now have its Ready status
+condition updated to reflect “live” <code class="language-plaintext highlighter-rouge">Deployment</code> and <code class="language-plaintext highlighter-rouge">Service</code>s status.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">ControlPlane</code> <code class="language-plaintext highlighter-rouge">election-id</code> has been changed so that every <code class="language-plaintext highlighter-rouge">ControlPlane</code>
+has its own <code class="language-plaintext highlighter-rouge">election-id</code>, based on the <code class="language-plaintext highlighter-rouge">ControlPlane</code> name. This prevents <code class="language-plaintext highlighter-rouge">pod</code>s
+belonging to different <code class="language-plaintext highlighter-rouge">ControlPlane</code>s from competing for the same lease.</li>
+  <li>Fill in the defaults for <code class="language-plaintext highlighter-rouge">env</code> and <code class="language-plaintext highlighter-rouge">volumes</code> when comparing the in-cluster spec
+with the generated spec.</li>
+  <li>Do not flap <code class="language-plaintext highlighter-rouge">DataPlane</code>’s <code class="language-plaintext highlighter-rouge">Ready</code> status condition when e.g. ingress <code class="language-plaintext highlighter-rouge">Service</code>
+can’t get an address assigned and <code class="language-plaintext highlighter-rouge">spec.network.services.ingress.</code>annotations`
+is non-empty.</li>
+  <li>Update or recreate a <code class="language-plaintext highlighter-rouge">ClusterRoleBinding</code> for control planes if the existing
+one does not contain the <code class="language-plaintext highlighter-rouge">ServiceAccount</code> used by <code class="language-plaintext highlighter-rouge">ControlPlane</code>, or
+<code class="language-plaintext highlighter-rouge">ClusterRole</code> is changed.</li>
+  <li>Retry reconciling <code class="language-plaintext highlighter-rouge">Gateway</code>s when provisioning owned <code class="language-plaintext highlighter-rouge">DataPlane</code> fails.</li>
+</ul>
+
 <h2 id="110">1.1.0</h2>
 
 <p><strong>Release Date</strong> 2023/11/20</p>
 
-<h3 id="added">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>Add support for <code class="language-plaintext highlighter-rouge">ControlPlane</code> <code class="language-plaintext highlighter-rouge">v3.0</code> by updating the generated <code class="language-plaintext highlighter-rouge">ClusterRole</code>.</li>
 </ul>
 
-<h3 id="changes">Changes</h3>
+<h3 id="changes-3">Changes</h3>
 
 <ul>
   <li>Bump <code class="language-plaintext highlighter-rouge">ControlPlane</code> default version to <code class="language-plaintext highlighter-rouge">v3.0</code>.</li>
   <li>Bump Gateway API to v1.0.</li>
 </ul>
 
-<h3 id="fixes">Fixes</h3>
+<h3 id="fixes-4">Fixes</h3>
 
 <ul>
   <li>Operator <code class="language-plaintext highlighter-rouge">Role</code> generation is fixed. As a result it contains now less rules
@@ -582,14 +831,14 @@ hence the operator needs less permissions to run.</li>
 
 <p><strong>Release Date</strong> 2023/11/06</p>
 
-<h3 id="fixes-1">Fixes</h3>
+<h3 id="fixes-5">Fixes</h3>
 
 <ul>
   <li>Fix an issue where operator is upgraded from an older version and it orphans
 old <code class="language-plaintext highlighter-rouge">DataPlane</code> resources.</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>Setting <code class="language-plaintext highlighter-rouge">spec.deployment.podTemplateSpec.spec.volumes</code> and
@@ -611,13 +860,13 @@ is now allowed.</li>
 
 <p><strong>Release Date</strong> 2023/10/02</p>
 
-<h3 id="fixes-2">Fixes</h3>
+<h3 id="fixes-6">Fixes</h3>
 
 <ul>
   <li>Fix flapping of <code class="language-plaintext highlighter-rouge">Gateway</code> managed <code class="language-plaintext highlighter-rouge">ControlPlane</code> <code class="language-plaintext highlighter-rouge">spec</code> field when applied without <code class="language-plaintext highlighter-rouge">controlPlaneOptions</code> set.</li>
 </ul>
 
-<h3 id="changes-1">Changes</h3>
+<h3 id="changes-4">Changes</h3>
 
 <ul>
   <li>Bump <code class="language-plaintext highlighter-rouge">ControlPlane</code> default version to <code class="language-plaintext highlighter-rouge">v2.12</code>.</li>
@@ -706,13 +955,12 @@ is now allowed.</li>
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -860,8 +1108,8 @@ is now allowed.</li>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -871,16 +1119,6 @@ is now allowed.</li>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Zipkin Configuration | Kong Docs</title>
+  <title>Zipkin Configuration - Plugin | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Zipkin Configuration | Kong Docs">
+  <meta property="og:title" content="Zipkin Configuration - Plugin | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -465,15 +466,39 @@
                 Gateway
                 
 
-                Version 3.5.x <em>(latest)</em>
+                Version 3.8.x <em>(latest)</em>
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
                 
                 
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
                 <li class="active">
                   <a href="/hub/kong-inc/zipkin/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/zipkin/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,9 +559,15 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
 
 
 
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge oss" aria-label="open-source" rel="noopener nofollow noreferrer "> </a>
 
 
         </div>
@@ -575,13 +606,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -597,6 +628,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -621,6 +654,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -636,13 +671,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -658,6 +693,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -682,13 +719,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=zipkin" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -720,6 +767,9 @@ Changelog
     <div class="page-content-container v2" id="documentation">
       <div class="page-content">
         <div class="content show-anchor-links">
+          
+
+          
           
       
         
@@ -753,7 +803,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -762,7 +812,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-zipkin</code>.</p>
+zipkin</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -777,9 +833,22 @@ zipkin</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>zipkin_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -795,8 +864,8 @@ zipkin</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -813,8 +882,8 @@ zipkin</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -831,8 +900,8 @@ zipkin</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the consumer the plugin targets.
-          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/consumers/CONSUMER_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/consumers/{consumerName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -896,6 +965,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -904,6 +975,8 @@ zipkin</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -953,6 +1026,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -962,6 +1037,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>The name of the service as displayed in Zipkin.</p>
 </div>
+
+    
 
     
 
@@ -1008,6 +1085,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1017,6 +1096,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>A string representing a URL, such as https://example.com/path/to/resource?q=search.</p>
 </div>
+
+    
 
     
 
@@ -1063,6 +1144,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1086,6 +1169,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>How often to sample requests that do not contain trace IDs. Set to <code class="language-plaintext highlighter-rouge">0</code> to turn sampling off, or to <code class="language-plaintext highlighter-rouge">1</code> to sample <strong>all</strong> requests.</p>
 </div>
+
+    
 
     
 
@@ -1132,6 +1217,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1141,6 +1228,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Set a default service name to override <code class="language-plaintext highlighter-rouge">unknown-service-name</code> in the Zipkin spans.</p>
 </div>
+
+    
 
     
 
@@ -1197,6 +1286,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1206,6 +1297,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Specify whether the credential of the currently authenticated consumer should be included in metadata sent to the Zipkin server.</p>
 </div>
+
+    
 
     
 
@@ -1260,6 +1353,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>8</code>, <code>16</code></span>
 
@@ -1275,6 +1370,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>The length in bytes of each request’s Trace ID.</p>
 </div>
+
+    
 
     
 
@@ -1319,6 +1416,16 @@ zipkin</code>.</p>
     
 
     
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>preserve</code>
+          
+        </span>
+      
+    
+
+    
 
     
 
@@ -1344,6 +1451,17 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>All HTTP requests going through the plugin are tagged with a tracing HTTP request. This property codifies what kind of tracing header the plugin expects on incoming requests</p>
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">zipkin: config.header_type is deprecated, please use config.propagation options instead.</span><span class="field-deprecation__version">
+              This field is planned to be removed in version 4.0.
+            </span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -1388,6 +1506,16 @@ zipkin</code>.</p>
     
 
     
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>b3</code>
+          
+        </span>
+      
+    
+
+    
 
     
 
@@ -1413,6 +1541,17 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Allows specifying the type of header to be added to requests with no pre-existing tracing headers and when <code class="language-plaintext highlighter-rouge">config.header_type</code> is set to <code class="language-plaintext highlighter-rouge">"preserve"</code>. When <code class="language-plaintext highlighter-rouge">header_type</code> is set to any other value, <code class="language-plaintext highlighter-rouge">default_header_type</code> is ignored.</p>
 </div>
+
+    
+      <div class="field-deprecation">
+        <blockquote class="important">
+          <strong>Deprecation notice:</strong>
+          <span class="field-deprecation__message">zipkin: config.default_header_type is deprecated, please use config.propagation.default_format instead.</span><span class="field-deprecation__version">
+              This field is planned to be removed in version 4.0.
+            </span>
+</blockquote>
+      </div>
+    
 
     
 
@@ -1469,6 +1608,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1478,6 +1619,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>The Zipkin plugin will add extra headers to the tags associated with any HTTP requests that come with a header named as configured by this property.</p>
 </div>
+
+    
 
     
 
@@ -1530,6 +1673,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1539,6 +1684,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>The tags specified on this property will be added to the generated request traces.</p>
 </div>
+
+    
 
     
 
@@ -1583,6 +1730,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1591,6 +1740,8 @@ zipkin</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1639,6 +1790,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1647,6 +1800,8 @@ zipkin</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1709,6 +1864,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>method</code>, <code>method_path</code></span>
 
@@ -1724,6 +1881,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Specify whether to include the HTTP path in the span name.</p>
 </div>
+
+    
 
     
 
@@ -1770,6 +1929,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1793,6 +1954,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -1839,6 +2002,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1862,6 +2027,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -1908,6 +2075,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1931,6 +2100,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -1977,6 +2148,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1985,6 +2158,8 @@ zipkin</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -2039,6 +2214,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>annotations</code>, <code>tags</code></span>
 
@@ -2054,6 +2231,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Specify whether to include the duration of each phase as an annotation or a tag.</p>
 </div>
+
+    
 
     
 
@@ -2106,6 +2285,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2114,6 +2295,8 @@ zipkin</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -2153,6 +2336,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>1</code>
@@ -2176,6 +2361,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Maximum number of entries that can be processed at a time.</p>
 </div>
+
+    
 
     
 
@@ -2222,6 +2409,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -2245,6 +2434,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Maximum number of (fractional) seconds to elapse after the first entry was queued before the queue starts calling the handler.</p>
 </div>
+
+    
 
     
 
@@ -2291,6 +2482,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>1</code>
@@ -2314,6 +2507,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Maximum number of entries that can be waiting on the queue.</p>
 </div>
+
+    
 
     
 
@@ -2360,6 +2555,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2369,6 +2566,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Maximum number of bytes that can be waiting on a queue, requires string content.</p>
 </div>
+
+    
 
     
 
@@ -2423,6 +2622,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2432,6 +2633,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Time in seconds before the queue gives up calling a failed handler for a batch.</p>
 </div>
+
+    
 
     
 
@@ -2478,6 +2681,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0.001</code>
@@ -2501,6 +2706,8 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Time in seconds before the initial retry is made for a failing batch.</p>
 </div>
+
+    
 
     
 
@@ -2547,6 +2754,8 @@ zipkin</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0.001</code>
@@ -2570,6 +2779,423 @@ zipkin</code>.</p>
     <div class="field-description">
 <p>Maximum time in seconds between retries, caps exponential backoff.</p>
 </div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-queue-concurrency_limit">
+      concurrency_limit
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>integer</strong>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>1</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>-1</code>, <code>1</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The number of of queue delivery timers. -1 indicates unlimited.</p>
+</div>
+
+    
+
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+      </div>
+    
+
+    
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-propagation">
+      propagation
+    </h4>
+    
+      <span class="field-subfield__expand">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>record</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+      
+        <span class="default">
+          
+            <strong>default: </strong><code>{"default_format"=&gt;"b3"}</code>
+          
+        </span>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+</div>
+
+    
+
+    
+      <div class="field-subfield__params">
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-propagation-extract">
+      extract
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>string</code>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+        <span>
+  Must be one of: <code>gcp</code>, <code>jaeger</code>, <code>aws</code>, <code>ot</code>, <code>w3c</code>, <code>datadog</code>, <code>b3</code></span>
+
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Header formats used to extract tracing context from incoming requests. If multiple values are specified, the first one found will be used for extraction. If left empty, Kong will not extract any tracing context information from incoming requests and generate a trace with no parent and a new trace ID.</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-propagation-clear">
+      clear
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>string</code>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Header names to clear after context extraction. This allows to extract the context from a certain header and then remove it from the request, useful when extraction and injection are performed on different header formats and the original header should not be sent to the upstream. If left empty, no headers are cleared.</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-propagation-inject">
+      inject
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>array</strong>
+      
+        of type <code>string</code>
+      
+    </span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      
+      
+        <span>
+  Must be one of: <code>preserve</code>, <code>gcp</code>, <code>b3-single</code>, <code>jaeger</code>, <code>aws</code>, <code>ot</code>, <code>w3c</code>, <code>datadog</code>, <code>b3</code></span>
+
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>Header formats used to inject tracing context. The value <code class="language-plaintext highlighter-rouge">preserve</code> will use the same header format as the incoming request. If multiple values are specified, all of them will be used during injection. If left empty, Kong will not inject any tracing context information in outgoing requests.</p>
+</div>
+
+    
+
+    
+
+    
+      
+        <div class="field-subfield__params">
+          
+        </div>
+      
+    
+  </div>
+</li>
+
+          </ul>
+        
+          <ul>
+            <li class="field">
+  <div class="field-overview">
+    <h4 id="config-propagation-default_format">
+      default_format
+    </h4>
+    
+  </div>
+  <div class="field-attributes">
+    <span>
+      <strong>string</strong>
+      
+    </span>
+
+    
+      <span class="required"><strong>required</strong></span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <span>
+  Must be one of: <code>gcp</code>, <code>b3-single</code>, <code>jaeger</code>, <code>aws</code>, <code>ot</code>, <code>w3c</code>, <code>datadog</code>, <code>b3</code></span>
+
+    
+
+    
+      
+      
+    
+
+  </div>
+  <div class="field-description-and-children">
+    <div class="field-description">
+<p>The default header format to use when extractors did not match any format in the incoming headers and <code class="language-plaintext highlighter-rouge">inject</code> is configured with the value: <code class="language-plaintext highlighter-rouge">preserve</code>. This can happen when no tracing header was found in the request, or the incoming tracing header formats were not included in <code class="language-plaintext highlighter-rouge">extract</code>.</p>
+</div>
+
+    
 
     
 
@@ -2692,7 +3318,7 @@ zipkin</code>.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -2840,8 +3466,8 @@ zipkin</code>.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -2851,16 +3477,6 @@ zipkin</code>.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

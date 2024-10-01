@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,9 +21,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -412,13 +414,22 @@
 </div>
 <ul>
   <li><a href="#what-are-plugins" class="active scroll-to">What are plugins?</a></li>
-  <li><a href="#why-use-plugins" class="scroll-to">Why use plugins?</a></li>
+  <li>
+<a href="#scoping-plugins" class="scroll-to">Scoping plugins</a>
+    <ul>
+      <li><a href="#global-scope" class="scroll-to">Global scope</a></li>
+      <li><a href="#precedence" class="scroll-to">Precedence</a></li>
+    </ul>
+  </li>
   <li><a href="#plugin-compatibility-with-deployment-types" class="scroll-to">Plugin compatibility with deployment types</a></li>
-  <li><a href="#precedence" class="scroll-to">Precedence</a></li>
-  <li><a href="#terminology" class="scroll-to">Terminology</a></li>
-  <li><a href="#developing-custom-plugins" class="scroll-to">Developing custom plugins</a></li>
-  <li><a href="#contributing-custom-plugins" class="scroll-to">Contributing custom plugins</a></li>
-  <li><a href="#other-key-concepts" class="scroll-to">Other key concepts</a></li>
+  <li>
+<a href="#custom-plugins" class="scroll-to">Custom plugins</a>
+    <ul>
+      <li><a href="#developing-custom-plugins" class="scroll-to">Developing custom plugins</a></li>
+      <li><a href="#third-party-plugins" class="scroll-to">Third-party plugins</a></li>
+    </ul>
+  </li>
+  <li><a href="#see-also" class="scroll-to">See also</a></li>
 </ul>
 
   
@@ -444,123 +455,150 @@
       <!-- shared with the Plugin Hub: Plugin Overview, Kong Gateway: Developing Plugins Overview, and Kong Gateway: Understanding Kong: Plugins -->
 <h2 id="what-are-plugins">What are plugins?</h2>
 
-<p>Kong Gateway is a Lua application designed to load and execute Lua or Go modules, which
-we commonly refer to as <em>plugins</em>. Kong provides a set of standard Lua
-plugins that get bundled with Kong Gateway. The set of plugins you
-have access to depends on your installation: open-source, enterprise, or either
-of these Kong Gateway options running on Kubernetes.</p>
+<p>Kong Gateway is a Lua application designed to load and execute modules, which
+we commonly refer to as <em>plugins</em>. Plugins provide advanced functionality and extend the 
+use of the Kong Gateway, allowing you to add more features to your implementation.</p>
 
-<p>Custom plugins can also be developed by the Kong Community and are supported
-and maintained by the plugin creators. If they are published on the Kong Plugin
-Hub, they are called Community or Third-Party plugins.</p>
+<p>Kong provides a set of
+<a href="/hub/?support=kong-inc">standard Lua plugins</a> that get bundled with Kong Gateway and
+Konnect. The set of plugins you
+have access to depends on your <a href="/hub/plugins/license-tiers/">license tier</a>.</p>
 
-<h2 id="why-use-plugins">Why use plugins?</h2>
+<p>You can also <a href="#developing-custom-plugins">develop custom plugins</a>, adding your own custom functionality to Kong Gateway.</p>
 
-<p>Plugins provide advanced functionality and extend the use of the Kong Gateway,
-which allows you to add new features to your implementation. Plugins can be configured to run in
-a variety of contexts, ranging from a specific route to all upstreams, and can
-execute actions inside Kong before or after a request has been proxied to the
-upstream API, as well as on any incoming responses.</p>
+<h2 id="scoping-plugins">Scoping plugins</h2>
 
-<h2 id="plugin-compatibility-with-deployment-types">Plugin compatibility with deployment types</h2>
+<p>You can run plugins in various contexts, depending on your environment needs.
+Each plugin can run globally, or be scoped to some combination of the following:</p>
+<ul>
+  <li>Services</li>
+  <li>Routes</li>
+  <li>Consumers</li>
+  <li>Consumer groups</li>
+</ul>
 
-<p>Kong Gateway can be deployed in a variety of ways, and not all plugins
-are fully compatible with each mode. See <a href="/konnect/compatibility#plugin-compatibility">Plugin Compatibility</a>
-for a comparison.</p>
+<p>Using scopes, you can customize how Kong handles functions in your environment, 
+either before a request is sent to your backend services or after it receives a response.
+For example, if you apply a plugin to a single <a href="/gateway/latest/key-concepts/routes/"><strong>route</strong></a>, that plugin will trigger only on the specific path requests take through your system.
+On the other hand, if you apply the plugin <a href="#global-scope"><strong>globally</strong></a>, it will run on every request, regardless of any other configuration.</p>
 
-<h2 id="precedence">Precedence</h2>
+<h3 id="global-scope">Global scope</h3>
+<p>A global plugin is not associated to any service, route, consumer, or consumer group is considered global, and will be run on every request,
+regardless of any other configuration.</p>
+
+<ul>
+  <li>In self-managed Kong Gateway Enterprise, the plugin applies to every entity in a given workspace.</li>
+  <li>In self-managed Kong Gateway (OSS), the plugin applies to your entire environment.</li>
+  <li>In Konnect, the plugin applies to every entity in a given control plane.</li>
+</ul>
+
+<p>Every plugin supports a subset of these scopes.</p>
+
+<p>See the <a href="/hub/plugins/compatibility/#scopes">scope compatibility</a> reference for all supported scopes for each plugin.</p>
+
+<h3 id="precedence">Precedence</h3>
 
 <p>A single plugin instance always runs <em>once</em> per request. The
 configuration with which it runs depends on the entities it has been
 configured for.
-Plugins can be configured for various entities, combinations of entities, or
-even globally. This is useful, for example, when you want to configure a plugin
-a certain way for most requests, but make <em>authenticated requests</em> behave
-slightly differently.</p>
+Plugins can be configured for various entities, combinations of entities, or even globally.
+This is useful, for example, when you want to configure a plugin a certain way for most requests but make <em>authenticated requests</em> behave slightly differently.</p>
 
-<p>Therefore, there is an order of precedence for running a plugin when it has
-been applied to different entities with different configurations. The amount of entities configured to a specific plugin directly correlate to its priority. The more entities configured to a plugin the higher its order of precedence is. 
-The complete order of precedence for plugins configured to multiple entities is:</p>
+<p>Therefore, there is an order of precedence for running a plugin when it has been applied to different entities with different configurations. The number of entities configured to a specific plugin directly correlates to its priority. The more entities a plugin is configured for, the higher its order of precedence.</p>
+
+<p>The complete order of precedence for plugins configured to multiple entities is:</p>
 
 <ol>
-  <li>Plugins configured on a combination of a consumer, a route, and a service.
- (Consumer means the request must be authenticated).</li>
-  <li>Plugins configured on a combination of a consumer group, service, and a route.
- (Consumer group means the request must be authenticated).</li>
-  <li>Plugins configured on a combination of a consumer and a route.
- (Consumer means the request must be authenticated).</li>
-  <li>Plugins configured on a combination of a consumer and a service.</li>
-  <li>Plugins configured on a consumer group and route.</li>
-  <li>Plugins configured on a consumer group and service.</li>
-  <li>Plugins configured on a route and service.</li>
-  <li>Plugins configured on a consumer.</li>
-  <li>Plugins configured on a consumer group.</li>
-  <li>Plugins configured on a route.</li>
-  <li>Plugins configured on a service.</li>
-  <li>Plugins configured globally.</li>
+  <li>
+<strong>Consumer</strong> + <strong>route</strong> + <strong>service</strong>: Highest precedence, affecting authenticated requests that match a specific consumer on a particular route and service.</li>
+  <li>
+<strong>Consumer group</strong> + <strong>service</strong> + <strong>route</strong>: Affects groups of authenticated users across specific services and routes.</li>
+  <li>
+<strong>Consumer</strong> + <strong>route</strong>: Targets authenticated requests from a specific consumer on a particular route.</li>
+  <li>
+<strong>Consumer</strong> + <strong>service</strong>: Applies to authenticated requests from a specific consumer accessing any route within a given service.</li>
+  <li>
+<strong>Consumer group</strong> + <strong>route</strong>: Affects groups of authenticated users on specific routes.</li>
+  <li>
+<strong>Consumer group</strong> + <strong>service</strong>: Applies to all routes within a specific service for groups of authenticated users.</li>
+  <li>
+<strong>Route</strong> + <strong>service</strong>: Targets all consumers on a specific route and service.</li>
+  <li>
+<strong>Consumer</strong>: Applies to all requests from a specific, authenticated consumer across all routes and services.</li>
+  <li>
+<strong>Consumer group</strong>: Affects all routes and services for a designated group of authenticated users.</li>
+  <li>
+<strong>Route</strong>: Specific to given route.</li>
+  <li>
+<strong>Service</strong>: Specific to given service.</li>
+  <li>
+<strong>Globally configured plugins</strong>: Lowest precedence, applies to all requests across all services and routes regardless of consumer status.</li>
 </ol>
 
-<h2 id="terminology">Terminology</h2>
-<dl>
-  <dt><strong>Plugin</strong></dt>
-  <dd>An extension to the Kong Gateway.</dd>
-  <dd>
-    <p>For plugins developed and maintained by Kong, plugin versioning generally has
-no impact on your implementation, other than to find out which versions of Kong
-contain which plugin features. Kong plugins are bundled with the
-Kong Gateway, so compatible plugin versions are already associated
-with the correct version of Kong.</p>
-  </dd>
-  <dt>
-<strong>Kong plugin</strong> or <strong>Kong bundled plugin</strong>
-</dt>
-  <dd>A plugin developed, maintained, and supported by Kong.</dd>
-  <dd>
-    <p>Because third-party plugins are not maintained by Kong and are not bundled with
-the Kong Gateway, version compatibility is a bigger concern. See each
-individual plugin’s page for its tested compatibility.</p>
-  </dd>
-  <dd>
-    <p>If the versions on the plugin page are outdated, contact the maintainer directly.</p>
-  </dd>
-  <dt><strong>Unsupported plugin</strong></dt>
-  <dd>A custom plugin developed, tested, and maintained by an external developer,
-not by Kong. Kong does not test these plugins, or update their version
-compatibility.</dd>
-  <dt><strong>Partner plugin</strong></dt>
-  <dd>Definition TBD</dd>
-</dl>
+<blockquote class="note">
+  <p><strong>Note on precedence for consumer groups</strong>:
+When a consumer is a member of two consumer groups, each with a scoped plugin, 
+Kong Gateway ensures deterministic behavior by executing only one of these plugins. 
+However, the specific rules that govern this behavior are not defined and are subject to change in future releases.</p>
+</blockquote>
 
-<h2 id="developing-custom-plugins">Developing custom plugins</h2>
+<h2 id="plugin-compatibility-with-deployment-types">Plugin compatibility with deployment types</h2>
+
+<p>Kong Gateway can be deployed in a variety of ways, and not all plugins
+are fully compatible with each mode. See <a href="/hub/plugins/compatibility#plugin-compatibility">Plugin Compatibility</a>
+for a comparison.</p>
+
+<h2 id="custom-plugins">Custom plugins</h2>
+
+<h3 id="developing-custom-plugins">Developing custom plugins</h3>
 
 <p>Kong provides an entire development environment for developing plugins,
-including Lua and Go SDKs, database abstractions, migrations, and more.</p>
+including Plugin Development Kits (or PDKs), database abstractions, migrations, and more.</p>
 
 <p>Plugins consist of modules interacting with the request/response objects or
-streams via a Plugin Development Kit (or PDK) to implement arbitrary logic.
-Kong provides PDKs for two languages: Lua and Go. Both of these PDKs are sets
-of functions that a plugin can use to facilitate interactions between plugins
+streams via a PDK to implement arbitrary logic.
+Kong provides PDKs in the following languages:</p>
+<ul>
+  <li><a href="/gateway/latest/plugin-development/">Lua</a></li>
+  <li><a href="/gateway/latest/plugin-development/pluginserver/go/">Go</a></li>
+  <li><a href="/gateway/latest/plugin-development/pluginserver/python/">Python</a></li>
+  <li><a href="/gateway/latest/plugin-development/pluginserver/javascript/">JavaScript</a></li>
+</ul>
+
+<p>These PDKs are sets of functions that a plugin can use to facilitate interactions between plugins
 and the core (or other components) of Kong.</p>
 
-<p>To start creating your own plugins, check out the PDK documentation:</p>
+<p>To start creating your own plugins, review the <a href="/gateway/latest/plugin-development/get-started/">Getting Started documentation</a>,
+or see the following references:</p>
 <ul>
-  <li><a href="/gateway/latest/plugin-development/">Plugin Development Guide</a></li>
   <li><a href="/gateway/latest/plugin-development/pdk/">Plugin Development Kit reference</a></li>
   <li><a href="/gateway/latest/plugin-development/pluginserver/go/">Other Language Support</a></li>
 </ul>
 
-<h2 id="contributing-custom-plugins">Contributing custom plugins</h2>
+<h3 id="third-party-plugins">Third-party plugins</h3>
 
-<p>If you are interested in sharing your custom plugin with other Kong users, you
-must also submit plugin reference documentation to the Kong Plugin Hub. See the
-<a href="/contributing/plugin-docs/">contribution guidelines</a>
-for adding documentation.</p>
+<p>Through partnerships with third parties, Kong lists some <a href="/hub/?support=third-party-partner%2Ccommunity%2premium-partner">third-party custom plugins</a> on the Kong Plugin Hub. 
+These plugins are maintained by Kong partners. 
+If you would like to have your plugin featured on the Kong Plugin Hub, we encourage you to become a <a href="https://konghq.com/partners/" target="_blank" rel="noopener nofollow noreferrer ">Kong Partner</a>.</p>
 
-<h2 id="other-key-concepts">Other key concepts</h2>
+<h2 id="see-also">See also</h2>
 
 <ul>
-  <li>For more information about available plugins, see the <a href="/hub/">Plugin Hub</a>.</li>
-  <li><a href="/gateway/latest/stability/">Stages of software availability</a></li>
+  <li>
+<a href="/hub/">Kong Plugin Hub</a>: All Kong bundled plugins and partner plugins</li>
+</ul>
+
+<p>References:</p>
+<ul>
+  <li><a href="/hub/plugins/compatibility/#scopes">Supported scopes for each plugin</a></li>
+  <li><a href="/hub/plugins/compatibility/">Supported topologies for each plugin</a></li>
+  <li><a href="/hub/plugins/compatibility/#protocols">Supported protocols for each plugin</a></li>
+</ul>
+
+<p>License or pricing tiers for plugins:</p>
+<ul>
+  <li><a href="/hub/plugins/license-tiers/">Self-managed Kong Gateway license tiers</a></li>
+  <li><a href="/konnect/compatibility/#plugin-compatibility">Konnect pricing tiers</a></li>
 </ul>
 
 
@@ -631,7 +669,7 @@ for adding documentation.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -779,8 +817,8 @@ for adding documentation.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -790,16 +828,6 @@ for adding documentation.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

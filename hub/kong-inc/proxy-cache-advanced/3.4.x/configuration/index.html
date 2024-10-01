@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Proxy Caching Advanced Configuration | Kong Docs</title>
+  <title>Proxy Caching Advanced Configuration - Plugin - v3.4.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Proxy Caching Advanced Configuration | Kong Docs">
+  <meta property="og:title" content="Proxy Caching Advanced Configuration - Plugin - v3.4.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/proxy-cache-advanced/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/proxy-cache-advanced/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/proxy-cache-advanced/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/proxy-cache-advanced/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/proxy-cache-advanced/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,11 +559,11 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
-  <a href="https://konghq.com/pricing" target="_blank" class="badge paid" aria-label="available with Konnect Paid subscription" rel="noopener nofollow noreferrer "> </a>
-
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -579,13 +604,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -601,6 +626,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -625,6 +652,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -640,13 +669,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -662,6 +691,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -686,13 +717,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=proxy-cache-advanced" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -725,12 +766,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/proxy-cache-advanced/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -762,7 +809,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -771,7 +818,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-proxy-cache-advanced</code>.</p>
+proxy-cache-advanced</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -786,9 +839,22 @@ proxy-cache-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>proxy-cache-advanced_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -804,8 +870,8 @@ proxy-cache-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -822,8 +888,8 @@ proxy-cache-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -840,8 +906,8 @@ proxy-cache-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the consumer the plugin targets.
-          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/consumers/CONSUMER_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/consumers/{consumerName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -905,6 +971,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -913,6 +981,8 @@ proxy-cache-advanced</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -958,6 +1028,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>1</code>
@@ -978,6 +1050,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Upstream response status code considered cacheable. The integers must be a value between 100 and 900.</p>
 </div>
+
+    
 
     
 
@@ -1040,6 +1114,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
         <span>
@@ -1053,6 +1129,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Downstream request methods considered cacheable. Available options: <code class="language-plaintext highlighter-rouge">HEAD</code>, <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">POST</code>, <code class="language-plaintext highlighter-rouge">PATCH</code>, <code class="language-plaintext highlighter-rouge">PUT</code>.</p>
 </div>
+
+    
 
     
 
@@ -1115,6 +1193,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1124,6 +1204,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Upstream response content types considered cacheable. The plugin performs an <strong>exact match</strong> against each specified value; for example, if the upstream is expected to respond with a <code class="language-plaintext highlighter-rouge">application/json; charset=utf-8</code> content-type, the plugin configuration must contain said value or a <code class="language-plaintext highlighter-rouge">Bypass</code> cache status is returned.</p>
 </div>
+
+    
 
     
 
@@ -1182,6 +1264,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1191,6 +1275,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>TTL in seconds of cache entities.</p>
 </div>
+
+    
 
     
 
@@ -1237,6 +1323,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>memory</code>, <code>redis</code></span>
 
@@ -1252,6 +1340,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>The backing data store in which to hold cache entities. Accepted values are: <code class="language-plaintext highlighter-rouge">memory</code> and <code class="language-plaintext highlighter-rouge">redis</code>.</p>
 </div>
+
+    
 
     
 
@@ -1308,6 +1398,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1317,6 +1409,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>When enabled, respect the Cache-Control behaviors defined in RFC7234.</p>
 </div>
+
+    
 
     
 
@@ -1371,6 +1465,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1380,6 +1476,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Determines whether to treat URIs as case sensitive. By default, case sensitivity is enabled. If set to true, requests are cached while ignoring case sensitivity in the URI.</p>
 </div>
+
+    
 
     
 
@@ -1426,6 +1524,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1435,6 +1535,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Number of seconds to keep resources in the storage backend. This value is independent of <code class="language-plaintext highlighter-rouge">cache_ttl</code> or resource TTLs defined by Cache-Control behaviors.</p>
 </div>
+
+    
 
     
 
@@ -1487,6 +1589,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1495,6 +1599,8 @@ proxy-cache-advanced</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -1544,6 +1650,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1553,6 +1661,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>The name of the shared dictionary in which to hold cache entities when the memory strategy is selected. Note that this dictionary currently must be defined manually in the Kong Nginx template.</p>
 </div>
+
+    
 
     
 
@@ -1612,6 +1722,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1621,6 +1733,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Relevant query parameters considered for the cache key. If undefined, all params are taken into consideration.</p>
 </div>
+
+    
 
     
 
@@ -1673,6 +1787,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1682,6 +1798,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Relevant headers considered for the cache key. If undefined, none of the headers are taken into consideration.</p>
 </div>
+
+    
 
     
 
@@ -1738,6 +1856,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1746,6 +1866,8 @@ proxy-cache-advanced</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -1785,6 +1907,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1794,6 +1918,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>A string representing a host name, such as example.com.</p>
 </div>
+
+    
 
     
 
@@ -1832,6 +1958,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1855,6 +1983,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>An integer representing a port number between 0 and 65535, inclusive.</p>
 </div>
+
+    
 
     
 
@@ -1901,6 +2031,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1924,6 +2056,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -1962,6 +2096,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1985,6 +2121,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -2023,6 +2161,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -2046,6 +2186,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -2084,6 +2226,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -2107,6 +2251,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>An integer representing a timeout in milliseconds. Must be between 0 and 2^31-2.</p>
 </div>
+
+    
 
     
 
@@ -2157,6 +2303,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2166,6 +2314,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Username to use for Redis connections. If undefined, ACL authentication won’t be performed. This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <code class="language-plaintext highlighter-rouge">default</code>.</p>
 </div>
+
+    
 
     
 
@@ -2220,6 +2370,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2229,6 +2381,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Password to use for Redis connections. If undefined, no AUTH commands are sent to Redis.</p>
 </div>
+
+    
 
     
 
@@ -2279,6 +2433,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2288,6 +2444,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Sentinel username to authenticate with a Redis Sentinel instance. If undefined, ACL authentication won’t be performed. This requires Redis v6.2.0+.</p>
 </div>
+
+    
 
     
 
@@ -2342,6 +2500,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2351,6 +2511,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Sentinel password to authenticate with a Redis Sentinel instance. If undefined, no AUTH commands are sent to Redis Sentinels.</p>
 </div>
+
+    
 
     
 
@@ -2405,6 +2567,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2414,6 +2578,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Database to use for the Redis connection when using the <code class="language-plaintext highlighter-rouge">redis</code> strategy</p>
 </div>
+
+    
 
     
 
@@ -2460,6 +2626,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>1</code>
@@ -2483,6 +2651,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>The size limit for every cosocket connection pool associated with every remote server, per worker process. If neither <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code> nor <code class="language-plaintext highlighter-rouge">keepalive_backlog</code> is specified, no pool is created. If <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code> isn’t specified but <code class="language-plaintext highlighter-rouge">keepalive_backlog</code> is specified, then the pool uses the default value. Try to increase (e.g. 512) this value if latency is high or throughput is low.</p>
 </div>
+
+    
 
     
 
@@ -2521,6 +2691,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -2544,6 +2716,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Limits the total number of opened connections for a pool. If the connection pool is full, connection queues above the limit go into the backlog queue. If the backlog queue is full, subsequent connect operations fail and return <code class="language-plaintext highlighter-rouge">nil</code>. Queued operations (subject to set timeouts) resume once the number of connections in the pool is less than <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code>. If latency is high or throughput is low, try increasing this value. Empirically, this value is larger than <code class="language-plaintext highlighter-rouge">keepalive_pool_size</code>.</p>
 </div>
+
+    
 
     
 
@@ -2590,6 +2764,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2599,6 +2775,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Sentinel master to use for Redis connections. Defining this value implies using Redis Sentinel.</p>
 </div>
+
+    
 
     
 
@@ -2643,6 +2821,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>master</code>, <code>slave</code>, <code>any</code></span>
 
@@ -2658,6 +2838,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Sentinel role to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined. Defining this value implies using Redis Sentinel.</p>
 </div>
+
+    
 
     
 
@@ -2700,6 +2882,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>1</code>
@@ -2720,6 +2904,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Sentinel addresses to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined. Defining this value implies using Redis Sentinel. Each string element must be a hostname. The minimum length of the array is 1 element.</p>
 </div>
+
+    
 
     
 
@@ -2766,6 +2952,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>1</code>
@@ -2786,6 +2974,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Cluster addresses to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined. Defining this value implies using Redis Cluster. Each string element must be a hostname. The minimum length of the array is 1 element.</p>
 </div>
+
+    
 
     
 
@@ -2844,6 +3034,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2853,6 +3045,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>If set to true, uses SSL to connect to Redis.</p>
 </div>
+
+    
 
     
 
@@ -2907,6 +3101,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2916,6 +3112,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>If set to true, verifies the validity of the server SSL certificate. If setting this parameter, also configure <code class="language-plaintext highlighter-rouge">lua_ssl_trusted_certificate</code> in <code class="language-plaintext highlighter-rouge">kong.conf</code> to specify the CA (or server) certificate used by your Redis server. You may also need to configure <code class="language-plaintext highlighter-rouge">lua_ssl_verify_depth</code> accordingly.</p>
 </div>
+
+    
 
     
 
@@ -2962,6 +3160,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -2971,6 +3171,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>A string representing an SNI (server name indication) value for TLS.</p>
 </div>
+
+    
 
     
 
@@ -3036,6 +3238,8 @@ proxy-cache-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -3045,6 +3249,8 @@ proxy-cache-advanced</code>.</p>
     <div class="field-description">
 <p>Unhandled errors while trying to retrieve a cache entry (such as redis down) are resolved with <code class="language-plaintext highlighter-rouge">Bypass</code>, with the request going upstream.</p>
 </div>
+
+    
 
     
 
@@ -3156,7 +3362,7 @@ proxy-cache-advanced</code>.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -3304,8 +3510,8 @@ proxy-cache-advanced</code>.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -3315,16 +3521,6 @@ proxy-cache-advanced</code>.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

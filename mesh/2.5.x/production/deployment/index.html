@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Deployment topologies overview - v2.5.x | Kong Docs</title>
+  <title>Deployment topologies overview - Kong Mesh - v2.5.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Deployment topologies overview - v2.5.x | Kong Docs">
+  <meta property="og:title" content="Deployment topologies overview - Kong Mesh - v2.5.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -402,7 +404,6 @@
         <div class="version">
           2.5.x
           
-            <span>(latest)</span>
           
         </div>
         
@@ -525,6 +526,9 @@
           <a href="/mesh/latest/" class="active">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -555,178 +559,119 @@
         <span>
           Version 2.5.x
           
-            <span>(latest)</span>
           
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/dev/production/deployment/" data-version-id="dev">
-            dev
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/mesh/2.5.x/production/deployment/" class="active" data-version-id="2.5.x">
-            2.5.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/dev/production/deployment/" data-version-id="2.9.x">
+              <em>dev</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.4.x/production/deployment/" data-version-id="2.4.x">
-            2.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.8.x/production/deployment/" data-version-id="2.8.x">
+              2.8.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.3.x/production/deployment/" data-version-id="2.3.x">
-            2.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.7.x/production/deployment/" data-version-id="2.7.x">
+              2.7.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.2.x/production/deployment/" data-version-id="2.2.x">
-            2.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.6.x/production/deployment/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.1.x" data-version-id="2.1.x">
-            2.1.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/mesh/2.5.x/production/deployment/" class="active" data-version-id="2.5.x">
+              2.5.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.0.x" data-version-id="2.0.x">
-            2.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.4.x/production/deployment/" data-version-id="2.4.x">
+              2.4.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.9.x" data-version-id="1.9.x">
-            1.9.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.3.x/production/deployment/" data-version-id="2.3.x">
+              2.3.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.8.x" data-version-id="1.8.x">
-            1.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.2.x/production/deployment/" data-version-id="2.2.x">
+              2.2.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.7.x" data-version-id="1.7.x">
-            1.7.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.1.x/" data-version-id="2.1.x">
+              2.1.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.6.x" data-version-id="1.6.x">
-            1.6.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.0.x/" data-version-id="2.0.x">
+              2.0.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.5.x" data-version-id="1.5.x">
-            1.5.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.9.x/" data-version-id="1.9.x">
+              1.9.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.4.x" data-version-id="1.4.x">
-            1.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.8.x/" data-version-id="1.8.x">
+              1.8.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.3.x" data-version-id="1.3.x">
-            1.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.7.x/" data-version-id="1.7.x">
+              1.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.2.x" data-version-id="1.2.x">
-            1.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.6.x/" data-version-id="1.6.x">
+              1.6.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.5.x/" data-version-id="1.5.x">
+              1.5.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.4.x/" data-version-id="1.4.x">
+              1.4.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.3.x/" data-version-id="1.3.x">
+              1.3.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.2.x/" data-version-id="1.2.x">
+              1.2.x
+            </a>
+          </li>
         
         
       </ul>
@@ -745,13 +690,13 @@
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -767,6 +712,8 @@ Introduction
 About service meshes
 
       </a>
+    
+
     
   </span>
 
@@ -785,6 +732,8 @@ Overview of Kong Mesh
 
       </a>
     
+
+    
   </span>
 
   
@@ -801,6 +750,8 @@ Overview of Kong Mesh
 How Kong Mesh works
 
       </a>
+    
+
     
   </span>
 
@@ -819,6 +770,8 @@ Architecture
 
       </a>
     
+
+    
   </span>
 
   
@@ -835,6 +788,8 @@ Architecture
 Stages of software availability
 
       </a>
+    
+
     
   </span>
 
@@ -853,6 +808,8 @@ Version support policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -870,6 +827,8 @@ Mesh requirements
 
       </a>
     
+
+    
   </span>
 
   
@@ -886,6 +845,8 @@ Mesh requirements
 Release notes
 
       </a>
+    
+
     
   </span>
 
@@ -910,6 +871,8 @@ Getting Started
 
       </a>
     
+
+    
   </span>
 
   
@@ -925,13 +888,13 @@ Getting Started
 
 Kong Mesh in Production
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Kong Mesh in Production subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Mesh in Production subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -948,6 +911,8 @@ Overview
 
       </a>
     
+
+    
   </span>
 
   
@@ -962,13 +927,13 @@ Overview
 
 Deployment topologies
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Deployment topologies subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment topologies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -984,6 +949,8 @@ Deployment topologies
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -1002,6 +969,8 @@ Standalone deployment
 
       </a>
     
+
+    
   </span>
 
   
@@ -1018,6 +987,8 @@ Standalone deployment
 Multi-zone deployment
 
       </a>
+    
+
     
   </span>
 
@@ -1041,6 +1012,8 @@ Install kumactl
 
       </a>
     
+
+    
   </span>
 
   
@@ -1058,6 +1031,8 @@ Use Kong Mesh
 
       </a>
     
+
+    
   </span>
 
   
@@ -1072,13 +1047,13 @@ Use Kong Mesh
 
 Control plane deployment
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Control plane deployment subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Control plane deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1094,6 +1069,8 @@ Control plane deployment
 Kong Mesh license
 
       </a>
+    
+
     
   </span>
 
@@ -1112,6 +1089,8 @@ Deploy a standalone control plane
 
       </a>
     
+
+    
   </span>
 
   
@@ -1128,6 +1107,8 @@ Deploy a standalone control plane
 Deploy a multi-zone global control plane
 
       </a>
+    
+
     
   </span>
 
@@ -1146,6 +1127,8 @@ Zone Ingress
 
       </a>
     
+
+    
   </span>
 
   
@@ -1162,6 +1145,8 @@ Zone Ingress
 Zone Egress
 
       </a>
+    
+
     
   </span>
 
@@ -1180,6 +1165,8 @@ Configure zone proxy authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -1196,6 +1183,8 @@ Configure zone proxy authentication
 Control plane configuration reference
 
       </a>
+    
+
     
   </span>
 
@@ -1214,6 +1203,8 @@ Systemd
 
       </a>
     
+
+    
   </span>
 
   
@@ -1230,6 +1221,8 @@ Systemd
 Kubernetes
 
       </a>
+    
+
     
   </span>
 
@@ -1253,6 +1246,8 @@ Create multiple service meshes in a cluster
 
       </a>
     
+
+    
   </span>
 
   
@@ -1267,13 +1262,13 @@ Create multiple service meshes in a cluster
 
 Data plane configuration
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Data plane configuration subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Data plane configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1289,6 +1284,8 @@ Data plane configuration
 Data plane proxy
 
       </a>
+    
+
     
   </span>
 
@@ -1307,6 +1304,8 @@ Configure the data plane on Kubernetes
 
       </a>
     
+
+    
   </span>
 
   
@@ -1323,6 +1322,8 @@ Configure the data plane on Kubernetes
 Configure the data plane on Universal
 
       </a>
+    
+
     
   </span>
 
@@ -1341,6 +1342,8 @@ Configure the Kong Mesh CNI
 
       </a>
     
+
+    
   </span>
 
   
@@ -1358,6 +1361,8 @@ Configure transparent proxying
 
       </a>
     
+
+    
   </span>
 
   
@@ -1374,6 +1379,8 @@ Configure transparent proxying
 IPv6 support
 
       </a>
+    
+
     
   </span>
 
@@ -1394,13 +1401,13 @@ IPv6 support
 
 Secure your deployment
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Secure your deployment subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Secure your deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1417,22 +1424,7 @@ Manage secrets
 
       </a>
     
-  </span>
 
-  
-</li>
-
-      
-        
-        <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label">
-    
-      <a class="sidebar-link" tabindex="-1" href="/mesh/2.5.x/production/secure-deployment/api-access-control/">
-        
-
-Kong Mesh API access control
-
-      </a>
     
   </span>
 
@@ -1451,6 +1443,8 @@ Authentication with the API server
 
       </a>
     
+
+    
   </span>
 
   
@@ -1467,6 +1461,8 @@ Authentication with the API server
 Authentication with the data plane proxy
 
       </a>
+    
+
     
   </span>
 
@@ -1485,6 +1481,8 @@ Configure data plane proxy membership
 
       </a>
     
+
+    
   </span>
 
   
@@ -1501,6 +1499,8 @@ Configure data plane proxy membership
 Secure access accross services
 
       </a>
+    
+
     
   </span>
 
@@ -1519,6 +1519,8 @@ Kong Mesh RBAC
 
       </a>
     
+
+    
   </span>
 
   
@@ -1535,6 +1537,8 @@ Kong Mesh RBAC
 FIPS support
 
       </a>
+    
+
     
   </span>
 
@@ -1558,6 +1562,8 @@ Kong Mesh user interface
 
       </a>
     
+
+    
   </span>
 
   
@@ -1572,13 +1578,13 @@ Kong Mesh user interface
 
 Upgrades and tuning
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Upgrades and tuning subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrades and tuning subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1594,6 +1600,8 @@ Upgrades and tuning
 Upgrade Kong Mesh
 
       </a>
+    
+
     
   </span>
 
@@ -1612,6 +1620,8 @@ Performance fine-tuning
 
       </a>
     
+
+    
   </span>
 
   
@@ -1619,23 +1629,6 @@ Performance fine-tuning
 
       
     </ul>
-  
-</li>
-
-      
-        
-        <li class="sidebar-item" role="none">
-  <span role="treeitem" class="sidebar-label">
-    
-      <a class="sidebar-link" tabindex="-1" href="/mesh/2.5.x/production/init-containers/">
-        
-
-Init containers
-
-      </a>
-    
-  </span>
-
   
 </li>
 
@@ -1654,13 +1647,13 @@ Init containers
 
 Deploy
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Deploy subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deploy subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1676,6 +1669,8 @@ Deploy
 Explore Kong Mesh with the Kubernetes demo app
 
       </a>
+    
+
     
   </span>
 
@@ -1693,6 +1688,8 @@ Explore Kong Mesh with the Kubernetes demo app
 Explore Kong Mesh with the Universal demo app
 
       </a>
+    
+
     
   </span>
 
@@ -1714,13 +1711,13 @@ Explore Kong Mesh with the Universal demo app
 
 Explore
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Explore subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Explore subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1736,6 +1733,12 @@ Explore
 Gateway
 
       </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Gateway subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
     
   </span>
 
@@ -1753,6 +1756,8 @@ Delegated
 
       </a>
     
+
+    
   </span>
 
   
@@ -1769,6 +1774,8 @@ Delegated
 Builtin
 
       </a>
+    
+
     
   </span>
 
@@ -1792,6 +1799,12 @@ CLI
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle CLI subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1807,6 +1820,8 @@ CLI
 kumactl
 
       </a>
+    
+
     
   </span>
 
@@ -1830,6 +1845,12 @@ Observability
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Observability subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1846,6 +1867,8 @@ Demo setup
 
       </a>
     
+
+    
   </span>
 
   
@@ -1856,12 +1879,14 @@ Demo setup
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/mesh/2.5.x/explore/observability/#control-plane-metrics">
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.5.x/explore/observability/#control-plane-observability">
         
 
 Control plane metrics
 
       </a>
+    
+
     
   </span>
 
@@ -1880,6 +1905,8 @@ Configuring Prometheus
 
       </a>
     
+
+    
   </span>
 
   
@@ -1896,6 +1923,8 @@ Configuring Prometheus
 Configuring Grafana
 
       </a>
+    
+
     
   </span>
 
@@ -1914,6 +1943,8 @@ Configuring Datadog
 
       </a>
     
+
+    
   </span>
 
   
@@ -1930,6 +1961,8 @@ Configuring Datadog
 Observability in multi-zone
 
       </a>
+    
+
     
   </span>
 
@@ -1953,6 +1986,12 @@ Inspect API
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Inspect API subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1968,6 +2007,8 @@ Inspect API
 Matched policies
 
       </a>
+    
+
     
   </span>
 
@@ -1986,6 +2027,8 @@ Affected data plane proxies
 
       </a>
     
+
+    
   </span>
 
   
@@ -2002,6 +2045,8 @@ Affected data plane proxies
 Envoy proxy configuration
 
       </a>
+    
+
     
   </span>
 
@@ -2025,6 +2070,12 @@ Kubernetes Gateway API
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kubernetes Gateway API subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2040,6 +2091,8 @@ Kubernetes Gateway API
 Installation
 
       </a>
+    
+
     
   </span>
 
@@ -2058,6 +2111,8 @@ Gateways
 
       </a>
     
+
+    
   </span>
 
   
@@ -2074,6 +2129,8 @@ Gateways
 TLS termination
 
       </a>
+    
+
     
   </span>
 
@@ -2092,6 +2149,8 @@ Customization
 
       </a>
     
+
+    
   </span>
 
   
@@ -2108,6 +2167,8 @@ Customization
 Multi-mesh
 
       </a>
+    
+
     
   </span>
 
@@ -2126,6 +2187,8 @@ Multi-zone
 
       </a>
     
+
+    
   </span>
 
   
@@ -2143,6 +2206,8 @@ GAMMA
 
       </a>
     
+
+    
   </span>
 
   
@@ -2159,6 +2224,8 @@ GAMMA
 How it works
 
       </a>
+    
+
     
   </span>
 
@@ -2185,13 +2252,13 @@ How it works
 
 Networking
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Networking subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Networking subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2207,6 +2274,8 @@ Networking
 Service Discovery
 
       </a>
+    
+
     
   </span>
 
@@ -2225,6 +2294,12 @@ DNS
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle DNS subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2240,6 +2315,8 @@ DNS
 How it works
 
       </a>
+    
+
     
   </span>
 
@@ -2258,6 +2335,8 @@ Installation
 
       </a>
     
+
+    
   </span>
 
   
@@ -2275,6 +2354,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -2291,6 +2372,8 @@ Configuration
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -2314,6 +2397,12 @@ Non-mesh traffic
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Non-mesh traffic subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2329,6 +2418,8 @@ Non-mesh traffic
 Incoming
 
       </a>
+    
+
     
   </span>
 
@@ -2347,6 +2438,8 @@ Outgoing
 
       </a>
     
+
+    
   </span>
 
   
@@ -2354,6 +2447,25 @@ Outgoing
 
       
     </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/mesh/2.5.x/networking/transparent-proxying/">
+        
+
+Transparent Proxying
+
+      </a>
+    
+
+    
+  </span>
+
   
 </li>
 
@@ -2372,13 +2484,13 @@ Outgoing
 
 Monitor &amp; manage
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Monitor &amp; manage subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Monitor &amp; manage subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2395,6 +2507,12 @@ Dataplane Health
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Dataplane Health subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2410,6 +2528,8 @@ Dataplane Health
 Circuit Breaker Policy
 
       </a>
+    
+
     
   </span>
 
@@ -2428,6 +2548,8 @@ Kubernetes and Universal Service Probes
 
       </a>
     
+
+    
   </span>
 
   
@@ -2444,6 +2566,8 @@ Kubernetes and Universal Service Probes
 Health Check Policy
 
       </a>
+    
+
     
   </span>
 
@@ -2467,6 +2591,12 @@ Control Plane Configuration
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Control Plane Configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2482,6 +2612,8 @@ Control Plane Configuration
 Modifying the configuration
 
       </a>
+    
+
     
   </span>
 
@@ -2500,6 +2632,8 @@ Inspecting the configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -2516,6 +2650,8 @@ Inspecting the configuration
 Store
 
       </a>
+    
+
     
   </span>
 
@@ -2542,13 +2678,13 @@ Store
 
 Policies
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Policies subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Policies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2564,6 +2700,8 @@ Policies
 Introduction
 
       </a>
+    
+
     
   </span>
 
@@ -2582,6 +2720,8 @@ General notes about Kong Mesh policies
 
       </a>
     
+
+    
   </span>
 
   
@@ -2598,6 +2738,8 @@ General notes about Kong Mesh policies
 Applying Policies
 
       </a>
+    
+
     
   </span>
 
@@ -2616,6 +2758,8 @@ How Kong Mesh chooses the right policy to apply
 
       </a>
     
+
+    
   </span>
 
   
@@ -2632,6 +2776,8 @@ How Kong Mesh chooses the right policy to apply
 Understanding TargetRef policies
 
       </a>
+    
+
     
   </span>
 
@@ -2650,6 +2796,8 @@ Protocol support in Kong Mesh
 
       </a>
     
+
+    
   </span>
 
   
@@ -2667,6 +2815,12 @@ Mutual TLS
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Mutual TLS subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2682,6 +2836,8 @@ Mutual TLS
 Usage of "builtin" CA
 
       </a>
+    
+
     
   </span>
 
@@ -2700,6 +2856,8 @@ Usage of "provided" CA
 
       </a>
     
+
+    
   </span>
 
   
@@ -2717,6 +2875,8 @@ Permissive mTLS
 
       </a>
     
+
+    
   </span>
 
   
@@ -2733,6 +2893,8 @@ Permissive mTLS
 Certificate Rotation
 
       </a>
+    
+
     
   </span>
 
@@ -2756,6 +2918,12 @@ Traffic Permissions
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Traffic Permissions subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2771,6 +2939,8 @@ Traffic Permissions
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -2788,6 +2958,8 @@ Usage
 Access to External Services
 
       </a>
+    
+
     
   </span>
 
@@ -2811,6 +2983,12 @@ Traffic Route
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Traffic Route subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2826,6 +3004,8 @@ Traffic Route
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -2849,6 +3029,12 @@ Traffic Metrics
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Traffic Metrics subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2864,6 +3050,8 @@ Traffic Metrics
 Expose metrics from data plane proxies
 
       </a>
+    
+
     
   </span>
 
@@ -2882,6 +3070,8 @@ Expose metrics from applications
 
       </a>
     
+
+    
   </span>
 
   
@@ -2898,6 +3088,8 @@ Expose metrics from applications
 Override Prometheus settings per data plane proxy
 
       </a>
+    
+
     
   </span>
 
@@ -2916,6 +3108,8 @@ Filter Envoy metrics
 
       </a>
     
+
+    
   </span>
 
   
@@ -2932,6 +3126,8 @@ Filter Envoy metrics
 Secure data plane proxy metrics
 
       </a>
+    
+
     
   </span>
 
@@ -2955,6 +3151,12 @@ Traffic Trace
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Traffic Trace subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2970,6 +3172,8 @@ Traffic Trace
 Add a tracing backend to the mesh
 
       </a>
+    
+
     
   </span>
 
@@ -2987,6 +3191,8 @@ Add a tracing backend to the mesh
 Add TrafficTrace resource
 
       </a>
+    
+
     
   </span>
 
@@ -3010,6 +3216,12 @@ Traffic Log
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Traffic Log subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3025,6 +3237,8 @@ Traffic Log
 Add a logging backend
 
       </a>
+    
+
     
   </span>
 
@@ -3043,6 +3257,8 @@ Add a TrafficLog resource
 
       </a>
     
+
+    
   </span>
 
   
@@ -3059,6 +3275,8 @@ Add a TrafficLog resource
 Logging external services
 
       </a>
+    
+
     
   </span>
 
@@ -3077,6 +3295,8 @@ Builtin Gateway support
 
       </a>
     
+
+    
   </span>
 
   
@@ -3093,6 +3313,8 @@ Builtin Gateway support
 Access Log Format
 
       </a>
+    
+
     
   </span>
 
@@ -3116,6 +3338,12 @@ Locality-aware Load Balancing
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Locality-aware Load Balancing subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3131,6 +3359,8 @@ Locality-aware Load Balancing
 Enabling locality-aware load balancing
 
       </a>
+    
+
     
   </span>
 
@@ -3154,6 +3384,12 @@ Fault Injection
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Fault Injection subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3169,6 +3405,8 @@ Fault Injection
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3186,6 +3424,8 @@ Usage
 Matching
 
       </a>
+    
+
     
   </span>
 
@@ -3209,6 +3449,12 @@ Health Check
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Health Check subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3224,6 +3470,8 @@ Health Check
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3241,6 +3489,8 @@ Usage
 Matching
 
       </a>
+    
+
     
   </span>
 
@@ -3264,6 +3514,12 @@ Circuit Breaker
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Circuit Breaker subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3279,6 +3535,8 @@ Circuit Breaker
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3297,6 +3555,8 @@ Matching
 
       </a>
     
+
+    
   </span>
 
   
@@ -3314,6 +3574,8 @@ Builtin Gateway support
 
       </a>
     
+
+    
   </span>
 
   
@@ -3330,6 +3592,8 @@ Builtin Gateway support
 Non-mesh traffic
 
       </a>
+    
+
     
   </span>
 
@@ -3353,6 +3617,12 @@ External Service
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle External Service subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3368,6 +3638,8 @@ External Service
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3385,6 +3657,8 @@ Usage
 Builtin Gateway support
 
       </a>
+    
+
     
   </span>
 
@@ -3408,6 +3682,12 @@ Retry
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Retry subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3423,6 +3703,8 @@ Retry
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3441,6 +3723,8 @@ Matching
 
       </a>
     
+
+    
   </span>
 
   
@@ -3457,6 +3741,8 @@ Matching
 Builtin Gateway support
 
       </a>
+    
+
     
   </span>
 
@@ -3480,6 +3766,12 @@ Timeout
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Timeout subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3495,6 +3787,8 @@ Timeout
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3513,6 +3807,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -3529,6 +3825,8 @@ Configuration
 Default general-purpose Timeout policy
 
       </a>
+    
+
     
   </span>
 
@@ -3547,6 +3845,8 @@ Matching
 
       </a>
     
+
+    
   </span>
 
   
@@ -3563,6 +3863,8 @@ Matching
 Builtin Gateway support
 
       </a>
+    
+
     
   </span>
 
@@ -3581,6 +3883,8 @@ Inbound timeouts
 
       </a>
     
+
+    
   </span>
 
   
@@ -3597,6 +3901,8 @@ Inbound timeouts
 Non-mesh traffic
 
       </a>
+    
+
     
   </span>
 
@@ -3620,6 +3926,12 @@ Rate Limit
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Rate Limit subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3635,6 +3947,8 @@ Rate Limit
 Usage
 
       </a>
+    
+
     
   </span>
 
@@ -3653,6 +3967,8 @@ Matching destinations
 
       </a>
     
+
+    
   </span>
 
   
@@ -3669,6 +3985,8 @@ Matching destinations
 Builtin Gateway support
 
       </a>
+    
+
     
   </span>
 
@@ -3692,6 +4010,12 @@ Virtual Outbound
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Virtual Outbound subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3707,6 +4031,8 @@ Virtual Outbound
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -3730,6 +4056,12 @@ MeshGateway
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshGateway subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3745,6 +4077,8 @@ MeshGateway
 TLS Termination
 
       </a>
+    
+
     
   </span>
 
@@ -3768,6 +4102,12 @@ MeshGatewayRoute
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshGatewayRoute subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3783,6 +4123,8 @@ MeshGatewayRoute
 Listener tags
 
       </a>
+    
+
     
   </span>
 
@@ -3801,6 +4143,8 @@ Matching
 
       </a>
     
+
+    
   </span>
 
   
@@ -3818,6 +4162,8 @@ Filters
 
       </a>
     
+
+    
   </span>
 
   
@@ -3834,6 +4180,8 @@ Filters
 Reference
 
       </a>
+    
+
     
   </span>
 
@@ -3857,6 +4205,8 @@ MeshGatewayInstance
 
       </a>
     
+
+    
   </span>
 
   
@@ -3874,6 +4224,12 @@ Service Health Probes
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Service Health Probes subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3889,6 +4245,8 @@ Service Health Probes
 Kubernetes
 
       </a>
+    
+
     
   </span>
 
@@ -3906,6 +4264,8 @@ Kubernetes
 Universal probes
 
       </a>
+    
+
     
   </span>
 
@@ -3929,6 +4289,12 @@ MeshAccessLog
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshAccessLog subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3944,6 +4310,8 @@ MeshAccessLog
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -3962,6 +4330,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -3978,6 +4348,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4001,6 +4373,12 @@ MeshCircuitBreaker
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshCircuitBreaker subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4016,6 +4394,8 @@ MeshCircuitBreaker
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4034,6 +4414,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4050,6 +4432,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4073,6 +4457,12 @@ MeshFaultInjection
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshFaultInjection subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4088,6 +4478,8 @@ MeshFaultInjection
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4106,6 +4498,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4122,6 +4516,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4145,6 +4541,12 @@ MeshHealthCheck
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshHealthCheck subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4160,6 +4562,8 @@ MeshHealthCheck
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4178,6 +4582,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4194,6 +4600,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4217,6 +4625,12 @@ MeshHTTPRoute
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshHTTPRoute subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4232,6 +4646,8 @@ MeshHTTPRoute
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4250,6 +4666,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4267,6 +4685,8 @@ Examples
 
       </a>
     
+
+    
   </span>
 
   
@@ -4283,6 +4703,8 @@ Examples
 Merging
 
       </a>
+    
+
     
   </span>
 
@@ -4306,6 +4728,12 @@ MeshProxyPatch
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshProxyPatch subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4321,6 +4749,8 @@ MeshProxyPatch
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4339,6 +4769,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4356,6 +4788,8 @@ Examples
 
       </a>
     
+
+    
   </span>
 
   
@@ -4372,6 +4806,8 @@ Examples
 Merging
 
       </a>
+    
+
     
   </span>
 
@@ -4395,6 +4831,12 @@ MeshRateLimit
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshRateLimit subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4410,6 +4852,8 @@ MeshRateLimit
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4428,6 +4872,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4444,6 +4890,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4467,6 +4915,12 @@ MeshRetry
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshRetry subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4482,6 +4936,8 @@ MeshRetry
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4500,6 +4956,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4516,6 +4974,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4539,6 +4999,12 @@ MeshTCPRoute
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTCPRoute subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4554,6 +5020,8 @@ MeshTCPRoute
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4572,6 +5040,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4589,6 +5059,8 @@ Examples
 
       </a>
     
+
+    
   </span>
 
   
@@ -4605,6 +5077,8 @@ Examples
 Route policies with different types targeting the same destination
 
       </a>
+    
+
     
   </span>
 
@@ -4628,6 +5102,12 @@ MeshTimeout
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTimeout subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4643,6 +5123,8 @@ MeshTimeout
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4661,6 +5143,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4677,6 +5161,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4700,6 +5186,12 @@ MeshTrace
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTrace subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4715,6 +5207,8 @@ MeshTrace
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4733,6 +5227,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4749,6 +5245,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4772,6 +5270,12 @@ MeshTrafficPermission
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshTrafficPermission subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4787,6 +5291,8 @@ MeshTrafficPermission
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4805,6 +5311,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4821,6 +5329,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4844,6 +5354,12 @@ MeshLoadBalancingStrategy
 
       </a>
     
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle MeshLoadBalancingStrategy subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4859,6 +5375,8 @@ MeshLoadBalancingStrategy
 TargetRef support matrix
 
       </a>
+    
+
     
   </span>
 
@@ -4877,6 +5395,8 @@ Configuration
 
       </a>
     
+
+    
   </span>
 
   
@@ -4893,6 +5413,8 @@ Configuration
 Examples
 
       </a>
+    
+
     
   </span>
 
@@ -4916,6 +5438,8 @@ OPA policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -4933,6 +5457,8 @@ MeshOPA (beta)
 
       </a>
     
+
+    
   </span>
 
   
@@ -4949,6 +5475,8 @@ MeshOPA (beta)
 MeshGlobalRateLimit (beta)
 
       </a>
+    
+
     
   </span>
 
@@ -4970,13 +5498,13 @@ MeshGlobalRateLimit (beta)
 
 Enterprise Features
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Enterprise Features subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Enterprise Features subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -4992,6 +5520,8 @@ Enterprise Features
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -5010,6 +5540,8 @@ HashiCorp Vault CA
 
       </a>
     
+
+    
   </span>
 
   
@@ -5026,6 +5558,8 @@ HashiCorp Vault CA
 Amazon ACM Private CA
 
       </a>
+    
+
     
   </span>
 
@@ -5044,6 +5578,8 @@ cert-manager Private CA
 
       </a>
     
+
+    
   </span>
 
   
@@ -5060,6 +5596,8 @@ cert-manager Private CA
 OPA policy support
 
       </a>
+    
+
     
   </span>
 
@@ -5078,6 +5616,8 @@ MeshOPA (beta)
 
       </a>
     
+
+    
   </span>
 
   
@@ -5094,6 +5634,8 @@ MeshOPA (beta)
 Multi-zone authentication
 
       </a>
+    
+
     
   </span>
 
@@ -5112,6 +5654,8 @@ FIPS support
 
       </a>
     
+
+    
   </span>
 
   
@@ -5128,6 +5672,8 @@ FIPS support
 Certificate Authority rotation
 
       </a>
+    
+
     
   </span>
 
@@ -5146,6 +5692,8 @@ Role-Based Access Control
 
       </a>
     
+
+    
   </span>
 
   
@@ -5160,13 +5708,13 @@ Role-Based Access Control
 
 Red Hat
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Red Hat subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Red Hat subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -5182,6 +5730,8 @@ Red Hat
 UBI Images
 
       </a>
+    
+
     
   </span>
 
@@ -5199,6 +5749,8 @@ UBI Images
 Red Hat OpenShift Quickstart
 
       </a>
+    
+
     
   </span>
 
@@ -5222,6 +5774,8 @@ ECS Support
 
       </a>
     
+
+    
   </span>
 
   
@@ -5239,6 +5793,8 @@ Auditing
 
       </a>
     
+
+    
   </span>
 
   
@@ -5255,6 +5811,8 @@ Auditing
 MeshGlobalRateLimit (beta)
 
       </a>
+    
+
     
   </span>
 
@@ -5276,13 +5834,13 @@ MeshGlobalRateLimit (beta)
 
 Reference
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -5298,6 +5856,8 @@ Reference
 HTTP API
 
       </a>
+    
+
     
   </span>
 
@@ -5316,6 +5876,8 @@ Kubernetes annotations and labels
 
       </a>
     
+
+    
   </span>
 
   
@@ -5332,6 +5894,8 @@ Kubernetes annotations and labels
 Kuma data collection
 
       </a>
+    
+
     
   </span>
 
@@ -5350,6 +5914,8 @@ Control plane configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -5366,6 +5932,8 @@ Control plane configuration reference
 Envoy proxy template
 
       </a>
+    
+
     
   </span>
 
@@ -5387,13 +5955,13 @@ Envoy proxy template
 
 Community
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Community subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Community subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -5409,6 +5977,8 @@ Community
 Contribute to Kuma
 
       </a>
+    
+
     
   </span>
 
@@ -5453,6 +6023,13 @@ Contribute to Kuma
       <div class="page-content">
         <div class="content show-anchor-links">
           
+            
+              <blockquote id="version-notice" class="important">
+                You are browsing documentation for an older version.
+            
+                See the <a href="/mesh/latest/production/deployment/">latest documentation here</a>.
+              </blockquote>
+          
 
           <h1 tabindex="-1" id="main" class="page-content-title">Deployment topologies overview
             
@@ -5473,16 +6050,10 @@ Contribute to Kuma
 
 <ul>
   <li>
-    <dl>
-      <dt><a href="/mesh/2.5.x/production/deployment/stand-alone/"><strong>Standalone</strong></a></dt>
-      <dd>Kong Mesh’s default deployment model with one control plane (that can be scaled horizontally) and many data planes connecting directly to it.</dd>
-    </dl>
+    <p><a href="/mesh/2.5.x/production/deployment/stand-alone/"><strong>Standalone</strong></a>: Kong Mesh’s default deployment model with one control plane (that can be scaled horizontally) and many data planes connecting directly to it.</p>
   </li>
   <li>
-    <dl>
-      <dt><a href="/mesh/2.5.x/production/deployment/multi-zone/"><strong>Multi-Zone</strong></a></dt>
-      <dd>Kong Mesh’s advanced deployment model to support multiple Kubernetes or VM-based zones, or hybrid Service Meshes running on both Kubernetes and VMs combined.</dd>
-    </dl>
+    <p><a href="/mesh/2.5.x/production/deployment/multi-zone/"><strong>Multi-Zone</strong></a>: Kong Mesh’s advanced deployment model to support multiple Kubernetes or VM-based zones, or hybrid Service Meshes running on both Kubernetes and VMs combined.</p>
   </li>
 </ul>
 
@@ -5564,13 +6135,12 @@ Contribute to Kuma
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -5718,8 +6288,8 @@ Contribute to Kuma
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -5729,16 +6299,6 @@ Contribute to Kuma
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

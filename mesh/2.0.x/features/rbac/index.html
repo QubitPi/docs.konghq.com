@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Role-Based Access Control - v2.0.x | Kong Docs</title>
+  <title>Role-Based Access Control - Kong Mesh - v2.0.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Role-Based Access Control - v2.0.x | Kong Docs">
+  <meta property="og:title" content="Role-Based Access Control - Kong Mesh - v2.0.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -402,6 +404,7 @@
         <div class="version">
           2.0.x
           
+          
         </div>
         
       </div>
@@ -517,6 +520,9 @@
           <a href="/mesh/latest/" class="active">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -547,176 +553,119 @@
         <span>
           Version 2.0.x
           
+          
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/dev/features/rbac/" data-version-id="dev">
-            dev
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.5.x/features/rbac/" data-version-id="2.5.x">
-            2.5.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/dev/features/rbac/" data-version-id="2.9.x">
+              <em>dev</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.4.x/features/rbac/" data-version-id="2.4.x">
-            2.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.8.x/features/rbac/" data-version-id="2.8.x">
+              2.8.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.3.x/features/rbac/" data-version-id="2.3.x">
-            2.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.7.x/features/rbac/" data-version-id="2.7.x">
+              2.7.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.2.x/features/rbac/" data-version-id="2.2.x">
-            2.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.6.x/features/rbac/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/2.1.x/features/rbac/" data-version-id="2.1.x">
-            2.1.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.5.x/features/rbac/" data-version-id="2.5.x">
+              2.5.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/mesh/2.0.x/features/rbac/" class="active" data-version-id="2.0.x">
-            2.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.4.x/features/rbac/" data-version-id="2.4.x">
+              2.4.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.9.x/features/rbac/" data-version-id="1.9.x">
-            1.9.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.3.x/features/rbac/" data-version-id="2.3.x">
+              2.3.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.8.x/features/rbac/" data-version-id="1.8.x">
-            1.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.2.x/features/rbac/" data-version-id="2.2.x">
+              2.2.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.7.x/features/rbac/" data-version-id="1.7.x">
-            1.7.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/2.1.x/features/rbac/" data-version-id="2.1.x">
+              2.1.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.6.x/features/rbac/" data-version-id="1.6.x">
-            1.6.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/mesh/2.0.x/features/rbac/" class="active" data-version-id="2.0.x">
+              2.0.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.5.x/features/rbac/" data-version-id="1.5.x">
-            1.5.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.9.x/features/rbac/" data-version-id="1.9.x">
+              1.9.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.4.x" data-version-id="1.4.x">
-            1.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.8.x/features/rbac/" data-version-id="1.8.x">
+              1.8.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.3.x" data-version-id="1.3.x">
-            1.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.7.x/features/rbac/" data-version-id="1.7.x">
+              1.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/mesh/1.2.x" data-version-id="1.2.x">
-            1.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.6.x/features/rbac/" data-version-id="1.6.x">
+              1.6.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.5.x/features/rbac/" data-version-id="1.5.x">
+              1.5.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.4.x/" data-version-id="1.4.x">
+              1.4.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.3.x/" data-version-id="1.3.x">
+              1.3.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/mesh/1.2.x/" data-version-id="1.2.x">
+              1.2.x
+            </a>
+          </li>
         
         
       </ul>
@@ -735,13 +684,13 @@
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -757,6 +706,8 @@ Introduction
 Introduction to Kong Mesh
 
       </a>
+    
+
     
   </span>
 
@@ -775,6 +726,8 @@ What is Service Mesh?
 
       </a>
     
+
+    
   </span>
 
   
@@ -791,6 +744,8 @@ What is Service Mesh?
 What is Kong Mesh?
 
       </a>
+    
+
     
   </span>
 
@@ -809,6 +764,8 @@ How Kong Mesh works
 
       </a>
     
+
+    
   </span>
 
   
@@ -825,6 +782,8 @@ How Kong Mesh works
 Deployments
 
       </a>
+    
+
     
   </span>
 
@@ -843,6 +802,8 @@ Version support policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -860,6 +821,8 @@ Stability
 
       </a>
     
+
+    
   </span>
 
   
@@ -876,6 +839,8 @@ Stability
 Release notes
 
       </a>
+    
+
     
   </span>
 
@@ -900,6 +865,8 @@ Getting Started
 
       </a>
     
+
+    
   </span>
 
   
@@ -915,13 +882,13 @@ Getting Started
 
 Install
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Install subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Install subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -937,6 +904,8 @@ Install
 Installation Options
 
       </a>
+    
+
     
   </span>
 
@@ -955,6 +924,8 @@ Kubernetes
 
       </a>
     
+
+    
   </span>
 
   
@@ -971,6 +942,8 @@ Kubernetes
 Helm
 
       </a>
+    
+
     
   </span>
 
@@ -989,6 +962,8 @@ OpenShift
 
       </a>
     
+
+    
   </span>
 
   
@@ -1005,6 +980,8 @@ OpenShift
 Docker
 
       </a>
+    
+
     
   </span>
 
@@ -1023,6 +1000,8 @@ Amazon ECS
 
       </a>
     
+
+    
   </span>
 
   
@@ -1039,6 +1018,8 @@ Amazon ECS
 Amazon Linux
 
       </a>
+    
+
     
   </span>
 
@@ -1057,6 +1038,8 @@ Red Hat
 
       </a>
     
+
+    
   </span>
 
   
@@ -1073,6 +1056,8 @@ Red Hat
 CentOS
 
       </a>
+    
+
     
   </span>
 
@@ -1091,6 +1076,8 @@ Debian
 
       </a>
     
+
+    
   </span>
 
   
@@ -1107,6 +1094,8 @@ Debian
 Ubuntu
 
       </a>
+    
+
     
   </span>
 
@@ -1125,6 +1114,8 @@ macOS
 
       </a>
     
+
+    
   </span>
 
   
@@ -1141,6 +1132,8 @@ macOS
 Windows
 
       </a>
+    
+
     
   </span>
 
@@ -1162,13 +1155,13 @@ Windows
 
 Deploy
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Deploy subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deploy subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1184,6 +1177,8 @@ Deploy
 Explore Kong Mesh with the Kubernetes demo app
 
       </a>
+    
+
     
   </span>
 
@@ -1202,6 +1197,8 @@ Explore Kong Mesh with the Universal demo app
 
       </a>
     
+
+    
   </span>
 
   
@@ -1218,6 +1215,8 @@ Explore Kong Mesh with the Universal demo app
 Standalone deployment
 
       </a>
+    
+
     
   </span>
 
@@ -1236,6 +1235,8 @@ Multi-zone deployment
 
       </a>
     
+
+    
   </span>
 
   
@@ -1252,6 +1253,8 @@ Multi-zone deployment
 License
 
       </a>
+    
+
     
   </span>
 
@@ -1273,13 +1276,13 @@ License
 
 Explore
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Explore subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Explore subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1295,6 +1298,8 @@ Explore
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -1313,6 +1318,8 @@ Data plane proxy
 
       </a>
     
+
+    
   </span>
 
   
@@ -1329,6 +1336,8 @@ Data plane proxy
 Data plane on Kubernetes
 
       </a>
+    
+
     
   </span>
 
@@ -1347,6 +1356,8 @@ Data plane on Universal
 
       </a>
     
+
+    
   </span>
 
   
@@ -1363,6 +1374,8 @@ Data plane on Universal
 Gateway
 
       </a>
+    
+
     
   </span>
 
@@ -1381,6 +1394,8 @@ Zone Ingress
 
       </a>
     
+
+    
   </span>
 
   
@@ -1397,6 +1412,8 @@ Zone Ingress
 Zone Egress
 
       </a>
+    
+
     
   </span>
 
@@ -1415,6 +1432,8 @@ CLI
 
       </a>
     
+
+    
   </span>
 
   
@@ -1431,6 +1450,8 @@ CLI
 GUI
 
       </a>
+    
+
     
   </span>
 
@@ -1449,6 +1470,8 @@ Observability
 
       </a>
     
+
+    
   </span>
 
   
@@ -1466,6 +1489,8 @@ Inspect API
 
       </a>
     
+
+    
   </span>
 
   
@@ -1482,6 +1507,8 @@ Inspect API
 Kubernetes Gateway API
 
       </a>
+    
+
     
   </span>
 
@@ -1503,13 +1530,13 @@ Kubernetes Gateway API
 
 Networking
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Networking subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Networking subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1525,6 +1552,8 @@ Networking
 Networking
 
       </a>
+    
+
     
   </span>
 
@@ -1543,6 +1572,8 @@ Service Discovery
 
       </a>
     
+
+    
   </span>
 
   
@@ -1559,6 +1590,8 @@ Service Discovery
 DNS
 
       </a>
+    
+
     
   </span>
 
@@ -1577,6 +1610,8 @@ Kong Mesh CNI
 
       </a>
     
+
+    
   </span>
 
   
@@ -1594,6 +1629,8 @@ Transparent Proxying
 
       </a>
     
+
+    
   </span>
 
   
@@ -1610,6 +1647,8 @@ Transparent Proxying
 IPv6 support
 
       </a>
+    
+
     
   </span>
 
@@ -1631,13 +1670,13 @@ IPv6 support
 
 Security
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Security subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Security subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1653,6 +1692,8 @@ Security
 Secure access across Kong Mesh components
 
       </a>
+    
+
     
   </span>
 
@@ -1671,6 +1712,8 @@ Secrets
 
       </a>
     
+
+    
   </span>
 
   
@@ -1687,6 +1730,8 @@ Secrets
 Kong Mesh API Access Control
 
       </a>
+    
+
     
   </span>
 
@@ -1705,6 +1750,8 @@ API server authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -1721,6 +1768,8 @@ API server authentication
 Data plane proxy authentication
 
       </a>
+    
+
     
   </span>
 
@@ -1739,6 +1788,8 @@ Zone proxy authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -1755,6 +1806,8 @@ Zone proxy authentication
 Data plane proxy membership
 
       </a>
+    
+
     
   </span>
 
@@ -1776,13 +1829,13 @@ Data plane proxy membership
 
 Monitor and Manage
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Monitor and Manage subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Monitor and Manage subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1798,6 +1851,8 @@ Monitor and Manage
 Dataplane Health
 
       </a>
+    
+
     
   </span>
 
@@ -1816,6 +1871,8 @@ Fine-tuning
 
       </a>
     
+
+    
   </span>
 
   
@@ -1832,6 +1889,8 @@ Fine-tuning
 Control Plane Configuration
 
       </a>
+    
+
     
   </span>
 
@@ -1850,6 +1909,8 @@ Upgrades
 
       </a>
     
+
+    
   </span>
 
   
@@ -1866,6 +1927,8 @@ Upgrades
 Requirements
 
       </a>
+    
+
     
   </span>
 
@@ -1887,13 +1950,13 @@ Requirements
 
 Policies
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Policies subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Policies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1909,6 +1972,8 @@ Policies
 Introduction
 
       </a>
+    
+
     
   </span>
 
@@ -1927,6 +1992,8 @@ General notes about Kong Mesh policies
 
       </a>
     
+
+    
   </span>
 
   
@@ -1943,6 +2010,8 @@ General notes about Kong Mesh policies
 Applying Policies
 
       </a>
+    
+
     
   </span>
 
@@ -1961,6 +2030,8 @@ How Kong Mesh chooses the right policy to apply
 
       </a>
     
+
+    
   </span>
 
   
@@ -1977,6 +2048,8 @@ How Kong Mesh chooses the right policy to apply
 Understanding TargetRef policies
 
       </a>
+    
+
     
   </span>
 
@@ -1995,6 +2068,8 @@ Protocol support in Kong Mesh
 
       </a>
     
+
+    
   </span>
 
   
@@ -2011,6 +2086,8 @@ Protocol support in Kong Mesh
 Mesh
 
       </a>
+    
+
     
   </span>
 
@@ -2029,6 +2106,8 @@ Mutual TLS
 
       </a>
     
+
+    
   </span>
 
   
@@ -2045,6 +2124,8 @@ Mutual TLS
 Traffic Permissions
 
       </a>
+    
+
     
   </span>
 
@@ -2063,6 +2144,8 @@ Traffic Route
 
       </a>
     
+
+    
   </span>
 
   
@@ -2079,6 +2162,8 @@ Traffic Route
 Traffic Metrics
 
       </a>
+    
+
     
   </span>
 
@@ -2097,6 +2182,8 @@ Traffic Trace
 
       </a>
     
+
+    
   </span>
 
   
@@ -2113,6 +2200,8 @@ Traffic Trace
 Traffic Log
 
       </a>
+    
+
     
   </span>
 
@@ -2131,6 +2220,8 @@ Locality-aware Load Balancing
 
       </a>
     
+
+    
   </span>
 
   
@@ -2147,6 +2238,8 @@ Locality-aware Load Balancing
 Fault Injection
 
       </a>
+    
+
     
   </span>
 
@@ -2165,6 +2258,8 @@ Health Check
 
       </a>
     
+
+    
   </span>
 
   
@@ -2181,6 +2276,8 @@ Health Check
 Circuit Breaker
 
       </a>
+    
+
     
   </span>
 
@@ -2199,6 +2296,8 @@ Proxy Template
 
       </a>
     
+
+    
   </span>
 
   
@@ -2215,6 +2314,8 @@ Proxy Template
 External Service
 
       </a>
+    
+
     
   </span>
 
@@ -2233,6 +2334,8 @@ Retry
 
       </a>
     
+
+    
   </span>
 
   
@@ -2249,6 +2352,8 @@ Retry
 Timeout
 
       </a>
+    
+
     
   </span>
 
@@ -2267,6 +2372,8 @@ Rate Limit
 
       </a>
     
+
+    
   </span>
 
   
@@ -2283,6 +2390,8 @@ Rate Limit
 Virtual Outbound
 
       </a>
+    
+
     
   </span>
 
@@ -2301,6 +2410,8 @@ MeshGateway
 
       </a>
     
+
+    
   </span>
 
   
@@ -2317,6 +2428,8 @@ MeshGateway
 MeshGatewayRoute
 
       </a>
+    
+
     
   </span>
 
@@ -2335,6 +2448,8 @@ Service Health Probes
 
       </a>
     
+
+    
   </span>
 
   
@@ -2351,6 +2466,8 @@ Service Health Probes
 MeshTrace (Beta)
 
       </a>
+    
+
     
   </span>
 
@@ -2369,6 +2486,8 @@ MeshAccessLog (Beta)
 
       </a>
     
+
+    
   </span>
 
   
@@ -2385,6 +2504,8 @@ MeshAccessLog (Beta)
 MeshTrafficPermission (Beta)
 
       </a>
+    
+
     
   </span>
 
@@ -2406,13 +2527,13 @@ MeshTrafficPermission (Beta)
 
 Enterprise Features
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Enterprise Features subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Enterprise Features subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2428,6 +2549,8 @@ Enterprise Features
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -2446,6 +2569,8 @@ HashiCorp Vault CA
 
       </a>
     
+
+    
   </span>
 
   
@@ -2462,6 +2587,8 @@ HashiCorp Vault CA
 Amazon ACM Private CA
 
       </a>
+    
+
     
   </span>
 
@@ -2480,6 +2607,8 @@ cert-manager Private CA
 
       </a>
     
+
+    
   </span>
 
   
@@ -2496,6 +2625,8 @@ cert-manager Private CA
 OPA policy support
 
       </a>
+    
+
     
   </span>
 
@@ -2514,6 +2645,8 @@ Multi-zone authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -2530,6 +2663,8 @@ Multi-zone authentication
 FIPS support
 
       </a>
+    
+
     
   </span>
 
@@ -2548,6 +2683,8 @@ Certificate Authority rotation
 
       </a>
     
+
+    
   </span>
 
   
@@ -2564,6 +2701,8 @@ Certificate Authority rotation
 Role-Based Access Control
 
       </a>
+    
+
     
   </span>
 
@@ -2582,6 +2721,8 @@ UBI Images
 
       </a>
     
+
+    
   </span>
 
   
@@ -2599,6 +2740,8 @@ Windows Support
 
       </a>
     
+
+    
   </span>
 
   
@@ -2615,6 +2758,8 @@ Windows Support
 Auditing
 
       </a>
+    
+
     
   </span>
 
@@ -2636,13 +2781,13 @@ Auditing
 
 Reference docs
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Reference docs subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference docs subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2658,6 +2803,8 @@ Reference docs
 HTTP API
 
       </a>
+    
+
     
   </span>
 
@@ -2676,6 +2823,8 @@ Annotations and labels in Kubernetes mode
 
       </a>
     
+
+    
   </span>
 
   
@@ -2693,6 +2842,8 @@ Kong Mesh data collection
 
       </a>
     
+
+    
   </span>
 
   
@@ -2707,13 +2858,13 @@ Kong Mesh data collection
 
 Resources
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Resources subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Resources subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2729,6 +2880,8 @@ Resources
 Mesh
 
       </a>
+    
+
     
   </span>
 
@@ -2747,6 +2900,8 @@ CircuitBreaker
 
       </a>
     
+
+    
   </span>
 
   
@@ -2763,6 +2918,8 @@ CircuitBreaker
 ExternalService
 
       </a>
+    
+
     
   </span>
 
@@ -2781,6 +2938,8 @@ FaultInjection
 
       </a>
     
+
+    
   </span>
 
   
@@ -2797,6 +2956,8 @@ FaultInjection
 HealthCheck
 
       </a>
+    
+
     
   </span>
 
@@ -2815,6 +2976,8 @@ MeshGateway
 
       </a>
     
+
+    
   </span>
 
   
@@ -2831,6 +2994,8 @@ MeshGateway
 MeshGatewayRoute
 
       </a>
+    
+
     
   </span>
 
@@ -2849,6 +3014,8 @@ ProxyTemplate
 
       </a>
     
+
+    
   </span>
 
   
@@ -2865,6 +3032,8 @@ ProxyTemplate
 RateLimit
 
       </a>
+    
+
     
   </span>
 
@@ -2883,6 +3052,8 @@ Retry
 
       </a>
     
+
+    
   </span>
 
   
@@ -2899,6 +3070,8 @@ Retry
 Timeout
 
       </a>
+    
+
     
   </span>
 
@@ -2917,6 +3090,8 @@ TrafficLog
 
       </a>
     
+
+    
   </span>
 
   
@@ -2933,6 +3108,8 @@ TrafficLog
 TrafficPermission
 
       </a>
+    
+
     
   </span>
 
@@ -2951,6 +3128,8 @@ TrafficRoute
 
       </a>
     
+
+    
   </span>
 
   
@@ -2967,6 +3146,8 @@ TrafficRoute
 TrafficTrace
 
       </a>
+    
+
     
   </span>
 
@@ -2985,6 +3166,8 @@ VirtualOutbound
 
       </a>
     
+
+    
   </span>
 
   
@@ -3001,6 +3184,8 @@ VirtualOutbound
 Dataplane
 
       </a>
+    
+
     
   </span>
 
@@ -3019,6 +3204,8 @@ ZoneEgress
 
       </a>
     
+
+    
   </span>
 
   
@@ -3035,6 +3222,8 @@ ZoneEgress
 ZoneIngress
 
       </a>
+    
+
     
   </span>
 
@@ -3055,13 +3244,13 @@ ZoneIngress
 
 Commands
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Commands subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Commands subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -3077,6 +3266,8 @@ Commands
 kuma-cp
 
       </a>
+    
+
     
   </span>
 
@@ -3095,6 +3286,8 @@ kuma-dp
 
       </a>
     
+
+    
   </span>
 
   
@@ -3111,6 +3304,8 @@ kuma-dp
 kumactl
 
       </a>
+    
+
     
   </span>
 
@@ -3133,6 +3328,8 @@ kumactl
 Kuma-cp configuration reference
 
       </a>
+    
+
     
   </span>
 
@@ -3189,6 +3386,7 @@ Kuma-cp configuration reference
   <li><a href="#example" class="scroll-to">Example</a></li>
   <li><a href="#multi-zone" class="scroll-to">Multi-zone</a></li>
   <li><a href="#wildcard-tag-value-matching" class="scroll-to">Wildcard tag value matching</a></li>
+  <li><a href="#what-should-i-do-if-ive-locked-myself-out" class="scroll-to">What should I do if I’ve locked myself out?</a></li>
 </ul>
 
         
@@ -3202,10 +3400,10 @@ Kuma-cp configuration reference
       <div class="page-content">
         <div class="content show-anchor-links">
           
+            
               <blockquote id="version-notice" class="important">
-                
-                You are browsing documentation for an outdated version.
-                
+                You are browsing documentation for an older version.
+            
                 See the <a href="/mesh/latest/features/rbac/">latest documentation here</a>.
               </blockquote>
           
@@ -3243,31 +3441,33 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="source-and-destination-selectors" data-navtab-id="navtab-9c957dac-5203-4fe9-8f90-2caa03eed8b5-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
-      Source and Destination selectors
+    <div data-slug="targetref-selectors" data-navtab-id="navtab-b954b99a-2003-408f-905a-5f0f9e9f6e0b-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      "targetRef" selectors
     </div>
   
     
-    <div data-slug="targetref-selectors" data-navtab-id="navtab-9c957dac-5203-4fe9-8f90-2caa03eed8b5-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
-      `targetRef` selectors
+    <div data-slug="source-and-destination-selectors" data-navtab-id="navtab-b954b99a-2003-408f-905a-5f0f9e9f6e0b-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Source and Destination selectors
     </div>
   
   </div>
   <div class="navtab-contents">
   
     
-    <div data-panel="source-and-destination-selectors" data-navtab-content="navtab-9c957dac-5203-4fe9-8f90-2caa03eed8b5-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="targetref-selectors" data-navtab-content="navtab-b954b99a-2003-408f-905a-5f0f9e9f6e0b-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
+<p>For policies using the <code class="language-plaintext highlighter-rouge">targetRef</code> selector. You can specify which <code class="language-plaintext highlighter-rouge">targetRef</code> kinds users should have access to.</p>
+
 <div class="navtabs  ">
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-79db7601-c213-44ec-934d-a30a445d339d-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-dfadf885-f174-4578-9943-6f9a2e54d1de-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-79db7601-c213-44ec-934d-a30a445d339d-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-dfadf885-f174-4578-9943-6f9a2e54d1de-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3275,7 +3475,81 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-79db7601-c213-44ec-934d-a30a445d339d-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-dfadf885-f174-4578-9943-6f9a2e54d1de-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">role-1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">rules</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">MeshTrafficPermission"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshTrace"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshAccessLog"</span><span class="pi">]</span> <span class="c1"># List of Kuma resource kinds that are granted access. If it's empty, access is granted to all kinds.</span>
+    <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">res-1"</span><span class="pi">]</span> <span class="c1"># List of allowed type names that are granted access. If it's empty, access is granted to resources regardless of the name.</span>
+    <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># Grants access to the resources in the named mesh. It can only be used with the mesh-scoped resources.</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">]</span> <span class="c1"># The action bound to a type.</span>
+    <span class="na">when</span><span class="pi">:</span> <span class="c1"># A set of qualifiers to receive access. Only one of them needs to be fulfilled to receive access.</span>
+    <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span> <span class="c1"># A condition on the targetRef section in policies 2.0 (like MeshAccessLog or MeshTrace).</span>
+        <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+        <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshSubset</span>
+        <span class="na">tags</span><span class="pi">:</span>
+          <span class="na">k8s.kuma.io/namespace</span><span class="pi">:</span> <span class="s">kuma-demo</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+    
+    <div data-panel="universal" data-navtab-content="navtab-dfadf885-f174-4578-9943-6f9a2e54d1de-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">role-1</span>
+<span class="na">rules</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">MeshTrafficPermission"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshTrace"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshAccessLog"</span><span class="pi">]</span> <span class="c1"># List of Kuma resource types that are granted access. If it's empty, access is granted to all types.</span>
+  <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">res-1"</span><span class="pi">]</span> <span class="c1"># List of allowed type names that are granted access. If it's empty, access is granted to resources regardless of the name.</span>
+  <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># Grants access to the resources in the named mesh. It can only be used with the mesh-scoped resources.</span>
+  <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">]</span> <span class="c1"># The action bound to a type.</span>
+  <span class="na">when</span><span class="pi">:</span> <span class="c1"># A set of qualifiers to receive access. Only one of them needs to be fulfilled to receive access.</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span> <span class="c1"># A condition on the targetRef section in policies 2.0 (like MeshAccessLog or MeshTrace).</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
+      <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshSubset</span>
+      <span class="na">tags</span><span class="pi">:</span>
+        <span class="na">k8s.kuma.io/namespace</span><span class="pi">:</span> <span class="s">kuma-demo</span>
+</code></pre></div></div>
+
+
+    </div>
+  
+  </div>
+</div>
+
+
+    </div>
+  
+    
+    <div data-panel="source-and-destination-selectors" data-navtab-content="navtab-b954b99a-2003-408f-905a-5f0f9e9f6e0b-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="kubernetes" data-navtab-id="navtab-4468309a-0dc1-42d0-83ad-045ca26bb35a-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      Kubernetes
+    </div>
+  
+    
+    <div data-slug="universal" data-navtab-id="navtab-4468309a-0dc1-42d0-83ad-045ca26bb35a-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Universal
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="kubernetes" data-navtab-content="navtab-4468309a-0dc1-42d0-83ad-045ca26bb35a-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -3287,11 +3561,11 @@ It is global-scoped, which means it is not bound to a mesh.</p>
     <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">res-1"</span><span class="pi">]</span> <span class="c1"># list of allowed names of types to which access is granted. If empty, then access is granted to resources regardless of the name.</span>
     <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># Mesh within which the access to resources is granted. It can only be used with the Mesh-scoped resources.</span>
     <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_DATAPLANE_TOKEN"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_USER_TOKEN"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_ZONE_CP_TOKEN"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_ZONE_TOKEN"</span><span class="pi">]</span> <span class="c1"># an action that is bound to a type.</span>
-    <span class="na">when</span><span class="pi">:</span> <span class="c1"># a set of qualifiers to receive an access. Only one of them needs to be fulfilled to receive an access</span>
-    <span class="pi">-</span> <span class="na">sources</span><span class="pi">:</span> <span class="c1"># a condition on sources section in connection policies (like TrafficRoute or Healtchecheck). If missing, then all sources are allowed</span>
+    <span class="na">when</span><span class="pi">:</span> <span class="c1"># a set of qualifiers to receive access. Only one of them needs to be fulfilled to receive an access</span>
+    <span class="pi">-</span> <span class="na">sources</span><span class="pi">:</span> <span class="c1"># a condition on sources section in connection policies (like TrafficRoute or HealthCheck). If missing, then all sources are allowed</span>
         <span class="na">match</span><span class="pi">:</span>
           <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web</span>
-      <span class="na">destinations</span><span class="pi">:</span> <span class="c1"># a condition on destinations section in connection policies (like TrafficRoute or Healtchecheck). If missing, then all destinations are allowed</span>
+      <span class="na">destinations</span><span class="pi">:</span> <span class="c1"># a condition on destinations section in connection policies (like TrafficRoute or HealthCheck). If missing, then all destinations are allowed</span>
         <span class="na">match</span><span class="pi">:</span>
           <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
     <span class="pi">-</span> <span class="na">selectors</span><span class="pi">:</span> <span class="c1"># a condition on selectors section in dataplane policies (like TrafficTrace or ProxyTemplate).</span>
@@ -3306,7 +3580,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-79db7601-c213-44ec-934d-a30a445d339d-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-4468309a-0dc1-42d0-83ad-045ca26bb35a-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">role-1</span>
@@ -3315,11 +3589,11 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">res-1"</span><span class="pi">]</span> <span class="c1"># list of allowed names of types to which access is granted. If empty, then access is granted to resources regardless of the name.</span>
   <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># Mesh within which the access to resources is granted. It can only be used with the Mesh-scoped resources.</span>
   <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_DATAPLANE_TOKEN"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_USER_TOKEN"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_ZONE_CP_TOKEN"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">GENERATE_ZONE_TOKEN"</span><span class="pi">]</span> <span class="c1"># an action that is bound to a type.</span>
-  <span class="na">when</span><span class="pi">:</span> <span class="c1"># a set of qualifiers to receive an access. Only one of them needs to be fulfilled to receive an access</span>
-  <span class="pi">-</span> <span class="na">sources</span><span class="pi">:</span> <span class="c1"># a condition on sources section in connection policies (like TrafficRoute or Healtchecheck). If missing, then all sources are allowed</span>
+  <span class="na">when</span><span class="pi">:</span> <span class="c1"># a set of qualifiers to receive access. Only one of them needs to be fulfilled to receive an access</span>
+  <span class="pi">-</span> <span class="na">sources</span><span class="pi">:</span> <span class="c1"># a condition on sources section in connection policies (like TrafficRoute or HealthCheck). If missing, then all sources are allowed</span>
       <span class="na">match</span><span class="pi">:</span>
         <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web</span>
-    <span class="na">destinations</span><span class="pi">:</span> <span class="c1"># a condition on destinations section in connection policies (like TrafficRoute or Healtchecheck). If missing, then all destinations are allowed</span>
+    <span class="na">destinations</span><span class="pi">:</span> <span class="c1"># a condition on destinations section in connection policies (like TrafficRoute or HealthCheck). If missing, then all destinations are allowed</span>
       <span class="na">match</span><span class="pi">:</span>
         <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
   <span class="pi">-</span> <span class="na">selectors</span><span class="pi">:</span> <span class="c1"># a condition on selectors section in dataplane policies (like TrafficTrace or ProxyTemplate).</span>
@@ -3330,84 +3604,6 @@ It is global-scoped, which means it is not bound to a mesh.</p>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">kuma.io/service</span>
         <span class="na">value</span><span class="pi">:</span> <span class="s">web</span>
 </code></pre></div></div>
-
-    </div>
-  
-  </div>
-</div>
-
-
-    </div>
-  
-    
-    <div data-panel="targetref-selectors" data-navtab-content="navtab-9c957dac-5203-4fe9-8f90-2caa03eed8b5-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
-      
-<p>For policies using the <code class="language-plaintext highlighter-rouge">targetRef</code> selector. You can specify which <code class="language-plaintext highlighter-rouge">targetRef</code> kinds users should have access to.</p>
-
-<div class="navtabs  ">
-  <div class="navtab-titles" role="tablist">
-  
-    
-    <div data-slug="kubernetes" data-navtab-id="navtab-7792061f-445e-4b20-8f3c-5e098c44d7eb-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
-      Kubernetes
-    </div>
-  
-    
-    <div data-slug="universal" data-navtab-id="navtab-7792061f-445e-4b20-8f3c-5e098c44d7eb-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
-      Universal
-    </div>
-  
-  </div>
-  <div class="navtab-contents">
-  
-    
-    <div data-panel="kubernetes" data-navtab-content="navtab-7792061f-445e-4b20-8f3c-5e098c44d7eb-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
-      
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">role-1</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">rules</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">MeshTrafficPermission"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshTrace"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshAccessLog"</span><span class="pi">]</span> <span class="c1"># List of Kuma resource kinds that are granted access. If it's empty, access is granted to all kinds.</span>
-    <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">res-1"</span><span class="pi">]</span> <span class="c1"># List of allowed type names that are granted access. If it's empty, access is granted to resources regardless of the name.</span>
-    <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># Grants access to the resources in the named mesh. It can only be used with the mesh-scoped resources.</span>
-    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">]</span> <span class="c1"># The action bound to a type.</span>
-    <span class="na">when</span><span class="pi">:</span> <span class="c1"># A set of qualifiers to receive access. Only one of them needs to be fulfilled to receive access.</span>
-    <span class="pi">-</span> <span class="na">tagetRef</span><span class="pi">:</span> <span class="c1"># A condition on the targetRef section in policies 2.0 (like MeshAccessLog or MeshTrace).</span>
-        <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
-        <span class="na">name</span><span class="pi">:</span> <span class="s">backend</span>
-    <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
-        <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshSubset</span>
-        <span class="na">tags</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">k8s.kuma.io/namespace</span>
-          <span class="na">value</span><span class="pi">:</span> <span class="s">kuma-demo</span>
-</code></pre></div></div>
-
-
-    </div>
-  
-    
-    <div data-panel="universal" data-navtab-content="navtab-7792061f-445e-4b20-8f3c-5e098c44d7eb-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
-      
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
-<span class="na">name</span><span class="pi">:</span> <span class="s">role-1</span>
-<span class="na">rules</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">MeshTrafficPermission"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshTrace"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">MeshAccessLog"</span><span class="pi">]</span> <span class="c1"># List of Kuma resource types that are granted access. If it's empty, access is granted to all types.</span>
-  <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">res-1"</span><span class="pi">]</span> <span class="c1"># List of allowed type names that are granted access. If it's empty, access is granted to resources regardless of the name.</span>
-  <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span> <span class="c1"># Grants access to the resources in the named mesh. It can only be used with the mesh-scoped resources.</span>
-  <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">]</span> <span class="c1"># The action bound to a type.</span>
-  <span class="na">when</span><span class="pi">:</span> <span class="c1"># A set of qualifiers to receive access. Only one of them needs to be fulfilled to receive access.</span>
-  <span class="pi">-</span> <span class="na">tagetRef</span><span class="pi">:</span> <span class="c1"># A condition on the targetRef section in policies 2.0 (like MeshAccessLog or MeshTrace).</span>
-        <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshService</span>
-        <span class="na">name</span><span class="pi">:</span> <span class="s">backend</span>
-  <span class="pi">-</span> <span class="na">targetRef</span><span class="pi">:</span>
-      <span class="na">kind</span><span class="pi">:</span> <span class="s">MeshSubset</span>
-      <span class="na">tags</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">k8s.kuma.io/namespace</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="s">kuma-demo</span>
-</code></pre></div></div>
-
 
     </div>
   
@@ -3429,12 +3625,12 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-0f8fadd1-aa58-46f1-8da9-ce6d763b801c-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-52f90236-5dca-4ba7-b353-7842ae15fc3e-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-0f8fadd1-aa58-46f1-8da9-ce6d763b801c-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-52f90236-5dca-4ba7-b353-7842ae15fc3e-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3442,7 +3638,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-0f8fadd1-aa58-46f1-8da9-ce6d763b801c-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-52f90236-5dca-4ba7-b353-7842ae15fc3e-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRoleBinding</span>
@@ -3461,7 +3657,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-0f8fadd1-aa58-46f1-8da9-ce6d763b801c-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-52f90236-5dca-4ba7-b353-7842ae15fc3e-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRoleBinding</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">binding-1</span>
@@ -3491,12 +3687,12 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-a7e7f47f-fd0c-4911-ba96-57b226286536-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-bce7958f-c1da-4d4a-94de-17ccde3a00f1-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-a7e7f47f-fd0c-4911-ba96-57b226286536-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-bce7958f-c1da-4d4a-94de-17ccde3a00f1-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3504,7 +3700,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-a7e7f47f-fd0c-4911-ba96-57b226286536-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-bce7958f-c1da-4d4a-94de-17ccde3a00f1-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -3518,7 +3714,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-a7e7f47f-fd0c-4911-ba96-57b226286536-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-bce7958f-c1da-4d4a-94de-17ccde3a00f1-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">admin</span>
@@ -3545,12 +3741,12 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-0b2144c3-016f-4355-a3f8-1762a6739366-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-a3cfbf1b-db18-4a67-b785-a2fcfed0ad04-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-0b2144c3-016f-4355-a3f8-1762a6739366-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-a3cfbf1b-db18-4a67-b785-a2fcfed0ad04-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3558,7 +3754,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-0b2144c3-016f-4355-a3f8-1762a6739366-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-a3cfbf1b-db18-4a67-b785-a2fcfed0ad04-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -3566,36 +3762,37 @@ It is global-scoped, which means it is not bound to a mesh.</p>
   <span class="na">name</span><span class="pi">:</span> <span class="s">backend-owner</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">rules</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
-      <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficPermission"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">RateLimit"</span><span class="pi">]</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
-      <span class="na">when</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">destinations</span><span class="pi">:</span>
-            <span class="na">match</span><span class="pi">:</span>
-              <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
-    <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
-      <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficRoute"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">HealthCheck"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">CircuitBreaker"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">FaultInjection"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Retry"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Timeout"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">TrafficLog"</span><span class="pi">]</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
-      <span class="na">when</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">sources</span><span class="pi">:</span>
-            <span class="na">match</span><span class="pi">:</span>
-              <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
-        <span class="pi">-</span> <span class="na">destinations</span><span class="pi">:</span>
-            <span class="na">match</span><span class="pi">:</span>
-              <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
-    <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
-      <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficTrace"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">ProxyTemplate"</span><span class="pi">]</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
-      <span class="na">when</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">selectors</span><span class="pi">:</span>
-            <span class="na">match</span><span class="pi">:</span>
-              <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficPermission"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">RateLimit"</span><span class="pi">]</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
+    <span class="na">when</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">destinations</span><span class="pi">:</span>
+        <span class="na">match</span><span class="pi">:</span>
+          <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficRoute"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">HealthCheck"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">CircuitBreaker"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">FaultInjection"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Retry"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Timeout"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">TrafficLog"</span><span class="pi">]</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
+    <span class="na">when</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">sources</span><span class="pi">:</span>
+        <span class="na">match</span><span class="pi">:</span>
+          <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="pi">-</span> <span class="na">destinations</span><span class="pi">:</span>
+        <span class="na">match</span><span class="pi">:</span>
+          <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficTrace"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">ProxyTemplate"</span><span class="pi">]</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
+    <span class="na">when</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">selectors</span><span class="pi">:</span>
+        <span class="na">match</span><span class="pi">:</span>
+          <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
 </code></pre></div></div>
+
 
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-0b2144c3-016f-4355-a3f8-1762a6739366-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-a3cfbf1b-db18-4a67-b785-a2fcfed0ad04-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">backend-owner</span>
@@ -3626,6 +3823,7 @@ It is global-scoped, which means it is not bound to a mesh.</p>
         <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend</span>
 </code></pre></div></div>
 
+
     </div>
   
   </div>
@@ -3650,18 +3848,18 @@ It’s useful because the service owner of backend has the best knowledge what (
 <h3 id="observability-operator">Observability operator</h3>
 
 <p>We may also have an infrastructure team which is responsible for the logging/metrics/tracing systems in the organization.
-Currently, those features are configured on <code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">TrafficLog</code> and <code class="language-plaintext highlighter-rouge">TrafficTrace</code> objects.</p>
+Currently, those features are configured on <code class="language-plaintext highlighter-rouge">Mesh</code>, <code class="language-plaintext highlighter-rouge">TrafficLog</code>, and <code class="language-plaintext highlighter-rouge">TrafficTrace</code> objects.</p>
 
 <div class="navtabs  ">
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-3ba28119-a894-4103-beee-a8e302610df4-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-5ef2a24b-0bee-4648-836e-1a7cee11fb9e-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-3ba28119-a894-4103-beee-a8e302610df4-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-5ef2a24b-0bee-4648-836e-1a7cee11fb9e-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3669,7 +3867,7 @@ Currently, those features are configured on <code class="language-plaintext high
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-3ba28119-a894-4103-beee-a8e302610df4-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-5ef2a24b-0bee-4648-836e-1a7cee11fb9e-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -3677,17 +3875,18 @@ Currently, those features are configured on <code class="language-plaintext high
   <span class="na">name</span><span class="pi">:</span> <span class="s">observability-operator</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">rules</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*'</span>
-      <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficLog"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">TrafficTrace"</span><span class="pi">]</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
-    <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Mesh"</span><span class="pi">]</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
+  <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*'</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">TrafficLog"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">TrafficTrace"</span><span class="pi">]</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
+  <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Mesh"</span><span class="pi">]</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
 </code></pre></div></div>
+
 
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-3ba28119-a894-4103-beee-a8e302610df4-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-5ef2a24b-0bee-4648-836e-1a7cee11fb9e-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">observability-operator</span>
@@ -3698,6 +3897,7 @@ Currently, those features are configured on <code class="language-plaintext high
 <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Mesh"</span><span class="pi">]</span>
   <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
 </code></pre></div></div>
+
 
     </div>
   
@@ -3714,18 +3914,18 @@ Currently, those features are configured on <code class="language-plaintext high
 <h3 id="single-mesh-operator">Single Mesh operator</h3>
 
 <p>Kong Mesh lets us segment the deployment into many logical service meshes configured by Mesh object.
-We may want to give an access to one specific Mesh and all objects connected with this Mesh.</p>
+We may want to give access to one specific Mesh and all objects connected with this Mesh.</p>
 
 <div class="navtabs  ">
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-4d176788-2855-45de-a741-858d4db882da-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-f2f6e0a6-359b-4c1c-9b57-b69c28356554-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-4d176788-2855-45de-a741-858d4db882da-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-f2f6e0a6-359b-4c1c-9b57-b69c28356554-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3733,7 +3933,7 @@ We may want to give an access to one specific Mesh and all objects connected wit
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-4d176788-2855-45de-a741-858d4db882da-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-f2f6e0a6-359b-4c1c-9b57-b69c28356554-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -3741,18 +3941,17 @@ We may want to give an access to one specific Mesh and all objects connected wit
   <span class="na">name</span><span class="pi">:</span> <span class="s">demo-mesh-operator</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">rules</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">demo</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
-    <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Mesh"</span><span class="pi">]</span>
-      <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">demo"</span><span class="pi">]</span>
-      <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
-
+  <span class="pi">-</span> <span class="na">mesh</span><span class="pi">:</span> <span class="s">demo</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
+  <span class="pi">-</span> <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Mesh"</span><span class="pi">]</span>
+    <span class="na">names</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">demo"</span><span class="pi">]</span>
+    <span class="na">access</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">CREATE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DELETE"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">UPDATE"</span><span class="pi">]</span>
 </code></pre></div></div>
 
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-4d176788-2855-45de-a741-858d4db882da-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-f2f6e0a6-359b-4c1c-9b57-b69c28356554-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">demo-mesh-operator</span>
@@ -3779,12 +3978,13 @@ We may want to give an access to one specific Mesh and all objects connected wit
 
 <p>Kubernetes provides their own RBAC system, but it’s not sufficient to cover use cases for several reasons:</p>
 <ul>
-  <li>You cannot restrict an access to resources of specific Mesh</li>
-  <li>You cannot restrict an access based on the content of the policy</li>
+  <li>You cannot restrict access to resources of specific Mesh</li>
+  <li>You cannot restrict access based on the content of the policy</li>
 </ul>
 
-<p>Kong Mesh RBAC works on top of Kubernetes RBAC.
-For example, to restrict the access for a user to modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for backend service, they need to be able to create <code class="language-plaintext highlighter-rouge">TrafficPermission</code> in the first place.</p>
+<p>Kong Mesh RBAC works on top of Kubernetes RBAC.</p>
+
+<p>For example, to restrict the access for a user to modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for backend service, they need to be able to create <code class="language-plaintext highlighter-rouge">TrafficPermission</code> in the first place.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">subjects</code> in <code class="language-plaintext highlighter-rouge">AccessRoleBinding</code> are compatible with Kubernetes users and groups.
 Kong Mesh RBAC on Kubernetes is implemented using Kubernetes Webhook when applying resources. This means you can only use Kubernetes users and groups for <code class="language-plaintext highlighter-rouge">CREATE</code>, <code class="language-plaintext highlighter-rouge">DELETE</code> and <code class="language-plaintext highlighter-rouge">UPDATE</code> access.
@@ -3803,12 +4003,12 @@ However, on the zone control plane, the <code class="language-plaintext highligh
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-07f62018-d9f9-44d6-aa04-a1604ce4ee17-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-ca56c353-3045-43b2-95ab-8547ec43a4e1-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-07f62018-d9f9-44d6-aa04-a1604ce4ee17-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-ca56c353-3045-43b2-95ab-8547ec43a4e1-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3816,7 +4016,7 @@ However, on the zone control plane, the <code class="language-plaintext highligh
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-07f62018-d9f9-44d6-aa04-a1604ce4ee17-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-ca56c353-3045-43b2-95ab-8547ec43a4e1-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -3847,7 +4047,7 @@ However, on the zone control plane, the <code class="language-plaintext highligh
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-07f62018-d9f9-44d6-aa04-a1604ce4ee17-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-ca56c353-3045-43b2-95ab-8547ec43a4e1-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">admin</span>
@@ -3876,12 +4076,12 @@ However, on the zone control plane, the <code class="language-plaintext highligh
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-56de54f9-7955-4523-a32b-217437480bee-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-ba619e9f-fefb-41c0-9551-290f65675f6c-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-56de54f9-7955-4523-a32b-217437480bee-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-ba619e9f-fefb-41c0-9551-290f65675f6c-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3889,7 +4089,7 @@ However, on the zone control plane, the <code class="language-plaintext highligh
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-56de54f9-7955-4523-a32b-217437480bee-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-ba619e9f-fefb-41c0-9551-290f65675f6c-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRoleBinding</span>
@@ -3911,7 +4111,7 @@ However, on the zone control plane, the <code class="language-plaintext highligh
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-56de54f9-7955-4523-a32b-217437480bee-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-ba619e9f-fefb-41c0-9551-290f65675f6c-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRoleBinding</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">default</span>
@@ -3929,37 +4129,37 @@ However, on the zone control plane, the <code class="language-plaintext highligh
 
 <h2 id="example">Example</h2>
 
-<p>Here are the steps to create a new user and restrict the access only to <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for backend service.</p>
-
 <div class="navtabs  ">
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="source-and-destination-selectors" data-navtab-id="navtab-fc2054fe-d91e-44fb-afad-2fbe18c19c38-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
-      Source and Destination selectors
+    <div data-slug="targetref-selectors" data-navtab-id="navtab-c78dcf25-1ddd-4b60-96e4-878ff8e6ecb8-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      "targetRef" selectors
     </div>
   
     
-    <div data-slug="targetref-selectors" data-navtab-id="navtab-fc2054fe-d91e-44fb-afad-2fbe18c19c38-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
-      `targetRef` selectors
+    <div data-slug="source-and-destination-selectors" data-navtab-id="navtab-c78dcf25-1ddd-4b60-96e4-878ff8e6ecb8-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Source and Destination selectors
     </div>
   
   </div>
   <div class="navtab-contents">
   
     
-    <div data-panel="source-and-destination-selectors" data-navtab-content="navtab-fc2054fe-d91e-44fb-afad-2fbe18c19c38-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="targetref-selectors" data-navtab-content="navtab-c78dcf25-1ddd-4b60-96e4-878ff8e6ecb8-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
+<p>The following steps create a new user and restrict the access to only <code class="language-plaintext highlighter-rouge">MeshTrafficPermission</code> for the backend service.</p>
+
 <div class="navtabs  ">
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-e2c4bbf3-97e9-44ca-b18b-4a64adddf570-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-479a402e-2a31-49b7-ab69-29beb753a149-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-e2c4bbf3-97e9-44ca-b18b-4a64adddf570-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-479a402e-2a31-49b7-ab69-29beb753a149-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -3967,165 +4167,175 @@ However, on the zone control plane, the <code class="language-plaintext highligh
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-e2c4bbf3-97e9-44ca-b18b-4a64adddf570-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-479a402e-2a31-49b7-ab69-29beb753a149-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <ol>
   <li>
-    <p>Create a backend-owner Kubernetes user and configure kubectl:</p>
+    <p>Create a backend-owner Kubernetes user and configure <code class="language-plaintext highlighter-rouge">kubectl</code>:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> /tmp/k8s-certs
-<span class="nb">cd</span> /tmp/k8s-certs
-openssl genrsa <span class="nt">-out</span> backend-owner.key 2048 <span class="c"># generate client key</span>
-openssl req <span class="nt">-new</span> <span class="nt">-key</span> backend-owner.key <span class="nt">-subj</span> <span class="s2">"/CN=backend-owner"</span> <span class="nt">-out</span> backend-owner.csr <span class="c"># generate client certificate request</span>
-<span class="nv">CSR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat </span>backend-owner.csr | <span class="nb">base64</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="si">)</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"apiVersion: certificates.k8s.io/v1
-kind: CertificateSigningRequest
-metadata:
-  name: backend-owner
-spec:
-  request: </span><span class="nv">$CSR</span><span class="s2">
-  signerName: kubernetes.io/kube-apiserver-client
-  usages:
-  - client auth"</span> | kubectl apply <span class="nt">-f</span> -
-kubectl certificate approve backend-owner
-kubectl get csr backend-owner <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.certificate}'</span>| <span class="nb">base64</span> <span class="nt">-d</span> <span class="o">&gt;</span> backend-owner.crt
-kubectl config set-credentials backend-owner <span class="se">\</span>
-<span class="nt">--client-key</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.key <span class="se">\</span>
-<span class="nt">--client-certificate</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.crt <span class="se">\</span>
-<span class="nt">--embed-certs</span><span class="o">=</span><span class="nb">true
-</span>kubectl config set-context backend-owner <span class="nt">--cluster</span><span class="o">=</span>YOUR_CLUSTER_NAME <span class="nt">--user</span><span class="o">=</span>backend-owner
+<div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir</span> <span class="nt">-p</span> /tmp/k8s-certs
+ <span class="nb">cd</span> /tmp/k8s-certs
+ openssl genrsa <span class="nt">-out</span> backend-owner.key 2048 <span class="c"># generate client key</span>
+ openssl req <span class="nt">-new</span> <span class="nt">-key</span> backend-owner.key <span class="nt">-subj</span> <span class="s2">"/CN=backend-owner"</span> <span class="nt">-out</span> backend-owner.csr <span class="c"># generate client certificate request</span>
+ <span class="nv">CSR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat </span>backend-owner.csr | <span class="nb">base64</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="si">)</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"apiVersion: certificates.k8s.io/v1
+ kind: CertificateSigningRequest
+ metadata:
+   name: backend-owner
+ spec:
+   request: </span><span class="nv">$CSR</span><span class="s2">
+   signerName: kubernetes.io/kube-apiserver-client
+   usages:
+   - client auth"</span> | kubectl apply <span class="nt">-f</span> -
+ kubectl certificate approve backend-owner
+ kubectl get csr backend-owner <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.certificate}'</span>| <span class="nb">base64</span> <span class="nt">-d</span> <span class="o">&gt;</span> backend-owner.crt
+ kubectl config set-credentials backend-owner <span class="se">\</span>
+ <span class="nt">--client-key</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.key <span class="se">\</span>
+ <span class="nt">--client-certificate</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.crt <span class="se">\</span>
+ <span class="nt">--embed-certs</span><span class="o">=</span><span class="nb">true
+ </span>kubectl config set-context backend-owner <span class="nt">--cluster</span><span class="o">=</span>YOUR_CLUSTER_NAME <span class="nt">--user</span><span class="o">=</span>backend-owner
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create Kubernetes RBAC to allow backend-owner to manage all <code class="language-plaintext highlighter-rouge">TrafficPermission</code>:</p>
+    <p>Create Kubernetes RBAC to allow backend-owner to manage all <code class="language-plaintext highlighter-rouge">MeshTrafficPermission</code>:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: kuma-policy-management
-rules:
-- apiGroups:
-  - kuma.io
-  resources:
-  - trafficpermissions
-  verbs:
-  - get
-  - list
-  - watch
-  - create
-  - update
-  - patch
-  - delete
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: kuma-policy-management-backend-owner
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: kuma-policy-management
-subjects:
-- kind: User
-  name: backend-owner
-  apiGroup: rbac.authorization.k8s.io
-"</span> | kubectl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRole
+ metadata:
+   name: kuma-policy-management
+ rules:
+ - apiGroups:
+   - kuma.io
+   resources:
+   - meshtrafficpermissions
+   verbs:
+   - get
+   - list
+   - watch
+   - create
+   - update
+   - patch
+   - delete
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRoleBinding
+ metadata:
+   name: kuma-policy-management-backend-owner
+ roleRef:
+   apiGroup: rbac.authorization.k8s.io
+   kind: ClusterRole
+   name: kuma-policy-management
+ subjects:
+ - kind: User
+   name: backend-owner
+   apiGroup: rbac.authorization.k8s.io
+ "</span> | kubectl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change default Kong Mesh RBAC to restrict access to resources by default:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
-apiVersion: kuma.io/v1alpha1
-kind: AccessRoleBinding
-metadata:
-  name: default
-spec:
-  subjects:
-  - type: Group
-    name: mesh-system:admin
-  - type: Group
-    name: system:masters
-  - type: Group
-    name: system:serviceaccounts:kube-system
-  roles:
-  - admin
-"</span> | kubectl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"
+ apiVersion: kuma.io/v1alpha1
+ kind: AccessRoleBinding
+ metadata:
+   name: default
+ spec:
+   subjects:
+   - type: Group
+     name: mesh-system:admin
+   - type: Group
+     name: system:masters
+   - type: Group
+     name: system:serviceaccounts:kube-system
+   roles:
+   - admin
+ "</span> | kubectl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create an AccessRole to grant permissions to user <code class="language-plaintext highlighter-rouge">backend-owner</code> to modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> only for the backend service:</p>
+    <p>Create an AccessRole to grant permissions to user <code class="language-plaintext highlighter-rouge">backend-owner</code> to modify <code class="language-plaintext highlighter-rouge">MeshTrafficPermission</code> only for the backend service:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'
----
-apiVersion: kuma.io/v1alpha1
-kind: AccessRole
-metadata:
-  name: backend-owner
-spec:
-  rules:
-  - types: ["TrafficPermission"]
-    mesh: default
-    access: ["CREATE", "UPDATE", "DELETE"]
-    when:
-    - destinations:
-        match:
-          kuma.io/service: backend
----
-apiVersion: kuma.io/v1alpha1
-kind: AccessRoleBinding
-metadata:
-  name: backend-owners
-spec:
-  subjects:
-  - type: User
-    name: backend-owner
-  roles:
-  - backend-owner
-'</span> | kubectl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s1">'
+ ---
+ apiVersion: kuma.io/v1alpha1
+ kind: AccessRole
+ metadata:
+   name: backend-owner
+ spec:
+   rules:
+   - types: ["MeshTrafficPermission"]
+     mesh: default
+     access: ["CREATE", "UPDATE", "DELETE"]
+     when:
+     - targetRef:
+         kind: MeshService
+         name: backend
+ ---
+ apiVersion: kuma.io/v1alpha1
+ kind: AccessRoleBinding
+ metadata:
+   name: backend-owners
+ spec:
+   subjects:
+   - type: User
+     name: backend-owner
+   roles:
+   - backend-owner
+ '</span> | kubectl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change the service to test user access:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>kubectl config use-context backend-owner
-<span class="nb">echo</span> <span class="s2">"
-apiVersion: kuma.io/v1alpha1
-kind: TrafficPermission
-mesh: default
-metadata:
-  name: web-to-backend
-spec:
-  sources:
-    - match:
-        kuma.io/service: web
-  destinations:
-    - match:
-        kuma.io/service: backend
-"</span> | kubectl apply <span class="nt">-f</span> -
-<span class="c"># operation should succeed, access to backend service access is granted</span>
+<div class="highlight"><pre class="highlight"><code> kubectl config use-context backend-owner
+ <span class="nb">echo</span> <span class="s2">"
+ apiVersion: kuma.io/v1alpha1
+ kind: MeshTrafficPermission
+ metadata:
+   name: web-to-backend
+   namespace: kong-mesh-system
+   labels:
+     kuma.io/mesh: default
+ spec:
+   targetRef:
+     kind: MeshService
+     name: backend
+   from:
+   - targetRef:
+       kind: MeshService
+       name: web
+     default:
+       action: ALLOW
+ "</span> | kubectl apply <span class="nt">-f</span> -
+ <span class="c"># operation should succeed, access to backend service access is granted</span>
 
-<span class="nb">echo</span> <span class="s2">"
-apiVersion: kuma.io/v1alpha1
-kind: TrafficPermission
-mesh: default
-metadata:
-  name: web-to-backend
-spec:
-  sources:
-    - match:
-        kuma.io/service: web
-  destinations:
-    - match:
-        kuma.io/service: not-backend # access to this service is not granted
-"</span> | kubectl apply <span class="nt">-f</span> -
-<span class="c"># operation should not succeed</span>
+ <span class="nb">echo</span> <span class="s2">"
+ apiVersion: kuma.io/v1alpha1
+ kind: MeshTrafficPermission
+ metadata:
+   name: web-to-backend
+   namespace: kong-mesh-system
+   labels:
+     kuma.io/mesh: default
+ spec:
+   targetRef:
+     kind: MeshService
+     name: not-backend # access to this service is not granted
+   from:
+   - targetRef:
+       kind: MeshService
+       name: web
+     default:
+       action: ALLOW
+ "</span> | kubectl apply <span class="nt">-f</span> -
+ <span class="c"># operation should not succeed</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4133,110 +4343,120 @@ spec:
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-e2c4bbf3-97e9-44ca-b18b-4a64adddf570-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-479a402e-2a31-49b7-ab69-29beb753a149-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
+<p>The following steps create a new user and restrict the access to only <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for the backend service.</p>
+
 <blockquote class="note">
-  <p><strong>Note</strong>: By default, all requests that originates from localhost are authenticated as user <code class="language-plaintext highlighter-rouge">admin</code> belonging to group <code class="language-plaintext highlighter-rouge">mesh-system:admin</code>.
-In order for this example to work you must either run the control plane with <code class="language-plaintext highlighter-rouge">KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN</code> set to <code class="language-plaintext highlighter-rouge">false</code> or be accessing the control plane not via localhost.</p>
+  <p><strong>Note</strong>: By default, all requests that originate from localhost are authenticated as the <code class="language-plaintext highlighter-rouge">admin</code> user in the <code class="language-plaintext highlighter-rouge">mesh-system:admin</code> group.
+For this example to work, you must either run the control plane with <code class="language-plaintext highlighter-rouge">KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN</code> set to <code class="language-plaintext highlighter-rouge">false</code> or access the control plane using a method other than localhost.</p>
 </blockquote>
 
 <ol>
   <li>
-    <p>Extract admin token and configure kumactl with admin:</p>
+    <p>Extract the admin token and configure <code class="language-plaintext highlighter-rouge">kumactl</code> with the admin:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span><span class="si">$(</span>curl http://localhost:5681/global-secrets/admin-user-token | jq <span class="nt">-r</span> .data | <span class="nb">base64</span> <span class="nt">-d</span><span class="si">)</span>
-kumactl config control-planes add <span class="se">\</span>
-<span class="nt">--name</span><span class="o">=</span>cp-admin <span class="se">\</span>
-<span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
-<span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
-<span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
-<span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$ADMIN_TOKEN</span>
+<div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span><span class="si">$(</span>curl http://localhost:5681/global-secrets/admin-user-token | jq <span class="nt">-r</span> .data | <span class="nb">base64</span> <span class="nt">-d</span><span class="si">)</span>
+ kumactl config control-planes add <span class="se">\</span>
+ <span class="nt">--name</span><span class="o">=</span>cp-admin <span class="se">\</span>
+ <span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
+ <span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+ <span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
+ <span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$ADMIN_TOKEN</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Configure backend-owner:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">BACKEND_OWNER_TOKEN</span><span class="o">=</span><span class="si">$(</span>kumactl generate user-token <span class="nt">--valid-for</span><span class="o">=</span>24h <span class="nt">--name</span> backend-owner<span class="si">)</span>
-kumactl config control-planes add <span class="se">\</span>
-<span class="nt">--name</span><span class="o">=</span>cp-backend-owner <span class="se">\</span>
-<span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
-<span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
-<span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
-<span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$BACKEND_OWNER_TOKEN</span>
-kumactl config control-planes switch <span class="nt">--name</span> cp-admin <span class="c"># switch back to admin</span>
+<div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">BACKEND_OWNER_TOKEN</span><span class="o">=</span><span class="si">$(</span>kumactl generate user-token <span class="nt">--valid-for</span><span class="o">=</span>24h <span class="nt">--name</span> backend-owner<span class="si">)</span>
+ kumactl config control-planes add <span class="se">\</span>
+ <span class="nt">--name</span><span class="o">=</span>cp-backend-owner <span class="se">\</span>
+ <span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
+ <span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+ <span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
+ <span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$BACKEND_OWNER_TOKEN</span>
+ kumactl config control-planes switch <span class="nt">--name</span> cp-admin <span class="c"># switch back to admin</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change default Kong Mesh RBAC to restrict access to resources by default:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"type: AccessRoleBinding
-name: default
-subjects:
-- type: Group
-  name: mesh-system:admin
-roles:
-- admin"</span> | kumactl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"type: AccessRoleBinding
+ name: default
+ subjects:
+ - type: Group
+   name: mesh-system:admin
+ roles:
+ - admin"</span> | kumactl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create Kong Mesh RBAC to restrict backend-owner to only modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for backend:</p>
+    <p>Create Kong Mesh RBAC to only allow the backend-owner to modify <code class="language-plaintext highlighter-rouge">MeshTrafficPermission</code> for backend:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'
-type: AccessRole
-name: backend-owner
-rules:
-- types: ["TrafficPermission"]
-  mesh: default
-  access: ["CREATE", "UPDATE", "DELETE"]
-  when:
-  - destinations:
-      match:
-        kuma.io/service: backend
-'</span> | kumactl apply <span class="nt">-f</span> -
-<span class="nb">echo</span> <span class="s1">'
-type: AccessRoleBinding
-name: backend-owners
-subjects:
-- type: User
-  name: backend-owner
-roles:
-- backend-owner'</span> | kumactl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s1">'
+ type: AccessRole
+ name: backend-owner
+ rules:
+ - types: ["MeshTrafficPermission"]
+   mesh: default
+   access: ["CREATE", "UPDATE", "DELETE"]
+   when:
+   - targetRef:
+       kind: MeshService
+       name: backend
+ '</span> | kumactl apply <span class="nt">-f</span> -
+ <span class="nb">echo</span> <span class="s1">'
+ type: AccessRoleBinding
+ name: backend-owners
+ subjects:
+ - type: User
+   name: backend-owner
+ roles:
+ - backend-owner'</span> | kumactl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change the user and test RBAC:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>kumactl config control-planes switch <span class="nt">--name</span> cp-backend-owner
-<span class="nb">echo</span> <span class="s2">"
-type: TrafficPermission
-mesh: default
-name: web-to-backend
-sources:
-- match:
-    kuma.io/service: web
-destinations:
-- match:
-    kuma.io/service: backend
-"</span> | kumactl apply <span class="nt">-f</span> -
-<span class="c"># this operation should succeed</span>
+<div class="highlight"><pre class="highlight"><code> kumactl config control-planes switch <span class="nt">--name</span> cp-backend-owner
+ <span class="nb">echo</span> <span class="s2">"
+ type: MeshTrafficPermission
+ mesh: default
+ name: web-to-backend
+ spec:
+   targetRef:
+     kind: MeshService
+     name: backend
+   from:
+   - targetRef:
+       kind: MeshService
+       name: web
+     default:
+       action: ALLOW
+ "</span> | kumactl apply <span class="nt">-f</span> -
+ <span class="c"># this operation should succeed</span>
 
-<span class="nb">echo</span> <span class="s2">"
-type: TrafficPermission
-mesh: default
-name: web-to-backend
-sources:
-- match:
-    kuma.io/service: web
-destinations:
-- match:
-    kuma.io/service: other
-"</span> | kumactl apply <span class="nt">-f</span> -
-Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owner/mesh-system:authenticated"</span> cannot access the resource<span class="o">)</span>
+ <span class="nb">echo</span> <span class="s2">"
+ type: MeshTrafficPermission
+ mesh: default
+ name: web-to-backend
+ spec:
+   targetRef:
+     kind: MeshService
+     name: not-backend
+   from:
+   - targetRef:
+       kind: MeshService
+       name: web
+     default:
+       action: ALLOW
+ "</span> | kumactl apply <span class="nt">-f</span> -
+ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owner/mesh-system:authenticated"</span> cannot access the resource<span class="o">)</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4251,18 +4471,18 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
     </div>
   
     
-    <div data-panel="targetref-selectors" data-navtab-content="navtab-fc2054fe-d91e-44fb-afad-2fbe18c19c38-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="source-and-destination-selectors" data-navtab-content="navtab-c78dcf25-1ddd-4b60-96e4-878ff8e6ecb8-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="navtabs  ">
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-f5c52ff8-e4e9-4110-876e-af242dae7ae9-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-780fc058-6d48-413c-b547-93728a537d39-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-f5c52ff8-e4e9-4110-876e-af242dae7ae9-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-780fc058-6d48-413c-b547-93728a537d39-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -4270,175 +4490,165 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-f5c52ff8-e4e9-4110-876e-af242dae7ae9-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-780fc058-6d48-413c-b547-93728a537d39-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <ol>
   <li>
-    <p>Create a backend-owner Kubernetes user and configure kubectl:</p>
+    <p>Create a backend-owner Kubernetes user and configure <code class="language-plaintext highlighter-rouge">kubectl</code>:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> /tmp/k8s-certs
-<span class="nb">cd</span> /tmp/k8s-certs
-openssl genrsa <span class="nt">-out</span> backend-owner.key 2048 <span class="c"># generate client key</span>
-openssl req <span class="nt">-new</span> <span class="nt">-key</span> backend-owner.key <span class="nt">-subj</span> <span class="s2">"/CN=backend-owner"</span> <span class="nt">-out</span> backend-owner.csr <span class="c"># generate client certificate request</span>
-<span class="nv">CSR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat </span>backend-owner.csr | <span class="nb">base64</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="si">)</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"apiVersion: certificates.k8s.io/v1
-kind: CertificateSigningRequest
-metadata:
-  name: backend-owner
-spec:
-  request: </span><span class="nv">$CSR</span><span class="s2">
-  signerName: kubernetes.io/kube-apiserver-client
-  usages:
-  - client auth"</span> | kubectl apply <span class="nt">-f</span> -
-kubectl certificate approve backend-owner
-kubectl get csr backend-owner <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.certificate}'</span>| <span class="nb">base64</span> <span class="nt">-d</span> <span class="o">&gt;</span> backend-owner.crt
-kubectl config set-credentials backend-owner <span class="se">\</span>
-<span class="nt">--client-key</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.key <span class="se">\</span>
-<span class="nt">--client-certificate</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.crt <span class="se">\</span>
-<span class="nt">--embed-certs</span><span class="o">=</span><span class="nb">true
-</span>kubectl config set-context backend-owner <span class="nt">--cluster</span><span class="o">=</span>YOUR_CLUSTER_NAME <span class="nt">--user</span><span class="o">=</span>backend-owner
+<div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir</span> <span class="nt">-p</span> /tmp/k8s-certs
+ <span class="nb">cd</span> /tmp/k8s-certs
+ openssl genrsa <span class="nt">-out</span> backend-owner.key 2048 <span class="c"># generate client key</span>
+ openssl req <span class="nt">-new</span> <span class="nt">-key</span> backend-owner.key <span class="nt">-subj</span> <span class="s2">"/CN=backend-owner"</span> <span class="nt">-out</span> backend-owner.csr <span class="c"># generate client certificate request</span>
+ <span class="nv">CSR</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat </span>backend-owner.csr | <span class="nb">base64</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="si">)</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"apiVersion: certificates.k8s.io/v1
+ kind: CertificateSigningRequest
+ metadata:
+   name: backend-owner
+ spec:
+   request: </span><span class="nv">$CSR</span><span class="s2">
+   signerName: kubernetes.io/kube-apiserver-client
+   usages:
+   - client auth"</span> | kubectl apply <span class="nt">-f</span> -
+ kubectl certificate approve backend-owner
+ kubectl get csr backend-owner <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.certificate}'</span>| <span class="nb">base64</span> <span class="nt">-d</span> <span class="o">&gt;</span> backend-owner.crt
+ kubectl config set-credentials backend-owner <span class="se">\</span>
+ <span class="nt">--client-key</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.key <span class="se">\</span>
+ <span class="nt">--client-certificate</span><span class="o">=</span>/tmp/k8s-certs/backend-owner.crt <span class="se">\</span>
+ <span class="nt">--embed-certs</span><span class="o">=</span><span class="nb">true
+ </span>kubectl config set-context backend-owner <span class="nt">--cluster</span><span class="o">=</span>YOUR_CLUSTER_NAME <span class="nt">--user</span><span class="o">=</span>backend-owner
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create Kubernetes RBAC to allow backend-owner to manage all <code class="language-plaintext highlighter-rouge">TrafficPermission</code>:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: kuma-policy-management
-rules:
-- apiGroups:
-  - kuma.io
-  resources:
-  - meshtrafficpermissions
-  verbs:
-  - get
-  - list
-  - watch
-  - create
-  - update
-  - patch
-  - delete
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: kuma-policy-management-backend-owner
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: kuma-policy-management
-subjects:
-- kind: User
-  name: backend-owner
-  apiGroup: rbac.authorization.k8s.io
-"</span> | kubectl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRole
+ metadata:
+   name: kuma-policy-management
+ rules:
+ - apiGroups:
+   - kuma.io
+   resources:
+   - trafficpermissions
+   verbs:
+   - get
+   - list
+   - watch
+   - create
+   - update
+   - patch
+   - delete
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRoleBinding
+ metadata:
+   name: kuma-policy-management-backend-owner
+ roleRef:
+   apiGroup: rbac.authorization.k8s.io
+   kind: ClusterRole
+   name: kuma-policy-management
+ subjects:
+ - kind: User
+   name: backend-owner
+   apiGroup: rbac.authorization.k8s.io
+ "</span> | kubectl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change default Kong Mesh RBAC to restrict access to resources by default:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"
-apiVersion: kuma.io/v1alpha1
-kind: AccessRoleBinding
-metadata:
-  name: default
-spec:
-  subjects:
-  - type: Group
-    name: mesh-system:admin
-  - type: Group
-    name: system:masters
-  - type: Group
-    name: system:serviceaccounts:kube-system
-  roles:
-  - admin
-"</span> | kubectl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"
+ apiVersion: kuma.io/v1alpha1
+ kind: AccessRoleBinding
+ metadata:
+   name: default
+ spec:
+   subjects:
+   - type: Group
+     name: mesh-system:admin
+   - type: Group
+     name: system:masters
+   - type: Group
+     name: system:serviceaccounts:kube-system
+   roles:
+   - admin
+ "</span> | kubectl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create an AccessRole to grant permissions to user <code class="language-plaintext highlighter-rouge">backend-owner</code> to modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> only for the backend service:</p>
+    <p>Create an AccessRole to grant permissions to the <code class="language-plaintext highlighter-rouge">backend-owner</code> user to modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> only for the backend service:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'
----
-apiVersion: kuma.io/v1alpha1
-kind: AccessRole
-metadata:
-  name: backend-owner
-spec:
-  rules:
-  - types: ["MeshTrafficPermission"]
-    mesh: default
-    access: ["CREATE", "UPDATE", "DELETE"]
-    when:
-    - targetRef:
-        kind: MeshService
-        name: backend
----
-apiVersion: kuma.io/v1alpha1
-kind: AccessRoleBinding
-metadata:
-  name: backend-owners
-spec:
-  subjects:
-  - type: User
-    name: backend-owner
-  roles:
-  - backend-owner
-'</span> | kubectl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s1">'
+ ---
+ apiVersion: kuma.io/v1alpha1
+ kind: AccessRole
+ metadata:
+   name: backend-owner
+ spec:
+   rules:
+   - types: ["TrafficPermission"]
+     mesh: default
+     access: ["CREATE", "UPDATE", "DELETE"]
+     when:
+     - destinations:
+         match:
+           kuma.io/service: backend
+ ---
+ apiVersion: kuma.io/v1alpha1
+ kind: AccessRoleBinding
+ metadata:
+   name: backend-owners
+ spec:
+   subjects:
+   - type: User
+     name: backend-owner
+   roles:
+   - backend-owner
+ '</span> | kubectl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change the service to test user access:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>kubectl config use-context backend-owner
-<span class="nb">echo</span> <span class="s2">"
-apiVersion: kuma.io/v1alpha1
-kind: MeshTrafficPermission
-metadata:
-  name: web-to-backend
-  namespace: kong-mesh-system
-  labels:
-    kuma.io/mesh: default
-spec:
-  targetRef:
-    kind: MeshService
-    name: backend
-  from:
-    - targetRef:
-        kind: MeshService
-        name: web
-      default:
-        action: ALLOW
-"</span> | kubectl apply <span class="nt">-f</span> -
-<span class="c"># operation should succeed, access to backend service access is granted</span>
+<div class="highlight"><pre class="highlight"><code> kubectl config use-context backend-owner
+ <span class="nb">echo</span> <span class="s2">"
+ apiVersion: kuma.io/v1alpha1
+ kind: TrafficPermission
+ mesh: default
+ metadata:
+   name: web-to-backend
+ spec:
+   sources:
+   - match:
+       kuma.io/service: web
+   destinations:
+   - match:
+       kuma.io/service: backend
+ "</span> | kubectl apply <span class="nt">-f</span> -
+ <span class="c"># operation should succeed, access to backend service access is granted</span>
 
-<span class="nb">echo</span> <span class="s2">"
-apiVersion: kuma.io/v1alpha1
-kind: MeshTrafficPermission
-metadata:
-  name: web-to-backend
-  namespace: kong-mesh-system
-  labels:
-    kuma.io/mesh: default
-spec:
-  targetRef:
-    kind: MeshService
-    name: not-backend # access to this service is not granted
-  from:
-    - targetRef:
-        kind: MeshService
-        name: web
-      default:
-        action: ALLOW
-"</span> | kubectl apply <span class="nt">-f</span> -
-<span class="c"># operation should not succeed</span>
+ <span class="nb">echo</span> <span class="s2">"
+ apiVersion: kuma.io/v1alpha1
+ kind: TrafficPermission
+ mesh: default
+ metadata:
+   name: web-to-backend
+ spec:
+   sources:
+   - match:
+       kuma.io/service: web
+   destinations:
+   - match:
+       kuma.io/service: not-backend # access to this service is not granted
+ "</span> | kubectl apply <span class="nt">-f</span> -
+ <span class="c"># operation should not succeed</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4446,11 +4656,11 @@ spec:
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-f5c52ff8-e4e9-4110-876e-af242dae7ae9-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-780fc058-6d48-413c-b547-93728a537d39-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <blockquote class="note">
-  <p><strong>Note</strong>: By default, all requests that originate from localhost are authenticated as the <code class="language-plaintext highlighter-rouge">admin</code> user in the <code class="language-plaintext highlighter-rouge">mesh-system:admin</code> group.
-For this example to work, you must either run the control plane with <code class="language-plaintext highlighter-rouge">KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN</code> set to <code class="language-plaintext highlighter-rouge">false</code> or access the control plane using a method other than localhost.</p>
+  <p><strong>Note</strong>: By default, all requests that originates from localhost are authenticated as the <code class="language-plaintext highlighter-rouge">admin</code> user belonging to the <code class="language-plaintext highlighter-rouge">mesh-system:admin</code> group.
+For this example to work, you must either run the control plane with <code class="language-plaintext highlighter-rouge">KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN</code> set to <code class="language-plaintext highlighter-rouge">false</code> or access the control plane via a method other than localhost.</p>
 </blockquote>
 
 <ol>
@@ -4458,106 +4668,98 @@ For this example to work, you must either run the control plane with <code class
     <p>Extract admin token and configure kumactl with admin:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span><span class="si">$(</span>curl http://localhost:5681/global-secrets/admin-user-token | jq <span class="nt">-r</span> .data | <span class="nb">base64</span> <span class="nt">-d</span><span class="si">)</span>
-kumactl config control-planes add <span class="se">\</span>
-<span class="nt">--name</span><span class="o">=</span>cp-admin <span class="se">\</span>
-<span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
-<span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
-<span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
-<span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$ADMIN_TOKEN</span>
+<div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span><span class="si">$(</span>curl http://localhost:5681/global-secrets/admin-user-token | jq <span class="nt">-r</span> .data | <span class="nb">base64</span> <span class="nt">-d</span><span class="si">)</span>
+ kumactl config control-planes add <span class="se">\</span>
+ <span class="nt">--name</span><span class="o">=</span>cp-admin <span class="se">\</span>
+ <span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
+ <span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+ <span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
+ <span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$ADMIN_TOKEN</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Configure backend-owner:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">BACKEND_OWNER_TOKEN</span><span class="o">=</span><span class="si">$(</span>kumactl generate user-token <span class="nt">--valid-for</span><span class="o">=</span>24h <span class="nt">--name</span> backend-owner<span class="si">)</span>
-kumactl config control-planes add <span class="se">\</span>
-<span class="nt">--name</span><span class="o">=</span>cp-backend-owner <span class="se">\</span>
-<span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
-<span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
-<span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
-<span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$BACKEND_OWNER_TOKEN</span>
-kumactl config control-planes switch <span class="nt">--name</span> cp-admin <span class="c"># switch back to admin</span>
+<div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">BACKEND_OWNER_TOKEN</span><span class="o">=</span><span class="si">$(</span>kumactl generate user-token <span class="nt">--valid-for</span><span class="o">=</span>24h <span class="nt">--name</span> backend-owner<span class="si">)</span>
+ kumactl config control-planes add <span class="se">\</span>
+ <span class="nt">--name</span><span class="o">=</span>cp-backend-owner <span class="se">\</span>
+ <span class="nt">--address</span><span class="o">=</span>https://localhost:5682 <span class="se">\</span>
+ <span class="nt">--skip-verify</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+ <span class="nt">--auth-type</span><span class="o">=</span>tokens <span class="se">\</span>
+ <span class="nt">--auth-conf</span> <span class="nv">token</span><span class="o">=</span><span class="nv">$BACKEND_OWNER_TOKEN</span>
+ kumactl config control-planes switch <span class="nt">--name</span> cp-admin <span class="c"># switch back to admin</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change default Kong Mesh RBAC to restrict access to resources by default:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"type: AccessRoleBinding
-name: default
-subjects:
-- type: Group
-  name: mesh-system:admin
-roles:
-- admin"</span> | kumactl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s2">"type: AccessRoleBinding
+ name: default
+ subjects:
+ - type: Group
+   name: mesh-system:admin
+ roles:
+ - admin"</span> | kumactl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create Kong Mesh RBAC to only allow the backend-owner to modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for backend:</p>
+    <p>Create Kong Mesh RBAC to restrict backend-owner to only modify <code class="language-plaintext highlighter-rouge">TrafficPermission</code> for backend:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'
-type: AccessRole
-name: backend-owner
-rules:
-- types: ["MeshTrafficPermission"]
-  mesh: default
-  access: ["CREATE", "UPDATE", "DELETE"]
-  when:
-  - targetRef:
-      kind: MeshService
-      name: backend
-'</span> | kumactl apply <span class="nt">-f</span> -
-<span class="nb">echo</span> <span class="s1">'
-type: AccessRoleBinding
-name: backend-owners
-subjects:
-- type: User
-  name: backend-owner
-roles:
-- backend-owner'</span> | kumactl apply <span class="nt">-f</span> -
+<div class="highlight"><pre class="highlight"><code> <span class="nb">echo</span> <span class="s1">'
+ type: AccessRole
+ name: backend-owner
+ rules:
+ - types: ["TrafficPermission"]
+   mesh: default
+   access: ["CREATE", "UPDATE", "DELETE"]
+   when:
+   - destinations:
+       match:
+         kuma.io/service: backend
+ '</span> | kumactl apply <span class="nt">-f</span> -
+ <span class="nb">echo</span> <span class="s1">'
+ type: AccessRoleBinding
+ name: backend-owners
+ subjects:
+ - type: User
+   name: backend-owner
+ roles:
+ - backend-owner'</span> | kumactl apply <span class="nt">-f</span> -
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change the user and test RBAC:</p>
 
     <div class="language-sh highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>kumactl config control-planes switch <span class="nt">--name</span> cp-backend-owner
-<span class="nb">echo</span> <span class="s2">"
-type: MeshTrafficPermission
-mesh: default
-name: web-to-backend
-spec:
-  targetRef:
-    kind: MeshService
-    name: backend
-  from:
-    - targetRef:
-        kind: MeshService
-        name: web
-      default:
-        action: ALLOW
-"</span> | kumactl apply <span class="nt">-f</span> -
-<span class="c"># this operation should succeed</span>
+<div class="highlight"><pre class="highlight"><code> kumactl config control-planes switch <span class="nt">--name</span> cp-backend-owner
+ <span class="nb">echo</span> <span class="s2">"
+ type: TrafficPermission
+ mesh: default
+ name: web-to-backend
+ sources:
+ - match:
+     kuma.io/service: web
+ destinations:
+ - match:
+     kuma.io/service: backend
+ "</span> | kumactl apply <span class="nt">-f</span> -
+ <span class="c"># this operation should succeed</span>
 
-<span class="nb">echo</span> <span class="s2">"
-type: MeshTrafficPermission
-mesh: default
-name: web-to-backend
-spec:
-  targetRef:
-    kind: MeshService
-    name: not-backend
-  from:
-    - targetRef:
-        kind: MeshService
-        name: web
-      default:
-        action: ALLOW
-"</span> | kumactl apply <span class="nt">-f</span> -
-Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owner/mesh-system:authenticated"</span> cannot access the resource<span class="o">)</span>
+ <span class="nb">echo</span> <span class="s2">"
+ type: TrafficPermission
+ mesh: default
+ name: web-to-backend
+ sources:
+ - match:
+     kuma.io/service: web
+ destinations:
+ - match:
+     kuma.io/service: other
+ "</span> | kumactl apply <span class="nt">-f</span> -
+ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owner/mesh-system:authenticated"</span> cannot access the resource<span class="o">)</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4584,6 +4786,10 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <p><strong>Note</strong>: This feature is available starting in Kong Mesh 1.9.1</p>
 </blockquote>
 
+<blockquote class="note">
+  <p><strong>Note</strong>: This feature currently only works with “Source and Destination” selectors. This limitation restricts using newer policy types like <code class="language-plaintext highlighter-rouge">MeshTrafficPermission</code>, <code class="language-plaintext highlighter-rouge">MeshAccessLog</code>, or <code class="language-plaintext highlighter-rouge">MeshHTTPRoute</code>.</p>
+</blockquote>
+
 <p>You can perform partial tag value matching using <code class="language-plaintext highlighter-rouge">*</code> wildcards.</p>
 
 <p>For example, the following role:</p>
@@ -4592,12 +4798,12 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-865a75dc-4808-4e5d-8657-e33edafc363a-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-53e721a5-5216-4e54-8d4a-4f87cc9f2a9e-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-865a75dc-4808-4e5d-8657-e33edafc363a-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-53e721a5-5216-4e54-8d4a-4f87cc9f2a9e-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -4605,7 +4811,7 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-865a75dc-4808-4e5d-8657-e33edafc363a-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-53e721a5-5216-4e54-8d4a-4f87cc9f2a9e-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AccessRole</span>
@@ -4628,7 +4834,7 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-865a75dc-4808-4e5d-8657-e33edafc363a-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-53e721a5-5216-4e54-8d4a-4f87cc9f2a9e-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">AccessRole</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">role-wildcard</span>
@@ -4656,12 +4862,12 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="kubernetes" data-navtab-id="navtab-1f713dee-e424-4696-9dc6-1e55668464da-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="kubernetes" data-navtab-id="navtab-8889db66-6ba6-4013-a203-48d7e15e4b42-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Kubernetes
     </div>
   
     
-    <div data-slug="universal" data-navtab-id="navtab-1f713dee-e424-4696-9dc6-1e55668464da-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="universal" data-navtab-id="navtab-8889db66-6ba6-4013-a203-48d7e15e4b42-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Universal
     </div>
   
@@ -4669,7 +4875,7 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <div class="navtab-contents">
   
     
-    <div data-panel="kubernetes" data-navtab-content="navtab-1f713dee-e424-4696-9dc6-1e55668464da-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="kubernetes" data-navtab-content="navtab-8889db66-6ba6-4013-a203-48d7e15e4b42-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kuma.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">TrafficRoute</span>
@@ -4677,13 +4883,13 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <span class="na">name</span><span class="pi">:</span> <span class="s">tr-orders</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">sources</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
-        <span class="na">k8s.kuma.io/namespace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">orders'</span>
+  <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+      <span class="na">k8s.kuma.io/namespace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">orders'</span>
   <span class="na">destinations</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
-        <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web_orders_svc_1000</span>
-    <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
-        <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend_orders_svc_1000</span>
+  <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+      <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web_orders_svc_1000</span>
+  <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+      <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend_orders_svc_1000</span>
   <span class="na">conf</span><span class="pi">:</span>
     <span class="na">destination</span><span class="pi">:</span>
       <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*'</span>
@@ -4692,19 +4898,19 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
     </div>
   
     
-    <div data-panel="universal" data-navtab-content="navtab-1f713dee-e424-4696-9dc6-1e55668464da-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="universal" data-navtab-content="navtab-8889db66-6ba6-4013-a203-48d7e15e4b42-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">TrafficRoute</span>
 <span class="na">mesh</span><span class="pi">:</span> <span class="s">default</span>
 <span class="na">name</span><span class="pi">:</span> <span class="s">tr-orders</span>
 <span class="na">sources</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
-      <span class="na">k8s.kuma.io/namespace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">orders'</span>
+<span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+    <span class="na">k8s.kuma.io/namespace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">orders'</span>
 <span class="na">destinations</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
-      <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web_orders_svc_1000</span>
-  <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
-      <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend_orders_svc_1000</span>
+<span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+    <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">web_orders_svc_1000</span>
+<span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+    <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s">backend_orders_svc_1000</span>
 <span class="na">conf</span><span class="pi">:</span>
   <span class="na">destination</span><span class="pi">:</span>
     <span class="na">kuma.io/service</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*'</span>
@@ -4714,6 +4920,17 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   
   </div>
 </div>
+
+<h2 id="what-should-i-do-if-ive-locked-myself-out">What should I do if I’ve locked myself out?</h2>
+
+<p>If you remove the default <code class="language-plaintext highlighter-rouge">AccessRoleBinding</code> and <code class="language-plaintext highlighter-rouge">AccessRole</code>, you might find yourself locked out and unable to edit any resources. If you encounter this situation, you can regain access to the cluster by following these steps:</p>
+
+<ol>
+  <li>
+<a href="/mesh/2.0.x/documentation/configuration/#modifying-the-configuration">Configure the control-plane</a> by setting the: <code class="language-plaintext highlighter-rouge">KUMA_ACCESS_TYPE</code> environment variable to <code class="language-plaintext highlighter-rouge">static</code>, and then restart the control-plane.</li>
+  <li>Create the default <code class="language-plaintext highlighter-rouge">AccessRoleBinding</code> and <code class="language-plaintext highlighter-rouge">AccessRole</code> (as described in the <a href="/mesh/2.0.x/features/rbac/#default">default section</a>), or add new groups if necessary.</li>
+  <li>Remove the <code class="language-plaintext highlighter-rouge">KUMA_ACCESS_TYPE</code> environment variable for the control-plane and restart the control-plane.</li>
+</ol>
 
 
 
@@ -4786,13 +5003,12 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -4940,8 +5156,8 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -4951,16 +5167,6 @@ Error: Access Denied <span class="o">(</span>user <span class="s2">"backend-owne
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

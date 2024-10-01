@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>OAuth 2.0 Authentication Configuration | Kong Docs</title>
+  <title>OAuth 2.0 Authentication Configuration - Plugin - v3.4.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="OAuth 2.0 Authentication Configuration | Kong Docs">
+  <meta property="og:title" content="OAuth 2.0 Authentication Configuration - Plugin - v3.4.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/oauth2/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/oauth2/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/oauth2/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -535,8 +560,12 @@
         <div class="meta--content-badges">
           
 
+  <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
 
 
+
+
+  <a href="https://konghq.com/pricing" target="_blank" class="badge oss" aria-label="open-source" rel="noopener nofollow noreferrer "> </a>
 
 
         </div>
@@ -575,13 +604,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -597,6 +626,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -621,6 +652,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -636,13 +669,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -658,6 +691,8 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -675,6 +710,8 @@ Basic config examples
 Set rate limit for Oauth2 tokens
 
       </a>
+    
+
     
   </span>
 
@@ -699,13 +736,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=oauth2" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -738,12 +785,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/oauth2/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -780,7 +833,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -789,7 +842,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-oauth2</code>.</p>
+oauth2</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -804,9 +863,22 @@ oauth2</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>oauth2_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -822,8 +894,8 @@ oauth2</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -840,8 +912,8 @@ oauth2</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -907,6 +979,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -915,6 +989,8 @@ oauth2</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -956,6 +1032,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -965,6 +1043,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>Describes an array of scope names that will be available to the end user. If <code class="language-plaintext highlighter-rouge">mandatory_scope</code> is set to <code class="language-plaintext highlighter-rouge">true</code>, then <code class="language-plaintext highlighter-rouge">scopes</code> are required.</p>
 </div>
+
+    
 
     
 
@@ -1025,6 +1105,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1034,6 +1116,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value telling the plugin to require at least one <code class="language-plaintext highlighter-rouge">scope</code> to be authorized by the end user.</p>
 </div>
+
+    
 
     
 
@@ -1086,6 +1170,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1095,6 +1181,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>The unique key the plugin has generated when it has been added to the Service.</p>
 </div>
+
+    
 
     
 
@@ -1151,6 +1239,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1160,6 +1250,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional integer value telling the plugin how many seconds a token should last, after which the client will need to refresh the token. Set to <code class="language-plaintext highlighter-rouge">0</code> to disable the expiration.</p>
 </div>
+
+    
 
     
 
@@ -1216,6 +1308,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1225,6 +1319,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value to enable the three-legged Authorization Code flow (RFC 6742 Section 4.1).</p>
 </div>
+
+    
 
     
 
@@ -1281,6 +1377,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1290,6 +1388,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value to enable the Implicit Grant flow which allows to provision a token as a result of the authorization process (RFC 6742 Section 4.2).</p>
 </div>
+
+    
 
     
 
@@ -1346,6 +1446,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1355,6 +1457,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value to enable the Client Credentials Grant flow (RFC 6742 Section 4.4).</p>
 </div>
+
+    
 
     
 
@@ -1411,6 +1515,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1420,6 +1526,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value to enable the Resource Owner Password Credentials Grant flow (RFC 6742 Section 4.3).</p>
 </div>
+
+    
 
     
 
@@ -1476,6 +1584,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1485,6 +1595,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value telling the plugin to show or hide the credential from the upstream service.</p>
 </div>
+
+    
 
     
 
@@ -1541,6 +1653,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1550,6 +1664,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>Accepts HTTPs requests that have already been terminated by a proxy or load balancer.</p>
 </div>
+
+    
 
     
 
@@ -1596,6 +1712,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1605,6 +1723,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional string (consumer UUID or username) value to use as an “anonymous” consumer if authentication fails.</p>
 </div>
+
+    
 
     
 
@@ -1661,6 +1781,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1670,6 +1792,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value that allows using the same OAuth credentials generated by the plugin with any other service whose OAuth 2.0 plugin configuration also has <code class="language-plaintext highlighter-rouge">config.global_credentials=true</code>.</p>
 </div>
+
+    
 
     
 
@@ -1724,6 +1848,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1733,6 +1859,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>The name of the header that is supposed to carry the access token.</p>
 </div>
+
+    
 
     
 
@@ -1781,6 +1909,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1804,6 +1934,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>Time-to-live value for data</p>
 </div>
+
+    
 
     
 
@@ -1860,6 +1992,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1869,6 +2003,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>An optional boolean value that indicates whether an OAuth refresh token is reused when refreshing an access token.</p>
 </div>
+
+    
 
     
 
@@ -1925,6 +2061,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       
       
     
@@ -1933,6 +2071,8 @@ oauth2</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1985,6 +2125,8 @@ oauth2</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>none</code>, <code>lax</code>, <code>strict</code></span>
 
@@ -2000,6 +2142,8 @@ oauth2</code>.</p>
     <div class="field-description">
 <p>Specifies a mode of how the Proof Key for Code Exchange (PKCE) should be handled by the plugin.</p>
 </div>
+
+    
 
     
 
@@ -2111,7 +2255,7 @@ oauth2</code>.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -2259,8 +2403,8 @@ oauth2</code>.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -2270,16 +2414,6 @@ oauth2</code>.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

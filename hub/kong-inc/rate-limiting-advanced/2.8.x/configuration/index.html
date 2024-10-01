@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>rate-limiting-advanced Configuration | Kong Docs</title>
+  <title>Rate Limiting Advanced Configuration - Plugin - v2.8.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="rate-limiting-advanced Configuration | Kong Docs">
+  <meta property="og:title" content="Rate Limiting Advanced Configuration - Plugin - v2.8.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -388,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -418,7 +419,7 @@
         
           <li class="breadcrumb-item">
             
-              <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/">rate-limiting-advanced</a>
+              <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/">Rate Limiting Advanced</a>
             
           </li>
         
@@ -455,7 +456,7 @@
     </div>
     <div class="page-header--info-meta">
       <div class="meta--title">
-        <h1 id="main" tabindex="-1">rate-limiting-advanced Configuration</h1>
+        <h1 id="main" tabindex="-1">Rate Limiting Advanced Configuration</h1>
 
         
           <div>
@@ -472,8 +473,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/unreleased/configuration/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/rate-limiting-advanced/configuration/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.7.x/configuration/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.6.x/configuration/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.5.x/configuration/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -534,11 +559,11 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
-
-  <a href="https://konghq.com/pricing" target="_blank" class="badge premium" aria-label="available with Konnect Premium subscription" rel="noopener nofollow noreferrer "> </a>
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -579,13 +604,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -598,9 +623,11 @@ Introduction
       <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/2.8.x/">
         
 
-Missing nav_title
+Overview
 
       </a>
+    
+
     
   </span>
 
@@ -625,6 +652,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -640,13 +669,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -662,6 +691,27 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/2.8.x/how-to/peak-traffic-rate-limit/">
+        
+
+Set rate limit based on peak or non-peak time
+
+      </a>
+    
+
     
   </span>
 
@@ -686,13 +736,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=rate-limiting-advanced" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -724,12 +784,18 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/rate-limiting-advanced/configuration/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
@@ -740,7 +806,8 @@ Changelog
 
 
 
-  <p>The cluster strategy is not supported in DB-less and hybrid modes. For {{site.base_gateway}} in DB-less or hybrid mode, the <code class="language-plaintext highlighter-rouge">redis</code> strategy is the only available option to configure the plugin with a central data store.</p>
+  <p>The cluster strategy is not supported in DB-less and hybrid modes. For Kong
+Gateway in DB-less or hybrid mode, the <code class="language-plaintext highlighter-rouge">redis</code> strategy is the only available option to configure the plugin with a central data store.</p>
 
 <blockquote class="note">
   <p><strong>Note</strong>: We recommend setting <code class="language-plaintext highlighter-rouge">namespace</code> to a static value in DB-less mode.
@@ -764,7 +831,7 @@ The <code class="language-plaintext highlighter-rouge">namespace</code> will be 
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -773,7 +840,13 @@ The <code class="language-plaintext highlighter-rouge">namespace</code> will be 
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-rate-limiting-advanced</code>.</p>
+rate-limiting-advanced</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -791,8 +864,8 @@ rate-limiting-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -809,8 +882,8 @@ rate-limiting-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -827,8 +900,8 @@ rate-limiting-advanced</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the consumer the plugin targets.
-          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/consumers/CONSUMER_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a consumer through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/consumers/{consumerName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -892,6 +965,8 @@ rate-limiting-advanced</code>.</p>
     
 
     
+
+    
       
       
     
@@ -900,6 +975,8 @@ rate-limiting-advanced</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -947,6 +1024,8 @@ rate-limiting-advanced</code>.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>ip</code>, <code>credential</code>, <code>consumer</code>, <code>service</code>, <code>header</code>, <code>path</code></span>
 
@@ -964,6 +1043,8 @@ rate-limiting-advanced</code>.</p>
 Defines the scope used to increment the rate limiting counters.
 Can be <code class="language-plaintext highlighter-rouge">ip</code>, <code class="language-plaintext highlighter-rouge">credential</code>, <code class="language-plaintext highlighter-rouge">consumer</code>, <code class="language-plaintext highlighter-rouge">service</code>, <code class="language-plaintext highlighter-rouge">header</code>, or <code class="language-plaintext highlighter-rouge">path</code>.</p>
 </div>
+
+    
 
     
 
@@ -1014,6 +1095,8 @@ Can be <code class="language-plaintext highlighter-rouge">ip</code>, <code class
     
 
     
+
+    
       
       
     
@@ -1024,6 +1107,8 @@ Can be <code class="language-plaintext highlighter-rouge">ip</code>, <code class
 <p>One or more window sizes to apply a limit to (defined in seconds). There
 must be a matching number of window limits and sizes specified.</p>
 </div>
+
+    
 
     
 
@@ -1080,6 +1165,8 @@ must be a matching number of window limits and sizes specified.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>fixed</code>, <code>sliding</code></span>
 
@@ -1103,6 +1190,8 @@ based on its timestamp and will affect only that window’s counters.
 For more information refer to the
 <a href="/gateway/latest/reference/rate-limiting/#overview">Enterprise Rate Limiting Library Overview</a>.</p>
 </div>
+
+    
 
     
 
@@ -1153,6 +1242,8 @@ For more information refer to the
     
 
     
+
+    
       
       
     
@@ -1163,6 +1254,8 @@ For more information refer to the
 <p>One or more requests-per-window limits to apply. There must be a matching
 number of window limits and sizes specified.</p>
 </div>
+
+    
 
     
 
@@ -1213,6 +1306,8 @@ number of window limits and sizes specified.</p>
     
 
     
+
+    
       
       
     
@@ -1226,6 +1321,8 @@ entirely and only stores counters in node memory. A value greater than
 0 will sync the counters in the specified number of seconds. The minimum
 allowed interval is 0.02 seconds (20ms).</p>
 </div>
+
+    
 
     
 
@@ -1274,6 +1371,8 @@ allowed interval is 0.02 seconds (20ms).</p>
     
 
     
+
+    
       
       
     
@@ -1295,6 +1394,8 @@ If not set, you will run into the following issues:</p>
   </ul>
 </blockquote>
 </div>
+
+    
 
     
 
@@ -1349,6 +1450,8 @@ If not set, you will run into the following issues:</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>cluster</code>, <code>redis</code>, <code>local</code></span>
 
@@ -1382,6 +1485,8 @@ is not supported.</p>
 <p>For details on which strategy should be used, refer to the
 <a href="/hub/kong-inc/rate-limiting/#implementation-considerations">implementation considerations</a>.</p>
 </div>
+
+    
 
     
 
@@ -1438,6 +1543,8 @@ is not supported.</p>
     
 
     
+
+    
       
       
     
@@ -1451,6 +1558,8 @@ configured to synchronize counter data externally (that is
 <code class="language-plaintext highlighter-rouge">-1</code>), this dictionary serves as a buffer to populate counters in the
 data store on each synchronization cycle.</p>
 </div>
+
+    
 
     
 
@@ -1505,6 +1614,8 @@ data store on each synchronization cycle.</p>
     
 
     
+
+    
       
       
     
@@ -1517,6 +1628,8 @@ provide information about the current status of limits and counters as
 described in the paragraph <a href="#headers-sent-to-the-client">Headers sent to the client</a>.
 Available options: <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>.</p>
 </div>
+
+    
 
     
 
@@ -1571,6 +1684,8 @@ Available options: <code class="language-plaintext highlighter-rouge">true</code
     
 
     
+
+    
       
       
     
@@ -1583,6 +1698,8 @@ header of denied requests (status = <code class="language-plaintext highlighter-
 from coming back at the same time. The lower bound of the jitter is <code class="language-plaintext highlighter-rouge">0</code>; in this case,
 the <code class="language-plaintext highlighter-rouge">Retry-After</code> header is equal to the <code class="language-plaintext highlighter-rouge">RateLimit-Reset</code> header.</p>
 </div>
+
+    
 
     
 
@@ -1629,6 +1746,8 @@ the <code class="language-plaintext highlighter-rouge">Retry-After</code> header
     
 
     
+
+    
       
       
     
@@ -1639,6 +1758,8 @@ the <code class="language-plaintext highlighter-rouge">Retry-After</code> header
 <p>Header name to use as the rate limit key when <code class="language-plaintext highlighter-rouge">config.identifier</code> is
 configured with the value <code class="language-plaintext highlighter-rouge">header</code>. Ignored when <code class="language-plaintext highlighter-rouge">config.identifier</code> is not <code class="language-plaintext highlighter-rouge">header</code>.</p>
 </div>
+
+    
 
     
 
@@ -1675,6 +1796,8 @@ configured with the value <code class="language-plaintext highlighter-rouge">hea
     
 
     
+
+    
       <span>
         <strong>starts_with: </strong>
         <code>/</code>
@@ -1698,6 +1821,8 @@ configured with the value <code class="language-plaintext highlighter-rouge">hea
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
 
@@ -1750,6 +1875,8 @@ configured with the value <code class="language-plaintext highlighter-rouge">hea
     
 
     
+
+    
       
       
     
@@ -1758,6 +1885,8 @@ configured with the value <code class="language-plaintext highlighter-rouge">hea
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -1797,6 +1926,8 @@ configured with the value <code class="language-plaintext highlighter-rouge">hea
     
 
     
+
+    
       
       
     
@@ -1807,6 +1938,8 @@ configured with the value <code class="language-plaintext highlighter-rouge">hea
 <p>Host to use for Redis connection when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined.
 This parameter accepts a hostname or an IP address as a value.</p>
 </div>
+
+    
 
     
 
@@ -1845,6 +1978,8 @@ This parameter accepts a hostname or an IP address as a value.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1869,6 +2004,8 @@ This parameter accepts a hostname or an IP address as a value.</p>
 <p>Specifies the Redis server port when using the <code class="language-plaintext highlighter-rouge">redis</code> strategy. Must be a
 value between 0 and 65535. Default: 6379.</p>
 </div>
+
+    
 
     
 
@@ -1915,6 +2052,8 @@ value between 0 and 65535. Default: 6379.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>0</code>
@@ -1942,6 +2081,8 @@ value between 0 and 65535. Default: 6379.</p>
     
 
     
+
+    
       
     
   </div>
@@ -1962,6 +2103,8 @@ value between 0 and 65535. Default: 6379.</p>
       <strong>integer</strong>
       
     </span>
+
+    
 
     
 
@@ -2003,6 +2146,8 @@ value between 0 and 65535. Default: 6379.</p>
     
 
     
+
+    
       
     
   </div>
@@ -2023,6 +2168,8 @@ value between 0 and 65535. Default: 6379.</p>
       <strong>integer</strong>
       
     </span>
+
+    
 
     
 
@@ -2064,6 +2211,8 @@ value between 0 and 65535. Default: 6379.</p>
     
 
     
+
+    
       
     
   </div>
@@ -2084,6 +2233,8 @@ value between 0 and 65535. Default: 6379.</p>
       <strong>integer</strong>
       
     </span>
+
+    
 
     
 
@@ -2121,6 +2272,8 @@ value between 0 and 65535. Default: 6379.</p>
     <div class="field-description">
 <p>Read timeout to use for Redis connection when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined.</p>
 </div>
+
+    
 
     
 
@@ -2171,6 +2324,8 @@ value between 0 and 65535. Default: 6379.</p>
     
 
     
+
+    
       
       
     
@@ -2182,6 +2337,8 @@ value between 0 and 65535. Default: 6379.</p>
 If undefined, ACL authentication will not be performed.
 This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <code class="language-plaintext highlighter-rouge">default</code>.</p>
 </div>
+
+    
 
     
 
@@ -2236,6 +2393,8 @@ This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <cod
     
 
     
+
+    
       
       
     
@@ -2246,6 +2405,8 @@ This requires Redis v6.0.0+. The username <strong>cannot</strong> be set to <cod
 <p>Password to use for Redis connection when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined.
 If undefined, no AUTH commands are sent to Redis.</p>
 </div>
+
+    
 
     
 
@@ -2296,6 +2457,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
     
 
     
+
+    
       
       
     
@@ -2306,6 +2469,8 @@ If undefined, no AUTH commands are sent to Redis.</p>
 <p>Sentinel username to authenticate with a Redis Sentinel instance.
 If undefined, ACL authentication will not be performed. This requires Redis v6.2.0+.</p>
 </div>
+
+    
 
     
 
@@ -2360,6 +2525,8 @@ If undefined, ACL authentication will not be performed. This requires Redis v6.2
     
 
     
+
+    
       
       
     
@@ -2370,6 +2537,8 @@ If undefined, ACL authentication will not be performed. This requires Redis v6.2
 <p>Sentinel password to authenticate with a Redis Sentinel instance.
 If undefined, no AUTH commands are sent to Redis Sentinels.</p>
 </div>
+
+    
 
     
 
@@ -2424,6 +2593,8 @@ If undefined, no AUTH commands are sent to Redis Sentinels.</p>
     
 
     
+
+    
       
       
     
@@ -2433,6 +2604,8 @@ If undefined, no AUTH commands are sent to Redis Sentinels.</p>
     <div class="field-description">
 <p>Database to use for Redis connection when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined.</p>
 </div>
+
+    
 
     
 
@@ -2479,6 +2652,8 @@ If undefined, no AUTH commands are sent to Redis Sentinels.</p>
     
 
     
+
+    
       <span>
         <strong>between: </strong>
         <code>1</code>
@@ -2509,6 +2684,8 @@ is specified, then the pool uses the default value <code class="language-plainte
     
 
     
+
+    
       
     
   </div>
@@ -2529,6 +2706,8 @@ is specified, then the pool uses the default value <code class="language-plainte
       <strong>integer</strong>
       
     </span>
+
+    
 
     
 
@@ -2575,6 +2754,8 @@ connect operations are subject to set timeouts.</p>
     
 
     
+
+    
       
     
   </div>
@@ -2617,6 +2798,8 @@ connect operations are subject to set timeouts.</p>
     
 
     
+
+    
       
       
     
@@ -2627,6 +2810,8 @@ connect operations are subject to set timeouts.</p>
 <p>Sentinel master to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined.
 Defining this value implies using Redis Sentinel.</p>
 </div>
+
+    
 
     
 
@@ -2671,6 +2856,8 @@ Defining this value implies using Redis Sentinel.</p>
     
 
     
+
+    
       <span>
   Must be one of: <code>master</code>, <code>slave</code>, <code>any</code></span>
 
@@ -2687,6 +2874,8 @@ Defining this value implies using Redis Sentinel.</p>
 <p>Sentinel role to use for Redis connections when the <code class="language-plaintext highlighter-rouge">redis</code> strategy is defined.
 Defining this value implies using Redis Sentinel. Available options:  <code class="language-plaintext highlighter-rouge">master</code>, <code class="language-plaintext highlighter-rouge">slave</code>, <code class="language-plaintext highlighter-rouge">any</code>.</p>
 </div>
+
+    
 
     
 
@@ -2729,6 +2918,8 @@ Defining this value implies using Redis Sentinel. Available options:  <code clas
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>1</code>
@@ -2751,6 +2942,8 @@ Defining this value implies using Redis Sentinel. Available options:  <code clas
 Defining this value implies using Redis Sentinel. Each string element must
 consist of a hostname (or IP address) and port. The minimum length of the array is 1 element.</p>
 </div>
+
+    
 
     
 
@@ -2797,6 +2990,8 @@ consist of a hostname (or IP address) and port. The minimum length of the array 
     
 
     
+
+    
       <span>
         <strong>len_min: </strong>
         <code>1</code>
@@ -2819,6 +3014,8 @@ consist of a hostname (or IP address) and port. The minimum length of the array 
 Defining this value implies using Redis cluster. Each string element must
 consist of a hostname (or IP address) and port. The minimum length of the array is 1 element.</p>
 </div>
+
+    
 
     
 
@@ -2877,6 +3074,8 @@ consist of a hostname (or IP address) and port. The minimum length of the array 
     
 
     
+
+    
       
       
     
@@ -2886,6 +3085,8 @@ consist of a hostname (or IP address) and port. The minimum length of the array 
     <div class="field-description">
 <p>If set to true, then uses SSL to connect to Redis.</p>
 </div>
+
+    
 
     
 
@@ -2940,6 +3141,8 @@ consist of a hostname (or IP address) and port. The minimum length of the array 
     
 
     
+
+    
       
       
     
@@ -2952,6 +3155,8 @@ consist of a hostname (or IP address) and port. The minimum length of the array 
 to specify the CA (or server) certificate used by your redis server. You may also need to configure
 <a href="/gateway/latest/reference/configuration/#lua_ssl_verify_depth">lua_ssl_verify_depth</a> accordingly.</p>
 </div>
+
+    
 
     
 
@@ -2998,6 +3203,8 @@ to specify the CA (or server) certificate used by your redis server. You may als
     
 
     
+
+    
       
       
     
@@ -3007,6 +3214,8 @@ to specify the CA (or server) certificate used by your redis server. You may als
     <div class="field-description">
 <p>Specifies the server name for the new TLS extension Server Name Indication (SNI) when connecting over SSL.</p>
 </div>
+
+    
 
     
 
@@ -3072,6 +3281,8 @@ to specify the CA (or server) certificate used by your redis server. You may als
     
 
     
+
+    
       
       
     
@@ -3083,6 +3294,8 @@ to specify the CA (or server) certificate used by your redis server. You may als
 from one of the allowed consumer groups to override the given plugin
 configuration.</p>
 </div>
+
+    
 
     
 
@@ -3131,6 +3344,8 @@ configuration.</p>
     
 
     
+
+    
       
       
     
@@ -3146,6 +3361,8 @@ group override, but does not clear the list of consumer groups.
 You can then flip <code class="language-plaintext highlighter-rouge">enforce_consumer_groups</code> to <code class="language-plaintext highlighter-rouge">true</code> to re-enforce the
 groups.</p>
 </div>
+
+    
 
     
 
@@ -3184,13 +3401,13 @@ groups.</p>
     
       <div class="book-nav previous">
         <span class="direction">Previous</span>
-        <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/">rate-limiting-advanced</a>
+        <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/">Rate Limiting Advanced</a>
       </div>
     
     
       <div class="book-nav next">
         <span class="direction">Next</span>
-        <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/how-to/basic-example/">Basic config examples for rate-limiting-advanced</a>
+        <a href="/hub/kong-inc/rate-limiting-advanced/2.8.x/how-to/basic-example/">Basic config examples for Rate Limiting Advanced</a>
       </div>
     
   </div>
@@ -3261,7 +3478,7 @@ groups.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -3409,8 +3626,8 @@ groups.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -3420,16 +3637,6 @@ groups.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

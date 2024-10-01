@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,21 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Imperva API Security Configuration
-| Kong Docs</title>
+  <title>Imperva API Security Configuration - Plugin | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Imperva API Security Configuration
-| Kong Docs">
+  <meta property="og:title" content="Imperva API Security Configuration - Plugin | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -74,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -94,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -120,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -139,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -191,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -228,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -284,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -390,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -465,12 +464,14 @@
         <div class="meta--content-title"><span>By Imperva</span></div>
         <div class="meta--content-badges">
           
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/partners" target="_blank" class="badge techpartner" aria-label="Verified Kong technical partner" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -510,13 +511,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -532,6 +533,8 @@ Introduction
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -556,6 +559,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -573,6 +578,8 @@ Configuration reference
 Basic config examples
 
       </a>
+    
+
     
   </span>
 
@@ -592,13 +599,17 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
   </ul>
+
 </aside>
 
 
@@ -664,6 +675,9 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
 
       <h2 id="configuration">Configuration</h2>
@@ -692,7 +706,7 @@ Changelog
 <ul class="fields">
   <li class="field">
     <div class="field-overview">
-      <h4 id="name">name</h4>
+      <h4 id="name">name or plugin</h4>
     </div>
     <div class="field-attributes">
       <span><strong>string</strong></span>
@@ -701,7 +715,13 @@ Changelog
     <div class="field-description-and-children">
       
       <p class="field-description">The name of the plugin, in this case <code>
-imp-appsec-connector</code>.</p>
+imp-appsec-connector</code>.
+        </p>
+<ul>
+          <li>If using the Kong Admin API, Konnect API, declarative configuration, or decK files, the field is <code>name</code>.</li>
+          <li>If using the KongPlugin object in Kubernetes, the field is <code>plugin</code>.</li>
+        </ul>
+      
     </div>
   </li>
 
@@ -716,9 +736,22 @@ imp-appsec-connector</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           An optional custom name to identify an instance of the plugin, for example <code>imp-appsec-connector_my-service</code>.
-          Useful when running the same plugin in multiple contexts, for example, on multiple services.
         </p>
-      </div>
+        <p class="field-description">
+          The instance name shows up in Kong Manager and in Konnect, so it's useful when running the same 
+          plugin in multiple contexts, for example, on multiple services. You can also use it to access a specific plugin instance
+          via the Kong Admin API.
+        </p>
+        <p class="field-description">
+          An instance name must be unique within the following context:
+          </p>
+<ul>
+            <li>Within a workspace for Kong Gateway Enterprise</li>
+            <li>Within a control plane or control plane group for Konnect</li>
+            <li>Globally for Kong Gateway (OSS)</li>
+        
+      </ul>
+</div>
     </li>
   
 
@@ -734,8 +767,8 @@ imp-appsec-connector</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the service the plugin targets.
-          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/services/SERVICE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a service through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/services/{serviceName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -752,8 +785,8 @@ imp-appsec-connector</code>.</p>
       <div class="field-description-and-children">
         <p class="field-description">
           The name or ID of the route the plugin targets.
-          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/latest/admin-api/#add-plugin"><code>/plugins</code> endpoint.</a>
-          Not required if using <code>/routes/ROUTE_NAME|ID/plugins</code>.
+          Set one of these parameters if adding the plugin to a route through the top-level <a href="/gateway/api/admin-ee/latest/#/Plugins/create-plugin"><code>/plugins</code> endpoint.</a>
+          Not required if using <code>/routes/{routeName|Id}/plugins</code>.
         </p>
       </div>
     </li>
@@ -819,6 +852,8 @@ imp-appsec-connector</code>.</p>
     
 
     
+
+    
       
       
     
@@ -827,6 +862,8 @@ imp-appsec-connector</code>.</p>
   <div class="field-description-and-children">
     <div class="field-description">
 </div>
+
+    
 
     
       <div class="field-subfield__params">
@@ -872,6 +909,8 @@ imp-appsec-connector</code>.</p>
     
 
     
+
+    
       
       
     
@@ -882,6 +921,8 @@ imp-appsec-connector</code>.</p>
 <p>Destination address of the API security receiver. 
 This can be an IP address or domain name, for example <code class="language-plaintext highlighter-rouge">logconsumer.myapisec.mydomain</code>.</p>
 </div>
+
+    
 
     
 
@@ -934,6 +975,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     
 
     
+
+    
       <span>
   Must be one of: <code>8080</code>, <code>80</code>, <code>8443</code>, <code>443</code></span>
 
@@ -949,6 +992,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     <div class="field-description">
 <p>Destination port of the API security receiver.</p>
 </div>
+
+    
 
     
 
@@ -1001,6 +1046,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     
 
     
+
+    
       <span>
   Must be one of: <code>tcp</code>, <code>http</code></span>
 
@@ -1016,6 +1063,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     <div class="field-description">
 <p>The connection protocol to use.</p>
 </div>
+
+    
 
     
 
@@ -1068,6 +1117,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     
 
     
+
+    
       <span>
   Must be one of: <code>POST</code>, <code>PUT</code>, <code>PATCH</code></span>
 
@@ -1083,6 +1134,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     <div class="field-description">
 <p>The request method to use.</p>
 </div>
+
+    
 
     
 
@@ -1137,6 +1190,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     
 
     
+
+    
       
       
     
@@ -1146,6 +1201,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     <div class="field-description">
 <p>Maximum payload body size to capture, in bytes.</p>
 </div>
+
+    
 
     
 
@@ -1200,6 +1257,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     
 
     
+
+    
       
       
     
@@ -1209,6 +1268,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     <div class="field-description">
 <p>Whether or not to use an TLS/SSL tunnel to send API traffic capture to the destination.</p>
 </div>
+
+    
 
     
 
@@ -1263,6 +1324,8 @@ This can be an IP address or domain name, for example <code class="language-plai
     
 
     
+
+    
       
       
     
@@ -1275,6 +1338,8 @@ This can be an IP address or domain name, for example <code class="language-plai
 <p>Set to <code class="language-plaintext highlighter-rouge">false</code> to disable. Use <strong>only</strong> for debugging purposes. 
 API security will not fully function without inspection of the request body payload.</p>
 </div>
+
+    
 
     
 
@@ -1329,6 +1394,8 @@ API security will not fully function without inspection of the request body payl
     
 
     
+
+    
       
       
     
@@ -1341,6 +1408,8 @@ API security will not fully function without inspection of the request body payl
 <p>Set to <code class="language-plaintext highlighter-rouge">false</code> to disable. Use <strong>only</strong> for debugging purposes. 
 API security will not fully function without inspection of the response body payload.</p>
 </div>
+
+    
 
     
 
@@ -1395,6 +1464,8 @@ API security will not fully function without inspection of the response body pay
     
 
     
+
+    
       
       
     
@@ -1404,6 +1475,8 @@ API security will not fully function without inspection of the response body pay
     <div class="field-description">
 <p>Number of retries if sending the API call capture fails. No retry by default.</p>
 </div>
+
+    
 
     
 
@@ -1458,6 +1531,8 @@ API security will not fully function without inspection of the response body pay
     
 
     
+
+    
       
       
     
@@ -1468,6 +1543,8 @@ API security will not fully function without inspection of the response body pay
 <p>Number of API logs to keep in the queue for retries. Default is 1, meaning no retries. 
 Set to a number larger than 1 to enable retries.</p>
 </div>
+
+    
 
     
 
@@ -1522,6 +1599,8 @@ Set to a number larger than 1 to enable retries.</p>
     
 
     
+
+    
       
       
     
@@ -1531,6 +1610,8 @@ Set to a number larger than 1 to enable retries.</p>
     <div class="field-description">
 <p>Number of seconds to wait before flushing the queue.</p>
 </div>
+
+    
 
     
 
@@ -1585,6 +1666,8 @@ Set to a number larger than 1 to enable retries.</p>
     
 
     
+
+    
       
       
     
@@ -1594,6 +1677,8 @@ Set to a number larger than 1 to enable retries.</p>
     <div class="field-description">
 <p>Number of milliseconds to keep a single connection open to the destination.</p>
 </div>
+
+    
 
     
 
@@ -1705,7 +1790,7 @@ Set to a number larger than 1 to enable retries.</p>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -1853,8 +1938,8 @@ Set to a number larger than 1 to enable retries.</p>
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -1864,16 +1949,6 @@ Set to a number larger than 1 to enable retries.</p>
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

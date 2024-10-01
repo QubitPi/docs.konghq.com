@@ -12,10 +12,57 @@
 /gateway/latest/install/post-install/enterprise-license/    /gateway/latest/licenses/deploy/
 /gateway/:version/install/post-install/kong-manager/        /gateway/:version/kong-manager/enable/
 /gateway/latest/install/post-install/kong-manager/          /gateway/latest/kong-manager/enable/
-/gateway/:version/install/post-install/kong-manager-oss/    /gateway/:version/kong-manager-oss/
-/gateway/latest/install/post-install/kong-manager-oss/      /gateway/latest/kong-manager-oss/
- 
+/gateway/:version/install/post-install/kong-manager-oss/    /gateway/:version/kong-manager/
+/gateway/latest/install/post-install/kong-manager-oss/      /gateway/latest/kong-manager/
+/gateway/latest/kong-production/db-encryption/ /gateway/latest/kong-enterprise/db-encryption/
+/gateway/:version/ai-gateway/ai-analytics/ /gateway/:version/production/logging/ai-analytics/
+/gateway/latest/ai-gateway/ai-analytics/ /gateway/latest/production/latest/ai-analytics/
+/gateway/:version/ai-gateway/metrics/    /gateway/:version/production/monitoring/ai-metrics/
+/gateway/latest/ai-gateway/metrics/    /gateway/latest/production/monitoring/ai-metrics/
+
 ######################################################################
+
+
+## DCG seperate section
+
+
+/konnect/gateway-manager/data-plane-nodes/azure-peering/     /konnect/gateway-manager/dedicated-cloud-gateways/azure-peering/
+/konnect/gateway-manager/data-plane-nodes/transit-gateways/ /konnect/gateway-manager/dedicated-cloud-gateways/transit-gateways/
+/konnect/gateway-manager/provision-cloud-gateway/            /konnect/gateway-manager/dedicated-cloud-gateways/provision-cloud-gateway/
+/konnect/gateway-manager/dedicated-cloud-gateways/   /konnect/gateway-manager/dedicated-cloud-gateways/
+## Saml SSO
+
+/konnect/org-management/oidc-idp/   /konnect/org-management/sso/
+/konnect/org-management/saml-idp/   /konnect/org-management/sso/
+
+
+## Service Catalog rename
+
+/konnect/servicehub/ /konnect/service-catalog/
+
+## Kong Manager
+
+/gateway/:version/kong-manager-oss/troubleshoot/    /gateway/:version/kong-manager/troubleshoot/
+/gateway/:version/kong-manager-oss/ /gateway/:version/kong-manager/
+
+## AI plugins
+
+/hub/kong-inc/ai-proxy/how-to/openai/    /hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/openai/
+/hub/kong-inc/ai-proxy/how-to/cohere/    /hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/cohere/
+/hub/kong-inc/ai-proxy/how-to/azure/     /hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/azure/
+/hub/kong-inc/ai-proxy/how-to/anthropic/ /hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/anthropic/
+/hub/kong-inc/ai-proxy/how-to/mistral/   /hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/mistral/
+/hub/kong-inc/ai-proxy/how-to/llama2/    /hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/llama2/
+
+## App reg v2
+
+
+/konnect/dev-portal/applications/dev-reg-app-service/ /konnect/dev-portal/applications/dev-apps/
+/konnect/dev-portal/access/ /konnect/dev-portal/
+# API
+
+/konnect/api/portal-rbac/latest/*    /konnect/api/portal-management/latest/
+/konnect/api/portal-rbac/:version/*    /konnect/api/portal-management/latest/
 
 # Konnect plugins
 
@@ -42,6 +89,72 @@
 /konnect/getting-started/configure-runtime/ /konnect/getting-started/configure-data-plane-node/
 /konnect/api/runtime-groups-config/overview/ /konnect/api/
 
+# Konnect get started rework
+
+/konnect/getting-started/access-account/    /konnect/getting-started/
+/konnect/getting-started/configure-data-plane-node/ /konnect/gateway-manager/data-plane-nodes/#supported-installation-options
+/konnect/getting-started/deploy-service/    /konnect/gateway-manager/deploy-service/
+/konnect/getting-started/publish-service/   /konnect/dev-portal/publish-service/
+/konnect/getting-started/app-registration/  /konnect/dev-portal/applications/dev-apps/
+/konnect/getting-started/productize-service/    /konnect/api-products/productize-service/
+/konnect/getting-started/import/                /konnect/getting-started/migration/
+/konnect/gateway-manager/deploy-service/        /konnect/getting-started/add-api
+
+# Konnect Analytics Explorer revision
+
+/konnect/analytics/reference/   /konnect/analytics/explorer/
+/konnect/analytics/use-cases/latency/   /konnect/analytics/explorer/#diagnosing-latency-issues-example
+/konnect/analytics/custom-reports/  /konnect/analytics/use-cases/
+/konnect/analytics/troubleshoot/    /konnect/analytics/
+
+# Konnect Dev Portal rework
+
+/konnect/dev-portal/dev-reg/    /konnect/dev-portal/register-and-create-app/
+/konnect/dev-portal/applications/dev-apps/    /konnect/dev-portal/register-and-create-app/
+/konnect/dev-portal/applications/dev-gen-creds/    /konnect/dev-portal/register-and-create-app/
+/dev-portal/access-and-approval/azure/  /dev-portal/access-and-approval/sso/
+/konnect/dev-portal/access-and-approval/azure/    /konnect/dev-portal/access-and-approval/sso/
+/konnect/dev-portal/access-and-approval/manage-app-reg-requests/    /konnect/dev-portal/access-and-approval/manage-app-connections/
+/konnect/dev-portal/access-and-approval/auto-approve-devs-apps/ /konnect/dev-portal/create-dev-portal/
+/konnect/dev-portal/access-and-approval/manage-teams    /konnect/dev-portal/access-and-approval/manage-teams/#enable-portal-rbac
+/konnect/api/portal-auth/portal-rbac-guide/   /konnect/dev-portal/access-and-approval/manage-teams/#enable-portal-rbac
+
+# API markdown doc deprecation
+
+/gateway/latest/admin-api/licenses/reference   /gateway/api/admin-ee/latest/#/licenses/get-licenses/
+/gateway/latest/admin-api/workspaces/reference/   /gateway/api/admin-ee/latest/#/Workspaces/list-workspace/
+/gateway/latest/admin-api/rbac/reference/        /gateway/api/admin-ee/latest/#/rbac/get-rbac-users/
+/gateway/latest/admin-api/event-hooks/reference/ /gateway/api/admin-ee/latest/#/Event-hooks/get-event-hooks/
+/gateway/latest/admin-api/db-encryption/     /gateway/api/admin-ee/latest/#/Keyring/get-keyring/
+/gateway/latest/admin-api/audit-logs/        /gateway/api/admin-ee/latest/#/audit-logs/get-audit-requests/
+/gateway/latest/admin-api/admins/reference/   /gateway/api/admin-ee/latest/#/admins/get-admins/
+/gateway/latest/admin-api/*                   /gateway/api/admin-ee/latest/
+/gateway/3.5.x/admin-api/#health-routes    /gateway/api/admin-ee/latest/#/Information/get-status/
+/gateway/3.5.x/admin-api/#tags        /gateway/api/admin-ee/latest/#/tags/get-tags/
+/gateway/3.5.x/admin-api/#debug-routes /gateway/api/admin-ee/latest/#/debug/put-debug-cluster-control-planes-nodes-log-level-log_level/
+/gateway/3.5.x/admin-api/#service-object   /gateway/api/admin-ee/latest/#/Services/list-service/
+/gateway/3.5.x/admin-api/#route-object /gateway/api/admin-ee/latest/#/Routes/list-route/
+/gateway/3.5.x/admin-api/#consumer-object  /gateway/api/admin-ee/latest/#/Consumers/list-consumer/
+/gateway/3.5.x/admin-api/#plugin-object    /gateway/api/admin-ee/latest/#/Plugins/list-plugin
+/gateway/3.5.x/admin-api/#certificate-object   /gateway/api/admin-ee/latest/#/Certificates/list-certificate/
+/gateway/3.5.x/admin-api/#ca-certificate-object    /gateway/api/admin-ee/latest/#/CA%20Certificates/list-ca_certificate/
+/gateway/3.5.x/admin-api/#sni-object   /gateway/api/admin-ee/latest/#/SNIs/list-sni-with-certificate/
+/gateway/3.5.x/admin-api/#upstream-object  /gateway/api/admin-ee/latest/#/Upstreams/list-upstream/
+/gateway/3.5.x/admin-api/#target-object    /gateway/api/admin-ee/latest/#/Targets/list-target-with-upstream/
+/gateway/3.5.x/admin-api/#vaults-object    /gateway/api/admin-ee/latest/#/Vaults/list-vault/
+/gateway/3.5.x/admin-api/#keys-object      /gateway/api/admin-ee/latest/#/Keys/list-key/
+/gateway/3.5.x/admin-api/#filter-chains    /gateway/api/admin-ee/latest/#/filter-chains/get-filter-chains/
+/gateway/3.5.x/admin-api/licenses/reference   /gateway/api/admin-ee/latest/#/licenses/get-licenses/
+/gateway/3.5.x/admin-api/workspaces/reference/   /gateway/api/admin-ee/latest/#/Workspaces/list-workspace/
+/gateway/3.5.x/admin-api/rbac/reference/        /gateway/api/admin-ee/latest/#/rbac/get-rbac-users/
+/gateway/3.5.x/admin-api/event-hooks/reference/ /gateway/api/admin-ee/latest/#/Event-hooks/get-event-hooks/
+/gateway/3.5.x/admin-api/db-encryption/     /gateway/api/admin-ee/latest/#/Keyring/get-keyring/
+/gateway/3.5.x/admin-api/audit-logs/        /gateway/api/admin-ee/latest/#/audit-logs/get-audit-requests/
+/gateway/3.5.x/admin-api/admins/reference/   /gateway/api/admin-ee/latest/#/admins/get-admins/
+/gateway/3.5.x/admin-api/*                   /gateway/api/admin-ee/latest/
+
+# 3.6
+/gateway/3.6.x/production/benchmark/  /gateway/3.6.x/production/performance/benchmark/
 
 # 3.5
 /gateway/latest/kong-enterprise/analytics/* /gateway/3.4.x/kong-enterprise/analytics/:splat
@@ -55,9 +168,9 @@
 
 # 3.4
 
-/gateway/latest/production/security-update-process /gateway/latest/support/vulnerability-patching-process 
+/gateway/latest/production/security-update-process /gateway/latest/support/vulnerability-patching-process
 /gateway/latest/kong-enterprise/consumer-groups /gateway/latest/key-concepts/consumer-groups
-/gateway/latest/admin-api/consumer-groups/reference  /gateway/api/admin-ee/3.3.0.x/#/consumer_groups/get-consumer_groups
+/gateway/latest/admin-api/consumer-groups/reference  /gateway/api/admin-ee/latest/#/consumer_groups/get-consumer_groups
 /konnect/runtime-manager/configuration/consumer-groups /hub/kong-inc/rate-limiting-advanced/how-to/
 
 # 3.3
@@ -66,10 +179,10 @@
 
 # 3.2
 
-/gateway/latest/admin-api/index/#keys-entity     /gateway/latest/admin-api/keys-object
-/gateway/latest/admin-api/index/#vaults-entity  /gateway/latest/admin-api/#vaults-object
-/gateway/3.2.x/admin-api/index/#keys-entity     /gateway/latest/admin-api/keys-object
-/gateway/3.2.x/admin-api/index/#vaults-entity  /gateway/latest/admin-api/#vaults-object
+/gateway/latest/admin-api/index/#keys-entity    /gateway/api/admin-ee/latest/#/Keys/list-key/
+/gateway/latest/admin-api/index/#vaults-entity  /gateway/api/admin-ee/latest/#/Vaults/list-vault/
+/gateway/3.2.x/admin-api/index/#keys-entity     /gateway/api/admin-ee/latest/#/Keys/list-key/
+/gateway/3.2.x/admin-api/index/#vaults-entity  /gateway/api/admin-ee/latest/#/Vaults/list-vault/
 /gateway/latest/os-support/                     /gateway/latest/support-policy/
 /gateway/latest/install-support/                /gateway/latest/support-policy/
 /gateway/3.2.x/os-support/                     /gateway/latest/support-policy/
@@ -89,7 +202,7 @@
 /gateway/2.8.x/get-started/quickstart/configuring-a-grpc-service/       /gateway/latest/get-started/ratelimiting/
 /gateway/2.8.x/get-started/quickstart/enabling-plugins/                /gateway/latest/key-concepts/plugins/
 /gateway/2.8.x/get-started/quickstart/adding-consumers/               /gateway/latest/get-started/key-authentication
-/gateway/2.8.x/admin-api/rbac/examples/                              /gateway/latest/admin-api/rbac/reference/
+/gateway/2.8.x/admin-api/rbac/examples/                              /gateway/api/admin-ee/latest/#/rbac/get-rbac-users/
 
 #3.x
 /gateway/:version/kong-plugins/request-transformer/add-body-value/  /hub/kong-inc/request-transformer/how-to/add-body-value/
@@ -170,6 +283,20 @@
 
 
 # PLUGINS
+/gateway/:version/kong-plugins/authentication/oidc/           /hub/kong-inc/openid-connect/
+/gateway/latest/kong-plugins/authentication/oidc/           /hub/kong-inc/openid-connect/
+/gateway/:version/kong-plugins/authentication/oidc/curity/    /hub/kong-inc/openid-connect/how-to/third-party/curity/
+/gateway/latest/kong-plugins/authentication/oidc/curity/    /hub/kong-inc/openid-connect/how-to/third-party/curity/
+/gateway/:version/kong-plugins/authentication/oidc/azure-ad/  /hub/kong-inc/openid-connect/how-to/third-party/azure-ad/
+/gateway/latest/kong-plugins/authentication/oidc/azure-ad/  /hub/kong-inc/openid-connect/how-to/third-party/azure-ad/
+/gateway/:version/kong-plugins/authentication/oidc/google/    /hub/kong-inc/openid-connect/how-to/third-party/google/
+/gateway/latest/kong-plugins/authentication/oidc/google/    /hub/kong-inc/openid-connect/how-to/third-party/google/
+/gateway/:version/kong-plugins/authentication/oidc/okta/      /hub/kong-inc/openid-connect/how-to/third-party/okta/
+/gateway/latest/kong-plugins/authentication/oidc/okta/      /hub/kong-inc/openid-connect/how-to/third-party/okta/
+/gateway/:version/kong-plugins/authentication/oidc/auth0/     /hub/kong-inc/openid-connect/how-to/third-party/auth0/
+/gateway/latest/kong-plugins/authentication/oidc/auth0/     /hub/kong-inc/openid-connect/how-to/third-party/auth0/
+/gateway/:version/kong-plugins/authentication/oidc/cognito/   /hub/kong-inc/openid-connect/how-to/third-party/cognito/
+/gateway/latest/kong-plugins/authentication/oidc/cognito/   /hub/kong-inc/openid-connect/how-to/third-party/cognito/
 /hub/api-fortress/api-fortress-http-log/    /hub/
 /hub/api-fortress/api-fortress-http-log/*   /hub/
 /enterprise/latest/plugins/statsd-advanced/ /hub/kong-inc/statsd-advanced/
@@ -324,9 +451,6 @@
 # KONNECT
 
 /konnect/api/audit-logs/webhook/                    /konnect/org-management/audit-logging/webhook/
-/konnect/service-hub                                /konnect/servicehub/
-/konnect/service-hub/*                              /konnect/servicehub/:splat
-/konnect/service-hub/manage-services                /konnect/servicehub/
 /konnect/org-management/okta-role-mapping           /konnect/org-management/okta-idp/#map-roles-to-groups
 /konnect/key-concepts-and-terms/                    /konnect/
 /konnect/reference/konnect-api/                     /konnect/
@@ -336,13 +460,12 @@
 /konnect/deployment/license-management              /konnect/account-management/
 /konnect/deployment/network                         /konnect/network/
 /konnect/deployment/network-resiliency              /konnect/network-resiliency/
-/konnect/migrate/                                   /konnect/getting-started/import/
 /konnect/getting-started/declarative-config/        /konnect/runtime-manager/manage-runtime-groups/#manage-runtime-groups-using-deck
 /konnect/getting-started/spec/publish/              /konnect/getting-started/publish-service/
 /konnect/getting-started/spec/implement/            /konnect/getting-started/implement-service/
 /konnect/getting-started/spec/service/              /konnect/getting-started/configure-service/
-/konnect/servicehub/dev-portal/service-documentation/   /konnect/servicehub/service-documentation/
-/konnect/servicehub/dev-portal/publish/              /konnect/servicehub/service-documentation/
+/konnect/servicehub/dev-portal/service-documentation/  /konnect/api-products/service-documentation/
+/konnect/servicehub/dev-portal/publish/              /konnect/service-catalog/
 /konnect/runtime-manager/gateway-runtime-conf        /konnect/runtime-manager/runtime-instances/
 /konnect/runtime-manager/gateway-runtime-docker      /konnect/runtime-manager/runtime-instances/
 /konnect/runtime-manager/gateway-runtime-kubernetes  /konnect/runtime-manager/runtime-instances/
@@ -370,7 +493,6 @@
 /konnect/analytics/services-and-routes/              /konnect/analytics/
 /konnect/legacy/*                                    /konnect/
 /konnect/install-support/                            /konnect/runtime-manager/runtime-instances/
-/konnect/servicehub/plugins/                          /konnect/runtime-manager/plugins/
 
 /konnect/getting-started/configure-service/           /konnect/getting-started/productize-service/
 /konnect/getting-started/implement-service/           /konnect/getting-started/deploy-service
@@ -380,7 +502,7 @@
 /konnect/api/portal-auth/portal-rbac-guide/ /konnect/dev-portal/access-and-approval/manage-teams/
 #API Redirects
 
-/konnect/identity-management-api/   /konnect/api/identity-management/v2/
+/konnect/identity-management-api/   /konnect/api/identity-management/latest/
 /gateway/*/kong-enterprise/dev-portal/portal-api/ /dev-portal/api/v1/
 
 # STUDIO
@@ -422,14 +544,14 @@
 /gateway/2.7.x/developer-portal/files-api/                 /gateway/2.7.x/developer-portal/portal-api/
 
 # GATEWAY REFERENCES
-/vaults/                               /gateway/latest/vaults
-/admin-api/                            /gateway/latest/admin-api
-/admin-api/*                           /gateway/latest/admin-api/:splat
-/2.6.x/admin-api/                      /gateway/latest/admin-api
-/2.7.x/admin-api/                      /gateway/latest/admin-api
-/latest/admin-api/*                    /gateway/latest/admin-api/:splat
-/2.6.x/api-admin-gui/                  /gateway/latest/admin-api
-/2.7.x/api-admin-gui/                  /gateway/latest/admin-api
+/vaults/                               /gateway/api/admin-ee/latest/#/Vaults/list-vault
+/admin-api/                            /gateway/api/admin-ee/latest/
+/admin-api/*                           /gateway/api/admin-ee/latest/
+/2.6.x/admin-api/                      /gateway/api/admin-ee/latest/
+/2.7.x/admin-api/                      /gateway/api/admin-ee/latest/
+/latest/admin-api/*                    /gateway/api/admin-oss/latest/
+/2.6.x/api-admin-gui/                  /gateway/api/admin-oss/latest/
+/2.7.x/api-admin-gui/                  /gateway/api/admin-oss/latest/
 /gateway-oss/2.6.x/admin-api           /gateway/2.6.x/admin-api/
 /gateway-oss/2.6.x/admin-api/*         /gateway/2.6.x/admin-api/:splat
 /enterprise/2.6.x/admin-api            /gateway/2.6.x/admin-api/
@@ -438,19 +560,19 @@
 /gateway-oss/2.7.x/admin-api/*         /gateway/2.7.x/admin-api/:splat
 /enterprise/2.7.x/admin-api            /gateway/2.7.x/admin-api/
 /enterprise/2.7.x/admin-api/*          /gateway/2.7.x/admin-api/:splat
-/enterprise/*/admin-gui/               /gateway/latest/admin-api
-/enterprise/latest/admin-api/          /gateway/latest/admin-api/
-/enterprise/latest/admin-api/*         /gateway/latest/admin-api/:splat
-/gateway-oss/latest/admin-api/         /gateway/latest/admin-api/
-/gateway-oss/latest/admin-api/*        /gateway/latest/admin-api/:splat
+/enterprise/*/admin-gui/               /gateway/api/admin-ee/latest/
+/enterprise/latest/admin-api/          /gateway/api/admin-ee/latest/
+/enterprise/latest/admin-api/*         /gateway/api/admin-ee/latest/
+/gateway-oss/latest/admin-api/         /gateway/api/admin-oss/latest/
+/gateway-oss/latest/admin-api/*        /gateway/api/admin-oss/latest/
 
 /enterprise/*/kong-implementation-checklist/    /gateway/latest/plan-and-deploy
 /enterprise/*/organization-management/managing-admins  /gateway/latest/configuration/auth/rbac/add-admin
 /enterprise/*/plugins/rbac-api/        /gateway/latest/configure/auth/rbac
 /enterprise/*/organization-management/rbac-and-perms/  /gateway/latest/configuration/auth/rbac
-/admin-api/workspaces   /gateway/latest/admin-api/workspaces/reference
+/admin-api/workspaces   /gateway/api/admin-ee/latest/#/Workspaces/list-workspace
 
-/enterprise/latest/setting-up-admin-api-rbac  /gateway/latest/admin-api/rbac/reference/
+/enterprise/latest/setting-up-admin-api-rbac  /gateway/api/admin-ee/latest/#/rbac/get-rbac-users
 /enterprise/2.6.x/property-reference/   /gateway/2.6.x/reference/configuration
 /enterprise/2.7.x/property-reference/   /gateway/2.7.x/reference/configuration
 /enterprise/latest/reference/configuration/  /gateway/latest/reference/configuration
@@ -646,9 +768,13 @@
 
 # KONG MESH
 /policies /mesh/latest/policies/introduction
+/features/ /mesh/latest/features/
 /mesh/:version/documentation/introduction/  /mesh/:version/
 /mesh/:version/introduction/overview-of-kong-mesh /mesh/:version/
 /mesh/:version/overview /mesh/:version/
+/mesh/:version/quickstart/kubernetes/ /mesh/:version/quickstart/kubernetes-demo/
+/mesh/:version/production/secure-deployment/api-access-control/ /mesh/:version/features/rbac/
+
 # Make GUI docs link work
 /mesh/konnect/* /mesh/latest/:splat
 /mesh/:version/installation/windows   /mesh/:version/features/windows
@@ -804,10 +930,10 @@
 /enterprise/latest/deployment/licensing/*   /gateway/latest/plan-and-deploy/licenses/:splat
 /enterprise/2.6.x/secure-admin-api/       /gateway/2.6.x/admin-api/secure-admin-api
 /enterprise/2.7.x/secure-admin-api/       /gateway/2.7.x/admin-api/secure-admin-api
-/enterprise/latest/secure-admin-api/      /gateway/latest/admin-api/secure-admin-api
+/enterprise/latest/secure-admin-api/      /gateway/latest/production/running-kong/secure-admin-api
 /gateway-oss/2.6.x/secure-admin-api/      /gateway/2.6.x/admin-api/secure-admin-api
 /gateway-oss/2.7.x/secure-admin-api/      /gateway/2.7.x/admin-api/secure-admin-api
-/gateway-oss/latest/secure-admin-api/     /gateway/latest/admin-api/secure-admin-api
+/gateway-oss/latest/secure-admin-api/     /gateway/latest/production/running-kong/secure-admin-api
 /enterprise/2.6.x/db-encryption/       /gateway/2.6.x/plan-and-deploy/security/db-encryption
 /enterprise/2.7.x/db-encryption/       /gateway/2.7.x/plan-and-deploy/security/db-encryption
 /enterprise/latest/db-encryption/      /gateway/latest/plan-and-deploy/security/db-encryption
@@ -1094,6 +1220,7 @@
 /gateway/latest/get-started/secure-services/	/gateway/latest/get-started/key-authentication/
 /gateway/latest/install/linux/os-support/	/gateway/latest/support-policy/#supported-versions
 /gateway/latest/install/kubernetes/deployment-options/	/gateway/latest/install/kubernetes/
+/gateway/latest/production/benchmark/	/gateway/latest/production/performance/benchmark/
 /kubernetes-ingress-controller/latest/concepts/expression-based-router/	/kubernetes-ingress-controller/latest/
 /kubernetes-ingress-controller/latest/concepts/ingress-versions/	/kubernetes-ingress-controller/latest/
 /kubernetes-ingress-controller/latest/availability-stages/	/kubernetes-ingress-controller/latest/
@@ -1136,7 +1263,8 @@
 /kubernetes-ingress-controller/latest/guides/using-ingress-with-grpc/	/kubernetes-ingress-controller/latest/guides/services/grpc/
 /kubernetes-ingress-controller/latest/guides/using-mtls-auth-plugin/	/kubernetes-ingress-controller/latest/plugins/mtls/
 /kubernetes-ingress-controller/latest/guides/using-oidc-plugin/	/kubernetes-ingress-controller/latest/plugins/oidc/
-/kubernetes-ingress-controller/latest/guides/using-rewrites/	/kubernetes-ingress-controller/latest/guides/requests/rewrite-host/
+/kubernetes-ingress-controller/latest/guides/using-rewrites/	/kubernetes-ingress-controller/latest/guides/requests/rewrite-host-and-paths/
+/kubernetes-ingress-controller/latest/guides/rewrite-host/	/kubernetes-ingress-controller/latest/guides/requests/rewrite-host-and-paths/
 /kubernetes-ingress-controller/latest/guides/preserve-client-ip/	/kubernetes-ingress-controller/latest/guides/security/client-ip/
 /kubernetes-ingress-controller/latest/guides/using-multiple-backends/	/kubernetes-ingress-controller/latest/guides/services/multiple-backends/
 /kubernetes-ingress-controller/latest/guides/using-gateway-discovery/	/kubernetes-ingress-controller/latest/production/deployment-topologies/gateway-discovery/
@@ -1207,3 +1335,6 @@
 # kuma IA redirects (pages that do exist take precedence on these so it's safe to use `:version` for pages moved in newer versions).
 /mesh/:version/policies/proxy-template/ /mesh/:version/reference/proxy-template/
 /mesh/:version/installation/* /mesh/:version/production/cp-deployment/stand-alone/
+/mesh/:version/production/cp-deployment/stand-alone/ /mesh/:version/production/cp-deployment/single-zone/
+/mesh/:version/production/deployment/stand-alone/ /mesh/:version/production/deployment/single-zone/
+/mesh/:version/explore/gateway/ /mesh/:version/using-mesh/managing-ingress-traffic/overview/

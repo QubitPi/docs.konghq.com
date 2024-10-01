@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Custom Resource Definitions API Reference - v3.0.x | Kong Docs</title>
+  <title>Custom Resource Definitions API Reference - Kong Ingress Controller | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Custom Resource Definitions API Reference - v3.0.x | Kong Docs">
+  <meta property="og:title" content="Custom Resource Definitions API Reference - Kong Ingress Controller | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -400,9 +402,10 @@
         </div>
         
         <div class="version">
-          3.0.x
+          3.3.x
           
             <span>(latest)</span>
+          
           
         </div>
         
@@ -478,7 +481,7 @@
         <div class="github-links">
   <div class="github-links--edit">
     
-      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/kubernetes-ingress-controller/reference/custom-resources-3.0.x.md" target="_blank" rel="noopener nofollow noreferrer ">
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/kubernetes-ingress-controller/reference/custom-resources-3.3.x.md" target="_blank" rel="noopener nofollow noreferrer ">
         <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
       </a>
     
@@ -519,6 +522,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -547,213 +553,87 @@
     <div class="versions-dropdown dropdown">
       <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
         <span>
-          Version 3.0.x
+          Version 3.3.x
           
             <span>(latest)</span>
+          
           
         </span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
-          
-          
-          
-          
-          
-        <li class="active" role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/3.0.x/reference/custom-resources/" class="active" data-version-id="3.0.x">
-            3.0.x
-             <em>(latest)</em>
-            
-          </a>
-        </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.12.x" data-version-id="2.12.x">
-            2.12.x
-            
-          </a>
-        </li>
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.3.x/reference/custom-resources/" class="active" data-version-id="3.3.x">
+              3.3.x <em>(latest)</em>
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.11.x" data-version-id="2.11.x">
-            2.11.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.2.x/reference/custom-resources/" data-version-id="3.2.x">
+              3.2.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.10.x" data-version-id="2.10.x">
-            2.10.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.1.x/reference/custom-resources/" data-version-id="3.1.x">
+              3.1.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.9.x" data-version-id="2.9.x">
-            2.9.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/3.0.x/reference/custom-resources/" data-version-id="3.0.x">
+              3.0.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.8.x" data-version-id="2.8.x">
-            2.8.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.12.x/" data-version-id="2.12.x">
+              2.12.x (LTS)
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.7.x" data-version-id="2.7.x">
-            2.7.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.11.x/" data-version-id="2.11.x">
+              2.11.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.6.x" data-version-id="2.6.x">
-            2.6.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.10.x/" data-version-id="2.10.x">
+              2.10.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.5.x" data-version-id="2.5.x">
-            2.5.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.9.x/" data-version-id="2.9.x">
+              2.9.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.4.x" data-version-id="2.4.x">
-            2.4.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.8.x/" data-version-id="2.8.x">
+              2.8.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.3.x" data-version-id="2.3.x">
-            2.3.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.7.x/" data-version-id="2.7.x">
+              2.7.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.2.x" data-version-id="2.2.x">
-            2.2.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.6.x/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
         
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.1.x" data-version-id="2.1.x">
-            2.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/2.0.x" data-version-id="2.0.x">
-            2.0.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.3.x" data-version-id="1.3.x">
-            1.3.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.2.x" data-version-id="1.2.x">
-            1.2.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.1.x" data-version-id="1.1.x">
-            1.1.x
-            
-          </a>
-        </li>
-        
-          
-          
-          
-          
-        <li role="menuitem" tabindex="-1">
-          <a href="/kubernetes-ingress-controller/1.0.x" data-version-id="1.0.x">
-            1.0.x
-            
-          </a>
-        </li>
+          <li role="menuitem" tabindex="-1">
+            <a href="/kubernetes-ingress-controller/2.5.x/" data-version-id="2.5.x">
+              2.5.x (LTS)
+            </a>
+          </li>
         
         
       </ul>
@@ -772,13 +652,13 @@
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -788,12 +668,14 @@ Introduction
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/3.0.x/">
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/3.3.x/">
         
 
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -812,6 +694,8 @@ Kubernetes Gateway API
 
       </a>
     
+
+    
   </span>
 
   
@@ -829,6 +713,8 @@ Version Support Policy
 
       </a>
     
+
+    
   </span>
 
   
@@ -845,6 +731,8 @@ Version Support Policy
 Changelog
 
       </a>
+    
+
     
   </span>
 
@@ -866,13 +754,13 @@ Changelog
 
 How KIC Works
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle How KIC Works subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle How KIC Works subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -888,6 +776,8 @@ How KIC Works
 Architecture
 
       </a>
+    
+
     
   </span>
 
@@ -906,6 +796,8 @@ Gateway API
 
       </a>
     
+
+    
   </span>
 
   
@@ -922,6 +814,8 @@ Gateway API
 Ingress
 
       </a>
+    
+
     
   </span>
 
@@ -940,6 +834,8 @@ Custom Resources
 
       </a>
     
+
+    
   </span>
 
   
@@ -957,6 +853,8 @@ Using Annotations
 
       </a>
     
+
+    
   </span>
 
   
@@ -973,6 +871,8 @@ Using Annotations
 Admission Webhook
 
       </a>
+    
+
     
   </span>
 
@@ -994,13 +894,13 @@ Admission Webhook
 
 Get Started
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Get Started subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1016,6 +916,8 @@ Get Started
 Install KIC
 
       </a>
+    
+
     
   </span>
 
@@ -1034,6 +936,8 @@ Services and Routes
 
       </a>
     
+
+    
   </span>
 
   
@@ -1050,6 +954,8 @@ Services and Routes
 Rate Limiting
 
       </a>
+    
+
     
   </span>
 
@@ -1068,6 +974,8 @@ Proxy Caching
 
       </a>
     
+
+    
   </span>
 
   
@@ -1084,6 +992,8 @@ Proxy Caching
 Key Authentication
 
       </a>
+    
+
     
   </span>
 
@@ -1105,13 +1015,13 @@ Key Authentication
 
 KIC in Production
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle KIC in Production subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle KIC in Production subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1125,13 +1035,13 @@ KIC in Production
 
 Deployment Topologies
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1147,6 +1057,8 @@ Deployment Topologies
 Overview
 
       </a>
+    
+
     
   </span>
 
@@ -1165,6 +1077,8 @@ Gateway Discovery
 
       </a>
     
+
+    
   </span>
 
   
@@ -1182,6 +1096,8 @@ Database Backed
 
       </a>
     
+
+    
   </span>
 
   
@@ -1198,6 +1114,8 @@ Database Backed
 Traditional (sidecar)
 
       </a>
+    
+
     
   </span>
 
@@ -1218,13 +1136,13 @@ Traditional (sidecar)
 
 Installation Methods
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Installation Methods subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Installation Methods subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1240,6 +1158,8 @@ Installation Methods
 Helm
 
       </a>
+    
+
     
   </span>
 
@@ -1257,6 +1177,8 @@ Helm
 Kong Gateway Operator
 
       </a>
+    
+
     
   </span>
 
@@ -1277,13 +1199,13 @@ Kong Gateway Operator
 
 Cloud Deployment
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Cloud Deployment subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Cloud Deployment subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1299,6 +1221,8 @@ Cloud Deployment
 Azure
 
       </a>
+    
+
     
   </span>
 
@@ -1317,6 +1241,8 @@ Amazon
 
       </a>
     
+
+    
   </span>
 
   
@@ -1333,6 +1259,8 @@ Amazon
 Google
 
       </a>
+    
+
     
   </span>
 
@@ -1356,6 +1284,8 @@ Enterprise License
 
       </a>
     
+
+    
   </span>
 
   
@@ -1370,13 +1300,13 @@ Enterprise License
 
 Observability
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Observability subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Observability subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1392,6 +1322,8 @@ Observability
 Prometheus Metrics
 
       </a>
+    
+
     
   </span>
 
@@ -1410,6 +1342,8 @@ Configuring Prometheus and Grafana
 
       </a>
     
+
+    
   </span>
 
   
@@ -1426,6 +1360,8 @@ Configuring Prometheus and Grafana
 Kubernetes Events
 
       </a>
+    
+
     
   </span>
 
@@ -1446,13 +1382,13 @@ Kubernetes Events
 
 Upgrading
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Upgrading subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrading subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1468,6 +1404,8 @@ Upgrading
 Kong Gateway
 
       </a>
+    
+
     
   </span>
 
@@ -1485,6 +1423,8 @@ Kong Gateway
 Ingress Controller
 
       </a>
+    
+
     
   </span>
 
@@ -1511,13 +1451,13 @@ Ingress Controller
 
 Guides
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1531,13 +1471,13 @@ Guides
 
 Service Configuration
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Service Configuration subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Service Configuration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1553,6 +1493,8 @@ Service Configuration
 HTTP Service
 
       </a>
+    
+
     
   </span>
 
@@ -1571,6 +1513,8 @@ TCP Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1587,6 +1531,8 @@ TCP Service
 UDP Service
 
       </a>
+    
+
     
   </span>
 
@@ -1605,6 +1551,8 @@ gRPC Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1621,6 +1569,8 @@ gRPC Service
 TLS
 
       </a>
+    
+
     
   </span>
 
@@ -1639,6 +1589,8 @@ External Service
 
       </a>
     
+
+    
   </span>
 
   
@@ -1655,6 +1607,8 @@ External Service
 HTTPS Redirects
 
       </a>
+    
+
     
   </span>
 
@@ -1673,6 +1627,8 @@ Multiple Backend Services
 
       </a>
     
+
+    
   </span>
 
   
@@ -1689,6 +1645,27 @@ Multiple Backend Services
 Configuring Gateway API resources across namespaces
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/latest/guides/services/custom-entity/">
+        
+
+Configuring Custom Kong Entities
+
+      </a>
+    
+
     
   </span>
 
@@ -1709,13 +1686,13 @@ Configuring Gateway API resources across namespaces
 
 Request Manipulation
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Request Manipulation subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Request Manipulation subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1725,12 +1702,14 @@ Request Manipulation
         <li class="sidebar-item" role="none">
   <span role="treeitem" class="sidebar-label">
     
-      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/latest/guides/requests/rewrite-host/">
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/latest/guides/requests/rewrite-host-and-paths/">
         
 
 Rewriting Hosts and Paths
 
       </a>
+    
+
     
   </span>
 
@@ -1749,6 +1728,8 @@ Rewrite Annotation
 
       </a>
     
+
+    
   </span>
 
   
@@ -1765,6 +1746,8 @@ Rewrite Annotation
 Customizing load-balancing behavior
 
       </a>
+    
+
     
   </span>
 
@@ -1785,13 +1768,13 @@ Customizing load-balancing behavior
 
 High Availability
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle High Availability subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle High Availability subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1807,6 +1790,8 @@ High Availability
 KIC High Availability
 
       </a>
+    
+
     
   </span>
 
@@ -1825,6 +1810,8 @@ Service Health Checks
 
       </a>
     
+
+    
   </span>
 
   
@@ -1841,6 +1828,27 @@ Service Health Checks
 Last Known Good Config
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/latest/guides/high-availability/fallback-config/">
+        
+
+Fallback Configuration
+
+      </a>
+    
+
     
   </span>
 
@@ -1861,13 +1869,13 @@ Last Known Good Config
 
 Security
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Security subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Security subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1883,6 +1891,8 @@ Security
 Kong Vaults
 
       </a>
+    
+
     
   </span>
 
@@ -1901,6 +1911,8 @@ Using Workspaces
 
       </a>
     
+
+    
   </span>
 
   
@@ -1918,6 +1930,8 @@ Preserving Client IP
 
       </a>
     
+
+    
   </span>
 
   
@@ -1934,6 +1948,8 @@ Preserving Client IP
 Kubernetes Secrets in Plugins
 
       </a>
+    
+
     
   </span>
 
@@ -1954,13 +1970,13 @@ Kubernetes Secrets in Plugins
 
 Migrate
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Migrate subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Migrate subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -1976,6 +1992,8 @@ Migrate
 KongIngress to KongUpstreamPolicy
 
       </a>
+    
+
     
   </span>
 
@@ -1994,6 +2012,8 @@ Migrating from Ingress to Gateway
 
       </a>
     
+
+    
   </span>
 
   
@@ -2010,6 +2030,8 @@ Migrating from Ingress to Gateway
 Credential Type Labels
 
       </a>
+    
+
     
   </span>
 
@@ -2030,13 +2052,13 @@ Credential Type Labels
 
 Customize Deployments
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Customize Deployments subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Customize Deployments subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2052,6 +2074,8 @@ Customize Deployments
 Images
 
       </a>
+    
+
     
   </span>
 
@@ -2072,13 +2096,13 @@ Images
 
 Custom Ingress Class
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Custom Ingress Class subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Custom Ingress Class subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2094,6 +2118,8 @@ Custom Ingress Class
 Internal / External Traffic
 
       </a>
+    
+
     
   </span>
 
@@ -2120,13 +2146,13 @@ Internal / External Traffic
 
 Plugins
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Plugins subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugins subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2142,6 +2168,8 @@ Plugins
 Custom Plugins
 
       </a>
+    
+
     
   </span>
 
@@ -2160,6 +2188,8 @@ Authentication
 
       </a>
     
+
+    
   </span>
 
   
@@ -2176,6 +2206,8 @@ Authentication
 ACL
 
       </a>
+    
+
     
   </span>
 
@@ -2194,6 +2226,8 @@ Rate Limiting
 
       </a>
     
+
+    
   </span>
 
   
@@ -2211,6 +2245,8 @@ mTLS
 
       </a>
     
+
+    
   </span>
 
   
@@ -2227,6 +2263,8 @@ mTLS
 OIDC
 
       </a>
+    
+
     
   </span>
 
@@ -2248,13 +2286,13 @@ OIDC
 
 Reference
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2270,6 +2308,8 @@ Reference
 Troubleshooting
 
       </a>
+    
+
     
   </span>
 
@@ -2288,6 +2328,8 @@ Version Compatibility
 
       </a>
     
+
+    
   </span>
 
   
@@ -2304,6 +2346,8 @@ Version Compatibility
 Annotations
 
       </a>
+    
+
     
   </span>
 
@@ -2322,6 +2366,8 @@ Configuration Options
 
       </a>
     
+
+    
   </span>
 
   
@@ -2339,6 +2385,8 @@ Beta Feature Gates
 
       </a>
     
+
+    
   </span>
 
   
@@ -2353,13 +2401,13 @@ Beta Feature Gates
 
 FAQ
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle FAQ subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle FAQ subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -2375,6 +2423,8 @@ FAQ
 Plugin Compatibility
 
       </a>
+    
+
     
   </span>
 
@@ -2393,6 +2443,8 @@ Kong Router
 
       </a>
     
+
+    
   </span>
 
   
@@ -2409,6 +2461,8 @@ Kong Router
 Custom nginx.conf
 
       </a>
+    
+
     
   </span>
 
@@ -2432,6 +2486,8 @@ Custom Resource Definitions
 
       </a>
     
+
+    
   </span>
 
   
@@ -2448,6 +2504,8 @@ Custom Resource Definitions
 Resources Requiring Setting Ingress Class
 
       </a>
+    
+
     
   </span>
 
@@ -2466,6 +2524,8 @@ Gateway API migration
 
       </a>
     
+
+    
   </span>
 
   
@@ -2482,6 +2542,27 @@ Gateway API migration
 Required Permissions for Installation
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/kubernetes-ingress-controller/latest/reference/failure-modes/">
+        
+
+Categories of Failures
+
+      </a>
+    
+
     
   </span>
 
@@ -2525,21 +2606,17 @@ Required Permissions for Installation
       <li><a href="#kongconsumer" class="scroll-to">KongConsumer</a></li>
       <li><a href="#kongingress" class="scroll-to">KongIngress</a></li>
       <li><a href="#kongplugin" class="scroll-to">KongPlugin</a></li>
-      <li><a href="#configsource" class="scroll-to">ConfigSource</a></li>
-      <li><a href="#kongingressroute" class="scroll-to">KongIngressRoute</a></li>
-      <li><a href="#kongingressservice" class="scroll-to">KongIngressService</a></li>
-      <li><a href="#kongingressupstream" class="scroll-to">KongIngressUpstream</a></li>
-      <li><a href="#kongprotocol" class="scroll-to">KongProtocol</a></li>
-      <li><a href="#namespacedconfigsource" class="scroll-to">NamespacedConfigSource</a></li>
-      <li><a href="#namespacedsecretvaluefromsource" class="scroll-to">NamespacedSecretValueFromSource</a></li>
-      <li><a href="#secretvaluefromsource" class="scroll-to">SecretValueFromSource</a></li>
+      <li><a href="#types" class="scroll-to">Types</a></li>
     </ul>
   </li>
   <li>
 <a href="#configurationkonghqcomv1alpha1" class="scroll-to">configuration.konghq.com/v1alpha1</a>
     <ul>
       <li><a href="#ingressclassparameters" class="scroll-to">IngressClassParameters</a></li>
-      <li><a href="#ingressclassparametersspec" class="scroll-to">IngressClassParametersSpec</a></li>
+      <li><a href="#kongcustomentity" class="scroll-to">KongCustomEntity</a></li>
+      <li><a href="#konglicense" class="scroll-to">KongLicense</a></li>
+      <li><a href="#kongvault" class="scroll-to">KongVault</a></li>
+      <li><a href="#types-1" class="scroll-to">Types</a></li>
     </ul>
   </li>
   <li>
@@ -2549,21 +2626,7 @@ Required Permissions for Installation
       <li><a href="#kongupstreampolicy" class="scroll-to">KongUpstreamPolicy</a></li>
       <li><a href="#tcpingress" class="scroll-to">TCPIngress</a></li>
       <li><a href="#udpingress" class="scroll-to">UDPIngress</a></li>
-      <li><a href="#httpstatus" class="scroll-to">HTTPStatus</a></li>
-      <li><a href="#hashinput" class="scroll-to">HashInput</a></li>
-      <li><a href="#ingressbackend" class="scroll-to">IngressBackend</a></li>
-      <li><a href="#ingressrule" class="scroll-to">IngressRule</a></li>
-      <li><a href="#ingresstls" class="scroll-to">IngressTLS</a></li>
-      <li><a href="#kongupstreamactivehealthcheck" class="scroll-to">KongUpstreamActiveHealthcheck</a></li>
-      <li><a href="#kongupstreamhash" class="scroll-to">KongUpstreamHash</a></li>
-      <li><a href="#kongupstreamhealthcheck" class="scroll-to">KongUpstreamHealthcheck</a></li>
-      <li><a href="#kongupstreamhealthcheckhealthy" class="scroll-to">KongUpstreamHealthcheckHealthy</a></li>
-      <li><a href="#kongupstreamhealthcheckunhealthy" class="scroll-to">KongUpstreamHealthcheckUnhealthy</a></li>
-      <li><a href="#kongupstreampassivehealthcheck" class="scroll-to">KongUpstreamPassiveHealthcheck</a></li>
-      <li><a href="#kongupstreampolicyspec" class="scroll-to">KongUpstreamPolicySpec</a></li>
-      <li><a href="#tcpingressspec" class="scroll-to">TCPIngressSpec</a></li>
-      <li><a href="#udpingressrule" class="scroll-to">UDPIngressRule</a></li>
-      <li><a href="#udpingressspec" class="scroll-to">UDPIngressSpec</a></li>
+      <li><a href="#types-2" class="scroll-to">Types</a></li>
     </ul>
   </li>
 </ul>
@@ -2610,10 +2673,11 @@ Required Permissions for Installation
   <li><a href="#kongclusterplugin">KongClusterPlugin</a></li>
   <li><a href="#kongconsumer">KongConsumer</a></li>
   <li><a href="#kongingress">KongIngress</a></li>
-  <li><a href="#kongplugin">KongPlugin</a></li>
+  <li>
+<a href="#kongplugin">KongPlugin</a>
+    <h3 id="kongclusterplugin">KongClusterPlugin</h3>
+  </li>
 </ul>
-
-<h3 id="kongclusterplugin">KongClusterPlugin</h3>
 
 <p>KongClusterPlugin is the Schema for the kongclusterplugins API.</p>
 
@@ -2661,7 +2725,7 @@ global plugin using <code class="language-plaintext highlighter-rouge">global</c
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">config</code> <em><a href="#json">JSON</a></em>
+<code class="language-plaintext highlighter-rouge">config</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#json-v1-apiextensions-k8s-io" target="_blank" rel="noopener nofollow noreferrer ">JSON</a></em>
 </td>
       <td>Config contains the plugin configuration. It’s a list of keys and values required to configure the plugin. Please read the documentation of the plugin being configured to set values in here. For any plugin in Kong, anything that goes in the <code class="language-plaintext highlighter-rouge">config</code> JSON key in the Admin API request, goes into this property. Only one of <code class="language-plaintext highlighter-rouge">config</code> or <code class="language-plaintext highlighter-rouge">configFrom</code> may be used in a KongClusterPlugin, not both at once.</td>
     </tr>
@@ -2670,6 +2734,12 @@ global plugin using <code class="language-plaintext highlighter-rouge">global</c
 <code class="language-plaintext highlighter-rouge">configFrom</code> <em><a href="#namespacedconfigsource">NamespacedConfigSource</a></em>
 </td>
       <td>ConfigFrom references a secret containing the plugin configuration. This should be used when the plugin configuration contains sensitive information, such as AWS credentials in the Lambda plugin or the client secret in the OIDC plugin. Only one of <code class="language-plaintext highlighter-rouge">config</code> or <code class="language-plaintext highlighter-rouge">configFrom</code> may be used in a KongClusterPlugin, not both at once.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">configPatches</code> <em><a href="#namespacedconfigpatch">NamespacedConfigPatch</a> array</em>
+</td>
+      <td>ConfigPatches represents JSON patches to the configuration of the plugin. Each item means a JSON patch to add something in the configuration, where path is specified in <code class="language-plaintext highlighter-rouge">path</code> and value is in <code class="language-plaintext highlighter-rouge">valueFrom</code> referencing a key in a secret. When Config is specified, patches will be applied to the configuration in Config. Otherwise, patches will be applied to an empty object.</td>
     </tr>
     <tr>
       <td>
@@ -2849,7 +2919,7 @@ deprecated.</p>
 
 <p>KongPlugin is the Schema for the kongplugins API.</p>
 
-<p>Plugins can be associated with the Ingress or Service object in Kubernetes using <code class="language-plaintext highlighter-rouge">konghq.com/plugins</code> annotation.</p>
+<p>Plugins can be associated with the <code class="language-plaintext highlighter-rouge">Ingress</code>, <code class="language-plaintext highlighter-rouge">Service</code>, <code class="language-plaintext highlighter-rouge">HTTPRoute</code>, <code class="language-plaintext highlighter-rouge">KongConsumer</code> or <code class="language-plaintext highlighter-rouge">KongConsumerGroup</code> object in Kubernetes using <code class="language-plaintext highlighter-rouge">konghq.com/plugins</code> annotation.</p>
 
 <table>
   <thead>
@@ -2891,7 +2961,7 @@ deprecated.</p>
     </tr>
     <tr>
       <td>
-<code class="language-plaintext highlighter-rouge">config</code> <em><a href="#json">JSON</a></em>
+<code class="language-plaintext highlighter-rouge">config</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#json-v1-apiextensions-k8s-io" target="_blank" rel="noopener nofollow noreferrer ">JSON</a></em>
 </td>
       <td>Config contains the plugin configuration. It’s a list of keys and values required to configure the plugin. Please read the documentation of the plugin being configured to set values in here. For any plugin in Kong, anything that goes in the <code class="language-plaintext highlighter-rouge">config</code> JSON key in the Admin API request, goes into this property. Only one of <code class="language-plaintext highlighter-rouge">config</code> or <code class="language-plaintext highlighter-rouge">configFrom</code> may be used in a KongPlugin, not both at once.</td>
     </tr>
@@ -2900,6 +2970,12 @@ deprecated.</p>
 <code class="language-plaintext highlighter-rouge">configFrom</code> <em><a href="#configsource">ConfigSource</a></em>
 </td>
       <td>ConfigFrom references a secret containing the plugin configuration. This should be used when the plugin configuration contains sensitive information, such as AWS credentials in the Lambda plugin or the client secret in the OIDC plugin. Only one of <code class="language-plaintext highlighter-rouge">config</code> or <code class="language-plaintext highlighter-rouge">configFrom</code> may be used in a KongPlugin, not both at once.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">configPatches</code> <em><a href="#configpatch">ConfigPatch</a> array</em>
+</td>
+      <td>ConfigPatches represents JSON patches to the configuration of the plugin. Each item means a JSON patch to add something in the configuration, where path is specified in <code class="language-plaintext highlighter-rouge">path</code> and value is in <code class="language-plaintext highlighter-rouge">valueFrom</code> referencing a key in a secret. When Config is specified, patches will be applied to the configuration in Config. Otherwise, patches will be applied to an empty object.</td>
     </tr>
     <tr>
       <td>
@@ -2934,7 +3010,45 @@ deprecated.</p>
   </tbody>
 </table>
 
-<h3 id="configsource">ConfigSource</h3>
+<h3 id="types">Types</h3>
+
+<p>In this section you will find types that the CRDs rely on.</p>
+
+<h4 id="configpatch">ConfigPatch</h4>
+
+<p>ConfigPatch is a JSON patch (RFC6902) to add values from Secret to the generated configuration.
+It is an equivalent of the following patch:
+<code class="language-plaintext highlighter-rouge">{"op": "add", "path": {.Path}, "value": {.ComputedValueFrom}}</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">path</code> <em>string</em>
+</td>
+      <td>Path is the JSON-Pointer value (RFC6901) that references a location within the target configuration.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">valueFrom</code> <em><a href="#configsource">ConfigSource</a></em>
+</td>
+      <td>ValueFrom is the reference to a key of a secret where the patched value comes from.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#kongplugin">KongPlugin</a></li>
+</ul>
+
+<h4 id="configsource">ConfigSource</h4>
 
 <p>ConfigSource is a wrapper around SecretValueFromSource.</p>
 
@@ -2957,12 +3071,15 @@ deprecated.</p>
 
 <p><em>Appears in:</em></p>
 <ul>
+  <li><a href="#configpatch">ConfigPatch</a></li>
   <li><a href="#kongplugin">KongPlugin</a></li>
 </ul>
 
-<h3 id="kongingressroute">KongIngressRoute</h3>
+<h4 id="kongingressroute">KongIngressRoute</h4>
 
-<p>KongIngressRoute contains KongIngress route configuration. It contains the subset of <code class="language-plaintext highlighter-rouge">go-kong.kong.Route</code> fields supported by <code class="language-plaintext highlighter-rouge">kongstate.Route.overrideByKongIngress</code>. Deprecated: use Ingress’ annotations instead.</p>
+<p>KongIngressRoute contains KongIngress route configuration.
+It contains the subset of <code class="language-plaintext highlighter-rouge">go-kong.kong.Route</code> fields supported by <code class="language-plaintext highlighter-rouge">kongstate.Route.overrideByKongIngress</code>.
+Deprecated: use Ingress’ annotations instead.</p>
 
 <table>
   <thead>
@@ -3046,9 +3163,11 @@ deprecated.</p>
   <li><a href="#kongingress">KongIngress</a></li>
 </ul>
 
-<h3 id="kongingressservice">KongIngressService</h3>
+<h4 id="kongingressservice">KongIngressService</h4>
 
-<p>KongIngressService contains KongIngress service configuration. It contains the subset of go-kong.kong.Service fields supported by kongstate.Service.overrideByKongIngress. Deprecated: use Service’s annotations instead.</p>
+<p>KongIngressService contains KongIngress service configuration.
+It contains the subset of go-kong.kong.Service fields supported by kongstate.Service.overrideByKongIngress.
+Deprecated: use Service’s annotations instead.</p>
 
 <table>
   <thead>
@@ -3102,9 +3221,10 @@ deprecated.</p>
   <li><a href="#kongingress">KongIngress</a></li>
 </ul>
 
-<h3 id="kongingressupstream">KongIngressUpstream</h3>
+<h4 id="kongingressupstream">KongIngressUpstream</h4>
 
-<p>KongIngressUpstream contains KongIngress upstream configuration. It contains the subset of <code class="language-plaintext highlighter-rouge">go-kong.kong.Upstream</code> fields supported by <code class="language-plaintext highlighter-rouge">kongstate.Upstream.overrideByKongIngress</code>.</p>
+<p>KongIngressUpstream contains KongIngress upstream configuration.
+It contains the subset of <code class="language-plaintext highlighter-rouge">go-kong.kong.Upstream</code> fields supported by <code class="language-plaintext highlighter-rouge">kongstate.Upstream.overrideByKongIngress</code>.</p>
 
 <table>
   <thead>
@@ -3206,11 +3326,11 @@ deprecated.</p>
   <li><a href="#kongingress">KongIngress</a></li>
 </ul>
 
-<h3 id="kongprotocol">KongProtocol</h3>
-
+<h4 id="kongprotocol">KongProtocol</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p>KongProtocol is a valid Kong protocol. This alias is necessary to deal with https://github.com/kubernetes-sigs/controller-tools/issues/342</p>
+<p>KongProtocol is a valid Kong protocol.
+This alias is necessary to deal with https://github.com/kubernetes-sigs/controller-tools/issues/342</p>
 
 <p><em>Appears in:</em></p>
 <ul>
@@ -3219,7 +3339,40 @@ deprecated.</p>
   <li><a href="#kongplugin">KongPlugin</a></li>
 </ul>
 
-<h3 id="namespacedconfigsource">NamespacedConfigSource</h3>
+<h4 id="namespacedconfigpatch">NamespacedConfigPatch</h4>
+
+<p>NamespacedConfigPatch is a JSON patch to add values from secrets to KongClusterPlugin
+to the generated configuration of plugin in Kong.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">path</code> <em>string</em>
+</td>
+      <td>Path is the JSON path to add the patch.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">valueFrom</code> <em><a href="#namespacedconfigsource">NamespacedConfigSource</a></em>
+</td>
+      <td>ValueFrom is the reference to a key of a secret where the patched value comes from.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#kongclusterplugin">KongClusterPlugin</a></li>
+</ul>
+
+<h4 id="namespacedconfigsource">NamespacedConfigSource</h4>
 
 <p>NamespacedConfigSource is a wrapper around NamespacedSecretValueFromSource.</p>
 
@@ -3243,9 +3396,10 @@ deprecated.</p>
 <p><em>Appears in:</em></p>
 <ul>
   <li><a href="#kongclusterplugin">KongClusterPlugin</a></li>
+  <li><a href="#namespacedconfigpatch">NamespacedConfigPatch</a></li>
 </ul>
 
-<h3 id="namespacedsecretvaluefromsource">NamespacedSecretValueFromSource</h3>
+<h4 id="namespacedsecretvaluefromsource">NamespacedSecretValueFromSource</h4>
 
 <p>NamespacedSecretValueFromSource represents the source of a secret value specifying the secret namespace.</p>
 
@@ -3283,7 +3437,7 @@ deprecated.</p>
   <li><a href="#namespacedconfigsource">NamespacedConfigSource</a></li>
 </ul>
 
-<h3 id="secretvaluefromsource">SecretValueFromSource</h3>
+<h4 id="secretvaluefromsource">SecretValueFromSource</h4>
 
 <p>SecretValueFromSource represents the source of a secret value.</p>
 
@@ -3321,9 +3475,13 @@ deprecated.</p>
 
 <ul>
   <li><a href="#ingressclassparameters">IngressClassParameters</a></li>
+  <li><a href="#kongcustomentity">KongCustomEntity</a></li>
+  <li><a href="#konglicense">KongLicense</a></li>
+  <li>
+<a href="#kongvault">KongVault</a>
+    <h3 id="ingressclassparameters">IngressClassParameters</h3>
+  </li>
 </ul>
-
-<h3 id="ingressclassparameters">IngressClassParameters</h3>
 
 <p>IngressClassParameters is the Schema for the IngressClassParameters API.</p>
 
@@ -3364,7 +3522,194 @@ deprecated.</p>
   </tbody>
 </table>
 
-<h3 id="ingressclassparametersspec">IngressClassParametersSpec</h3>
+<h3 id="kongcustomentity">KongCustomEntity</h3>
+
+<p>KongCustomEntity defines a “custom” Kong entity that KIC cannot support the entity type directly.</p>
+
+<!-- This file is a placeholder for KongCustomEntity additional notes. It's left empty intentionally, please do not remove it. -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">configuration.konghq.com/v1alpha1</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">KongCustomEntity</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+</td>
+      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">spec</code> <em><a href="#kongcustomentityspec">KongCustomEntitySpec</a></em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="konglicense">KongLicense</h3>
+
+<p>KongLicense stores a Kong enterprise license to apply to managed Kong gateway instances.</p>
+
+<!-- This file is a placeholder for IngressClassParameters additional notes. It's left empty intentionally, please do not remove it. -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">configuration.konghq.com/v1alpha1</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">KongLicense</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+</td>
+      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">rawLicenseString</code> <em>string</em>
+</td>
+      <td>RawLicenseString is a string with the raw content of the license.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">enabled</code> <em>boolean</em>
+</td>
+      <td>Enabled is set to true to let controllers (like KIC or KGO) to reconcile it. Default value is true to apply the license by default.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="kongvault">KongVault</h3>
+
+<p>KongVault is the schema for kongvaults API which defines a custom Kong vault.
+A Kong vault is a storage to store sensitive data, where the values can be referenced in configuration of plugins.
+See: https://docs.konghq.com/gateway/latest/kong-enterprise/secrets-management/</p>
+
+<!-- This file is a placeholder for IngressClassParameters additional notes. It's left empty intentionally, please do not remove it. -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">apiVersion</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">configuration.konghq.com/v1alpha1</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">KongVault</code></td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">metadata</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#objectmeta-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">ObjectMeta</a></em>
+</td>
+      <td>Refer to Kubernetes API documentation for fields of <code class="language-plaintext highlighter-rouge">metadata</code>.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">spec</code> <em><a href="#kongvaultspec">KongVaultSpec</a></em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="types-1">Types</h3>
+
+<p>In this section you will find types that the CRDs rely on.</p>
+<h4 id="controllerreference">ControllerReference</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">group</code> <em><a href="#group">Group</a></em>
+</td>
+      <td>Group is the group of referent. It should be empty if the referent is in “core” group (like pod).</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em><a href="#kind">Kind</a></em>
+</td>
+      <td>Kind is the kind of the referent. By default the nil kind means kind Pod.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em><a href="#namespace">Namespace</a></em>
+</td>
+      <td>Namespace is the namespace of the referent. It should be empty if the referent is cluster scoped.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em><a href="#objectname">ObjectName</a></em>
+</td>
+      <td>Name is the name of the referent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#konglicensecontrollerstatus">KongLicenseControllerStatus</a></li>
+</ul>
+
+<h4 id="group">Group</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>Group refers to a Kubernetes Group. It must either be an empty string or a
+RFC 1123 subdomain.</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controllerreference">ControllerReference</a></li>
+</ul>
+
+<h4 id="ingressclassparametersspec">IngressClassParametersSpec</h4>
 
 <table>
   <thead>
@@ -3394,6 +3739,207 @@ deprecated.</p>
   <li><a href="#ingressclassparameters">IngressClassParameters</a></li>
 </ul>
 
+<h4 id="kind">Kind</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>Kind refers to a Kubernetes kind.</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controllerreference">ControllerReference</a></li>
+</ul>
+
+<h4 id="kongcustomentityspec">KongCustomEntitySpec</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">type</code> <em>string</em>
+</td>
+      <td>EntityType is the type of the Kong entity. The type is used in generating declarative configuration.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">fields</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#json-v1-apiextensions-k8s-io" target="_blank" rel="noopener nofollow noreferrer ">JSON</a></em>
+</td>
+      <td>Fields defines the fields of the Kong entity itself.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">controllerName</code> <em>string</em>
+</td>
+      <td>ControllerName specifies the controller that should reconcile it, like ingress class.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">parentRef</code> <em><a href="#objectreference">ObjectReference</a></em>
+</td>
+      <td>ParentRef references the kubernetes resource it attached to when its scope is “attached”. Currently only KongPlugin/KongClusterPlugin allowed. This will make the custom entity to be attached to the entity(service/route/consumer) where the plugin is attached.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#kongcustomentity">KongCustomEntity</a></li>
+</ul>
+
+<h4 id="konglicensecontrollerstatus">KongLicenseControllerStatus</h4>
+
+<p>KongLicenseControllerStatus is the status of owning KongLicense being processed
+identified by the controllerName field.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">controllerName</code> <em>string</em>
+</td>
+      <td>ControllerName is an identifier of the controller to reconcile this KongLicense. Should be unique in the list of controller statuses.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">controllerRef</code> <em><a href="#controllerreference">ControllerReference</a></em>
+</td>
+      <td>ControllerRef is the reference of the controller to reconcile this KongLicense. It is usually the name of (KIC/KGO) pod that reconciles it.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">conditions</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#condition-v1-meta" target="_blank" rel="noopener nofollow noreferrer ">Condition</a> array</em>
+</td>
+      <td>Conditions describe the current conditions of the KongLicense on the controller.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#konglicensestatus">KongLicenseStatus</a></li>
+</ul>
+
+<h4 id="kongvaultspec">KongVaultSpec</h4>
+
+<p>KongVaultSpec defines specification of a custom Kong vault.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">backend</code> <em>string</em>
+</td>
+      <td>Backend is the type of the backend storing the secrets in the vault. The supported backends of Kong is listed here: https://docs.konghq.com/gateway/latest/kong-enterprise/secrets-management/backends/</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">prefix</code> <em>string</em>
+</td>
+      <td>Prefix is the prefix of vault URI for referencing values in the vault. It is immutable after created.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">description</code> <em>string</em>
+</td>
+      <td>Description is the additional information about the vault.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">config</code> <em><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#json-v1-apiextensions-k8s-io" target="_blank" rel="noopener nofollow noreferrer ">JSON</a></em>
+</td>
+      <td>Config is the configuration of the vault. Varies for different backends.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#kongvault">KongVault</a></li>
+</ul>
+
+<h4 id="namespace">Namespace</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>Namespace refers to a Kubernetes namespace. It must be a RFC 1123 label.</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controllerreference">ControllerReference</a></li>
+</ul>
+
+<h4 id="objectname">ObjectName</h4>
+<p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
+
+<p>ObjectName refers to the name of a Kubernetes object.
+Object names can have a variety of forms, including RFC1123 subdomains,
+RFC 1123 labels, or RFC 1035 labels.</p>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#controllerreference">ControllerReference</a></li>
+</ul>
+
+<h4 id="objectreference">ObjectReference</h4>
+
+<p>ObjectReference defines reference of a kubernetes object.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">group</code> <em>string</em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">kind</code> <em>string</em>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">namespace</code> <em>string</em>
+</td>
+      <td>Empty namespace means the same namespace of the owning object.</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">name</code> <em>string</em>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Appears in:</em></p>
+<ul>
+  <li><a href="#kongcustomentityspec">KongCustomEntitySpec</a></li>
+</ul>
+
 <h2 id="configurationkonghqcomv1beta1">configuration.konghq.com/v1beta1</h2>
 
 <p>Package v1beta1 contains API Schema definitions for the configuration.konghq.com v1beta1 API group.</p>
@@ -3402,10 +3948,11 @@ deprecated.</p>
   <li><a href="#kongconsumergroup">KongConsumerGroup</a></li>
   <li><a href="#kongupstreampolicy">KongUpstreamPolicy</a></li>
   <li><a href="#tcpingress">TCPIngress</a></li>
-  <li><a href="#udpingress">UDPIngress</a></li>
+  <li>
+<a href="#udpingress">UDPIngress</a>
+    <h3 id="kongconsumergroup">KongConsumerGroup</h3>
+  </li>
 </ul>
-
-<h3 id="kongconsumergroup">KongConsumerGroup</h3>
 
 <p>KongConsumerGroup is the Schema for the kongconsumergroups API.</p>
 
@@ -3442,9 +3989,21 @@ deprecated.</p>
 
 <h3 id="kongupstreampolicy">KongUpstreamPolicy</h3>
 
-<p>KongUpstreamPolicy allows configuring algorithm that should be used for load balancing traffic between Kong Upstream’s Targets. It also allows configuring health checks for Kong Upstream’s Targets. <br><br> Its configuration is similar to Kong Upstream object (https://docs.konghq.com/gateway/latest/admin-api/#upstream-object), and it is applied to Kong Upstream objects created by the controller. <br><br> It can be attached to Services. To attach it to a Service, it has to be annotated with <code class="language-plaintext highlighter-rouge">konghq.com/upstream-policy: &lt;name&gt;</code>, where <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> is the name of the KongUpstreamPolicy object in the same namespace as the Service. <br><br> When attached to a Service, it will affect all Kong Upstreams created for the Service. <br><br> When attached to a Service used in a Gateway API <em>Route rule with multiple BackendRefs, all of its Services MUST be configured with the same KongUpstreamPolicy. Otherwise, the controller will *ignore</em> the KongUpstreamPolicy. <br><br> Note: KongUpstreamPolicy doesn’t implement Gateway API’s GEP-713 strictly. In particular, it doesn’t use the TargetRef for attaching to Services and Gateway API *Routes - annotations are used instead. This is to allow reusing the same KongUpstreamPolicy for multiple Services and Gateway API *Routes.</p>
+<p>KongUpstreamPolicy allows configuring algorithm that should be used for load balancing traffic between Kong
+Upstream’s Targets. It also allows configuring health checks for Kong Upstream’s Targets.<br><br>
+Its configuration is similar to Kong Upstream object (https://docs.konghq.com/gateway/latest/admin-api/#upstream-object),
+and it is applied to Kong Upstream objects created by the controller.<br><br>
+It can be attached to Services. To attach it to a Service, it has to be annotated with
+<code class="language-plaintext highlighter-rouge">konghq.com/upstream-policy: &lt;name&gt;</code>, where <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> is the name of the KongUpstreamPolicy
+object in the same namespace as the Service.<br><br>
+When attached to a Service, it will affect all Kong Upstreams created for the Service.<br><br>
+When attached to a Service used in a Gateway API <em>Route rule with multiple BackendRefs, all of its Services MUST
+be configured with the same KongUpstreamPolicy. Otherwise, the controller will *ignore</em> the KongUpstreamPolicy.<br><br>
+Note: KongUpstreamPolicy doesn’t implement Gateway API’s GEP-713 strictly.
+In particular, it doesn’t use the TargetRef for attaching to Services and Gateway API *Routes - annotations are
+used instead. This is to allow reusing the same KongUpstreamPolicy for multiple Services and Gateway API *Routes.</p>
 
-<p>See <a href="/kubernetes-ingress-controller/3.0.x/guides/migrate/kongingress/">migrate <code class="language-plaintext highlighter-rouge">KongIngress</code> to <code class="language-plaintext highlighter-rouge">KongUpstreamPolicy</code></a> and <a href="/kubernetes-ingress-controller/3.0.x/guides/requests/customizing-load-balancing/">customizing load balancing</a>.</p>
+<p>See <a href="/kubernetes-ingress-controller/3.3.x/guides/migrate/kongingress/">migrate <code class="language-plaintext highlighter-rouge">KongIngress</code> to <code class="language-plaintext highlighter-rouge">KongUpstreamPolicy</code></a> and <a href="/kubernetes-ingress-controller/3.3.x/guides/requests/customizing-load-balancing/">customizing load balancing</a>.</p>
 
 <table>
   <thead>
@@ -3565,8 +4124,10 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   </tbody>
 </table>
 
-<h3 id="httpstatus">HTTPStatus</h3>
+<h3 id="types-2">Types</h3>
 
+<p>In this section you will find types that the CRDs rely on.</p>
+<h4 id="httpstatus">HTTPStatus</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">integer</code></p>
 
 <p>HTTPStatus is an HTTP status code.</p>
@@ -3577,18 +4138,18 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreamhealthcheckunhealthy">KongUpstreamHealthcheckUnhealthy</a></li>
 </ul>
 
-<h3 id="hashinput">HashInput</h3>
-
+<h4 id="hashinput">HashInput</h4>
 <p><em>Underlying type:</em> <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p>HashInput is the input for consistent-hashing load balancing algorithm. Can be one of: “ip”, “consumer”, “path”.</p>
+<p>HashInput is the input for consistent-hashing load balancing algorithm.
+Can be one of: “ip”, “consumer”, “path”.</p>
 
 <p><em>Appears in:</em></p>
 <ul>
   <li><a href="#kongupstreamhash">KongUpstreamHash</a></li>
 </ul>
 
-<h3 id="ingressbackend">IngressBackend</h3>
+<h4 id="ingressbackend">IngressBackend</h4>
 
 <p>IngressBackend describes all endpoints for a given service and port.</p>
 
@@ -3621,9 +4182,10 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#udpingressrule">UDPIngressRule</a></li>
 </ul>
 
-<h3 id="ingressrule">IngressRule</h3>
+<h4 id="ingressrule">IngressRule</h4>
 
-<p>IngressRule represents a rule to apply against incoming requests. Matching is performed based on an (optional) SNI and port.</p>
+<p>IngressRule represents a rule to apply against incoming requests.
+Matching is performed based on an (optional) SNI and port.</p>
 
 <table>
   <thead>
@@ -3659,7 +4221,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#tcpingressspec">TCPIngressSpec</a></li>
 </ul>
 
-<h3 id="ingresstls">IngressTLS</h3>
+<h4 id="ingresstls">IngressTLS</h4>
 
 <p>IngressTLS describes the transport layer security.</p>
 
@@ -3691,7 +4253,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#tcpingressspec">TCPIngressSpec</a></li>
 </ul>
 
-<h3 id="kongupstreamactivehealthcheck">KongUpstreamActiveHealthcheck</h3>
+<h4 id="kongupstreamactivehealthcheck">KongUpstreamActiveHealthcheck</h4>
 
 <p>KongUpstreamActiveHealthcheck configures active health check probing.</p>
 
@@ -3765,9 +4327,10 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreamhealthcheck">KongUpstreamHealthcheck</a></li>
 </ul>
 
-<h3 id="kongupstreamhash">KongUpstreamHash</h3>
+<h4 id="kongupstreamhash">KongUpstreamHash</h4>
 
-<p>KongUpstreamHash defines how to calculate hash for consistent-hashing load balancing algorithm. Only one of the fields must be set.</p>
+<p>KongUpstreamHash defines how to calculate hash for consistent-hashing load balancing algorithm.
+Only one of the fields must be set.</p>
 
 <table>
   <thead>
@@ -3821,7 +4384,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreampolicyspec">KongUpstreamPolicySpec</a></li>
 </ul>
 
-<h3 id="kongupstreamhealthcheck">KongUpstreamHealthcheck</h3>
+<h4 id="kongupstreamhealthcheck">KongUpstreamHealthcheck</h4>
 
 <p>KongUpstreamHealthcheck represents a health-check config of an Upstream in Kong.</p>
 
@@ -3859,7 +4422,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreampolicyspec">KongUpstreamPolicySpec</a></li>
 </ul>
 
-<h3 id="kongupstreamhealthcheckhealthy">KongUpstreamHealthcheckHealthy</h3>
+<h4 id="kongupstreamhealthcheckhealthy">KongUpstreamHealthcheckHealthy</h4>
 
 <p>KongUpstreamHealthcheckHealthy configures thresholds and HTTP status codes to mark targets healthy for an upstream.</p>
 
@@ -3898,7 +4461,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreampassivehealthcheck">KongUpstreamPassiveHealthcheck</a></li>
 </ul>
 
-<h3 id="kongupstreamhealthcheckunhealthy">KongUpstreamHealthcheckUnhealthy</h3>
+<h4 id="kongupstreamhealthcheckunhealthy">KongUpstreamHealthcheckUnhealthy</h4>
 
 <p>KongUpstreamHealthcheckUnhealthy configures thresholds and HTTP status codes to mark targets unhealthy.</p>
 
@@ -3949,9 +4512,10 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreampassivehealthcheck">KongUpstreamPassiveHealthcheck</a></li>
 </ul>
 
-<h3 id="kongupstreampassivehealthcheck">KongUpstreamPassiveHealthcheck</h3>
+<h4 id="kongupstreampassivehealthcheck">KongUpstreamPassiveHealthcheck</h4>
 
-<p>KongUpstreamPassiveHealthcheck configures passive checks around passive health checks.</p>
+<p>KongUpstreamPassiveHealthcheck configures passive checks around
+passive health checks.</p>
 
 <table>
   <thead>
@@ -3987,7 +4551,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreamhealthcheck">KongUpstreamHealthcheck</a></li>
 </ul>
 
-<h3 id="kongupstreampolicyspec">KongUpstreamPolicySpec</h3>
+<h4 id="kongupstreampolicyspec">KongUpstreamPolicySpec</h4>
 
 <p>KongUpstreamPolicySpec contains the specification for KongUpstreamPolicy.</p>
 
@@ -4037,7 +4601,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#kongupstreampolicy">KongUpstreamPolicy</a></li>
 </ul>
 
-<h3 id="tcpingressspec">TCPIngressSpec</h3>
+<h4 id="tcpingressspec">TCPIngressSpec</h4>
 
 <p>TCPIngressSpec defines the desired state of TCPIngress.</p>
 
@@ -4069,9 +4633,11 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#tcpingress">TCPIngress</a></li>
 </ul>
 
-<h3 id="udpingressrule">UDPIngressRule</h3>
+<h4 id="udpingressrule">UDPIngressRule</h4>
 
-<p>UDPIngressRule represents a rule to apply against incoming requests wherein no Host matching is available for request routing, only the port is used to match requests.</p>
+<p>UDPIngressRule represents a rule to apply against incoming requests
+wherein no Host matching is available for request routing, only the port
+is used to match requests.</p>
 
 <table>
   <thead>
@@ -4101,7 +4667,7 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <li><a href="#udpingressspec">UDPIngressSpec</a></li>
 </ul>
 
-<h3 id="udpingressspec">UDPIngressSpec</h3>
+<h4 id="udpingressspec">UDPIngressSpec</h4>
 
 <p>UDPIngressSpec defines the desired state of UDPIngress.</p>
 
@@ -4199,13 +4765,12 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -4353,8 +4918,8 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -4364,16 +4929,6 @@ For each rule provided in the spec, the Kong proxy environment must be updated t
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

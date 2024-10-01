@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,21 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>rate-limiting-advanced
-| Kong Docs</title>
+  <title>Rate Limiting Advanced - Plugin - v2.6.x | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="rate-limiting-advanced
-| Kong Docs">
+  <meta property="og:title" content="Rate Limiting Advanced - Plugin - v2.6.x | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -74,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -94,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -120,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -139,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -191,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -228,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -284,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -390,7 +390,6 @@
 
     
 
-
 <!-- BEGIN PAGE OUTPUT -->
 <div class="search-selector">Plugin Hub</div>
 
@@ -420,7 +419,7 @@
         
           <li class="breadcrumb-item active">
             
-              <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/">rate-limiting-advanced</a>
+              <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/">Rate Limiting Advanced</a>
             
           </li>
         
@@ -432,7 +431,7 @@
         
           <li class="breadcrumb-item active">
             
-              <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/">Missing nav_title</a>
+              <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/">Overview</a>
             
           </li>
         
@@ -442,7 +441,7 @@
     <div class="github-links">
   <div class="github-links--edit">
     
-      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/rate-limiting-advanced/_v1/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_hub/kong-inc/rate-limiting-advanced/overview/_index.md" target="_blank" rel="noopener nofollow noreferrer ">
         <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
       </a>
     
@@ -463,7 +462,7 @@
     </div>
     <div class="page-header--info-meta">
       <div class="meta--title">
-        <h1 id="main" tabindex="-1">rate-limiting-advanced</h1>
+        <h1 id="main" tabindex="-1">Rate Limiting Advanced</h1>
 
         
           <div>
@@ -480,8 +479,32 @@
                 
                 
                 <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/unreleased/">
+                    unreleased
+                  </a>
+                </li>
+                
+                <li class="">
                   <a href="/hub/kong-inc/rate-limiting-advanced/">
-                    3.5.x <em>(latest)</em>
+                    3.8.x <em>(latest)</em>
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.7.x/">
+                    3.7.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.6.x/">
+                    3.6.x
+                  </a>
+                </li>
+                
+                <li class="">
+                  <a href="/hub/kong-inc/rate-limiting-advanced/3.5.x/">
+                    3.5.x
                   </a>
                 </li>
                 
@@ -542,11 +565,11 @@
         <div class="meta--content-title"><span>By Kong Inc.</span></div>
         <div class="meta--content-badges">
           
-
-  <a href="https://konghq.com/pricing" target="_blank" class="badge premium" aria-label="available with Konnect Premium subscription" rel="noopener nofollow noreferrer "> </a>
+  <a href="https://konghq.com/pricing" target="_blank" class="badge konnect" aria-label="available in Konnect" rel="noopener nofollow noreferrer "> </a>
 
 
   <a href="https://konghq.com/pricing" target="_blank" class="badge enterprise" aria-label="available with Kong Gateway Enterprise subscription" rel="noopener nofollow noreferrer "> </a>
+
 
 
 
@@ -587,13 +610,13 @@ Plugin Hub
 
 Introduction
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -606,9 +629,11 @@ Introduction
       <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/2.6.x/">
         
 
-Missing nav_title
+Overview
 
       </a>
+    
+
     
   </span>
 
@@ -633,6 +658,8 @@ Configuration reference
 
       </a>
     
+
+    
   </span>
 
   
@@ -648,13 +675,13 @@ Configuration reference
 
 Using the plugin
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Using the plugin subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -670,6 +697,27 @@ Using the plugin
 Basic config examples
 
       </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/rate-limiting-advanced/2.6.x/how-to/peak-traffic-rate-limit/">
+        
+
+Set rate limit based on peak or non-peak time
+
+      </a>
+    
+
     
   </span>
 
@@ -694,13 +742,23 @@ Changelog
 
       </a>
     
+
+    
   </span>
 
   
 </li>
 
     
+    
+      <li>
+        <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=rate-limiting-advanced" class="sidebar-button" target="_blank" rel="noopener nofollow noreferrer ">
+          Try it in Konnect
+        </a>
+      </li>
+    
   </ul>
+
 </aside>
 
 
@@ -715,9 +773,15 @@ Changelog
 </div>
 <ul>
   <li><a href="#headers-sent-to-the-client" class="active scroll-to">Headers sent to the client</a></li>
-  <li><a href="#multi-limits-windows" class="scroll-to">Multiple Limits and Window Sizes</a></li>
-  <li><a href="#fallback-to-ip" class="scroll-to">Fallback to IP</a></li>
-  <li><a href="#fallback-from-redis" class="scroll-to">Fallback from Redis</a></li>
+  <li><a href="#multi-limits-windows" class="scroll-to">Multiple limits and window sizes</a></li>
+  <li><a href="#window-types" class="scroll-to">Window types</a></li>
+  <li>
+<a href="#implementation-considerations" class="scroll-to">Implementation considerations</a>
+    <ul>
+      <li><a href="#limit-by-ip-address" class="scroll-to">Limit by IP Address</a></li>
+      <li><a href="#strategies" class="scroll-to">Strategies</a></li>
+    </ul>
+  </li>
 </ul>
 
   
@@ -730,37 +794,22 @@ Changelog
       <div class="page-content">
         <div class="content show-anchor-links">
           
+
+          
+          
       
         
-          <div class="old-version-banner">
-          You are browsing documentation for an outdated plugin version.
-          See the <a href="/hub/kong-inc/rate-limiting-advanced/">latest documentation here</a>.
-          </div>
+            
+              <blockquote id="version-notice" class="important">
+              You are browsing documentation for an outdated plugin version.
+            
+              
+              
+            </blockquote>
         
       
 
       
-<blockquote class="compatibility">
-  <strong>This plugin is not compatible with Konnect</strong>
-</blockquote>
-
-
-
-  
-    
-      <blockquote class="note" role="alert">
-        <p>
-          Did you know that you can try this plugin without talking to anyone for just $10/month with Kong Konnect? <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=" target="_blank" rel="noopener nofollow noreferrer ">Get started in under 5 minutes</a>.
-        </p>
-      </blockquote>
-    
-  
-
-
-
-
-
-
 
 
 
@@ -769,7 +818,7 @@ Changelog
 
 <blockquote>
   <p>
-    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/configuration/">rate-limiting-advanced configuration reference</a> doc.</em>
+    <em>Looking for the plugin's configuration parameters? You can find them in the <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/configuration/">Rate Limiting Advanced configuration reference</a> doc.</em>
   </p>
 </blockquote>
 
@@ -777,6 +826,19 @@ Changelog
 
 
 
+
+
+<p>Rate limit how many HTTP requests can be made in a given time frame.</p>
+
+<p>The Rate Limiting Advanced plugin offers more functionality than the Kong Gateway (OSS) <a href="/hub/kong-inc/rate-limiting/">Rate Limiting plugin</a>, such as:</p>
+<ul>
+  <li>Enhanced capabilities to tune the rate limiter, provided by the parameters <code class="language-plaintext highlighter-rouge">limit</code> and <code class="language-plaintext highlighter-rouge">window_size</code>. Learn more in <a href="#multi-limits-windows">Multiple Limits and Window Sizes</a>
+</li>
+  <li>Support for Redis Sentinel, Redis cluster, and Redis SSL</li>
+  <li>Increased performance: Rate Limiting Advanced has better throughput performance with better accuracy. The plugin allows you to tune performance and accuracy via a configurable synchronization of counter data with the backend storage. This can be controlled by setting the desired value on the <code class="language-plaintext highlighter-rouge">sync_rate</code> parameter.</li>
+  <li>More limiting algorithms to choose from: These algorithms are more accurate and they enable configuration with more specificity. Learn more about our algorithms in <a href="https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm" target="_blank" rel="noopener nofollow noreferrer ">How to Design a Scalable Rate Limiting Algorithm</a>.</li>
+  <li>More control over which requests contribute to incrementing the rate limiting counters via the <code class="language-plaintext highlighter-rouge">disable_penalty</code> parameter</li>
+</ul>
 
 <p>The Rate Limiting Advanced plugin for Konnect is a re-engineered version of the Kong Gateway (OSS) <a href="/hub/kong-inc/rate-limiting/">Rate Limiting plugin</a>.</p>
 
@@ -804,7 +866,7 @@ which could lead to <code class="language-plaintext highlighter-rouge">no memory
   </ul>
 </blockquote>
 
-<h3 id="headers-sent-to-the-client">Headers sent to the client</h3>
+<h2 id="headers-sent-to-the-client">Headers sent to the client</h2>
 
 <p>When this plugin is enabled, Kong sends some additional headers back to the client
 indicating the allowed limits, how many requests are available, and how long it will take
@@ -845,10 +907,10 @@ expected to be unavailable to the client. When using <code class="language-plain
 may increase due to the rate calculation for the sliding window.</p>
 
 <blockquote class="important">
-  <p>The headers <code class="language-plaintext highlighter-rouge">RateLimit-Limit</code>, <code class="language-plaintext highlighter-rouge">RateLimit-Remaining</code>, and <code class="language-plaintext highlighter-rouge">RateLimit-Reset</code> are based on the Internet-Draft <a href="https://tools.ietf.org/html/draft-polli-ratelimit-headers-02" target="_blank" rel="noopener nofollow noreferrer ">RateLimit Header Fields for HTTP</a> and may change in the future to respect specification updates.</p>
+  <p>The headers <code class="language-plaintext highlighter-rouge">RateLimit-Limit</code>, <code class="language-plaintext highlighter-rouge">RateLimit-Remaining</code>, and <code class="language-plaintext highlighter-rouge">RateLimit-Reset</code> are based on the Internet-Draft <a href="https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers" target="_blank" rel="noopener nofollow noreferrer ">RateLimit Header Fields for HTTP</a> and may change in the future to respect specification updates.</p>
 </blockquote>
 
-<h3 id="multi-limits-windows">Multiple Limits and Window Sizes</h3>
+<h2 id="multi-limits-windows">Multiple limits and window sizes</h2>
 
 <p>An arbitrary number of limits/window sizes can be applied per plugin instance. This allows you to create
 multiple rate limiting windows (e.g., rate limit per minute and per hour, and per any arbitrary window size).
@@ -872,70 +934,144 @@ otherwise, an error occurs:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You must provide the same number of windows and limits
 </code></pre></div></div>
+<h2 id="window-types">Window types</h2>
 
-<h3 id="fallback-to-ip">Fallback to IP</h3>
+<p>The Rate Limiting Advanced plugin supports these window types:</p>
+
+<ul>
+  <li>
+<strong>Fixed window</strong>: Fixed windows consist of buckets that are statically assigned to a definitive time range. Each request is mapped to only one fixed window based on its timestamp and will affect only that window’s counters.</li>
+  <li>
+<strong>Sliding window</strong> (default): A sliding window tracks the number of hits assigned to a specific key (such as an IP address, consumer, credential) within a given time window, taking into account previous hit rates to create a dynamically calculated rate.
+The default (and recommended) sliding window type ensures a resource is not consumed at a higher rate than what is configured.</li>
+</ul>
+
+<p>For example, consider this configuration:</p>
+
+<ul>
+  <li>Limit size = 10</li>
+  <li>Window size = 60 seconds</li>
+</ul>
+
+<p>With a fixed window type, you can predict when the window is going to be reset and if the client sends a burst of traffic. For example, if 12 requests arrive in one minute, 10 requests are accepted with a <code class="language-plaintext highlighter-rouge">200</code> response and two requests are rejected with a <code class="language-plaintext highlighter-rouge">429</code> response.</p>
+
+<p>If you use a sliding window, the first instance is the same: the client sends a burst of 12 requests per minute, 10 requests are accepted with a <code class="language-plaintext highlighter-rouge">200</code> response and two requests are rejected with a <code class="language-plaintext highlighter-rouge">429</code> response. 
+In this case, it appears to the client that the window is never reset.
+The algorithm counts the response <code class="language-plaintext highlighter-rouge">429</code> and the API is blocked indefinitely.
+This happens because the burst of traffic rate of 12 requests per minute is higher than the rate configured in the plugin, which is 10 requests per minute. 
+If the client reduces the number of requests, then you get the <code class="language-plaintext highlighter-rouge">response 200</code> again.</p>
+
+<p>When the client receives a <code class="language-plaintext highlighter-rouge">429</code> response, it also receives a <code class="language-plaintext highlighter-rouge">Retry-After:&lt;seconds&gt;</code> header. This means the client has to wait some number of seconds before making a new request. 
+If the client makes another request in less than this time, you get the <code class="language-plaintext highlighter-rouge">429</code> response again. Otherwise, the window is reset.</p>
+
+<p>The sliding window type ensures the API is consumed in the configured requests per second rate. 
+This is not always true for the fixed window strategy.</p>
+
+<p>Consider the same example with 10 requests per minute instead of 12. 
+Let’s say the client sends all 10 requests in the 59th second of the window:</p>
+<ul>
+  <li>In a fixed window, the window resets a second later, and the client can send another 10 requests in the first second of the following window. All of the requests are accepted, making the acceptance rate higher than the configured rate in that two-second time period.</li>
+  <li>In a sliding window, the window moves during the last 60 seconds to ensure it meets the configured rate.</li>
+</ul>
+
+<h2 id="implementation-considerations">Implementation considerations</h2>
+
+<h3 id="limit-by-ip-address">Limit by IP Address</h3>
+
+<p>If limiting by IP address, it’s important to understand how the IP address is determined. The IP address is determined by the request header sent to Kong from downstream. In most cases, the header has a name of <code class="language-plaintext highlighter-rouge">X-Real-IP</code> or <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code>.</p>
+
+<p>By default, Kong uses the header name <code class="language-plaintext highlighter-rouge">X-Real-IP</code>. If a different header name is required, it needs to be defined using the <a href="/gateway/latest/reference/configuration/#real_ip_header">real_ip_header</a> Nginx property. Depending on the environmental network setup, the <a href="/gateway/latest/reference/configuration/#trusted_ips">trusted_ips</a> Nginx property may also need to be configured to include the load balancer IP address.</p>
+
+<h3 id="strategies">Strategies</h3>
+
+<p>The plugin supports three strategies.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strategy</th>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">local</code></td>
+      <td>Minimal performance impact.</td>
+      <td>Less accurate. Unless there’s a consistent-hashing load balancer in front of Kong, it diverges when scaling the number of nodes.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cluster</code></td>
+      <td>Accurate<sup>1</sup>, no extra components to support.</td>
+      <td>Each request forces a read and a write on the data store. Therefore, relatively, the biggest performance impact.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">redis</code></td>
+      <td>Accurate<sup>1</sup>, less performance impact than a <code class="language-plaintext highlighter-rouge">cluster</code> policy.</td>
+      <td>Needs a Redis installation. Bigger performance impact than a <code class="language-plaintext highlighter-rouge">local</code> policy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote class="note no-icon">
+  <p><strong>[1]</strong>: Only when <code class="language-plaintext highlighter-rouge">sync_rate</code> option is set to <code class="language-plaintext highlighter-rouge">0</code> (synchronous behavior). See the <a href="/hub/kong-inc/rate-limiting-advanced/configuration/#config-sync_rate">configuration reference</a> for more details.</p>
+</blockquote>
+
+<p>Two common use cases are:</p>
+
+<ol>
+  <li>
+<em>Every transaction counts</em>. The highest level of accuracy is needed. An example is a transaction with financial
+consequences.</li>
+  <li>
+<em>Backend protection</em>. Accuracy is not as relevant. The requirement is
+only to protect backend services from overloading that’s caused either by specific
+users or by attacks.</li>
+</ol>
+
+<h4 id="every-transaction-counts">Every transaction counts</h4>
+
+<p>In this scenario, because accuracy is important, the <code class="language-plaintext highlighter-rouge">local</code> policy is not an option. Consider the support effort you might need
+for Redis, and then choose either <code class="language-plaintext highlighter-rouge">cluster</code> or <code class="language-plaintext highlighter-rouge">redis</code>.</p>
+
+<p>You could start with the <code class="language-plaintext highlighter-rouge">cluster</code> policy, and move to <code class="language-plaintext highlighter-rouge">redis</code>
+if performance reduces drastically.</p>
+
+<p>Do remember that you cannot port the existing usage metrics from the data store to Redis.
+This might not be a problem with short-lived metrics (for example, seconds or minutes)
+but if you use metrics with a longer time frame (for example, months), plan
+your switch carefully.</p>
+
+<h4 id="backend-protection">Backend protection</h4>
+
+<p>If accuracy is of lesser importance, choose the <code class="language-plaintext highlighter-rouge">local</code> policy. You might need to experiment a little
+before you get a setting that works for your scenario. As the cluster scales to more nodes, more user requests are handled.
+When the cluster scales down, the probability of false negatives increases. So, adjust your limits when scaling.</p>
+
+<p>For example, if a user can make 100 requests every second, and you have an
+equally balanced 5-node Kong cluster, setting the <code class="language-plaintext highlighter-rouge">local</code> limit to something like 30 requests every second
+should work. If you see too many false negatives, increase the limit.</p>
+
+<p>To minimize inaccuracies, consider using a consistent-hashing load balancer in front of
+Kong. The load balancer ensures that a user is always directed to the same Kong node, thus reducing
+inaccuracies and preventing scaling problems.</p>
+
+<h4 id="fallback-to-ip">Fallback to IP</h4>
 
 <p>When the selected strategy cannot be retrieved, the <code class="language-plaintext highlighter-rouge">rate-limiting-advanced</code> plugin will fall back
 to limit using IP as the identifier. This can happen for several reasons, such as the
 selected header was not sent by the client or the configured service was not found.</p>
 
-<h3 id="fallback-from-redis">Fallback from Redis</h3>
+<h4 id="fallback-from-redis">Fallback from Redis</h4>
 
 <p>When the <code class="language-plaintext highlighter-rouge">redis</code> strategy is used and a Kong Gateway node is disconnected from Redis, the <code class="language-plaintext highlighter-rouge">rate-limiting-advanced</code> plugin will fall back to <code class="language-plaintext highlighter-rouge">local</code>. This can happen when the Redis server is down or the connection to Redis broken.
 Kong Gateway keeps the local counters for rate limiting and syncs with Redis once the connection is re-established.
 Kong Gateway will still rate limit, but the Kong Gateway nodes can’t sync the counters. As a result, users will be able
 to perform more requests than the limit, but there will still be a limit per node.</p>
 
-<hr>
 
-<h2 id="changelog">Changelog</h2>
 
-<p><strong>Kong Gateway 3.1.x</strong></p>
-<ul>
-  <li>Added the ability to customize the error code and message with
-the configuration parameters <code class="language-plaintext highlighter-rouge">error_code</code> and <code class="language-plaintext highlighter-rouge">error_message</code>.</li>
-</ul>
 
-<p><strong>Kong Gateway 3.0.x</strong></p>
-
-<ul>
-  <li>Kong Gateway now disallows enabling the plugin if the <code class="language-plaintext highlighter-rouge">cluster</code>
-strategy is set with DB-less or hybrid mode.</li>
-</ul>
-
-<p><strong>Kong Gateway 2.8.x</strong></p>
-
-<ul>
-  <li>
-    <p>Added the <code class="language-plaintext highlighter-rouge">redis.username</code> and <code class="language-plaintext highlighter-rouge">redis.sentinel_username</code> configuration parameters.</p>
-  </li>
-  <li>
-    <p>The <code class="language-plaintext highlighter-rouge">redis.username</code>, <code class="language-plaintext highlighter-rouge">redis.password</code>, <code class="language-plaintext highlighter-rouge">redis.sentinel_username</code>, and <code class="language-plaintext highlighter-rouge">redis.sentinel_password</code>
-configuration fields are now marked as referenceable, which means they can be securely stored as
-<a href="/gateway/latest/kong-enterprise/secrets-management/getting-started">secrets</a>
-in a vault. References must follow a <a href="/gateway/latest/kong-enterprise/secrets-management/reference-format">specific format</a>.</p>
-  </li>
-</ul>
-
-<p><strong>Kong Gateway 2.7.x</strong></p>
-
-<ul>
-  <li>Added the <code class="language-plaintext highlighter-rouge">enforce_consumer_groups</code> and <code class="language-plaintext highlighter-rouge">consumer_groups</code> configuration parameters.</li>
-</ul>
-
-<p><strong>Kong Gateway 2.5.x</strong></p>
-
-<ul>
-  <li>Deprecated the <code class="language-plaintext highlighter-rouge">timeout</code> field and replaces it with three precise options: <code class="language-plaintext highlighter-rouge">connect_timeout</code>, <code class="language-plaintext highlighter-rouge">read_timeout</code>, and <code class="language-plaintext highlighter-rouge">send_timeout</code>.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">redis.keepalive_pool</code>, <code class="language-plaintext highlighter-rouge">redis.keepalive_pool_size</code>, and <code class="language-plaintext highlighter-rouge">redis.keepalive_backlog</code> configuration options.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">ssl_verify</code> and <code class="language-plaintext highlighter-rouge">server_name</code> configuration options now support Redis Sentinel-based connections.</li>
-</ul>
-
-<p><strong>Kong Gateway 2.2.x</strong></p>
-<ul>
-  <li>Added the <code class="language-plaintext highlighter-rouge">redis.ssl</code>, <code class="language-plaintext highlighter-rouge">redis.ssl_verify</code>, and <code class="language-plaintext highlighter-rouge">redis.server_name</code> parameters for configuring TLS connections.</li>
-</ul>
 
 
 
@@ -950,7 +1086,7 @@ in a vault. References must follow a <a href="/gateway/latest/kong-enterprise/se
     
       <div class="book-nav next">
         <span class="direction">Next</span>
-        <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/configuration/">rate-limiting-advanced Configuration</a>
+        <a href="/hub/kong-inc/rate-limiting-advanced/2.6.x/configuration/">Rate Limiting Advanced Configuration</a>
       </div>
     
   </div>
@@ -1021,7 +1157,7 @@ in a vault. References must follow a <a href="/gateway/latest/kong-enterprise/se
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -1169,8 +1305,8 @@ in a vault. References must follow a <a href="/gateway/latest/kong-enterprise/se
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -1180,16 +1316,6 @@ in a vault. References must follow a <a href="/gateway/latest/kong-enterprise/se
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {

@@ -1,0 +1,7840 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <!-- OneTrust Cookies Consent Notice start for konghq.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="2c4de954-6bec-4e93-8086-64cb113f151a">
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for konghq.com -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kong Gateway 3.0.x breaking changes - v3.7.x | Kong Docs</title>
+  <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="author" content="KongHQ">
+  <meta property="og:title" content="Kong Gateway 3.0.x breaking changes - v3.7.x | Kong Docs">
+  <meta property="og:site_name" content="Kong Docs">
+  <!-- use share link for facebook -->
+  <meta property="og:url" content="https://docs.konghq.com">
+  <meta property="og:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thekonginc">
+  <meta name="twitter:creator" content="@thekonginc">
+  <meta name="twitter:url" content="https://docs.konghq.com">
+  <meta name="twitter:description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
+  <meta name="twitter:image" content="https://docs.konghq.com/assets/images/share.png">
+  <meta property="fb:admins" content="227304446">
+  <meta property="fb:admins" content="576641408">
+  <meta name="google-site-verification" content="CrU3zp02dNKTe8NSAipL4NCPkrIjDXG8fViTZ-MIzP4">
+
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "KongHQ",
+      "url": "https://docs.konghq.com",
+      "logo": "https://docs.konghq.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/konginc",
+        "https://twitter.com/thekonginc",
+        "https://plus.google.com/+mashape"
+      ]
+    }
+  </script>
+
+  <!-- Preload assets -->
+  <link rel="dns-prefetch" href="https://cloud.typography.com">
+  <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
+  <link rel="dns-prefetch" href="https://cdn.segment.com">
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  
+    <link rel="canonical" href="https://docs.konghq.com/gateway/latest/breaking-changes/30x/">
+  
+
+  
+    <meta name="robots" content="follow,noindex">
+  
+
+  <!-- FontAwesome icon font -->
+  <script src="https://kit.fontawesome.com/1332a92967.js" crossorigin="anonymous">
+  </script>
+
+  
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
+
+
+  
+
+  
+
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
+
+  
+</head>
+
+
+  <body id="" data-spy="scroll" data-target="#scroll-sidebar" data-offset="350">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL48VKT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="navbar-v2 closed">
+  <a class="skip-main" href="#main">Skip to content</a>
+  <!-- uncomment the promo-banner div when adding a new promo banner-->
+  <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
+  <!-- <div id="promo-banner">
+    <div class="container">
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
+    </div>
+  </div> -->
+  <div class="navbar-content">
+    <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
+    </a>
+    <span class="logo-divider">|</span>
+    <a href="/" class="navbar-brand col col-xl-auto">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+    </a>
+
+    <div class="separator mobile"></div>
+      <div class="search-input-wrapper" id="getkong-algolia-search-input">
+    </div>
+
+    <div class="search-results-wrapper"></div>
+
+    <div class="navbar-items" role="navigation" aria-label="Main menu">
+      <ul class="navbar-items" role="menubar">
+        <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
+          <span tabindex="0" id="docs-link" class="main-menu-item-title">Docs</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/api/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the API Specs</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-api-specs.png" alt="View all API Specs">
+                      <span class="docs-dropdown-li__card-image">
+                        View all API Specs
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all API Specs arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li" tabindex="-1">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Documentation</span>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/api/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">API Specs</div>
+                      </div>
+                    </a>
+                    
+                      <a class="item" href="/gateway/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway</div>
+                          <div class="item__description-desc">Lightweight, fast, and flexible cloud-native API gateway</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/konnect/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Konnect</div>
+                          <div class="item__description-desc">Single platform for SaaS end-to-end connectivity</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/mesh/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Mesh</div>
+                          <div class="item__description-desc">Enterprise service mesh based on Kuma and Envoy</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/deck/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">decK</div>
+                          <div class="item__description-desc">Helps manage Kong’s configuration in a declarative fashion</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/kubernetes-ingress-controller/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Ingress Controller</div>
+                          <div class="item__description-desc">Works inside a Kubernetes cluster and configures Kong to proxy traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/gateway-operator/latest/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong Gateway Operator</div>
+                          <div class="item__description-desc">Manage your Kong deployments on Kubernetes using YAML Manifests</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="https://docs.insomnia.rest/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Insomnia</div>
+                          <div class="item__description-desc">Collaborative API development platform</div>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+        </li>
+
+        <li role="menuitem" aria-haspopup="true" aria-expanded="false" class="navbar-item main-menu-item with-submenu navbar-item-hub">
+          <span id="plugin-link" class="main-menu-item-title" tabindex="0">Plugin Hub</span>
+          <span class="caret"></span>
+          <ul class="navbar-item-submenu" role="menu">
+            <div class="submenu-section">
+              <li role="menuitem" class="docs-dropdown-li">
+                <a href="/hub/" class="docs-dropdown-li__link" tabindex="-1">
+                  <div class="docs-dropdown-li__card">
+                    <span class="heading">Explore the Plugin Hub</span>
+                    <div class="docs-dropdown-li__card-link">
+                      <img src="/assets/images/landing-page/view-all-plugins.svg" alt="View all plugins">
+                      <span class="docs-dropdown-li__card-image">
+                        View all plugins
+                        <img src="/assets/images/landing-page/arrow-right.svg" alt="View all plugins arrow image">
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li role="menuitem" class="docs-dropdown-li">
+                <div class="docs-dropdown-li__section">
+                  <div class="docs-dropdown-li__section-title">
+                    <span class="heading">Functionality</span>
+                    <a href="/hub/" class="view-all" tabindex="-1">
+                      View all
+                      <img src="/assets/images/landing-page/arrow-right.svg" alt="View all arrow image">
+                    </a>
+                  </div>
+
+                  <div class="docs-dropdown-li__section-items">
+                    <a class="item item-all" href="/hub/" tabindex="-1">
+                      <div class="item__description">
+                        <div class="item__description-title">View all plugins</div>
+                      </div>
+                    </a>
+
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=authentication" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/lock_person.svg" alt="Authentication's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Authentication</div>
+                          <div class="item__description-desc">Protect your services with an authentication layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=security" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/shield.svg" alt="Security's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Security</div>
+                          <div class="item__description-desc">Protect your services with additional security layer</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=traffic-control" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/route.svg" alt="Traffic Control's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Traffic Control</div>
+                          <div class="item__description-desc">Manage, throttle and restrict inbound and outbound API traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=serverless" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/serverless.svg" alt="Serverless's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Serverless</div>
+                          <div class="item__description-desc">Invoke serverless functions in combination with other plugins</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=analytics-monitoring" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/bar_chart.svg" alt="Analytics &amp; Monitoring's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Analytics &amp; Monitoring</div>
+                          <div class="item__description-desc">Visualize, inspect and monitor APIs and microservices traffic</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=transformations" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/swap_horiz.svg" alt="Transformations's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Transformations</div>
+                          <div class="item__description-desc">Transform request and responses on the fly on Kong</div>
+                        </div>
+                      </a>
+                    
+                      <a class="item" href="/hub/?category=logging" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/list_alt.svg" alt="Logging's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">Logging</div>
+                          <div class="item__description-desc">Log request and response data using the best transport for your infrastructure</div>
+                        </div>
+                      </a>
+                    
+
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://support.konghq.com/" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Support</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://konghq.com/community/" class="navbar-item" target="_blank" rel="noopener noreferrer">Community</a>
+        </li>
+        <li role="menuitem" class="main-menu-item">
+          <a href="https://education.konghq.com" class="navbar-item" target="_blank" rel="noopener nofollow noreferrer ">Kong Academy</a>
+        </li>
+      </ul>
+      <a id="top-cta" href="https://konghq.com/contact-sales?utm_source=docs.konghq.com" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Get a Demo
+      </a>
+      <a id="konnect-cta" href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_content=top-nav" class="navbar-button" target="_blank" rel="noopener nofollow noreferrer ">
+        Start Free Trial
+      </a>
+    </div>
+    <div id="navbar-menu-toggle-button" class="small-screen-button" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+
+    
+
+<div class="page v2 " data-url="/gateway/3.7.x/breaking-changes/30x/">
+  <div class="page--header-background page--header-background-doc"></div>
+  <div class="container">
+
+    <header class="page-header page-header-doc">
+      <div class="page-header-product-version">
+        <div class="edition">
+          Kong Gateway
+          
+        </div>
+        
+        <div class="version">
+          3.7.x
+          
+          
+        </div>
+        
+      </div>
+      <div class="page-header--nav">
+        <i class="sidebar-toggle"></i>
+
+        
+          
+
+
+
+
+
+
+
+
+
+  <ul class="breadcrumbs">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <img src="/assets/images/icons/hub-layout/icn-breadcrumbs.svg" alt="Home icon">
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/gateway/3.7.x/">Kong Gateway</a>
+    </li>
+
+    
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+        <li class="breadcrumb-item">
+          
+          <a href="/gateway/3.7.x/breaking-changes/">Breaking Changes</a>
+          
+        </li>
+      
+    
+      
+
+      
+
+      
+      
+
+      
+      
+
+      
+    
+
+    
+    
+    <li class="breadcrumb-item">
+      <a href="/gateway/3.7.x/breaking-changes/30x/">Kong Gateway 3.0.x breaking changes</a>
+    </li>
+  </ul>
+
+        
+
+        
+
+        <div class="github-links">
+  <div class="github-links--edit">
+    
+      <a href="https://github.com/Kong/docs.konghq.com/edit/main/app/_src/gateway/breaking-changes/30x.md" target="_blank" rel="noopener nofollow noreferrer ">
+        <img src="/assets/images/icons/third-party/logo-github-white.svg" alt="github-edit-page">Edit this page
+      </a>
+    
+  </div>
+  <div class="github-links--issues">
+    <a href="https://github.com/Kong/docs.konghq.com/issues" target="_blank" rel="noopener nofollow noreferrer ">
+      <img src="/assets/images/icons/documentation/icn-monitoring-white.svg" alt="report-issue">Report an issue</a>
+  </div>
+</div>
+
+
+      </div>
+    </header>
+
+    
+
+<aside class="docs-sidebar">
+  <i class="fa fa-times close-sidebar"></i>
+
+  <div class="sidebar-title-container">
+    <div class="docsets-dropdown dropdown">
+      <button class="dropdown-button" id="module-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Kong Gateway
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right with-submenu" id="module-list" role="menu" aria-labelledby="module-dropdown" aria-hidden="true">
+
+        <li role="menuitem" tabindex="-1" class="active">
+          <a href="/gateway/latest/" class="active">Kong Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/konnect/">Kong Konnect</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/mesh/latest/">Kong Mesh</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/deck/latest/">decK</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/kubernetes-ingress-controller/latest/">Kong Ingress Controller</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="/gateway-operator/latest/">Kong Gateway Operator</a>
+        </li>
+        <li>
+          <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer ">Insomnia</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank" rel="noopener nofollow noreferrer ">Kuma</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1">
+          <a href="/contributing/">Docs contribution guidelines</a>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="versions-dropdown dropdown">
+      <button class="dropdown-button" id="version-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <span>
+          Version 3.7.x
+          
+          
+        </span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/unreleased/breaking-changes/30x/" data-version-id="3.9.x">
+              <em>unreleased</em>
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.8.x/breaking-changes/30x/" data-version-id="3.8.x">
+              3.8.x <em>(latest)</em>
+            </a>
+          </li>
+        
+          <li class="active" role="menuitem" tabindex="-1">
+            <a href="/gateway/3.7.x/breaking-changes/30x/" class="active" data-version-id="3.7.x">
+              3.7.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.6.x/breaking-changes/30x/" data-version-id="3.6.x">
+              3.6.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.5.x/breaking-changes/30x/" data-version-id="3.5.x">
+              3.5.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.4.x/breaking-changes/30x/" data-version-id="3.4.x">
+              3.4.x (LTS)
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.3.x/breaking-changes/30x/" data-version-id="3.3.x">
+              3.3.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.2.x/breaking-changes/30x/" data-version-id="3.2.x">
+              3.2.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.1.x/breaking-changes/30x/" data-version-id="3.1.x">
+              3.1.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/3.0.x/" data-version-id="3.0.x">
+              3.0.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/2.8.x/" data-version-id="2.8.x">
+              2.8.x (LTS)
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/2.7.x/" data-version-id="2.7.x">
+              2.7.x
+            </a>
+          </li>
+        
+          <li role="menuitem" tabindex="-1">
+            <a href="/gateway/2.6.x/" data-version-id="2.6.x">
+              2.6.x
+            </a>
+          </li>
+        
+        
+        <li role="menuitem" tabindex="-1">
+          <a href="https://legacy-gateway--kongdocs.netlify.app/" target="_blank" rel="noopener nofollow noreferrer ">
+            Archive (pre-2.6)
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <ul class="sidebar-container" role="tree" aria-label="Documentation">
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-introduction-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-flag.svg" alt="">
+
+
+Introduction
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Introduction subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-introduction-subtree" role="group" aria-label="Introduction">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/">
+        
+
+Overview of Kong Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-2-support-subtree">
+    
+      
+
+Support
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Support subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-2-support-subtree" role="group" aria-label="Support">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/support-policy/">
+        
+
+Version Support Policy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/support/third-party/">
+        
+
+Third Party Dependencies
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/support/browser/">
+        
+
+Browser Support
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/support/vulnerability-patching-process/">
+        
+
+Vulnerability Patching Process
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/support/sbom/">
+        
+
+Software Bill of Materials
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/stability/">
+        
+
+Stability
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/changelog/">
+        
+
+Release Notes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-5-breaking-changes-subtree">
+    
+      
+
+Breaking Changes
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Breaking Changes subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-5-breaking-changes-subtree" role="group" aria-label="Breaking Changes">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/">
+        
+
+Kong Gateway 3.7.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/36x/">
+        
+
+Kong Gateway 3.6.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/35x/">
+        
+
+Kong Gateway 3.5.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/34x/">
+        
+
+Kong Gateway 3.4.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/33x/">
+        
+
+Kong Gateway 3.3.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/32x/">
+        
+
+Kong Gateway 3.2.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/31x/">
+        
+
+Kong Gateway 3.1.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/30x/">
+        
+
+Kong Gateway 3.0.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/breaking-changes/28x/">
+        
+
+Kong Gateway 2.8.x or earlier
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-6-key-concepts-subtree">
+    
+      
+
+Key Concepts
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Key Concepts subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-6-key-concepts-subtree" role="group" aria-label="Key Concepts">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/services/">
+        
+
+Services
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/routes/">
+        
+
+Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/consumers/">
+        
+
+Consumers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/upstreams/">
+        
+
+Upstreams
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/plugins/">
+        
+
+Plugins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/consumer-groups/">
+        
+
+Consumer Groups
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-1-7-how-kong-works-subtree">
+    
+      
+
+How Kong Works
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle How Kong Works subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-1-7-how-kong-works-subtree" role="group" aria-label="How Kong Works">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/how-kong-works/routing-traffic/">
+        
+
+Routing Traffic
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/how-kong-works/load-balancing/">
+        
+
+Load Balancing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/how-kong-works/health-checks/">
+        
+
+Health Checks and Circuit Breakers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/glossary/">
+        
+
+Glossary
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-2-get-started-with-kong-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-learning.svg" alt="">
+
+
+Get Started with Kong
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Get Started with Kong subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-2-get-started-with-kong-subtree" role="group" aria-label="Get Started with Kong">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/">
+        
+
+Get Kong
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/services-and-routes/">
+        
+
+Services and Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/rate-limiting/">
+        
+
+Rate Limiting
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/proxy-caching/">
+        
+
+Proxy Caching
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/key-authentication/">
+        
+
+Key Authentication
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/load-balancing/">
+        
+
+Load-Balancing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-install-kong-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Install Kong
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Install Kong subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-install-kong-subtree" role="group" aria-label="Install Kong">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-2-kubernetes-subtree">
+    
+      
+
+Kubernetes
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kubernetes subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-2-kubernetes-subtree" role="group" aria-label="Kubernetes">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/kubernetes/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/kubernetes/proxy/">
+        
+
+Install Kong Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/kubernetes/admin/">
+        
+
+Configure the Admin API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/kubernetes/manager/">
+        
+
+Install Kong Manager
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-3-docker-subtree">
+    
+      
+
+Docker
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Docker subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-3-docker-subtree" role="group" aria-label="Docker">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/docker/">
+        
+
+Using docker run
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/docker/build-custom-images/">
+        
+
+Build your own Docker images
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-4-linux-subtree">
+    
+      
+
+Linux
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Linux subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-4-linux-subtree" role="group" aria-label="Linux">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/linux/amazon-linux/">
+        
+
+Amazon Linux
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/linux/debian/">
+        
+
+Debian
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/linux/rhel/">
+        
+
+Red Hat
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/linux/ubuntu/">
+        
+
+Ubuntu
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-3-5-post-installation-subtree">
+    
+      
+
+Post-installation
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Post-installation subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-3-5-post-installation-subtree" role="group" aria-label="Post-installation">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/post-install/set-up-data-store/">
+        
+
+Set up a data store
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/post-install/enterprise-license/">
+        
+
+Apply Enterprise license
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/install/post-install/kong-manager/">
+        
+
+Enable Kong Manager
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-kong-in-production-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-deployment-color.svg" alt="">
+
+
+Kong in Production
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong in Production subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-kong-in-production-subtree" role="group" aria-label="Kong in Production">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-1-deployment-topologies-subtree">
+    
+      
+
+Deployment Topologies
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Deployment Topologies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-1-deployment-topologies-subtree" role="group" aria-label="Deployment Topologies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/deployment-topologies/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-1-2-hybrid-mode-subtree">
+    
+      
+
+Hybrid Mode
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Hybrid Mode subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-1-2-hybrid-mode-subtree" role="group" aria-label="Hybrid Mode">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/deployment-topologies/hybrid-mode/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/deployment-topologies/hybrid-mode/setup/">
+        
+
+Deploy Kong Gateway in Hybrid mode
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/deployment-topologies/db-less-and-declarative-config/">
+        
+
+DB-less Deployment
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/deployment-topologies/traditional/">
+        
+
+Traditional
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-2-running-kong-subtree">
+    
+      
+
+Running Kong
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Running Kong subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-2-running-kong-subtree" role="group" aria-label="Running Kong">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/running-kong/kong-user/">
+        
+
+Running Kong as a non-root user
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/running-kong/secure-admin-api/">
+        
+
+Securing the Admin API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/running-kong/systemd/">
+        
+
+Using systemd
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-3-access-control-subtree">
+    
+      
+
+Access Control
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Access Control subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-3-access-control-subtree" role="group" aria-label="Access Control">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/access-control/start-securely/">
+        
+
+Start Kong Gateway Securely
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/access-control/register-admin-api/">
+        
+
+Programatically Creating Admins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/access-control/enable-rbac/">
+        
+
+Enabling RBAC
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-4-licenses-subtree">
+    
+      
+
+Licenses
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Licenses subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-4-licenses-subtree" role="group" aria-label="Licenses">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/licenses/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/licenses/download/">
+        
+
+Download your License
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/licenses/deploy/">
+        
+
+Deploy Enterprise License
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/licenses/examples/">
+        
+
+Using the License API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/licenses/report/">
+        
+
+Monitor Licenses Usage
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-5-networking-subtree">
+    
+      
+
+Networking
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Networking subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-5-networking-subtree" role="group" aria-label="Networking">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/networking/default-ports/">
+        
+
+Default Ports
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/networking/dns-considerations/">
+        
+
+DNS Considerations
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/networking/firewall/">
+        
+
+Network and Firewall
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/networking/cp-dp-proxy/">
+        
+
+CP/DP Communication through a Forward Proxy
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-5-5-postgresql-tls-subtree">
+    
+      
+
+PostgreSQL TLS
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle PostgreSQL TLS subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-5-5-postgresql-tls-subtree" role="group" aria-label="PostgreSQL TLS">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/networking/configure-postgres-tls/">
+        
+
+Configure PostgreSQL TLS
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/networking/troubleshoot-postgres-tls/">
+        
+
+Troubleshooting PostgreSQL TLS
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/kong-conf/">
+        
+
+Kong Configuration File
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/environment-variables/">
+        
+
+Environment Variables
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/website-api-serving/">
+        
+
+Serving a Website and APIs from Kong
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-9-monitoring-subtree">
+    
+      
+
+Monitoring
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Monitoring subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-9-monitoring-subtree" role="group" aria-label="Monitoring">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/monitoring/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/monitoring/prometheus/">
+        
+
+Prometheus
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/monitoring/statsd/">
+        
+
+StatsD
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/monitoring/datadog/">
+        
+
+Datadog
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/monitoring/healthcheck-probes/">
+        
+
+Health Check Probes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-10-tracing-subtree">
+    
+      
+
+Tracing
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Tracing subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-10-tracing-subtree" role="group" aria-label="Tracing">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/tracing/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/tracing/write-custom-trace-exporter/">
+        
+
+Writing a Custom Trace Exporter
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/tracing/api/">
+        
+
+Tracing API Reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/sizing-guidelines/">
+        
+
+Resource Sizing Guidelines
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/security-update-process/">
+        
+
+Security Update Process
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/blue-green/">
+        
+
+Blue-Green Deployments
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/canary/">
+        
+
+Canary Deployments
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/clustering/">
+        
+
+Clustering Reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-16-performance-subtree">
+    
+      
+
+Performance
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Performance subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-16-performance-subtree" role="group" aria-label="Performance">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/performance/performance-testing/">
+        
+
+Performance Testing Benchmarks
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/performance/benchmark/">
+        
+
+Establish a Performance Benchmark
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/performance/brotli/">
+        
+
+Improve performance with Brotli compression
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-17-logging-and-debugging-subtree">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/logging/">
+        
+
+Logging and Debugging
+
+      </a>
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Logging and Debugging subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-17-logging-and-debugging-subtree" role="group" aria-label="Logging and Debugging">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/logging/log-reference/">
+        
+
+Log Reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/logging/update-log-level-dynamically/">
+        
+
+Dynamic log level updates
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/logging/customize-gateway-logs/">
+        
+
+Customize Gateway Logs
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/debug-request/">
+        
+
+Debug Requests
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/logging/ai-analytics/">
+        
+
+AI Gateway Analytics
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/configuring-a-grpc-service/">
+        
+
+Configure a gRPC service
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/key-concepts/routes/expressions/">
+        
+
+Use the Expressions Router
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-20-upgrade-and-migration-subtree">
+    
+      
+
+Upgrade and Migration
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrade and Migration subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-20-upgrade-and-migration-subtree" role="group" aria-label="Upgrade and Migration">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/">
+        
+
+Upgrading Kong Gateway 3.x.x
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/backup-and-restore/">
+        
+
+Backup and Restore
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-4-20-3-upgrade-strategies-subtree">
+    
+      
+
+Upgrade Strategies
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Upgrade Strategies subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-4-20-3-upgrade-strategies-subtree" role="group" aria-label="Upgrade Strategies">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/dual-cluster/">
+        
+
+Dual-Cluster Upgrade
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/in-place/">
+        
+
+In-Place Upgrade
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/blue-green/">
+        
+
+Blue-Green Upgrade
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/rolling-upgrade/">
+        
+
+Rolling Upgrade
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/upgrade/lts-upgrade/">
+        
+
+Upgrade from 2.8 LTS to 3.4 LTS
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/migrate-ce-to-ke/">
+        
+
+Migrate from OSS to Enterprise
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/migrate-cassandra-to-postgres/">
+        
+
+Migration Guidelines Cassandra to PostgreSQL
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/production/breaking-changes/">
+        
+
+Breaking Changes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-kong-gateway-enterprise-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-enterprise-blue.svg" alt="">
+
+
+Kong Gateway Enterprise
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Gateway Enterprise subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-kong-gateway-enterprise-subtree" role="group" aria-label="Kong Gateway Enterprise">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-2-secrets-management-subtree">
+    
+      
+
+Secrets Management
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Secrets Management subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-2-secrets-management-subtree" role="group" aria-label="Secrets Management">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/getting-started/">
+        
+
+Getting Started
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/secrets-rotation/">
+        
+
+Secrets Rotation
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/advanced-usage/">
+        
+
+Advanced Usage
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-2-5-backends-subtree">
+    
+      
+
+Backends
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Backends subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-2-5-backends-subtree" role="group" aria-label="Backends">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/backends/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/backends/env/">
+        
+
+Environment Variables
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/backends/aws-sm/">
+        
+
+AWS Secrets Manager
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/backends/azure-key-vaults/">
+        
+
+Azure Key Vaults
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/backends/gcp-sm/">
+        
+
+Google Cloud Secret Manager
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/backends/hashicorp-vault/">
+        
+
+HashiCorp Vault
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-2-6-how-to-subtree">
+    
+      
+
+How-To
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle How-To subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-2-6-how-to-subtree" role="group" aria-label="How-To">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/how-to/aws-secrets-manager/">
+        
+
+Securing the Database with AWS Secrets Manager
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/secrets-management/reference-format/">
+        
+
+Reference Format
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-3-dynamic-plugin-ordering-subtree">
+    
+      
+
+Dynamic Plugin Ordering
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Dynamic Plugin Ordering subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-3-dynamic-plugin-ordering-subtree" role="group" aria-label="Dynamic Plugin Ordering">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/plugin-ordering/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/plugin-ordering/get-started/">
+        
+
+Get Started with Dynamic Plugin Ordering
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/audit-log/">
+        
+
+Audit Logging
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/db-encryption/">
+        
+
+Keyring and Data Encryption
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/workspaces/">
+        
+
+Workspaces
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/consumer-groups/">
+        
+
+Consumer Groups
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/event-hooks/">
+        
+
+Event Hooks
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/cp-outage-handling/">
+        
+
+Configure Data Plane Resilience
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/cp-outage-handling-faq/">
+        
+
+About Control Plane Outage Management
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-5-11-fips-140-2-subtree">
+    
+      
+
+FIPS 140-2
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle FIPS 140-2 subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-5-11-fips-140-2-subtree" role="group" aria-label="FIPS 140-2">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/fips-support/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/fips-support/install/">
+        
+
+Install the FIPS Compliant Package
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/fips-support/plugins/">
+        
+
+FIPS 140-2 Compliant Plugins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/aws-iam-auth-to-rds-database/">
+        
+
+Authenticate your Kong Gateway Amazon RDS database with AWS IAM
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/signed-images/">
+        
+
+Verify Signatures for Signed Kong Images
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-enterprise/provenance-verification/">
+        
+
+Verify Build Provenance for Signed Kong Images
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-kong-ai-gateway-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-ai.svg" alt="">
+
+
+Kong AI Gateway
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong AI Gateway subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-6-kong-ai-gateway-subtree" role="group" aria-label="Kong AI Gateway">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/ai-gateway/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/get-started/ai-gateway/">
+        
+
+Get started with AI Gateway
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-6-3-llm-provider-integration-guides-subtree">
+    
+      
+
+LLM Provider Integration Guides
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle LLM Provider Integration Guides subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-6-3-llm-provider-integration-guides-subtree" role="group" aria-label="LLM Provider Integration Guides">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/openai/">
+        
+
+OpenAI
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/cohere/">
+        
+
+Cohere
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/azure/">
+        
+
+Azure
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/anthropic/">
+        
+
+Anthropic
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/mistral/">
+        
+
+Mistral
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/kong-inc/ai-proxy/how-to/llm-provider-integration-guides/llama2/">
+        
+
+Llama2
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/ai-gateway/ai-analytics/">
+        
+
+AI Gateway Analytics
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/hub/?category=ai/">
+        
+
+AI Gateway plugins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-kong-manager-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-manager-color.svg" alt="">
+
+
+Kong Manager
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Manager subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-kong-manager-subtree" role="group" aria-label="Kong Manager">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/enable/">
+        
+
+Enable Kong Manager
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-3-get-started-with-kong-manager-subtree">
+    
+      
+
+Get Started with Kong Manager
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Get Started with Kong Manager subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-3-get-started-with-kong-manager-subtree" role="group" aria-label="Get Started with Kong Manager">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/get-started/services-and-routes/">
+        
+
+Services and Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/get-started/rate-limiting/">
+        
+
+Rate Limiting
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/get-started/proxy-caching/">
+        
+
+Proxy Caching
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/get-started/consumers/">
+        
+
+Authentication with Consumers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/get-started/load-balancing/">
+        
+
+Load Balancing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-4-authentication-and-authorization-subtree">
+    
+      
+
+Authentication and Authorization
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Authentication and Authorization subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-4-authentication-and-authorization-subtree" role="group" aria-label="Authentication and Authorization">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/super-admin/">
+        
+
+Create a Super Admin
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/workspaces-and-teams/">
+        
+
+Workspaces and Teams
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/reset-password/">
+        
+
+Reset Passwords and RBAC Tokens
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/basic/">
+        
+
+Basic Auth
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-4-6-ldap-subtree">
+    
+      
+
+LDAP
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle LDAP subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-4-6-ldap-subtree" role="group" aria-label="LDAP">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/ldap/configure/">
+        
+
+Configure LDAP
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/ldap/service-directory-mapping/">
+        
+
+LDAP Service Directory Mapping
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-4-7-oidc-subtree">
+    
+      
+
+OIDC
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle OIDC subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-4-7-oidc-subtree" role="group" aria-label="OIDC">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/oidc/configure/">
+        
+
+Configure OIDC
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/oidc/mapping/">
+        
+
+OIDC Authenticated Group Mapping
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/oidc/migrate/">
+        
+
+Migrate from previous configurations
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/sessions/">
+        
+
+Sessions
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-7-4-9-rbac-subtree">
+    
+      
+
+RBAC
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle RBAC subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-7-4-9-rbac-subtree" role="group" aria-label="RBAC">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/rbac/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/rbac/enable/">
+        
+
+Enable RBAC
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/rbac/add-role/">
+        
+
+Add a Role and Permissions
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/rbac/add-user/">
+        
+
+Create a User
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/auth/rbac/add-admin/">
+        
+
+Create an Admin
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/networking/">
+        
+
+Networking Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/workspaces/">
+        
+
+Workspaces
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/consumer-groups/">
+        
+
+Create Consumer Groups
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/configuring-to-send-email/">
+        
+
+Sending Email
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-manager/troubleshoot/">
+        
+
+Troubleshoot
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-develop-custom-plugins-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-dev-portal-color.svg" alt="">
+
+
+Develop Custom Plugins
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Develop Custom Plugins subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-develop-custom-plugins-subtree" role="group" aria-label="Develop Custom Plugins">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-2-getting-started-subtree">
+    
+      
+
+Getting Started
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Getting Started subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-2-getting-started-subtree" role="group" aria-label="Getting Started">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/get-started/">
+        
+
+Introduction
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/get-started/setup/">
+        
+
+Set up the Plugin Project
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/get-started/testing/">
+        
+
+Add Plugin Testing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/get-started/config/">
+        
+
+Add Plugin Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/get-started/http/">
+        
+
+Consume External Services
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/get-started/deploy/">
+        
+
+Deploy Plugins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/file-structure/">
+        
+
+File Structure
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/custom-logic/">
+        
+
+Implementing Custom Logic
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/configuration/">
+        
+
+Plugin Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/access-the-datastore/">
+        
+
+Accessing the Data Store
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/custom-entities/">
+        
+
+Storing Custom Entities
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/entities-cache/">
+        
+
+Caching Custom Entities
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/admin-api/">
+        
+
+Extending the Admin API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/tests/">
+        
+
+Writing Tests
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/distribution/">
+        
+
+Installation and Distribution
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-12-proxy-wasm-filters-subtree">
+    
+      
+
+Proxy-Wasm Filters
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Proxy-Wasm Filters subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-12-proxy-wasm-filters-subtree" role="group" aria-label="Proxy-Wasm Filters">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/wasm/filter-development-guide/">
+        
+
+Create a Proxy-Wasm Filter
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/wasm/filter-configuration/">
+        
+
+Proxy-Wasm Filter Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-13-plugin-development-kit-subtree">
+    
+      
+
+Plugin Development Kit
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugin Development Kit subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-13-plugin-development-kit-subtree" role="group" aria-label="Plugin Development Kit">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.client/">
+        
+
+kong.client
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.client.tls/">
+        
+
+kong.client.tls
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.cluster/">
+        
+
+kong.cluster
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.ctx/">
+        
+
+kong.ctx
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.ip/">
+        
+
+kong.ip
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.jwe/">
+        
+
+kong.jwe
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.log/">
+        
+
+kong.log
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.nginx/">
+        
+
+kong.nginx
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.node/">
+        
+
+kong.node
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.plugin/">
+        
+
+kong.plugin
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.request/">
+        
+
+kong.request
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.response/">
+        
+
+kong.response
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.router/">
+        
+
+kong.router
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.service/">
+        
+
+kong.service
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.service.request/">
+        
+
+kong.service.request
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.service.response/">
+        
+
+kong.service.response
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.table/">
+        
+
+kong.table
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.tracing/">
+        
+
+kong.tracing
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.vault/">
+        
+
+kong.vault
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.websocket.client/">
+        
+
+kong.websocket.client
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pdk/kong.websocket.upstream/">
+        
+
+kong.websocket.upstream
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-8-14-plugins-in-other-languages-subtree">
+    
+      
+
+Plugins in Other Languages
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugins in Other Languages subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-8-14-plugins-in-other-languages-subtree" role="group" aria-label="Plugins in Other Languages">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pluginserver/go/">
+        
+
+Go
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pluginserver/javascript/">
+        
+
+Javascript
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pluginserver/python/">
+        
+
+Python
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pluginserver/plugins-kubernetes/">
+        
+
+Running Plugins in Containers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/plugin-development/pluginserver/performance/">
+        
+
+External Plugin Performance
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-kong-plugins-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-api-plugins-color.svg" alt="">
+
+
+Kong Plugins
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Kong Plugins subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-9-kong-plugins-subtree" role="group" aria-label="Kong Plugins">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-plugins/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-plugins/authentication/reference/">
+        
+
+Authentication Reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-plugins/authentication/allowing-multiple-authentication-methods/">
+        
+
+Allow Multiple Authentication Plugins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-9-4-plugin-queuing-subtree">
+    
+      
+
+Plugin Queuing
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugin Queuing subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-9-4-plugin-queuing-subtree" role="group" aria-label="Plugin Queuing">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-plugins/queue/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/kong-plugins/queue/reference/">
+        
+
+Plugin Queuing Reference
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-admin-api-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-admin-api-color.svg" alt="">
+
+
+Admin API
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Admin API subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-10-admin-api-subtree" role="group" aria-label="Admin API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/admin-api/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/admin-api/declarative-configuration/">
+        
+
+Declarative Configuration
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-10-3-enterprise-api-subtree">
+    
+      
+
+Enterprise API
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Enterprise API subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-10-3-enterprise-api-subtree" role="group" aria-label="Enterprise API">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Information/get-endpoints/" target="_blank">
+        
+
+Information Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Information/get-status/" target="_blank">
+        
+
+Health Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/tags/get-tags/" target="_blank">
+        
+
+Tags
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/debug/put-debug-cluster-control-planes-nodes-log-level-log_level/" target="_blank">
+        
+
+Debug Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Services/list-service/" target="_blank">
+        
+
+Services
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Routes/list-route/" target="_blank">
+        
+
+Routes
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Consumers/list-consumer/" target="_blank">
+        
+
+Consumers
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Plugins/list-plugins-with-consumer/" target="_blank">
+        
+
+Plugins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Certificates/list-certificate/" target="_blank">
+        
+
+Certificates
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/CA%20Certificates/list-ca_certificate/" target="_blank">
+        
+
+CA Certificates
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/SNIs/list-sni-with-certificate/" target="_blank">
+        
+
+SNIs
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Upstreams/list-upstream/" target="_blank">
+        
+
+Upstreams
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Targets/list-target-with-upstream/" target="_blank">
+        
+
+Targets
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Vaults/list-vault/" target="_blank">
+        
+
+Vaults
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Keys/list-key/" target="_blank">
+        
+
+Keys
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/filter-chains/get-filter-chains/" target="_blank">
+        
+
+Filter Chains
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/licenses/get-licenses/" target="_blank">
+        
+
+Licenses
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Workspaces/list-workspace/" target="_blank">
+        
+
+Workspaces
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/rbac/get-rbac-users/" target="_blank">
+        
+
+RBAC
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/admins/get-admins/" target="_blank">
+        
+
+Admins
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/consumer_groups/" target="_blank">
+        
+
+Consumer Groups
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Event-hooks/get-event-hooks/" target="_blank">
+        
+
+Event Hooks
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/Keyring/get-keyring/" target="_blank">
+        
+
+Keyring and Data Encryption
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-ee/latest/#/audit-logs/get-audit-requests/" target="_blank">
+        
+
+Audit Logs
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/status/v1/" target="_blank">
+        
+
+Status API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/api/admin-oss/latest/" target="_blank">
+        
+
+Open Source API
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+      <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-11-reference-subtree">
+    
+      
+  <img src="/assets/images/icons/documentation/icn-references-color.svg" alt="">
+
+
+Reference
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Reference subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-11-reference-subtree" role="group" aria-label="Reference">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/configuration/">
+        
+
+kong.conf
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/nginx-directives/">
+        
+
+Injecting Nginx Directives
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/cli/">
+        
+
+CLI
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/key-management/">
+        
+
+Key Management
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label" aria-expanded="false" aria-owns="id-11-5-the-expressions-language-subtree">
+    
+      
+
+The Expressions Language
+
+    
+
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle The Expressions Language subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
+  </span>
+
+  
+    <ul class="items" id="id-11-5-the-expressions-language-subtree" role="group" aria-label="The Expressions Language">
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/expressions-language/">
+        
+
+Overview
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/expressions-language/language-references/">
+        
+
+Language References
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/expressions-language/performance/">
+        
+
+Performance Optimizations
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/rate-limiting/">
+        
+
+Rate Limiting Library
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/wasm/">
+        
+
+WebAssembly
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+        
+        <li class="sidebar-item" role="none">
+  <span role="treeitem" class="sidebar-label">
+    
+      <a class="sidebar-link" tabindex="-1" href="/gateway/3.7.x/reference/faq/">
+        
+
+FAQ
+
+      </a>
+    
+
+    
+  </span>
+
+  
+</li>
+
+      
+    </ul>
+  
+</li>
+
+    
+  </ul>
+</aside>
+
+
+
+
+      <aside class="docs-toc">
+        <i class="fa fa-times close-sidebar"></i>
+        <i class="fa fa-chevron-right collapse-toc"></i>
+        <i class="far fa-list-alt expand-toc"></i>
+
+        <div id="oss-ee-toggle" data-current="Enterprise" style="display: none">
+          <span class="oss-ee-toggle-inner">
+            <img src="/assets/images/icons/icn-enterprise-black.svg" alt="enterprise-switcher-icon">
+            <span>Switch to <span id="switch-to-version">OSS</span></span>
+          </span>
+        </div>
+
+        
+        <div class="docs-toc-title">
+<img src="/assets/images/icons/hub-layout/icn-on-this-page.svg" alt="On this page"><a href="#">On this page</a>
+</div>
+<ul>
+  <li>
+<a href="#plugins" class="active scroll-to">Plugins</a>
+    <ul>
+      <li><a href="#kong-plugins" class="scroll-to">Kong plugins</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#deployment" class="scroll-to">Deployment</a>
+    <ul>
+      <li><a href="#blue-green-deployments" class="scroll-to">Blue-green deployments</a></li>
+    </ul>
+  </li>
+  <li><a href="#dependencies" class="scroll-to">Dependencies</a></li>
+  <li>
+<a href="#migrations" class="scroll-to">Migrations</a>
+    <ul>
+      <li><a href="#deprecations-and-changed-parameters" class="scroll-to">Deprecations and changed parameters</a></li>
+      <li><a href="#custom-plugins-and-the-pdk" class="scroll-to">Custom plugins and the PDK</a></li>
+      <li><a href="#new-router" class="scroll-to">New router</a></li>
+      <li><a href="#declarative-and-db-less" class="scroll-to">Declarative and DB-less</a></li>
+      <li><a href="#admin-api" class="scroll-to">Admin API</a></li>
+      <li><a href="#configuration" class="scroll-to">Configuration</a></li>
+      <li><a href="#kong-for-kubernetes-considerations" class="scroll-to">Kong for Kubernetes considerations</a></li>
+      <li><a href="#hybrid-mode-considerations" class="scroll-to">Hybrid mode considerations</a></li>
+      <li><a href="#template-changes" class="scroll-to">Template changes</a></li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </aside>
+
+    <div class="page-content-container page-content-container-doc v2 " id="documentation">
+      <div class="toggles ">
+          <i class="far fa-list-alt toc-sidebar-toggle"></i>
+      </div>
+
+      <div class="page-content">
+        <div class="content show-anchor-links">
+          
+            
+              <blockquote id="version-notice" class="important">
+                You are browsing documentation for an older version.
+            
+                See the <a href="/gateway/latest/breaking-changes/30x/">latest documentation here</a>.
+              </blockquote>
+          
+
+          <h1 tabindex="-1" id="main" class="page-content-title">Kong Gateway 3.0.x breaking changes
+            
+
+            
+          </h1>
+
+          
+
+          
+          
+
+          <p>Before upgrading, review any configuration or breaking changes in this version and prior versions that affect your current installation.</p>
+
+<p>You may need to adopt different upgrade paths depending on your deployment methods, set of features in use, custom plugins, for example.</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>For breaking changes to plugins, see the <a href="/gateway/changelog/">Kong Gateway Changelog</a> for your Kong Gateway version.</p>
+
+<h3 id="kong-plugins">Kong plugins</h3>
+
+<p>If you are adding a new plugin to your installation, you need to run
+<code class="language-plaintext highlighter-rouge">kong migrations up</code> with the plugin name specified. For example,
+<code class="language-plaintext highlighter-rouge">KONG_PLUGINS=tls-handshake-modifier</code>.</p>
+
+<p>The 3.0 release includes the following new plugins:</p>
+<ul>
+  <li>
+<a href="/hub/kong-inc/opentelemetry/">OpenTelemetry</a> (<code class="language-plaintext highlighter-rouge">opentelemetry</code>)</li>
+  <li>
+<a href="/hub/kong-inc/tls-handshake-modifier/">TLS Handshake Modifier</a> (<code class="language-plaintext highlighter-rouge">tls-handshake-modifier</code>)</li>
+  <li>
+<a href="/hub/kong-inc/tls-metadata-headers/">TLS Metadata Headers</a> (<code class="language-plaintext highlighter-rouge">tls-metadata-headers</code>)</li>
+  <li>
+<a href="/hub/kong-inc/websocket-size-limit/">WebSocket Size Limit</a> (<code class="language-plaintext highlighter-rouge">websocket-size-limit</code>)</li>
+  <li>
+<a href="/hub/kong-inc/websocket-validator/">WebSocket Validator</a> (<code class="language-plaintext highlighter-rouge">websocket-validator</code>)</li>
+</ul>
+
+<p>Kong plugins no longer support <code class="language-plaintext highlighter-rouge">CREDENTIAL_USERNAME</code> (<code class="language-plaintext highlighter-rouge">X-Credential-Username</code>).
+Use the constant <code class="language-plaintext highlighter-rouge">CREDENTIAL_IDENTIFIER</code> (<code class="language-plaintext highlighter-rouge">X-Credential-Identifier</code>) when
+setting the upstream headers for a credential.</p>
+
+<h2 id="deployment">Deployment</h2>
+
+<p>Amazon Linux 1 and Debian 8 (Jessie) containers and packages are deprecated and are no longer produced for new versions of Kong Gateway.</p>
+
+<h3 id="blue-green-deployments">Blue-green deployments</h3>
+
+<p><strong>Traditional mode</strong>: Blue-green upgrades from versions of 2.8.1 and below to 3.0.0 are not currently supported.
+This is a known issue planned to be fixed in the next 2.8 release. When that version is released, 2.x users should upgrade to that version before beginning a blue-green upgrade to 3.0.</p>
+
+<p><strong>Hybrid mode</strong>: See the <a href="#migrate-db">upgrade instructions</a> below.</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>If you are using the provided binary packages (except Debian and RHEL), all necessary dependencies
+for the gateway are bundled and you can skip this section.</p>
+
+<p>As of Kong Gateway 3.0, Debian and RHEL images are built with minimal dependencies and run through automated security scanners before being published.
+They only contain the bare minimum required to run Kong Gateway.
+If you would like further customize the base image and any dependencies, you can
+<a href="/gateway/3.7.x/install/docker/build-custom-images">build your own Docker images</a>.</p>
+
+<p>If you are using Debian, RHEL, or building your dependencies by hand, there are changes since the
+previous release, so you will need to rebuild them with the latest patches.</p>
+
+<p>The required OpenResty version for Kong Gateway 3.0.x is
+<a href="https://openresty.org/en/ann-1021004001.html" target="_blank" rel="noopener nofollow noreferrer ">1.21.4.1</a>. In addition to an upgraded
+OpenResty, you need the correct <a href="https://github.com/Kong/kong-build-tools/tree/master/openresty-build-tools/patches" target="_blank" rel="noopener nofollow noreferrer ">OpenResty patches</a>
+for this new version, including the latest release of <a href="https://github.com/Kong/lua-kong-nginx-module" target="_blank" rel="noopener nofollow noreferrer ">lua-kong-nginx-module</a>.
+The <a href="https://github.com/Kong/kong-build-tools" target="_blank" rel="noopener nofollow noreferrer ">kong-build-tools</a>
+repository contains <a href="https://github.com/Kong/kong-build-tools/tree/master/openresty-build-tools" target="_blank" rel="noopener nofollow noreferrer ">openresty-build-tools</a>,
+which allows you to more easily build OpenResty with the necessary patches and modules.</p>
+
+<h2 id="migrations">Migrations</h2>
+
+<p>The migration helper library (mostly used for Cassandra migrations) is no longer supplied with Kong Gateway.</p>
+
+<p>PostgreSQL migrations can now have an <code class="language-plaintext highlighter-rouge">up_f</code> part like Cassandra
+migrations, designating a function to call. The <code class="language-plaintext highlighter-rouge">up_f</code> part is
+invoked after the <code class="language-plaintext highlighter-rouge">up</code> part has been executed against the database
+for both PostgreSQL and Cassandra.</p>
+
+<h3 id="deprecations-and-changed-parameters">Deprecations and changed parameters</h3>
+
+<p>The <a href="/hub/kong-inc/statsd-advanced/">StatsD Advanced</a> plugin
+has been deprecated and will be removed in 4.0.
+All capabilities are now available in the <a href="/hub/kong-inc/statsd/">StatsD</a> plugin.</p>
+
+<p>The following plugins have had configuration parameters changed or removed. You will need to carefully review and update your configuration as needed:</p>
+
+<p><strong><a href="/hub/kong-inc/acl/">ACL</a>, <a href="/hub/kong-inc/bot-detection/">Bot Detection</a>, and <a href="/hub/kong-inc/ip-restriction/">IP Restriction</a></strong></p>
+<ul>
+  <li>Removed the deprecated <code class="language-plaintext highlighter-rouge">blacklist</code> and <code class="language-plaintext highlighter-rouge">whitelist</code> configuration parameters. Use <code class="language-plaintext highlighter-rouge">allow</code> or <code class="language-plaintext highlighter-rouge">deny</code> instead.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/acme/">ACME</a></strong></p>
+<ul>
+  <li>The default value of the <code class="language-plaintext highlighter-rouge">auth_method</code> configuration parameter is now <code class="language-plaintext highlighter-rouge">token</code>.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/aws-lambda/">AWS Lambda</a></strong></p>
+<ul>
+  <li>The AWS region is now required. You can set it through the plugin configuration with the <code class="language-plaintext highlighter-rouge">aws_region</code> field parameter, or with environment variables.</li>
+  <li>The plugin now allows <code class="language-plaintext highlighter-rouge">host</code> and <code class="language-plaintext highlighter-rouge">aws_region</code> fields to be set at the same time, and always applies the SigV4 signature.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/http-log/">HTTP Log</a></strong></p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">headers</code> field now only takes a single string per header name,
+where it previously took an array of values.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/jwt/">JWT</a></strong></p>
+<ul>
+  <li>The authenticated JWT is no longer put into the nginx
+context (<code class="language-plaintext highlighter-rouge">ngx.ctx.authenticated_jwt_token</code>). Custom plugins which depend on that
+value being set under that name must be updated to use Kong’s shared context
+instead (<code class="language-plaintext highlighter-rouge">kong.ctx.shared.authenticated_jwt_token</code>) before upgrading to 3.0.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/prometheus/">Prometheus</a></strong></p>
+<ul>
+  <li>
+    <p>High cardinality metrics are now disabled by default.</p>
+  </li>
+  <li>The following metric names were adjusted to add units to standardize where possible:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">http_status</code> to <code class="language-plaintext highlighter-rouge">http_requests_total</code>.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">latency</code> to <code class="language-plaintext highlighter-rouge">kong_request_latency_ms</code> (HTTP), <code class="language-plaintext highlighter-rouge">kong_upstream_latency_ms</code>, <code class="language-plaintext highlighter-rouge">kong_kong_latency_ms</code>, and <code class="language-plaintext highlighter-rouge">session_duration_ms</code> (stream).
+  Kong latency and upstream latency can operate at orders of different magnitudes. Separate these buckets to reduce memory overhead.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kong_bandwidth</code> to <code class="language-plaintext highlighter-rouge">kong_bandwidth_bytes</code>.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">nginx_http_current_connections</code> and <code class="language-plaintext highlighter-rouge">nginx_stream_current_connections</code> were merged into <code class="language-plaintext highlighter-rouge">nginx_connections_total</code>.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">request_count</code> and <code class="language-plaintext highlighter-rouge">consumer_status</code> were merged into <code class="language-plaintext highlighter-rouge">http_requests_total</code>.
+  If the <code class="language-plaintext highlighter-rouge">per_consumer</code> config is set to <code class="language-plaintext highlighter-rouge">false</code>, the <code class="language-plaintext highlighter-rouge">consumer</code> label will be empty. If the <code class="language-plaintext highlighter-rouge">per_consumer</code> config is <code class="language-plaintext highlighter-rouge">true</code>, the <code class="language-plaintext highlighter-rouge">consumer</code> label will be filled.</li>
+    </ul>
+  </li>
+  <li>Other metric changes:
+    <ul>
+      <li>Removed the following metric: <code class="language-plaintext highlighter-rouge">http_consumer_status</code>.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">http_requests_total</code> has a new label, <code class="language-plaintext highlighter-rouge">source</code>. It can be set to <code class="language-plaintext highlighter-rouge">exit</code>, <code class="language-plaintext highlighter-rouge">error</code>, or <code class="language-plaintext highlighter-rouge">service</code>.</li>
+      <li>All memory metrics have a new label: <code class="language-plaintext highlighter-rouge">node_id</code>.</li>
+      <li>The plugin doesn’t export status codes, latencies, bandwidth and upstream
+health check metrics by default. They can still be turned on manually by setting <code class="language-plaintext highlighter-rouge">status_code_metrics</code>,
+<code class="language-plaintext highlighter-rouge">lantency_metrics</code>, <code class="language-plaintext highlighter-rouge">bandwidth_metrics</code> and <code class="language-plaintext highlighter-rouge">upstream_health_metrics</code> respectively.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/pre-function/">Pre-function</a> and <a href="/hub/kong-inc/post-function/">Post-function</a> plugins</strong></p>
+<ul>
+  <li>Removed the deprecated <code class="language-plaintext highlighter-rouge">config.functions</code> configuration parameter from the
+<code class="language-plaintext highlighter-rouge">post-function</code> and <code class="language-plaintext highlighter-rouge">pre-function</code> plugins’ schemas. Use the <code class="language-plaintext highlighter-rouge">config.access</code> phase instead.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/statsd/">StatsD</a></strong></p>
+<ul>
+  <li>Any metric name that is related to a service now has a <code class="language-plaintext highlighter-rouge">service.</code> prefix: <code class="language-plaintext highlighter-rouge">kong.service.&lt;service_identifier&gt;.request.count</code>.
+    <ul>
+      <li>The metric <code class="language-plaintext highlighter-rouge">kong.&lt;service_identifier&gt;.request.status.&lt;status&gt;</code> has been renamed to <code class="language-plaintext highlighter-rouge">kong.service.&lt;service_identifier&gt;.status.&lt;status&gt;</code>.</li>
+      <li>The metric <code class="language-plaintext highlighter-rouge">kong.&lt;service_identifier&gt;.user.&lt;consumer_identifier&gt;.request.status.&lt;status&gt;</code> has been renamed to <code class="language-plaintext highlighter-rouge">kong.service.&lt;service_identifier&gt;.user.&lt;consumer_identifier&gt;.status.&lt;status&gt;</code>.</li>
+    </ul>
+  </li>
+  <li>The metric <code class="language-plaintext highlighter-rouge">*.status.&lt;status&gt;.total</code> from metrics <code class="language-plaintext highlighter-rouge">status_count</code> and <code class="language-plaintext highlighter-rouge">status_count_per_user</code> has been removed.</li>
+</ul>
+
+<p><strong><a href="/hub/kong-inc/proxy-cache/">Proxy Cache</a>, <a href="/hub/kong-inc/proxy-cache-advanced/">Proxy Cache Advanced</a>, and <a href="/hub/kong-inc/graphql-proxy-cache-advanced/">GraphQL Proxy Cache Advanced</a></strong></p>
+<ul>
+  <li>These plugins don’t store response data in <code class="language-plaintext highlighter-rouge">ngx.ctx.proxy_cache_hit</code> anymore.</li>
+  <li>Logging plugins that need the response data must now read it from <code class="language-plaintext highlighter-rouge">kong.ctx.shared.proxy_cache_hit</code>.</li>
+</ul>
+
+<h3 id="custom-plugins-and-the-pdk">Custom plugins and the PDK</h3>
+
+<ul>
+  <li>DAOs in plugins must be listed in an array, so that their loading order is explicit. Loading them in a
+hash-like table is no longer supported.</li>
+  <li>Plugins MUST now have a valid <code class="language-plaintext highlighter-rouge">PRIORITY</code> (integer) and <code class="language-plaintext highlighter-rouge">VERSION</code> (“x.y.z” format)
+field in their <code class="language-plaintext highlighter-rouge">handler.lua</code> file, otherwise the plugin will fail to load.</li>
+  <li>The old <code class="language-plaintext highlighter-rouge">kong.plugins.log-serializers.basic</code> library was removed in favor of the PDK
+function <code class="language-plaintext highlighter-rouge">kong.log.serialize</code>. Upgrade your plugins to use the PDK.</li>
+  <li>
+    <p>The support for deprecated legacy plugin schemas was removed. If your custom plugins
+still use the old (<code class="language-plaintext highlighter-rouge">0.x era</code>) schemas, you are now forced to upgrade them.</p>
+  </li>
+  <li>
+    <p>Updated the priority for some plugins.</p>
+
+    <p>This is important for those who run custom plugins as it may affect the sequence in which your plugins are executed.
+  This does not change the order of execution for plugins in a standard Kong Gateway installation.</p>
+
+    <p>Old and new plugin priority values:</p>
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">acme</code> changed from <code class="language-plaintext highlighter-rouge">1007</code> to <code class="language-plaintext highlighter-rouge">1705</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">basic-auth</code> changed from <code class="language-plaintext highlighter-rouge">1001</code> to <code class="language-plaintext highlighter-rouge">1100</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">canary</code> changed from <code class="language-plaintext highlighter-rouge">13</code> to <code class="language-plaintext highlighter-rouge">20</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">degraphql</code> changed from <code class="language-plaintext highlighter-rouge">1005</code> to <code class="language-plaintext highlighter-rouge">1500</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">graphql-proxy-cache-advanced</code> changed from <code class="language-plaintext highlighter-rouge">100</code> to <code class="language-plaintext highlighter-rouge">99</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">hmac-auth</code> changed from <code class="language-plaintext highlighter-rouge">1000</code> to <code class="language-plaintext highlighter-rouge">1030</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">jwt</code> changed from <code class="language-plaintext highlighter-rouge">1005</code> to <code class="language-plaintext highlighter-rouge">1450</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">jwt-signer</code> changed from <code class="language-plaintext highlighter-rouge">999</code> to <code class="language-plaintext highlighter-rouge">1020</code>.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">key-auth</code> changed from <code class="language-plaintext highlighter-rouge">1003</code> to <code class="language-plaintext highlighter-rouge">1250</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">key-auth-advanced</code> changed from <code class="language-plaintext highlighter-rouge">1003</code> to <code class="language-plaintext highlighter-rouge">1250</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">ldap-auth</code> changed from <code class="language-plaintext highlighter-rouge">1002</code> to <code class="language-plaintext highlighter-rouge">1200</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">ldap-auth-advanced</code> changed from <code class="language-plaintext highlighter-rouge">1002</code> to <code class="language-plaintext highlighter-rouge">1200</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">mtls-auth</code> changed from <code class="language-plaintext highlighter-rouge">1006</code> to <code class="language-plaintext highlighter-rouge">1600</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">oauth2</code> changed from <code class="language-plaintext highlighter-rouge">1004</code> to <code class="language-plaintext highlighter-rouge">1400</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">openid-connect</code> changed from <code class="language-plaintext highlighter-rouge">1000</code> to <code class="language-plaintext highlighter-rouge">1050</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">rate-limiting</code> changed from <code class="language-plaintext highlighter-rouge">901</code> to <code class="language-plaintext highlighter-rouge">910</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">rate-limiting-advanced</code> changed from <code class="language-plaintext highlighter-rouge">902</code> to <code class="language-plaintext highlighter-rouge">910</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">route-by-header</code> changed from <code class="language-plaintext highlighter-rouge">2000</code> to <code class="language-plaintext highlighter-rouge">850</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">route-transformer-advanced</code> changed from <code class="language-plaintext highlighter-rouge">800</code> to <code class="language-plaintext highlighter-rouge">780</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">pre-function</code> changed from <code class="language-plaintext highlighter-rouge">+inf</code> to <code class="language-plaintext highlighter-rouge">1000000</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">vault-auth</code> change from <code class="language-plaintext highlighter-rouge">1003</code> to <code class="language-plaintext highlighter-rouge">1350</code>
+</li>
+    </ul>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">kong.request.get_path()</code> PDK function now performs path normalization
+on the string that is returned to the caller. The raw, non-normalized version
+of the request path can be fetched via <code class="language-plaintext highlighter-rouge">kong.request.get_raw_path()</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">pdk.response.set_header()</code>, <code class="language-plaintext highlighter-rouge">pdk.response.set_headers()</code>, <code class="language-plaintext highlighter-rouge">pdk.response.exit()</code> now ignore and emit warnings for manually set <code class="language-plaintext highlighter-rouge">Transfer-Encoding</code> headers.</p>
+  </li>
+  <li>
+    <p>The PDK is no longer versioned.</p>
+  </li>
+  <li>
+    <p>The JavaScript PDK now returns <code class="language-plaintext highlighter-rouge">Uint8Array</code> for <code class="language-plaintext highlighter-rouge">kong.request.getRawBody</code>,
+<code class="language-plaintext highlighter-rouge">kong.response.getRawBody</code>, and <code class="language-plaintext highlighter-rouge">kong.service.response.getRawBody</code>.
+The Python PDK returns <code class="language-plaintext highlighter-rouge">bytes</code> for <code class="language-plaintext highlighter-rouge">kong.request.get_raw_body</code>,
+<code class="language-plaintext highlighter-rouge">kong.response.get_raw_body</code>, and <code class="language-plaintext highlighter-rouge">kong.service.response.get_raw_body</code>.
+Previously, these functions returned strings.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">go_pluginserver_exe</code> and <code class="language-plaintext highlighter-rouge">go_plugins_dir</code> directives are no longer supported.
+If you are using
+ <a href="https://github.com/Kong/go-pluginserver" target="_blank" rel="noopener nofollow noreferrer ">Go plugin server</a>, migrate your plugins to use the
+ <a href="https://github.com/Kong/go-pdk" target="_blank" rel="noopener nofollow noreferrer ">Go PDK</a> before upgrading.</p>
+  </li>
+  <li>
+    <p>As of 3.0, Kong Gateway’s schema library’s <code class="language-plaintext highlighter-rouge">process_auto_fields</code> function will not make deep
+copies of data that is passed to it when the given context is <code class="language-plaintext highlighter-rouge">select</code>. This was
+done to avoid excessive deep copying of tables where Kong believes the data most of
+the time comes from a driver like <code class="language-plaintext highlighter-rouge">pgmoon</code> or <code class="language-plaintext highlighter-rouge">lmdb</code>.</p>
+
+    <p>If a custom plugin relied on <code class="language-plaintext highlighter-rouge">process_auto_fields</code> not overriding the given table, it must make its own copy
+before passing it to the function now.</p>
+  </li>
+  <li>
+    <p>The deprecated <code class="language-plaintext highlighter-rouge">shorthands</code> field in Kong plugin or DAO schemas was removed in favor
+of the typed <code class="language-plaintext highlighter-rouge">shorthand_fields</code>. If your custom schemas still use <code class="language-plaintext highlighter-rouge">shorthands</code>, you
+need to update them to use <code class="language-plaintext highlighter-rouge">shorthand_fields</code>.</p>
+  </li>
+  <li>
+    <p>The support for <code class="language-plaintext highlighter-rouge">legacy = true/false</code> attribute was removed from Kong schemas and
+Kong field schemas.</p>
+  </li>
+  <li>The Kong singletons module <code class="language-plaintext highlighter-rouge">kong.singletons</code> was removed in favor of the PDK <code class="language-plaintext highlighter-rouge">kong.*</code>.</li>
+</ul>
+
+<h3 id="new-router">New router</h3>
+
+<p>Kong Gateway no longer uses a heuristic to guess whether a <code class="language-plaintext highlighter-rouge">route.path</code> is a regex pattern. From 3.0 onward,
+all regex paths must start with the <code class="language-plaintext highlighter-rouge">"~"</code> prefix, and all paths that don’t start with <code class="language-plaintext highlighter-rouge">"~"</code> will be considered plain text.
+The migration process should automatically convert the regex paths when upgrading from 2.x to 3.0.</p>
+
+<p>The normalization rules for <code class="language-plaintext highlighter-rouge">route.path</code> have changed. Kong Gateway now stores the unnormalized path, but
+the regex path always pattern-matches with the normalized URI. Previously, Kong Gateway replaced percent-encoding
+in the regex path pattern to ensure different forms of URI matches.
+That is no longer supported. Except for the reserved characters defined in
+<a href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.2" target="_blank" rel="noopener nofollow noreferrer ">rfc3986</a>,
+write all other characters without percent-encoding.</p>
+
+<h3 id="declarative-and-db-less">Declarative and DB-less</h3>
+
+<p>The version number (<code class="language-plaintext highlighter-rouge">_format_version</code>) of declarative configuration has been bumped to <code class="language-plaintext highlighter-rouge">3.0</code> for changes on <code class="language-plaintext highlighter-rouge">route.path</code>.
+Declarative configurations with older versions will be upgraded to <code class="language-plaintext highlighter-rouge">3.0</code> during migrations.</p>
+
+<blockquote class="important">
+  <p><strong>Do not sync (<code class="language-plaintext highlighter-rouge">deck gateway sync</code>) declarative configuration files from 2.8 or earlier to 3.0.</strong>
+Old configuration files will overwrite the configuration and create compatibility issues.
+To grab the updated configuration, <code class="language-plaintext highlighter-rouge">deck gateway dump</code> the 3.0 file after migrations are completed.</p>
+</blockquote>
+
+<p>It is no longer possible to use the <code class="language-plaintext highlighter-rouge">.lua</code> format to import a declarative configuration file from the <code class="language-plaintext highlighter-rouge">kong</code>
+CLI tool. Only JSON and YAML formats are supported. If your update procedure with Kong Gateway involves
+executing <code class="language-plaintext highlighter-rouge">kong config db_import config.lua</code>, convert the <code class="language-plaintext highlighter-rouge">config.lua</code> file into a <code class="language-plaintext highlighter-rouge">config.json</code> or <code class="language-plaintext highlighter-rouge">config.yml</code> file
+before upgrading.</p>
+
+<h3 id="admin-api">Admin API</h3>
+
+<p>The Admin API endpoint <code class="language-plaintext highlighter-rouge">/vitals/reports</code> has been removed.</p>
+
+<p><code class="language-plaintext highlighter-rouge">POST</code> requests on <code class="language-plaintext highlighter-rouge">/targets</code> endpoints are no longer able to update
+existing entities. They are only able to create new ones.
+If you have scripts that use <code class="language-plaintext highlighter-rouge">POST</code> requests to modify <code class="language-plaintext highlighter-rouge">/targets</code>, change them to <code class="language-plaintext highlighter-rouge">PUT</code>
+requests to the appropriate endpoints before updating to Kong 3.0.</p>
+
+<p>The list of reported plugins available on the server now returns a table of
+metadata per plugin instead of a boolean <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>The Kong constant <code class="language-plaintext highlighter-rouge">CREDENTIAL_USERNAME</code> with the value of <code class="language-plaintext highlighter-rouge">X-Credential-Username</code> has been
+removed.</p>
+
+<p>The default value of <code class="language-plaintext highlighter-rouge">lua_ssl_trusted_certificate</code> has changed to <code class="language-plaintext highlighter-rouge">system</code> to automatically load the trusted CA list from the system CA store.</p>
+
+<p>The data plane config cache mechanism and its related configuration options
+(<code class="language-plaintext highlighter-rouge">data_plane_config_cache_mode</code> and <code class="language-plaintext highlighter-rouge">data_plane_config_cache_path</code>) have been removed in favor of LMDB.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ngx.ctx.balancer_address</code> was removed in favor of <code class="language-plaintext highlighter-rouge">ngx.ctx.balancer_data</code>.</p>
+
+<h3 id="kong-for-kubernetes-considerations">Kong for Kubernetes considerations</h3>
+
+<p>The Helm chart automates the upgrade migration process. When running <code class="language-plaintext highlighter-rouge">helm upgrade</code>,
+the chart spawns an initial job to run <code class="language-plaintext highlighter-rouge">kong migrations up</code> and then spawns new
+Kong pods with the updated version. Once these pods become ready, they begin processing
+traffic and old pods are terminated. Once this is complete, the chart spawns another job
+to run <code class="language-plaintext highlighter-rouge">kong migrations finish</code>.</p>
+
+<p>While the migrations themselves are automated, the chart does not automatically ensure
+that you follow the recommended upgrade path. If you are upgrading from more than one minor
+Kong Gateway version back, check the upgrade path recommendations.</p>
+
+<p>Although not required, users should upgrade their chart version and Kong Gateway version independently.
+In the event of any issues, this will help clarify whether the issue stems from changes in
+Kubernetes resources or changes in Kong Gateway.</p>
+
+<p>For specific Kong for Kubernetes version upgrade considerations, see
+<a href="https://github.com/Kong/charts/blob/main/charts/kong/UPGRADE.md" target="_blank" rel="noopener nofollow noreferrer ">Upgrade considerations</a></p>
+
+<h4 id="kong-deployment-split-across-multiple-releases">Kong deployment split across multiple releases</h4>
+
+<p>The standard chart upgrade automation process assumes that there is only a single Kong Gateway release
+in the Kong Gateway cluster, and runs both <code class="language-plaintext highlighter-rouge">migrations up</code> and <code class="language-plaintext highlighter-rouge">migrations finish</code> jobs.</p>
+
+<p>If you split your Kong Gateway deployment across multiple Helm releases (to create proxy-only
+and admin-only nodes, for example), you must set which migration jobs run based on your
+upgrade order.</p>
+
+<p>To handle clusters split across multiple releases, you should:</p>
+
+<ol>
+  <li>
+    <p>Upgrade one of the releases with:</p>
+
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>helm upgrade RELEASENAME <span class="nt">-f</span> values.yaml <span class="se">\</span>
+<span class="nt">--set</span> migrations.preUpgrade<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+<span class="nt">--set</span> migrations.postUpgrade<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Upgrade all but one of the remaining releases with:</p>
+
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>helm upgrade RELEASENAME <span class="nt">-f</span> values.yaml <span class="se">\</span>
+<span class="nt">--set</span> migrations.preUpgrade<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+<span class="nt">--set</span> migrations.postUpgrade<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Upgrade the final release with:</p>
+
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>helm upgrade RELEASENAME <span class="nt">-f</span> values.yaml <span class="se">\</span>
+<span class="nt">--set</span> migrations.preUpgrade<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+<span class="nt">--set</span> migrations.postUpgrade<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>This ensures that all instances are using the new Kong Gateway package before running
+<code class="language-plaintext highlighter-rouge">kong migrations finish</code>.</p>
+
+<h3 id="hybrid-mode-considerations">Hybrid mode considerations</h3>
+
+<blockquote class="important">
+  <p><strong>Important:</strong> If you are currently running in <a href="/gateway/3.7.x/production/deployment-topologies/hybrid-mode/">hybrid mode</a>,
+upgrade the control plane first, and then the data planes.</p>
+</blockquote>
+
+<ul>
+  <li>If you are currently running 2.8.x in classic (traditional)
+mode and want to run in hybrid mode instead, follow the hybrid mode
+<a href="/gateway/3.7.x/production/deployment-topologies/hybrid-mode/setup/">installation instructions</a>
+after running the migration.</li>
+  <li>Custom plugins (either your own plugins or third-party plugins that are not shipped with Kong Gateway)
+need to be installed on both the control plane and the data planes in hybrid mode. Install the
+plugins on the control plane first, and then the data planes.</li>
+  <li>The <a href="/hub/kong-inc/rate-limiting-advanced/">Rate Limiting Advanced</a> plugin does not
+  support the <code class="language-plaintext highlighter-rouge">cluster</code> strategy in hybrid mode. The <code class="language-plaintext highlighter-rouge">redis</code> strategy must be used instead.</li>
+</ul>
+
+<h3 id="template-changes">Template changes</h3>
+
+<p>There are changes in the Nginx configuration file between every minor and major
+version of Kong Gateway starting with 2.0.x.</p>
+
+<p>In 3.0.x, the deprecated alias of <code class="language-plaintext highlighter-rouge">Kong.serve_admin_api</code> was removed.
+If your custom Nginx templates still use it, change it to <code class="language-plaintext highlighter-rouge">Kong.admin_content</code>.</p>
+
+<div class="navtabs  ">
+  <div class="navtab-titles" role="tablist">
+  
+    
+    <div data-slug="oss" data-navtab-id="navtab-05c2c8c5-ec38-407c-8174-45c09823dd71-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+      OSS
+    </div>
+  
+    
+    <div data-slug="enterprise" data-navtab-id="navtab-05c2c8c5-ec38-407c-8174-45c09823dd71-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+      Enterprise
+    </div>
+  
+  </div>
+  <div class="navtab-contents">
+  
+    
+    <div data-panel="oss" data-navtab-content="navtab-05c2c8c5-ec38-407c-8174-45c09823dd71-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+      
+<p>To view all of the configuration changes between versions, clone the
+<a href="https://github.com/kong/kong" target="_blank" rel="noopener nofollow noreferrer ">Kong repository</a> and run <code class="language-plaintext highlighter-rouge">git diff</code>
+on the configuration templates, using <code class="language-plaintext highlighter-rouge">-w</code> for greater readability.</p>
+
+<p>Here’s how to see the differences between previous versions and 3.0.x:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/kong/kong
+cd kong
+git diff -w 2.0.0 3.0.0 kong/templates/nginx_kong*.lua
+</code></pre></div></div>
+
+<p>Adjust the starting version number (2.0.0 in the example) to the version number you are currently using.</p>
+
+<p>To produce a patch file, use the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff 2.0.0 3.0.0 kong/templates/nginx_kong*.lua &gt; kong_config_changes.diff
+</code></pre></div></div>
+
+<p>Adjust the starting version number to the version number (2.0.0 in the example) you are currently using.</p>
+
+
+    </div>
+  
+    
+    <div data-panel="enterprise" data-navtab-content="navtab-05c2c8c5-ec38-407c-8174-45c09823dd71-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+      
+<p>The default template for Kong Gateway can be found using this command
+on the system running your Kong Gateway instance:
+<code class="language-plaintext highlighter-rouge">find / -type d -name "templates" | grep kong</code>.</p>
+
+<p>When upgrading, make sure to run this command on both the old and new clusters,
+diff the files to identify any changes, and apply them as needed.</p>
+
+
+    </div>
+  
+  </div>
+</div>
+
+
+
+          
+  <div class="book-nav-container">
+    <hr>
+    
+      <div class="book-nav previous">
+        <span class="direction">Previous</span>
+        <a href="/gateway/3.7.x/breaking-changes/28x/">Kong Gateway 2.8.x and earlier breaking changes</a>
+      </div>
+    
+    
+      <div class="book-nav next">
+        <span class="direction">Next</span>
+        <a href="/gateway/3.7.x/breaking-changes/31x/">Kong Gateway 3.1.x breaking changes</a>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+      <div id="scroll-to-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      
+        <div class="feedback-widget-container">
+  <input id="feedback-widget-checkbox" type="checkbox">
+  <label for="feedback-widget-checkbox">
+    <img src="/assets/images/icons/feedback-widget.svg" alt="Feedback widget">
+  </label>
+  <div class="feedback-container">
+    <div class="feedback-thankyou">
+      Thank you for your feedback.
+    </div>
+    <div class="feedback-comment">
+      <textarea id="feedback-comment-text" rows="3" placeholder="Please let us know what we can improve on this page..."></textarea>
+      <div class="feedback-comment-buttons">
+        <button id="feedback-comment-button-back">Back</button>
+        <button id="feedback-comment-button-submit" class="button-primary">Submit</button>
+      </div>
+    </div>
+    <div class="feedback-options">
+      <div class="feedback-options-title">Was this page useful?</div>
+      <div class="feedback-options-buttons">
+        <i data-feedback-result="yes" class="feedback-options-button far fa-thumbs-up"></i>
+        <i data-feedback-result="no" class="feedback-options-button far fa-thumbs-down"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+  </div>
+
+  <div id="image-modal" data-image-expand-disabled="">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-container">
+    <img src="" alt="">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+
+
+
+  <div class="modal closed" id="modal" role="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+    <div class="konnect-cta-card">
+      <div class="title">
+      Too much on your plate?
+      <a href="#" class="cta-card-close modal-close" id="modal-close">
+          <img src="/assets/images/icons/documentation/close.svg" alt="close cta icon">
+        </a>
+      </div>
+      <div class="description">More features, less infrastructure with Kong Konnect. 1M requests per month for free.</div>
+      <a href="https://konghq.com/products/kong-konnect/register?utm_medium=referral&amp;utm_source=docs&amp;utm_campaign=gateway-konnect&amp;utm_campaign=right-nav-card&amp;utm_content=gateway" class="button" target="_blank" rel="noopener nofollow noreferrer ">
+      Try it for Free
+    </a>
+    </div>
+  </div>
+  <div id="modal-open" class="modal-open"></div>
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+
+
+    <footer class="marketing-footer--light-gray">
+  <section>
+    <ul class="newsletter">
+      <li class="logo-wrapper">
+        <div class="logo">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
+        </div>
+        <div class="footer-title">Powering the API world</div>
+        <p>
+          Increase developer productivity, security, and performance at scale with the unified platform for API management, service mesh, and ingress controller.
+        </p>
+        <div class="footer-form-container">
+          <form id="subscribe-form" method="POST" action="/assets/javascripts/subscribe.js">
+            <input required id="subscribe-input" type="email" name="email" placeholder="Email" aria-required="true" aria-invalid="false">
+            <input id="footer-form-button" type="submit" form="subscribe-form" value="Subscribe">
+          </form>
+
+          <div id="form-response"></div>
+        </div>
+      </li>
+
+      <li class="footer-columns">
+        <ul class="footer-columns-product-list">
+          <li>
+            <nav>
+              <div class="footer-category">Products</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/products/kong-konnect" target="_blank" rel="noopener nofollow noreferrer ">Kong Konnect</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-enterprise" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway Enterprise</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-gateway" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-mesh" target="_blank" rel="noopener nofollow noreferrer ">Kong Mesh</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/products/kong-ingress-controller" target="_blank" rel="noopener nofollow noreferrer ">Kong Ingress Controller</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/product-updates" target="_blank" rel="noopener nofollow noreferrer ">Product Updates</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/contact-sales" target="_blank" rel="noopener nofollow noreferrer ">Get Started</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Documentation</div>
+              <ul>
+                <li>
+                  <a href="/konnect/">Kong Konnect Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/">Kong Gateway Docs</a>
+                </li>
+                <li>
+                  <a href="/gateway/latest/kong-enterprise/">Kong Gateway Enterprise Docs</a>
+                </li>
+                <li>
+                  <a href="/mesh/latest/">Kong Mesh Docs</a>
+                </li>
+                <li>
+                  <a href="https://docs.insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kong Insomnia Docs</a>
+                </li>
+                <li>
+                  <a href="/hub/">Kong Konnect Plugin Hub</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Open Source</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/install/#kong-community" target="_blank" rel="noopener nofollow noreferrer ">Kong Gateway</a>
+                </li>
+                <li>
+                  <a href="https://kuma.io/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Kuma</a>
+                </li>
+                <li>
+                  <a href="https://insomnia.rest/" target="_blank" rel="noopener nofollow noreferrer noopener nofollow noreferrer">Insomnia</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/community" target="_blank" rel="noopener nofollow noreferrer ">Kong Community</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <nav>
+              <div class="footer-category">Company</div>
+              <ul>
+                <li>
+                  <a href="https://konghq.com/company/about-us" target="_blank" rel="noopener nofollow noreferrer ">About Kong</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/customers" target="_blank" rel="noopener nofollow noreferrer ">Customers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/careers" target="_blank" rel="noopener nofollow noreferrer ">Careers</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/press-room" target="_blank" rel="noopener nofollow noreferrer ">Press</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/events" target="_blank" rel="noopener nofollow noreferrer ">Events</a>
+                </li>
+                <li>
+                  <a href="https://konghq.com/company/contact-us" target="_blank" rel="noopener nofollow noreferrer ">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="legal">
+    <div class="container d-flex">
+      <div class="social">
+        <div class="social-link">
+          <a href="https://www.facebook.com/konghq/" title="Facebook" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Facebook" class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://twitter.com/thekonginc" title="Twitter" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://www.meetup.com/topics/kong/all/" title="Meetup" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="Meetup" class="fa fa-meetup" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://linkedin.com/company/278819" title="LinkedIn" target="_blank" rel="noopener nofollow noreferrer "><i aria-label="GitHub" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="social-link">
+          <a href="https://github.com/kong/kong" target="_blank" class="btn-gh" title="GitHub" rel="noopener nofollow noreferrer ">
+            <i class="fa fa-github" aria-hidden="true" aria-label="GitHub"></i>
+          </a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="mashape-footer-content">
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
+          </span>
+        </li>
+      </ul>
+      <div>
+        <span>© Kong Inc. 2024  </span>
+      </div>
+    </div>
+  </section>
+</footer>
+ <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    anchor.title = `${id} Permalink`;
+    return anchor;
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var className =
+        ".show-anchor-links h1, .show-anchor-links h2, .show-anchor-links h3, " +
+        ".show-anchor-links h4, .show-anchor-links h5, .show-anchor-links h6";
+      var headers = document.querySelectorAll(className);
+
+      for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        if (typeof header.id !== "undefined" && header.id !== "") {
+          header.prepend(anchorForId(header.id));
+        }
+      }
+    }
+  };
+</script>
+
+
+    
+      <script>
+        (function stp(){
+          if (typeof analytics == "undefined"){
+            return setTimeout(stp, 30);
+          }
+          analytics.page();
+        })();
+      </script>
+    
+
+    <div id="fb-root"></div>
+    <script id="github-bjs" src="https://buttons.github.io/buttons.js" async defer></script>
+
+    <script type="text/javascript">
+      var _vwo_code = (function() {
+        var account_id = 125292,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = true,
+          // DO NOT EDIT BELOW THIS LINE
+          f = false,
+          d = document;
+        return {
+          use_existing_jquery: function() {
+            return use_existing_jquery;
+          },
+          library_tolerance: function() {
+            return library_tolerance;
+          },
+          finish: function() {
+            if (!f) {
+              f = true;
+              var a = d.getElementById('_vis_opt_path_hides');
+              if (a) a.parentNode.removeChild(a);
+            }
+          },
+          finished: function() {
+            return f;
+          },
+          load: function(a) {
+            var b = d.createElement('script');
+            b.src = a;
+            b.type = 'text/javascript';
+            b.innerText;
+            b.onerror = function() {
+              _vwo_code.finish();
+            };
+            d.getElementsByTagName('head')[0].appendChild(b);
+          },
+          init: function() {
+            settings_timer = setTimeout(
+              '_vwo_code.finish()',
+              settings_tolerance
+            );
+            this.load(
+              '//dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&r=' +
+                Math.random()
+            );
+            var a = d.createElement('style'),
+              b = '',
+              h = d.getElementsByTagName('head')[0];
+            a.setAttribute('id', '_vis_opt_path_hides');
+            a.setAttribute('type', 'text/css');
+            if (a.styleSheet) a.styleSheet.cssText = b;
+            else a.appendChild(d.createTextNode(b));
+            h.appendChild(a);
+            return settings_timer;
+          }
+        };
+      })();
+      _vwo_settings_timer = _vwo_code.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    
+      <script type="text/javascript">
+        docsearch({
+          appId: '05Y6TLHNFZ',
+          apiKey: '80483bfe28d9fd036a11a6f6a06454f8',
+          indexName: 'konghq',
+          container: '#getkong-algolia-search-input',
+          disableUserPersonalization: true,
+          placeholder: 'Search the docs...',
+          // Override selected event to allow for local environment navigation
+          transformItems(items) {
+            return items.map((item) => {
+              var modifiedUrl = window.location.protocol + '//' + window.location.host + item.url.split('docs.konghq.com')[1];
+              return { ...item, url: modifiedUrl };
+            });
+          },
+          translations: {
+            button: {
+              buttonText: 'Search the docs..',
+              buttonAriaLabel: 'Search the docs...'
+            }
+          },
+          resultsFooterComponent({ state }) {
+            var facetParameters = {};
+            
+              facetParameters = {"version[0]":"3.7.x","product[0]":"Kong Gateway"};
+            
+
+            var queryParams = new URLSearchParams(facetParameters);
+            queryParams.set('query', state.query);
+
+            return {
+              // The HTML `tag`
+              type: 'a',
+              ref: undefined,
+              constructor: undefined,
+              key: state.query,
+              // Its props
+              props: {
+                href: `/search/?${queryParams.toString()}`,
+                target: '_blank',
+                // Raw text rendered in the HTML element
+                children: 'See more >'
+              },
+              __v: null,
+            };
+          },
+          
+           searchParameters: {
+              optionalFilters: ['product:deck<score=1>', 'product:Plugin Hub<score=2>', 'product:Kong Gateway<score=3>'],
+              facetFilters: [ 'version:3.7.x']
+            }
+            
+          });
+      </script>
+    
+  </div>
+</body>
+
+  
+
+</html>

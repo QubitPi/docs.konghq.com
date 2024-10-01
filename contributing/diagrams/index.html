@@ -3,8 +3,6 @@
 
   
 
-
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -23,19 +21,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NL48VKT');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Diagrams in the docs | Kong Docs</title>
+  <title>Diagrams in the docs - Contribution Guidelines | Kong Docs</title>
   <meta name="description" content="Documentation for Kong, the Cloud Connectivity Company for APIs and Microservices.">
   <meta name="author" content="KongHQ">
-  <meta property="og:title" content="Diagrams in the docs | Kong Docs">
+  <meta property="og:title" content="Diagrams in the docs - Contribution Guidelines | Kong Docs">
   <meta property="og:site_name" content="Kong Docs">
   <!-- use share link for facebook -->
   <meta property="og:url" content="https://docs.konghq.com">
@@ -72,7 +67,6 @@
 
   <!-- Preload assets -->
   <link rel="dns-prefetch" href="https://cloud.typography.com">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="dns-prefetch" href="https://dev.visualwebsiteoptimizer.com">
   <link rel="dns-prefetch" href="https://cdn.segment.com">
 
@@ -92,15 +86,15 @@
   </script>
 
   
-  <script src="/docs.konghq.com/vite/assets/application-MBEAZv6G.js" crossorigin="anonymous" type="module"></script>
-<link href="/docs.konghq.com/vite/assets/_commonjsHelpers-4gQjN7DL.js" rel="modulepreload" as="script" crossorigin="anonymous">
+  <script src="/vite/assets/application-DqmI9sc2.js" crossorigin="anonymous" type="module"></script>
+<link href="/vite/assets/_commonjsHelpers-Cpj98o6Y.js" rel="modulepreload" as="script" crossorigin="anonymous">
 
 
   
 
   
 
-  <link rel="stylesheet" href="/docs.konghq.com/vite/assets/application-T5YiCv-Y.css" media="screen">
+  <link rel="stylesheet" href="/vite/assets/application-CrIf7Il_.css" media="screen">
 
   
 </head>
@@ -118,17 +112,16 @@
   <!--also uncomment the promo banner sections in app/assets/stylesheets/header.less and application.js-->
   <!-- <div id="promo-banner">
     <div class="container">
-      <div class="closebanner"></div> <strong>2023 API Summit Hackathon: Experiment with AI for APIs (August 28 - September 27) <a
-          href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Learn More &rarr;</a></strong>
+      <div class="closebanner"></div> <strong>2024 API Summit Hackathon: Experiment with API Innovation & AI. Submit by Sept 11 &nbsp;&mdash;<a href="https://konghq.com/conferences/kong-summit/hackathon?utm_medium=website&utm_source=docs-konghq-com&utm_campaign=docs-banner">Enter Now &rarr;</a> </strong>
     </div>
   </div> -->
   <div class="navbar-content">
     <a href="https://konghq.com" class="navbar-brand col col-xl-auto" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong Logo" id="kong-logo">
+      <img src="/assets/images/logos/konglogo-dark-theme.svg" alt="Kong Logo" id="kong-logo">
     </a>
     <span class="logo-divider">|</span>
     <a href="/" class="navbar-brand col col-xl-auto">
-      <img src="/assets/images/logos/docs-logo-steel.svg" alt="Kong Docs Logo" id="kong-docs-logo">
+      <img src="/assets/images/logos/docslogo-dark-theme.svg" alt="Kong Docs Logo" id="kong-docs-logo">
     </a>
 
     <div class="separator mobile"></div>
@@ -137,7 +130,6 @@
 
     <div class="search-results-wrapper"></div>
 
-    <div class="separator"></div>
     <div class="navbar-items" role="navigation" aria-label="Main menu">
       <ul class="navbar-items" role="menubar">
         <li id="top-module-list" aria-haspopup="true" role="menuitem" aria-expanded="false" class="navbar-item main-menu-item with-submenu  active">
@@ -189,6 +181,14 @@
                         </div>
                       </a>
                     
+                      <a class="item" href="/gateway/latest/ai-gateway/" tabindex="-1">
+                        
+                        <div class="item__description">
+                          <div class="item__description-title">Kong AI Gateway</div>
+                          <div class="item__description-desc">Multi-LLM AI Gateway for GenAI infrastructure</div>
+                        </div>
+                      </a>
+                    
                       <a class="item" href="/mesh/latest/" tabindex="-1">
                         
                         <div class="item__description">
@@ -226,14 +226,6 @@
                         <div class="item__description">
                           <div class="item__description-title">Insomnia</div>
                           <div class="item__description-desc">Collaborative API development platform</div>
-                        </div>
-                      </a>
-                    
-                      <a class="item" href="https://kuma.io/docs/" tabindex="-1" target="_blank" rel="noopener nofollow noreferrer ">
-                        
-                        <div class="item__description">
-                          <div class="item__description-title">Kuma</div>
-                          <div class="item__description-desc">Open-source distributed control plane with a bundled Envoy Proxy integration</div>
                         </div>
                       </a>
                     
@@ -282,6 +274,16 @@
                       </div>
                     </a>
 
+                    
+                      <a class="item" href="/hub/?category=ai" tabindex="-1">
+                        <div>
+                          <img src="/assets/images/nav/hub/ai.svg" alt="AI's icon">
+                        </div>
+                        <div class="item__description">
+                          <div class="item__description-title">AI</div>
+                          <div class="item__description-desc">Govern, secure, and control AI traffic with multi-LLM AI Gateway plugins</div>
+                        </div>
+                      </a>
                     
                       <a class="item" href="/hub/?category=authentication" tabindex="-1">
                         <div>
@@ -494,6 +496,9 @@
           <a href="/mesh/latest/">Kong Mesh</a>
         </li>
         <li role="menuitem" tabindex="-1">
+          <a href="/hub/?category=ai">Kong AI Gateway</a>
+        </li>
+        <li role="menuitem" tabindex="-1">
           <a href="/hub/">Plugin Hub</a>
         </li>
         <li role="menuitem" tabindex="-1">
@@ -535,6 +540,8 @@ Contribution guidelines
 
       </a>
     
+
+    
   </span>
 
   
@@ -550,13 +557,13 @@ Contribution guidelines
 
 Style guidelines
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Style guidelines subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Style guidelines subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -572,6 +579,8 @@ Style guidelines
 Style guide
 
       </a>
+    
+
     
   </span>
 
@@ -590,6 +599,8 @@ Word choice and naming
 
       </a>
     
+
+    
   </span>
 
   
@@ -606,6 +617,8 @@ Word choice and naming
 Notes and other notices
 
       </a>
+    
+
     
   </span>
 
@@ -624,6 +637,8 @@ Diagrams
 
       </a>
     
+
+    
   </span>
 
   
@@ -640,6 +655,8 @@ Diagrams
 Documenting user interfaces
 
       </a>
+    
+
     
   </span>
 
@@ -658,6 +675,8 @@ Contribution templates
 
       </a>
     
+
+    
   </span>
 
   
@@ -672,13 +691,13 @@ Contribution templates
 
 Plugin documentation
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Plugin documentation subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Plugin documentation subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -694,6 +713,8 @@ Plugin documentation
 Documenting Kong-owned plugins
 
       </a>
+    
+
     
   </span>
 
@@ -711,6 +732,8 @@ Documenting Kong-owned plugins
 Documenting partner plugins
 
       </a>
+    
+
     
   </span>
 
@@ -737,13 +760,13 @@ Documenting partner plugins
 
 Markdown rules and formatting
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Markdown rules and formatting subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Markdown rules and formatting subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -759,6 +782,8 @@ Markdown rules and formatting
 Markdown rules
 
       </a>
+    
+
     
   </span>
 
@@ -777,6 +802,8 @@ Reusable content
 
       </a>
     
+
+    
   </span>
 
   
@@ -793,6 +820,8 @@ Reusable content
 Variables
 
       </a>
+    
+
     
   </span>
 
@@ -811,6 +840,8 @@ Single-sourced versions
 
       </a>
     
+
+    
   </span>
 
   
@@ -828,6 +859,8 @@ Single-sourced plugins
 
       </a>
     
+
+    
   </span>
 
   
@@ -844,6 +877,8 @@ Single-sourced plugins
 Conditional rendering
 
       </a>
+    
+
     
   </span>
 
@@ -865,13 +900,13 @@ Conditional rendering
 
 Community
 
+    
 
-        
-          <button class="sidebar-tree-toggle" aria-label="toggle Community subtree">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-        
-      
+    
+      <button class="sidebar-tree-toggle" aria-label="toggle Community subtree" tabindex="-1">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    
   </span>
 
   
@@ -887,6 +922,8 @@ Community
 Welcome to the Kong Docs community
 
       </a>
+    
+
     
   </span>
 
@@ -905,6 +942,8 @@ Community expectations
 
       </a>
     
+
+    
   </span>
 
   
@@ -921,6 +960,8 @@ Community expectations
 Hackathons
 
       </a>
+    
+
     
   </span>
 
@@ -958,6 +999,7 @@ Hackathons
 <ul>
   <li><a href="#add-a-diagram-to-the-docs" class="active scroll-to">Add a diagram to the docs</a></li>
   <li><a href="#styling" class="scroll-to">Styling</a></li>
+  <li><a href="#export-a-mermaid-diagram-from-the-docs" class="scroll-to">Export a Mermaid diagram from the docs</a></li>
 </ul>
 
         
@@ -1059,10 +1101,13 @@ flowchart TD
       'primaryTextColor': '#495c64',
       'secondaryColor': '#fff',
       'secondaryTextColor': '#5096f2',
+      'tertiaryBorderColor': '#AAB4BB',
       'edgeLabelBackground': '#fff',
       'fontFamily': 'Roboto',
       'fontSize': '15px',
-      'lineColor': '#99b0c0'
+      'lineColor': '#99b0c0',
+      'activationBorderColor': '#c2d4e0',
+      'sequenceNumberColor': '#fff'
     }
   });
 </script>
@@ -1156,12 +1201,12 @@ linkStyle 3,6,9 stroke:#b6d7a8
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="diagram" data-navtab-id="navtab-86aa5dcb-3282-48cd-bda7-0e3a11819260-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="diagram" data-navtab-id="navtab-81f87b27-c2e6-4e88-aa99-8c6f18e7ab8b-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Diagram
     </div>
   
     
-    <div data-slug="source-code-of-diagram" data-navtab-id="navtab-86aa5dcb-3282-48cd-bda7-0e3a11819260-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="source-code-of-diagram" data-navtab-id="navtab-81f87b27-c2e6-4e88-aa99-8c6f18e7ab8b-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Source code of diagram
     </div>
   
@@ -1169,7 +1214,7 @@ linkStyle 3,6,9 stroke:#b6d7a8
   <div class="navtab-contents">
   
     
-    <div data-panel="diagram" data-navtab-content="navtab-86aa5dcb-3282-48cd-bda7-0e3a11819260-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="diagram" data-navtab-content="navtab-81f87b27-c2e6-4e88-aa99-8c6f18e7ab8b-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
@@ -1182,10 +1227,13 @@ linkStyle 3,6,9 stroke:#b6d7a8
       'primaryTextColor': '#495c64',
       'secondaryColor': '#fff',
       'secondaryTextColor': '#5096f2',
+      'tertiaryBorderColor': '#AAB4BB',
       'edgeLabelBackground': '#fff',
       'fontFamily': 'Roboto',
       'fontSize': '15px',
-      'lineColor': '#99b0c0'
+      'lineColor': '#99b0c0',
+      'activationBorderColor': '#c2d4e0',
+      'sequenceNumberColor': '#fff'
     }
   });
 </script>
@@ -1228,7 +1276,7 @@ flowchart TD
     </div>
   
     
-    <div data-panel="source-code-of-diagram" data-navtab-content="navtab-86aa5dcb-3282-48cd-bda7-0e3a11819260-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="source-code-of-diagram" data-navtab-content="navtab-81f87b27-c2e6-4e88-aa99-8c6f18e7ab8b-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% mermaid %}
 flowchart TD
@@ -1269,6 +1317,18 @@ flowchart TD
   
   </div>
 </div>
+
+<h2 id="export-a-mermaid-diagram-from-the-docs">Export a Mermaid diagram from the docs</h2>
+
+<p>You can export a Mermaid diagram from the Kong docs using the Mermaid live editor. This method will only work with diagrams that don’t contain icons or images.</p>
+
+<ol>
+  <li>Copy the Mermaid diagram from the Kong doc file. You can find the doc source file by clicking <strong>Edit this page</strong> at the top right corner of the doc.</li>
+  <li>Paste the Mermaid diagram into the <a href="https://mermaid.live/edit#pako:eNpl0D1vwjAQBuC_El3XDFQCRDK2VdWhXaDqUHm52Gew5I_o4lBSlP9eh4Dkiu107_PecGeQQRHUoG34kQfkWLxvoQRH7NCoFJyFLwoB8UCOBNRpbLBLU5ntv5ANNpa6CVwKU6SDj6_ojB3m3hvZI0Uj8Vq-mZ35vV5-XLWnLGzZOOThOdjAM3jQWt-Dp8CKOGdL3Kxpcy8_6RT_uWol18vMWeMpB1XVLORCwJSPwo_pNdjHsBu8hDpyTyX0rcJILwb3jA5qjbZLW1ImBv6Yn3v5cQkt-u8Qbmb8A-8_eHU" target="_blank" rel="noopener nofollow noreferrer ">Mermaid live editor</a>.</li>
+  <li>If the diagram contains images, remove all <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tags.</li>
+  <li>Replace any <a href="/contributing/variables/">Liquid variables</a> (for example, <code class="language-plaintext highlighter-rouge">{{site.base_gateway}}</code>) with their output. Liquid variables won’t render correctly in the Mermaid live editor.</li>
+  <li>Click <strong>Actions</strong> on the bottom left corner and select the file type you want to export the diagram to.</li>
+</ol>
 
 
           
@@ -1340,13 +1400,12 @@ flowchart TD
   <div class="modal-overlay closed" id="modal-overlay"></div>
 
 
-
     <footer class="marketing-footer--light-gray">
   <section>
     <ul class="newsletter">
       <li class="logo-wrapper">
         <div class="logo">
-          <img src="/assets/images/logos/kong-logo-blue.svg" alt="Kong">
+          <img src="/assets/images/logos/konglogo-light-theme-primary.svg" alt="Kong">
         </div>
         <div class="footer-title">Powering the API world</div>
         <p>
@@ -1494,8 +1553,8 @@ flowchart TD
       <ul>
         <li>
           <span class="mashape-footer-content">
-            <a href="https://konghq.com/terms" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
-            <a href="https://konghq.com/privacy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
+            <a href="https://konghq.com/legal/terms-of-use" target="_blank" rel="noopener nofollow noreferrer ">Terms</a><b>•</b>
+            <a href="https://konghq.com/legal/privacy-policy" target="_blank" rel="noopener nofollow noreferrer ">Privacy</a><b>•</b>
             <a href="https://konghq.com/compliance" target="_blank" rel="noopener nofollow noreferrer ">Trust and Compliance</a>
           </span>
         </li>
@@ -1505,16 +1564,6 @@ flowchart TD
       </div>
     </div>
   </section>
-
-  <script type="text/javascript">
-    function onSubmit(response) {
-      document.getElementById("subscription_form").submit();
-      document.getElementById("follow_up_subscription_form").submit();
-      if (response.length == 0) {
-        alert("reCaptcha verification failed");
-      }
-    }
-  </script>
 </footer>
  <script>
   var anchorForId = function (id) {
