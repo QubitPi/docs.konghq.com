@@ -1,5 +1,8 @@
-name: Build Docs PDF
+name: Build Docs PDF and Publish Docs HTML to GitHub Pages
 on:
+  pull_request:
+  push:
+    branches: [master]
   workflow_dispatch:
     inputs:
       version:
@@ -56,25 +59,40 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
 
-      - run: npm ci
+      # Build the Docs
+      - name: Build Docs
+        run: |
+          npm ci
+          cp .env.example .env
+          exe/build
 
       - name: Set date
         run: |
            echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-      # Build the PDF
-      - name: Generate PDF for Docs "${{ github.event.inputs.version }}"
-        env:
-          KONG_DOC_VERSIONS: "${{ github.event.inputs.version }}"
-        run: |
-          npm install -g wait-on
-          netlify dev & wait-on http://localhost:8888
-          cd pdf-generation
-          npm ci
-          node run.js
+#      # Build the PDF
+#      - name: Generate PDF for Docs "${{ github.event.inputs.version }}"
+#        env:
+#          KONG_DOC_VERSIONS: "${{ github.event.inputs.version }}"
+#        run: |
+#          npm install -g wait-on
+#          netlify dev & wait-on http://localhost:8888
+#          cd pdf-generation
+#          npm ci
+#          node run.js
+#
+#      # Upload build PDFs
+#      - uses: actions/upload-artifact@v4
+#        with:
+#          name: "pdfs-${{ env.TODAY }}"
+#          path: pdf-generation/pdfs/*.pdf
 
-      # Upload build PDFs
-      - uses: actions/upload-artifact@v4
+      - name: Deploy documentation to GitHub Pages
+        # if: github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: "pdfs-${{ env.TODAY }}"
-          path: pdf-generation/pdfs/*.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          enable_jekyll: false
+          user_name: QubitPi
+          user_email: jack20220723@gmail.com

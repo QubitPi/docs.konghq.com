@@ -65,6 +65,7 @@ jobs:
 
       - name: Run Smoke Tests
         run: |
+          cp .env.example .env
           npm install -g wait-on
           netlify dev & wait-on http://localhost:8888
           npm test
