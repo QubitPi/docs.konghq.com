@@ -6407,12 +6407,12 @@ FAQ
   <div class="navtab-titles" role="tablist">
   
     
-    <div data-slug="manual-method-example" data-navtab-id="navtab-e9efe97a-984b-4274-8ae1-4ab3587a458a-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
+    <div data-slug="manual-method-example" data-navtab-id="navtab-7d519252-d90e-4c30-8748-737ae5fda491-0" class="navtab-title" role="tab" aria-controls="navtab-id-0" tabindex="0">
       Manual method example
     </div>
   
     
-    <div data-slug="programmatic-method-requires-jq" data-navtab-id="navtab-e9efe97a-984b-4274-8ae1-4ab3587a458a-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
+    <div data-slug="programmatic-method-requires-jq" data-navtab-id="navtab-7d519252-d90e-4c30-8748-737ae5fda491-1" class="navtab-title" role="tab" aria-controls="navtab-id-1" tabindex="0">
       Programmatic method (requires jq)
     </div>
   
@@ -6420,7 +6420,7 @@ FAQ
   <div class="navtab-contents">
   
     
-    <div data-panel="manual-method-example" data-navtab-content="navtab-e9efe97a-984b-4274-8ae1-4ab3587a458a-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
+    <div data-panel="manual-method-example" data-navtab-content="navtab-7d519252-d90e-4c30-8748-737ae5fda491-0" class="navtab-content" role="tabpanel" id="navtab-id-0" tabindex="0" aria-labelledby="navtab-id-0">
       
 <ol>
   <li>Send a request to the registration URL</li>
@@ -6441,7 +6441,7 @@ FAQ
     </div>
   
     
-    <div data-panel="programmatic-method-requires-jq" data-navtab-content="navtab-e9efe97a-984b-4274-8ae1-4ab3587a458a-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
+    <div data-panel="programmatic-method-requires-jq" data-navtab-content="navtab-7d519252-d90e-4c30-8748-737ae5fda491-1" class="navtab-content" role="tabpanel" id="navtab-id-1" tabindex="0" aria-labelledby="navtab-id-1">
       
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">REGISTER_TOKEN</span><span class="o">=</span><span class="si">$(</span>curl <span class="nt">-i</span> <span class="nt">-X</span> http://localhost:8001/<span class="nv">$WORKSPACE</span>/admins/<span class="nv">$USERNAME</span>?generate_register_url<span class="o">=</span><span class="nb">true</span> <span class="nt">-H</span> Kong-Admin-Token:<span class="nv">$TOKEN</span> | jq .token <span class="nt">-r</span><span class="si">)</span>
 </code></pre></div></div>
